@@ -1,0 +1,1047 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0
+rootdir: /tests
+plugins: json-ctrf-0.5.3
+collected 37 items
+
+tests/test_final_state.py FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF          [100%]
+
+=================================== FAILURES ===================================
+_____________ test_t01_custom_expressions_are_registered_with_ash ______________
+
+suite = {'output': '', 'results': {}, 'returncode': -9}
+
+    def test_t01_custom_expressions_are_registered_with_ash(suite):
+        """T01 custom expressions are registered with ash"""
+>       check(suite, "T01")
+
+tests/test_final_state.py:653: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': '', 'results': {}, 'returncode': -9}, scenario = 'T01'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+E           Failed: The ExUnit verification suite produced no results (the project most likely does not compile).
+E           mix run exit code: -9
+E           output:
+
+tests/test_final_state.py:632: Failed
+_______ test_t02_custom_expression_modules_report_name_0_and_arguments_0 _______
+
+suite = {'output': '', 'results': {}, 'returncode': -9}
+
+    def test_t02_custom_expression_modules_report_name_0_and_arguments_0(suite):
+        """T02 custom expression modules report name/0 and arguments/0"""
+>       check(suite, "T02")
+
+tests/test_final_state.py:658: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': '', 'results': {}, 'returncode': -9}, scenario = 'T02'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+E           Failed: The ExUnit verification suite produced no results (the project most likely does not compile).
+E           mix run exit code: -9
+E           output:
+
+tests/test_final_state.py:632: Failed
+_______________ test_t03_expression_2_dispatches_per_data_layer ________________
+
+suite = {'output': '', 'results': {}, 'returncode': -9}
+
+    def test_t03_expression_2_dispatches_per_data_layer(suite):
+        """T03 expression/2 dispatches per data layer"""
+>       check(suite, "T03")
+
+tests/test_final_state.py:663: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': '', 'results': {}, 'returncode': -9}, scenario = 'T03'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+E           Failed: The ExUnit verification suite produced no results (the project most likely does not compile).
+E           mix run exit code: -9
+E           output:
+
+tests/test_final_state.py:632: Failed
+___________ test_t04_both_data_layer_clauses_produce_the_same_values ___________
+
+suite = {'output': '', 'results': {}, 'returncode': -9}
+
+    def test_t04_both_data_layer_clauses_produce_the_same_values(suite):
+        """T04 both data layer clauses produce the same values"""
+>       check(suite, "T04")
+
+tests/test_final_state.py:668: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': '', 'results': {}, 'returncode': -9}, scenario = 'T04'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+E           Failed: The ExUnit verification suite produced no results (the project most likely does not compile).
+E           mix run exit code: -9
+E           output:
+
+tests/test_final_state.py:632: Failed
+____________ test_t05_route_key_normalises_and_orders_its_arguments ____________
+
+suite = {'output': '', 'results': {}, 'returncode': -9}
+
+    def test_t05_route_key_normalises_and_orders_its_arguments(suite):
+        """T05 route_key normalises and orders its arguments"""
+>       check(suite, "T05")
+
+tests/test_final_state.py:673: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': '', 'results': {}, 'returncode': -9}, scenario = 'T05'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+E           Failed: The ExUnit verification suite produced no results (the project most likely does not compile).
+E           mix run exit code: -9
+E           output:
+
+tests/test_final_state.py:632: Failed
+______________ test_t06_ratio_bps_computes_integral_basis_points _______________
+
+suite = {'output': '', 'results': {}, 'returncode': -9}
+
+    def test_t06_ratio_bps_computes_integral_basis_points(suite):
+        """T06 ratio_bps computes integral basis points"""
+>       check(suite, "T06")
+
+tests/test_final_state.py:678: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': '', 'results': {}, 'returncode': -9}, scenario = 'T06'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+E           Failed: The ExUnit verification suite produced no results (the project most likely does not compile).
+E           mix run exit code: -9
+E           output:
+
+tests/test_final_state.py:632: Failed
+___________________ test_t07_ratio_bps_rounds_halves_upwards ___________________
+
+suite = {'output': '', 'results': {}, 'returncode': -9}
+
+    def test_t07_ratio_bps_rounds_halves_upwards(suite):
+        """T07 ratio_bps rounds halves upwards"""
+>       check(suite, "T07")
+
+tests/test_final_state.py:683: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': '', 'results': {}, 'returncode': -9}, scenario = 'T07'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+E           Failed: The ExUnit verification suite produced no results (the project most likely does not compile).
+E           mix run exit code: -9
+E           output:
+
+tests/test_final_state.py:632: Failed
+____________ test_t08_ratio_bps_clamps_to_the_closed_range_0_20000 _____________
+
+suite = {'output': '', 'results': {}, 'returncode': -9}
+
+    def test_t08_ratio_bps_clamps_to_the_closed_range_0_20000(suite):
+        """T08 ratio_bps clamps to the closed range 0..20000"""
+>       check(suite, "T08")
+
+tests/test_final_state.py:688: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': '', 'results': {}, 'returncode': -9}, scenario = 'T08'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+E           Failed: The ExUnit verification suite produced no results (the project most likely does not compile).
+E           mix run exit code: -9
+E           output:
+
+tests/test_final_state.py:632: Failed
+___ test_t09_ratio_bps_returns_nil_for_nil_arguments_and_a_zero_denominator ____
+
+suite = {'output': '', 'results': {}, 'returncode': -9}
+
+    def test_t09_ratio_bps_returns_nil_for_nil_arguments_and_a_zero_denominator(suite):
+        """T09 ratio_bps returns nil for nil arguments and a zero denominator"""
+>       check(suite, "T09")
+
+tests/test_final_state.py:693: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': '', 'results': {}, 'returncode': -9}, scenario = 'T09'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+E           Failed: The ExUnit verification suite produced no results (the project most likely does not compile).
+E           mix run exit code: -9
+E           output:
+
+tests/test_final_state.py:632: Failed
+_____________ test_t10_custom_expressions_compose_with_each_other ______________
+
+suite = {'output': '', 'results': {}, 'returncode': -9}
+
+    def test_t10_custom_expressions_compose_with_each_other(suite):
+        """T10 custom expressions compose with each other"""
+>       check(suite, "T10")
+
+tests/test_final_state.py:698: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': '', 'results': {}, 'returncode': -9}, scenario = 'T10'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+E           Failed: The ExUnit verification suite produced no results (the project most likely does not compile).
+E           mix run exit code: -9
+E           output:
+
+tests/test_final_state.py:632: Failed
+___________ test_t11_custom_expressions_short_circuit_inside_if_cond ___________
+
+suite = {'output': '', 'results': {}, 'returncode': -9}
+
+    def test_t11_custom_expressions_short_circuit_inside_if_cond(suite):
+        """T11 custom expressions short circuit inside if/cond"""
+>       check(suite, "T11")
+
+tests/test_final_state.py:703: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': '', 'results': {}, 'returncode': -9}, scenario = 'T11'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+E           Failed: The ExUnit verification suite produced no results (the project most likely does not compile).
+E           mix run exit code: -9
+E           output:
+
+tests/test_final_state.py:632: Failed
+__________ test_t12_custom_expression_results_can_be_cast_with_type_2 __________
+
+suite = {'output': '', 'results': {}, 'returncode': -9}
+
+    def test_t12_custom_expression_results_can_be_cast_with_type_2(suite):
+        """T12 custom expression results can be cast with type/2"""
+>       check(suite, "T12")
+
+tests/test_final_state.py:708: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': '', 'results': {}, 'returncode': -9}, scenario = 'T12'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+E           Failed: The ExUnit verification suite produced no results (the project most likely does not compile).
+E           mix run exit code: -9
+E           output:
+
+tests/test_final_state.py:632: Failed
+__________ test_t13_arguments_outside_the_declared_types_are_rejected __________
+
+suite = {'output': '', 'results': {}, 'returncode': -9}
+
+    def test_t13_arguments_outside_the_declared_types_are_rejected(suite):
+        """T13 arguments outside the declared types are rejected"""
+>       check(suite, "T13")
+
+tests/test_final_state.py:713: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': '', 'results': {}, 'returncode': -9}, scenario = 'T13'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+E           Failed: The ExUnit verification suite produced no results (the project most likely does not compile).
+E           mix run exit code: -9
+E           output:
+
+tests/test_final_state.py:632: Failed
+_________ test_t14_route_key_is_available_as_an_expression_calculation _________
+
+suite = {'output': '', 'results': {}, 'returncode': -9}
+
+    def test_t14_route_key_is_available_as_an_expression_calculation(suite):
+        """T14 route_key is available as an expression calculation"""
+>       check(suite, "T14")
+
+tests/test_final_state.py:718: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': '', 'results': {}, 'returncode': -9}, scenario = 'T14'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+E           Failed: The ExUnit verification suite produced no results (the project most likely does not compile).
+E           mix run exit code: -9
+E           output:
+
+tests/test_final_state.py:632: Failed
+_______ test_t15_sla_ratio_bps_is_available_as_an_expression_calculation _______
+
+suite = {'output': '', 'results': {}, 'returncode': -9}
+
+    def test_t15_sla_ratio_bps_is_available_as_an_expression_calculation(suite):
+        """T15 sla_ratio_bps is available as an expression calculation"""
+>       check(suite, "T15")
+
+tests/test_final_state.py:723: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': '', 'results': {}, 'returncode': -9}, scenario = 'T15'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+E           Failed: The ExUnit verification suite produced no results (the project most likely does not compile).
+E           mix run exit code: -9
+E           output:
+
+tests/test_final_state.py:632: Failed
+____ test_t16_status_label_composes_the_custom_expression_with_conditionals ____
+
+suite = {'output': '', 'results': {}, 'returncode': -9}
+
+    def test_t16_status_label_composes_the_custom_expression_with_conditionals(suite):
+        """T16 status_label composes the custom expression with conditionals"""
+>       check(suite, "T16")
+
+tests/test_final_state.py:728: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': '', 'results': {}, 'returncode': -9}, scenario = 'T16'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+E           Failed: The ExUnit verification suite produced no results (the project most likely does not compile).
+E           mix run exit code: -9
+E           output:
+
+tests/test_final_state.py:632: Failed
+______ test_t17_the_on_route_read_action_filters_on_the_custom_expression ______
+
+suite = {'output': '', 'results': {}, 'returncode': -9}
+
+    def test_t17_the_on_route_read_action_filters_on_the_custom_expression(suite):
+        """T17 the on_route read action filters on the custom expression"""
+>       check(suite, "T17")
+
+tests/test_final_state.py:733: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': '', 'results': {}, 'returncode': -9}, scenario = 'T17'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+E           Failed: The ExUnit verification suite produced no results (the project most likely does not compile).
+E           mix run exit code: -9
+E           output:
+
+tests/test_final_state.py:632: Failed
+______ test_t18_custom_expressions_can_be_used_directly_in_a_query_filter ______
+
+suite = {'output': '', 'results': {}, 'returncode': -9}
+
+    def test_t18_custom_expressions_can_be_used_directly_in_a_query_filter(suite):
+        """T18 custom expressions can be used directly in a query filter"""
+>       check(suite, "T18")
+
+tests/test_final_state.py:738: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': '', 'results': {}, 'returncode': -9}, scenario = 'T18'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+E           Failed: The ExUnit verification suite produced no results (the project most likely does not compile).
+E           mix run exit code: -9
+E           output:
+
+tests/test_final_state.py:632: Failed
+_______ test_t19_calculations_built_on_custom_expressions_are_filterable _______
+
+suite = {'output': '', 'results': {}, 'returncode': -9}
+
+    def test_t19_calculations_built_on_custom_expressions_are_filterable(suite):
+        """T19 calculations built on custom expressions are filterable"""
+>       check(suite, "T19")
+
+tests/test_final_state.py:743: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': '', 'results': {}, 'returncode': -9}, scenario = 'T19'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+E           Failed: The ExUnit verification suite produced no results (the project most likely does not compile).
+E           mix run exit code: -9
+E           output:
+
+tests/test_final_state.py:632: Failed
+________ test_t20_calculations_built_on_custom_expressions_are_sortable ________
+
+suite = {'output': '', 'results': {}, 'returncode': -9}
+
+    def test_t20_calculations_built_on_custom_expressions_are_sortable(suite):
+        """T20 calculations built on custom expressions are sortable"""
+>       check(suite, "T20")
+
+tests/test_final_state.py:748: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': '', 'results': {}, 'returncode': -9}, scenario = 'T20'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+E           Failed: The ExUnit verification suite produced no results (the project most likely does not compile).
+E           mix run exit code: -9
+E           output:
+
+tests/test_final_state.py:632: Failed
+_____________ test_t21_custom_expressions_can_be_sorted_on_inline ______________
+
+suite = {'output': '', 'results': {}, 'returncode': -9}
+
+    def test_t21_custom_expressions_can_be_sorted_on_inline(suite):
+        """T21 custom expressions can be sorted on inline"""
+>       check(suite, "T21")
+
+tests/test_final_state.py:753: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': '', 'results': {}, 'returncode': -9}, scenario = 'T21'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+E           Failed: The ExUnit verification suite produced no results (the project most likely does not compile).
+E           mix run exit code: -9
+E           output:
+
+tests/test_final_state.py:632: Failed
+_____________ test_t22_aggregate_filters_accept_custom_expressions _____________
+
+suite = {'output': '', 'results': {}, 'returncode': -9}
+
+    def test_t22_aggregate_filters_accept_custom_expressions(suite):
+        """T22 aggregate filters accept custom expressions"""
+>       check(suite, "T22")
+
+tests/test_final_state.py:758: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': '', 'results': {}, 'returncode': -9}, scenario = 'T22'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+E           Failed: The ExUnit verification suite produced no results (the project most likely does not compile).
+E           mix run exit code: -9
+E           output:
+
+tests/test_final_state.py:632: Failed
+___________ test_t23_custom_expressions_can_be_applied_to_aggregates ___________
+
+suite = {'output': '', 'results': {}, 'returncode': -9}
+
+    def test_t23_custom_expressions_can_be_applied_to_aggregates(suite):
+        """T23 custom expressions can be applied to aggregates"""
+>       check(suite, "T23")
+
+tests/test_final_state.py:763: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': '', 'results': {}, 'returncode': -9}, scenario = 'T23'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+E           Failed: The ExUnit verification suite produced no results (the project most likely does not compile).
+E           mix run exit code: -9
+E           output:
+
+tests/test_final_state.py:632: Failed
+__________ test_t24_custom_expressions_over_aggregates_are_filterable __________
+
+suite = {'output': '', 'results': {}, 'returncode': -9}
+
+    def test_t24_custom_expressions_over_aggregates_are_filterable(suite):
+        """T24 custom expressions over aggregates are filterable"""
+>       check(suite, "T24")
+
+tests/test_final_state.py:768: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': '', 'results': {}, 'returncode': -9}, scenario = 'T24'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+E           Failed: The ExUnit verification suite produced no results (the project most likely does not compile).
+E           mix run exit code: -9
+E           output:
+
+tests/test_final_state.py:632: Failed
+_______________ test_t25_custom_expressions_work_inside_exists_1 _______________
+
+suite = {'output': '', 'results': {}, 'returncode': -9}
+
+    def test_t25_custom_expressions_work_inside_exists_1(suite):
+        """T25 custom expressions work inside exists/1"""
+>       check(suite, "T25")
+
+tests/test_final_state.py:773: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': '', 'results': {}, 'returncode': -9}, scenario = 'T25'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+E           Failed: The ExUnit verification suite produced no results (the project most likely does not compile).
+E           mix run exit code: -9
+E           output:
+
+tests/test_final_state.py:632: Failed
+_____ test_t26_record_delivery_accepts_a_delivery_within_the_allowed_ratio _____
+
+suite = {'output': '', 'results': {}, 'returncode': -9}
+
+    def test_t26_record_delivery_accepts_a_delivery_within_the_allowed_ratio(suite):
+        """T26 record_delivery accepts a delivery within the allowed ratio"""
+>       check(suite, "T26")
+
+tests/test_final_state.py:778: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': '', 'results': {}, 'returncode': -9}, scenario = 'T26'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+E           Failed: The ExUnit verification suite produced no results (the project most likely does not compile).
+E           mix run exit code: -9
+E           output:
+
+tests/test_final_state.py:632: Failed
+_____ test_t27_record_delivery_rejects_a_delivery_beyond_the_allowed_ratio _____
+
+suite = {'output': '', 'results': {}, 'returncode': -9}
+
+    def test_t27_record_delivery_rejects_a_delivery_beyond_the_allowed_ratio(suite):
+        """T27 record_delivery rejects a delivery beyond the allowed ratio"""
+>       check(suite, "T27")
+
+tests/test_final_state.py:783: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': '', 'results': {}, 'returncode': -9}, scenario = 'T27'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+E           Failed: The ExUnit verification suite produced no results (the project most likely does not compile).
+E           mix run exit code: -9
+E           output:
+
+tests/test_final_state.py:632: Failed
+___________ test_t28_the_delivery_validation_is_enforced_atomically ____________
+
+suite = {'output': '', 'results': {}, 'returncode': -9}
+
+    def test_t28_the_delivery_validation_is_enforced_atomically(suite):
+        """T28 the delivery validation is enforced atomically"""
+>       check(suite, "T28")
+
+tests/test_final_state.py:788: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': '', 'results': {}, 'returncode': -9}, scenario = 'T28'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+E           Failed: The ExUnit verification suite produced no results (the project most likely does not compile).
+E           mix run exit code: -9
+E           output:
+
+tests/test_final_state.py:632: Failed
+_________ test_t29_the_read_policy_authorises_on_the_custom_expression _________
+
+suite = {'output': '', 'results': {}, 'returncode': -9}
+
+    def test_t29_the_read_policy_authorises_on_the_custom_expression(suite):
+        """T29 the read policy authorises on the custom expression"""
+>       check(suite, "T29")
+
+tests/test_final_state.py:793: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': '', 'results': {}, 'returncode': -9}, scenario = 'T29'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+E           Failed: The ExUnit verification suite produced no results (the project most likely does not compile).
+E           mix run exit code: -9
+E           output:
+
+tests/test_final_state.py:632: Failed
+_ test_t30_admins_bypass_the_route_policy_and_anonymous_readers_are_forbidden __
+
+suite = {'output': '', 'results': {}, 'returncode': -9}
+
+    def test_t30_admins_bypass_the_route_policy_and_anonymous_readers_are_forbidden(suite):
+        """T30 admins bypass the route policy and anonymous readers are forbidden"""
+>       check(suite, "T30")
+
+tests/test_final_state.py:798: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': '', 'results': {}, 'returncode': -9}, scenario = 'T30'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+E           Failed: The ExUnit verification suite produced no results (the project most likely does not compile).
+E           mix run exit code: -9
+E           output:
+
+tests/test_final_state.py:632: Failed
+_______ test_t31_the_penalty_points_function_module_reports_its_contract _______
+
+suite = {'output': '', 'results': {}, 'returncode': -9}
+
+    def test_t31_the_penalty_points_function_module_reports_its_contract(suite):
+        """T31 the penalty_points function module reports its contract"""
+>       check(suite, "T31")
+
+tests/test_final_state.py:803: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': '', 'results': {}, 'returncode': -9}, scenario = 'T31'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+E           Failed: The ExUnit verification suite produced no results (the project most likely does not compile).
+E           mix run exit code: -9
+E           output:
+
+tests/test_final_state.py:632: Failed
+_______ test_t32_penalty_points_evaluates_eagerly_for_literal_arguments ________
+
+suite = {'output': '', 'results': {}, 'returncode': -9}
+
+    def test_t32_penalty_points_evaluates_eagerly_for_literal_arguments(suite):
+        """T32 penalty_points evaluates eagerly for literal arguments"""
+>       check(suite, "T32")
+
+tests/test_final_state.py:808: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': '', 'results': {}, 'returncode': -9}, scenario = 'T32'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+E           Failed: The ExUnit verification suite produced no results (the project most likely does not compile).
+E           mix run exit code: -9
+E           output:
+
+tests/test_final_state.py:632: Failed
+________ test_t33_penalty_points_is_never_evaluated_with_nil_arguments _________
+
+suite = {'output': '', 'results': {}, 'returncode': -9}
+
+    def test_t33_penalty_points_is_never_evaluated_with_nil_arguments(suite):
+        """T33 penalty_points is never evaluated with nil arguments"""
+>       check(suite, "T33")
+
+tests/test_final_state.py:813: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': '', 'results': {}, 'returncode': -9}, scenario = 'T33'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+E           Failed: The ExUnit verification suite produced no results (the project most likely does not compile).
+E           mix run exit code: -9
+E           output:
+
+tests/test_final_state.py:632: Failed
+__________ test_t34_penalty_points_reports_unknown_and_invalid_inputs __________
+
+suite = {'output': '', 'results': {}, 'returncode': -9}
+
+    def test_t34_penalty_points_reports_unknown_and_invalid_inputs(suite):
+        """T34 penalty_points reports unknown and invalid inputs"""
+>       check(suite, "T34")
+
+tests/test_final_state.py:818: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': '', 'results': {}, 'returncode': -9}, scenario = 'T34'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+E           Failed: The ExUnit verification suite produced no results (the project most likely does not compile).
+E           mix run exit code: -9
+E           output:
+
+tests/test_final_state.py:632: Failed
+__________ test_t35_penalty_points_can_be_used_inside_a_query_filter ___________
+
+suite = {'output': '', 'results': {}, 'returncode': -9}
+
+    def test_t35_penalty_points_can_be_used_inside_a_query_filter(suite):
+        """T35 penalty_points can be used inside a query filter"""
+>       check(suite, "T35")
+
+tests/test_final_state.py:823: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': '', 'results': {}, 'returncode': -9}, scenario = 'T35'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+E           Failed: The ExUnit verification suite produced no results (the project most likely does not compile).
+E           mix run exit code: -9
+E           output:
+
+tests/test_final_state.py:632: Failed
+______________ test_t36_penalty_points_evaluates_against_a_record ______________
+
+suite = {'output': '', 'results': {}, 'returncode': -9}
+
+    def test_t36_penalty_points_evaluates_against_a_record(suite):
+        """T36 penalty_points evaluates against a record"""
+>       check(suite, "T36")
+
+tests/test_final_state.py:828: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': '', 'results': {}, 'returncode': -9}, scenario = 'T36'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+E           Failed: The ExUnit verification suite produced no results (the project most likely does not compile).
+E           mix run exit code: -9
+E           output:
+
+tests/test_final_state.py:632: Failed
+_________ test_t37_programmatically_parsed_filters_behave_identically __________
+
+suite = {'output': '', 'results': {}, 'returncode': -9}
+
+    def test_t37_programmatically_parsed_filters_behave_identically(suite):
+        """T37 programmatically parsed filters behave identically"""
+>       check(suite, "T37")
+
+tests/test_final_state.py:833: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': '', 'results': {}, 'returncode': -9}, scenario = 'T37'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+E           Failed: The ExUnit verification suite produced no results (the project most likely does not compile).
+E           mix run exit code: -9
+E           output:
+
+tests/test_final_state.py:632: Failed
+=========================== short test summary info ============================
+FAILED tests/test_final_state.py::test_t01_custom_expressions_are_registered_with_ash
+FAILED tests/test_final_state.py::test_t02_custom_expression_modules_report_name_0_and_arguments_0
+FAILED tests/test_final_state.py::test_t03_expression_2_dispatches_per_data_layer
+FAILED tests/test_final_state.py::test_t04_both_data_layer_clauses_produce_the_same_values
+FAILED tests/test_final_state.py::test_t05_route_key_normalises_and_orders_its_arguments
+FAILED tests/test_final_state.py::test_t06_ratio_bps_computes_integral_basis_points
+FAILED tests/test_final_state.py::test_t07_ratio_bps_rounds_halves_upwards - ...
+FAILED tests/test_final_state.py::test_t08_ratio_bps_clamps_to_the_closed_range_0_20000
+FAILED tests/test_final_state.py::test_t09_ratio_bps_returns_nil_for_nil_arguments_and_a_zero_denominator
+FAILED tests/test_final_state.py::test_t10_custom_expressions_compose_with_each_other
+FAILED tests/test_final_state.py::test_t11_custom_expressions_short_circuit_inside_if_cond
+FAILED tests/test_final_state.py::test_t12_custom_expression_results_can_be_cast_with_type_2
+FAILED tests/test_final_state.py::test_t13_arguments_outside_the_declared_types_are_rejected
+FAILED tests/test_final_state.py::test_t14_route_key_is_available_as_an_expression_calculation
+FAILED tests/test_final_state.py::test_t15_sla_ratio_bps_is_available_as_an_expression_calculation
+FAILED tests/test_final_state.py::test_t16_status_label_composes_the_custom_expression_with_conditionals
+FAILED tests/test_final_state.py::test_t17_the_on_route_read_action_filters_on_the_custom_expression
+FAILED tests/test_final_state.py::test_t18_custom_expressions_can_be_used_directly_in_a_query_filter
+FAILED tests/test_final_state.py::test_t19_calculations_built_on_custom_expressions_are_filterable
+FAILED tests/test_final_state.py::test_t20_calculations_built_on_custom_expressions_are_sortable
+FAILED tests/test_final_state.py::test_t21_custom_expressions_can_be_sorted_on_inline
+FAILED tests/test_final_state.py::test_t22_aggregate_filters_accept_custom_expressions
+FAILED tests/test_final_state.py::test_t23_custom_expressions_can_be_applied_to_aggregates
+FAILED tests/test_final_state.py::test_t24_custom_expressions_over_aggregates_are_filterable
+FAILED tests/test_final_state.py::test_t25_custom_expressions_work_inside_exists_1
+FAILED tests/test_final_state.py::test_t26_record_delivery_accepts_a_delivery_within_the_allowed_ratio
+FAILED tests/test_final_state.py::test_t27_record_delivery_rejects_a_delivery_beyond_the_allowed_ratio
+FAILED tests/test_final_state.py::test_t28_the_delivery_validation_is_enforced_atomically
+FAILED tests/test_final_state.py::test_t29_the_read_policy_authorises_on_the_custom_expression
+FAILED tests/test_final_state.py::test_t30_admins_bypass_the_route_policy_and_anonymous_readers_are_forbidden
+FAILED tests/test_final_state.py::test_t31_the_penalty_points_function_module_reports_its_contract
+FAILED tests/test_final_state.py::test_t32_penalty_points_evaluates_eagerly_for_literal_arguments
+FAILED tests/test_final_state.py::test_t33_penalty_points_is_never_evaluated_with_nil_arguments
+FAILED tests/test_final_state.py::test_t34_penalty_points_reports_unknown_and_invalid_inputs
+FAILED tests/test_final_state.py::test_t35_penalty_points_can_be_used_inside_a_query_filter
+FAILED tests/test_final_state.py::test_t36_penalty_points_evaluates_against_a_record
+FAILED tests/test_final_state.py::test_t37_programmatically_parsed_filters_behave_identically
+============================== 37 failed in 4.72s ==============================

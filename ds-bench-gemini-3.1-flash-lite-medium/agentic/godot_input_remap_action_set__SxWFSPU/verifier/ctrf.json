@@ -1,0 +1,119 @@
+{
+    "reportFormat": "CTRF",
+    "specVersion": "0.0.0",
+    "timestamp": "2026-09-11T11:14:07.634634+00:00",
+    "generatedBy": "pytest",
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "7.4.4"
+        },
+        "summary": {
+            "tests": 10,
+            "passed": 10,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1789125246853,
+            "stop": 1789125247634
+        },
+        "environment": {
+            "buildName": "Pytest JSON CTRF Report",
+            "buildNumber": "000",
+            "buildUrl": "https://ctrf.io"
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_project_godot_exists",
+                "status": "passed",
+                "duration": 2,
+                "start": 1789125246866,
+                "stop": 1789125246868,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_required_files_exist",
+                "status": "passed",
+                "duration": 0,
+                "start": 1789125246868,
+                "stop": 1789125246868,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_autoload_registered_in_project_godot",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789125246868,
+                "stop": 1789125246869,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_project_godot_declares_all_actions",
+                "status": "passed",
+                "duration": 0,
+                "start": 1789125246869,
+                "stop": 1789125246869,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_remap_button_scene_uses_control_root",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789125246869,
+                "stop": 1789125246870,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_remap_button_script_declares_action_name_export",
+                "status": "passed",
+                "duration": 0,
+                "start": 1789125246870,
+                "stop": 1789125246870,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_project_loads_without_errors",
+                "status": "passed",
+                "duration": 169,
+                "start": 1789125246870,
+                "stop": 1789125247039,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_actions_harness",
+                "status": "passed",
+                "duration": 151,
+                "start": 1789125247039,
+                "stop": 1789125247190,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_persistence_harness",
+                "status": "passed",
+                "duration": 165,
+                "start": 1789125247190,
+                "stop": 1789125247355,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_remap_button_harness",
+                "status": "passed",
+                "duration": 279,
+                "start": 1789125247355,
+                "stop": 1789125247634,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

@@ -1,0 +1,132 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0
+rootdir: /tests
+plugins: json-ctrf-0.5.3
+collected 5 items
+
+../tests/test_final_state.py FFFFF                                       [100%]
+
+=================================== FAILURES ===================================
+__________________________ test_scheduler_file_exists __________________________
+
+    def test_scheduler_file_exists():
+>       assert os.path.isfile(SCHEDULER_FILE), (
+            f"Expected the scheduler script at {SCHEDULER_FILE}."
+        )
+E       AssertionError: Expected the scheduler script at /home/user/godot_coroutine_scheduler/scheduler/frame_scheduler.gd.
+E       assert False
+E        +  where False = <function isfile at 0x7c4f07d84220>('/home/user/godot_coroutine_scheduler/scheduler/frame_scheduler.gd')
+E        +    where <function isfile at 0x7c4f07d84220> = <module 'posixpath' (frozen)>.isfile
+E        +      where <module 'posixpath' (frozen)> = os.path
+
+/tests/test_final_state.py:138: AssertionError
+_________________ test_scheduler_declares_class_name_and_base __________________
+
+    def test_scheduler_declares_class_name_and_base():
+>       src = _read_scheduler_source()
+
+/tests/test_final_state.py:144: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _read_scheduler_source():
+>       with open(SCHEDULER_FILE) as fh:
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/godot_coroutine_scheduler/scheduler/frame_scheduler.gd'
+
+/tests/test_final_state.py:96: FileNotFoundError
+_______________ test_scheduler_does_not_use_wallclock_or_network _______________
+
+    def test_scheduler_does_not_use_wallclock_or_network():
+        """Secondary, non-runtime constraint: timing must be driven only by advance().
+    
+        The determinism of the transcript is the primary runtime proof; this guards
+        against smuggling in real-time / engine-frame / network sources.
+        """
+>       src = _read_scheduler_source()
+
+/tests/test_final_state.py:159: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _read_scheduler_source():
+>       with open(SCHEDULER_FILE) as fh:
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/godot_coroutine_scheduler/scheduler/frame_scheduler.gd'
+
+/tests/test_final_state.py:96: FileNotFoundError
+_______________________ test_transcript_matches_expected _______________________
+
+    def test_transcript_matches_expected():
+>       transcript = _run_harness()
+
+/tests/test_final_state.py:180: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/tests/test_final_state.py:107: in _run_harness
+    result = subprocess.run(
+/usr/lib/python3.12/subprocess.py:550: in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+/usr/lib/python3.12/subprocess.py:1209: in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+/usr/lib/python3.12/subprocess.py:2116: in _communicate
+    self._check_timeout(endtime, orig_timeout, stdout, stderr)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <Popen: returncode: -9 args: ['godot', '--headless', '--path', '/home/user/g...>
+endtime = 4238880.722163227, orig_timeout = 180
+stdout_seq = [b'Godot Engine v4.3.stable.official.77dcf97d8 - https://godotengine.org\n', b'\n']
+stderr_seq = [b"ERROR: Attempt to open script 'res://scheduler/frame_scheduler.gd' resulted in error 'File not found'.\n   at: load...R: Invalid call. Nonexistent function 'spawn' in base 'Nil'.\n          at: _initialize (res://verify_driver.gd:43)\n"]
+skip_check_and_raise = False
+
+    def _check_timeout(self, endtime, orig_timeout, stdout_seq, stderr_seq,
+                       skip_check_and_raise=False):
+        """Convenience for checking if a timeout has expired."""
+        if endtime is None:
+            return
+        if skip_check_and_raise or _time() > endtime:
+>           raise TimeoutExpired(
+                    self.args, orig_timeout,
+                    output=b''.join(stdout_seq) if stdout_seq else None,
+                    stderr=b''.join(stderr_seq) if stderr_seq else None)
+E           subprocess.TimeoutExpired: Command '['godot', '--headless', '--path', '/home/user/godot_coroutine_scheduler', '--script', 'res://verify_driver.gd']' timed out after 180 seconds
+
+/usr/lib/python3.12/subprocess.py:1253: TimeoutExpired
+_________________ test_transcript_is_deterministic_across_runs _________________
+
+    def test_transcript_is_deterministic_across_runs():
+>       runs = [_run_harness() for _ in range(3)]
+
+/tests/test_final_state.py:191: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/tests/test_final_state.py:107: in _run_harness
+    result = subprocess.run(
+/usr/lib/python3.12/subprocess.py:550: in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+/usr/lib/python3.12/subprocess.py:1209: in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+/usr/lib/python3.12/subprocess.py:2116: in _communicate
+    self._check_timeout(endtime, orig_timeout, stdout, stderr)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <Popen: returncode: -9 args: ['godot', '--headless', '--path', '/home/user/g...>
+endtime = 4239060.894617439, orig_timeout = 180
+stdout_seq = [b'Godot Engine v4.3.stable.official.77dcf97d8 - https://godotengine.org\n', b'\n']
+stderr_seq = [b"ERROR: Attempt to open script 'res://scheduler/frame_scheduler.gd' resulted in error 'File not found'.\n   at: load...R: Invalid call. Nonexistent function 'spawn' in base 'Nil'.\n          at: _initialize (res://verify_driver.gd:43)\n"]
+skip_check_and_raise = False
+
+    def _check_timeout(self, endtime, orig_timeout, stdout_seq, stderr_seq,
+                       skip_check_and_raise=False):
+        """Convenience for checking if a timeout has expired."""
+        if endtime is None:
+            return
+        if skip_check_and_raise or _time() > endtime:
+>           raise TimeoutExpired(
+                    self.args, orig_timeout,
+                    output=b''.join(stdout_seq) if stdout_seq else None,
+                    stderr=b''.join(stderr_seq) if stderr_seq else None)
+E           subprocess.TimeoutExpired: Command '['godot', '--headless', '--path', '/home/user/godot_coroutine_scheduler', '--script', 'res://verify_driver.gd']' timed out after 180 seconds
+
+/usr/lib/python3.12/subprocess.py:1253: TimeoutExpired
+=========================== short test summary info ============================
+FAILED ../tests/test_final_state.py::test_scheduler_file_exists - AssertionEr...
+FAILED ../tests/test_final_state.py::test_scheduler_declares_class_name_and_base
+FAILED ../tests/test_final_state.py::test_scheduler_does_not_use_wallclock_or_network
+FAILED ../tests/test_final_state.py::test_transcript_matches_expected - subpr...
+FAILED ../tests/test_final_state.py::test_transcript_is_deterministic_across_runs
+======================== 5 failed in 360.38s (0:06:00) =========================

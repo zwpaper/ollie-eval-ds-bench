@@ -1,0 +1,130 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0
+rootdir: /tests
+plugins: json-ctrf-0.5.3
+collected 9 items
+
+tests/test_final_state.py ..F.FF..F                                      [100%]
+
+=================================== FAILURES ===================================
+____________ test_dialog_node_script_declares_resource_with_exports ____________
+
+    def test_dialog_node_script_declares_resource_with_exports():
+        src = _src("scripts/DialogNode.gd")
+        assert re.search(r"^\s*class_name\s+DialogNode\b", src, re.MULTILINE), (
+            "DialogNode.gd must declare `class_name DialogNode`."
+        )
+        assert re.search(r"^\s*extends\s+Resource\b", src, re.MULTILINE), (
+            "DialogNode.gd must `extends Resource`."
+        )
+        for prop, type_re in [
+            ("id", r"StringName"),
+            ("speaker", r"String"),
+            ("text", r"String"),
+            ("choices", r"Array\s*\[\s*DialogChoice\s*\]"),
+            ("next_id", r"StringName"),
+        ]:
+            pattern = rf"@export\s+var\s+{prop}\s*:\s*{type_re}"
+>           assert re.search(pattern, src), (
+                f"DialogNode.gd must export `{prop}` typed as {type_re}."
+            )
+E           AssertionError: DialogNode.gd must export `choices` typed as Array\s*\[\s*DialogChoice\s*\].
+E           assert None
+E            +  where None = <function search at 0x7f3b0c4b3ba0>('@export\\s+var\\s+choices\\s*:\\s*Array\\s*\\[\\s*DialogChoice\\s*\\]', 'extends Resource\nclass_name DialogNode\n\n@export var id: StringName\n@export var speaker: String\n@export var text: String\n@export var choices: Array\n@export var next_id: StringName\n')
+E            +    where <function search at 0x7f3b0c4b3ba0> = re.search
+
+tests/test_final_state.py:101: AssertionError
+_____ test_dialog_tree_script_declares_resource_with_exports_and_get_node ______
+
+    def test_dialog_tree_script_declares_resource_with_exports_and_get_node():
+        src = _src("scripts/DialogTree.gd")
+        assert re.search(r"^\s*class_name\s+DialogTree\b", src, re.MULTILINE), (
+            "DialogTree.gd must declare `class_name DialogTree`."
+        )
+        assert re.search(r"^\s*extends\s+Resource\b", src, re.MULTILINE), (
+            "DialogTree.gd must `extends Resource`."
+        )
+>       assert re.search(r"@export\s+var\s+nodes\s*:\s*Array\s*\[\s*DialogNode\s*\]", src), (
+            "DialogTree.gd must export `nodes: Array[DialogNode]`."
+        )
+E       AssertionError: DialogTree.gd must export `nodes: Array[DialogNode]`.
+E       assert None
+E        +  where None = <function search at 0x7f3b0c4b3ba0>('@export\\s+var\\s+nodes\\s*:\\s*Array\\s*\\[\\s*DialogNode\\s*\\]', 'extends Resource\nclass_name DialogTree\n\n@export var nodes: Array\n@export var start_id: StringName\n\nfunc get_node(id: StringName):\n\tfor node in nodes:\n\t\tif node.id == id:\n\t\t\treturn node\n\treturn null\n')
+E        +    where <function search at 0x7f3b0c4b3ba0> = re.search
+
+tests/test_final_state.py:133: AssertionError
+______________ test_dialog_player_script_has_signals_and_methods _______________
+
+    def test_dialog_player_script_has_signals_and_methods():
+        src = _src("scripts/DialogPlayer.gd")
+        assert re.search(r"^\s*class_name\s+DialogPlayer\b", src, re.MULTILINE), (
+            "DialogPlayer.gd must declare `class_name DialogPlayer`."
+        )
+>       assert re.search(r"@export\s+var\s+tree\s*:\s*DialogTree", src), (
+            "DialogPlayer.gd must export `tree: DialogTree`."
+        )
+E       AssertionError: DialogPlayer.gd must export `tree: DialogTree`.
+E       assert None
+E        +  where None = <function search at 0x7f3b0c4b3ba0>('@export\\s+var\\s+tree\\s*:\\s*DialogTree', 'extends Node\nclass_name DialogPlayer\n\n@export var tree: Resource\n\nsignal line_shown(speaker: String, text: Strin...hoices_labels.append(choice.label)\n\t\t\n\tline_shown.emit(current_node.speaker, current_node.text, choices_labels)\n')
+E        +    where <function search at 0x7f3b0c4b3ba0> = re.search
+
+tests/test_final_state.py:149: AssertionError
+_____________________________ test_runtime_harness _____________________________
+
+    def test_runtime_harness():
+        _reset_user_data()
+>       result = subprocess.run(
+            [
+                "godot",
+                "--headless",
+                "--path",
+                PROJECT_DIR,
+                "res://_zealt_tests/test_harness_dialog.tscn",
+            ],
+            capture_output=True,
+            text=True,
+            timeout=180,
+            env=_godot_env(),
+        )
+
+tests/test_final_state.py:206: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+usr/lib/python3.12/subprocess.py:550: in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+usr/lib/python3.12/subprocess.py:1209: in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+usr/lib/python3.12/subprocess.py:2116: in _communicate
+    self._check_timeout(endtime, orig_timeout, stdout, stderr)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <Popen: returncode: -9 args: ['godot', '--headless', '--path', '/home/user/d...>
+endtime = 154634.239730283, orig_timeout = 180
+stdout_seq = [b'Godot Engine v4.3.stable.official.77dcf97d8 - https://godotengine.org\n', b'\n']
+stderr_seq = [b'SCRIPT ERROR: Parse Error: Could not find type "DialogTree" in the current scope.\n          at: GDScript::reload (...gChoice" in the current scope.\n          at: GDScript::reload (res://_zealt_tests/test_harness_dialog.gd:110)\n', ...]
+skip_check_and_raise = False
+
+    def _check_timeout(self, endtime, orig_timeout, stdout_seq, stderr_seq,
+                       skip_check_and_raise=False):
+        """Convenience for checking if a timeout has expired."""
+        if endtime is None:
+            return
+        if skip_check_and_raise or _time() > endtime:
+>           raise TimeoutExpired(
+                    self.args, orig_timeout,
+                    output=b''.join(stdout_seq) if stdout_seq else None,
+                    stderr=b''.join(stderr_seq) if stderr_seq else None)
+E           subprocess.TimeoutExpired: Command '['godot', '--headless', '--path', '/home/user/dialog_branching_system', 'res://_zealt_tests/test_harness_dialog.tscn']' timed out after 180 seconds
+
+usr/lib/python3.12/subprocess.py:1253: TimeoutExpired
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED tests/test_final_state.py::test_project_godot_exists
+PASSED tests/test_final_state.py::test_required_files_exist
+PASSED tests/test_final_state.py::test_dialog_choice_script_declares_resource_with_exports
+PASSED tests/test_final_state.py::test_dialog_ui_scene_has_required_controls
+PASSED tests/test_final_state.py::test_project_loads_without_errors
+FAILED tests/test_final_state.py::test_dialog_node_script_declares_resource_with_exports
+FAILED tests/test_final_state.py::test_dialog_tree_script_declares_resource_with_exports_and_get_node
+FAILED tests/test_final_state.py::test_dialog_player_script_has_signals_and_methods
+FAILED tests/test_final_state.py::test_runtime_harness - subprocess.TimeoutEx...
+=================== 4 failed, 5 passed in 180.72s (0:03:00) ====================

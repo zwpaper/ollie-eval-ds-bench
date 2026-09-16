@@ -1,0 +1,107 @@
+{
+    "reportFormat": "CTRF",
+    "specVersion": "0.0.0",
+    "timestamp": "2026-09-11T11:13:24.890568+00:00",
+    "generatedBy": "pytest",
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "7.4.4"
+        },
+        "summary": {
+            "tests": 8,
+            "passed": 6,
+            "failed": 2,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1789125202134,
+            "stop": 1789125204890
+        },
+        "environment": {
+            "buildName": "Pytest JSON CTRF Report",
+            "buildNumber": "000",
+            "buildUrl": "https://ctrf.io"
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_project_godot_exists",
+                "status": "passed",
+                "duration": 2,
+                "start": 1789125202150,
+                "stop": 1789125202152,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_required_files_exist",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789125202152,
+                "stop": 1789125202153,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_field_controller_declares_class_and_api",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789125202153,
+                "stop": 1789125202154,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_scene_declares_expected_nodes",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789125202154,
+                "stop": 1789125202155,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_project_loads_without_errors",
+                "status": "passed",
+                "duration": 163,
+                "start": 1789125202155,
+                "stop": 1789125202318,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_struct_harness",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 187,
+                "start": 1789125202318,
+                "stop": 1789125202505,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_struct_harness():\n>       _run_harness(\"test_harness_struct.tscn\", \"STRUCT_HARNESS_OK\", timeout=180)\n\n/tests/test_final_state.py:153: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nscene = 'test_harness_struct.tscn', marker = 'STRUCT_HARNESS_OK', timeout = 180\n\n    def _run_harness(scene: str, marker: str, timeout: int) -> None:\n        _reset_user_data()\n        result = subprocess.run(\n            [\"godot\", \"--headless\", \"--path\", PROJECT_DIR, f\"res://_zealt_tests/{scene}\"],\n            capture_output=True,\n            text=True,\n            timeout=timeout,\n            env=_godot_env(),\n        )\n        combined = (result.stdout or \"\") + (result.stderr or \"\")\n>       assert result.returncode == 0, (\n            f\"Harness {scene} exited with code {result.returncode}:\\n{combined}\"\n        )\nE       AssertionError: Harness test_harness_struct.tscn exited with code 8:\nE         Godot Engine v4.3.stable.official.77dcf97d8 - https://godotengine.org\nE         \nE         FAIL: FieldGlobalDown RectangleShape2D size (-1, -1) != expected (4000, 4000)\nE         \nE       assert 8 == 0\nE        +  where 8 = CompletedProcess(args=['godot', '--headless', '--path', '/home/user/gravity_fields', 'res://_zealt_tests/test_harness_...https://godotengine.org\\n\\n', stderr='FAIL: FieldGlobalDown RectangleShape2D size (-1, -1) != expected (4000, 4000)\\n').returncode\n\n/tests/test_final_state.py:61: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_probe_harness",
+                "status": "passed",
+                "duration": 160,
+                "start": 1789125202505,
+                "stop": 1789125202665,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_traj_harness",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 2225,
+                "start": 1789125202665,
+                "stop": 1789125204890,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_traj_harness():\n>       _run_harness(\"test_harness_traj.tscn\", \"TRAJ_HARNESS_OK\", timeout=240)\n\n/tests/test_final_state.py:161: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nscene = 'test_harness_traj.tscn', marker = 'TRAJ_HARNESS_OK', timeout = 240\n\n    def _run_harness(scene: str, marker: str, timeout: int) -> None:\n        _reset_user_data()\n        result = subprocess.run(\n            [\"godot\", \"--headless\", \"--path\", PROJECT_DIR, f\"res://_zealt_tests/{scene}\"],\n            capture_output=True,\n            text=True,\n            timeout=timeout,\n            env=_godot_env(),\n        )\n        combined = (result.stdout or \"\") + (result.stderr or \"\")\n>       assert result.returncode == 0, (\n            f\"Harness {scene} exited with code {result.returncode}:\\n{combined}\"\n        )\nE       AssertionError: Harness test_harness_traj.tscn exited with code 6:\nE         Godot Engine v4.3.stable.official.77dcf97d8 - https://godotengine.org\nE         \nE         FAIL: position after 60 ticks (0, 482.225) != expected (152.5, 203.333) (eps 25.000000)\nE         \nE       assert 6 == 0\nE        +  where 6 = CompletedProcess(args=['godot', '--headless', '--path', '/home/user/gravity_fields', 'res://_zealt_tests/test_harness_...dotengine.org\\n\\n', stderr='FAIL: position after 60 ticks (0, 482.225) != expected (152.5, 203.333) (eps 25.000000)\\n').returncode\n\n/tests/test_final_state.py:61: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            }
+        ]
+    }
+}

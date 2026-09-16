@@ -1,0 +1,57 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0
+rootdir: /tests
+plugins: json-ctrf-0.5.3
+collected 4 items
+
+../tests/test_final_state.py .FFF                                        [100%]
+
+=================================== FAILURES ===================================
+_______________________ test_required_animations_present _______________________
+
+    def test_required_animations_present():
+        data = _run_harness()
+        anims = data["results"].get("animations") or {}
+>       assert anims.get("ok"), (
+            "AnimationPlayer is missing one or more required animations "
+            f"(idle, walk_north, walk_south, walk_east, walk_west, attack). detail={anims.get('detail')}"
+        )
+E       AssertionError: AnimationPlayer is missing one or more required animations (idle, walk_north, walk_south, walk_east, walk_west, attack). detail={'attack': False, 'idle': False, 'walk_east': False, 'walk_north': False, 'walk_south': False, 'walk_west': False}
+E       assert False
+E        +  where False = <built-in method get of dict object at 0x797e77788500>('ok')
+E        +    where <built-in method get of dict object at 0x797e77788500> = {'detail': {'attack': False, 'idle': False, 'walk_east': False, 'walk_north': False, ...}, 'ok': False}.get
+
+/tests/test_final_state.py:67: AssertionError
+_________________________ test_state_machine_structure _________________________
+
+    def test_state_machine_structure():
+        data = _run_harness()
+        r = data["results"]
+>       assert r.get("tree_root_is_state_machine"), (
+            "AnimationTree.tree_root must be an AnimationNodeStateMachine."
+        )
+E       AssertionError: AnimationTree.tree_root must be an AnimationNodeStateMachine.
+E       assert False
+E        +  where False = <built-in method get of dict object at 0x797e7776a200>('tree_root_is_state_machine')
+E        +    where <built-in method get of dict object at 0x797e7776a200> = {'animations': {'detail': {'attack': False, 'idle': False, 'walk_east': False, 'walk_north': False, ...}, 'ok': False}, 'found_animation_player': True, 'found_animation_tree': True, 'found_controller': True, ...}.get
+
+/tests/test_final_state.py:76: AssertionError
+_______________________ test_runtime_controller_behavior _______________________
+
+    def test_runtime_controller_behavior():
+        data = _run_harness()
+        r = data["results"]
+>       assert r.get("tree_active"), "AnimationTree.active must become true."
+E       AssertionError: AnimationTree.active must become true.
+E       assert None
+E        +  where None = <built-in method get of dict object at 0x797e77769640>('tree_active')
+E        +    where <built-in method get of dict object at 0x797e77769640> = {'animations': {'detail': {'attack': False, 'idle': False, 'walk_east': False, 'walk_north': False, ...}, 'ok': False}, 'found_animation_player': True, 'found_animation_tree': True, 'found_controller': True, ...}.get
+
+/tests/test_final_state.py:104: AssertionError
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED ../tests/test_final_state.py::test_scene_and_nodes_exist
+FAILED ../tests/test_final_state.py::test_required_animations_present - Asser...
+FAILED ../tests/test_final_state.py::test_state_machine_structure - Assertion...
+FAILED ../tests/test_final_state.py::test_runtime_controller_behavior - Asser...
+========================= 3 failed, 1 passed in 16.40s =========================

@@ -1,0 +1,469 @@
+{
+    "reportFormat": "CTRF",
+    "specVersion": "0.0.0",
+    "timestamp": "2026-09-11T11:12:12.639418+00:00",
+    "generatedBy": "pytest",
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "7.4.4"
+        },
+        "summary": {
+            "tests": 44,
+            "passed": 0,
+            "failed": 44,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1789125125783,
+            "stop": 1789125132639
+        },
+        "environment": {
+            "buildName": "Pytest JSON CTRF Report",
+            "buildNumber": "000",
+            "buildUrl": "https://ctrf.io"
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 6721,
+                "start": 1789125125795,
+                "stop": 1789125132516,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 12 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/payload.ex ==\nE         ** (FunctionClauseError) no function clause matching in Keyword.keys/1    \nE             \nE             The following arguments were given to Keyword.keys/1:\nE             \nE                 # 1\nE                 :union\nE             \nE             Attempted function clauses (showing 1 out of 1):\nE             \nE                 def keys(+keywords+) when -is_list(keywords)-\nE             \nE             (elixir 1.18.4) lib/keyword.ex:646: Keyword.keys/1\nE             (ash 3.33.3) expanding macro: Ash.Type.NewType.__using__/1\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE             (elixir 1.18.4) expanding macro: Kernel.use/2\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 12 files (.ex)\\n', stderr='\\n== Compilation ...    (elixir 1.18.4) expanding macro: Kernel.use/2\\n    lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\\n').returncode\n\n/tests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 3,
+                "start": 1789125132516,
+                "stop": 1789125132519,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 12 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/payload.ex ==\nE         ** (FunctionClauseError) no function clause matching in Keyword.keys/1    \nE             \nE             The following arguments were given to Keyword.keys/1:\nE             \nE                 # 1\nE                 :union\nE             \nE             Attempted function clauses (showing 1 out of 1):\nE             \nE                 def keys(+keywords+) when -is_list(keywords)-\nE             \nE             (elixir 1.18.4) lib/keyword.ex:646: Keyword.keys/1\nE             (ash 3.33.3) expanding macro: Ash.Type.NewType.__using__/1\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE             (elixir 1.18.4) expanding macro: Kernel.use/2\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 12 files (.ex)\\n', stderr='\\n== Compilation ...    (elixir 1.18.4) expanding macro: Kernel.use/2\\n    lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\\n').returncode\n\n/tests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 3,
+                "start": 1789125132519,
+                "stop": 1789125132522,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 12 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/payload.ex ==\nE         ** (FunctionClauseError) no function clause matching in Keyword.keys/1    \nE             \nE             The following arguments were given to Keyword.keys/1:\nE             \nE                 # 1\nE                 :union\nE             \nE             Attempted function clauses (showing 1 out of 1):\nE             \nE                 def keys(+keywords+) when -is_list(keywords)-\nE             \nE             (elixir 1.18.4) lib/keyword.ex:646: Keyword.keys/1\nE             (ash 3.33.3) expanding macro: Ash.Type.NewType.__using__/1\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE             (elixir 1.18.4) expanding macro: Kernel.use/2\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 12 files (.ex)\\n', stderr='\\n== Compilation ...    (elixir 1.18.4) expanding macro: Kernel.use/2\\n    lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\\n').returncode\n\n/tests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 2,
+                "start": 1789125132522,
+                "stop": 1789125132524,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 12 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/payload.ex ==\nE         ** (FunctionClauseError) no function clause matching in Keyword.keys/1    \nE             \nE             The following arguments were given to Keyword.keys/1:\nE             \nE                 # 1\nE                 :union\nE             \nE             Attempted function clauses (showing 1 out of 1):\nE             \nE                 def keys(+keywords+) when -is_list(keywords)-\nE             \nE             (elixir 1.18.4) lib/keyword.ex:646: Keyword.keys/1\nE             (ash 3.33.3) expanding macro: Ash.Type.NewType.__using__/1\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE             (elixir 1.18.4) expanding macro: Kernel.use/2\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 12 files (.ex)\\n', stderr='\\n== Compilation ...    (elixir 1.18.4) expanding macro: Kernel.use/2\\n    lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\\n').returncode\n\n/tests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 2,
+                "start": 1789125132524,
+                "stop": 1789125132526,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 12 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/payload.ex ==\nE         ** (FunctionClauseError) no function clause matching in Keyword.keys/1    \nE             \nE             The following arguments were given to Keyword.keys/1:\nE             \nE                 # 1\nE                 :union\nE             \nE             Attempted function clauses (showing 1 out of 1):\nE             \nE                 def keys(+keywords+) when -is_list(keywords)-\nE             \nE             (elixir 1.18.4) lib/keyword.ex:646: Keyword.keys/1\nE             (ash 3.33.3) expanding macro: Ash.Type.NewType.__using__/1\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE             (elixir 1.18.4) expanding macro: Kernel.use/2\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 12 files (.ex)\\n', stderr='\\n== Compilation ...    (elixir 1.18.4) expanding macro: Kernel.use/2\\n    lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\\n').returncode\n\n/tests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 2,
+                "start": 1789125132527,
+                "stop": 1789125132529,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 12 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/payload.ex ==\nE         ** (FunctionClauseError) no function clause matching in Keyword.keys/1    \nE             \nE             The following arguments were given to Keyword.keys/1:\nE             \nE                 # 1\nE                 :union\nE             \nE             Attempted function clauses (showing 1 out of 1):\nE             \nE                 def keys(+keywords+) when -is_list(keywords)-\nE             \nE             (elixir 1.18.4) lib/keyword.ex:646: Keyword.keys/1\nE             (ash 3.33.3) expanding macro: Ash.Type.NewType.__using__/1\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE             (elixir 1.18.4) expanding macro: Kernel.use/2\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 12 files (.ex)\\n', stderr='\\n== Compilation ...    (elixir 1.18.4) expanding macro: Kernel.use/2\\n    lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\\n').returncode\n\n/tests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 2,
+                "start": 1789125132529,
+                "stop": 1789125132531,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 12 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/payload.ex ==\nE         ** (FunctionClauseError) no function clause matching in Keyword.keys/1    \nE             \nE             The following arguments were given to Keyword.keys/1:\nE             \nE                 # 1\nE                 :union\nE             \nE             Attempted function clauses (showing 1 out of 1):\nE             \nE                 def keys(+keywords+) when -is_list(keywords)-\nE             \nE             (elixir 1.18.4) lib/keyword.ex:646: Keyword.keys/1\nE             (ash 3.33.3) expanding macro: Ash.Type.NewType.__using__/1\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE             (elixir 1.18.4) expanding macro: Kernel.use/2\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 12 files (.ex)\\n', stderr='\\n== Compilation ...    (elixir 1.18.4) expanding macro: Kernel.use/2\\n    lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\\n').returncode\n\n/tests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 3,
+                "start": 1789125132531,
+                "stop": 1789125132534,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 12 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/payload.ex ==\nE         ** (FunctionClauseError) no function clause matching in Keyword.keys/1    \nE             \nE             The following arguments were given to Keyword.keys/1:\nE             \nE                 # 1\nE                 :union\nE             \nE             Attempted function clauses (showing 1 out of 1):\nE             \nE                 def keys(+keywords+) when -is_list(keywords)-\nE             \nE             (elixir 1.18.4) lib/keyword.ex:646: Keyword.keys/1\nE             (ash 3.33.3) expanding macro: Ash.Type.NewType.__using__/1\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE             (elixir 1.18.4) expanding macro: Kernel.use/2\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 12 files (.ex)\\n', stderr='\\n== Compilation ...    (elixir 1.18.4) expanding macro: Kernel.use/2\\n    lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\\n').returncode\n\n/tests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 2,
+                "start": 1789125132534,
+                "stop": 1789125132536,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 12 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/payload.ex ==\nE         ** (FunctionClauseError) no function clause matching in Keyword.keys/1    \nE             \nE             The following arguments were given to Keyword.keys/1:\nE             \nE                 # 1\nE                 :union\nE             \nE             Attempted function clauses (showing 1 out of 1):\nE             \nE                 def keys(+keywords+) when -is_list(keywords)-\nE             \nE             (elixir 1.18.4) lib/keyword.ex:646: Keyword.keys/1\nE             (ash 3.33.3) expanding macro: Ash.Type.NewType.__using__/1\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE             (elixir 1.18.4) expanding macro: Kernel.use/2\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 12 files (.ex)\\n', stderr='\\n== Compilation ...    (elixir 1.18.4) expanding macro: Kernel.use/2\\n    lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\\n').returncode\n\n/tests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 3,
+                "start": 1789125132536,
+                "stop": 1789125132539,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 12 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/payload.ex ==\nE         ** (FunctionClauseError) no function clause matching in Keyword.keys/1    \nE             \nE             The following arguments were given to Keyword.keys/1:\nE             \nE                 # 1\nE                 :union\nE             \nE             Attempted function clauses (showing 1 out of 1):\nE             \nE                 def keys(+keywords+) when -is_list(keywords)-\nE             \nE             (elixir 1.18.4) lib/keyword.ex:646: Keyword.keys/1\nE             (ash 3.33.3) expanding macro: Ash.Type.NewType.__using__/1\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE             (elixir 1.18.4) expanding macro: Kernel.use/2\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 12 files (.ex)\\n', stderr='\\n== Compilation ...    (elixir 1.18.4) expanding macro: Kernel.use/2\\n    lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\\n').returncode\n\n/tests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 2,
+                "start": 1789125132539,
+                "stop": 1789125132541,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 12 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/payload.ex ==\nE         ** (FunctionClauseError) no function clause matching in Keyword.keys/1    \nE             \nE             The following arguments were given to Keyword.keys/1:\nE             \nE                 # 1\nE                 :union\nE             \nE             Attempted function clauses (showing 1 out of 1):\nE             \nE                 def keys(+keywords+) when -is_list(keywords)-\nE             \nE             (elixir 1.18.4) lib/keyword.ex:646: Keyword.keys/1\nE             (ash 3.33.3) expanding macro: Ash.Type.NewType.__using__/1\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE             (elixir 1.18.4) expanding macro: Kernel.use/2\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 12 files (.ex)\\n', stderr='\\n== Compilation ...    (elixir 1.18.4) expanding macro: Kernel.use/2\\n    lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\\n').returncode\n\n/tests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 2,
+                "start": 1789125132541,
+                "stop": 1789125132543,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 12 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/payload.ex ==\nE         ** (FunctionClauseError) no function clause matching in Keyword.keys/1    \nE             \nE             The following arguments were given to Keyword.keys/1:\nE             \nE                 # 1\nE                 :union\nE             \nE             Attempted function clauses (showing 1 out of 1):\nE             \nE                 def keys(+keywords+) when -is_list(keywords)-\nE             \nE             (elixir 1.18.4) lib/keyword.ex:646: Keyword.keys/1\nE             (ash 3.33.3) expanding macro: Ash.Type.NewType.__using__/1\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE             (elixir 1.18.4) expanding macro: Kernel.use/2\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 12 files (.ex)\\n', stderr='\\n== Compilation ...    (elixir 1.18.4) expanding macro: Kernel.use/2\\n    lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\\n').returncode\n\n/tests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 2,
+                "start": 1789125132544,
+                "stop": 1789125132546,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 12 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/payload.ex ==\nE         ** (FunctionClauseError) no function clause matching in Keyword.keys/1    \nE             \nE             The following arguments were given to Keyword.keys/1:\nE             \nE                 # 1\nE                 :union\nE             \nE             Attempted function clauses (showing 1 out of 1):\nE             \nE                 def keys(+keywords+) when -is_list(keywords)-\nE             \nE             (elixir 1.18.4) lib/keyword.ex:646: Keyword.keys/1\nE             (ash 3.33.3) expanding macro: Ash.Type.NewType.__using__/1\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE             (elixir 1.18.4) expanding macro: Kernel.use/2\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 12 files (.ex)\\n', stderr='\\n== Compilation ...    (elixir 1.18.4) expanding macro: Kernel.use/2\\n    lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\\n').returncode\n\n/tests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 2,
+                "start": 1789125132546,
+                "stop": 1789125132548,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 12 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/payload.ex ==\nE         ** (FunctionClauseError) no function clause matching in Keyword.keys/1    \nE             \nE             The following arguments were given to Keyword.keys/1:\nE             \nE                 # 1\nE                 :union\nE             \nE             Attempted function clauses (showing 1 out of 1):\nE             \nE                 def keys(+keywords+) when -is_list(keywords)-\nE             \nE             (elixir 1.18.4) lib/keyword.ex:646: Keyword.keys/1\nE             (ash 3.33.3) expanding macro: Ash.Type.NewType.__using__/1\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE             (elixir 1.18.4) expanding macro: Kernel.use/2\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 12 files (.ex)\\n', stderr='\\n== Compilation ...    (elixir 1.18.4) expanding macro: Kernel.use/2\\n    lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\\n').returncode\n\n/tests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 3,
+                "start": 1789125132548,
+                "stop": 1789125132551,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 12 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/payload.ex ==\nE         ** (FunctionClauseError) no function clause matching in Keyword.keys/1    \nE             \nE             The following arguments were given to Keyword.keys/1:\nE             \nE                 # 1\nE                 :union\nE             \nE             Attempted function clauses (showing 1 out of 1):\nE             \nE                 def keys(+keywords+) when -is_list(keywords)-\nE             \nE             (elixir 1.18.4) lib/keyword.ex:646: Keyword.keys/1\nE             (ash 3.33.3) expanding macro: Ash.Type.NewType.__using__/1\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE             (elixir 1.18.4) expanding macro: Kernel.use/2\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 12 files (.ex)\\n', stderr='\\n== Compilation ...    (elixir 1.18.4) expanding macro: Kernel.use/2\\n    lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\\n').returncode\n\n/tests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 2,
+                "start": 1789125132551,
+                "stop": 1789125132553,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 12 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/payload.ex ==\nE         ** (FunctionClauseError) no function clause matching in Keyword.keys/1    \nE             \nE             The following arguments were given to Keyword.keys/1:\nE             \nE                 # 1\nE                 :union\nE             \nE             Attempted function clauses (showing 1 out of 1):\nE             \nE                 def keys(+keywords+) when -is_list(keywords)-\nE             \nE             (elixir 1.18.4) lib/keyword.ex:646: Keyword.keys/1\nE             (ash 3.33.3) expanding macro: Ash.Type.NewType.__using__/1\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE             (elixir 1.18.4) expanding macro: Kernel.use/2\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 12 files (.ex)\\n', stderr='\\n== Compilation ...    (elixir 1.18.4) expanding macro: Kernel.use/2\\n    lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\\n').returncode\n\n/tests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 2,
+                "start": 1789125132554,
+                "stop": 1789125132556,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 12 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/payload.ex ==\nE         ** (FunctionClauseError) no function clause matching in Keyword.keys/1    \nE             \nE             The following arguments were given to Keyword.keys/1:\nE             \nE                 # 1\nE                 :union\nE             \nE             Attempted function clauses (showing 1 out of 1):\nE             \nE                 def keys(+keywords+) when -is_list(keywords)-\nE             \nE             (elixir 1.18.4) lib/keyword.ex:646: Keyword.keys/1\nE             (ash 3.33.3) expanding macro: Ash.Type.NewType.__using__/1\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE             (elixir 1.18.4) expanding macro: Kernel.use/2\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 12 files (.ex)\\n', stderr='\\n== Compilation ...    (elixir 1.18.4) expanding macro: Kernel.use/2\\n    lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\\n').returncode\n\n/tests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 2,
+                "start": 1789125132556,
+                "stop": 1789125132558,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 12 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/payload.ex ==\nE         ** (FunctionClauseError) no function clause matching in Keyword.keys/1    \nE             \nE             The following arguments were given to Keyword.keys/1:\nE             \nE                 # 1\nE                 :union\nE             \nE             Attempted function clauses (showing 1 out of 1):\nE             \nE                 def keys(+keywords+) when -is_list(keywords)-\nE             \nE             (elixir 1.18.4) lib/keyword.ex:646: Keyword.keys/1\nE             (ash 3.33.3) expanding macro: Ash.Type.NewType.__using__/1\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE             (elixir 1.18.4) expanding macro: Kernel.use/2\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 12 files (.ex)\\n', stderr='\\n== Compilation ...    (elixir 1.18.4) expanding macro: Kernel.use/2\\n    lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\\n').returncode\n\n/tests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 3,
+                "start": 1789125132558,
+                "stop": 1789125132561,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 12 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/payload.ex ==\nE         ** (FunctionClauseError) no function clause matching in Keyword.keys/1    \nE             \nE             The following arguments were given to Keyword.keys/1:\nE             \nE                 # 1\nE                 :union\nE             \nE             Attempted function clauses (showing 1 out of 1):\nE             \nE                 def keys(+keywords+) when -is_list(keywords)-\nE             \nE             (elixir 1.18.4) lib/keyword.ex:646: Keyword.keys/1\nE             (ash 3.33.3) expanding macro: Ash.Type.NewType.__using__/1\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE             (elixir 1.18.4) expanding macro: Kernel.use/2\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 12 files (.ex)\\n', stderr='\\n== Compilation ...    (elixir 1.18.4) expanding macro: Kernel.use/2\\n    lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\\n').returncode\n\n/tests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 2,
+                "start": 1789125132561,
+                "stop": 1789125132563,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 12 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/payload.ex ==\nE         ** (FunctionClauseError) no function clause matching in Keyword.keys/1    \nE             \nE             The following arguments were given to Keyword.keys/1:\nE             \nE                 # 1\nE                 :union\nE             \nE             Attempted function clauses (showing 1 out of 1):\nE             \nE                 def keys(+keywords+) when -is_list(keywords)-\nE             \nE             (elixir 1.18.4) lib/keyword.ex:646: Keyword.keys/1\nE             (ash 3.33.3) expanding macro: Ash.Type.NewType.__using__/1\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE             (elixir 1.18.4) expanding macro: Kernel.use/2\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 12 files (.ex)\\n', stderr='\\n== Compilation ...    (elixir 1.18.4) expanding macro: Kernel.use/2\\n    lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\\n').returncode\n\n/tests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 3,
+                "start": 1789125132563,
+                "stop": 1789125132566,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 12 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/payload.ex ==\nE         ** (FunctionClauseError) no function clause matching in Keyword.keys/1    \nE             \nE             The following arguments were given to Keyword.keys/1:\nE             \nE                 # 1\nE                 :union\nE             \nE             Attempted function clauses (showing 1 out of 1):\nE             \nE                 def keys(+keywords+) when -is_list(keywords)-\nE             \nE             (elixir 1.18.4) lib/keyword.ex:646: Keyword.keys/1\nE             (ash 3.33.3) expanding macro: Ash.Type.NewType.__using__/1\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE             (elixir 1.18.4) expanding macro: Kernel.use/2\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 12 files (.ex)\\n', stderr='\\n== Compilation ...    (elixir 1.18.4) expanding macro: Kernel.use/2\\n    lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\\n').returncode\n\n/tests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 3,
+                "start": 1789125132566,
+                "stop": 1789125132569,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 12 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/payload.ex ==\nE         ** (FunctionClauseError) no function clause matching in Keyword.keys/1    \nE             \nE             The following arguments were given to Keyword.keys/1:\nE             \nE                 # 1\nE                 :union\nE             \nE             Attempted function clauses (showing 1 out of 1):\nE             \nE                 def keys(+keywords+) when -is_list(keywords)-\nE             \nE             (elixir 1.18.4) lib/keyword.ex:646: Keyword.keys/1\nE             (ash 3.33.3) expanding macro: Ash.Type.NewType.__using__/1\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE             (elixir 1.18.4) expanding macro: Kernel.use/2\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 12 files (.ex)\\n', stderr='\\n== Compilation ...    (elixir 1.18.4) expanding macro: Kernel.use/2\\n    lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\\n').returncode\n\n/tests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 2,
+                "start": 1789125132569,
+                "stop": 1789125132571,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 12 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/payload.ex ==\nE         ** (FunctionClauseError) no function clause matching in Keyword.keys/1    \nE             \nE             The following arguments were given to Keyword.keys/1:\nE             \nE                 # 1\nE                 :union\nE             \nE             Attempted function clauses (showing 1 out of 1):\nE             \nE                 def keys(+keywords+) when -is_list(keywords)-\nE             \nE             (elixir 1.18.4) lib/keyword.ex:646: Keyword.keys/1\nE             (ash 3.33.3) expanding macro: Ash.Type.NewType.__using__/1\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE             (elixir 1.18.4) expanding macro: Kernel.use/2\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 12 files (.ex)\\n', stderr='\\n== Compilation ...    (elixir 1.18.4) expanding macro: Kernel.use/2\\n    lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\\n').returncode\n\n/tests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 3,
+                "start": 1789125132571,
+                "stop": 1789125132574,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 12 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/payload.ex ==\nE         ** (FunctionClauseError) no function clause matching in Keyword.keys/1    \nE             \nE             The following arguments were given to Keyword.keys/1:\nE             \nE                 # 1\nE                 :union\nE             \nE             Attempted function clauses (showing 1 out of 1):\nE             \nE                 def keys(+keywords+) when -is_list(keywords)-\nE             \nE             (elixir 1.18.4) lib/keyword.ex:646: Keyword.keys/1\nE             (ash 3.33.3) expanding macro: Ash.Type.NewType.__using__/1\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE             (elixir 1.18.4) expanding macro: Kernel.use/2\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 12 files (.ex)\\n', stderr='\\n== Compilation ...    (elixir 1.18.4) expanding macro: Kernel.use/2\\n    lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\\n').returncode\n\n/tests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 3,
+                "start": 1789125132574,
+                "stop": 1789125132577,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 12 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/payload.ex ==\nE         ** (FunctionClauseError) no function clause matching in Keyword.keys/1    \nE             \nE             The following arguments were given to Keyword.keys/1:\nE             \nE                 # 1\nE                 :union\nE             \nE             Attempted function clauses (showing 1 out of 1):\nE             \nE                 def keys(+keywords+) when -is_list(keywords)-\nE             \nE             (elixir 1.18.4) lib/keyword.ex:646: Keyword.keys/1\nE             (ash 3.33.3) expanding macro: Ash.Type.NewType.__using__/1\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE             (elixir 1.18.4) expanding macro: Kernel.use/2\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 12 files (.ex)\\n', stderr='\\n== Compilation ...    (elixir 1.18.4) expanding macro: Kernel.use/2\\n    lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\\n').returncode\n\n/tests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 2,
+                "start": 1789125132577,
+                "stop": 1789125132579,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 12 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/payload.ex ==\nE         ** (FunctionClauseError) no function clause matching in Keyword.keys/1    \nE             \nE             The following arguments were given to Keyword.keys/1:\nE             \nE                 # 1\nE                 :union\nE             \nE             Attempted function clauses (showing 1 out of 1):\nE             \nE                 def keys(+keywords+) when -is_list(keywords)-\nE             \nE             (elixir 1.18.4) lib/keyword.ex:646: Keyword.keys/1\nE             (ash 3.33.3) expanding macro: Ash.Type.NewType.__using__/1\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE             (elixir 1.18.4) expanding macro: Kernel.use/2\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 12 files (.ex)\\n', stderr='\\n== Compilation ...    (elixir 1.18.4) expanding macro: Kernel.use/2\\n    lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\\n').returncode\n\n/tests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 3,
+                "start": 1789125132579,
+                "stop": 1789125132582,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 12 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/payload.ex ==\nE         ** (FunctionClauseError) no function clause matching in Keyword.keys/1    \nE             \nE             The following arguments were given to Keyword.keys/1:\nE             \nE                 # 1\nE                 :union\nE             \nE             Attempted function clauses (showing 1 out of 1):\nE             \nE                 def keys(+keywords+) when -is_list(keywords)-\nE             \nE             (elixir 1.18.4) lib/keyword.ex:646: Keyword.keys/1\nE             (ash 3.33.3) expanding macro: Ash.Type.NewType.__using__/1\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE             (elixir 1.18.4) expanding macro: Kernel.use/2\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 12 files (.ex)\\n', stderr='\\n== Compilation ...    (elixir 1.18.4) expanding macro: Kernel.use/2\\n    lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\\n').returncode\n\n/tests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 3,
+                "start": 1789125132582,
+                "stop": 1789125132585,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 12 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/payload.ex ==\nE         ** (FunctionClauseError) no function clause matching in Keyword.keys/1    \nE             \nE             The following arguments were given to Keyword.keys/1:\nE             \nE                 # 1\nE                 :union\nE             \nE             Attempted function clauses (showing 1 out of 1):\nE             \nE                 def keys(+keywords+) when -is_list(keywords)-\nE             \nE             (elixir 1.18.4) lib/keyword.ex:646: Keyword.keys/1\nE             (ash 3.33.3) expanding macro: Ash.Type.NewType.__using__/1\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE             (elixir 1.18.4) expanding macro: Kernel.use/2\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 12 files (.ex)\\n', stderr='\\n== Compilation ...    (elixir 1.18.4) expanding macro: Kernel.use/2\\n    lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\\n').returncode\n\n/tests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 2,
+                "start": 1789125132585,
+                "stop": 1789125132587,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 12 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/payload.ex ==\nE         ** (FunctionClauseError) no function clause matching in Keyword.keys/1    \nE             \nE             The following arguments were given to Keyword.keys/1:\nE             \nE                 # 1\nE                 :union\nE             \nE             Attempted function clauses (showing 1 out of 1):\nE             \nE                 def keys(+keywords+) when -is_list(keywords)-\nE             \nE             (elixir 1.18.4) lib/keyword.ex:646: Keyword.keys/1\nE             (ash 3.33.3) expanding macro: Ash.Type.NewType.__using__/1\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE             (elixir 1.18.4) expanding macro: Kernel.use/2\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 12 files (.ex)\\n', stderr='\\n== Compilation ...    (elixir 1.18.4) expanding macro: Kernel.use/2\\n    lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\\n').returncode\n\n/tests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 4,
+                "start": 1789125132587,
+                "stop": 1789125132591,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 12 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/payload.ex ==\nE         ** (FunctionClauseError) no function clause matching in Keyword.keys/1    \nE             \nE             The following arguments were given to Keyword.keys/1:\nE             \nE                 # 1\nE                 :union\nE             \nE             Attempted function clauses (showing 1 out of 1):\nE             \nE                 def keys(+keywords+) when -is_list(keywords)-\nE             \nE             (elixir 1.18.4) lib/keyword.ex:646: Keyword.keys/1\nE             (ash 3.33.3) expanding macro: Ash.Type.NewType.__using__/1\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE             (elixir 1.18.4) expanding macro: Kernel.use/2\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 12 files (.ex)\\n', stderr='\\n== Compilation ...    (elixir 1.18.4) expanding macro: Kernel.use/2\\n    lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\\n').returncode\n\n/tests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 4,
+                "start": 1789125132592,
+                "stop": 1789125132596,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 12 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/payload.ex ==\nE         ** (FunctionClauseError) no function clause matching in Keyword.keys/1    \nE             \nE             The following arguments were given to Keyword.keys/1:\nE             \nE                 # 1\nE                 :union\nE             \nE             Attempted function clauses (showing 1 out of 1):\nE             \nE                 def keys(+keywords+) when -is_list(keywords)-\nE             \nE             (elixir 1.18.4) lib/keyword.ex:646: Keyword.keys/1\nE             (ash 3.33.3) expanding macro: Ash.Type.NewType.__using__/1\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE             (elixir 1.18.4) expanding macro: Kernel.use/2\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 12 files (.ex)\\n', stderr='\\n== Compilation ...    (elixir 1.18.4) expanding macro: Kernel.use/2\\n    lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\\n').returncode\n\n/tests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 5,
+                "start": 1789125132596,
+                "stop": 1789125132601,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 12 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/payload.ex ==\nE         ** (FunctionClauseError) no function clause matching in Keyword.keys/1    \nE             \nE             The following arguments were given to Keyword.keys/1:\nE             \nE                 # 1\nE                 :union\nE             \nE             Attempted function clauses (showing 1 out of 1):\nE             \nE                 def keys(+keywords+) when -is_list(keywords)-\nE             \nE             (elixir 1.18.4) lib/keyword.ex:646: Keyword.keys/1\nE             (ash 3.33.3) expanding macro: Ash.Type.NewType.__using__/1\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE             (elixir 1.18.4) expanding macro: Kernel.use/2\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 12 files (.ex)\\n', stderr='\\n== Compilation ...    (elixir 1.18.4) expanding macro: Kernel.use/2\\n    lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\\n').returncode\n\n/tests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 4,
+                "start": 1789125132602,
+                "stop": 1789125132606,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 12 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/payload.ex ==\nE         ** (FunctionClauseError) no function clause matching in Keyword.keys/1    \nE             \nE             The following arguments were given to Keyword.keys/1:\nE             \nE                 # 1\nE                 :union\nE             \nE             Attempted function clauses (showing 1 out of 1):\nE             \nE                 def keys(+keywords+) when -is_list(keywords)-\nE             \nE             (elixir 1.18.4) lib/keyword.ex:646: Keyword.keys/1\nE             (ash 3.33.3) expanding macro: Ash.Type.NewType.__using__/1\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE             (elixir 1.18.4) expanding macro: Kernel.use/2\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 12 files (.ex)\\n', stderr='\\n== Compilation ...    (elixir 1.18.4) expanding macro: Kernel.use/2\\n    lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\\n').returncode\n\n/tests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 3,
+                "start": 1789125132606,
+                "stop": 1789125132609,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 12 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/payload.ex ==\nE         ** (FunctionClauseError) no function clause matching in Keyword.keys/1    \nE             \nE             The following arguments were given to Keyword.keys/1:\nE             \nE                 # 1\nE                 :union\nE             \nE             Attempted function clauses (showing 1 out of 1):\nE             \nE                 def keys(+keywords+) when -is_list(keywords)-\nE             \nE             (elixir 1.18.4) lib/keyword.ex:646: Keyword.keys/1\nE             (ash 3.33.3) expanding macro: Ash.Type.NewType.__using__/1\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE             (elixir 1.18.4) expanding macro: Kernel.use/2\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 12 files (.ex)\\n', stderr='\\n== Compilation ...    (elixir 1.18.4) expanding macro: Kernel.use/2\\n    lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\\n').returncode\n\n/tests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 3,
+                "start": 1789125132609,
+                "stop": 1789125132612,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 12 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/payload.ex ==\nE         ** (FunctionClauseError) no function clause matching in Keyword.keys/1    \nE             \nE             The following arguments were given to Keyword.keys/1:\nE             \nE                 # 1\nE                 :union\nE             \nE             Attempted function clauses (showing 1 out of 1):\nE             \nE                 def keys(+keywords+) when -is_list(keywords)-\nE             \nE             (elixir 1.18.4) lib/keyword.ex:646: Keyword.keys/1\nE             (ash 3.33.3) expanding macro: Ash.Type.NewType.__using__/1\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE             (elixir 1.18.4) expanding macro: Kernel.use/2\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 12 files (.ex)\\n', stderr='\\n== Compilation ...    (elixir 1.18.4) expanding macro: Kernel.use/2\\n    lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\\n').returncode\n\n/tests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 3,
+                "start": 1789125132612,
+                "stop": 1789125132615,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 12 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/payload.ex ==\nE         ** (FunctionClauseError) no function clause matching in Keyword.keys/1    \nE             \nE             The following arguments were given to Keyword.keys/1:\nE             \nE                 # 1\nE                 :union\nE             \nE             Attempted function clauses (showing 1 out of 1):\nE             \nE                 def keys(+keywords+) when -is_list(keywords)-\nE             \nE             (elixir 1.18.4) lib/keyword.ex:646: Keyword.keys/1\nE             (ash 3.33.3) expanding macro: Ash.Type.NewType.__using__/1\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE             (elixir 1.18.4) expanding macro: Kernel.use/2\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 12 files (.ex)\\n', stderr='\\n== Compilation ...    (elixir 1.18.4) expanding macro: Kernel.use/2\\n    lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\\n').returncode\n\n/tests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 3,
+                "start": 1789125132616,
+                "stop": 1789125132619,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 12 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/payload.ex ==\nE         ** (FunctionClauseError) no function clause matching in Keyword.keys/1    \nE             \nE             The following arguments were given to Keyword.keys/1:\nE             \nE                 # 1\nE                 :union\nE             \nE             Attempted function clauses (showing 1 out of 1):\nE             \nE                 def keys(+keywords+) when -is_list(keywords)-\nE             \nE             (elixir 1.18.4) lib/keyword.ex:646: Keyword.keys/1\nE             (ash 3.33.3) expanding macro: Ash.Type.NewType.__using__/1\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE             (elixir 1.18.4) expanding macro: Kernel.use/2\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 12 files (.ex)\\n', stderr='\\n== Compilation ...    (elixir 1.18.4) expanding macro: Kernel.use/2\\n    lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\\n').returncode\n\n/tests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 3,
+                "start": 1789125132619,
+                "stop": 1789125132622,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 12 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/payload.ex ==\nE         ** (FunctionClauseError) no function clause matching in Keyword.keys/1    \nE             \nE             The following arguments were given to Keyword.keys/1:\nE             \nE                 # 1\nE                 :union\nE             \nE             Attempted function clauses (showing 1 out of 1):\nE             \nE                 def keys(+keywords+) when -is_list(keywords)-\nE             \nE             (elixir 1.18.4) lib/keyword.ex:646: Keyword.keys/1\nE             (ash 3.33.3) expanding macro: Ash.Type.NewType.__using__/1\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE             (elixir 1.18.4) expanding macro: Kernel.use/2\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 12 files (.ex)\\n', stderr='\\n== Compilation ...    (elixir 1.18.4) expanding macro: Kernel.use/2\\n    lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\\n').returncode\n\n/tests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 3,
+                "start": 1789125132622,
+                "stop": 1789125132625,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 12 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/payload.ex ==\nE         ** (FunctionClauseError) no function clause matching in Keyword.keys/1    \nE             \nE             The following arguments were given to Keyword.keys/1:\nE             \nE                 # 1\nE                 :union\nE             \nE             Attempted function clauses (showing 1 out of 1):\nE             \nE                 def keys(+keywords+) when -is_list(keywords)-\nE             \nE             (elixir 1.18.4) lib/keyword.ex:646: Keyword.keys/1\nE             (ash 3.33.3) expanding macro: Ash.Type.NewType.__using__/1\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE             (elixir 1.18.4) expanding macro: Kernel.use/2\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 12 files (.ex)\\n', stderr='\\n== Compilation ...    (elixir 1.18.4) expanding macro: Kernel.use/2\\n    lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\\n').returncode\n\n/tests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 3,
+                "start": 1789125132625,
+                "stop": 1789125132628,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 12 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/payload.ex ==\nE         ** (FunctionClauseError) no function clause matching in Keyword.keys/1    \nE             \nE             The following arguments were given to Keyword.keys/1:\nE             \nE                 # 1\nE                 :union\nE             \nE             Attempted function clauses (showing 1 out of 1):\nE             \nE                 def keys(+keywords+) when -is_list(keywords)-\nE             \nE             (elixir 1.18.4) lib/keyword.ex:646: Keyword.keys/1\nE             (ash 3.33.3) expanding macro: Ash.Type.NewType.__using__/1\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE             (elixir 1.18.4) expanding macro: Kernel.use/2\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 12 files (.ex)\\n', stderr='\\n== Compilation ...    (elixir 1.18.4) expanding macro: Kernel.use/2\\n    lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\\n').returncode\n\n/tests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 3,
+                "start": 1789125132628,
+                "stop": 1789125132631,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 12 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/payload.ex ==\nE         ** (FunctionClauseError) no function clause matching in Keyword.keys/1    \nE             \nE             The following arguments were given to Keyword.keys/1:\nE             \nE                 # 1\nE                 :union\nE             \nE             Attempted function clauses (showing 1 out of 1):\nE             \nE                 def keys(+keywords+) when -is_list(keywords)-\nE             \nE             (elixir 1.18.4) lib/keyword.ex:646: Keyword.keys/1\nE             (ash 3.33.3) expanding macro: Ash.Type.NewType.__using__/1\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE             (elixir 1.18.4) expanding macro: Kernel.use/2\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 12 files (.ex)\\n', stderr='\\n== Compilation ...    (elixir 1.18.4) expanding macro: Kernel.use/2\\n    lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\\n').returncode\n\n/tests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 2,
+                "start": 1789125132631,
+                "stop": 1789125132633,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 12 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/payload.ex ==\nE         ** (FunctionClauseError) no function clause matching in Keyword.keys/1    \nE             \nE             The following arguments were given to Keyword.keys/1:\nE             \nE                 # 1\nE                 :union\nE             \nE             Attempted function clauses (showing 1 out of 1):\nE             \nE                 def keys(+keywords+) when -is_list(keywords)-\nE             \nE             (elixir 1.18.4) lib/keyword.ex:646: Keyword.keys/1\nE             (ash 3.33.3) expanding macro: Ash.Type.NewType.__using__/1\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE             (elixir 1.18.4) expanding macro: Kernel.use/2\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 12 files (.ex)\\n', stderr='\\n== Compilation ...    (elixir 1.18.4) expanding macro: Kernel.use/2\\n    lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\\n').returncode\n\n/tests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 3,
+                "start": 1789125132633,
+                "stop": 1789125132636,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 12 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/payload.ex ==\nE         ** (FunctionClauseError) no function clause matching in Keyword.keys/1    \nE             \nE             The following arguments were given to Keyword.keys/1:\nE             \nE                 # 1\nE                 :union\nE             \nE             Attempted function clauses (showing 1 out of 1):\nE             \nE                 def keys(+keywords+) when -is_list(keywords)-\nE             \nE             (elixir 1.18.4) lib/keyword.ex:646: Keyword.keys/1\nE             (ash 3.33.3) expanding macro: Ash.Type.NewType.__using__/1\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE             (elixir 1.18.4) expanding macro: Kernel.use/2\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 12 files (.ex)\\n', stderr='\\n== Compilation ...    (elixir 1.18.4) expanding macro: Kernel.use/2\\n    lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\\n').returncode\n\n/tests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 3,
+                "start": 1789125132636,
+                "stop": 1789125132639,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 12 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/payload.ex ==\nE         ** (FunctionClauseError) no function clause matching in Keyword.keys/1    \nE             \nE             The following arguments were given to Keyword.keys/1:\nE             \nE                 # 1\nE                 :union\nE             \nE             Attempted function clauses (showing 1 out of 1):\nE             \nE                 def keys(+keywords+) when -is_list(keywords)-\nE             \nE             (elixir 1.18.4) lib/keyword.ex:646: Keyword.keys/1\nE             (ash 3.33.3) expanding macro: Ash.Type.NewType.__using__/1\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE             (elixir 1.18.4) expanding macro: Kernel.use/2\nE             lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 12 files (.ex)\\n', stderr='\\n== Compilation ...    (elixir 1.18.4) expanding macro: Kernel.use/2\\n    lib/vault/ledger/payload.ex:2: Vault.Ledger.Payload (module)\\n').returncode\n\n/tests/test_final_state.py:1461: AssertionError"
+            }
+        ]
+    }
+}

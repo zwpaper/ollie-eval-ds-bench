@@ -1,0 +1,1782 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0
+rootdir: /tests
+plugins: json-ctrf-0.5.3
+collected 40 items
+
+tests/test_final_state.py EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE       [100%]
+
+==================================== ERRORS ====================================
+_____________ ERROR at setup of test_t01_currencies_and_exponents ______________
+
+    @pytest.fixture(scope="session")
+    def suite_results():
+        assert os.path.isdir(PROJECT_DIR), f"Project directory {PROJECT_DIR} is missing."
+        _write_suite()
+    
+        completed = subprocess.run(
+            ["mix", "run", SUITE_PATH],
+            cwd=PROJECT_DIR,
+            capture_output=True,
+            text=True,
+            timeout=1800,
+        )
+    
+        print(completed.stdout[-20000:])
+        print(completed.stderr[-20000:])
+    
+        results = _parse(completed.stdout)
+    
+        if not results:
+>           pytest.fail(
+                "The behaviour suite produced no results, which usually means the project "
+                "failed to compile.\n"
+                f"exit code: {completed.returncode}\n"
+                f"stdout tail:\n{completed.stdout[-6000:]}\n"
+                f"stderr tail:\n{completed.stderr[-6000:]}"
+            )
+E           Failed: The behaviour suite produced no results, which usually means the project failed to compile.
+E           exit code: 1
+E           stdout tail:
+E           Compiling 6 files (.ex)
+E           
+E           stderr tail:
+E           
+E           == Compilation error in file lib/ledger/money/usd.ex ==
+E           ** (ArgumentError) Unknown options given to `use Ash.Type.NewType`: [:subtype]
+E               (ash 3.31.0) expanding macro: Ash.Type.NewType.__using__/1
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+E               (elixir 1.18.4) expanding macro: Kernel.use/2
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+
+tests/test_final_state.py:729: Failed
+---------------------------- Captured stdout setup -----------------------------
+Compiling 6 files (.ex)
+
+
+== Compilation error in file lib/ledger/money/usd.ex ==
+** (ArgumentError) Unknown options given to `use Ash.Type.NewType`: [:subtype]
+    (ash 3.31.0) expanding macro: Ash.Type.NewType.__using__/1
+    lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+    (elixir 1.18.4) expanding macro: Kernel.use/2
+    lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+
+___________________ ERROR at setup of test_t02_constructors ____________________
+
+    @pytest.fixture(scope="session")
+    def suite_results():
+        assert os.path.isdir(PROJECT_DIR), f"Project directory {PROJECT_DIR} is missing."
+        _write_suite()
+    
+        completed = subprocess.run(
+            ["mix", "run", SUITE_PATH],
+            cwd=PROJECT_DIR,
+            capture_output=True,
+            text=True,
+            timeout=1800,
+        )
+    
+        print(completed.stdout[-20000:])
+        print(completed.stderr[-20000:])
+    
+        results = _parse(completed.stdout)
+    
+        if not results:
+>           pytest.fail(
+                "The behaviour suite produced no results, which usually means the project "
+                "failed to compile.\n"
+                f"exit code: {completed.returncode}\n"
+                f"stdout tail:\n{completed.stdout[-6000:]}\n"
+                f"stderr tail:\n{completed.stderr[-6000:]}"
+            )
+E           Failed: The behaviour suite produced no results, which usually means the project failed to compile.
+E           exit code: 1
+E           stdout tail:
+E           Compiling 6 files (.ex)
+E           
+E           stderr tail:
+E           
+E           == Compilation error in file lib/ledger/money/usd.ex ==
+E           ** (ArgumentError) Unknown options given to `use Ash.Type.NewType`: [:subtype]
+E               (ash 3.31.0) expanding macro: Ash.Type.NewType.__using__/1
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+E               (elixir 1.18.4) expanding macro: Kernel.use/2
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+
+tests/test_final_state.py:729: Failed
+_________________ ERROR at setup of test_t03_canonical_string __________________
+
+    @pytest.fixture(scope="session")
+    def suite_results():
+        assert os.path.isdir(PROJECT_DIR), f"Project directory {PROJECT_DIR} is missing."
+        _write_suite()
+    
+        completed = subprocess.run(
+            ["mix", "run", SUITE_PATH],
+            cwd=PROJECT_DIR,
+            capture_output=True,
+            text=True,
+            timeout=1800,
+        )
+    
+        print(completed.stdout[-20000:])
+        print(completed.stderr[-20000:])
+    
+        results = _parse(completed.stdout)
+    
+        if not results:
+>           pytest.fail(
+                "The behaviour suite produced no results, which usually means the project "
+                "failed to compile.\n"
+                f"exit code: {completed.returncode}\n"
+                f"stdout tail:\n{completed.stdout[-6000:]}\n"
+                f"stderr tail:\n{completed.stderr[-6000:]}"
+            )
+E           Failed: The behaviour suite produced no results, which usually means the project failed to compile.
+E           exit code: 1
+E           stdout tail:
+E           Compiling 6 files (.ex)
+E           
+E           stderr tail:
+E           
+E           == Compilation error in file lib/ledger/money/usd.ex ==
+E           ** (ArgumentError) Unknown options given to `use Ash.Type.NewType`: [:subtype]
+E               (ash 3.31.0) expanding macro: Ash.Type.NewType.__using__/1
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+E               (elixir 1.18.4) expanding macro: Kernel.use/2
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+
+tests/test_final_state.py:729: Failed
+_____________ ERROR at setup of test_t04_addition_and_subtraction ______________
+
+    @pytest.fixture(scope="session")
+    def suite_results():
+        assert os.path.isdir(PROJECT_DIR), f"Project directory {PROJECT_DIR} is missing."
+        _write_suite()
+    
+        completed = subprocess.run(
+            ["mix", "run", SUITE_PATH],
+            cwd=PROJECT_DIR,
+            capture_output=True,
+            text=True,
+            timeout=1800,
+        )
+    
+        print(completed.stdout[-20000:])
+        print(completed.stderr[-20000:])
+    
+        results = _parse(completed.stdout)
+    
+        if not results:
+>           pytest.fail(
+                "The behaviour suite produced no results, which usually means the project "
+                "failed to compile.\n"
+                f"exit code: {completed.returncode}\n"
+                f"stdout tail:\n{completed.stdout[-6000:]}\n"
+                f"stderr tail:\n{completed.stderr[-6000:]}"
+            )
+E           Failed: The behaviour suite produced no results, which usually means the project failed to compile.
+E           exit code: 1
+E           stdout tail:
+E           Compiling 6 files (.ex)
+E           
+E           stderr tail:
+E           
+E           == Compilation error in file lib/ledger/money/usd.ex ==
+E           ** (ArgumentError) Unknown options given to `use Ash.Type.NewType`: [:subtype]
+E               (ash 3.31.0) expanding macro: Ash.Type.NewType.__using__/1
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+E               (elixir 1.18.4) expanding macro: Kernel.use/2
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+
+tests/test_final_state.py:729: Failed
+__________________ ERROR at setup of test_t05_multiplication ___________________
+
+    @pytest.fixture(scope="session")
+    def suite_results():
+        assert os.path.isdir(PROJECT_DIR), f"Project directory {PROJECT_DIR} is missing."
+        _write_suite()
+    
+        completed = subprocess.run(
+            ["mix", "run", SUITE_PATH],
+            cwd=PROJECT_DIR,
+            capture_output=True,
+            text=True,
+            timeout=1800,
+        )
+    
+        print(completed.stdout[-20000:])
+        print(completed.stderr[-20000:])
+    
+        results = _parse(completed.stdout)
+    
+        if not results:
+>           pytest.fail(
+                "The behaviour suite produced no results, which usually means the project "
+                "failed to compile.\n"
+                f"exit code: {completed.returncode}\n"
+                f"stdout tail:\n{completed.stdout[-6000:]}\n"
+                f"stderr tail:\n{completed.stderr[-6000:]}"
+            )
+E           Failed: The behaviour suite produced no results, which usually means the project failed to compile.
+E           exit code: 1
+E           stdout tail:
+E           Compiling 6 files (.ex)
+E           
+E           stderr tail:
+E           
+E           == Compilation error in file lib/ledger/money/usd.ex ==
+E           ** (ArgumentError) Unknown options given to `use Ash.Type.NewType`: [:subtype]
+E               (ash 3.31.0) expanding macro: Ash.Type.NewType.__using__/1
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+E               (elixir 1.18.4) expanding macro: Kernel.use/2
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+
+tests/test_final_state.py:729: Failed
+________________________ ERROR at setup of test_t06_sum ________________________
+
+    @pytest.fixture(scope="session")
+    def suite_results():
+        assert os.path.isdir(PROJECT_DIR), f"Project directory {PROJECT_DIR} is missing."
+        _write_suite()
+    
+        completed = subprocess.run(
+            ["mix", "run", SUITE_PATH],
+            cwd=PROJECT_DIR,
+            capture_output=True,
+            text=True,
+            timeout=1800,
+        )
+    
+        print(completed.stdout[-20000:])
+        print(completed.stderr[-20000:])
+    
+        results = _parse(completed.stdout)
+    
+        if not results:
+>           pytest.fail(
+                "The behaviour suite produced no results, which usually means the project "
+                "failed to compile.\n"
+                f"exit code: {completed.returncode}\n"
+                f"stdout tail:\n{completed.stdout[-6000:]}\n"
+                f"stderr tail:\n{completed.stderr[-6000:]}"
+            )
+E           Failed: The behaviour suite produced no results, which usually means the project failed to compile.
+E           exit code: 1
+E           stdout tail:
+E           Compiling 6 files (.ex)
+E           
+E           stderr tail:
+E           
+E           == Compilation error in file lib/ledger/money/usd.ex ==
+E           ** (ArgumentError) Unknown options given to `use Ash.Type.NewType`: [:subtype]
+E               (ash 3.31.0) expanding macro: Ash.Type.NewType.__using__/1
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+E               (elixir 1.18.4) expanding macro: Kernel.use/2
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+
+tests/test_final_state.py:729: Failed
+____________________ ERROR at setup of test_t07_comparison _____________________
+
+    @pytest.fixture(scope="session")
+    def suite_results():
+        assert os.path.isdir(PROJECT_DIR), f"Project directory {PROJECT_DIR} is missing."
+        _write_suite()
+    
+        completed = subprocess.run(
+            ["mix", "run", SUITE_PATH],
+            cwd=PROJECT_DIR,
+            capture_output=True,
+            text=True,
+            timeout=1800,
+        )
+    
+        print(completed.stdout[-20000:])
+        print(completed.stderr[-20000:])
+    
+        results = _parse(completed.stdout)
+    
+        if not results:
+>           pytest.fail(
+                "The behaviour suite produced no results, which usually means the project "
+                "failed to compile.\n"
+                f"exit code: {completed.returncode}\n"
+                f"stdout tail:\n{completed.stdout[-6000:]}\n"
+                f"stderr tail:\n{completed.stderr[-6000:]}"
+            )
+E           Failed: The behaviour suite produced no results, which usually means the project failed to compile.
+E           exit code: 1
+E           stdout tail:
+E           Compiling 6 files (.ex)
+E           
+E           stderr tail:
+E           
+E           == Compilation error in file lib/ledger/money/usd.ex ==
+E           ** (ArgumentError) Unknown options given to `use Ash.Type.NewType`: [:subtype]
+E               (ash 3.31.0) expanding macro: Ash.Type.NewType.__using__/1
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+E               (elixir 1.18.4) expanding macro: Kernel.use/2
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+
+tests/test_final_state.py:729: Failed
+_________________ ERROR at setup of test_t08_cast_shapes_agree _________________
+
+    @pytest.fixture(scope="session")
+    def suite_results():
+        assert os.path.isdir(PROJECT_DIR), f"Project directory {PROJECT_DIR} is missing."
+        _write_suite()
+    
+        completed = subprocess.run(
+            ["mix", "run", SUITE_PATH],
+            cwd=PROJECT_DIR,
+            capture_output=True,
+            text=True,
+            timeout=1800,
+        )
+    
+        print(completed.stdout[-20000:])
+        print(completed.stderr[-20000:])
+    
+        results = _parse(completed.stdout)
+    
+        if not results:
+>           pytest.fail(
+                "The behaviour suite produced no results, which usually means the project "
+                "failed to compile.\n"
+                f"exit code: {completed.returncode}\n"
+                f"stdout tail:\n{completed.stdout[-6000:]}\n"
+                f"stderr tail:\n{completed.stderr[-6000:]}"
+            )
+E           Failed: The behaviour suite produced no results, which usually means the project failed to compile.
+E           exit code: 1
+E           stdout tail:
+E           Compiling 6 files (.ex)
+E           
+E           stderr tail:
+E           
+E           == Compilation error in file lib/ledger/money/usd.ex ==
+E           ** (ArgumentError) Unknown options given to `use Ash.Type.NewType`: [:subtype]
+E               (ash 3.31.0) expanding macro: Ash.Type.NewType.__using__/1
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+E               (elixir 1.18.4) expanding macro: Kernel.use/2
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+
+tests/test_final_state.py:729: Failed
+_____________ ERROR at setup of test_t09_canonical_string_casting ______________
+
+    @pytest.fixture(scope="session")
+    def suite_results():
+        assert os.path.isdir(PROJECT_DIR), f"Project directory {PROJECT_DIR} is missing."
+        _write_suite()
+    
+        completed = subprocess.run(
+            ["mix", "run", SUITE_PATH],
+            cwd=PROJECT_DIR,
+            capture_output=True,
+            text=True,
+            timeout=1800,
+        )
+    
+        print(completed.stdout[-20000:])
+        print(completed.stderr[-20000:])
+    
+        results = _parse(completed.stdout)
+    
+        if not results:
+>           pytest.fail(
+                "The behaviour suite produced no results, which usually means the project "
+                "failed to compile.\n"
+                f"exit code: {completed.returncode}\n"
+                f"stdout tail:\n{completed.stdout[-6000:]}\n"
+                f"stderr tail:\n{completed.stderr[-6000:]}"
+            )
+E           Failed: The behaviour suite produced no results, which usually means the project failed to compile.
+E           exit code: 1
+E           stdout tail:
+E           Compiling 6 files (.ex)
+E           
+E           stderr tail:
+E           
+E           == Compilation error in file lib/ledger/money/usd.ex ==
+E           ** (ArgumentError) Unknown options given to `use Ash.Type.NewType`: [:subtype]
+E               (ash 3.31.0) expanding macro: Ash.Type.NewType.__using__/1
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+E               (elixir 1.18.4) expanding macro: Kernel.use/2
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+
+tests/test_final_state.py:729: Failed
+______________ ERROR at setup of test_t10_unknown_currency_errors ______________
+
+    @pytest.fixture(scope="session")
+    def suite_results():
+        assert os.path.isdir(PROJECT_DIR), f"Project directory {PROJECT_DIR} is missing."
+        _write_suite()
+    
+        completed = subprocess.run(
+            ["mix", "run", SUITE_PATH],
+            cwd=PROJECT_DIR,
+            capture_output=True,
+            text=True,
+            timeout=1800,
+        )
+    
+        print(completed.stdout[-20000:])
+        print(completed.stderr[-20000:])
+    
+        results = _parse(completed.stdout)
+    
+        if not results:
+>           pytest.fail(
+                "The behaviour suite produced no results, which usually means the project "
+                "failed to compile.\n"
+                f"exit code: {completed.returncode}\n"
+                f"stdout tail:\n{completed.stdout[-6000:]}\n"
+                f"stderr tail:\n{completed.stderr[-6000:]}"
+            )
+E           Failed: The behaviour suite produced no results, which usually means the project failed to compile.
+E           exit code: 1
+E           stdout tail:
+E           Compiling 6 files (.ex)
+E           
+E           stderr tail:
+E           
+E           == Compilation error in file lib/ledger/money/usd.ex ==
+E           ** (ArgumentError) Unknown options given to `use Ash.Type.NewType`: [:subtype]
+E               (ash 3.31.0) expanding macro: Ash.Type.NewType.__using__/1
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+E               (elixir 1.18.4) expanding macro: Kernel.use/2
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+
+tests/test_final_state.py:729: Failed
+______________ ERROR at setup of test_t11_fractional_minor_units _______________
+
+    @pytest.fixture(scope="session")
+    def suite_results():
+        assert os.path.isdir(PROJECT_DIR), f"Project directory {PROJECT_DIR} is missing."
+        _write_suite()
+    
+        completed = subprocess.run(
+            ["mix", "run", SUITE_PATH],
+            cwd=PROJECT_DIR,
+            capture_output=True,
+            text=True,
+            timeout=1800,
+        )
+    
+        print(completed.stdout[-20000:])
+        print(completed.stderr[-20000:])
+    
+        results = _parse(completed.stdout)
+    
+        if not results:
+>           pytest.fail(
+                "The behaviour suite produced no results, which usually means the project "
+                "failed to compile.\n"
+                f"exit code: {completed.returncode}\n"
+                f"stdout tail:\n{completed.stdout[-6000:]}\n"
+                f"stderr tail:\n{completed.stderr[-6000:]}"
+            )
+E           Failed: The behaviour suite produced no results, which usually means the project failed to compile.
+E           exit code: 1
+E           stdout tail:
+E           Compiling 6 files (.ex)
+E           
+E           stderr tail:
+E           
+E           == Compilation error in file lib/ledger/money/usd.ex ==
+E           ** (ArgumentError) Unknown options given to `use Ash.Type.NewType`: [:subtype]
+E               (ash 3.31.0) expanding macro: Ash.Type.NewType.__using__/1
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+E               (elixir 1.18.4) expanding macro: Kernel.use/2
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+
+tests/test_final_state.py:729: Failed
+__________________ ERROR at setup of test_t12_invalid_format ___________________
+
+    @pytest.fixture(scope="session")
+    def suite_results():
+        assert os.path.isdir(PROJECT_DIR), f"Project directory {PROJECT_DIR} is missing."
+        _write_suite()
+    
+        completed = subprocess.run(
+            ["mix", "run", SUITE_PATH],
+            cwd=PROJECT_DIR,
+            capture_output=True,
+            text=True,
+            timeout=1800,
+        )
+    
+        print(completed.stdout[-20000:])
+        print(completed.stderr[-20000:])
+    
+        results = _parse(completed.stdout)
+    
+        if not results:
+>           pytest.fail(
+                "The behaviour suite produced no results, which usually means the project "
+                "failed to compile.\n"
+                f"exit code: {completed.returncode}\n"
+                f"stdout tail:\n{completed.stdout[-6000:]}\n"
+                f"stderr tail:\n{completed.stderr[-6000:]}"
+            )
+E           Failed: The behaviour suite produced no results, which usually means the project failed to compile.
+E           exit code: 1
+E           stdout tail:
+E           Compiling 6 files (.ex)
+E           
+E           stderr tail:
+E           
+E           == Compilation error in file lib/ledger/money/usd.ex ==
+E           ** (ArgumentError) Unknown options given to `use Ash.Type.NewType`: [:subtype]
+E               (ash 3.31.0) expanding macro: Ash.Type.NewType.__using__/1
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+E               (elixir 1.18.4) expanding macro: Kernel.use/2
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+
+tests/test_final_state.py:729: Failed
+_____________________ ERROR at setup of test_t13_equality ______________________
+
+    @pytest.fixture(scope="session")
+    def suite_results():
+        assert os.path.isdir(PROJECT_DIR), f"Project directory {PROJECT_DIR} is missing."
+        _write_suite()
+    
+        completed = subprocess.run(
+            ["mix", "run", SUITE_PATH],
+            cwd=PROJECT_DIR,
+            capture_output=True,
+            text=True,
+            timeout=1800,
+        )
+    
+        print(completed.stdout[-20000:])
+        print(completed.stderr[-20000:])
+    
+        results = _parse(completed.stdout)
+    
+        if not results:
+>           pytest.fail(
+                "The behaviour suite produced no results, which usually means the project "
+                "failed to compile.\n"
+                f"exit code: {completed.returncode}\n"
+                f"stdout tail:\n{completed.stdout[-6000:]}\n"
+                f"stderr tail:\n{completed.stderr[-6000:]}"
+            )
+E           Failed: The behaviour suite produced no results, which usually means the project failed to compile.
+E           exit code: 1
+E           stdout tail:
+E           Compiling 6 files (.ex)
+E           
+E           stderr tail:
+E           
+E           == Compilation error in file lib/ledger/money/usd.ex ==
+E           ** (ArgumentError) Unknown options given to `use Ash.Type.NewType`: [:subtype]
+E               (ash 3.31.0) expanding macro: Ash.Type.NewType.__using__/1
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+E               (elixir 1.18.4) expanding macro: Kernel.use/2
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+
+tests/test_final_state.py:729: Failed
+___________________ ERROR at setup of test_t14_storage_type ____________________
+
+    @pytest.fixture(scope="session")
+    def suite_results():
+        assert os.path.isdir(PROJECT_DIR), f"Project directory {PROJECT_DIR} is missing."
+        _write_suite()
+    
+        completed = subprocess.run(
+            ["mix", "run", SUITE_PATH],
+            cwd=PROJECT_DIR,
+            capture_output=True,
+            text=True,
+            timeout=1800,
+        )
+    
+        print(completed.stdout[-20000:])
+        print(completed.stderr[-20000:])
+    
+        results = _parse(completed.stdout)
+    
+        if not results:
+>           pytest.fail(
+                "The behaviour suite produced no results, which usually means the project "
+                "failed to compile.\n"
+                f"exit code: {completed.returncode}\n"
+                f"stdout tail:\n{completed.stdout[-6000:]}\n"
+                f"stderr tail:\n{completed.stderr[-6000:]}"
+            )
+E           Failed: The behaviour suite produced no results, which usually means the project failed to compile.
+E           exit code: 1
+E           stdout tail:
+E           Compiling 6 files (.ex)
+E           
+E           stderr tail:
+E           
+E           == Compilation error in file lib/ledger/money/usd.ex ==
+E           ** (ArgumentError) Unknown options given to `use Ash.Type.NewType`: [:subtype]
+E               (ash 3.31.0) expanding macro: Ash.Type.NewType.__using__/1
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+E               (elixir 1.18.4) expanding macro: Kernel.use/2
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+
+tests/test_final_state.py:729: Failed
+________________ ERROR at setup of test_t15_storage_round_trip _________________
+
+    @pytest.fixture(scope="session")
+    def suite_results():
+        assert os.path.isdir(PROJECT_DIR), f"Project directory {PROJECT_DIR} is missing."
+        _write_suite()
+    
+        completed = subprocess.run(
+            ["mix", "run", SUITE_PATH],
+            cwd=PROJECT_DIR,
+            capture_output=True,
+            text=True,
+            timeout=1800,
+        )
+    
+        print(completed.stdout[-20000:])
+        print(completed.stderr[-20000:])
+    
+        results = _parse(completed.stdout)
+    
+        if not results:
+>           pytest.fail(
+                "The behaviour suite produced no results, which usually means the project "
+                "failed to compile.\n"
+                f"exit code: {completed.returncode}\n"
+                f"stdout tail:\n{completed.stdout[-6000:]}\n"
+                f"stderr tail:\n{completed.stderr[-6000:]}"
+            )
+E           Failed: The behaviour suite produced no results, which usually means the project failed to compile.
+E           exit code: 1
+E           stdout tail:
+E           Compiling 6 files (.ex)
+E           
+E           stderr tail:
+E           
+E           == Compilation error in file lib/ledger/money/usd.ex ==
+E           ** (ArgumentError) Unknown options given to `use Ash.Type.NewType`: [:subtype]
+E               (ash 3.31.0) expanding macro: Ash.Type.NewType.__using__/1
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+E               (elixir 1.18.4) expanding macro: Kernel.use/2
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+
+tests/test_final_state.py:729: Failed
+_____________ ERROR at setup of test_t16_array_and_nil_round_trip ______________
+
+    @pytest.fixture(scope="session")
+    def suite_results():
+        assert os.path.isdir(PROJECT_DIR), f"Project directory {PROJECT_DIR} is missing."
+        _write_suite()
+    
+        completed = subprocess.run(
+            ["mix", "run", SUITE_PATH],
+            cwd=PROJECT_DIR,
+            capture_output=True,
+            text=True,
+            timeout=1800,
+        )
+    
+        print(completed.stdout[-20000:])
+        print(completed.stderr[-20000:])
+    
+        results = _parse(completed.stdout)
+    
+        if not results:
+>           pytest.fail(
+                "The behaviour suite produced no results, which usually means the project "
+                "failed to compile.\n"
+                f"exit code: {completed.returncode}\n"
+                f"stdout tail:\n{completed.stdout[-6000:]}\n"
+                f"stderr tail:\n{completed.stderr[-6000:]}"
+            )
+E           Failed: The behaviour suite produced no results, which usually means the project failed to compile.
+E           exit code: 1
+E           stdout tail:
+E           Compiling 6 files (.ex)
+E           
+E           stderr tail:
+E           
+E           == Compilation error in file lib/ledger/money/usd.ex ==
+E           ** (ArgumentError) Unknown options given to `use Ash.Type.NewType`: [:subtype]
+E               (ash 3.31.0) expanding macro: Ash.Type.NewType.__using__/1
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+E               (elixir 1.18.4) expanding macro: Kernel.use/2
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+
+tests/test_final_state.py:729: Failed
+_______________ ERROR at setup of test_t17_invalid_stored_value ________________
+
+    @pytest.fixture(scope="session")
+    def suite_results():
+        assert os.path.isdir(PROJECT_DIR), f"Project directory {PROJECT_DIR} is missing."
+        _write_suite()
+    
+        completed = subprocess.run(
+            ["mix", "run", SUITE_PATH],
+            cwd=PROJECT_DIR,
+            capture_output=True,
+            text=True,
+            timeout=1800,
+        )
+    
+        print(completed.stdout[-20000:])
+        print(completed.stderr[-20000:])
+    
+        results = _parse(completed.stdout)
+    
+        if not results:
+>           pytest.fail(
+                "The behaviour suite produced no results, which usually means the project "
+                "failed to compile.\n"
+                f"exit code: {completed.returncode}\n"
+                f"stdout tail:\n{completed.stdout[-6000:]}\n"
+                f"stderr tail:\n{completed.stderr[-6000:]}"
+            )
+E           Failed: The behaviour suite produced no results, which usually means the project failed to compile.
+E           exit code: 1
+E           stdout tail:
+E           Compiling 6 files (.ex)
+E           
+E           stderr tail:
+E           
+E           == Compilation error in file lib/ledger/money/usd.ex ==
+E           ** (ArgumentError) Unknown options given to `use Ash.Type.NewType`: [:subtype]
+E               (ash 3.31.0) expanding macro: Ash.Type.NewType.__using__/1
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+E               (elixir 1.18.4) expanding macro: Kernel.use/2
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+
+tests/test_final_state.py:729: Failed
+_______________ ERROR at setup of test_t18_currencies_constraint _______________
+
+    @pytest.fixture(scope="session")
+    def suite_results():
+        assert os.path.isdir(PROJECT_DIR), f"Project directory {PROJECT_DIR} is missing."
+        _write_suite()
+    
+        completed = subprocess.run(
+            ["mix", "run", SUITE_PATH],
+            cwd=PROJECT_DIR,
+            capture_output=True,
+            text=True,
+            timeout=1800,
+        )
+    
+        print(completed.stdout[-20000:])
+        print(completed.stderr[-20000:])
+    
+        results = _parse(completed.stdout)
+    
+        if not results:
+>           pytest.fail(
+                "The behaviour suite produced no results, which usually means the project "
+                "failed to compile.\n"
+                f"exit code: {completed.returncode}\n"
+                f"stdout tail:\n{completed.stdout[-6000:]}\n"
+                f"stderr tail:\n{completed.stderr[-6000:]}"
+            )
+E           Failed: The behaviour suite produced no results, which usually means the project failed to compile.
+E           exit code: 1
+E           stdout tail:
+E           Compiling 6 files (.ex)
+E           
+E           stderr tail:
+E           
+E           == Compilation error in file lib/ledger/money/usd.ex ==
+E           ** (ArgumentError) Unknown options given to `use Ash.Type.NewType`: [:subtype]
+E               (ash 3.31.0) expanding macro: Ash.Type.NewType.__using__/1
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+E               (elixir 1.18.4) expanding macro: Kernel.use/2
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+
+tests/test_final_state.py:729: Failed
+______________ ERROR at setup of test_t19_multiple_of_constraint _______________
+
+    @pytest.fixture(scope="session")
+    def suite_results():
+        assert os.path.isdir(PROJECT_DIR), f"Project directory {PROJECT_DIR} is missing."
+        _write_suite()
+    
+        completed = subprocess.run(
+            ["mix", "run", SUITE_PATH],
+            cwd=PROJECT_DIR,
+            capture_output=True,
+            text=True,
+            timeout=1800,
+        )
+    
+        print(completed.stdout[-20000:])
+        print(completed.stderr[-20000:])
+    
+        results = _parse(completed.stdout)
+    
+        if not results:
+>           pytest.fail(
+                "The behaviour suite produced no results, which usually means the project "
+                "failed to compile.\n"
+                f"exit code: {completed.returncode}\n"
+                f"stdout tail:\n{completed.stdout[-6000:]}\n"
+                f"stderr tail:\n{completed.stderr[-6000:]}"
+            )
+E           Failed: The behaviour suite produced no results, which usually means the project failed to compile.
+E           exit code: 1
+E           stdout tail:
+E           Compiling 6 files (.ex)
+E           
+E           stderr tail:
+E           
+E           == Compilation error in file lib/ledger/money/usd.ex ==
+E           ** (ArgumentError) Unknown options given to `use Ash.Type.NewType`: [:subtype]
+E               (ash 3.31.0) expanding macro: Ash.Type.NewType.__using__/1
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+E               (elixir 1.18.4) expanding macro: Kernel.use/2
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+
+tests/test_final_state.py:729: Failed
+______________ ERROR at setup of test_t20_min_and_max_constraints ______________
+
+    @pytest.fixture(scope="session")
+    def suite_results():
+        assert os.path.isdir(PROJECT_DIR), f"Project directory {PROJECT_DIR} is missing."
+        _write_suite()
+    
+        completed = subprocess.run(
+            ["mix", "run", SUITE_PATH],
+            cwd=PROJECT_DIR,
+            capture_output=True,
+            text=True,
+            timeout=1800,
+        )
+    
+        print(completed.stdout[-20000:])
+        print(completed.stderr[-20000:])
+    
+        results = _parse(completed.stdout)
+    
+        if not results:
+>           pytest.fail(
+                "The behaviour suite produced no results, which usually means the project "
+                "failed to compile.\n"
+                f"exit code: {completed.returncode}\n"
+                f"stdout tail:\n{completed.stdout[-6000:]}\n"
+                f"stderr tail:\n{completed.stderr[-6000:]}"
+            )
+E           Failed: The behaviour suite produced no results, which usually means the project failed to compile.
+E           exit code: 1
+E           stdout tail:
+E           Compiling 6 files (.ex)
+E           
+E           stderr tail:
+E           
+E           == Compilation error in file lib/ledger/money/usd.ex ==
+E           ** (ArgumentError) Unknown options given to `use Ash.Type.NewType`: [:subtype]
+E               (ash 3.31.0) expanding macro: Ash.Type.NewType.__using__/1
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+E               (elixir 1.18.4) expanding macro: Kernel.use/2
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+
+tests/test_final_state.py:729: Failed
+______________ ERROR at setup of test_t21_bound_currency_mismatch ______________
+
+    @pytest.fixture(scope="session")
+    def suite_results():
+        assert os.path.isdir(PROJECT_DIR), f"Project directory {PROJECT_DIR} is missing."
+        _write_suite()
+    
+        completed = subprocess.run(
+            ["mix", "run", SUITE_PATH],
+            cwd=PROJECT_DIR,
+            capture_output=True,
+            text=True,
+            timeout=1800,
+        )
+    
+        print(completed.stdout[-20000:])
+        print(completed.stderr[-20000:])
+    
+        results = _parse(completed.stdout)
+    
+        if not results:
+>           pytest.fail(
+                "The behaviour suite produced no results, which usually means the project "
+                "failed to compile.\n"
+                f"exit code: {completed.returncode}\n"
+                f"stdout tail:\n{completed.stdout[-6000:]}\n"
+                f"stderr tail:\n{completed.stderr[-6000:]}"
+            )
+E           Failed: The behaviour suite produced no results, which usually means the project failed to compile.
+E           exit code: 1
+E           stdout tail:
+E           Compiling 6 files (.ex)
+E           
+E           stderr tail:
+E           
+E           == Compilation error in file lib/ledger/money/usd.ex ==
+E           ** (ArgumentError) Unknown options given to `use Ash.Type.NewType`: [:subtype]
+E               (ash 3.31.0) expanding macro: Ash.Type.NewType.__using__/1
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+E               (elixir 1.18.4) expanding macro: Kernel.use/2
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+
+tests/test_final_state.py:729: Failed
+________________ ERROR at setup of test_t22_constraint_ordering ________________
+
+    @pytest.fixture(scope="session")
+    def suite_results():
+        assert os.path.isdir(PROJECT_DIR), f"Project directory {PROJECT_DIR} is missing."
+        _write_suite()
+    
+        completed = subprocess.run(
+            ["mix", "run", SUITE_PATH],
+            cwd=PROJECT_DIR,
+            capture_output=True,
+            text=True,
+            timeout=1800,
+        )
+    
+        print(completed.stdout[-20000:])
+        print(completed.stderr[-20000:])
+    
+        results = _parse(completed.stdout)
+    
+        if not results:
+>           pytest.fail(
+                "The behaviour suite produced no results, which usually means the project "
+                "failed to compile.\n"
+                f"exit code: {completed.returncode}\n"
+                f"stdout tail:\n{completed.stdout[-6000:]}\n"
+                f"stderr tail:\n{completed.stderr[-6000:]}"
+            )
+E           Failed: The behaviour suite produced no results, which usually means the project failed to compile.
+E           exit code: 1
+E           stdout tail:
+E           Compiling 6 files (.ex)
+E           
+E           stderr tail:
+E           
+E           == Compilation error in file lib/ledger/money/usd.ex ==
+E           ** (ArgumentError) Unknown options given to `use Ash.Type.NewType`: [:subtype]
+E               (ash 3.31.0) expanding macro: Ash.Type.NewType.__using__/1
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+E               (elixir 1.18.4) expanding macro: Kernel.use/2
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+
+tests/test_final_state.py:729: Failed
+_________________ ERROR at setup of test_t23_array_cast_index __________________
+
+    @pytest.fixture(scope="session")
+    def suite_results():
+        assert os.path.isdir(PROJECT_DIR), f"Project directory {PROJECT_DIR} is missing."
+        _write_suite()
+    
+        completed = subprocess.run(
+            ["mix", "run", SUITE_PATH],
+            cwd=PROJECT_DIR,
+            capture_output=True,
+            text=True,
+            timeout=1800,
+        )
+    
+        print(completed.stdout[-20000:])
+        print(completed.stderr[-20000:])
+    
+        results = _parse(completed.stdout)
+    
+        if not results:
+>           pytest.fail(
+                "The behaviour suite produced no results, which usually means the project "
+                "failed to compile.\n"
+                f"exit code: {completed.returncode}\n"
+                f"stdout tail:\n{completed.stdout[-6000:]}\n"
+                f"stderr tail:\n{completed.stderr[-6000:]}"
+            )
+E           Failed: The behaviour suite produced no results, which usually means the project failed to compile.
+E           exit code: 1
+E           stdout tail:
+E           Compiling 6 files (.ex)
+E           
+E           stderr tail:
+E           
+E           == Compilation error in file lib/ledger/money/usd.ex ==
+E           ** (ArgumentError) Unknown options given to `use Ash.Type.NewType`: [:subtype]
+E               (ash 3.31.0) expanding macro: Ash.Type.NewType.__using__/1
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+E               (elixir 1.18.4) expanding macro: Kernel.use/2
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+
+tests/test_final_state.py:729: Failed
+______________ ERROR at setup of test_t24_array_constraint_index _______________
+
+    @pytest.fixture(scope="session")
+    def suite_results():
+        assert os.path.isdir(PROJECT_DIR), f"Project directory {PROJECT_DIR} is missing."
+        _write_suite()
+    
+        completed = subprocess.run(
+            ["mix", "run", SUITE_PATH],
+            cwd=PROJECT_DIR,
+            capture_output=True,
+            text=True,
+            timeout=1800,
+        )
+    
+        print(completed.stdout[-20000:])
+        print(completed.stderr[-20000:])
+    
+        results = _parse(completed.stdout)
+    
+        if not results:
+>           pytest.fail(
+                "The behaviour suite produced no results, which usually means the project "
+                "failed to compile.\n"
+                f"exit code: {completed.returncode}\n"
+                f"stdout tail:\n{completed.stdout[-6000:]}\n"
+                f"stderr tail:\n{completed.stderr[-6000:]}"
+            )
+E           Failed: The behaviour suite produced no results, which usually means the project failed to compile.
+E           exit code: 1
+E           stdout tail:
+E           Compiling 6 files (.ex)
+E           
+E           stderr tail:
+E           
+E           == Compilation error in file lib/ledger/money/usd.ex ==
+E           ** (ArgumentError) Unknown options given to `use Ash.Type.NewType`: [:subtype]
+E               (ash 3.31.0) expanding macro: Ash.Type.NewType.__using__/1
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+E               (elixir 1.18.4) expanding macro: Kernel.use/2
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+
+tests/test_final_state.py:729: Failed
+______________ ERROR at setup of test_t25_new_type_introspection _______________
+
+    @pytest.fixture(scope="session")
+    def suite_results():
+        assert os.path.isdir(PROJECT_DIR), f"Project directory {PROJECT_DIR} is missing."
+        _write_suite()
+    
+        completed = subprocess.run(
+            ["mix", "run", SUITE_PATH],
+            cwd=PROJECT_DIR,
+            capture_output=True,
+            text=True,
+            timeout=1800,
+        )
+    
+        print(completed.stdout[-20000:])
+        print(completed.stderr[-20000:])
+    
+        results = _parse(completed.stdout)
+    
+        if not results:
+>           pytest.fail(
+                "The behaviour suite produced no results, which usually means the project "
+                "failed to compile.\n"
+                f"exit code: {completed.returncode}\n"
+                f"stdout tail:\n{completed.stdout[-6000:]}\n"
+                f"stderr tail:\n{completed.stderr[-6000:]}"
+            )
+E           Failed: The behaviour suite produced no results, which usually means the project failed to compile.
+E           exit code: 1
+E           stdout tail:
+E           Compiling 6 files (.ex)
+E           
+E           stderr tail:
+E           
+E           == Compilation error in file lib/ledger/money/usd.ex ==
+E           ** (ArgumentError) Unknown options given to `use Ash.Type.NewType`: [:subtype]
+E               (ash 3.31.0) expanding macro: Ash.Type.NewType.__using__/1
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+E               (elixir 1.18.4) expanding macro: Kernel.use/2
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+
+tests/test_final_state.py:729: Failed
+_______________ ERROR at setup of test_t26_new_type_constraints ________________
+
+    @pytest.fixture(scope="session")
+    def suite_results():
+        assert os.path.isdir(PROJECT_DIR), f"Project directory {PROJECT_DIR} is missing."
+        _write_suite()
+    
+        completed = subprocess.run(
+            ["mix", "run", SUITE_PATH],
+            cwd=PROJECT_DIR,
+            capture_output=True,
+            text=True,
+            timeout=1800,
+        )
+    
+        print(completed.stdout[-20000:])
+        print(completed.stderr[-20000:])
+    
+        results = _parse(completed.stdout)
+    
+        if not results:
+>           pytest.fail(
+                "The behaviour suite produced no results, which usually means the project "
+                "failed to compile.\n"
+                f"exit code: {completed.returncode}\n"
+                f"stdout tail:\n{completed.stdout[-6000:]}\n"
+                f"stderr tail:\n{completed.stderr[-6000:]}"
+            )
+E           Failed: The behaviour suite produced no results, which usually means the project failed to compile.
+E           exit code: 1
+E           stdout tail:
+E           Compiling 6 files (.ex)
+E           
+E           stderr tail:
+E           
+E           == Compilation error in file lib/ledger/money/usd.ex ==
+E           ** (ArgumentError) Unknown options given to `use Ash.Type.NewType`: [:subtype]
+E               (ash 3.31.0) expanding macro: Ash.Type.NewType.__using__/1
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+E               (elixir 1.18.4) expanding macro: Kernel.use/2
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+
+tests/test_final_state.py:729: Failed
+________________ ERROR at setup of test_t27_resource_round_trip ________________
+
+    @pytest.fixture(scope="session")
+    def suite_results():
+        assert os.path.isdir(PROJECT_DIR), f"Project directory {PROJECT_DIR} is missing."
+        _write_suite()
+    
+        completed = subprocess.run(
+            ["mix", "run", SUITE_PATH],
+            cwd=PROJECT_DIR,
+            capture_output=True,
+            text=True,
+            timeout=1800,
+        )
+    
+        print(completed.stdout[-20000:])
+        print(completed.stderr[-20000:])
+    
+        results = _parse(completed.stdout)
+    
+        if not results:
+>           pytest.fail(
+                "The behaviour suite produced no results, which usually means the project "
+                "failed to compile.\n"
+                f"exit code: {completed.returncode}\n"
+                f"stdout tail:\n{completed.stdout[-6000:]}\n"
+                f"stderr tail:\n{completed.stderr[-6000:]}"
+            )
+E           Failed: The behaviour suite produced no results, which usually means the project failed to compile.
+E           exit code: 1
+E           stdout tail:
+E           Compiling 6 files (.ex)
+E           
+E           stderr tail:
+E           
+E           == Compilation error in file lib/ledger/money/usd.ex ==
+E           ** (ArgumentError) Unknown options given to `use Ash.Type.NewType`: [:subtype]
+E               (ash 3.31.0) expanding macro: Ash.Type.NewType.__using__/1
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+E               (elixir 1.18.4) expanding macro: Kernel.use/2
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+
+tests/test_final_state.py:729: Failed
+___________ ERROR at setup of test_t28_attribute_currency_constraint ___________
+
+    @pytest.fixture(scope="session")
+    def suite_results():
+        assert os.path.isdir(PROJECT_DIR), f"Project directory {PROJECT_DIR} is missing."
+        _write_suite()
+    
+        completed = subprocess.run(
+            ["mix", "run", SUITE_PATH],
+            cwd=PROJECT_DIR,
+            capture_output=True,
+            text=True,
+            timeout=1800,
+        )
+    
+        print(completed.stdout[-20000:])
+        print(completed.stderr[-20000:])
+    
+        results = _parse(completed.stdout)
+    
+        if not results:
+>           pytest.fail(
+                "The behaviour suite produced no results, which usually means the project "
+                "failed to compile.\n"
+                f"exit code: {completed.returncode}\n"
+                f"stdout tail:\n{completed.stdout[-6000:]}\n"
+                f"stderr tail:\n{completed.stderr[-6000:]}"
+            )
+E           Failed: The behaviour suite produced no results, which usually means the project failed to compile.
+E           exit code: 1
+E           stdout tail:
+E           Compiling 6 files (.ex)
+E           
+E           stderr tail:
+E           
+E           == Compilation error in file lib/ledger/money/usd.ex ==
+E           ** (ArgumentError) Unknown options given to `use Ash.Type.NewType`: [:subtype]
+E               (ash 3.31.0) expanding macro: Ash.Type.NewType.__using__/1
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+E               (elixir 1.18.4) expanding macro: Kernel.use/2
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+
+tests/test_final_state.py:729: Failed
+_______________ ERROR at setup of test_t29_resource_array_index ________________
+
+    @pytest.fixture(scope="session")
+    def suite_results():
+        assert os.path.isdir(PROJECT_DIR), f"Project directory {PROJECT_DIR} is missing."
+        _write_suite()
+    
+        completed = subprocess.run(
+            ["mix", "run", SUITE_PATH],
+            cwd=PROJECT_DIR,
+            capture_output=True,
+            text=True,
+            timeout=1800,
+        )
+    
+        print(completed.stdout[-20000:])
+        print(completed.stderr[-20000:])
+    
+        results = _parse(completed.stdout)
+    
+        if not results:
+>           pytest.fail(
+                "The behaviour suite produced no results, which usually means the project "
+                "failed to compile.\n"
+                f"exit code: {completed.returncode}\n"
+                f"stdout tail:\n{completed.stdout[-6000:]}\n"
+                f"stderr tail:\n{completed.stderr[-6000:]}"
+            )
+E           Failed: The behaviour suite produced no results, which usually means the project failed to compile.
+E           exit code: 1
+E           stdout tail:
+E           Compiling 6 files (.ex)
+E           
+E           stderr tail:
+E           
+E           == Compilation error in file lib/ledger/money/usd.ex ==
+E           ** (ArgumentError) Unknown options given to `use Ash.Type.NewType`: [:subtype]
+E               (ash 3.31.0) expanding macro: Ash.Type.NewType.__using__/1
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+E               (elixir 1.18.4) expanding macro: Kernel.use/2
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+
+tests/test_final_state.py:729: Failed
+__________ ERROR at setup of test_t30_adjustment_currency_validation ___________
+
+    @pytest.fixture(scope="session")
+    def suite_results():
+        assert os.path.isdir(PROJECT_DIR), f"Project directory {PROJECT_DIR} is missing."
+        _write_suite()
+    
+        completed = subprocess.run(
+            ["mix", "run", SUITE_PATH],
+            cwd=PROJECT_DIR,
+            capture_output=True,
+            text=True,
+            timeout=1800,
+        )
+    
+        print(completed.stdout[-20000:])
+        print(completed.stderr[-20000:])
+    
+        results = _parse(completed.stdout)
+    
+        if not results:
+>           pytest.fail(
+                "The behaviour suite produced no results, which usually means the project "
+                "failed to compile.\n"
+                f"exit code: {completed.returncode}\n"
+                f"stdout tail:\n{completed.stdout[-6000:]}\n"
+                f"stderr tail:\n{completed.stderr[-6000:]}"
+            )
+E           Failed: The behaviour suite produced no results, which usually means the project failed to compile.
+E           exit code: 1
+E           stdout tail:
+E           Compiling 6 files (.ex)
+E           
+E           stderr tail:
+E           
+E           == Compilation error in file lib/ledger/money/usd.ex ==
+E           ** (ArgumentError) Unknown options given to `use Ash.Type.NewType`: [:subtype]
+E               (ash 3.31.0) expanding macro: Ash.Type.NewType.__using__/1
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+E               (elixir 1.18.4) expanding macro: Kernel.use/2
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+
+tests/test_final_state.py:729: Failed
+_____________ ERROR at setup of test_t31_apply_adjustment_appends ______________
+
+    @pytest.fixture(scope="session")
+    def suite_results():
+        assert os.path.isdir(PROJECT_DIR), f"Project directory {PROJECT_DIR} is missing."
+        _write_suite()
+    
+        completed = subprocess.run(
+            ["mix", "run", SUITE_PATH],
+            cwd=PROJECT_DIR,
+            capture_output=True,
+            text=True,
+            timeout=1800,
+        )
+    
+        print(completed.stdout[-20000:])
+        print(completed.stderr[-20000:])
+    
+        results = _parse(completed.stdout)
+    
+        if not results:
+>           pytest.fail(
+                "The behaviour suite produced no results, which usually means the project "
+                "failed to compile.\n"
+                f"exit code: {completed.returncode}\n"
+                f"stdout tail:\n{completed.stdout[-6000:]}\n"
+                f"stderr tail:\n{completed.stderr[-6000:]}"
+            )
+E           Failed: The behaviour suite produced no results, which usually means the project failed to compile.
+E           exit code: 1
+E           stdout tail:
+E           Compiling 6 files (.ex)
+E           
+E           stderr tail:
+E           
+E           == Compilation error in file lib/ledger/money/usd.ex ==
+E           ** (ArgumentError) Unknown options given to `use Ash.Type.NewType`: [:subtype]
+E               (ash 3.31.0) expanding macro: Ash.Type.NewType.__using__/1
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+E               (elixir 1.18.4) expanding macro: Kernel.use/2
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+
+tests/test_final_state.py:729: Failed
+________ ERROR at setup of test_t32_apply_adjustment_currency_mismatch _________
+
+    @pytest.fixture(scope="session")
+    def suite_results():
+        assert os.path.isdir(PROJECT_DIR), f"Project directory {PROJECT_DIR} is missing."
+        _write_suite()
+    
+        completed = subprocess.run(
+            ["mix", "run", SUITE_PATH],
+            cwd=PROJECT_DIR,
+            capture_output=True,
+            text=True,
+            timeout=1800,
+        )
+    
+        print(completed.stdout[-20000:])
+        print(completed.stderr[-20000:])
+    
+        results = _parse(completed.stdout)
+    
+        if not results:
+>           pytest.fail(
+                "The behaviour suite produced no results, which usually means the project "
+                "failed to compile.\n"
+                f"exit code: {completed.returncode}\n"
+                f"stdout tail:\n{completed.stdout[-6000:]}\n"
+                f"stderr tail:\n{completed.stderr[-6000:]}"
+            )
+E           Failed: The behaviour suite produced no results, which usually means the project failed to compile.
+E           exit code: 1
+E           stdout tail:
+E           Compiling 6 files (.ex)
+E           
+E           stderr tail:
+E           
+E           == Compilation error in file lib/ledger/money/usd.ex ==
+E           ** (ArgumentError) Unknown options given to `use Ash.Type.NewType`: [:subtype]
+E               (ash 3.31.0) expanding macro: Ash.Type.NewType.__using__/1
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+E               (elixir 1.18.4) expanding macro: Kernel.use/2
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+
+tests/test_final_state.py:729: Failed
+________ ERROR at setup of test_t33_apply_adjustment_element_constraint ________
+
+    @pytest.fixture(scope="session")
+    def suite_results():
+        assert os.path.isdir(PROJECT_DIR), f"Project directory {PROJECT_DIR} is missing."
+        _write_suite()
+    
+        completed = subprocess.run(
+            ["mix", "run", SUITE_PATH],
+            cwd=PROJECT_DIR,
+            capture_output=True,
+            text=True,
+            timeout=1800,
+        )
+    
+        print(completed.stdout[-20000:])
+        print(completed.stderr[-20000:])
+    
+        results = _parse(completed.stdout)
+    
+        if not results:
+>           pytest.fail(
+                "The behaviour suite produced no results, which usually means the project "
+                "failed to compile.\n"
+                f"exit code: {completed.returncode}\n"
+                f"stdout tail:\n{completed.stdout[-6000:]}\n"
+                f"stderr tail:\n{completed.stderr[-6000:]}"
+            )
+E           Failed: The behaviour suite produced no results, which usually means the project failed to compile.
+E           exit code: 1
+E           stdout tail:
+E           Compiling 6 files (.ex)
+E           
+E           stderr tail:
+E           
+E           == Compilation error in file lib/ledger/money/usd.ex ==
+E           ** (ArgumentError) Unknown options given to `use Ash.Type.NewType`: [:subtype]
+E               (ash 3.31.0) expanding macro: Ash.Type.NewType.__using__/1
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+E               (elixir 1.18.4) expanding macro: Kernel.use/2
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+
+tests/test_final_state.py:729: Failed
+_________________ ERROR at setup of test_t34_total_calculation _________________
+
+    @pytest.fixture(scope="session")
+    def suite_results():
+        assert os.path.isdir(PROJECT_DIR), f"Project directory {PROJECT_DIR} is missing."
+        _write_suite()
+    
+        completed = subprocess.run(
+            ["mix", "run", SUITE_PATH],
+            cwd=PROJECT_DIR,
+            capture_output=True,
+            text=True,
+            timeout=1800,
+        )
+    
+        print(completed.stdout[-20000:])
+        print(completed.stderr[-20000:])
+    
+        results = _parse(completed.stdout)
+    
+        if not results:
+>           pytest.fail(
+                "The behaviour suite produced no results, which usually means the project "
+                "failed to compile.\n"
+                f"exit code: {completed.returncode}\n"
+                f"stdout tail:\n{completed.stdout[-6000:]}\n"
+                f"stderr tail:\n{completed.stderr[-6000:]}"
+            )
+E           Failed: The behaviour suite produced no results, which usually means the project failed to compile.
+E           exit code: 1
+E           stdout tail:
+E           Compiling 6 files (.ex)
+E           
+E           stderr tail:
+E           
+E           == Compilation error in file lib/ledger/money/usd.ex ==
+E           ** (ArgumentError) Unknown options given to `use Ash.Type.NewType`: [:subtype]
+E               (ash 3.31.0) expanding macro: Ash.Type.NewType.__using__/1
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+E               (elixir 1.18.4) expanding macro: Kernel.use/2
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+
+tests/test_final_state.py:729: Failed
+__________ ERROR at setup of test_t35_payments_aggregate_and_balance ___________
+
+    @pytest.fixture(scope="session")
+    def suite_results():
+        assert os.path.isdir(PROJECT_DIR), f"Project directory {PROJECT_DIR} is missing."
+        _write_suite()
+    
+        completed = subprocess.run(
+            ["mix", "run", SUITE_PATH],
+            cwd=PROJECT_DIR,
+            capture_output=True,
+            text=True,
+            timeout=1800,
+        )
+    
+        print(completed.stdout[-20000:])
+        print(completed.stderr[-20000:])
+    
+        results = _parse(completed.stdout)
+    
+        if not results:
+>           pytest.fail(
+                "The behaviour suite produced no results, which usually means the project "
+                "failed to compile.\n"
+                f"exit code: {completed.returncode}\n"
+                f"stdout tail:\n{completed.stdout[-6000:]}\n"
+                f"stderr tail:\n{completed.stderr[-6000:]}"
+            )
+E           Failed: The behaviour suite produced no results, which usually means the project failed to compile.
+E           exit code: 1
+E           stdout tail:
+E           Compiling 6 files (.ex)
+E           
+E           stderr tail:
+E           
+E           == Compilation error in file lib/ledger/money/usd.ex ==
+E           ** (ArgumentError) Unknown options given to `use Ash.Type.NewType`: [:subtype]
+E               (ash 3.31.0) expanding macro: Ash.Type.NewType.__using__/1
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+E               (elixir 1.18.4) expanding macro: Kernel.use/2
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+
+tests/test_final_state.py:729: Failed
+_________ ERROR at setup of test_t36_derived_columns_are_not_writable __________
+
+    @pytest.fixture(scope="session")
+    def suite_results():
+        assert os.path.isdir(PROJECT_DIR), f"Project directory {PROJECT_DIR} is missing."
+        _write_suite()
+    
+        completed = subprocess.run(
+            ["mix", "run", SUITE_PATH],
+            cwd=PROJECT_DIR,
+            capture_output=True,
+            text=True,
+            timeout=1800,
+        )
+    
+        print(completed.stdout[-20000:])
+        print(completed.stderr[-20000:])
+    
+        results = _parse(completed.stdout)
+    
+        if not results:
+>           pytest.fail(
+                "The behaviour suite produced no results, which usually means the project "
+                "failed to compile.\n"
+                f"exit code: {completed.returncode}\n"
+                f"stdout tail:\n{completed.stdout[-6000:]}\n"
+                f"stderr tail:\n{completed.stderr[-6000:]}"
+            )
+E           Failed: The behaviour suite produced no results, which usually means the project failed to compile.
+E           exit code: 1
+E           stdout tail:
+E           Compiling 6 files (.ex)
+E           
+E           stderr tail:
+E           
+E           == Compilation error in file lib/ledger/money/usd.ex ==
+E           ** (ArgumentError) Unknown options given to `use Ash.Type.NewType`: [:subtype]
+E               (ash 3.31.0) expanding macro: Ash.Type.NewType.__using__/1
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+E               (elixir 1.18.4) expanding macro: Kernel.use/2
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+
+tests/test_final_state.py:729: Failed
+__________ ERROR at setup of test_t37_minor_unit_column_is_queryable ___________
+
+    @pytest.fixture(scope="session")
+    def suite_results():
+        assert os.path.isdir(PROJECT_DIR), f"Project directory {PROJECT_DIR} is missing."
+        _write_suite()
+    
+        completed = subprocess.run(
+            ["mix", "run", SUITE_PATH],
+            cwd=PROJECT_DIR,
+            capture_output=True,
+            text=True,
+            timeout=1800,
+        )
+    
+        print(completed.stdout[-20000:])
+        print(completed.stderr[-20000:])
+    
+        results = _parse(completed.stdout)
+    
+        if not results:
+>           pytest.fail(
+                "The behaviour suite produced no results, which usually means the project "
+                "failed to compile.\n"
+                f"exit code: {completed.returncode}\n"
+                f"stdout tail:\n{completed.stdout[-6000:]}\n"
+                f"stderr tail:\n{completed.stderr[-6000:]}"
+            )
+E           Failed: The behaviour suite produced no results, which usually means the project failed to compile.
+E           exit code: 1
+E           stdout tail:
+E           Compiling 6 files (.ex)
+E           
+E           stderr tail:
+E           
+E           == Compilation error in file lib/ledger/money/usd.ex ==
+E           ** (ArgumentError) Unknown options given to `use Ash.Type.NewType`: [:subtype]
+E               (ash 3.31.0) expanding macro: Ash.Type.NewType.__using__/1
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+E               (elixir 1.18.4) expanding macro: Kernel.use/2
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+
+tests/test_final_state.py:729: Failed
+___________ ERROR at setup of test_t38_generic_action_returns_money ____________
+
+    @pytest.fixture(scope="session")
+    def suite_results():
+        assert os.path.isdir(PROJECT_DIR), f"Project directory {PROJECT_DIR} is missing."
+        _write_suite()
+    
+        completed = subprocess.run(
+            ["mix", "run", SUITE_PATH],
+            cwd=PROJECT_DIR,
+            capture_output=True,
+            text=True,
+            timeout=1800,
+        )
+    
+        print(completed.stdout[-20000:])
+        print(completed.stderr[-20000:])
+    
+        results = _parse(completed.stdout)
+    
+        if not results:
+>           pytest.fail(
+                "The behaviour suite produced no results, which usually means the project "
+                "failed to compile.\n"
+                f"exit code: {completed.returncode}\n"
+                f"stdout tail:\n{completed.stdout[-6000:]}\n"
+                f"stderr tail:\n{completed.stderr[-6000:]}"
+            )
+E           Failed: The behaviour suite produced no results, which usually means the project failed to compile.
+E           exit code: 1
+E           stdout tail:
+E           Compiling 6 files (.ex)
+E           
+E           stderr tail:
+E           
+E           == Compilation error in file lib/ledger/money/usd.ex ==
+E           ** (ArgumentError) Unknown options given to `use Ash.Type.NewType`: [:subtype]
+E               (ash 3.31.0) expanding macro: Ash.Type.NewType.__using__/1
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+E               (elixir 1.18.4) expanding macro: Kernel.use/2
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+
+tests/test_final_state.py:729: Failed
+_________________ ERROR at setup of test_t39_sorting_by_money __________________
+
+    @pytest.fixture(scope="session")
+    def suite_results():
+        assert os.path.isdir(PROJECT_DIR), f"Project directory {PROJECT_DIR} is missing."
+        _write_suite()
+    
+        completed = subprocess.run(
+            ["mix", "run", SUITE_PATH],
+            cwd=PROJECT_DIR,
+            capture_output=True,
+            text=True,
+            timeout=1800,
+        )
+    
+        print(completed.stdout[-20000:])
+        print(completed.stderr[-20000:])
+    
+        results = _parse(completed.stdout)
+    
+        if not results:
+>           pytest.fail(
+                "The behaviour suite produced no results, which usually means the project "
+                "failed to compile.\n"
+                f"exit code: {completed.returncode}\n"
+                f"stdout tail:\n{completed.stdout[-6000:]}\n"
+                f"stderr tail:\n{completed.stderr[-6000:]}"
+            )
+E           Failed: The behaviour suite produced no results, which usually means the project failed to compile.
+E           exit code: 1
+E           stdout tail:
+E           Compiling 6 files (.ex)
+E           
+E           stderr tail:
+E           
+E           == Compilation error in file lib/ledger/money/usd.ex ==
+E           ** (ArgumentError) Unknown options given to `use Ash.Type.NewType`: [:subtype]
+E               (ash 3.31.0) expanding macro: Ash.Type.NewType.__using__/1
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+E               (elixir 1.18.4) expanding macro: Kernel.use/2
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+
+tests/test_final_state.py:729: Failed
+__________________ ERROR at setup of test_t40_equality_filter __________________
+
+    @pytest.fixture(scope="session")
+    def suite_results():
+        assert os.path.isdir(PROJECT_DIR), f"Project directory {PROJECT_DIR} is missing."
+        _write_suite()
+    
+        completed = subprocess.run(
+            ["mix", "run", SUITE_PATH],
+            cwd=PROJECT_DIR,
+            capture_output=True,
+            text=True,
+            timeout=1800,
+        )
+    
+        print(completed.stdout[-20000:])
+        print(completed.stderr[-20000:])
+    
+        results = _parse(completed.stdout)
+    
+        if not results:
+>           pytest.fail(
+                "The behaviour suite produced no results, which usually means the project "
+                "failed to compile.\n"
+                f"exit code: {completed.returncode}\n"
+                f"stdout tail:\n{completed.stdout[-6000:]}\n"
+                f"stderr tail:\n{completed.stderr[-6000:]}"
+            )
+E           Failed: The behaviour suite produced no results, which usually means the project failed to compile.
+E           exit code: 1
+E           stdout tail:
+E           Compiling 6 files (.ex)
+E           
+E           stderr tail:
+E           
+E           == Compilation error in file lib/ledger/money/usd.ex ==
+E           ** (ArgumentError) Unknown options given to `use Ash.Type.NewType`: [:subtype]
+E               (ash 3.31.0) expanding macro: Ash.Type.NewType.__using__/1
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+E               (elixir 1.18.4) expanding macro: Kernel.use/2
+E               lib/ledger/money/usd.ex:2: Ledger.Money.Usd (module)
+
+tests/test_final_state.py:729: Failed
+=========================== short test summary info ============================
+ERROR tests/test_final_state.py::test_t01_currencies_and_exponents - Failed: ...
+ERROR tests/test_final_state.py::test_t02_constructors - Failed: The behaviou...
+ERROR tests/test_final_state.py::test_t03_canonical_string - Failed: The beha...
+ERROR tests/test_final_state.py::test_t04_addition_and_subtraction - Failed: ...
+ERROR tests/test_final_state.py::test_t05_multiplication - Failed: The behavi...
+ERROR tests/test_final_state.py::test_t06_sum - Failed: The behaviour suite p...
+ERROR tests/test_final_state.py::test_t07_comparison - Failed: The behaviour ...
+ERROR tests/test_final_state.py::test_t08_cast_shapes_agree - Failed: The beh...
+ERROR tests/test_final_state.py::test_t09_canonical_string_casting - Failed: ...
+ERROR tests/test_final_state.py::test_t10_unknown_currency_errors - Failed: T...
+ERROR tests/test_final_state.py::test_t11_fractional_minor_units - Failed: Th...
+ERROR tests/test_final_state.py::test_t12_invalid_format - Failed: The behavi...
+ERROR tests/test_final_state.py::test_t13_equality - Failed: The behaviour su...
+ERROR tests/test_final_state.py::test_t14_storage_type - Failed: The behaviou...
+ERROR tests/test_final_state.py::test_t15_storage_round_trip - Failed: The be...
+ERROR tests/test_final_state.py::test_t16_array_and_nil_round_trip - Failed: ...
+ERROR tests/test_final_state.py::test_t17_invalid_stored_value - Failed: The ...
+ERROR tests/test_final_state.py::test_t18_currencies_constraint - Failed: The...
+ERROR tests/test_final_state.py::test_t19_multiple_of_constraint - Failed: Th...
+ERROR tests/test_final_state.py::test_t20_min_and_max_constraints - Failed: T...
+ERROR tests/test_final_state.py::test_t21_bound_currency_mismatch - Failed: T...
+ERROR tests/test_final_state.py::test_t22_constraint_ordering - Failed: The b...
+ERROR tests/test_final_state.py::test_t23_array_cast_index - Failed: The beha...
+ERROR tests/test_final_state.py::test_t24_array_constraint_index - Failed: Th...
+ERROR tests/test_final_state.py::test_t25_new_type_introspection - Failed: Th...
+ERROR tests/test_final_state.py::test_t26_new_type_constraints - Failed: The ...
+ERROR tests/test_final_state.py::test_t27_resource_round_trip - Failed: The b...
+ERROR tests/test_final_state.py::test_t28_attribute_currency_constraint - Fai...
+ERROR tests/test_final_state.py::test_t29_resource_array_index - Failed: The ...
+ERROR tests/test_final_state.py::test_t30_adjustment_currency_validation - Fa...
+ERROR tests/test_final_state.py::test_t31_apply_adjustment_appends - Failed: ...
+ERROR tests/test_final_state.py::test_t32_apply_adjustment_currency_mismatch
+ERROR tests/test_final_state.py::test_t33_apply_adjustment_element_constraint
+ERROR tests/test_final_state.py::test_t34_total_calculation - Failed: The beh...
+ERROR tests/test_final_state.py::test_t35_payments_aggregate_and_balance - Fa...
+ERROR tests/test_final_state.py::test_t36_derived_columns_are_not_writable - ...
+ERROR tests/test_final_state.py::test_t37_minor_unit_column_is_queryable - Fa...
+ERROR tests/test_final_state.py::test_t38_generic_action_returns_money - Fail...
+ERROR tests/test_final_state.py::test_t39_sorting_by_money - Failed: The beha...
+ERROR tests/test_final_state.py::test_t40_equality_filter - Failed: The behav...
+============================== 40 errors in 2.58s ==============================

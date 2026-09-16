@@ -1,0 +1,39 @@
+{
+    "schema_version": 2,
+    "task": {
+        "name": "godot_save_load_resource_serialization",
+        "type": "local",
+        "digest": "sha256:05b3da890a0214e09c0dd0b7fb01fe244194a329dfd7a5fbddf2ba29f659e4e3",
+        "source": "godot",
+        "path": "/home/kw/code/zealt/ollie-dataset/dataset/eval/tasks/godot/godot_save_load_resource_serialization"
+    },
+    "install_only": false,
+    "timeout_multiplier": 10.0,
+    "agent": {
+        "name": "ollie.agent:OllieAgent",
+        "model_name": "gemini-3.1-flash-lite",
+        "skills": [],
+        "resume_trajectory": false,
+        "extra_allowed_hosts": [],
+        "kwargs": {
+            "max_steps": 100
+        },
+        "mcp_servers": []
+    },
+    "bridge_inputs": {},
+    "skills": [],
+    "environment": {
+        "type": "daytona",
+        "force_build": false,
+        "delete": true,
+        "cpu_enforcement_policy": "auto",
+        "memory_enforcement_policy": "auto",
+        "extra_docker_compose": [],
+        "kwargs": {},
+        "extra_allowed_hosts": []
+    },
+    "verifier": {
+        "disable": false,
+        "environment_mode": "shared"
+    }
+}

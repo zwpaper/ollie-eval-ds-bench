@@ -1,0 +1,86 @@
+{
+    "reportFormat": "CTRF",
+    "specVersion": "0.0.0",
+    "timestamp": "2026-09-16T09:58:33.069724+00:00",
+    "generatedBy": "pytest",
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "7.4.4"
+        },
+        "summary": {
+            "tests": 5,
+            "passed": 1,
+            "failed": 4,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1789552352545,
+            "stop": 1789552713069
+        },
+        "environment": {
+            "buildName": "Pytest JSON CTRF Report",
+            "buildNumber": "000",
+            "buildUrl": "https://ctrf.io"
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_scheduler_file_exists",
+                "status": "passed",
+                "duration": 2,
+                "start": 1789552352580,
+                "stop": 1789552352582,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_scheduler_declares_class_name_and_base",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 24,
+                "start": 1789552352582,
+                "stop": 1789552352606,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_scheduler_declares_class_name_and_base():\n        src = _read_scheduler_source()\n        assert re.search(r\"(?m)^\\s*class_name\\s+FrameScheduler\\b\", src), (\n            \"frame_scheduler.gd must declare `class_name FrameScheduler`.\"\n        )\n>       assert re.search(r\"(?m)^\\s*extends\\s+RefCounted\\b\", src), (\n            \"frame_scheduler.gd must declare `extends RefCounted`.\"\n        )\nE       AssertionError: frame_scheduler.gd must declare `extends RefCounted`.\nE       assert None\nE        +  where None = <function search at 0x7fd6746c7ba0>('(?m)^\\\\s*extends\\\\s+RefCounted\\\\b', 'class_name FrameScheduler extends RefCounted\\n\\nvar current_frame: int = 0\\n\\nvar _task_counter: int = 0\\nvar _tasks ...he scheduler will emit a signal on when ready.\\n\\n# Let me rewrite using a per-task custom signal / awaitable.\\npass\\n')\nE        +    where <function search at 0x7fd6746c7ba0> = re.search\n\ntests/test_final_state.py:148: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_scheduler_does_not_use_wallclock_or_network",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 7,
+                "start": 1789552352607,
+                "stop": 1789552352614,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_scheduler_does_not_use_wallclock_or_network():\n        \"\"\"Secondary, non-runtime constraint: timing must be driven only by advance().\n    \n        The determinism of the transcript is the primary runtime proof; this guards\n        against smuggling in real-time / engine-frame / network sources.\n        \"\"\"\n        src = _read_scheduler_source()\n        forbidden = [\n            \"get_ticks_msec\",\n            \"get_ticks_usec\",\n            \"create_timer\",\n            \"SceneTreeTimer\",\n            \"process_frame\",\n            \"physics_frame\",\n            \"Time.\",\n            \"HTTPRequest\",\n            \"HTTPClient\",\n            \"StreamPeerTCP\",\n        ]\n        hits = [tok for tok in forbidden if tok in src]\n>       assert not hits, (\n            \"Scheduler must not depend on wall-clock time, engine frames, or the \"\n            f\"network; found forbidden references: {hits}\"\n        )\nE       AssertionError: Scheduler must not depend on wall-clock time, engine frames, or the network; found forbidden references: ['process_frame']\nE       assert not ['process_frame']\n\ntests/test_final_state.py:173: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_transcript_matches_expected",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 180224,
+                "start": 1789552352615,
+                "stop": 1789552532839,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_transcript_matches_expected():\n>       transcript = _run_harness()\n\ntests/test_final_state.py:180: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \ntests/test_final_state.py:107: in _run_harness\n    result = subprocess.run(\nusr/lib/python3.12/subprocess.py:550: in run\n    stdout, stderr = process.communicate(input, timeout=timeout)\nusr/lib/python3.12/subprocess.py:1209: in communicate\n    stdout, stderr = self._communicate(input, endtime, timeout)\nusr/lib/python3.12/subprocess.py:2116: in _communicate\n    self._check_timeout(endtime, orig_timeout, stdout, stderr)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <Popen: returncode: -9 args: ['godot', '--headless', '--path', '/home/user/g...>\nendtime = 153834.192236042, orig_timeout = 180\nstdout_seq = [b'Godot Engine v4.3.stable.official.77dcf97d8 - https://godotengine.org\\n', b'\\n']\nstderr_seq = [b'SCRIPT ERROR: Parse Error: \"yield\" was removed in Godot 4. Use \"await\" instead.\\n', b'          at: GDScript::reloa...l. Nonexistent function 'new' in base 'GDScript'.\\n\", b'          at: @implicit_new (res://verify_driver.gd:6)\\n', ...]\nskip_check_and_raise = False\n\n    def _check_timeout(self, endtime, orig_timeout, stdout_seq, stderr_seq,\n                       skip_check_and_raise=False):\n        \"\"\"Convenience for checking if a timeout has expired.\"\"\"\n        if endtime is None:\n            return\n        if skip_check_and_raise or _time() > endtime:\n>           raise TimeoutExpired(\n                    self.args, orig_timeout,\n                    output=b''.join(stdout_seq) if stdout_seq else None,\n                    stderr=b''.join(stderr_seq) if stderr_seq else None)\nE           subprocess.TimeoutExpired: Command '['godot', '--headless', '--path', '/home/user/godot_coroutine_scheduler', '--script', 'res://verify_driver.gd']' timed out after 180 seconds\n\nusr/lib/python3.12/subprocess.py:1253: TimeoutExpired",
+                "message": "The test failed in the call phase"
+            },
+            {
+                "name": "test_final_state.py::test_transcript_is_deterministic_across_runs",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 180230,
+                "start": 1789552532839,
+                "stop": 1789552713069,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_transcript_is_deterministic_across_runs():\n>       runs = [_run_harness() for _ in range(3)]\n\ntests/test_final_state.py:191: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \ntests/test_final_state.py:107: in _run_harness\n    result = subprocess.run(\nusr/lib/python3.12/subprocess.py:550: in run\n    stdout, stderr = process.communicate(input, timeout=timeout)\nusr/lib/python3.12/subprocess.py:1209: in communicate\n    stdout, stderr = self._communicate(input, endtime, timeout)\nusr/lib/python3.12/subprocess.py:2116: in _communicate\n    self._check_timeout(endtime, orig_timeout, stdout, stderr)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <Popen: returncode: -9 args: ['godot', '--headless', '--path', '/home/user/g...>\nendtime = 154014.426216289, orig_timeout = 180\nstdout_seq = [b'Godot Engine v4.3.stable.official.77dcf97d8 - https://godotengine.org\\n', b'\\n']\nstderr_seq = [b'SCRIPT ERROR: Parse Error: \"yield\" was removed in Godot 4. Use \"await\" instead.\\n', b'          at: GDScript::reloa...R: Invalid call. Nonexistent function 'spawn' in base 'Nil'.\\n          at: _initialize (res://verify_driver.gd:43)\\n\"]\nskip_check_and_raise = False\n\n    def _check_timeout(self, endtime, orig_timeout, stdout_seq, stderr_seq,\n                       skip_check_and_raise=False):\n        \"\"\"Convenience for checking if a timeout has expired.\"\"\"\n        if endtime is None:\n            return\n        if skip_check_and_raise or _time() > endtime:\n>           raise TimeoutExpired(\n                    self.args, orig_timeout,\n                    output=b''.join(stdout_seq) if stdout_seq else None,\n                    stderr=b''.join(stderr_seq) if stderr_seq else None)\nE           subprocess.TimeoutExpired: Command '['godot', '--headless', '--path', '/home/user/godot_coroutine_scheduler', '--script', 'res://verify_driver.gd']' timed out after 180 seconds\n\nusr/lib/python3.12/subprocess.py:1253: TimeoutExpired",
+                "message": "The test failed in the call phase"
+            }
+        ]
+    }
+}

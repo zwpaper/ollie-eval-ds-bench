@@ -1,0 +1,23 @@
+{
+    "job_name": "agentic",
+    "jobs_dir": "/home/kw/code/zealt/ollie-dataset/dataset/eval/results/godot-gemini-3.1-flash-lite-20260911T191125",
+    "timeout_multiplier": 10.0,
+    "n_concurrent_trials": 10,
+    "environment": {
+        "type": "daytona"
+    },
+    "agents": [
+        {
+            "name": "ollie.agent:OllieAgent",
+            "model_name": "gemini-3.1-flash-lite",
+            "kwargs": {
+                "max_steps": 100
+            }
+        }
+    ],
+    "datasets": [
+        {
+            "path": "/home/kw/code/zealt/ollie-dataset/dataset/eval/tasks/godot"
+        }
+    ]
+}

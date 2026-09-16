@@ -1,0 +1,348 @@
+[ollie-gen] Running: harbor run --agent ollie.agent:OllieAgent --ak max_steps=100 --ak reasoning_effort=auto --model gemini-3.1-flash-lite-sft-20260915-235544@2 --path /home/kweizh/ollie/dataset/eval/tasks/ds-bench --jobs-dir /home/kweizh/ollie/dataset/eval/results/ds-bench-gemini-3.1-flash-lite-sft-20260915-235544-2-20260916T171830 --job-name agentic -n 10 --timeout-multiplier 10
+
+Ollie exhausted its step budget; keeping the workspace as-is for evaluation (set fail_on_max_steps=true to fail instead)
+Ollie exhausted its step budget; keeping the workspace as-is for evaluation (set fail_on_max_steps=true to fail instead)
+Ollie exhausted its step budget; keeping the workspace as-is for evaluation (set fail_on_max_steps=true to fail instead)
+Ollie exhausted its step budget; keeping the workspace as-is for evaluation (set fail_on_max_steps=true to fail instead)
+Ollie exhausted its step budget; keeping the workspace as-is for evaluation (set fail_on_max_steps=true to fail instead)
+Ollie exhausted its step budget; keeping the workspace as-is for evaluation (set fail_on_max_steps=true to fail instead)
+Ollie exhausted its step budget; keeping the workspace as-is for evaluation (set fail_on_max_steps=true to fail instead)
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+
+[1;31mProvider List: https://docs.litellm.ai/docs/providers[0m
+
+  34/34 Mean: 0.147 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1:38:20 0:00:00
+ds-bench • ollie • gemini-3.1-flash-lite-sft-20260915-235544@2
+┏━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━┓
+┃ Trials ┃ Exceptions ┃  Mean ┃
+┡━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━┩
+│     34 │          8 │ 0.147 │
+└────────┴────────────┴───────┘
+
+┏━━━━━━━━┳━━━━━━━┓
+┃ Reward ┃ Count ┃
+┡━━━━━━━━╇━━━━━━━┩
+│ 0.0    │    29 │
+│ 1.0    │     5 │
+└────────┴───────┘
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━┓
+┃ Exception                 ┃ Count ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━┩
+│ NonZeroAgentExitCodeError │     8 │
+└───────────────────────────┴───────┘
+
+Job Info
+Total runtime: 1h 38m 20s
+Results written to 
+/home/kweizh/ollie/dataset/eval/results/ds-bench-gemini-3.1-flash-lite-sft-20260
+915-235544-2-20260916T171830/agentic/result.json
+Inspect results by running `harbor view 
+/home/kweizh/ollie/dataset/eval/results/ds-bench-gemini-3.1-flash-lite-sft-20260
+915-235544-2-20260916T171830`
+Share results by running `harbor upload 
+/home/kweizh/ollie/dataset/eval/results/ds-bench-gemini-3.1-flash-lite-sft-20260
+915-235544-2-20260916T171830/agentic`
+

@@ -1,0 +1,64 @@
+{
+    "id": "7bf8df75-2134-4138-bb20-8f3beb5c5eec",
+    "started_at": "2026-09-11T19:11:28.920651",
+    "updated_at": "2026-09-11T20:25:39.176814",
+    "finished_at": "2026-09-11T20:25:39.176814",
+    "n_total_trials": 21,
+    "stats": {
+        "n_completed_trials": 21,
+        "n_errored_trials": 1,
+        "n_running_trials": 0,
+        "n_pending_trials": 0,
+        "n_cancelled_trials": 0,
+        "n_retries": 0,
+        "evals": {
+            "ollie__gemini-3.1-flash-lite__godot": {
+                "n_trials": 20,
+                "n_errors": 1,
+                "metrics": [
+                    {
+                        "mean": 0.2857142857142857
+                    }
+                ],
+                "pass_at_k": {},
+                "reward_stats": {
+                    "reward": {
+                        "0.0": [
+                            "godot_animation_tree_blend_locom__GAhVeir",
+                            "godot_area_gravity_fields__JPasdLm",
+                            "godot_coin_collector_inventory_h__gChTr2y",
+                            "godot_compute_shader_prefix_sum__NAHyAJY",
+                            "godot_coroutine_scheduler__Kfp392i",
+                            "godot_delaunay_navmesh_triangula__DsdGYtd",
+                            "godot_dialog_branching_system__quNeMog",
+                            "godot_gdextension_cpp_vector_mat__v6cSQdv",
+                            "godot_gridmap_meshlibrary_builde__3zJ9wfF",
+                            "godot_multiplayer_synchronizer_l__sJzibzd",
+                            "godot_navigation_agent_2d_dynami__9Zv7k7j",
+                            "godot_resource_preloader_scene_l__ADiLBse",
+                            "godot_tween_chain_sequence_anima__DgkBzwf",
+                            "godot_viewport_render_target_cam__eRDnsQh"
+                        ],
+                        "1.0": [
+                            "godot_ecs_archetype_framework__uTMAkNL",
+                            "godot_enemy_stats_resource_spawn__8LC8XwV",
+                            "godot_input_remap_action_set__SxWFSPU",
+                            "godot_multimesh_custom_instance__nDXjak5",
+                            "godot_save_load_resource_seriali__HrEXrLK",
+                            "godot_tilemap_procedural_dungeon__h6MeWtN"
+                        ]
+                    }
+                },
+                "exception_stats": {
+                    "NonZeroAgentExitCodeError": [
+                        "godot_area3d_layered_gravity_fie__VWrvitT"
+                    ]
+                }
+            }
+        },
+        "n_input_tokens": null,
+        "n_cache_tokens": null,
+        "n_output_tokens": null,
+        "cost_usd": null
+    }
+}

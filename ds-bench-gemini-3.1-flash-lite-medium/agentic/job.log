@@ -1,0 +1,175 @@
+Selected strategy: _DaytonaDirect
+Selected strategy: _DaytonaDirect
+Selected strategy: _DaytonaDirect
+Selected strategy: _DaytonaDirect
+Selected strategy: _DaytonaDirect
+Selected strategy: _DaytonaDirect
+Selected strategy: _DaytonaDirect
+Selected strategy: _DaytonaDirect
+Selected strategy: _DaytonaDirect
+Selected strategy: _DaytonaDirect
+Creating new AsyncDaytona client
+Building environment from /home/kw/code/zealt/ollie-dataset/dataset/eval/tasks/godot/godot_animation_tree_blend_locomotion/environment/Dockerfile
+Building environment from /home/kw/code/zealt/ollie-dataset/dataset/eval/tasks/godot/godot_area3d_layered_gravity_fields/environment/Dockerfile
+Building environment from /home/kw/code/zealt/ollie-dataset/dataset/eval/tasks/godot/godot_area_gravity_fields/environment/Dockerfile
+Building environment from /home/kw/code/zealt/ollie-dataset/dataset/eval/tasks/godot/godot_coin_collector_inventory_hud/environment/Dockerfile
+Building environment from /home/kw/code/zealt/ollie-dataset/dataset/eval/tasks/godot/godot_compute_shader_prefix_sum/environment/Dockerfile
+Building environment from /home/kw/code/zealt/ollie-dataset/dataset/eval/tasks/godot/godot_coroutine_scheduler/environment/Dockerfile
+Building environment from /home/kw/code/zealt/ollie-dataset/dataset/eval/tasks/godot/godot_delaunay_navmesh_triangulation/environment/Dockerfile
+Building environment from /home/kw/code/zealt/ollie-dataset/dataset/eval/tasks/godot/godot_dialog_branching_system/environment/Dockerfile
+Building environment from /home/kw/code/zealt/ollie-dataset/dataset/eval/tasks/godot/godot_ecs_archetype_framework/environment/Dockerfile
+Building environment from /home/kw/code/zealt/ollie-dataset/dataset/eval/tasks/godot/godot_enemy_stats_resource_spawner/environment/Dockerfile
+Running command: export NVM_DIR="$HOME/.nvm" && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | env -u NODE_VERSION bash && . "$NVM_DIR/nvm.sh" || true && command -v nvm &>/dev/null || { echo 'Error: NVM failed to load' >&2; exit 1; } && nvm install 22 && nvm alias default 22 && npm -v && npm install -g @getollie/cli@latest && ollie --version
+Running command: export NVM_DIR="$HOME/.nvm" && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | env -u NODE_VERSION bash && . "$NVM_DIR/nvm.sh" || true && command -v nvm &>/dev/null || { echo 'Error: NVM failed to load' >&2; exit 1; } && nvm install 22 && nvm alias default 22 && npm -v && npm install -g @getollie/cli@latest && ollie --version
+Running command: export NVM_DIR="$HOME/.nvm" && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | env -u NODE_VERSION bash && . "$NVM_DIR/nvm.sh" || true && command -v nvm &>/dev/null || { echo 'Error: NVM failed to load' >&2; exit 1; } && nvm install 22 && nvm alias default 22 && npm -v && npm install -g @getollie/cli@latest && ollie --version
+Running command: export NVM_DIR="$HOME/.nvm" && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | env -u NODE_VERSION bash && . "$NVM_DIR/nvm.sh" || true && command -v nvm &>/dev/null || { echo 'Error: NVM failed to load' >&2; exit 1; } && nvm install 22 && nvm alias default 22 && npm -v && npm install -g @getollie/cli@latest && ollie --version
+Running command: export NVM_DIR="$HOME/.nvm" && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | env -u NODE_VERSION bash && . "$NVM_DIR/nvm.sh" || true && command -v nvm &>/dev/null || { echo 'Error: NVM failed to load' >&2; exit 1; } && nvm install 22 && nvm alias default 22 && npm -v && npm install -g @getollie/cli@latest && ollie --version
+Running command: export NVM_DIR="$HOME/.nvm" && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | env -u NODE_VERSION bash && . "$NVM_DIR/nvm.sh" || true && command -v nvm &>/dev/null || { echo 'Error: NVM failed to load' >&2; exit 1; } && nvm install 22 && nvm alias default 22 && npm -v && npm install -g @getollie/cli@latest && ollie --version
+Running command: export NVM_DIR="$HOME/.nvm" && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | env -u NODE_VERSION bash && . "$NVM_DIR/nvm.sh" || true && command -v nvm &>/dev/null || { echo 'Error: NVM failed to load' >&2; exit 1; } && nvm install 22 && nvm alias default 22 && npm -v && npm install -g @getollie/cli@latest && ollie --version
+Running command: export NVM_DIR="$HOME/.nvm" && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | env -u NODE_VERSION bash && . "$NVM_DIR/nvm.sh" || true && command -v nvm &>/dev/null || { echo 'Error: NVM failed to load' >&2; exit 1; } && nvm install 22 && nvm alias default 22 && npm -v && npm install -g @getollie/cli@latest && ollie --version
+Running command: export NVM_DIR="$HOME/.nvm" && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | env -u NODE_VERSION bash && . "$NVM_DIR/nvm.sh" || true && command -v nvm &>/dev/null || { echo 'Error: NVM failed to load' >&2; exit 1; } && nvm install 22 && nvm alias default 22 && npm -v && npm install -g @getollie/cli@latest && ollie --version
+Command failed
+Trial godot_area3d_layered_gravity_fie__VWrvitT failed: Command failed (exit 1): export NVM_DIR="$HOME/.nvm" && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | env -u NODE_VERSION bash && . "$NVM_DIR/nvm.sh" || true && command -v nvm &>/dev/null || { echo 'Error: NVM failed to load' >&2; exit 1; } && nvm install 22 && nvm alias default 22 && npm -v && npm install -g @getollie/cli@latest && ollie --version
+stdout: None
+stderr:   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 16631  100 16631    0     0   619k      0 --:--:-- --:--:-- --:--:--  649k
+You have $NVM_DIR set to "/root/.nvm", but that directory does not exist. Check your profile files and environment.
+Error: NVM failed to load
+
+Collecting main service artifacts
+Not retrying trial because the maximum number of retries has been reached
+Selected strategy: _DaytonaDirect
+Building environment from /home/kw/code/zealt/ollie-dataset/dataset/eval/tasks/godot/godot_gdextension_cpp_vector_math/environment/Dockerfile
+Running command: export NVM_DIR="$HOME/.nvm" && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | env -u NODE_VERSION bash && . "$NVM_DIR/nvm.sh" || true && command -v nvm &>/dev/null || { echo 'Error: NVM failed to load' >&2; exit 1; } && nvm install 22 && nvm alias default 22 && npm -v && npm install -g @getollie/cli@latest && ollie --version
+Command outputs captured
+Running command: mkdir -p /logs/agent
+Command outputs captured
+Running command: [ -f "$HOME/.nvm"/nvm.sh ] && . "$HOME/.nvm"/nvm.sh; cat /logs/agent/prompt.txt | ollie --ndjson --model gemini-3.1-flash-lite --max-steps 100 --mode native --reasoning-effort medium 2>&1 | stdbuf -oL tee /logs/agent/ollie.jsonl
+Command outputs captured
+Command outputs captured
+Command outputs captured
+Command outputs captured
+Running command: mkdir -p /logs/agent
+Command outputs captured
+Command outputs captured
+Running command: mkdir -p /logs/agent
+Running command: mkdir -p /logs/agent
+Running command: [ -f "$HOME/.nvm"/nvm.sh ] && . "$HOME/.nvm"/nvm.sh; cat /logs/agent/prompt.txt | ollie --ndjson --model gemini-3.1-flash-lite --max-steps 100 --mode native --reasoning-effort medium 2>&1 | stdbuf -oL tee /logs/agent/ollie.jsonl
+Running command: mkdir -p /logs/agent
+Command outputs captured
+Running command: [ -f "$HOME/.nvm"/nvm.sh ] && . "$HOME/.nvm"/nvm.sh; cat /logs/agent/prompt.txt | ollie --ndjson --model gemini-3.1-flash-lite --max-steps 100 --mode native --reasoning-effort medium 2>&1 | stdbuf -oL tee /logs/agent/ollie.jsonl
+Command outputs captured
+Running command: mkdir -p /logs/agent
+Command outputs captured
+Running command: [ -f "$HOME/.nvm"/nvm.sh ] && . "$HOME/.nvm"/nvm.sh; cat /logs/agent/prompt.txt | ollie --ndjson --model gemini-3.1-flash-lite --max-steps 100 --mode native --reasoning-effort medium 2>&1 | stdbuf -oL tee /logs/agent/ollie.jsonl
+Running command: [ -f "$HOME/.nvm"/nvm.sh ] && . "$HOME/.nvm"/nvm.sh; cat /logs/agent/prompt.txt | ollie --ndjson --model gemini-3.1-flash-lite --max-steps 100 --mode native --reasoning-effort medium 2>&1 | stdbuf -oL tee /logs/agent/ollie.jsonl
+Command outputs captured
+Command outputs captured
+Running command: [ -f "$HOME/.nvm"/nvm.sh ] && . "$HOME/.nvm"/nvm.sh; cat /logs/agent/prompt.txt | ollie --ndjson --model gemini-3.1-flash-lite --max-steps 100 --mode native --reasoning-effort medium 2>&1 | stdbuf -oL tee /logs/agent/ollie.jsonl
+Running command: mkdir -p /logs/agent
+Command outputs captured
+Running command: [ -f "$HOME/.nvm"/nvm.sh ] && . "$HOME/.nvm"/nvm.sh; cat /logs/agent/prompt.txt | ollie --ndjson --model gemini-3.1-flash-lite --max-steps 100 --mode native --reasoning-effort medium 2>&1 | stdbuf -oL tee /logs/agent/ollie.jsonl
+Command outputs captured
+Collecting main service artifacts
+Running command: mkdir -p /logs/agent
+Command outputs captured
+Collecting main service artifacts
+Command outputs captured
+Running command: [ -f "$HOME/.nvm"/nvm.sh ] && . "$HOME/.nvm"/nvm.sh; cat /logs/agent/prompt.txt | ollie --ndjson --model gemini-3.1-flash-lite --max-steps 100 --mode native --reasoning-effort medium 2>&1 | stdbuf -oL tee /logs/agent/ollie.jsonl
+Running command: mkdir -p /logs/agent
+Command outputs captured
+Running command: [ -f "$HOME/.nvm"/nvm.sh ] && . "$HOME/.nvm"/nvm.sh; cat /logs/agent/prompt.txt | ollie --ndjson --model gemini-3.1-flash-lite --max-steps 100 --mode native --reasoning-effort medium 2>&1 | stdbuf -oL tee /logs/agent/ollie.jsonl
+Collecting main service artifacts
+Selected strategy: _DaytonaDirect
+Building environment from /home/kw/code/zealt/ollie-dataset/dataset/eval/tasks/godot/godot_gridmap_meshlibrary_builder/environment/Dockerfile
+Selected strategy: _DaytonaDirect
+Building environment from /home/kw/code/zealt/ollie-dataset/dataset/eval/tasks/godot/godot_input_remap_action_set/environment/Dockerfile
+Running command: export NVM_DIR="$HOME/.nvm" && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | env -u NODE_VERSION bash && . "$NVM_DIR/nvm.sh" || true && command -v nvm &>/dev/null || { echo 'Error: NVM failed to load' >&2; exit 1; } && nvm install 22 && nvm alias default 22 && npm -v && npm install -g @getollie/cli@latest && ollie --version
+Running command: export NVM_DIR="$HOME/.nvm" && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | env -u NODE_VERSION bash && . "$NVM_DIR/nvm.sh" || true && command -v nvm &>/dev/null || { echo 'Error: NVM failed to load' >&2; exit 1; } && nvm install 22 && nvm alias default 22 && npm -v && npm install -g @getollie/cli@latest && ollie --version
+Collecting main service artifacts
+Collecting main service artifacts
+Selected strategy: _DaytonaDirect
+Building environment from /home/kw/code/zealt/ollie-dataset/dataset/eval/tasks/godot/godot_multimesh_custom_instance_data/environment/Dockerfile
+Selected strategy: _DaytonaDirect
+Building environment from /home/kw/code/zealt/ollie-dataset/dataset/eval/tasks/godot/godot_multiplayer_synchronizer_lobby/environment/Dockerfile
+Running command: export NVM_DIR="$HOME/.nvm" && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | env -u NODE_VERSION bash && . "$NVM_DIR/nvm.sh" || true && command -v nvm &>/dev/null || { echo 'Error: NVM failed to load' >&2; exit 1; } && nvm install 22 && nvm alias default 22 && npm -v && npm install -g @getollie/cli@latest && ollie --version
+Running command: export NVM_DIR="$HOME/.nvm" && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | env -u NODE_VERSION bash && . "$NVM_DIR/nvm.sh" || true && command -v nvm &>/dev/null || { echo 'Error: NVM failed to load' >&2; exit 1; } && nvm install 22 && nvm alias default 22 && npm -v && npm install -g @getollie/cli@latest && ollie --version
+Command outputs captured
+Selected strategy: _DaytonaDirect
+Building environment from /home/kw/code/zealt/ollie-dataset/dataset/eval/tasks/godot/godot_navigation_agent_2d_dynamic_obstacles/environment/Dockerfile
+Running command: mkdir -p /logs/agent
+Collecting main service artifacts
+Command outputs captured
+Running command: [ -f "$HOME/.nvm"/nvm.sh ] && . "$HOME/.nvm"/nvm.sh; cat /logs/agent/prompt.txt | ollie --ndjson --model gemini-3.1-flash-lite --max-steps 100 --mode native --reasoning-effort medium 2>&1 | stdbuf -oL tee /logs/agent/ollie.jsonl
+Running command: export NVM_DIR="$HOME/.nvm" && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | env -u NODE_VERSION bash && . "$NVM_DIR/nvm.sh" || true && command -v nvm &>/dev/null || { echo 'Error: NVM failed to load' >&2; exit 1; } && nvm install 22 && nvm alias default 22 && npm -v && npm install -g @getollie/cli@latest && ollie --version
+Command outputs captured
+Running command: mkdir -p /logs/agent
+Command outputs captured
+Running command: [ -f "$HOME/.nvm"/nvm.sh ] && . "$HOME/.nvm"/nvm.sh; cat /logs/agent/prompt.txt | ollie --ndjson --model gemini-3.1-flash-lite --max-steps 100 --mode native --reasoning-effort medium 2>&1 | stdbuf -oL tee /logs/agent/ollie.jsonl
+Collecting main service artifacts
+Command outputs captured
+Running command: mkdir -p /logs/agent
+Collecting main service artifacts
+Command outputs captured
+Running command: [ -f "$HOME/.nvm"/nvm.sh ] && . "$HOME/.nvm"/nvm.sh; cat /logs/agent/prompt.txt | ollie --ndjson --model gemini-3.1-flash-lite --max-steps 100 --mode native --reasoning-effort medium 2>&1 | stdbuf -oL tee /logs/agent/ollie.jsonl
+Command outputs captured
+Running command: mkdir -p /logs/agent
+Command outputs captured
+Running command: [ -f "$HOME/.nvm"/nvm.sh ] && . "$HOME/.nvm"/nvm.sh; cat /logs/agent/prompt.txt | ollie --ndjson --model gemini-3.1-flash-lite --max-steps 100 --mode native --reasoning-effort medium 2>&1 | stdbuf -oL tee /logs/agent/ollie.jsonl
+Selected strategy: _DaytonaDirect
+Building environment from /home/kw/code/zealt/ollie-dataset/dataset/eval/tasks/godot/godot_resource_preloader_scene_loader/environment/Dockerfile
+Selected strategy: _DaytonaDirect
+Building environment from /home/kw/code/zealt/ollie-dataset/dataset/eval/tasks/godot/godot_save_load_resource_serialization/environment/Dockerfile
+Command outputs captured
+Running command: mkdir -p /logs/agent
+Running command: export NVM_DIR="$HOME/.nvm" && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | env -u NODE_VERSION bash && . "$NVM_DIR/nvm.sh" || true && command -v nvm &>/dev/null || { echo 'Error: NVM failed to load' >&2; exit 1; } && nvm install 22 && nvm alias default 22 && npm -v && npm install -g @getollie/cli@latest && ollie --version
+Command outputs captured
+Running command: export NVM_DIR="$HOME/.nvm" && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | env -u NODE_VERSION bash && . "$NVM_DIR/nvm.sh" || true && command -v nvm &>/dev/null || { echo 'Error: NVM failed to load' >&2; exit 1; } && nvm install 22 && nvm alias default 22 && npm -v && npm install -g @getollie/cli@latest && ollie --version
+Running command: [ -f "$HOME/.nvm"/nvm.sh ] && . "$HOME/.nvm"/nvm.sh; cat /logs/agent/prompt.txt | ollie --ndjson --model gemini-3.1-flash-lite --max-steps 100 --mode native --reasoning-effort medium 2>&1 | stdbuf -oL tee /logs/agent/ollie.jsonl
+Collecting main service artifacts
+Command outputs captured
+Running command: mkdir -p /logs/agent
+Command outputs captured
+Command outputs captured
+Running command: [ -f "$HOME/.nvm"/nvm.sh ] && . "$HOME/.nvm"/nvm.sh; cat /logs/agent/prompt.txt | ollie --ndjson --model gemini-3.1-flash-lite --max-steps 100 --mode native --reasoning-effort medium 2>&1 | stdbuf -oL tee /logs/agent/ollie.jsonl
+Running command: mkdir -p /logs/agent
+Selected strategy: _DaytonaDirect
+Building environment from /home/kw/code/zealt/ollie-dataset/dataset/eval/tasks/godot/godot_tilemap_procedural_dungeon/environment/Dockerfile
+Command outputs captured
+Running command: [ -f "$HOME/.nvm"/nvm.sh ] && . "$HOME/.nvm"/nvm.sh; cat /logs/agent/prompt.txt | ollie --ndjson --model gemini-3.1-flash-lite --max-steps 100 --mode native --reasoning-effort medium 2>&1 | stdbuf -oL tee /logs/agent/ollie.jsonl
+Running command: export NVM_DIR="$HOME/.nvm" && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | env -u NODE_VERSION bash && . "$NVM_DIR/nvm.sh" || true && command -v nvm &>/dev/null || { echo 'Error: NVM failed to load' >&2; exit 1; } && nvm install 22 && nvm alias default 22 && npm -v && npm install -g @getollie/cli@latest && ollie --version
+Collecting main service artifacts
+Selected strategy: _DaytonaDirect
+Building environment from /home/kw/code/zealt/ollie-dataset/dataset/eval/tasks/godot/godot_tween_chain_sequence_animation/environment/Dockerfile
+Running command: export NVM_DIR="$HOME/.nvm" && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | env -u NODE_VERSION bash && . "$NVM_DIR/nvm.sh" || true && command -v nvm &>/dev/null || { echo 'Error: NVM failed to load' >&2; exit 1; } && nvm install 22 && nvm alias default 22 && npm -v && npm install -g @getollie/cli@latest && ollie --version
+Command outputs captured
+Running command: mkdir -p /logs/agent
+Command outputs captured
+Running command: [ -f "$HOME/.nvm"/nvm.sh ] && . "$HOME/.nvm"/nvm.sh; cat /logs/agent/prompt.txt | ollie --ndjson --model gemini-3.1-flash-lite --max-steps 100 --mode native --reasoning-effort medium 2>&1 | stdbuf -oL tee /logs/agent/ollie.jsonl
+Command outputs captured
+Running command: mkdir -p /logs/agent
+Command outputs captured
+Running command: [ -f "$HOME/.nvm"/nvm.sh ] && . "$HOME/.nvm"/nvm.sh; cat /logs/agent/prompt.txt | ollie --ndjson --model gemini-3.1-flash-lite --max-steps 100 --mode native --reasoning-effort medium 2>&1 | stdbuf -oL tee /logs/agent/ollie.jsonl
+Collecting main service artifacts
+Collecting main service artifacts
+Selected strategy: _DaytonaDirect
+Building environment from /home/kw/code/zealt/ollie-dataset/dataset/eval/tasks/godot/godot_viewport_render_target_camera/environment/Dockerfile
+Running command: export NVM_DIR="$HOME/.nvm" && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | env -u NODE_VERSION bash && . "$NVM_DIR/nvm.sh" || true && command -v nvm &>/dev/null || { echo 'Error: NVM failed to load' >&2; exit 1; } && nvm install 22 && nvm alias default 22 && npm -v && npm install -g @getollie/cli@latest && ollie --version
+Command outputs captured
+Running command: mkdir -p /logs/agent
+Command outputs captured
+Running command: [ -f "$HOME/.nvm"/nvm.sh ] && . "$HOME/.nvm"/nvm.sh; cat /logs/agent/prompt.txt | ollie --ndjson --model gemini-3.1-flash-lite --max-steps 100 --mode native --reasoning-effort medium 2>&1 | stdbuf -oL tee /logs/agent/ollie.jsonl
+Collecting main service artifacts
+Running command: export NVM_DIR="$HOME/.nvm" && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | env -u NODE_VERSION bash && . "$NVM_DIR/nvm.sh" || true && command -v nvm &>/dev/null || { echo 'Error: NVM failed to load' >&2; exit 1; } && nvm install 22 && nvm alias default 22 && npm -v && npm install -g @getollie/cli@latest && ollie --version
+Command outputs captured
+Running command: mkdir -p /logs/agent
+Command outputs captured
+Running command: [ -f "$HOME/.nvm"/nvm.sh ] && . "$HOME/.nvm"/nvm.sh; cat /logs/agent/prompt.txt | ollie --ndjson --model gemini-3.1-flash-lite --max-steps 100 --mode native --reasoning-effort medium 2>&1 | stdbuf -oL tee /logs/agent/ollie.jsonl
+Collecting main service artifacts
+Collecting main service artifacts
+Collecting main service artifacts
+Collecting main service artifacts
+Collecting main service artifacts
+Collecting main service artifacts
+Collecting main service artifacts

@@ -1,0 +1,77 @@
+{
+    "reportFormat": "CTRF",
+    "specVersion": "0.0.0",
+    "timestamp": "2026-09-16T10:34:05.736280+00:00",
+    "generatedBy": "pytest",
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "7.4.4"
+        },
+        "summary": {
+            "tests": 5,
+            "passed": 4,
+            "failed": 1,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1789554832748,
+            "stop": 1789554845736
+        },
+        "environment": {
+            "buildName": "Pytest JSON CTRF Report",
+            "buildNumber": "000",
+            "buildUrl": "https://ctrf.io"
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_result_exists_and_parses",
+                "status": "passed",
+                "duration": 4312,
+                "start": 1789554832785,
+                "stop": 1789554837097,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_schema",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789554837097,
+                "stop": 1789554837098,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_matches_reference",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 4329,
+                "start": 1789554837098,
+                "stop": 1789554841427,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "solution_result = {'physics_ticks_per_second': 60, 'samples': [{'position': [25.5291328430176, 0.681640148162842, 0], 'step': 40, 'veloc...25.9835777282715, 17.0651016235352], 'step': 240, 'velocity': [36.2339630126953, 4.75183629989624, 9.96596527099609]}]}\nreference_result = {'physics_ticks_per_second': 60, 'samples': [{'position': [25.7563400268555, 0.681640148162842, 0], 'step': 40, 'veloc...26.0153350830078, 16.6029472351074], 'step': 240, 'velocity': [40.7999610900879, 7.12855005264282, 7.89696884155273]}]}\n\n    def test_matches_reference(solution_result: dict, reference_result: dict):\n        sol = _sample_by_step(solution_result)\n        ref = _sample_by_step(reference_result)\n    \n        assert set(ref.keys()) == set(EXPECTED_STEPS), (\n            \"Reference oracle did not produce the expected sample steps; verifier setup error.\"\n        )\n    \n        for step in EXPECTED_STEPS:\n            assert step in sol, f\"Missing sample for physics step {step} in the solution output.\"\n            for field in (\"position\", \"velocity\"):\n                got = sol[step][field]\n                expected = ref[step][field]\n                for axis, (g, e) in zip(\"xyz\", zip(got, expected)):\n>                   assert abs(float(g) - float(e)) <= POS_VEL_TOL, (\n                        f\"{field} {axis} mismatch at step {step}: got {g}, expected {e} \"\n                        f\"(tolerance {POS_VEL_TOL}). The layered gravity fields are not \"\n                        f\"configured exactly as specified.\"\n                    )\nE                   AssertionError: position x mismatch at step 40: got 25.5291328430176, expected 25.7563400268555 (tolerance 0.001). The layered gravity fields are not configured exactly as specified.\nE                   assert 0.22720718383790128 <= 0.001\nE                    +  where 0.22720718383790128 = abs((25.5291328430176 - 25.7563400268555))\nE                    +    where 25.5291328430176 = float(25.5291328430176)\nE                    +    and   25.7563400268555 = float(25.7563400268555)\n\ntests/test_final_state.py:123: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_determinism",
+                "status": "passed",
+                "duration": 4307,
+                "start": 1789554841427,
+                "stop": 1789554845734,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_fields_had_effect",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789554845734,
+                "stop": 1789554845735,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

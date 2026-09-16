@@ -1,0 +1,85 @@
+{
+    "id": "3cbde49f-6bdf-4712-9d2f-71ed0f1b7192",
+    "started_at": "2026-09-16T17:18:32.450702",
+    "updated_at": "2026-09-16T18:56:53.357570",
+    "finished_at": "2026-09-16T18:56:53.357570",
+    "n_total_trials": 34,
+    "stats": {
+        "n_completed_trials": 34,
+        "n_errored_trials": 8,
+        "n_running_trials": 0,
+        "n_pending_trials": 0,
+        "n_cancelled_trials": 0,
+        "n_retries": 0,
+        "evals": {
+            "ollie__gemini-3.1-flash-lite-sft-20260915-235544@2__ds-bench": {
+                "n_trials": 34,
+                "n_errors": 8,
+                "metrics": [
+                    {
+                        "mean": 0.14705882352941177
+                    }
+                ],
+                "pass_at_k": {},
+                "reward_stats": {
+                    "reward": {
+                        "0.0": [
+                            "godot_dialog_branching_system__yW8CWKQ",
+                            "ash_custom_expression_operators__Qfj8tty",
+                            "godot_ecs_archetype_framework__nHegxdG",
+                            "ash_custom_type_money_ledger__tK8rX74",
+                            "ash_notifier_transactional_outbo__JSyg6sE",
+                            "ash_soft_delete_archive_cascade__vjJCuqM",
+                            "godot_tilemap_procedural_dungeon__eJuexoa",
+                            "godot_animation_tree_blend_locom__Qg4Wbsc",
+                            "godot_coin_collector_inventory_h__sk4mE5d",
+                            "godot_gdextension_cpp_vector_mat__PzGUhAL",
+                            "godot_viewport_render_target_cam__aeZF9oA",
+                            "ash_keyset_pagination_feed_api__AMDjsRy",
+                            "godot_tween_chain_sequence_anima__ofLqGGF",
+                            "ash_postgres_migration_generatio__LfCcEke",
+                            "godot_coroutine_scheduler__goEhJae",
+                            "ash_policy_bypass_rbac_hierarchy__prKcSFG",
+                            "godot_multiplayer_synchronizer_l__KPvYKbW",
+                            "godot_input_remap_action_set__3mqc3rS",
+                            "ash_phoenix_form_nested_resource__3po5UTA",
+                            "godot_resource_preloader_scene_l__3tUrksd",
+                            "ash_manual_relationship_read_act__9j9tLUo",
+                            "ash_event_sourcing_projection_re__kdyFhJQ",
+                            "godot_compute_shader_prefix_sum__F5WRSfU",
+                            "godot_area_gravity_fields__G55wEKY",
+                            "ash_cart_pricing_calculation_eng__gTL3AbN",
+                            "godot_enemy_stats_resource_spawn__tJBcPdK",
+                            "ash_json_api_resource_endpoints__N7d8hUr",
+                            "godot_area3d_layered_gravity_fie__hbsV2mf",
+                            "ash_reactor_workflow_compensatio__GviGw65"
+                        ],
+                        "1.0": [
+                            "godot_navigation_agent_2d_dynami__TaxYkPq",
+                            "godot_delaunay_navmesh_triangula__6qm2LpG",
+                            "godot_gridmap_meshlibrary_builde__cCMUZpj",
+                            "godot_multimesh_custom_instance__trKf9Dd",
+                            "godot_save_load_resource_seriali__c3Jw6PU"
+                        ]
+                    }
+                },
+                "exception_stats": {
+                    "NonZeroAgentExitCodeError": [
+                        "ash_custom_type_money_ledger__tK8rX74",
+                        "ash_notifier_transactional_outbo__JSyg6sE",
+                        "ash_soft_delete_archive_cascade__vjJCuqM",
+                        "godot_coroutine_scheduler__goEhJae",
+                        "godot_multiplayer_synchronizer_l__KPvYKbW",
+                        "ash_manual_relationship_read_act__9j9tLUo",
+                        "godot_area_gravity_fields__G55wEKY",
+                        "ash_cart_pricing_calculation_eng__gTL3AbN"
+                    ]
+                }
+            }
+        },
+        "n_input_tokens": 16757662,
+        "n_cache_tokens": 13329200,
+        "n_output_tokens": 257563,
+        "cost_usd": null
+    }
+}

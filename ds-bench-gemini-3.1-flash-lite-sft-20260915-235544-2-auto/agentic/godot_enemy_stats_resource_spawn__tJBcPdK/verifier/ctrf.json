@@ -1,0 +1,62 @@
+{
+    "reportFormat": "CTRF",
+    "specVersion": "0.0.0",
+    "timestamp": "2026-09-16T10:10:54.423298+00:00",
+    "generatedBy": "pytest",
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "7.4.4"
+        },
+        "summary": {
+            "tests": 3,
+            "passed": 1,
+            "failed": 2,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1789553443666,
+            "stop": 1789553454423
+        },
+        "environment": {
+            "buildName": "Pytest JSON CTRF Report",
+            "buildNumber": "000",
+            "buildUrl": "https://ctrf.io"
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_verify_log_file_created",
+                "status": "passed",
+                "duration": 10712,
+                "start": 1789553443685,
+                "stop": 1789553454397,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_verify_result_ok",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 20,
+                "start": 1789553454397,
+                "stop": 1789553454417,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "verify_run = {'import': CompletedProcess(args=['godot', '--headless', '--path', '/home/user/myproject', '--import'], returncode=0, ...rce_loader.cpp:283)\\nERROR: Failed to load Spawner.tscn\\n   at: push_error (core/variant/variant_utility.cpp:1092)\\n')}\n\n    def test_verify_result_ok(verify_run):\n        assert os.path.isfile(LOG_FILE), f\"missing log file {LOG_FILE}\"\n        with open(LOG_FILE) as f:\n            content = f.read().strip()\n>       assert content == \"VERIFY_OK\", (\n            f\"Godot verification harness reported failure. Log: {content!r}. \"\n            f\"Godot stdout: {verify_run['run'].stdout!r} stderr: {verify_run['run'].stderr!r}\"\n        )\nE       AssertionError: Godot verification harness reported failure. Log: 'VERIFY_FAIL: Failed to load Spawner.tscn'. Godot stdout: 'Godot Engine v4.3.stable.official.77dcf97d8 - https://godotengine.org\\n\\n' stderr: 'ERROR: Parse Error: Parse error. [Resource file res://scenes/Spawner.tscn:7]\\n   at: _parse_node_tag (scene/resources/resource_format_text.cpp:289)\\nERROR: Failed loading resource: res://scenes/Spawner.tscn. Make sure resources have been imported by opening the project in the editor at least once.\\n   at: _load (core/io/resource_loader.cpp:283)\\nERROR: Failed to load Spawner.tscn\\n   at: push_error (core/variant/variant_utility.cpp:1092)\\n'\nE       assert 'VERIFY_FAIL:... Spawner.tscn' == 'VERIFY_OK'\nE         - VERIFY_OK\nE         + VERIFY_FAIL: Failed to load Spawner.tscn\n\ntests/test_final_state.py:255: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_godot_harness_exit_code",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 5,
+                "start": 1789553454417,
+                "stop": 1789553454422,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "verify_run = {'import': CompletedProcess(args=['godot', '--headless', '--path', '/home/user/myproject', '--import'], returncode=0, ...rce_loader.cpp:283)\\nERROR: Failed to load Spawner.tscn\\n   at: push_error (core/variant/variant_utility.cpp:1092)\\n')}\n\n    def test_godot_harness_exit_code(verify_run):\n>       assert verify_run[\"run\"].returncode == 0, (\n            f\"godot exited with code {verify_run['run'].returncode}. \"\n            f\"stdout: {verify_run['run'].stdout!r} stderr: {verify_run['run'].stderr!r}\"\n        )\nE       AssertionError: godot exited with code 1. stdout: 'Godot Engine v4.3.stable.official.77dcf97d8 - https://godotengine.org\\n\\n' stderr: 'ERROR: Parse Error: Parse error. [Resource file res://scenes/Spawner.tscn:7]\\n   at: _parse_node_tag (scene/resources/resource_format_text.cpp:289)\\nERROR: Failed loading resource: res://scenes/Spawner.tscn. Make sure resources have been imported by opening the project in the editor at least once.\\n   at: _load (core/io/resource_loader.cpp:283)\\nERROR: Failed to load Spawner.tscn\\n   at: push_error (core/variant/variant_utility.cpp:1092)\\n'\nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['godot', '--headless', '--path', '/home/user/myproject', '-s', 'res://verify_harness.gd'], retu...urce_loader.cpp:283)\\nERROR: Failed to load Spawner.tscn\\n   at: push_error (core/variant/variant_utility.cpp:1092)\\n').returncode\n\ntests/test_final_state.py:262: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            }
+        ]
+    }
+}

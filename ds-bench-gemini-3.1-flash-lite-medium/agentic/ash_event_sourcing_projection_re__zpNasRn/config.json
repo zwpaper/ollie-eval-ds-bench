@@ -1,0 +1,20 @@
+{
+    "task": {
+        "path": "/home/kw/code/zealt/ollie-dataset/dataset/eval/tasks/ash/ash_event_sourcing_projection_rebuild",
+        "source": "ash"
+    },
+    "trial_name": "ash_event_sourcing_projection_re__zpNasRn",
+    "trials_dir": "/home/kw/code/zealt/ollie-dataset/dataset/eval/results/ash-gemini-3.1-flash-lite-20260911T191018/agentic",
+    "timeout_multiplier": 10.0,
+    "agent": {
+        "name": "ollie.agent:OllieAgent",
+        "model_name": "gemini-3.1-flash-lite",
+        "kwargs": {
+            "max_steps": 100
+        }
+    },
+    "environment": {
+        "type": "daytona"
+    },
+    "job_id": "05be16e6-3760-438e-a5c6-7e30ddd188de"
+}

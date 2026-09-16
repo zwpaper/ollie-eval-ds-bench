@@ -1,0 +1,39 @@
+{
+    "schema_version": 2,
+    "task": {
+        "name": "godot_coin_collector_inventory_hud",
+        "type": "local",
+        "digest": "sha256:94ea726b03c01b777a026e19cbea469462dc5ab84f4ce39d57b249a30f560e9c",
+        "source": "godot",
+        "path": "/home/kw/code/zealt/ollie-dataset/dataset/eval/tasks/godot/godot_coin_collector_inventory_hud"
+    },
+    "install_only": false,
+    "timeout_multiplier": 10.0,
+    "agent": {
+        "name": "ollie.agent:OllieAgent",
+        "model_name": "gemini-3.1-flash-lite",
+        "skills": [],
+        "resume_trajectory": false,
+        "extra_allowed_hosts": [],
+        "kwargs": {
+            "max_steps": 100
+        },
+        "mcp_servers": []
+    },
+    "bridge_inputs": {},
+    "skills": [],
+    "environment": {
+        "type": "daytona",
+        "force_build": false,
+        "delete": true,
+        "cpu_enforcement_policy": "auto",
+        "memory_enforcement_policy": "auto",
+        "extra_docker_compose": [],
+        "kwargs": {},
+        "extra_allowed_hosts": []
+    },
+    "verifier": {
+        "disable": false,
+        "environment_mode": "shared"
+    }
+}

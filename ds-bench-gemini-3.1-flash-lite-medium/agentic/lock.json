@@ -1,0 +1,847 @@
+{
+    "schema_version": 3,
+    "created_at": "2026-09-11T11:11:28.976418Z",
+    "harbor": {
+        "version": "0.22.0",
+        "is_editable": false
+    },
+    "n_concurrent_trials": 10,
+    "retry": {
+        "max_retries": 0,
+        "exclude_exceptions": [
+            "RewardFileNotFoundError",
+            "RewardFileEmptyError",
+            "VerifierOutputParseError",
+            "ApiUsageLimitError",
+            "AgentSafetyRefusalError",
+            "ModelNotFoundError",
+            "VerifierTimeoutError",
+            "AgentTimeoutError",
+            "AgentAuthenticationError"
+        ],
+        "wait_multiplier": 1.0,
+        "min_wait_sec": 1.0,
+        "max_wait_sec": 60.0
+    },
+    "trials": [
+        {
+            "schema_version": 2,
+            "task": {
+                "name": "godot_animation_tree_blend_locomotion",
+                "type": "local",
+                "digest": "sha256:e9cc6705b5358c20b813b4705f6809b2a136767e312a738e2f523af2a51432f4",
+                "source": "godot",
+                "path": "/home/kw/code/zealt/ollie-dataset/dataset/eval/tasks/godot/godot_animation_tree_blend_locomotion"
+            },
+            "install_only": false,
+            "timeout_multiplier": 10.0,
+            "agent": {
+                "name": "ollie.agent:OllieAgent",
+                "model_name": "gemini-3.1-flash-lite",
+                "skills": [],
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [],
+                "kwargs": {
+                    "max_steps": 100
+                },
+                "mcp_servers": []
+            },
+            "bridge_inputs": {},
+            "skills": [],
+            "environment": {
+                "type": "daytona",
+                "force_build": false,
+                "delete": true,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "disable": false,
+                "environment_mode": "shared"
+            }
+        },
+        {
+            "schema_version": 2,
+            "task": {
+                "name": "godot_area3d_layered_gravity_fields",
+                "type": "local",
+                "digest": "sha256:59399beec177c9c3f4272c2487542eb844714b7a78e91aaa4414e21ba7b97b01",
+                "source": "godot",
+                "path": "/home/kw/code/zealt/ollie-dataset/dataset/eval/tasks/godot/godot_area3d_layered_gravity_fields"
+            },
+            "install_only": false,
+            "timeout_multiplier": 10.0,
+            "agent": {
+                "name": "ollie.agent:OllieAgent",
+                "model_name": "gemini-3.1-flash-lite",
+                "skills": [],
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [],
+                "kwargs": {
+                    "max_steps": 100
+                },
+                "mcp_servers": []
+            },
+            "bridge_inputs": {},
+            "skills": [],
+            "environment": {
+                "type": "daytona",
+                "force_build": false,
+                "delete": true,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "disable": false,
+                "environment_mode": "shared"
+            }
+        },
+        {
+            "schema_version": 2,
+            "task": {
+                "name": "godot_area_gravity_fields",
+                "type": "local",
+                "digest": "sha256:5a36cbd15c371940adc8978ff202c5eb2856f8dcedafb84cab930218ab03922e",
+                "source": "godot",
+                "path": "/home/kw/code/zealt/ollie-dataset/dataset/eval/tasks/godot/godot_area_gravity_fields"
+            },
+            "install_only": false,
+            "timeout_multiplier": 10.0,
+            "agent": {
+                "name": "ollie.agent:OllieAgent",
+                "model_name": "gemini-3.1-flash-lite",
+                "skills": [],
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [],
+                "kwargs": {
+                    "max_steps": 100
+                },
+                "mcp_servers": []
+            },
+            "bridge_inputs": {},
+            "skills": [],
+            "environment": {
+                "type": "daytona",
+                "force_build": false,
+                "delete": true,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "disable": false,
+                "environment_mode": "shared"
+            }
+        },
+        {
+            "schema_version": 2,
+            "task": {
+                "name": "godot_coin_collector_inventory_hud",
+                "type": "local",
+                "digest": "sha256:94ea726b03c01b777a026e19cbea469462dc5ab84f4ce39d57b249a30f560e9c",
+                "source": "godot",
+                "path": "/home/kw/code/zealt/ollie-dataset/dataset/eval/tasks/godot/godot_coin_collector_inventory_hud"
+            },
+            "install_only": false,
+            "timeout_multiplier": 10.0,
+            "agent": {
+                "name": "ollie.agent:OllieAgent",
+                "model_name": "gemini-3.1-flash-lite",
+                "skills": [],
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [],
+                "kwargs": {
+                    "max_steps": 100
+                },
+                "mcp_servers": []
+            },
+            "bridge_inputs": {},
+            "skills": [],
+            "environment": {
+                "type": "daytona",
+                "force_build": false,
+                "delete": true,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "disable": false,
+                "environment_mode": "shared"
+            }
+        },
+        {
+            "schema_version": 2,
+            "task": {
+                "name": "godot_compute_shader_prefix_sum",
+                "type": "local",
+                "digest": "sha256:ca3479e9cb373730f64d0f049496cbaa1ee11db7d02590b1506ae098c5a1d183",
+                "source": "godot",
+                "path": "/home/kw/code/zealt/ollie-dataset/dataset/eval/tasks/godot/godot_compute_shader_prefix_sum"
+            },
+            "install_only": false,
+            "timeout_multiplier": 10.0,
+            "agent": {
+                "name": "ollie.agent:OllieAgent",
+                "model_name": "gemini-3.1-flash-lite",
+                "skills": [],
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [],
+                "kwargs": {
+                    "max_steps": 100
+                },
+                "mcp_servers": []
+            },
+            "bridge_inputs": {},
+            "skills": [],
+            "environment": {
+                "type": "daytona",
+                "force_build": false,
+                "delete": true,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "disable": false,
+                "environment_mode": "shared"
+            }
+        },
+        {
+            "schema_version": 2,
+            "task": {
+                "name": "godot_coroutine_scheduler",
+                "type": "local",
+                "digest": "sha256:d0a92731a79e36db20f3ab6342c95db40521f846fef4902ad531369371277b83",
+                "source": "godot",
+                "path": "/home/kw/code/zealt/ollie-dataset/dataset/eval/tasks/godot/godot_coroutine_scheduler"
+            },
+            "install_only": false,
+            "timeout_multiplier": 10.0,
+            "agent": {
+                "name": "ollie.agent:OllieAgent",
+                "model_name": "gemini-3.1-flash-lite",
+                "skills": [],
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [],
+                "kwargs": {
+                    "max_steps": 100
+                },
+                "mcp_servers": []
+            },
+            "bridge_inputs": {},
+            "skills": [],
+            "environment": {
+                "type": "daytona",
+                "force_build": false,
+                "delete": true,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "disable": false,
+                "environment_mode": "shared"
+            }
+        },
+        {
+            "schema_version": 2,
+            "task": {
+                "name": "godot_delaunay_navmesh_triangulation",
+                "type": "local",
+                "digest": "sha256:8587600a3cda5821eea2330b8376b464219d92b52ae5d91effafc1d7589f6978",
+                "source": "godot",
+                "path": "/home/kw/code/zealt/ollie-dataset/dataset/eval/tasks/godot/godot_delaunay_navmesh_triangulation"
+            },
+            "install_only": false,
+            "timeout_multiplier": 10.0,
+            "agent": {
+                "name": "ollie.agent:OllieAgent",
+                "model_name": "gemini-3.1-flash-lite",
+                "skills": [],
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [],
+                "kwargs": {
+                    "max_steps": 100
+                },
+                "mcp_servers": []
+            },
+            "bridge_inputs": {},
+            "skills": [],
+            "environment": {
+                "type": "daytona",
+                "force_build": false,
+                "delete": true,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "disable": false,
+                "environment_mode": "shared"
+            }
+        },
+        {
+            "schema_version": 2,
+            "task": {
+                "name": "godot_dialog_branching_system",
+                "type": "local",
+                "digest": "sha256:02a143030dfd685f6d74ca669c744889e15553e8b5dee915503b8aa645017d79",
+                "source": "godot",
+                "path": "/home/kw/code/zealt/ollie-dataset/dataset/eval/tasks/godot/godot_dialog_branching_system"
+            },
+            "install_only": false,
+            "timeout_multiplier": 10.0,
+            "agent": {
+                "name": "ollie.agent:OllieAgent",
+                "model_name": "gemini-3.1-flash-lite",
+                "skills": [],
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [],
+                "kwargs": {
+                    "max_steps": 100
+                },
+                "mcp_servers": []
+            },
+            "bridge_inputs": {},
+            "skills": [],
+            "environment": {
+                "type": "daytona",
+                "force_build": false,
+                "delete": true,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "disable": false,
+                "environment_mode": "shared"
+            }
+        },
+        {
+            "schema_version": 2,
+            "task": {
+                "name": "godot_ecs_archetype_framework",
+                "type": "local",
+                "digest": "sha256:2f6e92e961b779081de7083e9ea7755f61544dc8fe468e05790f2c4fad4e88b3",
+                "source": "godot",
+                "path": "/home/kw/code/zealt/ollie-dataset/dataset/eval/tasks/godot/godot_ecs_archetype_framework"
+            },
+            "install_only": false,
+            "timeout_multiplier": 10.0,
+            "agent": {
+                "name": "ollie.agent:OllieAgent",
+                "model_name": "gemini-3.1-flash-lite",
+                "skills": [],
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [],
+                "kwargs": {
+                    "max_steps": 100
+                },
+                "mcp_servers": []
+            },
+            "bridge_inputs": {},
+            "skills": [],
+            "environment": {
+                "type": "daytona",
+                "force_build": false,
+                "delete": true,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "disable": false,
+                "environment_mode": "shared"
+            }
+        },
+        {
+            "schema_version": 2,
+            "task": {
+                "name": "godot_enemy_stats_resource_spawner",
+                "type": "local",
+                "digest": "sha256:30248f34c6203601e355083664427a9ec7f18097d7dc1ede7e94dce55d015552",
+                "source": "godot",
+                "path": "/home/kw/code/zealt/ollie-dataset/dataset/eval/tasks/godot/godot_enemy_stats_resource_spawner"
+            },
+            "install_only": false,
+            "timeout_multiplier": 10.0,
+            "agent": {
+                "name": "ollie.agent:OllieAgent",
+                "model_name": "gemini-3.1-flash-lite",
+                "skills": [],
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [],
+                "kwargs": {
+                    "max_steps": 100
+                },
+                "mcp_servers": []
+            },
+            "bridge_inputs": {},
+            "skills": [],
+            "environment": {
+                "type": "daytona",
+                "force_build": false,
+                "delete": true,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "disable": false,
+                "environment_mode": "shared"
+            }
+        },
+        {
+            "schema_version": 2,
+            "task": {
+                "name": "godot_gdextension_cpp_vector_math",
+                "type": "local",
+                "digest": "sha256:0ed1d917e9b611bc5ec22245ae187586f1ae1ae32e3ce40d708742f0e50fa29e",
+                "source": "godot",
+                "path": "/home/kw/code/zealt/ollie-dataset/dataset/eval/tasks/godot/godot_gdextension_cpp_vector_math"
+            },
+            "install_only": false,
+            "timeout_multiplier": 10.0,
+            "agent": {
+                "name": "ollie.agent:OllieAgent",
+                "model_name": "gemini-3.1-flash-lite",
+                "skills": [],
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [],
+                "kwargs": {
+                    "max_steps": 100
+                },
+                "mcp_servers": []
+            },
+            "bridge_inputs": {},
+            "skills": [],
+            "environment": {
+                "type": "daytona",
+                "force_build": false,
+                "delete": true,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "disable": false,
+                "environment_mode": "shared"
+            }
+        },
+        {
+            "schema_version": 2,
+            "task": {
+                "name": "godot_gridmap_meshlibrary_builder",
+                "type": "local",
+                "digest": "sha256:ff1fee671e70a7ffe1fae922e8c5a9664a4475faabba81fa0c748d5301718df6",
+                "source": "godot",
+                "path": "/home/kw/code/zealt/ollie-dataset/dataset/eval/tasks/godot/godot_gridmap_meshlibrary_builder"
+            },
+            "install_only": false,
+            "timeout_multiplier": 10.0,
+            "agent": {
+                "name": "ollie.agent:OllieAgent",
+                "model_name": "gemini-3.1-flash-lite",
+                "skills": [],
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [],
+                "kwargs": {
+                    "max_steps": 100
+                },
+                "mcp_servers": []
+            },
+            "bridge_inputs": {},
+            "skills": [],
+            "environment": {
+                "type": "daytona",
+                "force_build": false,
+                "delete": true,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "disable": false,
+                "environment_mode": "shared"
+            }
+        },
+        {
+            "schema_version": 2,
+            "task": {
+                "name": "godot_input_remap_action_set",
+                "type": "local",
+                "digest": "sha256:29befeb579be178c43d5a86fff3a757f41e02d5f2251ca26f2a662e079f6d888",
+                "source": "godot",
+                "path": "/home/kw/code/zealt/ollie-dataset/dataset/eval/tasks/godot/godot_input_remap_action_set"
+            },
+            "install_only": false,
+            "timeout_multiplier": 10.0,
+            "agent": {
+                "name": "ollie.agent:OllieAgent",
+                "model_name": "gemini-3.1-flash-lite",
+                "skills": [],
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [],
+                "kwargs": {
+                    "max_steps": 100
+                },
+                "mcp_servers": []
+            },
+            "bridge_inputs": {},
+            "skills": [],
+            "environment": {
+                "type": "daytona",
+                "force_build": false,
+                "delete": true,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "disable": false,
+                "environment_mode": "shared"
+            }
+        },
+        {
+            "schema_version": 2,
+            "task": {
+                "name": "godot_multimesh_custom_instance_data",
+                "type": "local",
+                "digest": "sha256:d32f0d275dce8d0a05ba73c729f57fc1483cd90025664b8c17571803e5f99698",
+                "source": "godot",
+                "path": "/home/kw/code/zealt/ollie-dataset/dataset/eval/tasks/godot/godot_multimesh_custom_instance_data"
+            },
+            "install_only": false,
+            "timeout_multiplier": 10.0,
+            "agent": {
+                "name": "ollie.agent:OllieAgent",
+                "model_name": "gemini-3.1-flash-lite",
+                "skills": [],
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [],
+                "kwargs": {
+                    "max_steps": 100
+                },
+                "mcp_servers": []
+            },
+            "bridge_inputs": {},
+            "skills": [],
+            "environment": {
+                "type": "daytona",
+                "force_build": false,
+                "delete": true,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "disable": false,
+                "environment_mode": "shared"
+            }
+        },
+        {
+            "schema_version": 2,
+            "task": {
+                "name": "godot_multiplayer_synchronizer_lobby",
+                "type": "local",
+                "digest": "sha256:e193b82c85259985e39147e25fd4c73d81f8e5fcd432e6f05dc0cd421e3ef5a3",
+                "source": "godot",
+                "path": "/home/kw/code/zealt/ollie-dataset/dataset/eval/tasks/godot/godot_multiplayer_synchronizer_lobby"
+            },
+            "install_only": false,
+            "timeout_multiplier": 10.0,
+            "agent": {
+                "name": "ollie.agent:OllieAgent",
+                "model_name": "gemini-3.1-flash-lite",
+                "skills": [],
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [],
+                "kwargs": {
+                    "max_steps": 100
+                },
+                "mcp_servers": []
+            },
+            "bridge_inputs": {},
+            "skills": [],
+            "environment": {
+                "type": "daytona",
+                "force_build": false,
+                "delete": true,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "disable": false,
+                "environment_mode": "shared"
+            }
+        },
+        {
+            "schema_version": 2,
+            "task": {
+                "name": "godot_navigation_agent_2d_dynamic_obstacles",
+                "type": "local",
+                "digest": "sha256:04f03a51567b595be8ed4563d6ea0d7798b55efd32363e4858e227b36ee6962e",
+                "source": "godot",
+                "path": "/home/kw/code/zealt/ollie-dataset/dataset/eval/tasks/godot/godot_navigation_agent_2d_dynamic_obstacles"
+            },
+            "install_only": false,
+            "timeout_multiplier": 10.0,
+            "agent": {
+                "name": "ollie.agent:OllieAgent",
+                "model_name": "gemini-3.1-flash-lite",
+                "skills": [],
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [],
+                "kwargs": {
+                    "max_steps": 100
+                },
+                "mcp_servers": []
+            },
+            "bridge_inputs": {},
+            "skills": [],
+            "environment": {
+                "type": "daytona",
+                "force_build": false,
+                "delete": true,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "disable": false,
+                "environment_mode": "shared"
+            }
+        },
+        {
+            "schema_version": 2,
+            "task": {
+                "name": "godot_resource_preloader_scene_loader",
+                "type": "local",
+                "digest": "sha256:9a73d509bf9271b0bcb313c7380d7ed733c804ad4d07f81816d6287fb65fa707",
+                "source": "godot",
+                "path": "/home/kw/code/zealt/ollie-dataset/dataset/eval/tasks/godot/godot_resource_preloader_scene_loader"
+            },
+            "install_only": false,
+            "timeout_multiplier": 10.0,
+            "agent": {
+                "name": "ollie.agent:OllieAgent",
+                "model_name": "gemini-3.1-flash-lite",
+                "skills": [],
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [],
+                "kwargs": {
+                    "max_steps": 100
+                },
+                "mcp_servers": []
+            },
+            "bridge_inputs": {},
+            "skills": [],
+            "environment": {
+                "type": "daytona",
+                "force_build": false,
+                "delete": true,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "disable": false,
+                "environment_mode": "shared"
+            }
+        },
+        {
+            "schema_version": 2,
+            "task": {
+                "name": "godot_save_load_resource_serialization",
+                "type": "local",
+                "digest": "sha256:05b3da890a0214e09c0dd0b7fb01fe244194a329dfd7a5fbddf2ba29f659e4e3",
+                "source": "godot",
+                "path": "/home/kw/code/zealt/ollie-dataset/dataset/eval/tasks/godot/godot_save_load_resource_serialization"
+            },
+            "install_only": false,
+            "timeout_multiplier": 10.0,
+            "agent": {
+                "name": "ollie.agent:OllieAgent",
+                "model_name": "gemini-3.1-flash-lite",
+                "skills": [],
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [],
+                "kwargs": {
+                    "max_steps": 100
+                },
+                "mcp_servers": []
+            },
+            "bridge_inputs": {},
+            "skills": [],
+            "environment": {
+                "type": "daytona",
+                "force_build": false,
+                "delete": true,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "disable": false,
+                "environment_mode": "shared"
+            }
+        },
+        {
+            "schema_version": 2,
+            "task": {
+                "name": "godot_tilemap_procedural_dungeon",
+                "type": "local",
+                "digest": "sha256:0190f3bb7d71c41bdcd3d8897dbf1f14cf4d10cdecd7cb5a572312b53951ee44",
+                "source": "godot",
+                "path": "/home/kw/code/zealt/ollie-dataset/dataset/eval/tasks/godot/godot_tilemap_procedural_dungeon"
+            },
+            "install_only": false,
+            "timeout_multiplier": 10.0,
+            "agent": {
+                "name": "ollie.agent:OllieAgent",
+                "model_name": "gemini-3.1-flash-lite",
+                "skills": [],
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [],
+                "kwargs": {
+                    "max_steps": 100
+                },
+                "mcp_servers": []
+            },
+            "bridge_inputs": {},
+            "skills": [],
+            "environment": {
+                "type": "daytona",
+                "force_build": false,
+                "delete": true,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "disable": false,
+                "environment_mode": "shared"
+            }
+        },
+        {
+            "schema_version": 2,
+            "task": {
+                "name": "godot_tween_chain_sequence_animation",
+                "type": "local",
+                "digest": "sha256:f4a7620f56685a1dca99ed4330a0d4ea3b42ae6875da2ee53f7f793db754240c",
+                "source": "godot",
+                "path": "/home/kw/code/zealt/ollie-dataset/dataset/eval/tasks/godot/godot_tween_chain_sequence_animation"
+            },
+            "install_only": false,
+            "timeout_multiplier": 10.0,
+            "agent": {
+                "name": "ollie.agent:OllieAgent",
+                "model_name": "gemini-3.1-flash-lite",
+                "skills": [],
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [],
+                "kwargs": {
+                    "max_steps": 100
+                },
+                "mcp_servers": []
+            },
+            "bridge_inputs": {},
+            "skills": [],
+            "environment": {
+                "type": "daytona",
+                "force_build": false,
+                "delete": true,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "disable": false,
+                "environment_mode": "shared"
+            }
+        },
+        {
+            "schema_version": 2,
+            "task": {
+                "name": "godot_viewport_render_target_camera",
+                "type": "local",
+                "digest": "sha256:31fef291bdd403c6b0b2cc2c9581844008739ca9fe8edc4963a602733acdf7c3",
+                "source": "godot",
+                "path": "/home/kw/code/zealt/ollie-dataset/dataset/eval/tasks/godot/godot_viewport_render_target_camera"
+            },
+            "install_only": false,
+            "timeout_multiplier": 10.0,
+            "agent": {
+                "name": "ollie.agent:OllieAgent",
+                "model_name": "gemini-3.1-flash-lite",
+                "skills": [],
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [],
+                "kwargs": {
+                    "max_steps": 100
+                },
+                "mcp_servers": []
+            },
+            "bridge_inputs": {},
+            "skills": [],
+            "environment": {
+                "type": "daytona",
+                "force_build": false,
+                "delete": true,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "disable": false,
+                "environment_mode": "shared"
+            }
+        }
+    ]
+}

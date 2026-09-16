@@ -1,0 +1,131 @@
+{
+    "reportFormat": "CTRF",
+    "specVersion": "0.0.0",
+    "timestamp": "2026-09-16T09:29:19.676770+00:00",
+    "generatedBy": "pytest",
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "7.4.4"
+        },
+        "summary": {
+            "tests": 11,
+            "passed": 10,
+            "failed": 1,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1789550957957,
+            "stop": 1789550959676
+        },
+        "environment": {
+            "buildName": "Pytest JSON CTRF Report",
+            "buildNumber": "000",
+            "buildUrl": "https://ctrf.io"
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_project_godot_exists",
+                "status": "passed",
+                "duration": 3,
+                "start": 1789550957996,
+                "stop": 1789550957999,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_required_files_exist",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789550957999,
+                "stop": 1789550958000,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_autoload_registered_in_project_godot",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789550958001,
+                "stop": 1789550958002,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_player_scene_is_character_body_2d",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789550958002,
+                "stop": 1789550958003,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_coin_scene_is_area2d",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789550958004,
+                "stop": 1789550958005,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_hud_scene_is_canvas_layer",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789550958005,
+                "stop": 1789550958006,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_physics_process_calls_move_and_slide",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789550958006,
+                "stop": 1789550958007,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_coin_handler_uses_inventory_and_queue_free",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789550958008,
+                "stop": 1789550958009,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_project_loads_without_errors",
+                "status": "passed",
+                "duration": 442,
+                "start": 1789550958009,
+                "stop": 1789550958451,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_runtime_harness",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 466,
+                "start": 1789550958452,
+                "stop": 1789550958918,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_runtime_harness():\n        _reset_user_data()\n        result = subprocess.run(\n            [\n                \"godot\",\n                \"--headless\",\n                \"--path\",\n                PROJECT_DIR,\n                \"res://_zealt_tests/test_harness_runtime.tscn\",\n            ],\n            capture_output=True,\n            text=True,\n            timeout=180,\n            env=_godot_env(),\n        )\n        combined = (result.stdout or \"\") + (result.stderr or \"\")\n>       assert result.returncode == 0, (\n            f\"Runtime harness exited with code {result.returncode}:\\n{combined}\"\n        )\nE       AssertionError: Runtime harness exited with code 3:\nE         Godot Engine v4.3.stable.official.77dcf97d8 - https://godotengine.org\nE         \nE         FAIL: Inventory is missing required method: load\nE         \nE       assert 3 == 0\nE        +  where 3 = CompletedProcess(args=['godot', '--headless', '--path', '/home/user/coin_collector', 'res://_zealt_tests/test_harness_....stable.official.77dcf97d8 - https://godotengine.org\\n\\n', stderr='FAIL: Inventory is missing required method: load\\n').returncode\n\ntests/test_final_state.py:213: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_persistence_round_trip",
+                "status": "passed",
+                "duration": 757,
+                "start": 1789550958919,
+                "stop": 1789550959676,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

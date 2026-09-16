@@ -1,0 +1,86 @@
+{
+    "reportFormat": "CTRF",
+    "specVersion": "0.0.0",
+    "timestamp": "2026-09-16T10:56:39.298971+00:00",
+    "generatedBy": "pytest",
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "7.4.4"
+        },
+        "summary": {
+            "tests": 6,
+            "passed": 5,
+            "failed": 1,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1789556191785,
+            "stop": 1789556199298
+        },
+        "environment": {
+            "buildName": "Pytest JSON CTRF Report",
+            "buildNumber": "000",
+            "buildUrl": "https://ctrf.io"
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_project_godot_file_exists",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789556191808,
+                "stop": 1789556191809,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_tileset_file_exists",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789556191809,
+                "stop": 1789556191810,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_dungeon_generator_script_exists",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789556191810,
+                "stop": 1789556191811,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_main_scene_exists",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789556191811,
+                "stop": 1789556191812,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_project_imports_cleanly",
+                "status": "passed",
+                "duration": 7170,
+                "start": 1789556191812,
+                "stop": 1789556198982,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_harness_passes",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 316,
+                "start": 1789556198982,
+                "stop": 1789556199298,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_harness_passes():\n        with open(HARNESS_PATH, \"w\") as f:\n            f.write(HARNESS_SCRIPT)\n    \n        try:\n            result = _run_godot(\n                [\"--path\", PROJECT_DIR, \"--script\", \"res://zealt_harness.gd\"],\n                timeout=240,\n            )\n        finally:\n            try:\n                os.remove(HARNESS_PATH)\n            except OSError:\n                pass\n    \n        combined = (result.stdout or \"\") + \"\\n\" + (result.stderr or \"\")\n>       assert \"ZEALT_RESULT: OK\" in combined, (\n            f\"Dungeon generator harness did not report success.\\n\"\n            f\"exit code: {result.returncode}\\n\"\n            f\"stdout:\\n{result.stdout}\\n\"\n            f\"stderr:\\n{result.stderr}\"\n        )\nE       AssertionError: Dungeon generator harness did not report success.\nE         exit code: 1\nE         stdout:\nE         Godot Engine v4.3.stable.official.77dcf97d8 - https://godotengine.org\nE         \nE         ZEALT_RESULT: FAIL tilesets/dungeon.tres did not load as TileSet\nE         \nE         stderr:\nE         ERROR: Failed loading resource: res://tilesets/tiles.png. Make sure resources have been imported by opening the project in the editor at least once.\nE            at: _load (core/io/resource_loader.cpp:283)\nE         ERROR: Condition \"!int_resources.has(id)\" is true. Returning: ERR_INVALID_PARAMETER\nE            at: _parse_sub_resource (scene/resources/resource_format_text.cpp:119)\nE         ERROR: res://tilesets/dungeon.tres:7 - Parse Error: \nE            at: load (scene/resources/resource_format_text.cpp:717)\nE         ERROR: Failed loading resource: res://tilesets/dungeon.tres. Make sure resources have been imported by opening the project in the editor at least once.\nE            at: _load (core/io/resource_loader.cpp:283)\nE         \nE       assert 'ZEALT_RESULT: OK' in 'Godot Engine v4.3.stable.official.77dcf97d8 - https://godotengine.org\\n\\nZEALT_RESULT: FAIL tilesets/dungeon.tres did...ve been imported by opening the project in the editor at least once.\\n   at: _load (core/io/resource_loader.cpp:283)\\n'\n\ntests/test_final_state.py:190: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            }
+        ]
+    }
+}

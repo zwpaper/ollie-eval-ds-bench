@@ -1,0 +1,1098 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0
+rootdir: /tests
+plugins: json-ctrf-0.5.3
+collected 42 items
+
+../tests/test_final_state.py ..FFF.F....FFFF...F......FF.F.FFFFFF.F.FFF  [100%]
+
+=================================== FAILURES ===================================
+___________ test_t01_feed_action_declares_keyset_pagination_contract ___________
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}
+
+    def test_t01_feed_action_declares_keyset_pagination_contract(suite: Dict[str, Any]) -> None:
+>       _scenario(suite, "T01")
+
+/tests/test_final_state.py:844: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}
+scenario_id = 'T01'
+
+    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:
+        results = suite["results"]
+        if not results:
+            pytest.fail(
+                "The ExUnit contract suite produced no results at all, which normally means "
+                "the project failed to compile or the script crashed before running.\n"
+                + _diagnostics(suite)
+            )
+    
+        prefix = f"test {scenario_id} "
+        matches = [name for name in results if name.startswith(prefix)]
+        assert matches, (
+            f"Scenario {scenario_id} did not run. Known scenarios: {sorted(results)}\n"
+            + _diagnostics(suite)
+        )
+    
+        status, detail = results[matches[0]]
+>       assert status == "pass", f"Scenario {scenario_id} ({matches[0]}) failed:\n{detail}"
+E       AssertionError: Scenario T01 (test T01 the :feed action declares the required keyset pagination contract) failed:
+E           1) test T01 the :feed action declares the required keyset pagination contract (FeedPaginationTest)
+E              /tmp/harbor_feed_pagination_suite.exs:149
+E              Assertion with == failed
+E              code:  assert p.default_limit == 5
+E              left:  nil
+E              right: 5
+E              stacktrace:
+E                /tmp/harbor_feed_pagination_suite.exs:154: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+/tests/test_final_state.py:827: AssertionError
+________ test_t02_other_feed_actions_declare_their_pagination_contracts ________
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}
+
+    def test_t02_other_feed_actions_declare_their_pagination_contracts(suite: Dict[str, Any]) -> None:
+>       _scenario(suite, "T02")
+
+/tests/test_final_state.py:848: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}
+scenario_id = 'T02'
+
+    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:
+        results = suite["results"]
+        if not results:
+            pytest.fail(
+                "The ExUnit contract suite produced no results at all, which normally means "
+                "the project failed to compile or the script crashed before running.\n"
+                + _diagnostics(suite)
+            )
+    
+        prefix = f"test {scenario_id} "
+        matches = [name for name in results if name.startswith(prefix)]
+        assert matches, (
+            f"Scenario {scenario_id} did not run. Known scenarios: {sorted(results)}\n"
+            + _diagnostics(suite)
+        )
+    
+        status, detail = results[matches[0]]
+>       assert status == "pass", f"Scenario {scenario_id} ({matches[0]}) failed:\n{detail}"
+E       AssertionError: Scenario T02 (test T02 the remaining feed actions declare their own pagination contracts) failed:
+E           1) test T02 the remaining feed actions declare their own pagination contracts (FeedPaginationTest)
+E              /tmp/harbor_feed_pagination_suite.exs:159
+E              Assertion with == failed
+E              code:  assert offset.default_limit == 5
+E              left:  nil
+E              right: 5
+E              stacktrace:
+E                /tmp/harbor_feed_pagination_suite.exs:164: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+/tests/test_final_state.py:827: AssertionError
+________________ test_t03_first_keyset_page_struct_and_metadata ________________
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}
+
+    def test_t03_first_keyset_page_struct_and_metadata(suite: Dict[str, Any]) -> None:
+>       _scenario(suite, "T03")
+
+/tests/test_final_state.py:852: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}
+scenario_id = 'T03'
+
+    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:
+        results = suite["results"]
+        if not results:
+            pytest.fail(
+                "The ExUnit contract suite produced no results at all, which normally means "
+                "the project failed to compile or the script crashed before running.\n"
+                + _diagnostics(suite)
+            )
+    
+        prefix = f"test {scenario_id} "
+        matches = [name for name in results if name.startswith(prefix)]
+        assert matches, (
+            f"Scenario {scenario_id} did not run. Known scenarios: {sorted(results)}\n"
+            + _diagnostics(suite)
+        )
+    
+        status, detail = results[matches[0]]
+>       assert status == "pass", f"Scenario {scenario_id} ({matches[0]}) failed:\n{detail}"
+E       AssertionError: Scenario T03 (test T03 the first keyset page has the documented struct and metadata) failed:
+E           1) test T03 the first keyset page has the documented struct and metadata (FeedPaginationTest)
+E              /tmp/harbor_feed_pagination_suite.exs:185
+E              Assertion with == failed
+E              code:  assert page.count == nil
+E              left:  40
+E              right: nil
+E              stacktrace:
+E                /tmp/harbor_feed_pagination_suite.exs:190: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+/tests/test_final_state.py:827: AssertionError
+_________________ test_t05_default_limit_applies_when_omitted __________________
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}
+
+    def test_t05_default_limit_applies_when_omitted(suite: Dict[str, Any]) -> None:
+>       _scenario(suite, "T05")
+
+/tests/test_final_state.py:860: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}
+scenario_id = 'T05'
+
+    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:
+        results = suite["results"]
+        if not results:
+            pytest.fail(
+                "The ExUnit contract suite produced no results at all, which normally means "
+                "the project failed to compile or the script crashed before running.\n"
+                + _diagnostics(suite)
+            )
+    
+        prefix = f"test {scenario_id} "
+        matches = [name for name in results if name.startswith(prefix)]
+        assert matches, (
+            f"Scenario {scenario_id} did not run. Known scenarios: {sorted(results)}\n"
+            + _diagnostics(suite)
+        )
+    
+        status, detail = results[matches[0]]
+>       assert status == "pass", f"Scenario {scenario_id} ({matches[0]}) failed:\n{detail}"
+E       AssertionError: Scenario T05 (test T05 the action's default limit applies when the caller omits one) failed:
+E           1) test T05 the action's default limit applies when the caller omits one (FeedPaginationTest)
+E              /tmp/harbor_feed_pagination_suite.exs:202
+E              ** (Ash.Error.Invalid) 
+E              Bread Crumbs:
+E                > Error returned from: Feed.Timeline.Activity.feed
+E         
+E              Invalid Error
+E         
+E              * Limit is required
+E                (ash 3.31.0) lib/ash/actions/read/read.ex:88: Ash.Actions.Read.run/3
+E                (ash 3.31.0) lib/ash.ex:2938: Ash.read/2
+E                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2
+E                /tmp/harbor_feed_pagination_suite.exs:203: FeedPaginationTest."test T05 the action's default limit applies when the caller omits one"/1
+E                (ex_unit 1.18.4) lib/ex_unit/runner.ex:511: ExUnit.Runner.exec_test/2
+E                (stdlib 6.2.2) timer.erl:595: :timer.tc/2
+E                (ex_unit 1.18.4) lib/ex_unit/runner.ex:433: anonymous fn/6 in ExUnit.Runner.spawn_test_monitor/4
+E              code: page = timeline().feed!(page: [count: true])
+E              stacktrace:
+E                (ash 3.31.0) lib/ash/actions/read/read.ex:88: Ash.Actions.Read.run/3
+E                (ash 3.31.0) lib/ash.ex:2938: Ash.read/2
+E                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2
+E                /tmp/harbor_feed_pagination_suite.exs:203: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+/tests/test_final_state.py:827: AssertionError
+_______ test_t10_offset_feed_reports_offset_limit_more_and_default_count _______
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}
+
+    def test_t10_offset_feed_reports_offset_limit_more_and_default_count(suite: Dict[str, Any]) -> None:
+>       _scenario(suite, "T10")
+
+/tests/test_final_state.py:880: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}
+scenario_id = 'T10'
+
+    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:
+        results = suite["results"]
+        if not results:
+            pytest.fail(
+                "The ExUnit contract suite produced no results at all, which normally means "
+                "the project failed to compile or the script crashed before running.\n"
+                + _diagnostics(suite)
+            )
+    
+        prefix = f"test {scenario_id} "
+        matches = [name for name in results if name.startswith(prefix)]
+        assert matches, (
+            f"Scenario {scenario_id} did not run. Known scenarios: {sorted(results)}\n"
+            + _diagnostics(suite)
+        )
+    
+        status, detail = results[matches[0]]
+>       assert status == "pass", f"Scenario {scenario_id} ({matches[0]}) failed:\n{detail}"
+E       AssertionError: Scenario T10 (test T10 the offset feed reports offset, limit, more? and a default count) failed:
+E           1) test T10 the offset feed reports offset, limit, more? and a default count (FeedPaginationTest)
+E              /tmp/harbor_feed_pagination_suite.exs:270
+E              Assertion with == failed
+E              code:  assert page.count == 40
+E              left:  nil
+E              right: 40
+E              stacktrace:
+E                /tmp/harbor_feed_pagination_suite.exs:278: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+/tests/test_final_state.py:827: AssertionError
+____________ test_t11_ash_page_seeks_offset_page_by_last_and_number ____________
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}
+
+    def test_t11_ash_page_seeks_offset_page_by_last_and_number(suite: Dict[str, Any]) -> None:
+>       _scenario(suite, "T11")
+
+/tests/test_final_state.py:884: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}
+scenario_id = 'T11'
+
+    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:
+        results = suite["results"]
+        if not results:
+            pytest.fail(
+                "The ExUnit contract suite produced no results at all, which normally means "
+                "the project failed to compile or the script crashed before running.\n"
+                + _diagnostics(suite)
+            )
+    
+        prefix = f"test {scenario_id} "
+        matches = [name for name in results if name.startswith(prefix)]
+        assert matches, (
+            f"Scenario {scenario_id} did not run. Known scenarios: {sorted(results)}\n"
+            + _diagnostics(suite)
+        )
+    
+        status, detail = results[matches[0]]
+>       assert status == "pass", f"Scenario {scenario_id} ({matches[0]}) failed:\n{detail}"
+E       AssertionError: Scenario T11 (test T11 Ash.page/2 seeks an offset page by :last and by page number) failed:
+E           1) test T11 Ash.page/2 seeks an offset page by :last and by page number (FeedPaginationTest)
+E              /tmp/harbor_feed_pagination_suite.exs:284
+E              match (=) failed
+E              code:  assert {:ok, last} = Ash.page(page, :last)
+E              left:  {:ok, last}
+E              right: {:error, "Cannot fetch last page without counting"}
+E              stacktrace:
+E                /tmp/harbor_feed_pagination_suite.exs:287: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+/tests/test_final_state.py:827: AssertionError
+_________________ test_t12_max_page_size_caps_over_large_limit _________________
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}
+
+    def test_t12_max_page_size_caps_over_large_limit(suite: Dict[str, Any]) -> None:
+>       _scenario(suite, "T12")
+
+/tests/test_final_state.py:888: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}
+scenario_id = 'T12'
+
+    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:
+        results = suite["results"]
+        if not results:
+            pytest.fail(
+                "The ExUnit contract suite produced no results at all, which normally means "
+                "the project failed to compile or the script crashed before running.\n"
+                + _diagnostics(suite)
+            )
+    
+        prefix = f"test {scenario_id} "
+        matches = [name for name in results if name.startswith(prefix)]
+        assert matches, (
+            f"Scenario {scenario_id} did not run. Known scenarios: {sorted(results)}\n"
+            + _diagnostics(suite)
+        )
+    
+        status, detail = results[matches[0]]
+>       assert status == "pass", f"Scenario {scenario_id} ({matches[0]}) failed:\n{detail}"
+E       AssertionError: Scenario T12 (test T12 the maximum page size caps an over-large limit on :feed) failed:
+E           1) test T12 the maximum page size caps an over-large limit on :feed (FeedPaginationTest)
+E              /tmp/harbor_feed_pagination_suite.exs:295
+E              Assertion with == failed
+E              code:  assert length(page.results) == 26
+E              left:  40
+E              right: 26
+E              stacktrace:
+E                /tmp/harbor_feed_pagination_suite.exs:298: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+/tests/test_final_state.py:827: AssertionError
+__________ test_t13_author_feed_filters_and_caps_at_own_max_page_size __________
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}
+
+    def test_t13_author_feed_filters_and_caps_at_own_max_page_size(suite: Dict[str, Any]) -> None:
+>       _scenario(suite, "T13")
+
+/tests/test_final_state.py:892: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}
+scenario_id = 'T13'
+
+    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:
+        results = suite["results"]
+        if not results:
+            pytest.fail(
+                "The ExUnit contract suite produced no results at all, which normally means "
+                "the project failed to compile or the script crashed before running.\n"
+                + _diagnostics(suite)
+            )
+    
+        prefix = f"test {scenario_id} "
+        matches = [name for name in results if name.startswith(prefix)]
+        assert matches, (
+            f"Scenario {scenario_id} did not run. Known scenarios: {sorted(results)}\n"
+            + _diagnostics(suite)
+        )
+    
+        status, detail = results[matches[0]]
+>       assert status == "pass", f"Scenario {scenario_id} ({matches[0]}) failed:\n{detail}"
+E       AssertionError: Scenario T13 (test T13 :author_feed filters by its argument and caps at its own maximum page size) failed:
+E           1) test T13 :author_feed filters by its argument and caps at its own maximum page size (FeedPaginationTest)
+E              /tmp/harbor_feed_pagination_suite.exs:304
+E              ** (ArgumentError) Expected `params` to be a map or a list of maps.
+E              Got:  "u_ada"
+E         
+E              code: assert length(timeline().author_feed!("u_ada", page: [limit: 50]).results) == 11
+E              stacktrace:
+E                (ash 3.31.0) lib/ash/code_interface.ex:1909: Ash.CodeInterface.merge_params/2
+E                (ash 3.31.0) lib/ash/code_interface.ex:2023: Ash.CodeInterface.resolve_params_and_opts/16
+E                (feedapi 0.1.0) deps/ash/lib/ash/code_interface.ex:732: Feed.Timeline.author_feed!/2
+E                /tmp/harbor_feed_pagination_suite.exs:305: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+/tests/test_final_state.py:827: AssertionError
+_________ test_t17_dual_mode_action_is_optional_and_switches_page_type _________
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}
+
+    def test_t17_dual_mode_action_is_optional_and_switches_page_type(suite: Dict[str, Any]) -> None:
+>       _scenario(suite, "T17")
+
+/tests/test_final_state.py:908: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}
+scenario_id = 'T17'
+
+    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:
+        results = suite["results"]
+        if not results:
+            pytest.fail(
+                "The ExUnit contract suite produced no results at all, which normally means "
+                "the project failed to compile or the script crashed before running.\n"
+                + _diagnostics(suite)
+            )
+    
+        prefix = f"test {scenario_id} "
+        matches = [name for name in results if name.startswith(prefix)]
+        assert matches, (
+            f"Scenario {scenario_id} did not run. Known scenarios: {sorted(results)}\n"
+            + _diagnostics(suite)
+        )
+    
+        status, detail = results[matches[0]]
+>       assert status == "pass", f"Scenario {scenario_id} ({matches[0]}) failed:\n{detail}"
+E       AssertionError: Scenario T17 (test T17 the dual-mode action is optional and switches page type on demand) failed:
+E           1) test T17 the dual-mode action is optional and switches page type on demand (FeedPaginationTest)
+E              /tmp/harbor_feed_pagination_suite.exs:338
+E              ** (Ash.Error.Invalid) 
+E              Bread Crumbs:
+E                > Error returned from: Feed.Timeline.Activity.flexible_feed
+E         
+E              Invalid Error
+E         
+E              * Pagination is required
+E                (ash 3.31.0) lib/ash/actions/read/read.ex:88: Ash.Actions.Read.run/3
+E                (ash 3.31.0) lib/ash.ex:2938: Ash.read/2
+E                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2
+E                /tmp/harbor_feed_pagination_suite.exs:339: FeedPaginationTest."test T17 the dual-mode action is optional and switches page type on demand"/1
+E                (ex_unit 1.18.4) lib/ex_unit/runner.ex:511: ExUnit.Runner.exec_test/2
+E                (stdlib 6.2.2) timer.erl:595: :timer.tc/2
+E                (ex_unit 1.18.4) lib/ex_unit/runner.ex:433: anonymous fn/6 in ExUnit.Runner.spawn_test_monitor/4
+E              code: unpaged = timeline().flexible_feed!(page: false)
+E              stacktrace:
+E                (ash 3.31.0) lib/ash/actions/read/read.ex:88: Ash.Actions.Read.run/3
+E                (ash 3.31.0) lib/ash.ex:2938: Ash.read/2
+E                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2
+E                /tmp/harbor_feed_pagination_suite.exs:339: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+/tests/test_final_state.py:827: AssertionError
+________________ test_t24_api_fetch_returns_documented_envelope ________________
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}
+
+    def test_t24_api_fetch_returns_documented_envelope(suite: Dict[str, Any]) -> None:
+>       _scenario(suite, "T24")
+
+/tests/test_final_state.py:936: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}
+scenario_id = 'T24'
+
+    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:
+        results = suite["results"]
+        if not results:
+            pytest.fail(
+                "The ExUnit contract suite produced no results at all, which normally means "
+                "the project failed to compile or the script crashed before running.\n"
+                + _diagnostics(suite)
+            )
+    
+        prefix = f"test {scenario_id} "
+        matches = [name for name in results if name.startswith(prefix)]
+        assert matches, (
+            f"Scenario {scenario_id} did not run. Known scenarios: {sorted(results)}\n"
+            + _diagnostics(suite)
+        )
+    
+        status, detail = results[matches[0]]
+>       assert status == "pass", f"Scenario {scenario_id} ({matches[0]}) failed:\n{detail}"
+E       AssertionError: Scenario T24 (test T24 Feed.Api.fetch/2 returns the documented envelope for the first window) failed:
+E           1) test T24 Feed.Api.fetch/2 returns the documented envelope for the first window (FeedPaginationTest)
+E              /tmp/harbor_feed_pagination_suite.exs:428
+E              Assertion with == failed
+E              code:  assert ids(window) == ["a01", "a02", "a03", "a04", "a05"]
+E              left:  []
+E              right: ["a01", "a02", "a03", "a04", "a05"]
+E              stacktrace:
+E                /tmp/harbor_feed_pagination_suite.exs:434: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+/tests/test_final_state.py:827: AssertionError
+_______________ test_t25_cursor_codec_round_trips_and_is_opaque ________________
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}
+
+    def test_t25_cursor_codec_round_trips_and_is_opaque(suite: Dict[str, Any]) -> None:
+>       _scenario(suite, "T25")
+
+/tests/test_final_state.py:940: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}
+scenario_id = 'T25'
+
+    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:
+        results = suite["results"]
+        if not results:
+            pytest.fail(
+                "The ExUnit contract suite produced no results at all, which normally means "
+                "the project failed to compile or the script crashed before running.\n"
+                + _diagnostics(suite)
+            )
+    
+        prefix = f"test {scenario_id} "
+        matches = [name for name in results if name.startswith(prefix)]
+        assert matches, (
+            f"Scenario {scenario_id} did not run. Known scenarios: {sorted(results)}\n"
+            + _diagnostics(suite)
+        )
+    
+        status, detail = results[matches[0]]
+>       assert status == "pass", f"Scenario {scenario_id} ({matches[0]}) failed:\n{detail}"
+E       AssertionError: Scenario T25 (test T25 the cursor codec round-trips and is deterministic and opaque) failed:
+E           1) test T25 the cursor codec round-trips and is deterministic and opaque (FeedPaginationTest)
+E              /tmp/harbor_feed_pagination_suite.exs:449
+E              Assertion with == failed
+E              code:  assert cursor_mod().decode(encoded) == {:ok, payload}
+E              left:  {:error, :invalid_cursor}
+E              right: {:ok, %{direction: :next, keyset: "AAAA", feed: :feed}}
+E              stacktrace:
+E                (elixir 1.18.4) lib/enum.ex:1714: Enum."-map/2-lists^map/1-1-"/2
+E                /tmp/harbor_feed_pagination_suite.exs:455: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+/tests/test_final_state.py:827: AssertionError
+_________ test_t27_api_forward_cursor_paging_matches_raw_keyset_chain __________
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}
+
+    def test_t27_api_forward_cursor_paging_matches_raw_keyset_chain(suite: Dict[str, Any]) -> None:
+>       _scenario(suite, "T27")
+
+/tests/test_final_state.py:948: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}
+scenario_id = 'T27'
+
+    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:
+        results = suite["results"]
+        if not results:
+            pytest.fail(
+                "The ExUnit contract suite produced no results at all, which normally means "
+                "the project failed to compile or the script crashed before running.\n"
+                + _diagnostics(suite)
+            )
+    
+        prefix = f"test {scenario_id} "
+        matches = [name for name in results if name.startswith(prefix)]
+        assert matches, (
+            f"Scenario {scenario_id} did not run. Known scenarios: {sorted(results)}\n"
+            + _diagnostics(suite)
+        )
+    
+        status, detail = results[matches[0]]
+>       assert status == "pass", f"Scenario {scenario_id} ({matches[0]}) failed:\n{detail}"
+E       AssertionError: Scenario T27 (test T27 forward cursor paging through Feed.Api matches the raw keyset chain) failed:
+E           1) test T27 forward cursor paging through Feed.Api matches the raw keyset chain (FeedPaginationTest)
+E              /tmp/harbor_feed_pagination_suite.exs:494
+E              Assertion with == failed
+E              code:  assert ids(w1) == ["a01", "a02", "a03", "a04", "a05"]
+E              left:  []
+E              right: ["a01", "a02", "a03", "a04", "a05"]
+E              stacktrace:
+E                /tmp/harbor_feed_pagination_suite.exs:499: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+/tests/test_final_state.py:827: AssertionError
+_____________ test_t29_cursor_from_one_feed_is_refused_by_another ______________
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}
+
+    def test_t29_cursor_from_one_feed_is_refused_by_another(suite: Dict[str, Any]) -> None:
+>       _scenario(suite, "T29")
+
+/tests/test_final_state.py:956: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}
+scenario_id = 'T29'
+
+    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:
+        results = suite["results"]
+        if not results:
+            pytest.fail(
+                "The ExUnit contract suite produced no results at all, which normally means "
+                "the project failed to compile or the script crashed before running.\n"
+                + _diagnostics(suite)
+            )
+    
+        prefix = f"test {scenario_id} "
+        matches = [name for name in results if name.startswith(prefix)]
+        assert matches, (
+            f"Scenario {scenario_id} did not run. Known scenarios: {sorted(results)}\n"
+            + _diagnostics(suite)
+        )
+    
+        status, detail = results[matches[0]]
+>       assert status == "pass", f"Scenario {scenario_id} ({matches[0]}) failed:\n{detail}"
+E       AssertionError: Scenario T29 (test T29 a cursor issued for one feed is refused by another) failed:
+E           1) test T29 a cursor issued for one feed is refused by another (FeedPaginationTest)
+E              /tmp/harbor_feed_pagination_suite.exs:524
+E              Assertion with == failed
+E              code:  assert api().fetch(:public_feed, limit: 4, cursor: window.next_cursor) == {:error, :cursor_feed_mismatch}
+E              left:  {:ok, %{total: 0, items: [], has_next: false, has_prev: false, next_cursor: nil, prev_cursor: nil}}
+E              right: {:error, :cursor_feed_mismatch}
+E              stacktrace:
+E                /tmp/harbor_feed_pagination_suite.exs:526: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+/tests/test_final_state.py:827: AssertionError
+___________ test_t30_cursor_failures_surface_as_codec_or_ash_errors ____________
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}
+
+    def test_t30_cursor_failures_surface_as_codec_or_ash_errors(suite: Dict[str, Any]) -> None:
+>       _scenario(suite, "T30")
+
+/tests/test_final_state.py:960: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}
+scenario_id = 'T30'
+
+    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:
+        results = suite["results"]
+        if not results:
+            pytest.fail(
+                "The ExUnit contract suite produced no results at all, which normally means "
+                "the project failed to compile or the script crashed before running.\n"
+                + _diagnostics(suite)
+            )
+    
+        prefix = f"test {scenario_id} "
+        matches = [name for name in results if name.startswith(prefix)]
+        assert matches, (
+            f"Scenario {scenario_id} did not run. Known scenarios: {sorted(results)}\n"
+            + _diagnostics(suite)
+        )
+    
+        status, detail = results[matches[0]]
+>       assert status == "pass", f"Scenario {scenario_id} ({matches[0]}) failed:\n{detail}"
+E       AssertionError: Scenario T30 (test T30 cursor failures surface as codec errors or as Ash's keyset error) failed:
+E           1) test T30 cursor failures surface as codec errors or as Ash's keyset error (FeedPaginationTest)
+E              /tmp/harbor_feed_pagination_suite.exs:530
+E              match (=) failed
+E              code:  assert {:error, %Ash.Error.Invalid{} = error} = api().fetch(:feed, cursor: poisoned)
+E              left:  {:error, %Ash.Error.Invalid{} = error}
+E              right: {:ok, %{total: 0, items: [], has_next: false, has_prev: false, next_cursor: nil, prev_cursor: nil}}
+E              stacktrace:
+E                /tmp/harbor_feed_pagination_suite.exs:533: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+/tests/test_final_state.py:827: AssertionError
+__________ test_t31_api_enforces_max_page_size_and_rejects_bad_limits __________
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}
+
+    def test_t31_api_enforces_max_page_size_and_rejects_bad_limits(suite: Dict[str, Any]) -> None:
+>       _scenario(suite, "T31")
+
+/tests/test_final_state.py:964: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}
+scenario_id = 'T31'
+
+    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:
+        results = suite["results"]
+        if not results:
+            pytest.fail(
+                "The ExUnit contract suite produced no results at all, which normally means "
+                "the project failed to compile or the script crashed before running.\n"
+                + _diagnostics(suite)
+            )
+    
+        prefix = f"test {scenario_id} "
+        matches = [name for name in results if name.startswith(prefix)]
+        assert matches, (
+            f"Scenario {scenario_id} did not run. Known scenarios: {sorted(results)}\n"
+            + _diagnostics(suite)
+        )
+    
+        status, detail = results[matches[0]]
+>       assert status == "pass", f"Scenario {scenario_id} ({matches[0]}) failed:\n{detail}"
+E       AssertionError: Scenario T31 (test T31 Feed.Api enforces each feed's maximum page size and rejects bad limits) failed:
+E           1) test T31 Feed.Api enforces each feed's maximum page size and rejects bad limits (FeedPaginationTest)
+E              /tmp/harbor_feed_pagination_suite.exs:539
+E              Assertion with == failed
+E              code:  assert length(window.items) == 25
+E              left:  0
+E              right: 25
+E              stacktrace:
+E                /tmp/harbor_feed_pagination_suite.exs:549: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+/tests/test_final_state.py:827: AssertionError
+_____________ test_t32_api_validates_feed_name_and_author_argument _____________
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}
+
+    def test_t32_api_validates_feed_name_and_author_argument(suite: Dict[str, Any]) -> None:
+>       _scenario(suite, "T32")
+
+/tests/test_final_state.py:968: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}
+scenario_id = 'T32'
+
+    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:
+        results = suite["results"]
+        if not results:
+            pytest.fail(
+                "The ExUnit contract suite produced no results at all, which normally means "
+                "the project failed to compile or the script crashed before running.\n"
+                + _diagnostics(suite)
+            )
+    
+        prefix = f"test {scenario_id} "
+        matches = [name for name in results if name.startswith(prefix)]
+        assert matches, (
+            f"Scenario {scenario_id} did not run. Known scenarios: {sorted(results)}\n"
+            + _diagnostics(suite)
+        )
+    
+        status, detail = results[matches[0]]
+>       assert status == "pass", f"Scenario {scenario_id} ({matches[0]}) failed:\n{detail}"
+E       AssertionError: Scenario T32 (test T32 Feed.Api validates the feed name and the author argument) failed:
+E           1) test T32 Feed.Api validates the feed name and the author argument (FeedPaginationTest)
+E              /tmp/harbor_feed_pagination_suite.exs:552
+E              Assertion with == failed
+E              code:  assert ids(window) == ["a02", "a04", "a06", "a08"]
+E              left:  []
+E              right: ["a02", "a04", "a06", "a08"]
+E              stacktrace:
+E                /tmp/harbor_feed_pagination_suite.exs:557: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+/tests/test_final_state.py:827: AssertionError
+______________ test_t33_forward_walk_terminates_with_exact_totals ______________
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}
+
+    def test_t33_forward_walk_terminates_with_exact_totals(suite: Dict[str, Any]) -> None:
+>       _scenario(suite, "T33")
+
+/tests/test_final_state.py:972: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}
+scenario_id = 'T33'
+
+    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:
+        results = suite["results"]
+        if not results:
+            pytest.fail(
+                "The ExUnit contract suite produced no results at all, which normally means "
+                "the project failed to compile or the script crashed before running.\n"
+                + _diagnostics(suite)
+            )
+    
+        prefix = f"test {scenario_id} "
+        matches = [name for name in results if name.startswith(prefix)]
+        assert matches, (
+            f"Scenario {scenario_id} did not run. Known scenarios: {sorted(results)}\n"
+            + _diagnostics(suite)
+        )
+    
+        status, detail = results[matches[0]]
+>       assert status == "pass", f"Scenario {scenario_id} ({matches[0]}) failed:\n{detail}"
+E       AssertionError: Scenario T33 (test T33 walking the whole feed forwards terminates with exact totals) failed:
+E           1) test T33 walking the whole feed forwards terminates with exact totals (FeedPaginationTest)
+E              /tmp/harbor_feed_pagination_suite.exs:561
+E              Assertion with == failed
+E              code:  assert length(walked.pages) == 14
+E              left:  1
+E              right: 14
+E              stacktrace:
+E                /tmp/harbor_feed_pagination_suite.exs:564: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+/tests/test_final_state.py:827: AssertionError
+_______________ test_t34_walk_of_filtered_feed_and_of_empty_feed _______________
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}
+
+    def test_t34_walk_of_filtered_feed_and_of_empty_feed(suite: Dict[str, Any]) -> None:
+>       _scenario(suite, "T34")
+
+/tests/test_final_state.py:976: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}
+scenario_id = 'T34'
+
+    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:
+        results = suite["results"]
+        if not results:
+            pytest.fail(
+                "The ExUnit contract suite produced no results at all, which normally means "
+                "the project failed to compile or the script crashed before running.\n"
+                + _diagnostics(suite)
+            )
+    
+        prefix = f"test {scenario_id} "
+        matches = [name for name in results if name.startswith(prefix)]
+        assert matches, (
+            f"Scenario {scenario_id} did not run. Known scenarios: {sorted(results)}\n"
+            + _diagnostics(suite)
+        )
+    
+        status, detail = results[matches[0]]
+>       assert status == "pass", f"Scenario {scenario_id} ({matches[0]}) failed:\n{detail}"
+E       AssertionError: Scenario T34 (test T34 walking a filtered feed and an empty feed) failed:
+E           1) test T34 walking a filtered feed and an empty feed (FeedPaginationTest)
+E              /tmp/harbor_feed_pagination_suite.exs:571
+E              Assertion with == failed
+E              code:  assert length(public.pages) == 8
+E              left:  1
+E              right: 8
+E              stacktrace:
+E                /tmp/harbor_feed_pagination_suite.exs:573: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+/tests/test_final_state.py:827: AssertionError
+________ test_t36_insertion_between_pages_neither_duplicates_nor_skips _________
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}
+
+    def test_t36_insertion_between_pages_neither_duplicates_nor_skips(suite: Dict[str, Any]) -> None:
+>       _scenario(suite, "T36")
+
+/tests/test_final_state.py:984: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}
+scenario_id = 'T36'
+
+    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:
+        results = suite["results"]
+        if not results:
+            pytest.fail(
+                "The ExUnit contract suite produced no results at all, which normally means "
+                "the project failed to compile or the script crashed before running.\n"
+                + _diagnostics(suite)
+            )
+    
+        prefix = f"test {scenario_id} "
+        matches = [name for name in results if name.startswith(prefix)]
+        assert matches, (
+            f"Scenario {scenario_id} did not run. Known scenarios: {sorted(results)}\n"
+            + _diagnostics(suite)
+        )
+    
+        status, detail = results[matches[0]]
+>       assert status == "pass", f"Scenario {scenario_id} ({matches[0]}) failed:\n{detail}"
+E       AssertionError: Scenario T36 (test T36 inserting newer activities between pages neither duplicates nor skips) failed:
+E           1) test T36 inserting newer activities between pages neither duplicates nor skips (FeedPaginationTest)
+E              /tmp/harbor_feed_pagination_suite.exs:595
+E              Assertion with == failed
+E              code:  assert ids(w1) == ["a01", "a02", "a03", "a04", "a05"]
+E              left:  []
+E              right: ["a01", "a02", "a03", "a04", "a05"]
+E              stacktrace:
+E                /tmp/harbor_feed_pagination_suite.exs:597: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+/tests/test_final_state.py:827: AssertionError
+___________ test_t38_deletion_between_pages_does_not_skip_survivors ____________
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}
+
+    def test_t38_deletion_between_pages_does_not_skip_survivors(suite: Dict[str, Any]) -> None:
+>       _scenario(suite, "T38")
+
+/tests/test_final_state.py:992: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}
+scenario_id = 'T38'
+
+    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:
+        results = suite["results"]
+        if not results:
+            pytest.fail(
+                "The ExUnit contract suite produced no results at all, which normally means "
+                "the project failed to compile or the script crashed before running.\n"
+                + _diagnostics(suite)
+            )
+    
+        prefix = f"test {scenario_id} "
+        matches = [name for name in results if name.startswith(prefix)]
+        assert matches, (
+            f"Scenario {scenario_id} did not run. Known scenarios: {sorted(results)}\n"
+            + _diagnostics(suite)
+        )
+    
+        status, detail = results[matches[0]]
+>       assert status == "pass", f"Scenario {scenario_id} ({matches[0]}) failed:\n{detail}"
+E       AssertionError: Scenario T38 (test T38 deleting activities between pages does not skip survivors) failed:
+E           1) test T38 deleting activities between pages does not skip survivors (FeedPaginationTest)
+E              /tmp/harbor_feed_pagination_suite.exs:642
+E              Assertion with == failed
+E              code:  assert ids(w2) == ["a06", "a08", "a09", "a10", "a11"]
+E              left:  []
+E              right: ["a06", "a08", "a09", "a10", "a11"]
+E              stacktrace:
+E                /tmp/harbor_feed_pagination_suite.exs:650: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+/tests/test_final_state.py:827: AssertionError
+____________ test_t39_rescoring_between_pages_keeps_window_anchored ____________
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}
+
+    def test_t39_rescoring_between_pages_keeps_window_anchored(suite: Dict[str, Any]) -> None:
+>       _scenario(suite, "T39")
+
+/tests/test_final_state.py:996: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}
+scenario_id = 'T39'
+
+    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:
+        results = suite["results"]
+        if not results:
+            pytest.fail(
+                "The ExUnit contract suite produced no results at all, which normally means "
+                "the project failed to compile or the script crashed before running.\n"
+                + _diagnostics(suite)
+            )
+    
+        prefix = f"test {scenario_id} "
+        matches = [name for name in results if name.startswith(prefix)]
+        assert matches, (
+            f"Scenario {scenario_id} did not run. Known scenarios: {sorted(results)}\n"
+            + _diagnostics(suite)
+        )
+    
+        status, detail = results[matches[0]]
+>       assert status == "pass", f"Scenario {scenario_id} ({matches[0]}) failed:\n{detail}"
+E       AssertionError: Scenario T39 (test T39 re-scoring between pages keeps the keyset window anchored to the data) failed:
+E           1) test T39 re-scoring between pages keeps the keyset window anchored to the data (FeedPaginationTest)
+E              /tmp/harbor_feed_pagination_suite.exs:654
+E              Assertion with == failed
+E              code:  assert ids(w1) == Enum.take(Fixture.hot_ids(), 4)
+E              left:  []
+E              right: ["a14", "a29", "a04", "a19"]
+E              stacktrace:
+E                /tmp/harbor_feed_pagination_suite.exs:656: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+/tests/test_final_state.py:827: AssertionError
+_____________ test_t40_reported_total_stays_filtered_while_paging ______________
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}
+
+    def test_t40_reported_total_stays_filtered_while_paging(suite: Dict[str, Any]) -> None:
+>       _scenario(suite, "T40")
+
+/tests/test_final_state.py:1000: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}
+scenario_id = 'T40'
+
+    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:
+        results = suite["results"]
+        if not results:
+            pytest.fail(
+                "The ExUnit contract suite produced no results at all, which normally means "
+                "the project failed to compile or the script crashed before running.\n"
+                + _diagnostics(suite)
+            )
+    
+        prefix = f"test {scenario_id} "
+        matches = [name for name in results if name.startswith(prefix)]
+        assert matches, (
+            f"Scenario {scenario_id} did not run. Known scenarios: {sorted(results)}\n"
+            + _diagnostics(suite)
+        )
+    
+        status, detail = results[matches[0]]
+>       assert status == "pass", f"Scenario {scenario_id} ({matches[0]}) failed:\n{detail}"
+E       AssertionError: Scenario T40 (test T40 the reported total stays filtered while paging a filtered feed) failed:
+E           1) test T40 the reported total stays filtered while paging a filtered feed (FeedPaginationTest)
+E              /tmp/harbor_feed_pagination_suite.exs:681
+E              Assertion with == failed
+E              code:  assert length(windows) == 8
+E              left:  1
+E              right: 8
+E              stacktrace:
+E                /tmp/harbor_feed_pagination_suite.exs:701: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+/tests/test_final_state.py:827: AssertionError
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED ../tests/test_final_state.py::test_project_compiles
+PASSED ../tests/test_final_state.py::test_contract_suite_ran_completely
+PASSED ../tests/test_final_state.py::test_t04_keyset_page_carries_full_count
+PASSED ../tests/test_final_state.py::test_t06_forward_keyset_chaining_walks_disjoint_windows
+PASSED ../tests/test_final_state.py::test_t07_backward_keyset_chaining_reproduces_previous_windows
+PASSED ../tests/test_final_state.py::test_t08_ash_page_continues_rewinds_replays_restarts
+PASSED ../tests/test_final_state.py::test_t09_continuing_past_end_yields_empty_page
+PASSED ../tests/test_final_state.py::test_t14_disabling_pagination_on_required_action_is_refused
+PASSED ../tests/test_final_state.py::test_t15_action_without_default_limit_demands_one
+PASSED ../tests/test_final_state.py::test_t16_non_countable_action_refuses_count
+PASSED ../tests/test_final_state.py::test_t18_malformed_keyset_is_rejected
+PASSED ../tests/test_final_state.py::test_t19_public_feed_filters_and_counts_public_only
+PASSED ../tests/test_final_state.py::test_t20_hot_feed_orders_by_score_then_reactions_then_id
+PASSED ../tests/test_final_state.py::test_t21_hot_feed_keyset_walk_visits_every_activity_once
+PASSED ../tests/test_final_state.py::test_t22_heat_feed_keyset_walk_visits_every_activity_once
+PASSED ../tests/test_final_state.py::test_t23_aggregate_calculation_and_relationship_load_on_page
+PASSED ../tests/test_final_state.py::test_t26_cursor_codec_rejects_corrupt_and_forged_cursors
+PASSED ../tests/test_final_state.py::test_t28_api_backward_cursor_paging_returns_reversed_windows
+PASSED ../tests/test_final_state.py::test_t35_walk_back_visits_exactly_the_reversed_windows
+PASSED ../tests/test_final_state.py::test_t37_offset_paging_over_same_insertion_repeats_rows
+FAILED ../tests/test_final_state.py::test_t01_feed_action_declares_keyset_pagination_contract
+FAILED ../tests/test_final_state.py::test_t02_other_feed_actions_declare_their_pagination_contracts
+FAILED ../tests/test_final_state.py::test_t03_first_keyset_page_struct_and_metadata
+FAILED ../tests/test_final_state.py::test_t05_default_limit_applies_when_omitted
+FAILED ../tests/test_final_state.py::test_t10_offset_feed_reports_offset_limit_more_and_default_count
+FAILED ../tests/test_final_state.py::test_t11_ash_page_seeks_offset_page_by_last_and_number
+FAILED ../tests/test_final_state.py::test_t12_max_page_size_caps_over_large_limit
+FAILED ../tests/test_final_state.py::test_t13_author_feed_filters_and_caps_at_own_max_page_size
+FAILED ../tests/test_final_state.py::test_t17_dual_mode_action_is_optional_and_switches_page_type
+FAILED ../tests/test_final_state.py::test_t24_api_fetch_returns_documented_envelope
+FAILED ../tests/test_final_state.py::test_t25_cursor_codec_round_trips_and_is_opaque
+FAILED ../tests/test_final_state.py::test_t27_api_forward_cursor_paging_matches_raw_keyset_chain
+FAILED ../tests/test_final_state.py::test_t29_cursor_from_one_feed_is_refused_by_another
+FAILED ../tests/test_final_state.py::test_t30_cursor_failures_surface_as_codec_or_ash_errors
+FAILED ../tests/test_final_state.py::test_t31_api_enforces_max_page_size_and_rejects_bad_limits
+FAILED ../tests/test_final_state.py::test_t32_api_validates_feed_name_and_author_argument
+FAILED ../tests/test_final_state.py::test_t33_forward_walk_terminates_with_exact_totals
+FAILED ../tests/test_final_state.py::test_t34_walk_of_filtered_feed_and_of_empty_feed
+FAILED ../tests/test_final_state.py::test_t36_insertion_between_pages_neither_duplicates_nor_skips
+FAILED ../tests/test_final_state.py::test_t38_deletion_between_pages_does_not_skip_survivors
+FAILED ../tests/test_final_state.py::test_t39_rescoring_between_pages_keeps_window_anchored
+FAILED ../tests/test_final_state.py::test_t40_reported_total_stays_filtered_while_paging
+======================== 22 failed, 20 passed in 32.96s ========================

@@ -1,0 +1,161 @@
+{
+    "reportFormat": "CTRF",
+    "specVersion": "0.0.0",
+    "timestamp": "2026-09-16T09:52:37.007429+00:00",
+    "generatedBy": "pytest",
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "7.4.4"
+        },
+        "summary": {
+            "tests": 13,
+            "passed": 8,
+            "failed": 5,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1789552352729,
+            "stop": 1789552357007
+        },
+        "environment": {
+            "buildName": "Pytest JSON CTRF Report",
+            "buildNumber": "000",
+            "buildUrl": "https://ctrf.io"
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_required_files_exist",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789552352802,
+                "stop": 1789552352803,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_player_script_declares_required_rpc",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789552352804,
+                "stop": 1789552352805,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_top_level_shape",
+                "status": "passed",
+                "duration": 2085,
+                "start": 1789552352806,
+                "stop": 1789552354891,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_server_unique_id_is_one",
+                "status": "passed",
+                "duration": 2,
+                "start": 1789552354891,
+                "stop": 1789552354893,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_two_clients_returned",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789552354893,
+                "stop": 1789552354894,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_client_ids_distinct_and_above_one",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789552354894,
+                "stop": 1789552354895,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_server_peers_match_client_ids",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 21,
+                "start": 1789552354896,
+                "stop": 1789552354917,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "primary_run = ({'clients': [{'peers': [], 'players': {}, 'unique_id': 1801321141}, {'peers': [], 'players': {}, 'unique_id': 1191924...'server': {'peers': [1], 'players': {'1': {'authority': 1, 'position': [1, 1], 'score': 0}}, 'unique_id': 1}}, [7, 13])\n\n    def test_server_peers_match_client_ids(primary_run):\n        data, _ = primary_run\n        expected = sorted(c[\"unique_id\"] for c in data[\"clients\"])\n>       assert sorted(data[\"server\"][\"peers\"]) == expected, (\n            f\"server.peers {sorted(data['server']['peers'])} should equal sorted client ids {expected}.\"\n        )\nE       AssertionError: server.peers [1] should equal sorted client ids [1191924906, 1801321141].\nE       assert [1] == [1191924906, 1801321141]\nE         At index 0 diff: 1 != 1191924906\nE         Right contains one more item: 1801321141\nE         Use -v to get more diff\n\ntests/test_final_state.py:130: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_each_client_sees_other_peers",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 10,
+                "start": 1789552354917,
+                "stop": 1789552354927,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "primary_run = ({'clients': [{'peers': [], 'players': {}, 'unique_id': 1801321141}, {'peers': [], 'players': {}, 'unique_id': 1191924...'server': {'peers': [1], 'players': {'1': {'authority': 1, 'position': [1, 1], 'score': 0}}, 'unique_id': 1}}, [7, 13])\n\n    def test_each_client_sees_other_peers(primary_run):\n        data, _ = primary_run\n        all_client_ids = [c[\"unique_id\"] for c in data[\"clients\"]]\n        for client in data[\"clients\"]:\n            expected = sorted([1] + [cid for cid in all_client_ids if cid != client[\"unique_id\"]])\n>           assert sorted(client[\"peers\"]) == expected, (\n                f\"Client {client['unique_id']}.peers {sorted(client['peers'])} should equal {expected}.\"\n            )\nE           AssertionError: Client 1801321141.peers [] should equal [1, 1191924906].\nE           assert [] == [1, 1191924906]\nE             Right contains 2 more items, first extra item: 1\nE             Use -v to get more diff\n\ntests/test_final_state.py:140: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_player_keys_consistent",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 13,
+                "start": 1789552354929,
+                "stop": 1789552354942,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "primary_run = ({'clients': [{'peers': [], 'players': {}, 'unique_id': 1801321141}, {'peers': [], 'players': {}, 'unique_id': 1191924...'server': {'peers': [1], 'players': {'1': {'authority': 1, 'position': [1, 1], 'score': 0}}, 'unique_id': 1}}, [7, 13])\n\n    def test_player_keys_consistent(primary_run):\n        data, _ = primary_run\n        expected_keys = {\"1\"} | {str(c[\"unique_id\"]) for c in data[\"clients\"]}\n>       assert set(data[\"server\"][\"players\"].keys()) == expected_keys, (\n            f\"server.players keys {sorted(data['server']['players'].keys())} != expected {sorted(expected_keys)}\"\n        )\nE       AssertionError: server.players keys ['1'] != expected ['1', '1191924906', '1801321141']\nE       assert {'1'} == {'1', '119192... '1801321141'}\nE         Extra items in the right set:\nE         '1801321141'\nE         '1191924906'\nE         Use -v to get more diff\n\ntests/test_final_state.py:148: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_authority_matches_key",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789552354942,
+                "stop": 1789552354943,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_position_equals_authority",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789552354944,
+                "stop": 1789552354945,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_score_propagation",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 11,
+                "start": 1789552354946,
+                "stop": 1789552354957,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "primary_run = ({'clients': [{'peers': [], 'players': {}, 'unique_id': 1801321141}, {'peers': [], 'players': {}, 'unique_id': 1191924...'server': {'peers': [1], 'players': {'1': {'authority': 1, 'position': [1, 1], 'score': 0}}, 'unique_id': 1}}, [7, 13])\n\n    def test_score_propagation(primary_run):\n        data, deltas = primary_run\n        ordered_clients = data[\"clients\"]\n        expected = {\n            \"1\": 0,\n            str(ordered_clients[0][\"unique_id\"]): deltas[0],\n            str(ordered_clients[1][\"unique_id\"]): deltas[1],\n        }\n        for view_name, view in [(\"server\", data[\"server\"])] + [\n            (f\"client_{c['unique_id']}\", c) for c in ordered_clients\n        ]:\n            for key, expected_score in expected.items():\n>               actual = view[\"players\"][key][\"score\"]\nE               KeyError: '1801321141'\n\ntests/test_final_state.py:202: KeyError",
+                "message": "The test failed in the call phase"
+            },
+            {
+                "name": "test_final_state.py::test_rerun_with_different_deltas",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 2048,
+                "start": 1789552354958,
+                "stop": 1789552357006,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_rerun_with_different_deltas():\n        out_path = \"/tmp/result2.json\"\n        result = _run_lobby(port=27016, deltas=[-2, 5], out_path=out_path, frames=240)\n        assert result.returncode == 0, (\n            f\"Godot rerun failed with status {result.returncode}.\\n\"\n            f\"STDOUT:\\n{result.stdout}\\nSTDERR:\\n{result.stderr}\"\n        )\n        data = _load_result(out_path)\n        ordered_clients = data[\"clients\"]\n        assert len(ordered_clients) == 2, f\"Expected 2 clients on rerun, got {len(ordered_clients)}\"\n        expected = {\n            \"1\": 0,\n            str(ordered_clients[0][\"unique_id\"]): -2,\n            str(ordered_clients[1][\"unique_id\"]): 5,\n        }\n        for view_name, view in [(\"server\", data[\"server\"])] + [\n            (f\"client_{c['unique_id']}\", c) for c in ordered_clients\n        ]:\n            for key, expected_score in expected.items():\n>               actual = view[\"players\"][key][\"score\"]\nE               KeyError: '312947072'\n\ntests/test_final_state.py:227: KeyError",
+                "message": "The test failed in the call phase"
+            }
+        ]
+    }
+}

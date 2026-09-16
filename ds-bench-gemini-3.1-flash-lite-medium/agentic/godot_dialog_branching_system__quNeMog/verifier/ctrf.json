@@ -1,0 +1,116 @@
+{
+    "reportFormat": "CTRF",
+    "specVersion": "0.0.0",
+    "timestamp": "2026-09-11T11:16:38.203628+00:00",
+    "generatedBy": "pytest",
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "7.4.4"
+        },
+        "summary": {
+            "tests": 9,
+            "passed": 7,
+            "failed": 2,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1789125217860,
+            "stop": 1789125398203
+        },
+        "environment": {
+            "buildName": "Pytest JSON CTRF Report",
+            "buildNumber": "000",
+            "buildUrl": "https://ctrf.io"
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_project_godot_exists",
+                "status": "passed",
+                "duration": 0,
+                "start": 1789125217878,
+                "stop": 1789125217878,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_required_files_exist",
+                "status": "passed",
+                "duration": 0,
+                "start": 1789125217879,
+                "stop": 1789125217879,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_dialog_node_script_declares_resource_with_exports",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789125217879,
+                "stop": 1789125217880,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_dialog_choice_script_declares_resource_with_exports",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789125217880,
+                "stop": 1789125217881,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_dialog_tree_script_declares_resource_with_exports_and_get_node",
+                "status": "passed",
+                "duration": 0,
+                "start": 1789125217881,
+                "stop": 1789125217881,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_dialog_player_script_has_signals_and_methods",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789125217881,
+                "stop": 1789125217882,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_dialog_ui_scene_has_required_controls",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789125217882,
+                "stop": 1789125217883,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_project_loads_without_errors",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 175,
+                "start": 1789125217883,
+                "stop": 1789125218058,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_project_loads_without_errors():\n        _reset_user_data()\n        result = subprocess.run(\n            [\"godot\", \"--headless\", \"--path\", PROJECT_DIR, \"--quit\"],\n            capture_output=True,\n            text=True,\n            timeout=120,\n            env=_godot_env(),\n        )\n        combined = (result.stdout or \"\") + (result.stderr or \"\")\n        assert result.returncode == 0, (\n            f\"`godot --quit` exited with code {result.returncode}:\\n\"\n            f\"stdout:\\n{result.stdout}\\nstderr:\\n{result.stderr}\"\n        )\n        forbidden = [\"SCRIPT ERROR\", \"Parse Error\", \"Failed to load\"]\n        for marker in forbidden:\n>           assert marker not in combined, (\n                f\"Godot reported '{marker}' while loading the project:\\n{combined}\"\n            )\nE           AssertionError: Godot reported 'SCRIPT ERROR' while loading the project:\nE             Godot Engine v4.3.stable.official.77dcf97d8 - https://godotengine.org\nE             \nE             SCRIPT ERROR: Parse Error: Could not find type \"DialogTree\" in the current scope.\nE                       at: GDScript::reload (res://scripts/DialogPlayer.gd:4)\nE             SCRIPT ERROR: Parse Error: Cannot use simple \"@export\" annotation because the type of the initialized value can't be inferred.\nE                       at: GDScript::reload (res://scripts/DialogPlayer.gd:4)\nE             SCRIPT ERROR: Parse Error: Could not find type \"DialogChoice\" in the current scope.\nE                       at: GDScript::reload (res://scripts/DialogPlayer.gd:57)\nE             SCRIPT ERROR: Parse Error: Could not find type \"DialogChoice\" in the current scope.\nE                       at: GDScript::reload (res://scripts/DialogPlayer.gd:57)\nE             ERROR: Failed to load script \"res://scripts/DialogPlayer.gd\" with error \"Parse error\".\nE                at: load (modules/gdscript/gdscript.cpp:2936)\nE             ERROR: Cannot open file 'res://scripts/resources/dialogs/intro.tres'.\nE                at: load (scene/resources/resource_format_text.cpp:1367)\nE             ERROR: Failed loading resource: res://scripts/resources/dialogs/intro.tres. Make sure resources have been imported by opening the project in the editor at least once.\nE                at: _load (core/io/resource_loader.cpp:283)\nE             ERROR: res://Main.tscn:10 - Parse Error: [ext_resource] referenced non-existent resource at: res://scripts/resources/dialogs/intro.tres\nE                at: _parse_ext_resource (scene/resources/resource_format_text.cpp:159)\nE             \nE           assert 'SCRIPT ERROR' not in 'Godot Engin...t.cpp:159)\\n'\nE             'SCRIPT ERROR' is contained here:\nE               gine.org\nE               \nE               SCRIPT ERROR: Parse Error: Could not find type \"DialogTree\" in the current scope.\nE             ? ++++++++++++\nE                         at: GDScript::reload (res://scripts/DialogPlayer.gd:4)\nE               SCRIPT ERROR: Parse Error: Cannot use simple \"@export\" annotation because the type of the initialized value can't be inferred....\nE             \nE             ...Full output truncated (13 lines hidden), use '-vv' to show\n\n/tests/test_final_state.py:195: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_runtime_harness",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 180144,
+                "start": 1789125218059,
+                "stop": 1789125398203,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_runtime_harness():\n        _reset_user_data()\n>       result = subprocess.run(\n            [\n                \"godot\",\n                \"--headless\",\n                \"--path\",\n                PROJECT_DIR,\n                \"res://_zealt_tests/test_harness_dialog.tscn\",\n            ],\n            capture_output=True,\n            text=True,\n            timeout=180,\n            env=_godot_env(),\n        )\n\n/tests/test_final_state.py:206: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n/usr/lib/python3.12/subprocess.py:550: in run\n    stdout, stderr = process.communicate(input, timeout=timeout)\n/usr/lib/python3.12/subprocess.py:1209: in communicate\n    stdout, stderr = self._communicate(input, endtime, timeout)\n/usr/lib/python3.12/subprocess.py:2116: in _communicate\n    self._check_timeout(endtime, orig_timeout, stdout, stderr)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <Popen: returncode: -9 args: ['godot', '--headless', '--path', '/home/user/d...>\nendtime = 6867740.205625306, orig_timeout = 180\nstdout_seq = [b'Godot Engine v4.3.stable.official.77dcf97d8 - https://godotengine.org\\n', b'\\n']\nstderr_seq = [b'SCRIPT ERROR: Parse Error: Could not find type \"DialogTree\" in the current scope.\\n          at: GDScript::reload (...st_harness_dialog.gd:107)\\nSCRIPT ERROR: Parse Error: Could not find type \"DialogChoice\" in the current scope.\\n', ...]\nskip_check_and_raise = False\n\n    def _check_timeout(self, endtime, orig_timeout, stdout_seq, stderr_seq,\n                       skip_check_and_raise=False):\n        \"\"\"Convenience for checking if a timeout has expired.\"\"\"\n        if endtime is None:\n            return\n        if skip_check_and_raise or _time() > endtime:\n>           raise TimeoutExpired(\n                    self.args, orig_timeout,\n                    output=b''.join(stdout_seq) if stdout_seq else None,\n                    stderr=b''.join(stderr_seq) if stderr_seq else None)\nE           subprocess.TimeoutExpired: Command '['godot', '--headless', '--path', '/home/user/dialog_branching_system', 'res://_zealt_tests/test_harness_dialog.tscn']' timed out after 180 seconds\n\n/usr/lib/python3.12/subprocess.py:1253: TimeoutExpired",
+                "message": "The test failed in the call phase"
+            }
+        ]
+    }
+}

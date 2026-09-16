@@ -1,0 +1,469 @@
+{
+    "reportFormat": "CTRF",
+    "specVersion": "0.0.0",
+    "timestamp": "2026-09-16T10:11:51.958773+00:00",
+    "generatedBy": "pytest",
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "7.4.4"
+        },
+        "summary": {
+            "tests": 44,
+            "passed": 0,
+            "failed": 44,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1789553508398,
+            "stop": 1789553511958
+        },
+        "environment": {
+            "buildName": "Pytest JSON CTRF Report",
+            "buildNumber": "000",
+            "buildUrl": "https://ctrf.io"
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 3122,
+                "start": 1789553508430,
+                "stop": 1789553511552,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 19 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/event.ex ==\nE         ** (Spark.Error.DslError) [Vault.Ledger.Event]\nE         attributes -> attribute -> payload defined in lib/vault/ledger/event.ex:17::\nE           ** (ErlangError) Erlang error: \"types must be a list, got ``\"\nE             (ash 3.33.4) /home/user/vault/deps/spark/lib/spark/dsl/extension.ex:1405: Ash.Resource.Dsl.Attributes.Attribute.__build__/5\nE             (spark 2.7.3) lib/spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\nE             lib/vault/ledger/event.ex:17: (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 19 files (.ex)\\n', stderr='\\n== Compilation .../spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\\n    lib/vault/ledger/event.ex:17: (module)\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 9,
+                "start": 1789553511553,
+                "stop": 1789553511562,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 19 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/event.ex ==\nE         ** (Spark.Error.DslError) [Vault.Ledger.Event]\nE         attributes -> attribute -> payload defined in lib/vault/ledger/event.ex:17::\nE           ** (ErlangError) Erlang error: \"types must be a list, got ``\"\nE             (ash 3.33.4) /home/user/vault/deps/spark/lib/spark/dsl/extension.ex:1405: Ash.Resource.Dsl.Attributes.Attribute.__build__/5\nE             (spark 2.7.3) lib/spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\nE             lib/vault/ledger/event.ex:17: (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 19 files (.ex)\\n', stderr='\\n== Compilation .../spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\\n    lib/vault/ledger/event.ex:17: (module)\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 10,
+                "start": 1789553511562,
+                "stop": 1789553511572,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 19 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/event.ex ==\nE         ** (Spark.Error.DslError) [Vault.Ledger.Event]\nE         attributes -> attribute -> payload defined in lib/vault/ledger/event.ex:17::\nE           ** (ErlangError) Erlang error: \"types must be a list, got ``\"\nE             (ash 3.33.4) /home/user/vault/deps/spark/lib/spark/dsl/extension.ex:1405: Ash.Resource.Dsl.Attributes.Attribute.__build__/5\nE             (spark 2.7.3) lib/spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\nE             lib/vault/ledger/event.ex:17: (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 19 files (.ex)\\n', stderr='\\n== Compilation .../spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\\n    lib/vault/ledger/event.ex:17: (module)\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 9,
+                "start": 1789553511573,
+                "stop": 1789553511582,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 19 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/event.ex ==\nE         ** (Spark.Error.DslError) [Vault.Ledger.Event]\nE         attributes -> attribute -> payload defined in lib/vault/ledger/event.ex:17::\nE           ** (ErlangError) Erlang error: \"types must be a list, got ``\"\nE             (ash 3.33.4) /home/user/vault/deps/spark/lib/spark/dsl/extension.ex:1405: Ash.Resource.Dsl.Attributes.Attribute.__build__/5\nE             (spark 2.7.3) lib/spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\nE             lib/vault/ledger/event.ex:17: (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 19 files (.ex)\\n', stderr='\\n== Compilation .../spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\\n    lib/vault/ledger/event.ex:17: (module)\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 9,
+                "start": 1789553511582,
+                "stop": 1789553511591,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 19 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/event.ex ==\nE         ** (Spark.Error.DslError) [Vault.Ledger.Event]\nE         attributes -> attribute -> payload defined in lib/vault/ledger/event.ex:17::\nE           ** (ErlangError) Erlang error: \"types must be a list, got ``\"\nE             (ash 3.33.4) /home/user/vault/deps/spark/lib/spark/dsl/extension.ex:1405: Ash.Resource.Dsl.Attributes.Attribute.__build__/5\nE             (spark 2.7.3) lib/spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\nE             lib/vault/ledger/event.ex:17: (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 19 files (.ex)\\n', stderr='\\n== Compilation .../spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\\n    lib/vault/ledger/event.ex:17: (module)\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 9,
+                "start": 1789553511591,
+                "stop": 1789553511600,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 19 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/event.ex ==\nE         ** (Spark.Error.DslError) [Vault.Ledger.Event]\nE         attributes -> attribute -> payload defined in lib/vault/ledger/event.ex:17::\nE           ** (ErlangError) Erlang error: \"types must be a list, got ``\"\nE             (ash 3.33.4) /home/user/vault/deps/spark/lib/spark/dsl/extension.ex:1405: Ash.Resource.Dsl.Attributes.Attribute.__build__/5\nE             (spark 2.7.3) lib/spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\nE             lib/vault/ledger/event.ex:17: (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 19 files (.ex)\\n', stderr='\\n== Compilation .../spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\\n    lib/vault/ledger/event.ex:17: (module)\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 9,
+                "start": 1789553511600,
+                "stop": 1789553511609,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 19 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/event.ex ==\nE         ** (Spark.Error.DslError) [Vault.Ledger.Event]\nE         attributes -> attribute -> payload defined in lib/vault/ledger/event.ex:17::\nE           ** (ErlangError) Erlang error: \"types must be a list, got ``\"\nE             (ash 3.33.4) /home/user/vault/deps/spark/lib/spark/dsl/extension.ex:1405: Ash.Resource.Dsl.Attributes.Attribute.__build__/5\nE             (spark 2.7.3) lib/spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\nE             lib/vault/ledger/event.ex:17: (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 19 files (.ex)\\n', stderr='\\n== Compilation .../spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\\n    lib/vault/ledger/event.ex:17: (module)\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 9,
+                "start": 1789553511609,
+                "stop": 1789553511618,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 19 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/event.ex ==\nE         ** (Spark.Error.DslError) [Vault.Ledger.Event]\nE         attributes -> attribute -> payload defined in lib/vault/ledger/event.ex:17::\nE           ** (ErlangError) Erlang error: \"types must be a list, got ``\"\nE             (ash 3.33.4) /home/user/vault/deps/spark/lib/spark/dsl/extension.ex:1405: Ash.Resource.Dsl.Attributes.Attribute.__build__/5\nE             (spark 2.7.3) lib/spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\nE             lib/vault/ledger/event.ex:17: (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 19 files (.ex)\\n', stderr='\\n== Compilation .../spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\\n    lib/vault/ledger/event.ex:17: (module)\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 8,
+                "start": 1789553511619,
+                "stop": 1789553511627,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 19 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/event.ex ==\nE         ** (Spark.Error.DslError) [Vault.Ledger.Event]\nE         attributes -> attribute -> payload defined in lib/vault/ledger/event.ex:17::\nE           ** (ErlangError) Erlang error: \"types must be a list, got ``\"\nE             (ash 3.33.4) /home/user/vault/deps/spark/lib/spark/dsl/extension.ex:1405: Ash.Resource.Dsl.Attributes.Attribute.__build__/5\nE             (spark 2.7.3) lib/spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\nE             lib/vault/ledger/event.ex:17: (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 19 files (.ex)\\n', stderr='\\n== Compilation .../spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\\n    lib/vault/ledger/event.ex:17: (module)\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 9,
+                "start": 1789553511628,
+                "stop": 1789553511637,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 19 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/event.ex ==\nE         ** (Spark.Error.DslError) [Vault.Ledger.Event]\nE         attributes -> attribute -> payload defined in lib/vault/ledger/event.ex:17::\nE           ** (ErlangError) Erlang error: \"types must be a list, got ``\"\nE             (ash 3.33.4) /home/user/vault/deps/spark/lib/spark/dsl/extension.ex:1405: Ash.Resource.Dsl.Attributes.Attribute.__build__/5\nE             (spark 2.7.3) lib/spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\nE             lib/vault/ledger/event.ex:17: (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 19 files (.ex)\\n', stderr='\\n== Compilation .../spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\\n    lib/vault/ledger/event.ex:17: (module)\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 9,
+                "start": 1789553511637,
+                "stop": 1789553511646,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 19 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/event.ex ==\nE         ** (Spark.Error.DslError) [Vault.Ledger.Event]\nE         attributes -> attribute -> payload defined in lib/vault/ledger/event.ex:17::\nE           ** (ErlangError) Erlang error: \"types must be a list, got ``\"\nE             (ash 3.33.4) /home/user/vault/deps/spark/lib/spark/dsl/extension.ex:1405: Ash.Resource.Dsl.Attributes.Attribute.__build__/5\nE             (spark 2.7.3) lib/spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\nE             lib/vault/ledger/event.ex:17: (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 19 files (.ex)\\n', stderr='\\n== Compilation .../spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\\n    lib/vault/ledger/event.ex:17: (module)\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 8,
+                "start": 1789553511647,
+                "stop": 1789553511655,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 19 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/event.ex ==\nE         ** (Spark.Error.DslError) [Vault.Ledger.Event]\nE         attributes -> attribute -> payload defined in lib/vault/ledger/event.ex:17::\nE           ** (ErlangError) Erlang error: \"types must be a list, got ``\"\nE             (ash 3.33.4) /home/user/vault/deps/spark/lib/spark/dsl/extension.ex:1405: Ash.Resource.Dsl.Attributes.Attribute.__build__/5\nE             (spark 2.7.3) lib/spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\nE             lib/vault/ledger/event.ex:17: (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 19 files (.ex)\\n', stderr='\\n== Compilation .../spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\\n    lib/vault/ledger/event.ex:17: (module)\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 9,
+                "start": 1789553511656,
+                "stop": 1789553511665,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 19 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/event.ex ==\nE         ** (Spark.Error.DslError) [Vault.Ledger.Event]\nE         attributes -> attribute -> payload defined in lib/vault/ledger/event.ex:17::\nE           ** (ErlangError) Erlang error: \"types must be a list, got ``\"\nE             (ash 3.33.4) /home/user/vault/deps/spark/lib/spark/dsl/extension.ex:1405: Ash.Resource.Dsl.Attributes.Attribute.__build__/5\nE             (spark 2.7.3) lib/spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\nE             lib/vault/ledger/event.ex:17: (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 19 files (.ex)\\n', stderr='\\n== Compilation .../spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\\n    lib/vault/ledger/event.ex:17: (module)\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 9,
+                "start": 1789553511665,
+                "stop": 1789553511674,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 19 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/event.ex ==\nE         ** (Spark.Error.DslError) [Vault.Ledger.Event]\nE         attributes -> attribute -> payload defined in lib/vault/ledger/event.ex:17::\nE           ** (ErlangError) Erlang error: \"types must be a list, got ``\"\nE             (ash 3.33.4) /home/user/vault/deps/spark/lib/spark/dsl/extension.ex:1405: Ash.Resource.Dsl.Attributes.Attribute.__build__/5\nE             (spark 2.7.3) lib/spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\nE             lib/vault/ledger/event.ex:17: (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 19 files (.ex)\\n', stderr='\\n== Compilation .../spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\\n    lib/vault/ledger/event.ex:17: (module)\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 9,
+                "start": 1789553511675,
+                "stop": 1789553511684,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 19 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/event.ex ==\nE         ** (Spark.Error.DslError) [Vault.Ledger.Event]\nE         attributes -> attribute -> payload defined in lib/vault/ledger/event.ex:17::\nE           ** (ErlangError) Erlang error: \"types must be a list, got ``\"\nE             (ash 3.33.4) /home/user/vault/deps/spark/lib/spark/dsl/extension.ex:1405: Ash.Resource.Dsl.Attributes.Attribute.__build__/5\nE             (spark 2.7.3) lib/spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\nE             lib/vault/ledger/event.ex:17: (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 19 files (.ex)\\n', stderr='\\n== Compilation .../spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\\n    lib/vault/ledger/event.ex:17: (module)\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 9,
+                "start": 1789553511685,
+                "stop": 1789553511694,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 19 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/event.ex ==\nE         ** (Spark.Error.DslError) [Vault.Ledger.Event]\nE         attributes -> attribute -> payload defined in lib/vault/ledger/event.ex:17::\nE           ** (ErlangError) Erlang error: \"types must be a list, got ``\"\nE             (ash 3.33.4) /home/user/vault/deps/spark/lib/spark/dsl/extension.ex:1405: Ash.Resource.Dsl.Attributes.Attribute.__build__/5\nE             (spark 2.7.3) lib/spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\nE             lib/vault/ledger/event.ex:17: (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 19 files (.ex)\\n', stderr='\\n== Compilation .../spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\\n    lib/vault/ledger/event.ex:17: (module)\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 10,
+                "start": 1789553511694,
+                "stop": 1789553511704,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 19 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/event.ex ==\nE         ** (Spark.Error.DslError) [Vault.Ledger.Event]\nE         attributes -> attribute -> payload defined in lib/vault/ledger/event.ex:17::\nE           ** (ErlangError) Erlang error: \"types must be a list, got ``\"\nE             (ash 3.33.4) /home/user/vault/deps/spark/lib/spark/dsl/extension.ex:1405: Ash.Resource.Dsl.Attributes.Attribute.__build__/5\nE             (spark 2.7.3) lib/spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\nE             lib/vault/ledger/event.ex:17: (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 19 files (.ex)\\n', stderr='\\n== Compilation .../spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\\n    lib/vault/ledger/event.ex:17: (module)\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 9,
+                "start": 1789553511704,
+                "stop": 1789553511713,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 19 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/event.ex ==\nE         ** (Spark.Error.DslError) [Vault.Ledger.Event]\nE         attributes -> attribute -> payload defined in lib/vault/ledger/event.ex:17::\nE           ** (ErlangError) Erlang error: \"types must be a list, got ``\"\nE             (ash 3.33.4) /home/user/vault/deps/spark/lib/spark/dsl/extension.ex:1405: Ash.Resource.Dsl.Attributes.Attribute.__build__/5\nE             (spark 2.7.3) lib/spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\nE             lib/vault/ledger/event.ex:17: (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 19 files (.ex)\\n', stderr='\\n== Compilation .../spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\\n    lib/vault/ledger/event.ex:17: (module)\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 9,
+                "start": 1789553511714,
+                "stop": 1789553511723,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 19 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/event.ex ==\nE         ** (Spark.Error.DslError) [Vault.Ledger.Event]\nE         attributes -> attribute -> payload defined in lib/vault/ledger/event.ex:17::\nE           ** (ErlangError) Erlang error: \"types must be a list, got ``\"\nE             (ash 3.33.4) /home/user/vault/deps/spark/lib/spark/dsl/extension.ex:1405: Ash.Resource.Dsl.Attributes.Attribute.__build__/5\nE             (spark 2.7.3) lib/spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\nE             lib/vault/ledger/event.ex:17: (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 19 files (.ex)\\n', stderr='\\n== Compilation .../spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\\n    lib/vault/ledger/event.ex:17: (module)\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 9,
+                "start": 1789553511724,
+                "stop": 1789553511733,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 19 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/event.ex ==\nE         ** (Spark.Error.DslError) [Vault.Ledger.Event]\nE         attributes -> attribute -> payload defined in lib/vault/ledger/event.ex:17::\nE           ** (ErlangError) Erlang error: \"types must be a list, got ``\"\nE             (ash 3.33.4) /home/user/vault/deps/spark/lib/spark/dsl/extension.ex:1405: Ash.Resource.Dsl.Attributes.Attribute.__build__/5\nE             (spark 2.7.3) lib/spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\nE             lib/vault/ledger/event.ex:17: (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 19 files (.ex)\\n', stderr='\\n== Compilation .../spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\\n    lib/vault/ledger/event.ex:17: (module)\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 10,
+                "start": 1789553511733,
+                "stop": 1789553511743,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 19 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/event.ex ==\nE         ** (Spark.Error.DslError) [Vault.Ledger.Event]\nE         attributes -> attribute -> payload defined in lib/vault/ledger/event.ex:17::\nE           ** (ErlangError) Erlang error: \"types must be a list, got ``\"\nE             (ash 3.33.4) /home/user/vault/deps/spark/lib/spark/dsl/extension.ex:1405: Ash.Resource.Dsl.Attributes.Attribute.__build__/5\nE             (spark 2.7.3) lib/spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\nE             lib/vault/ledger/event.ex:17: (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 19 files (.ex)\\n', stderr='\\n== Compilation .../spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\\n    lib/vault/ledger/event.ex:17: (module)\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 9,
+                "start": 1789553511743,
+                "stop": 1789553511752,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 19 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/event.ex ==\nE         ** (Spark.Error.DslError) [Vault.Ledger.Event]\nE         attributes -> attribute -> payload defined in lib/vault/ledger/event.ex:17::\nE           ** (ErlangError) Erlang error: \"types must be a list, got ``\"\nE             (ash 3.33.4) /home/user/vault/deps/spark/lib/spark/dsl/extension.ex:1405: Ash.Resource.Dsl.Attributes.Attribute.__build__/5\nE             (spark 2.7.3) lib/spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\nE             lib/vault/ledger/event.ex:17: (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 19 files (.ex)\\n', stderr='\\n== Compilation .../spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\\n    lib/vault/ledger/event.ex:17: (module)\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 9,
+                "start": 1789553511753,
+                "stop": 1789553511762,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 19 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/event.ex ==\nE         ** (Spark.Error.DslError) [Vault.Ledger.Event]\nE         attributes -> attribute -> payload defined in lib/vault/ledger/event.ex:17::\nE           ** (ErlangError) Erlang error: \"types must be a list, got ``\"\nE             (ash 3.33.4) /home/user/vault/deps/spark/lib/spark/dsl/extension.ex:1405: Ash.Resource.Dsl.Attributes.Attribute.__build__/5\nE             (spark 2.7.3) lib/spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\nE             lib/vault/ledger/event.ex:17: (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 19 files (.ex)\\n', stderr='\\n== Compilation .../spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\\n    lib/vault/ledger/event.ex:17: (module)\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 10,
+                "start": 1789553511762,
+                "stop": 1789553511772,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 19 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/event.ex ==\nE         ** (Spark.Error.DslError) [Vault.Ledger.Event]\nE         attributes -> attribute -> payload defined in lib/vault/ledger/event.ex:17::\nE           ** (ErlangError) Erlang error: \"types must be a list, got ``\"\nE             (ash 3.33.4) /home/user/vault/deps/spark/lib/spark/dsl/extension.ex:1405: Ash.Resource.Dsl.Attributes.Attribute.__build__/5\nE             (spark 2.7.3) lib/spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\nE             lib/vault/ledger/event.ex:17: (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 19 files (.ex)\\n', stderr='\\n== Compilation .../spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\\n    lib/vault/ledger/event.ex:17: (module)\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 9,
+                "start": 1789553511772,
+                "stop": 1789553511781,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 19 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/event.ex ==\nE         ** (Spark.Error.DslError) [Vault.Ledger.Event]\nE         attributes -> attribute -> payload defined in lib/vault/ledger/event.ex:17::\nE           ** (ErlangError) Erlang error: \"types must be a list, got ``\"\nE             (ash 3.33.4) /home/user/vault/deps/spark/lib/spark/dsl/extension.ex:1405: Ash.Resource.Dsl.Attributes.Attribute.__build__/5\nE             (spark 2.7.3) lib/spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\nE             lib/vault/ledger/event.ex:17: (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 19 files (.ex)\\n', stderr='\\n== Compilation .../spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\\n    lib/vault/ledger/event.ex:17: (module)\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 9,
+                "start": 1789553511782,
+                "stop": 1789553511791,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 19 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/event.ex ==\nE         ** (Spark.Error.DslError) [Vault.Ledger.Event]\nE         attributes -> attribute -> payload defined in lib/vault/ledger/event.ex:17::\nE           ** (ErlangError) Erlang error: \"types must be a list, got ``\"\nE             (ash 3.33.4) /home/user/vault/deps/spark/lib/spark/dsl/extension.ex:1405: Ash.Resource.Dsl.Attributes.Attribute.__build__/5\nE             (spark 2.7.3) lib/spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\nE             lib/vault/ledger/event.ex:17: (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 19 files (.ex)\\n', stderr='\\n== Compilation .../spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\\n    lib/vault/ledger/event.ex:17: (module)\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 10,
+                "start": 1789553511791,
+                "stop": 1789553511801,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 19 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/event.ex ==\nE         ** (Spark.Error.DslError) [Vault.Ledger.Event]\nE         attributes -> attribute -> payload defined in lib/vault/ledger/event.ex:17::\nE           ** (ErlangError) Erlang error: \"types must be a list, got ``\"\nE             (ash 3.33.4) /home/user/vault/deps/spark/lib/spark/dsl/extension.ex:1405: Ash.Resource.Dsl.Attributes.Attribute.__build__/5\nE             (spark 2.7.3) lib/spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\nE             lib/vault/ledger/event.ex:17: (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 19 files (.ex)\\n', stderr='\\n== Compilation .../spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\\n    lib/vault/ledger/event.ex:17: (module)\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 9,
+                "start": 1789553511801,
+                "stop": 1789553511810,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 19 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/event.ex ==\nE         ** (Spark.Error.DslError) [Vault.Ledger.Event]\nE         attributes -> attribute -> payload defined in lib/vault/ledger/event.ex:17::\nE           ** (ErlangError) Erlang error: \"types must be a list, got ``\"\nE             (ash 3.33.4) /home/user/vault/deps/spark/lib/spark/dsl/extension.ex:1405: Ash.Resource.Dsl.Attributes.Attribute.__build__/5\nE             (spark 2.7.3) lib/spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\nE             lib/vault/ledger/event.ex:17: (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 19 files (.ex)\\n', stderr='\\n== Compilation .../spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\\n    lib/vault/ledger/event.ex:17: (module)\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 9,
+                "start": 1789553511811,
+                "stop": 1789553511820,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 19 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/event.ex ==\nE         ** (Spark.Error.DslError) [Vault.Ledger.Event]\nE         attributes -> attribute -> payload defined in lib/vault/ledger/event.ex:17::\nE           ** (ErlangError) Erlang error: \"types must be a list, got ``\"\nE             (ash 3.33.4) /home/user/vault/deps/spark/lib/spark/dsl/extension.ex:1405: Ash.Resource.Dsl.Attributes.Attribute.__build__/5\nE             (spark 2.7.3) lib/spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\nE             lib/vault/ledger/event.ex:17: (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 19 files (.ex)\\n', stderr='\\n== Compilation .../spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\\n    lib/vault/ledger/event.ex:17: (module)\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 9,
+                "start": 1789553511820,
+                "stop": 1789553511829,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 19 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/event.ex ==\nE         ** (Spark.Error.DslError) [Vault.Ledger.Event]\nE         attributes -> attribute -> payload defined in lib/vault/ledger/event.ex:17::\nE           ** (ErlangError) Erlang error: \"types must be a list, got ``\"\nE             (ash 3.33.4) /home/user/vault/deps/spark/lib/spark/dsl/extension.ex:1405: Ash.Resource.Dsl.Attributes.Attribute.__build__/5\nE             (spark 2.7.3) lib/spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\nE             lib/vault/ledger/event.ex:17: (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 19 files (.ex)\\n', stderr='\\n== Compilation .../spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\\n    lib/vault/ledger/event.ex:17: (module)\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 9,
+                "start": 1789553511829,
+                "stop": 1789553511838,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 19 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/event.ex ==\nE         ** (Spark.Error.DslError) [Vault.Ledger.Event]\nE         attributes -> attribute -> payload defined in lib/vault/ledger/event.ex:17::\nE           ** (ErlangError) Erlang error: \"types must be a list, got ``\"\nE             (ash 3.33.4) /home/user/vault/deps/spark/lib/spark/dsl/extension.ex:1405: Ash.Resource.Dsl.Attributes.Attribute.__build__/5\nE             (spark 2.7.3) lib/spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\nE             lib/vault/ledger/event.ex:17: (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 19 files (.ex)\\n', stderr='\\n== Compilation .../spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\\n    lib/vault/ledger/event.ex:17: (module)\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 9,
+                "start": 1789553511838,
+                "stop": 1789553511847,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 19 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/event.ex ==\nE         ** (Spark.Error.DslError) [Vault.Ledger.Event]\nE         attributes -> attribute -> payload defined in lib/vault/ledger/event.ex:17::\nE           ** (ErlangError) Erlang error: \"types must be a list, got ``\"\nE             (ash 3.33.4) /home/user/vault/deps/spark/lib/spark/dsl/extension.ex:1405: Ash.Resource.Dsl.Attributes.Attribute.__build__/5\nE             (spark 2.7.3) lib/spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\nE             lib/vault/ledger/event.ex:17: (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 19 files (.ex)\\n', stderr='\\n== Compilation .../spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\\n    lib/vault/ledger/event.ex:17: (module)\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 8,
+                "start": 1789553511848,
+                "stop": 1789553511856,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 19 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/event.ex ==\nE         ** (Spark.Error.DslError) [Vault.Ledger.Event]\nE         attributes -> attribute -> payload defined in lib/vault/ledger/event.ex:17::\nE           ** (ErlangError) Erlang error: \"types must be a list, got ``\"\nE             (ash 3.33.4) /home/user/vault/deps/spark/lib/spark/dsl/extension.ex:1405: Ash.Resource.Dsl.Attributes.Attribute.__build__/5\nE             (spark 2.7.3) lib/spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\nE             lib/vault/ledger/event.ex:17: (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 19 files (.ex)\\n', stderr='\\n== Compilation .../spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\\n    lib/vault/ledger/event.ex:17: (module)\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 9,
+                "start": 1789553511856,
+                "stop": 1789553511865,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 19 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/event.ex ==\nE         ** (Spark.Error.DslError) [Vault.Ledger.Event]\nE         attributes -> attribute -> payload defined in lib/vault/ledger/event.ex:17::\nE           ** (ErlangError) Erlang error: \"types must be a list, got ``\"\nE             (ash 3.33.4) /home/user/vault/deps/spark/lib/spark/dsl/extension.ex:1405: Ash.Resource.Dsl.Attributes.Attribute.__build__/5\nE             (spark 2.7.3) lib/spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\nE             lib/vault/ledger/event.ex:17: (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 19 files (.ex)\\n', stderr='\\n== Compilation .../spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\\n    lib/vault/ledger/event.ex:17: (module)\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 8,
+                "start": 1789553511865,
+                "stop": 1789553511873,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 19 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/event.ex ==\nE         ** (Spark.Error.DslError) [Vault.Ledger.Event]\nE         attributes -> attribute -> payload defined in lib/vault/ledger/event.ex:17::\nE           ** (ErlangError) Erlang error: \"types must be a list, got ``\"\nE             (ash 3.33.4) /home/user/vault/deps/spark/lib/spark/dsl/extension.ex:1405: Ash.Resource.Dsl.Attributes.Attribute.__build__/5\nE             (spark 2.7.3) lib/spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\nE             lib/vault/ledger/event.ex:17: (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 19 files (.ex)\\n', stderr='\\n== Compilation .../spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\\n    lib/vault/ledger/event.ex:17: (module)\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 8,
+                "start": 1789553511874,
+                "stop": 1789553511882,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 19 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/event.ex ==\nE         ** (Spark.Error.DslError) [Vault.Ledger.Event]\nE         attributes -> attribute -> payload defined in lib/vault/ledger/event.ex:17::\nE           ** (ErlangError) Erlang error: \"types must be a list, got ``\"\nE             (ash 3.33.4) /home/user/vault/deps/spark/lib/spark/dsl/extension.ex:1405: Ash.Resource.Dsl.Attributes.Attribute.__build__/5\nE             (spark 2.7.3) lib/spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\nE             lib/vault/ledger/event.ex:17: (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 19 files (.ex)\\n', stderr='\\n== Compilation .../spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\\n    lib/vault/ledger/event.ex:17: (module)\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 9,
+                "start": 1789553511882,
+                "stop": 1789553511891,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 19 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/event.ex ==\nE         ** (Spark.Error.DslError) [Vault.Ledger.Event]\nE         attributes -> attribute -> payload defined in lib/vault/ledger/event.ex:17::\nE           ** (ErlangError) Erlang error: \"types must be a list, got ``\"\nE             (ash 3.33.4) /home/user/vault/deps/spark/lib/spark/dsl/extension.ex:1405: Ash.Resource.Dsl.Attributes.Attribute.__build__/5\nE             (spark 2.7.3) lib/spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\nE             lib/vault/ledger/event.ex:17: (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 19 files (.ex)\\n', stderr='\\n== Compilation .../spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\\n    lib/vault/ledger/event.ex:17: (module)\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 9,
+                "start": 1789553511891,
+                "stop": 1789553511900,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 19 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/event.ex ==\nE         ** (Spark.Error.DslError) [Vault.Ledger.Event]\nE         attributes -> attribute -> payload defined in lib/vault/ledger/event.ex:17::\nE           ** (ErlangError) Erlang error: \"types must be a list, got ``\"\nE             (ash 3.33.4) /home/user/vault/deps/spark/lib/spark/dsl/extension.ex:1405: Ash.Resource.Dsl.Attributes.Attribute.__build__/5\nE             (spark 2.7.3) lib/spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\nE             lib/vault/ledger/event.ex:17: (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 19 files (.ex)\\n', stderr='\\n== Compilation .../spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\\n    lib/vault/ledger/event.ex:17: (module)\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 10,
+                "start": 1789553511900,
+                "stop": 1789553511910,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 19 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/event.ex ==\nE         ** (Spark.Error.DslError) [Vault.Ledger.Event]\nE         attributes -> attribute -> payload defined in lib/vault/ledger/event.ex:17::\nE           ** (ErlangError) Erlang error: \"types must be a list, got ``\"\nE             (ash 3.33.4) /home/user/vault/deps/spark/lib/spark/dsl/extension.ex:1405: Ash.Resource.Dsl.Attributes.Attribute.__build__/5\nE             (spark 2.7.3) lib/spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\nE             lib/vault/ledger/event.ex:17: (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 19 files (.ex)\\n', stderr='\\n== Compilation .../spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\\n    lib/vault/ledger/event.ex:17: (module)\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 9,
+                "start": 1789553511910,
+                "stop": 1789553511919,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 19 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/event.ex ==\nE         ** (Spark.Error.DslError) [Vault.Ledger.Event]\nE         attributes -> attribute -> payload defined in lib/vault/ledger/event.ex:17::\nE           ** (ErlangError) Erlang error: \"types must be a list, got ``\"\nE             (ash 3.33.4) /home/user/vault/deps/spark/lib/spark/dsl/extension.ex:1405: Ash.Resource.Dsl.Attributes.Attribute.__build__/5\nE             (spark 2.7.3) lib/spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\nE             lib/vault/ledger/event.ex:17: (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 19 files (.ex)\\n', stderr='\\n== Compilation .../spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\\n    lib/vault/ledger/event.ex:17: (module)\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 9,
+                "start": 1789553511920,
+                "stop": 1789553511929,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 19 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/event.ex ==\nE         ** (Spark.Error.DslError) [Vault.Ledger.Event]\nE         attributes -> attribute -> payload defined in lib/vault/ledger/event.ex:17::\nE           ** (ErlangError) Erlang error: \"types must be a list, got ``\"\nE             (ash 3.33.4) /home/user/vault/deps/spark/lib/spark/dsl/extension.ex:1405: Ash.Resource.Dsl.Attributes.Attribute.__build__/5\nE             (spark 2.7.3) lib/spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\nE             lib/vault/ledger/event.ex:17: (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 19 files (.ex)\\n', stderr='\\n== Compilation .../spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\\n    lib/vault/ledger/event.ex:17: (module)\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 9,
+                "start": 1789553511929,
+                "stop": 1789553511938,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 19 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/event.ex ==\nE         ** (Spark.Error.DslError) [Vault.Ledger.Event]\nE         attributes -> attribute -> payload defined in lib/vault/ledger/event.ex:17::\nE           ** (ErlangError) Erlang error: \"types must be a list, got ``\"\nE             (ash 3.33.4) /home/user/vault/deps/spark/lib/spark/dsl/extension.ex:1405: Ash.Resource.Dsl.Attributes.Attribute.__build__/5\nE             (spark 2.7.3) lib/spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\nE             lib/vault/ledger/event.ex:17: (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 19 files (.ex)\\n', stderr='\\n== Compilation .../spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\\n    lib/vault/ledger/event.ex:17: (module)\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 9,
+                "start": 1789553511939,
+                "stop": 1789553511948,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 19 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/event.ex ==\nE         ** (Spark.Error.DslError) [Vault.Ledger.Event]\nE         attributes -> attribute -> payload defined in lib/vault/ledger/event.ex:17::\nE           ** (ErlangError) Erlang error: \"types must be a list, got ``\"\nE             (ash 3.33.4) /home/user/vault/deps/spark/lib/spark/dsl/extension.ex:1405: Ash.Resource.Dsl.Attributes.Attribute.__build__/5\nE             (spark 2.7.3) lib/spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\nE             lib/vault/ledger/event.ex:17: (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 19 files (.ex)\\n', stderr='\\n== Compilation .../spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\\n    lib/vault/ledger/event.ex:17: (module)\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 10,
+                "start": 1789553511948,
+                "stop": 1789553511958,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 19 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/event.ex ==\nE         ** (Spark.Error.DslError) [Vault.Ledger.Event]\nE         attributes -> attribute -> payload defined in lib/vault/ledger/event.ex:17::\nE           ** (ErlangError) Erlang error: \"types must be a list, got ``\"\nE             (ash 3.33.4) /home/user/vault/deps/spark/lib/spark/dsl/extension.ex:1405: Ash.Resource.Dsl.Attributes.Attribute.__build__/5\nE             (spark 2.7.3) lib/spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\nE             lib/vault/ledger/event.ex:17: (module)\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 19 files (.ex)\\n', stderr='\\n== Compilation .../spark/dsl/extension/entity.ex:102: Spark.Dsl.Extension.Entity.handle/6\\n    lib/vault/ledger/event.ex:17: (module)\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            }
+        ]
+    }
+}

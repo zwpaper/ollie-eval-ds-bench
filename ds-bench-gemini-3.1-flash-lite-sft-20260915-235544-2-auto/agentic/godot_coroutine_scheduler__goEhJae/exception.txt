@@ -1,0 +1,29 @@
+Traceback (most recent call last):
+  File "/home/kweizh/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/trial/single_step.py", line 77, in _run_agent
+    await self._run_agent_phase(
+    ...<5 lines>...
+    )
+  File "/home/kweizh/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/trial/trial.py", line 554, in _run_agent_phase
+    await asyncio.wait_for(
+    ...<6 lines>...
+    )
+  File "/usr/lib/python3.13/asyncio/tasks.py", line 507, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "/home/kweizh/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/agents/installed/base.py", line 186, in wrapper
+    return await fn(self, instruction, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kweizh/ollie/agents/ollie/agent.py", line 494, in run
+    raise self._classify_exec_error(command, result)
+harbor.agents.installed.base.NonZeroAgentExitCodeError: Command failed (exit 1): [ -f "$HOME/.nvm"/nvm.sh ] && . "$HOME/.nvm"/nvm.sh; cat /logs/agent/prompt.txt | ollie --ndjson --model gemini-3.1-flash-lite-sft-20260915-235544@2 --max-steps 100 --mode native --reasoning-effort auto 2>&1 | stdbuf -oL tee /logs/agent/ollie.jsonl
+stdout: {"type":"text","text":"<think>Looking at the directory structure."}
+{"type":"text","text":"</think>"}
+{"type":"tool-call","toolName":"bash","input":{"command":"ls -la /home/user/godot_coroutine_scheduler/scheduler 2>/dev/null; echo ---; cat /home/use ... [34281 chars truncated] ... al emission is synchronous, but `await signal` suspends and"}
+{"type":"text","text":" returns to the scheduler. This is exactly what we want.\n\nSo:\n```gdscript\nvar _resume_signal = {}"}
+{"type":"text","text":" # task_id -> Object with 'resume' signal\n\nfunc wait_frames(n):\n    var id = _task_counter -"}
+{"type":"text","text":" 1\n    _tasks[id].suspended_until = func(): return current_frame >= current_frame + n\n    "}
+{"type":"text","text":"var sig_obj = _get_resume_signal(id)\n    await sig_obj.resume\n    "}
+{"type":"text","text":"# Resumed: continue and hit next suspension, yielding again\n```\n\nBut there's one catch: After the"}
+{"type":"error","message":"Chat completion failed (HTTP 200): Failed to process successful response"}
+
+stderr: None

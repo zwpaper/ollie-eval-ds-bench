@@ -1,0 +1,786 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0
+rootdir: /tests
+plugins: json-ctrf-0.5.3
+collected 35 items
+
+../../tests/test_final_state.py ....FFFFFFFFFFFF.F.F.....F.........      [100%]
+
+=================================== FAILURES ===================================
+______________ test_t05_recent_messages_is_a_per_thread_top_three ______________
+
+suite = ({'T01': ('PASS', ''), 'T02': ('PASS', ''), 'T03': ('PASS', ''), 'T04': ('PASS', ''), ...}, '`mix run /tmp/harbor_manu...\n    │\n    └─ lib/thread_graph/forum/threads/fork_thread.ex:4:60: ThreadGraph.Forum.Threads.ForkThread.create/3\n\n')
+
+    def test_t05_recent_messages_is_a_per_thread_top_three(suite):
+>       _assert_scenario(suite, "T05")
+
+/tests/test_final_state.py:912: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = ({'T01': ('PASS', ''), 'T02': ('PASS', ''), 'T03': ('PASS', ''), 'T04': ('PASS', ''), ...}, '`mix run /tmp/harbor_manu...\n    │\n    └─ lib/thread_graph/forum/threads/fork_thread.ex:4:60: ThreadGraph.Forum.Threads.ForkThread.create/3\n\n')
+scenario_id = 'T05'
+
+    def _assert_scenario(suite, scenario_id):
+        results, diagnostics = suite
+        assert scenario_id in results, (
+            f"Scenario {scenario_id} did not run. The project most likely failed to "
+            f"compile or the suite crashed.\n{diagnostics}"
+        )
+        status, detail = results[scenario_id]
+>       assert status == "PASS", f"Scenario {scenario_id} failed:\n{detail}"
+E       AssertionError: Scenario T05 failed:
+E           1) test T05 recent_messages returns the top 3 per thread, not a global top 3 (Harbor.Suite)
+E              /tmp/harbor_manual_graph.exs:349
+E              ** (Ash.Error.Unknown) 
+E              Bread Crumbs:
+E                > Exception raised in: ThreadGraph.Forum.Thread.read
+E         
+E              Unknown Error
+E         
+E              * ** (Spark.Options.ValidationError) unknown options [:query], valid options are: [:page, :load, :max_concurrency, :lock, :return_query?, :skip_unknown_inputs, :reuse_values?, :strict?, :authorize_with, :domain, :timeout, :tracer, :action, :authorize?, :context, :tenant, :actor, :scope]
+E                (ash 3.31.0) lib/ash/error/error.ex:114: Ash.Error.to_error_class/2
+E                (ash 3.31.0) lib/ash.ex:2949: anonymous fn/1 in Ash.read/2
+E                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2
+E                (thread_graph 0.1.0) lib/thread_graph/forum/threads/recent_messages.ex:14: ThreadGraph.Forum.Threads.RecentMessages.load/3
+E                (ash 3.31.0) lib/ash/actions/read/read.ex:88: Ash.Actions.Read.run/3
+E                (ash 3.31.0) lib/ash.ex:2938: Ash.read/2
+E                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2
+E                /tmp/harbor_manual_graph.exs:749: Harbor.Suite.load_all_threads/0
+E              code: threads = load_all_threads()
+E              stacktrace:
+E                (ash 3.31.0) lib/ash/error/error.ex:114: Ash.Error.to_error_class/2
+E                (ash 3.31.0) lib/ash.ex:2949: anonymous fn/1 in Ash.read/2
+E                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2
+E                (thread_graph 0.1.0) lib/thread_graph/forum/threads/recent_messages.ex:14: ThreadGraph.Forum.Threads.RecentMessages.load/3
+E                (ash 3.31.0) lib/ash/actions/read/read.ex:88: Ash.Actions.Read.run/3
+E                (ash 3.31.0) lib/ash.ex:2938: Ash.read/2
+E                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2
+E                /tmp/harbor_manual_graph.exs:749: Harbor.Suite.load_all_threads/0
+E                /tmp/harbor_manual_graph.exs:350: (test)
+E         
+E       assert 'FAIL' == 'PASS'
+E         - PASS
+E         + FAIL
+
+/tests/test_final_state.py:892: AssertionError
+_______ test_t06_recent_messages_is_empty_for_a_thread_without_messages ________
+
+suite = ({'T01': ('PASS', ''), 'T02': ('PASS', ''), 'T03': ('PASS', ''), 'T04': ('PASS', ''), ...}, '`mix run /tmp/harbor_manu...\n    │\n    └─ lib/thread_graph/forum/threads/fork_thread.ex:4:60: ThreadGraph.Forum.Threads.ForkThread.create/3\n\n')
+
+    def test_t06_recent_messages_is_empty_for_a_thread_without_messages(suite):
+>       _assert_scenario(suite, "T06")
+
+/tests/test_final_state.py:916: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = ({'T01': ('PASS', ''), 'T02': ('PASS', ''), 'T03': ('PASS', ''), 'T04': ('PASS', ''), ...}, '`mix run /tmp/harbor_manu...\n    │\n    └─ lib/thread_graph/forum/threads/fork_thread.ex:4:60: ThreadGraph.Forum.Threads.ForkThread.create/3\n\n')
+scenario_id = 'T06'
+
+    def _assert_scenario(suite, scenario_id):
+        results, diagnostics = suite
+        assert scenario_id in results, (
+            f"Scenario {scenario_id} did not run. The project most likely failed to "
+            f"compile or the suite crashed.\n{diagnostics}"
+        )
+        status, detail = results[scenario_id]
+>       assert status == "PASS", f"Scenario {scenario_id} failed:\n{detail}"
+E       AssertionError: Scenario T06 failed:
+E           1) test T06 recent_messages yields [] for a thread without messages (Harbor.Suite)
+E              /tmp/harbor_manual_graph.exs:358
+E              ** (Ash.Error.Unknown) 
+E              Bread Crumbs:
+E                > Exception raised in: ThreadGraph.Forum.Thread.read
+E         
+E              Unknown Error
+E         
+E              * ** (Spark.Options.ValidationError) unknown options [:query], valid options are: [:page, :load, :max_concurrency, :lock, :return_query?, :skip_unknown_inputs, :reuse_values?, :strict?, :authorize_with, :domain, :timeout, :tracer, :action, :authorize?, :context, :tenant, :actor, :scope]
+E                (ash 3.31.0) lib/ash/error/error.ex:114: Ash.Error.to_error_class/2
+E                (ash 3.31.0) lib/ash.ex:2949: anonymous fn/1 in Ash.read/2
+E                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2
+E                (thread_graph 0.1.0) lib/thread_graph/forum/threads/recent_messages.ex:14: ThreadGraph.Forum.Threads.RecentMessages.load/3
+E                (ash 3.31.0) lib/ash/actions/read/read.ex:88: Ash.Actions.Read.run/3
+E                (ash 3.31.0) lib/ash.ex:2938: Ash.read/2
+E                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2
+E                /tmp/harbor_manual_graph.exs:749: Harbor.Suite.load_all_threads/0
+E              code: threads = load_all_threads()
+E              stacktrace:
+E                (ash 3.31.0) lib/ash/error/error.ex:114: Ash.Error.to_error_class/2
+E                (ash 3.31.0) lib/ash.ex:2949: anonymous fn/1 in Ash.read/2
+E                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2
+E                (thread_graph 0.1.0) lib/thread_graph/forum/threads/recent_messages.ex:14: ThreadGraph.Forum.Threads.RecentMessages.load/3
+E                (ash 3.31.0) lib/ash/actions/read/read.ex:88: Ash.Actions.Read.run/3
+E                (ash 3.31.0) lib/ash.ex:2938: Ash.read/2
+E                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2
+E                /tmp/harbor_manual_graph.exs:749: Harbor.Suite.load_all_threads/0
+E                /tmp/harbor_manual_graph.exs:359: (test)
+E         
+E       assert 'FAIL' == 'PASS'
+E         - PASS
+E         + FAIL
+
+/tests/test_final_state.py:892: AssertionError
+_______ test_t07_recent_messages_returns_fewer_than_three_when_available _______
+
+suite = ({'T01': ('PASS', ''), 'T02': ('PASS', ''), 'T03': ('PASS', ''), 'T04': ('PASS', ''), ...}, '`mix run /tmp/harbor_manu...\n    │\n    └─ lib/thread_graph/forum/threads/fork_thread.ex:4:60: ThreadGraph.Forum.Threads.ForkThread.create/3\n\n')
+
+    def test_t07_recent_messages_returns_fewer_than_three_when_available(suite):
+>       _assert_scenario(suite, "T07")
+
+/tests/test_final_state.py:920: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = ({'T01': ('PASS', ''), 'T02': ('PASS', ''), 'T03': ('PASS', ''), 'T04': ('PASS', ''), ...}, '`mix run /tmp/harbor_manu...\n    │\n    └─ lib/thread_graph/forum/threads/fork_thread.ex:4:60: ThreadGraph.Forum.Threads.ForkThread.create/3\n\n')
+scenario_id = 'T07'
+
+    def _assert_scenario(suite, scenario_id):
+        results, diagnostics = suite
+        assert scenario_id in results, (
+            f"Scenario {scenario_id} did not run. The project most likely failed to "
+            f"compile or the suite crashed.\n{diagnostics}"
+        )
+        status, detail = results[scenario_id]
+>       assert status == "PASS", f"Scenario {scenario_id} failed:\n{detail}"
+E       AssertionError: Scenario T07 failed:
+E           1) test T07 recent_messages returns fewer than 3 entries when there are fewer messages (Harbor.Suite)
+E              /tmp/harbor_manual_graph.exs:363
+E              ** (Ash.Error.Unknown) 
+E              Bread Crumbs:
+E                > Exception raised in: ThreadGraph.Forum.Thread.read
+E         
+E              Unknown Error
+E         
+E              * ** (Spark.Options.ValidationError) unknown options [:query], valid options are: [:page, :load, :max_concurrency, :lock, :return_query?, :skip_unknown_inputs, :reuse_values?, :strict?, :authorize_with, :domain, :timeout, :tracer, :action, :authorize?, :context, :tenant, :actor, :scope]
+E                (ash 3.31.0) lib/ash/error/error.ex:114: Ash.Error.to_error_class/2
+E                (ash 3.31.0) lib/ash.ex:2949: anonymous fn/1 in Ash.read/2
+E                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2
+E                (thread_graph 0.1.0) lib/thread_graph/forum/threads/recent_messages.ex:14: ThreadGraph.Forum.Threads.RecentMessages.load/3
+E                (ash 3.31.0) lib/ash/actions/read/read.ex:88: Ash.Actions.Read.run/3
+E                (ash 3.31.0) lib/ash.ex:2938: Ash.read/2
+E                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2
+E                /tmp/harbor_manual_graph.exs:749: Harbor.Suite.load_all_threads/0
+E              code: threads = load_all_threads()
+E              stacktrace:
+E                (ash 3.31.0) lib/ash/error/error.ex:114: Ash.Error.to_error_class/2
+E                (ash 3.31.0) lib/ash.ex:2949: anonymous fn/1 in Ash.read/2
+E                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2
+E                (thread_graph 0.1.0) lib/thread_graph/forum/threads/recent_messages.ex:14: ThreadGraph.Forum.Threads.RecentMessages.load/3
+E                (ash 3.31.0) lib/ash/actions/read/read.ex:88: Ash.Actions.Read.run/3
+E                (ash 3.31.0) lib/ash.ex:2938: Ash.read/2
+E                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2
+E                /tmp/harbor_manual_graph.exs:749: Harbor.Suite.load_all_threads/0
+E                /tmp/harbor_manual_graph.exs:364: (test)
+E         
+E       assert 'FAIL' == 'PASS'
+E         - PASS
+E         + FAIL
+
+/tests/test_final_state.py:892: AssertionError
+________ test_t08_recent_messages_breaks_position_ties_by_ascending_id _________
+
+suite = ({'T01': ('PASS', ''), 'T02': ('PASS', ''), 'T03': ('PASS', ''), 'T04': ('PASS', ''), ...}, '`mix run /tmp/harbor_manu...\n    │\n    └─ lib/thread_graph/forum/threads/fork_thread.ex:4:60: ThreadGraph.Forum.Threads.ForkThread.create/3\n\n')
+
+    def test_t08_recent_messages_breaks_position_ties_by_ascending_id(suite):
+>       _assert_scenario(suite, "T08")
+
+/tests/test_final_state.py:924: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = ({'T01': ('PASS', ''), 'T02': ('PASS', ''), 'T03': ('PASS', ''), 'T04': ('PASS', ''), ...}, '`mix run /tmp/harbor_manu...\n    │\n    └─ lib/thread_graph/forum/threads/fork_thread.ex:4:60: ThreadGraph.Forum.Threads.ForkThread.create/3\n\n')
+scenario_id = 'T08'
+
+    def _assert_scenario(suite, scenario_id):
+        results, diagnostics = suite
+        assert scenario_id in results, (
+            f"Scenario {scenario_id} did not run. The project most likely failed to "
+            f"compile or the suite crashed.\n{diagnostics}"
+        )
+        status, detail = results[scenario_id]
+>       assert status == "PASS", f"Scenario {scenario_id} failed:\n{detail}"
+E       AssertionError: Scenario T08 failed:
+E           1) test T08 recent_messages breaks a position tie with an ascending id (Harbor.Suite)
+E              /tmp/harbor_manual_graph.exs:371
+E              ** (Ash.Error.Unknown) 
+E              Bread Crumbs:
+E                > Exception raised in: ThreadGraph.Forum.Thread.read
+E         
+E              Unknown Error
+E         
+E              * ** (Spark.Options.ValidationError) unknown options [:query], valid options are: [:page, :load, :max_concurrency, :lock, :return_query?, :skip_unknown_inputs, :reuse_values?, :strict?, :authorize_with, :domain, :timeout, :tracer, :action, :authorize?, :context, :tenant, :actor, :scope]
+E                (ash 3.31.0) lib/ash/error/error.ex:114: Ash.Error.to_error_class/2
+E                (ash 3.31.0) lib/ash.ex:2949: anonymous fn/1 in Ash.read/2
+E                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2
+E                (thread_graph 0.1.0) lib/thread_graph/forum/threads/recent_messages.ex:14: ThreadGraph.Forum.Threads.RecentMessages.load/3
+E                (ash 3.31.0) lib/ash/actions/read/read.ex:88: Ash.Actions.Read.run/3
+E                (ash 3.31.0) lib/ash.ex:2938: Ash.read/2
+E                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2
+E                /tmp/harbor_manual_graph.exs:749: Harbor.Suite.load_all_threads/0
+E              code: threads = load_all_threads()
+E              stacktrace:
+E                (ash 3.31.0) lib/ash/error/error.ex:114: Ash.Error.to_error_class/2
+E                (ash 3.31.0) lib/ash.ex:2949: anonymous fn/1 in Ash.read/2
+E                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2
+E                (thread_graph 0.1.0) lib/thread_graph/forum/threads/recent_messages.ex:14: ThreadGraph.Forum.Threads.RecentMessages.load/3
+E                (ash 3.31.0) lib/ash/actions/read/read.ex:88: Ash.Actions.Read.run/3
+E                (ash 3.31.0) lib/ash.ex:2938: Ash.read/2
+E                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2
+E                /tmp/harbor_manual_graph.exs:749: Harbor.Suite.load_all_threads/0
+E                /tmp/harbor_manual_graph.exs:372: (test)
+E         
+E       assert 'FAIL' == 'PASS'
+E         - PASS
+E         + FAIL
+
+/tests/test_final_state.py:892: AssertionError
+______________ test_t09_recent_messages_filters_before_truncating ______________
+
+suite = ({'T01': ('PASS', ''), 'T02': ('PASS', ''), 'T03': ('PASS', ''), 'T04': ('PASS', ''), ...}, '`mix run /tmp/harbor_manu...\n    │\n    └─ lib/thread_graph/forum/threads/fork_thread.ex:4:60: ThreadGraph.Forum.Threads.ForkThread.create/3\n\n')
+
+    def test_t09_recent_messages_filters_before_truncating(suite):
+>       _assert_scenario(suite, "T09")
+
+/tests/test_final_state.py:928: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = ({'T01': ('PASS', ''), 'T02': ('PASS', ''), 'T03': ('PASS', ''), 'T04': ('PASS', ''), ...}, '`mix run /tmp/harbor_manu...\n    │\n    └─ lib/thread_graph/forum/threads/fork_thread.ex:4:60: ThreadGraph.Forum.Threads.ForkThread.create/3\n\n')
+scenario_id = 'T09'
+
+    def _assert_scenario(suite, scenario_id):
+        results, diagnostics = suite
+        assert scenario_id in results, (
+            f"Scenario {scenario_id} did not run. The project most likely failed to "
+            f"compile or the suite crashed.\n{diagnostics}"
+        )
+        status, detail = results[scenario_id]
+>       assert status == "PASS", f"Scenario {scenario_id} failed:\n{detail}"
+E       AssertionError: Scenario T09 failed:
+E           1) test T09 recent_messages applies the load query filter before truncating (Harbor.Suite)
+E              /tmp/harbor_manual_graph.exs:378
+E              ** (Ash.Error.Unknown) 
+E              Bread Crumbs:
+E                > Exception raised in: ThreadGraph.Forum.Thread.read
+E         
+E              Unknown Error
+E         
+E              * ** (Spark.Options.ValidationError) unknown options [:query], valid options are: [:page, :load, :max_concurrency, :lock, :return_query?, :skip_unknown_inputs, :reuse_values?, :strict?, :authorize_with, :domain, :timeout, :tracer, :action, :authorize?, :context, :tenant, :actor, :scope]
+E                (ash 3.31.0) lib/ash/error/error.ex:114: Ash.Error.to_error_class/2
+E                (ash 3.31.0) lib/ash.ex:2949: anonymous fn/1 in Ash.read/2
+E                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2
+E                (thread_graph 0.1.0) lib/thread_graph/forum/threads/recent_messages.ex:14: ThreadGraph.Forum.Threads.RecentMessages.load/3
+E                (ash 3.31.0) lib/ash/actions/read/read.ex:88: Ash.Actions.Read.run/3
+E                (ash 3.31.0) lib/ash.ex:2938: Ash.read/2
+E                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2
+E                /tmp/harbor_manual_graph.exs:382: Harbor.Suite."test T09 recent_messages applies the load query filter before truncating"/1
+E              code: |> Ash.read!()
+E              stacktrace:
+E                (ash 3.31.0) lib/ash/error/error.ex:114: Ash.Error.to_error_class/2
+E                (ash 3.31.0) lib/ash.ex:2949: anonymous fn/1 in Ash.read/2
+E                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2
+E                (thread_graph 0.1.0) lib/thread_graph/forum/threads/recent_messages.ex:14: ThreadGraph.Forum.Threads.RecentMessages.load/3
+E                (ash 3.31.0) lib/ash/actions/read/read.ex:88: Ash.Actions.Read.run/3
+E                (ash 3.31.0) lib/ash.ex:2938: Ash.read/2
+E                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2
+E                /tmp/harbor_manual_graph.exs:382: (test)
+E         
+E       assert 'FAIL' == 'PASS'
+E         - PASS
+E         + FAIL
+
+/tests/test_final_state.py:892: AssertionError
+_______________ test_t10_recent_messages_is_loaded_in_one_batch ________________
+
+suite = ({'T01': ('PASS', ''), 'T02': ('PASS', ''), 'T03': ('PASS', ''), 'T04': ('PASS', ''), ...}, '`mix run /tmp/harbor_manu...\n    │\n    └─ lib/thread_graph/forum/threads/fork_thread.ex:4:60: ThreadGraph.Forum.Threads.ForkThread.create/3\n\n')
+
+    def test_t10_recent_messages_is_loaded_in_one_batch(suite):
+>       _assert_scenario(suite, "T10")
+
+/tests/test_final_state.py:932: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = ({'T01': ('PASS', ''), 'T02': ('PASS', ''), 'T03': ('PASS', ''), 'T04': ('PASS', ''), ...}, '`mix run /tmp/harbor_manu...\n    │\n    └─ lib/thread_graph/forum/threads/fork_thread.ex:4:60: ThreadGraph.Forum.Threads.ForkThread.create/3\n\n')
+scenario_id = 'T10'
+
+    def _assert_scenario(suite, scenario_id):
+        results, diagnostics = suite
+        assert scenario_id in results, (
+            f"Scenario {scenario_id} did not run. The project most likely failed to "
+            f"compile or the suite crashed.\n{diagnostics}"
+        )
+        status, detail = results[scenario_id]
+>       assert status == "PASS", f"Scenario {scenario_id} failed:\n{detail}"
+E       AssertionError: Scenario T10 failed:
+E           1) test T10 recent_messages is loaded in a single batch for every parent (Harbor.Suite)
+E              /tmp/harbor_manual_graph.exs:389
+E              ** (Ash.Error.Unknown) 
+E              Bread Crumbs:
+E                > Exception raised in: ThreadGraph.Forum.Thread.read
+E         
+E              Unknown Error
+E         
+E              * ** (Spark.Options.ValidationError) unknown options [:query], valid options are: [:page, :load, :max_concurrency, :lock, :return_query?, :skip_unknown_inputs, :reuse_values?, :strict?, :authorize_with, :domain, :timeout, :tracer, :action, :authorize?, :context, :tenant, :actor, :scope]
+E                (ash 3.31.0) lib/ash/error/error.ex:114: Ash.Error.to_error_class/2
+E                (ash 3.31.0) lib/ash.ex:2949: anonymous fn/1 in Ash.read/2
+E                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2
+E                (thread_graph 0.1.0) lib/thread_graph/forum/threads/recent_messages.ex:14: ThreadGraph.Forum.Threads.RecentMessages.load/3
+E                (ash 3.31.0) lib/ash/actions/read/read.ex:88: Ash.Actions.Read.run/3
+E                (ash 3.31.0) lib/ash.ex:2938: Ash.read/2
+E                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2
+E                /tmp/harbor_manual_graph.exs:396: Harbor.Suite."test T10 recent_messages is loaded in a single batch for every parent"/1
+E              code: |> Ash.read!()
+E              stacktrace:
+E                (ash 3.31.0) lib/ash/error/error.ex:114: Ash.Error.to_error_class/2
+E                (ash 3.31.0) lib/ash.ex:2949: anonymous fn/1 in Ash.read/2
+E                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2
+E                (thread_graph 0.1.0) lib/thread_graph/forum/threads/recent_messages.ex:14: ThreadGraph.Forum.Threads.RecentMessages.load/3
+E                (ash 3.31.0) lib/ash/actions/read/read.ex:88: Ash.Actions.Read.run/3
+E                (ash 3.31.0) lib/ash.ex:2938: Ash.read/2
+E                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2
+E                /tmp/harbor_manual_graph.exs:396: (test)
+E         
+E       assert 'FAIL' == 'PASS'
+E         - PASS
+E         + FAIL
+
+/tests/test_final_state.py:892: AssertionError
+______________ test_t11_recent_messages_does_not_query_per_parent ______________
+
+suite = ({'T01': ('PASS', ''), 'T02': ('PASS', ''), 'T03': ('PASS', ''), 'T04': ('PASS', ''), ...}, '`mix run /tmp/harbor_manu...\n    │\n    └─ lib/thread_graph/forum/threads/fork_thread.ex:4:60: ThreadGraph.Forum.Threads.ForkThread.create/3\n\n')
+
+    def test_t11_recent_messages_does_not_query_per_parent(suite):
+>       _assert_scenario(suite, "T11")
+
+/tests/test_final_state.py:936: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = ({'T01': ('PASS', ''), 'T02': ('PASS', ''), 'T03': ('PASS', ''), 'T04': ('PASS', ''), ...}, '`mix run /tmp/harbor_manu...\n    │\n    └─ lib/thread_graph/forum/threads/fork_thread.ex:4:60: ThreadGraph.Forum.Threads.ForkThread.create/3\n\n')
+scenario_id = 'T11'
+
+    def _assert_scenario(suite, scenario_id):
+        results, diagnostics = suite
+        assert scenario_id in results, (
+            f"Scenario {scenario_id} did not run. The project most likely failed to "
+            f"compile or the suite crashed.\n{diagnostics}"
+        )
+        status, detail = results[scenario_id]
+>       assert status == "PASS", f"Scenario {scenario_id} failed:\n{detail}"
+E       AssertionError: Scenario T11 failed:
+E           1) test T11 recent_messages does not issue a read per parent record (Harbor.Suite)
+E              /tmp/harbor_manual_graph.exs:402
+E              ** (Ash.Error.Unknown) 
+E              Bread Crumbs:
+E                > Exception raised in: ThreadGraph.Forum.Thread.read
+E         
+E              Unknown Error
+E         
+E              * ** (Spark.Options.ValidationError) unknown options [:query], valid options are: [:page, :load, :max_concurrency, :lock, :return_query?, :skip_unknown_inputs, :reuse_values?, :strict?, :authorize_with, :domain, :timeout, :tracer, :action, :authorize?, :context, :tenant, :actor, :scope]
+E                (ash 3.31.0) lib/ash/error/error.ex:114: Ash.Error.to_error_class/2
+E                (ash 3.31.0) lib/ash.ex:2949: anonymous fn/1 in Ash.read/2
+E                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2
+E                (thread_graph 0.1.0) lib/thread_graph/forum/threads/recent_messages.ex:14: ThreadGraph.Forum.Threads.RecentMessages.load/3
+E                (ash 3.31.0) lib/ash/actions/read/read.ex:88: Ash.Actions.Read.run/3
+E                (ash 3.31.0) lib/ash.ex:2682: Ash.load/3
+E                (ash 3.31.0) lib/ash.ex:2540: Ash.load!/3
+E                /tmp/harbor_manual_graph.exs:186: Harbor.Helpers.with_read_count/1
+E              code: {loaded, reads} = with_read_count(fn -> Ash.load!(threads, :recent_messages) end)
+E              stacktrace:
+E                (ash 3.31.0) lib/ash/error/error.ex:114: Ash.Error.to_error_class/2
+E                (ash 3.31.0) lib/ash.ex:2949: anonymous fn/1 in Ash.read/2
+E                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2
+E                (thread_graph 0.1.0) lib/thread_graph/forum/threads/recent_messages.ex:14: ThreadGraph.Forum.Threads.RecentMessages.load/3
+E                (ash 3.31.0) lib/ash/actions/read/read.ex:88: Ash.Actions.Read.run/3
+E                (ash 3.31.0) lib/ash.ex:2682: Ash.load/3
+E                (ash 3.31.0) lib/ash.ex:2540: Ash.load!/3
+E                /tmp/harbor_manual_graph.exs:186: Harbor.Helpers.with_read_count/1
+E                /tmp/harbor_manual_graph.exs:410: (test)
+E         
+E       assert 'FAIL' == 'PASS'
+E         - PASS
+E         + FAIL
+
+/tests/test_final_state.py:892: AssertionError
+___________ test_t12_relationship_loads_under_a_manual_relationship ____________
+
+suite = ({'T01': ('PASS', ''), 'T02': ('PASS', ''), 'T03': ('PASS', ''), 'T04': ('PASS', ''), ...}, '`mix run /tmp/harbor_manu...\n    │\n    └─ lib/thread_graph/forum/threads/fork_thread.ex:4:60: ThreadGraph.Forum.Threads.ForkThread.create/3\n\n')
+
+    def test_t12_relationship_loads_under_a_manual_relationship(suite):
+>       _assert_scenario(suite, "T12")
+
+/tests/test_final_state.py:940: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = ({'T01': ('PASS', ''), 'T02': ('PASS', ''), 'T03': ('PASS', ''), 'T04': ('PASS', ''), ...}, '`mix run /tmp/harbor_manu...\n    │\n    └─ lib/thread_graph/forum/threads/fork_thread.ex:4:60: ThreadGraph.Forum.Threads.ForkThread.create/3\n\n')
+scenario_id = 'T12'
+
+    def _assert_scenario(suite, scenario_id):
+        results, diagnostics = suite
+        assert scenario_id in results, (
+            f"Scenario {scenario_id} did not run. The project most likely failed to "
+            f"compile or the suite crashed.\n{diagnostics}"
+        )
+        status, detail = results[scenario_id]
+>       assert status == "PASS", f"Scenario {scenario_id} failed:\n{detail}"
+E       AssertionError: Scenario T12 failed:
+E           1) test T12 a normal relationship loads underneath a manual relationship (Harbor.Suite)
+E              /tmp/harbor_manual_graph.exs:416
+E              ** (Ash.Error.Unknown) 
+E              Bread Crumbs:
+E                > Exception raised in: ThreadGraph.Forum.Thread.read
+E         
+E              Unknown Error
+E         
+E              * ** (Spark.Options.ValidationError) unknown options [:query], valid options are: [:page, :load, :max_concurrency, :lock, :return_query?, :skip_unknown_inputs, :reuse_values?, :strict?, :authorize_with, :domain, :timeout, :tracer, :action, :authorize?, :context, :tenant, :actor, :scope]
+E                (ash 3.31.0) lib/ash/error/error.ex:114: Ash.Error.to_error_class/2
+E                (ash 3.31.0) lib/ash.ex:2949: anonymous fn/1 in Ash.read/2
+E                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2
+E                (thread_graph 0.1.0) lib/thread_graph/forum/threads/recent_messages.ex:14: ThreadGraph.Forum.Threads.RecentMessages.load/3
+E                (ash 3.31.0) lib/ash/actions/read/read.ex:88: Ash.Actions.Read.run/3
+E                (ash 3.31.0) lib/ash.ex:3181: Ash.do_read_one/3
+E                (ash 3.31.0) lib/ash.ex:3085: Ash.read_one/2
+E                (ash 3.31.0) lib/ash.ex:3037: Ash.read_one!/2
+E              code: |> Ash.read_one!()
+E              stacktrace:
+E                (ash 3.31.0) lib/ash/error/error.ex:114: Ash.Error.to_error_class/2
+E                (ash 3.31.0) lib/ash.ex:2949: anonymous fn/1 in Ash.read/2
+E                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2
+E                (thread_graph 0.1.0) lib/thread_graph/forum/threads/recent_messages.ex:14: ThreadGraph.Forum.Threads.RecentMessages.load/3
+E                (ash 3.31.0) lib/ash/actions/read/read.ex:88: Ash.Actions.Read.run/3
+E                (ash 3.31.0) lib/ash.ex:3181: Ash.do_read_one/3
+E                (ash 3.31.0) lib/ash.ex:3085: Ash.read_one/2
+E                (ash 3.31.0) lib/ash.ex:3037: Ash.read_one!/2
+E                /tmp/harbor_manual_graph.exs:421: (test)
+E         
+E       assert 'FAIL' == 'PASS'
+E         - PASS
+E         + FAIL
+
+/tests/test_final_state.py:892: AssertionError
+_____________ test_t13_aggregate_loads_under_a_manual_relationship _____________
+
+suite = ({'T01': ('PASS', ''), 'T02': ('PASS', ''), 'T03': ('PASS', ''), 'T04': ('PASS', ''), ...}, '`mix run /tmp/harbor_manu...\n    │\n    └─ lib/thread_graph/forum/threads/fork_thread.ex:4:60: ThreadGraph.Forum.Threads.ForkThread.create/3\n\n')
+
+    def test_t13_aggregate_loads_under_a_manual_relationship(suite):
+>       _assert_scenario(suite, "T13")
+
+/tests/test_final_state.py:944: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = ({'T01': ('PASS', ''), 'T02': ('PASS', ''), 'T03': ('PASS', ''), 'T04': ('PASS', ''), ...}, '`mix run /tmp/harbor_manu...\n    │\n    └─ lib/thread_graph/forum/threads/fork_thread.ex:4:60: ThreadGraph.Forum.Threads.ForkThread.create/3\n\n')
+scenario_id = 'T13'
+
+    def _assert_scenario(suite, scenario_id):
+        results, diagnostics = suite
+        assert scenario_id in results, (
+            f"Scenario {scenario_id} did not run. The project most likely failed to "
+            f"compile or the suite crashed.\n{diagnostics}"
+        )
+        status, detail = results[scenario_id]
+>       assert status == "PASS", f"Scenario {scenario_id} failed:\n{detail}"
+E       AssertionError: Scenario T13 failed:
+E           1) test T13 an aggregate loads underneath a manual relationship (Harbor.Suite)
+E              /tmp/harbor_manual_graph.exs:427
+E              ** (Ash.Error.Unknown) 
+E              Bread Crumbs:
+E                > Exception raised in: ThreadGraph.Forum.Thread.read
+E         
+E              Unknown Error
+E         
+E              * ** (Spark.Options.ValidationError) unknown options [:query], valid options are: [:page, :load, :max_concurrency, :lock, :return_query?, :skip_unknown_inputs, :reuse_values?, :strict?, :authorize_with, :domain, :timeout, :tracer, :action, :authorize?, :context, :tenant, :actor, :scope]
+E                (ash 3.31.0) lib/ash/error/error.ex:114: Ash.Error.to_error_class/2
+E                (ash 3.31.0) lib/ash.ex:2949: anonymous fn/1 in Ash.read/2
+E                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2
+E                (thread_graph 0.1.0) lib/thread_graph/forum/threads/recent_messages.ex:14: ThreadGraph.Forum.Threads.RecentMessages.load/3
+E                (ash 3.31.0) lib/ash/actions/read/read.ex:88: Ash.Actions.Read.run/3
+E                (ash 3.31.0) lib/ash.ex:3181: Ash.do_read_one/3
+E                (ash 3.31.0) lib/ash.ex:3085: Ash.read_one/2
+E                (ash 3.31.0) lib/ash.ex:3037: Ash.read_one!/2
+E              code: |> Ash.read_one!()
+E              stacktrace:
+E                (ash 3.31.0) lib/ash/error/error.ex:114: Ash.Error.to_error_class/2
+E                (ash 3.31.0) lib/ash.ex:2949: anonymous fn/1 in Ash.read/2
+E                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2
+E                (thread_graph 0.1.0) lib/thread_graph/forum/threads/recent_messages.ex:14: ThreadGraph.Forum.Threads.RecentMessages.load/3
+E                (ash 3.31.0) lib/ash/actions/read/read.ex:88: Ash.Actions.Read.run/3
+E                (ash 3.31.0) lib/ash.ex:3181: Ash.do_read_one/3
+E                (ash 3.31.0) lib/ash.ex:3085: Ash.read_one/2
+E                (ash 3.31.0) lib/ash.ex:3037: Ash.read_one!/2
+E                /tmp/harbor_manual_graph.exs:432: (test)
+E         
+E       assert 'FAIL' == 'PASS'
+E         - PASS
+E         + FAIL
+
+/tests/test_final_state.py:892: AssertionError
+________ test_t14_manual_relationship_loads_under_a_manual_relationship ________
+
+suite = ({'T01': ('PASS', ''), 'T02': ('PASS', ''), 'T03': ('PASS', ''), 'T04': ('PASS', ''), ...}, '`mix run /tmp/harbor_manu...\n    │\n    └─ lib/thread_graph/forum/threads/fork_thread.ex:4:60: ThreadGraph.Forum.Threads.ForkThread.create/3\n\n')
+
+    def test_t14_manual_relationship_loads_under_a_manual_relationship(suite):
+>       _assert_scenario(suite, "T14")
+
+/tests/test_final_state.py:948: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = ({'T01': ('PASS', ''), 'T02': ('PASS', ''), 'T03': ('PASS', ''), 'T04': ('PASS', ''), ...}, '`mix run /tmp/harbor_manu...\n    │\n    └─ lib/thread_graph/forum/threads/fork_thread.ex:4:60: ThreadGraph.Forum.Threads.ForkThread.create/3\n\n')
+scenario_id = 'T14'
+
+    def _assert_scenario(suite, scenario_id):
+        results, diagnostics = suite
+        assert scenario_id in results, (
+            f"Scenario {scenario_id} did not run. The project most likely failed to "
+            f"compile or the suite crashed.\n{diagnostics}"
+        )
+        status, detail = results[scenario_id]
+>       assert status == "PASS", f"Scenario {scenario_id} failed:\n{detail}"
+E       AssertionError: Scenario T14 failed:
+E           1) test T14 a manual relationship loads underneath another manual relationship (Harbor.Suite)
+E              /tmp/harbor_manual_graph.exs:437
+E              ** (Ash.Error.Unknown) 
+E              Bread Crumbs:
+E                > Exception raised in: ThreadGraph.Forum.Thread.read
+E         
+E              Unknown Error
+E         
+E              * ** (Spark.Options.ValidationError) unknown options [:query], valid options are: [:page, :load, :max_concurrency, :lock, :return_query?, :skip_unknown_inputs, :reuse_values?, :strict?, :authorize_with, :domain, :timeout, :tracer, :action, :authorize?, :context, :tenant, :actor, :scope]
+E                (ash 3.31.0) lib/ash/error/error.ex:114: Ash.Error.to_error_class/2
+E                (ash 3.31.0) lib/ash.ex:2949: anonymous fn/1 in Ash.read/2
+E                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2
+E                (thread_graph 0.1.0) lib/thread_graph/forum/threads/recent_messages.ex:14: ThreadGraph.Forum.Threads.RecentMessages.load/3
+E                (ash 3.31.0) lib/ash/actions/read/read.ex:88: Ash.Actions.Read.run/3
+E                (ash 3.31.0) lib/ash.ex:3181: Ash.do_read_one/3
+E                (ash 3.31.0) lib/ash.ex:3085: Ash.read_one/2
+E                (ash 3.31.0) lib/ash.ex:3037: Ash.read_one!/2
+E              code: |> Ash.read_one!()
+E              stacktrace:
+E                (ash 3.31.0) lib/ash/error/error.ex:114: Ash.Error.to_error_class/2
+E                (ash 3.31.0) lib/ash.ex:2949: anonymous fn/1 in Ash.read/2
+E                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2
+E                (thread_graph 0.1.0) lib/thread_graph/forum/threads/recent_messages.ex:14: ThreadGraph.Forum.Threads.RecentMessages.load/3
+E                (ash 3.31.0) lib/ash/actions/read/read.ex:88: Ash.Actions.Read.run/3
+E                (ash 3.31.0) lib/ash.ex:3181: Ash.do_read_one/3
+E                (ash 3.31.0) lib/ash.ex:3085: Ash.read_one/2
+E                (ash 3.31.0) lib/ash.ex:3037: Ash.read_one!/2
+E                /tmp/harbor_manual_graph.exs:442: (test)
+E         
+E       assert 'FAIL' == 'PASS'
+E         - PASS
+E         + FAIL
+
+/tests/test_final_state.py:892: AssertionError
+____________ test_t15_ancestor_messages_is_ordered_outermost_first _____________
+
+suite = ({'T01': ('PASS', ''), 'T02': ('PASS', ''), 'T03': ('PASS', ''), 'T04': ('PASS', ''), ...}, '`mix run /tmp/harbor_manu...\n    │\n    └─ lib/thread_graph/forum/threads/fork_thread.ex:4:60: ThreadGraph.Forum.Threads.ForkThread.create/3\n\n')
+
+    def test_t15_ancestor_messages_is_ordered_outermost_first(suite):
+>       _assert_scenario(suite, "T15")
+
+/tests/test_final_state.py:952: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = ({'T01': ('PASS', ''), 'T02': ('PASS', ''), 'T03': ('PASS', ''), 'T04': ('PASS', ''), ...}, '`mix run /tmp/harbor_manu...\n    │\n    └─ lib/thread_graph/forum/threads/fork_thread.ex:4:60: ThreadGraph.Forum.Threads.ForkThread.create/3\n\n')
+scenario_id = 'T15'
+
+    def _assert_scenario(suite, scenario_id):
+        results, diagnostics = suite
+        assert scenario_id in results, (
+            f"Scenario {scenario_id} did not run. The project most likely failed to "
+            f"compile or the suite crashed.\n{diagnostics}"
+        )
+        status, detail = results[scenario_id]
+>       assert status == "PASS", f"Scenario {scenario_id} failed:\n{detail}"
+E       AssertionError: Scenario T15 failed:
+E           1) test T15 ancestor_messages walks the whole parent chain, outermost first (Harbor.Suite)
+E              /tmp/harbor_manual_graph.exs:451
+E              Assertion with == failed
+E              code:  assert ancestors["chain-1"] == ["chain-0"]
+E              left:  []
+E              right: ["chain-0"]
+E              stacktrace:
+E                /tmp/harbor_manual_graph.exs:455: (test)
+E         
+E       assert 'FAIL' == 'PASS'
+E         - PASS
+E         + FAIL
+
+/tests/test_final_state.py:892: AssertionError
+_______________ test_t16_ancestor_messages_terminates_on_a_cycle _______________
+
+suite = ({'T01': ('PASS', ''), 'T02': ('PASS', ''), 'T03': ('PASS', ''), 'T04': ('PASS', ''), ...}, '`mix run /tmp/harbor_manu...\n    │\n    └─ lib/thread_graph/forum/threads/fork_thread.ex:4:60: ThreadGraph.Forum.Threads.ForkThread.create/3\n\n')
+
+    def test_t16_ancestor_messages_terminates_on_a_cycle(suite):
+>       _assert_scenario(suite, "T16")
+
+/tests/test_final_state.py:956: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = ({'T01': ('PASS', ''), 'T02': ('PASS', ''), 'T03': ('PASS', ''), 'T04': ('PASS', ''), ...}, '`mix run /tmp/harbor_manu...\n    │\n    └─ lib/thread_graph/forum/threads/fork_thread.ex:4:60: ThreadGraph.Forum.Threads.ForkThread.create/3\n\n')
+scenario_id = 'T16'
+
+    def _assert_scenario(suite, scenario_id):
+        results, diagnostics = suite
+        assert scenario_id in results, (
+            f"Scenario {scenario_id} did not run. The project most likely failed to "
+            f"compile or the suite crashed.\n{diagnostics}"
+        )
+        status, detail = results[scenario_id]
+>       assert status == "PASS", f"Scenario {scenario_id} failed:\n{detail}"
+E       AssertionError: Scenario T16 failed:
+E           1) test T16 ancestor_messages terminates on a cyclic parent chain (Harbor.Suite)
+E              /tmp/harbor_manual_graph.exs:461
+E              Assertion with == failed
+E              code:  assert ancestors["cycle-1"] == ["cycle-2"]
+E              left:  []
+E              right: ["cycle-2"]
+E              stacktrace:
+E                /tmp/harbor_manual_graph.exs:464: (test)
+E         
+E       assert 'FAIL' == 'PASS'
+E         - PASS
+E         + FAIL
+
+/tests/test_final_state.py:892: AssertionError
+_______________ test_t18_linked_messages_is_a_transitive_closure _______________
+
+suite = ({'T01': ('PASS', ''), 'T02': ('PASS', ''), 'T03': ('PASS', ''), 'T04': ('PASS', ''), ...}, '`mix run /tmp/harbor_manu...\n    │\n    └─ lib/thread_graph/forum/threads/fork_thread.ex:4:60: ThreadGraph.Forum.Threads.ForkThread.create/3\n\n')
+
+    def test_t18_linked_messages_is_a_transitive_closure(suite):
+>       _assert_scenario(suite, "T18")
+
+/tests/test_final_state.py:964: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = ({'T01': ('PASS', ''), 'T02': ('PASS', ''), 'T03': ('PASS', ''), 'T04': ('PASS', ''), ...}, '`mix run /tmp/harbor_manu...\n    │\n    └─ lib/thread_graph/forum/threads/fork_thread.ex:4:60: ThreadGraph.Forum.Threads.ForkThread.create/3\n\n')
+scenario_id = 'T18'
+
+    def _assert_scenario(suite, scenario_id):
+        results, diagnostics = suite
+        assert scenario_id in results, (
+            f"Scenario {scenario_id} did not run. The project most likely failed to "
+            f"compile or the suite crashed.\n{diagnostics}"
+        )
+        status, detail = results[scenario_id]
+>       assert status == "PASS", f"Scenario {scenario_id} failed:\n{detail}"
+E       AssertionError: Scenario T18 failed:
+E           1) test T18 linked_messages returns the transitive closure ordered by hop distance (Harbor.Suite)
+E              /tmp/harbor_manual_graph.exs:481
+E              Assertion with == failed
+E              code:  assert linked["graph-1"] == ["graph-2", "graph-3", "graph-4", "graph-5"]
+E              left:  []
+E              right: ["graph-2", "graph-3", "graph-4", "graph-5"]
+E              stacktrace:
+E                /tmp/harbor_manual_graph.exs:484: (test)
+E         
+E       assert 'FAIL' == 'PASS'
+E         - PASS
+E         + FAIL
+
+/tests/test_final_state.py:892: AssertionError
+___________ test_t20_linked_messages_ignores_kind_and_shares_targets ___________
+
+suite = ({'T01': ('PASS', ''), 'T02': ('PASS', ''), 'T03': ('PASS', ''), 'T04': ('PASS', ''), ...}, '`mix run /tmp/harbor_manu...\n    │\n    └─ lib/thread_graph/forum/threads/fork_thread.ex:4:60: ThreadGraph.Forum.Threads.ForkThread.create/3\n\n')
+
+    def test_t20_linked_messages_ignores_kind_and_shares_targets(suite):
+>       _assert_scenario(suite, "T20")
+
+/tests/test_final_state.py:972: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = ({'T01': ('PASS', ''), 'T02': ('PASS', ''), 'T03': ('PASS', ''), 'T04': ('PASS', ''), ...}, '`mix run /tmp/harbor_manu...\n    │\n    └─ lib/thread_graph/forum/threads/fork_thread.ex:4:60: ThreadGraph.Forum.Threads.ForkThread.create/3\n\n')
+scenario_id = 'T20'
+
+    def _assert_scenario(suite, scenario_id):
+        results, diagnostics = suite
+        assert scenario_id in results, (
+            f"Scenario {scenario_id} did not run. The project most likely failed to "
+            f"compile or the suite crashed.\n{diagnostics}"
+        )
+        status, detail = results[scenario_id]
+>       assert status == "PASS", f"Scenario {scenario_id} failed:\n{detail}"
+E       AssertionError: Scenario T20 failed:
+E           1) test T20 linked_messages ignores the edge kind and shares targets between sources (Harbor.Suite)
+E              /tmp/harbor_manual_graph.exs:497
+E              Assertion with == failed
+E              code:  assert linked["beta-1"] == ["zeta-1", "alpha-2", "alpha-1"]
+E              left:  []
+E              right: ["zeta-1", "alpha-2", "alpha-1"]
+E              stacktrace:
+E                /tmp/harbor_manual_graph.exs:500: (test)
+E         
+E       assert 'FAIL' == 'PASS'
+E         - PASS
+E         + FAIL
+
+/tests/test_final_state.py:892: AssertionError
+__________________ test_t26_highlights_honours_a_query_filter __________________
+
+suite = ({'T01': ('PASS', ''), 'T02': ('PASS', ''), 'T03': ('PASS', ''), 'T04': ('PASS', ''), ...}, '`mix run /tmp/harbor_manu...\n    │\n    └─ lib/thread_graph/forum/threads/fork_thread.ex:4:60: ThreadGraph.Forum.Threads.ForkThread.create/3\n\n')
+
+    def test_t26_highlights_honours_a_query_filter(suite):
+>       _assert_scenario(suite, "T26")
+
+/tests/test_final_state.py:996: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = ({'T01': ('PASS', ''), 'T02': ('PASS', ''), 'T03': ('PASS', ''), 'T04': ('PASS', ''), ...}, '`mix run /tmp/harbor_manu...\n    │\n    └─ lib/thread_graph/forum/threads/fork_thread.ex:4:60: ThreadGraph.Forum.Threads.ForkThread.create/3\n\n')
+scenario_id = 'T26'
+
+    def _assert_scenario(suite, scenario_id):
+        results, diagnostics = suite
+        assert scenario_id in results, (
+            f"Scenario {scenario_id} did not run. The project most likely failed to "
+            f"compile or the suite crashed.\n{diagnostics}"
+        )
+        status, detail = results[scenario_id]
+>       assert status == "PASS", f"Scenario {scenario_id} failed:\n{detail}"
+E       AssertionError: Scenario T26 failed:
+E           1) test T26 cross_board_highlights honours a filter carried by the query (Harbor.Suite)
+E              /tmp/harbor_manual_graph.exs:566
+E              Assertion with == failed
+E              code:  assert bodies(results) == ["gamma-4", "gamma-2"]
+E              left:  ["alpha-1", "beta-1", "zeta-1", "alpha-2", "zeta-2", "alpha-3", "alpha-4", "alpha-5", "gamma-4", "gamma-1", "gamma-2", "gamma-3", "beta-2",
+E                      "beta-3"]
+E              right: ["gamma-4", "gamma-2"]
+E              stacktrace:
+E                /tmp/harbor_manual_graph.exs:576: (test)
+E         
+E       assert 'FAIL' == 'PASS'
+E         - PASS
+E         + FAIL
+
+/tests/test_final_state.py:892: AssertionError
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED ../../tests/test_final_state.py::test_t01_manual_relationships_declare_their_modules
+PASSED ../../tests/test_final_state.py::test_t02_manual_actions_declare_their_modules
+PASSED ../../tests/test_final_state.py::test_t03_manual_actions_expose_the_required_arguments
+PASSED ../../tests/test_final_state.py::test_t04_reply_count_aggregate_counts_direct_replies
+PASSED ../../tests/test_final_state.py::test_t17_ancestor_messages_is_batched
+PASSED ../../tests/test_final_state.py::test_t19_linked_messages_excludes_self_and_handles_leaves
+PASSED ../../tests/test_final_state.py::test_t21_linked_messages_is_batched
+PASSED ../../tests/test_final_state.py::test_t22_highlights_scopes_by_board_with_default_ordering
+PASSED ../../tests/test_final_state.py::test_t23_highlights_honours_min_endorsements
+PASSED ../../tests/test_final_state.py::test_t24_highlights_merges_several_boards
+PASSED ../../tests/test_final_state.py::test_t25_highlights_attaches_endorsement_count_metadata
+PASSED ../../tests/test_final_state.py::test_t27_highlights_honours_a_query_sort
+PASSED ../../tests/test_final_state.py::test_t28_highlights_honours_limit_and_offset
+PASSED ../../tests/test_final_state.py::test_t29_highlights_code_interface_runs_the_action_once
+PASSED ../../tests/test_final_state.py::test_t30_fork_copies_the_source_subtree
+PASSED ../../tests/test_final_state.py::test_t31_fork_renumbers_positions_by_position_order
+PASSED ../../tests/test_final_state.py::test_t32_fork_records_a_single_fork_of_link
+PASSED ../../tests/test_final_state.py::test_t33_fork_rejects_an_unknown_source_message
+PASSED ../../tests/test_final_state.py::test_t34_fork_rejects_a_locked_source_thread
+PASSED ../../tests/test_final_state.py::test_t35_fork_code_interface_runs_the_action_once
+FAILED ../../tests/test_final_state.py::test_t05_recent_messages_is_a_per_thread_top_three
+FAILED ../../tests/test_final_state.py::test_t06_recent_messages_is_empty_for_a_thread_without_messages
+FAILED ../../tests/test_final_state.py::test_t07_recent_messages_returns_fewer_than_three_when_available
+FAILED ../../tests/test_final_state.py::test_t08_recent_messages_breaks_position_ties_by_ascending_id
+FAILED ../../tests/test_final_state.py::test_t09_recent_messages_filters_before_truncating
+FAILED ../../tests/test_final_state.py::test_t10_recent_messages_is_loaded_in_one_batch
+FAILED ../../tests/test_final_state.py::test_t11_recent_messages_does_not_query_per_parent
+FAILED ../../tests/test_final_state.py::test_t12_relationship_loads_under_a_manual_relationship
+FAILED ../../tests/test_final_state.py::test_t13_aggregate_loads_under_a_manual_relationship
+FAILED ../../tests/test_final_state.py::test_t14_manual_relationship_loads_under_a_manual_relationship
+FAILED ../../tests/test_final_state.py::test_t15_ancestor_messages_is_ordered_outermost_first
+FAILED ../../tests/test_final_state.py::test_t16_ancestor_messages_terminates_on_a_cycle
+FAILED ../../tests/test_final_state.py::test_t18_linked_messages_is_a_transitive_closure
+FAILED ../../tests/test_final_state.py::test_t20_linked_messages_ignores_kind_and_shares_targets
+FAILED ../../tests/test_final_state.py::test_t26_highlights_honours_a_query_filter
+======================== 15 failed, 20 passed in 23.30s ========================

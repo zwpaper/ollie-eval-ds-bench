@@ -1,0 +1,39 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0
+rootdir: /tests
+plugins: json-ctrf-0.5.3
+collected 12 items
+
+tests/test_final_state.py ....F.......                                   [100%]
+
+=================================== FAILURES ===================================
+____________________ test_checkpoint_t_0_50_linear_position ____________________
+
+    def test_checkpoint_t_0_50_linear_position():
+        r = _run_harness()
+        sample = r.get("samples", {}).get("t_0_50")
+        assert sample is not None, "Missing checkpoint sample at t=0.50s."
+>       assert _approx_vec(sample["position"], [100.0, 50.0], 0.5), (
+            "At t=0.50s the position must be ~(100, 50) (verifies step 1 uses TRANS_LINEAR). "
+            f"got={sample['position']!r}"
+        )
+E       AssertionError: At t=0.50s the position must be ~(100, 50) (verifies step 1 uses TRANS_LINEAR). got=[101.010093688965, 50.5050468444824]
+E       assert False
+E        +  where False = _approx_vec([101.010093688965, 50.5050468444824], [100.0, 50.0], 0.5)
+
+tests/test_final_state.py:113: AssertionError
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED tests/test_final_state.py::test_scene_and_nodes_exist
+PASSED tests/test_final_state.py::test_required_signals_declared
+PASSED tests/test_final_state.py::test_initial_target_state
+PASSED tests/test_final_state.py::test_play_sequence_returns_tween
+PASSED tests/test_final_state.py::test_checkpoint_t_1_00_step_a_complete
+PASSED tests/test_final_state.py::test_checkpoint_t_1_50_parallel_progress
+PASSED tests/test_final_state.py::test_checkpoint_t_2_00_step_b_complete
+PASSED tests/test_final_state.py::test_checkpoint_t_3_00_step_c_complete
+PASSED tests/test_final_state.py::test_checkpoint_t_3_50_final_state
+PASSED tests/test_final_state.py::test_all_signals_emitted_exactly_once
+PASSED tests/test_final_state.py::test_is_running_false_after_completion
+FAILED tests/test_final_state.py::test_checkpoint_t_0_50_linear_position - As...
+======================== 1 failed, 11 passed in 13.29s =========================

@@ -1,0 +1,31 @@
+{
+  "version": "godot",
+  "agent": "ollie.agent:OllieAgent",
+  "model": "gemini-3.1-flash-lite",
+  "env": "daytona",
+  "concurrency": 10,
+  "taskIds": [
+    "godot_animation_tree_blend_locomotion",
+    "godot_area3d_layered_gravity_fields",
+    "godot_area_gravity_fields",
+    "godot_coin_collector_inventory_hud",
+    "godot_compute_shader_prefix_sum",
+    "godot_coroutine_scheduler",
+    "godot_delaunay_navmesh_triangulation",
+    "godot_dialog_branching_system",
+    "godot_ecs_archetype_framework",
+    "godot_enemy_stats_resource_spawner",
+    "godot_gdextension_cpp_vector_math",
+    "godot_gridmap_meshlibrary_builder",
+    "godot_input_remap_action_set",
+    "godot_multimesh_custom_instance_data",
+    "godot_multiplayer_synchronizer_lobby",
+    "godot_navigation_agent_2d_dynamic_obstacles",
+    "godot_resource_preloader_scene_loader",
+    "godot_save_load_resource_serialization",
+    "godot_tilemap_procedural_dungeon",
+    "godot_tween_chain_sequence_animation",
+    "godot_viewport_render_target_camera"
+  ],
+  "createdAt": "2026-09-11T12:25:39.965Z"
+}

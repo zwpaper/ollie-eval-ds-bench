@@ -1,0 +1,123 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0
+rootdir: /tests
+plugins: json-ctrf-0.5.3
+collected 13 items
+
+tests/test_final_state.py ......FFF..FF                                  [100%]
+
+=================================== FAILURES ===================================
+______________________ test_server_peers_match_client_ids ______________________
+
+primary_run = ({'clients': [{'peers': [], 'players': {}, 'unique_id': 1801321141}, {'peers': [], 'players': {}, 'unique_id': 1191924...'server': {'peers': [1], 'players': {'1': {'authority': 1, 'position': [1, 1], 'score': 0}}, 'unique_id': 1}}, [7, 13])
+
+    def test_server_peers_match_client_ids(primary_run):
+        data, _ = primary_run
+        expected = sorted(c["unique_id"] for c in data["clients"])
+>       assert sorted(data["server"]["peers"]) == expected, (
+            f"server.peers {sorted(data['server']['peers'])} should equal sorted client ids {expected}."
+        )
+E       AssertionError: server.peers [1] should equal sorted client ids [1191924906, 1801321141].
+E       assert [1] == [1191924906, 1801321141]
+E         At index 0 diff: 1 != 1191924906
+E         Right contains one more item: 1801321141
+E         Use -v to get more diff
+
+tests/test_final_state.py:130: AssertionError
+______________________ test_each_client_sees_other_peers _______________________
+
+primary_run = ({'clients': [{'peers': [], 'players': {}, 'unique_id': 1801321141}, {'peers': [], 'players': {}, 'unique_id': 1191924...'server': {'peers': [1], 'players': {'1': {'authority': 1, 'position': [1, 1], 'score': 0}}, 'unique_id': 1}}, [7, 13])
+
+    def test_each_client_sees_other_peers(primary_run):
+        data, _ = primary_run
+        all_client_ids = [c["unique_id"] for c in data["clients"]]
+        for client in data["clients"]:
+            expected = sorted([1] + [cid for cid in all_client_ids if cid != client["unique_id"]])
+>           assert sorted(client["peers"]) == expected, (
+                f"Client {client['unique_id']}.peers {sorted(client['peers'])} should equal {expected}."
+            )
+E           AssertionError: Client 1801321141.peers [] should equal [1, 1191924906].
+E           assert [] == [1, 1191924906]
+E             Right contains 2 more items, first extra item: 1
+E             Use -v to get more diff
+
+tests/test_final_state.py:140: AssertionError
+_________________________ test_player_keys_consistent __________________________
+
+primary_run = ({'clients': [{'peers': [], 'players': {}, 'unique_id': 1801321141}, {'peers': [], 'players': {}, 'unique_id': 1191924...'server': {'peers': [1], 'players': {'1': {'authority': 1, 'position': [1, 1], 'score': 0}}, 'unique_id': 1}}, [7, 13])
+
+    def test_player_keys_consistent(primary_run):
+        data, _ = primary_run
+        expected_keys = {"1"} | {str(c["unique_id"]) for c in data["clients"]}
+>       assert set(data["server"]["players"].keys()) == expected_keys, (
+            f"server.players keys {sorted(data['server']['players'].keys())} != expected {sorted(expected_keys)}"
+        )
+E       AssertionError: server.players keys ['1'] != expected ['1', '1191924906', '1801321141']
+E       assert {'1'} == {'1', '119192... '1801321141'}
+E         Extra items in the right set:
+E         '1801321141'
+E         '1191924906'
+E         Use -v to get more diff
+
+tests/test_final_state.py:148: AssertionError
+____________________________ test_score_propagation ____________________________
+
+primary_run = ({'clients': [{'peers': [], 'players': {}, 'unique_id': 1801321141}, {'peers': [], 'players': {}, 'unique_id': 1191924...'server': {'peers': [1], 'players': {'1': {'authority': 1, 'position': [1, 1], 'score': 0}}, 'unique_id': 1}}, [7, 13])
+
+    def test_score_propagation(primary_run):
+        data, deltas = primary_run
+        ordered_clients = data["clients"]
+        expected = {
+            "1": 0,
+            str(ordered_clients[0]["unique_id"]): deltas[0],
+            str(ordered_clients[1]["unique_id"]): deltas[1],
+        }
+        for view_name, view in [("server", data["server"])] + [
+            (f"client_{c['unique_id']}", c) for c in ordered_clients
+        ]:
+            for key, expected_score in expected.items():
+>               actual = view["players"][key]["score"]
+E               KeyError: '1801321141'
+
+tests/test_final_state.py:202: KeyError
+_______________________ test_rerun_with_different_deltas _______________________
+
+    def test_rerun_with_different_deltas():
+        out_path = "/tmp/result2.json"
+        result = _run_lobby(port=27016, deltas=[-2, 5], out_path=out_path, frames=240)
+        assert result.returncode == 0, (
+            f"Godot rerun failed with status {result.returncode}.\n"
+            f"STDOUT:\n{result.stdout}\nSTDERR:\n{result.stderr}"
+        )
+        data = _load_result(out_path)
+        ordered_clients = data["clients"]
+        assert len(ordered_clients) == 2, f"Expected 2 clients on rerun, got {len(ordered_clients)}"
+        expected = {
+            "1": 0,
+            str(ordered_clients[0]["unique_id"]): -2,
+            str(ordered_clients[1]["unique_id"]): 5,
+        }
+        for view_name, view in [("server", data["server"])] + [
+            (f"client_{c['unique_id']}", c) for c in ordered_clients
+        ]:
+            for key, expected_score in expected.items():
+>               actual = view["players"][key]["score"]
+E               KeyError: '312947072'
+
+tests/test_final_state.py:227: KeyError
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED tests/test_final_state.py::test_required_files_exist
+PASSED tests/test_final_state.py::test_player_script_declares_required_rpc
+PASSED tests/test_final_state.py::test_top_level_shape
+PASSED tests/test_final_state.py::test_server_unique_id_is_one
+PASSED tests/test_final_state.py::test_two_clients_returned
+PASSED tests/test_final_state.py::test_client_ids_distinct_and_above_one
+PASSED tests/test_final_state.py::test_authority_matches_key
+PASSED tests/test_final_state.py::test_position_equals_authority
+FAILED tests/test_final_state.py::test_server_peers_match_client_ids - Assert...
+FAILED tests/test_final_state.py::test_each_client_sees_other_peers - Asserti...
+FAILED tests/test_final_state.py::test_player_keys_consistent - AssertionErro...
+FAILED tests/test_final_state.py::test_score_propagation - KeyError: '1801321...
+FAILED tests/test_final_state.py::test_rerun_with_different_deltas - KeyError...
+========================= 5 failed, 8 passed in 4.27s ==========================
