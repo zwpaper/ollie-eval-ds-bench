@@ -1,0 +1,83 @@
+{
+    "reportFormat": "CTRF",
+    "specVersion": "0.0.0",
+    "timestamp": "2026-09-17T10:49:09.330985+00:00",
+    "generatedBy": "pytest",
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "7.4.4"
+        },
+        "summary": {
+            "tests": 6,
+            "passed": 6,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1789642148403,
+            "stop": 1789642149330
+        },
+        "environment": {
+            "buildName": "Pytest JSON CTRF Report",
+            "buildNumber": "000",
+            "buildUrl": "https://ctrf.io"
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_gdextension_config_present",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789642148428,
+                "stop": 1789642148429,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_built_shared_library_exists_for_linux_x86_64",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789642148430,
+                "stop": 1789642148431,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_test_runner_script_exists",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789642148431,
+                "stop": 1789642148432,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_godot_headless_runs_fastvectormath_checks",
+                "status": "passed",
+                "duration": 301,
+                "start": 1789642148432,
+                "stop": 1789642148733,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_classdb_registration",
+                "status": "passed",
+                "duration": 296,
+                "start": 1789642148733,
+                "stop": 1789642149029,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_method_results_via_godot",
+                "status": "passed",
+                "duration": 300,
+                "start": 1789642149030,
+                "stop": 1789642149330,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

@@ -1,0 +1,1275 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0
+rootdir: /tests
+plugins: json-ctrf-0.5.3
+collected 23 items
+
+tests/test_final_state.py FFFFFFFFFFFFFFFFFFFFFFF                        [100%]
+
+=================================== FAILURES ===================================
+_________________________ test_contract_suite_executed _________________________
+
+contract_run = {'output': 'Compiling 7 files (.ex)\n\n    error: undefined function authorize_if/1 (there is no such import)\n    │\n...ve been logged)\n    (ash 3.31.0) expanding macro: Ash.Policy.Authorizer.policies/1\n', 'results': {}, 'returncode': 1}
+
+    def test_contract_suite_executed(contract_run):
+>       assert contract_run["results"], (
+            "The ExUnit contract suite produced no results at all; the project at "
+            f"{PROJECT_DIR} could not be compiled or run (exit code "
+            f"{contract_run['returncode']}).\n"
+            f"Combined output:\n{contract_run['output'][-8000:]}"
+        )
+E       AssertionError: The ExUnit contract suite produced no results at all; the project at /home/user/forum could not be compiled or run (exit code 1).
+E         Combined output:
+E         Compiling 7 files (.ex)
+E         
+E             error: undefined function authorize_if/1 (there is no such import)
+E             │
+E          61 │     authorize_if always()
+E             │     ^
+E             │
+E             └─ lib/forum/content/reaction.ex:61:5: Forum.Content.Reaction (module)
+E         
+E             error: undefined function authorize_if/1 (there is no such import)
+E             │
+E          60 │     authorize_if always()
+E             │     ^
+E             │
+E             └─ lib/forum/content/post.ex:60:5: Forum.Content.Post (module)
+E         
+E             error: undefined function authorize_if/1 (there is no such import)
+E             │
+E          62 │     authorize_if always()
+E             │     ^
+E             │
+E             └─ lib/forum/content/comment.ex:62:5: Forum.Content.Comment (module)
+E         
+E         
+E         == Compilation error in file lib/forum/content/post.ex ==
+E         ** (CompileError) lib/forum/content/post.ex: cannot compile module Forum.Content.Post (errors have been logged)
+E             (ash 3.31.0) expanding macro: Ash.Policy.Authorizer.policies/1
+E         
+E       assert {}
+
+tests/test_final_state.py:743: AssertionError
+---------------------------- Captured stdout setup -----------------------------
+===== [mix run] Begin combined output =====
+Compiling 7 files (.ex)
+
+    error: undefined function authorize_if/1 (there is no such import)
+    │
+ 61 │     authorize_if always()
+    │     ^
+    │
+    └─ lib/forum/content/reaction.ex:61:5: Forum.Content.Reaction (module)
+
+    error: undefined function authorize_if/1 (there is no such import)
+    │
+ 60 │     authorize_if always()
+    │     ^
+    │
+    └─ lib/forum/content/post.ex:60:5: Forum.Content.Post (module)
+
+    error: undefined function authorize_if/1 (there is no such import)
+    │
+ 62 │     authorize_if always()
+    │     ^
+    │
+    └─ lib/forum/content/comment.ex:62:5: Forum.Content.Comment (module)
+
+
+== Compilation error in file lib/forum/content/post.ex ==
+** (CompileError) lib/forum/content/post.ex: cannot compile module Forum.Content.Post (errors have been logged)
+    (ash 3.31.0) expanding macro: Ash.Policy.Authorizer.policies/1
+
+===== [mix run] End combined output =====
+_____________ test_s01_structure_resources_actions_and_attributes ______________
+
+contract_run = {'output': 'Compiling 7 files (.ex)\n\n    error: undefined function authorize_if/1 (there is no such import)\n    │\n...ve been logged)\n    (ash 3.31.0) expanding macro: Ash.Policy.Authorizer.policies/1\n', 'results': {}, 'returncode': 1}
+
+    def test_s01_structure_resources_actions_and_attributes(contract_run):
+>       _scenario(contract_run, "s01_structure_resources_actions_and_attributes")
+
+tests/test_final_state.py:757: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+contract_run = {'output': 'Compiling 7 files (.ex)\n\n    error: undefined function authorize_if/1 (there is no such import)\n    │\n...ve been logged)\n    (ash 3.31.0) expanding macro: Ash.Policy.Authorizer.policies/1\n', 'results': {}, 'returncode': 1}
+name = 's01_structure_resources_actions_and_attributes'
+
+    def _scenario(contract_run, name):
+        results = contract_run["results"]
+        if name not in results:
+>           pytest.fail(
+                f"Scenario {name!r} never reported a result. The Ash project at "
+                f"{PROJECT_DIR} most likely failed to compile or to boot "
+                f"(mix run exit code {contract_run['returncode']}).\n"
+                f"Combined output:\n{contract_run['output'][-8000:]}"
+            )
+E           Failed: Scenario 's01_structure_resources_actions_and_attributes' never reported a result. The Ash project at /home/user/forum most likely failed to compile or to boot (mix run exit code 1).
+E           Combined output:
+E           Compiling 7 files (.ex)
+E           
+E               error: undefined function authorize_if/1 (there is no such import)
+E               │
+E            61 │     authorize_if always()
+E               │     ^
+E               │
+E               └─ lib/forum/content/reaction.ex:61:5: Forum.Content.Reaction (module)
+E           
+E               error: undefined function authorize_if/1 (there is no such import)
+E               │
+E            60 │     authorize_if always()
+E               │     ^
+E               │
+E               └─ lib/forum/content/post.ex:60:5: Forum.Content.Post (module)
+E           
+E               error: undefined function authorize_if/1 (there is no such import)
+E               │
+E            62 │     authorize_if always()
+E               │     ^
+E               │
+E               └─ lib/forum/content/comment.ex:62:5: Forum.Content.Comment (module)
+E           
+E           
+E           == Compilation error in file lib/forum/content/post.ex ==
+E           ** (CompileError) lib/forum/content/post.ex: cannot compile module Forum.Content.Post (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Policy.Authorizer.policies/1
+
+tests/test_final_state.py:728: Failed
+_____________ test_s02_shared_modules_are_reused_across_resources ______________
+
+contract_run = {'output': 'Compiling 7 files (.ex)\n\n    error: undefined function authorize_if/1 (there is no such import)\n    │\n...ve been logged)\n    (ash 3.31.0) expanding macro: Ash.Policy.Authorizer.policies/1\n', 'results': {}, 'returncode': 1}
+
+    def test_s02_shared_modules_are_reused_across_resources(contract_run):
+>       _scenario(contract_run, "s02_shared_modules_are_reused_across_resources")
+
+tests/test_final_state.py:760: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+contract_run = {'output': 'Compiling 7 files (.ex)\n\n    error: undefined function authorize_if/1 (there is no such import)\n    │\n...ve been logged)\n    (ash 3.31.0) expanding macro: Ash.Policy.Authorizer.policies/1\n', 'results': {}, 'returncode': 1}
+name = 's02_shared_modules_are_reused_across_resources'
+
+    def _scenario(contract_run, name):
+        results = contract_run["results"]
+        if name not in results:
+>           pytest.fail(
+                f"Scenario {name!r} never reported a result. The Ash project at "
+                f"{PROJECT_DIR} most likely failed to compile or to boot "
+                f"(mix run exit code {contract_run['returncode']}).\n"
+                f"Combined output:\n{contract_run['output'][-8000:]}"
+            )
+E           Failed: Scenario 's02_shared_modules_are_reused_across_resources' never reported a result. The Ash project at /home/user/forum most likely failed to compile or to boot (mix run exit code 1).
+E           Combined output:
+E           Compiling 7 files (.ex)
+E           
+E               error: undefined function authorize_if/1 (there is no such import)
+E               │
+E            61 │     authorize_if always()
+E               │     ^
+E               │
+E               └─ lib/forum/content/reaction.ex:61:5: Forum.Content.Reaction (module)
+E           
+E               error: undefined function authorize_if/1 (there is no such import)
+E               │
+E            60 │     authorize_if always()
+E               │     ^
+E               │
+E               └─ lib/forum/content/post.ex:60:5: Forum.Content.Post (module)
+E           
+E               error: undefined function authorize_if/1 (there is no such import)
+E               │
+E            62 │     authorize_if always()
+E               │     ^
+E               │
+E               └─ lib/forum/content/comment.ex:62:5: Forum.Content.Comment (module)
+E           
+E           
+E           == Compilation error in file lib/forum/content/post.ex ==
+E           ** (CompileError) lib/forum/content/post.ex: cannot compile module Forum.Content.Post (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Policy.Authorizer.policies/1
+
+tests/test_final_state.py:728: Failed
+___________________ test_s03_live_reads_return_every_record ____________________
+
+contract_run = {'output': 'Compiling 7 files (.ex)\n\n    error: undefined function authorize_if/1 (there is no such import)\n    │\n...ve been logged)\n    (ash 3.31.0) expanding macro: Ash.Policy.Authorizer.policies/1\n', 'results': {}, 'returncode': 1}
+
+    def test_s03_live_reads_return_every_record(contract_run):
+>       _scenario(contract_run, "s03_live_reads_return_every_record")
+
+tests/test_final_state.py:763: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+contract_run = {'output': 'Compiling 7 files (.ex)\n\n    error: undefined function authorize_if/1 (there is no such import)\n    │\n...ve been logged)\n    (ash 3.31.0) expanding macro: Ash.Policy.Authorizer.policies/1\n', 'results': {}, 'returncode': 1}
+name = 's03_live_reads_return_every_record'
+
+    def _scenario(contract_run, name):
+        results = contract_run["results"]
+        if name not in results:
+>           pytest.fail(
+                f"Scenario {name!r} never reported a result. The Ash project at "
+                f"{PROJECT_DIR} most likely failed to compile or to boot "
+                f"(mix run exit code {contract_run['returncode']}).\n"
+                f"Combined output:\n{contract_run['output'][-8000:]}"
+            )
+E           Failed: Scenario 's03_live_reads_return_every_record' never reported a result. The Ash project at /home/user/forum most likely failed to compile or to boot (mix run exit code 1).
+E           Combined output:
+E           Compiling 7 files (.ex)
+E           
+E               error: undefined function authorize_if/1 (there is no such import)
+E               │
+E            61 │     authorize_if always()
+E               │     ^
+E               │
+E               └─ lib/forum/content/reaction.ex:61:5: Forum.Content.Reaction (module)
+E           
+E               error: undefined function authorize_if/1 (there is no such import)
+E               │
+E            60 │     authorize_if always()
+E               │     ^
+E               │
+E               └─ lib/forum/content/post.ex:60:5: Forum.Content.Post (module)
+E           
+E               error: undefined function authorize_if/1 (there is no such import)
+E               │
+E            62 │     authorize_if always()
+E               │     ^
+E               │
+E               └─ lib/forum/content/comment.ex:62:5: Forum.Content.Comment (module)
+E           
+E           
+E           == Compilation error in file lib/forum/content/post.ex ==
+E           ** (CompileError) lib/forum/content/post.ex: cannot compile module Forum.Content.Post (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Policy.Authorizer.policies/1
+
+tests/test_final_state.py:728: Failed
+___ test_s04_archiving_a_post_hides_the_whole_subtree_from_the_primary_read ____
+
+contract_run = {'output': 'Compiling 7 files (.ex)\n\n    error: undefined function authorize_if/1 (there is no such import)\n    │\n...ve been logged)\n    (ash 3.31.0) expanding macro: Ash.Policy.Authorizer.policies/1\n', 'results': {}, 'returncode': 1}
+
+    def test_s04_archiving_a_post_hides_the_whole_subtree_from_the_primary_read(contract_run):
+>       _scenario(contract_run, "s04_archiving_a_post_hides_the_whole_subtree_from_the_primary_read")
+
+tests/test_final_state.py:766: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+contract_run = {'output': 'Compiling 7 files (.ex)\n\n    error: undefined function authorize_if/1 (there is no such import)\n    │\n...ve been logged)\n    (ash 3.31.0) expanding macro: Ash.Policy.Authorizer.policies/1\n', 'results': {}, 'returncode': 1}
+name = 's04_archiving_a_post_hides_the_whole_subtree_from_the_primary_read'
+
+    def _scenario(contract_run, name):
+        results = contract_run["results"]
+        if name not in results:
+>           pytest.fail(
+                f"Scenario {name!r} never reported a result. The Ash project at "
+                f"{PROJECT_DIR} most likely failed to compile or to boot "
+                f"(mix run exit code {contract_run['returncode']}).\n"
+                f"Combined output:\n{contract_run['output'][-8000:]}"
+            )
+E           Failed: Scenario 's04_archiving_a_post_hides_the_whole_subtree_from_the_primary_read' never reported a result. The Ash project at /home/user/forum most likely failed to compile or to boot (mix run exit code 1).
+E           Combined output:
+E           Compiling 7 files (.ex)
+E           
+E               error: undefined function authorize_if/1 (there is no such import)
+E               │
+E            61 │     authorize_if always()
+E               │     ^
+E               │
+E               └─ lib/forum/content/reaction.ex:61:5: Forum.Content.Reaction (module)
+E           
+E               error: undefined function authorize_if/1 (there is no such import)
+E               │
+E            60 │     authorize_if always()
+E               │     ^
+E               │
+E               └─ lib/forum/content/post.ex:60:5: Forum.Content.Post (module)
+E           
+E               error: undefined function authorize_if/1 (there is no such import)
+E               │
+E            62 │     authorize_if always()
+E               │     ^
+E               │
+E               └─ lib/forum/content/comment.ex:62:5: Forum.Content.Comment (module)
+E           
+E           
+E           == Compilation error in file lib/forum/content/post.ex ==
+E           ** (CompileError) lib/forum/content/post.ex: cannot compile module Forum.Content.Post (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Policy.Authorizer.policies/1
+
+tests/test_final_state.py:728: Failed
+___________ test_s05_archived_rows_survive_but_get_reports_not_found ___________
+
+contract_run = {'output': 'Compiling 7 files (.ex)\n\n    error: undefined function authorize_if/1 (there is no such import)\n    │\n...ve been logged)\n    (ash 3.31.0) expanding macro: Ash.Policy.Authorizer.policies/1\n', 'results': {}, 'returncode': 1}
+
+    def test_s05_archived_rows_survive_but_get_reports_not_found(contract_run):
+>       _scenario(contract_run, "s05_archived_rows_survive_but_get_reports_not_found")
+
+tests/test_final_state.py:769: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+contract_run = {'output': 'Compiling 7 files (.ex)\n\n    error: undefined function authorize_if/1 (there is no such import)\n    │\n...ve been logged)\n    (ash 3.31.0) expanding macro: Ash.Policy.Authorizer.policies/1\n', 'results': {}, 'returncode': 1}
+name = 's05_archived_rows_survive_but_get_reports_not_found'
+
+    def _scenario(contract_run, name):
+        results = contract_run["results"]
+        if name not in results:
+>           pytest.fail(
+                f"Scenario {name!r} never reported a result. The Ash project at "
+                f"{PROJECT_DIR} most likely failed to compile or to boot "
+                f"(mix run exit code {contract_run['returncode']}).\n"
+                f"Combined output:\n{contract_run['output'][-8000:]}"
+            )
+E           Failed: Scenario 's05_archived_rows_survive_but_get_reports_not_found' never reported a result. The Ash project at /home/user/forum most likely failed to compile or to boot (mix run exit code 1).
+E           Combined output:
+E           Compiling 7 files (.ex)
+E           
+E               error: undefined function authorize_if/1 (there is no such import)
+E               │
+E            61 │     authorize_if always()
+E               │     ^
+E               │
+E               └─ lib/forum/content/reaction.ex:61:5: Forum.Content.Reaction (module)
+E           
+E               error: undefined function authorize_if/1 (there is no such import)
+E               │
+E            60 │     authorize_if always()
+E               │     ^
+E               │
+E               └─ lib/forum/content/post.ex:60:5: Forum.Content.Post (module)
+E           
+E               error: undefined function authorize_if/1 (there is no such import)
+E               │
+E            62 │     authorize_if always()
+E               │     ^
+E               │
+E               └─ lib/forum/content/comment.ex:62:5: Forum.Content.Comment (module)
+E           
+E           
+E           == Compilation error in file lib/forum/content/post.ex ==
+E           ** (CompileError) lib/forum/content/post.ex: cannot compile module Forum.Content.Post (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Policy.Authorizer.policies/1
+
+tests/test_final_state.py:728: Failed
+_________ test_s06_one_archive_operation_marks_exactly_one_generation __________
+
+contract_run = {'output': 'Compiling 7 files (.ex)\n\n    error: undefined function authorize_if/1 (there is no such import)\n    │\n...ve been logged)\n    (ash 3.31.0) expanding macro: Ash.Policy.Authorizer.policies/1\n', 'results': {}, 'returncode': 1}
+
+    def test_s06_one_archive_operation_marks_exactly_one_generation(contract_run):
+>       _scenario(contract_run, "s06_one_archive_operation_marks_exactly_one_generation")
+
+tests/test_final_state.py:772: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+contract_run = {'output': 'Compiling 7 files (.ex)\n\n    error: undefined function authorize_if/1 (there is no such import)\n    │\n...ve been logged)\n    (ash 3.31.0) expanding macro: Ash.Policy.Authorizer.policies/1\n', 'results': {}, 'returncode': 1}
+name = 's06_one_archive_operation_marks_exactly_one_generation'
+
+    def _scenario(contract_run, name):
+        results = contract_run["results"]
+        if name not in results:
+>           pytest.fail(
+                f"Scenario {name!r} never reported a result. The Ash project at "
+                f"{PROJECT_DIR} most likely failed to compile or to boot "
+                f"(mix run exit code {contract_run['returncode']}).\n"
+                f"Combined output:\n{contract_run['output'][-8000:]}"
+            )
+E           Failed: Scenario 's06_one_archive_operation_marks_exactly_one_generation' never reported a result. The Ash project at /home/user/forum most likely failed to compile or to boot (mix run exit code 1).
+E           Combined output:
+E           Compiling 7 files (.ex)
+E           
+E               error: undefined function authorize_if/1 (there is no such import)
+E               │
+E            61 │     authorize_if always()
+E               │     ^
+E               │
+E               └─ lib/forum/content/reaction.ex:61:5: Forum.Content.Reaction (module)
+E           
+E               error: undefined function authorize_if/1 (there is no such import)
+E               │
+E            60 │     authorize_if always()
+E               │     ^
+E               │
+E               └─ lib/forum/content/post.ex:60:5: Forum.Content.Post (module)
+E           
+E               error: undefined function authorize_if/1 (there is no such import)
+E               │
+E            62 │     authorize_if always()
+E               │     ^
+E               │
+E               └─ lib/forum/content/comment.ex:62:5: Forum.Content.Comment (module)
+E           
+E           
+E           == Compilation error in file lib/forum/content/post.ex ==
+E           ** (CompileError) lib/forum/content/post.ex: cannot compile module Forum.Content.Post (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Policy.Authorizer.policies/1
+
+tests/test_final_state.py:728: Failed
+__________ test_s07_separate_archive_operations_use_distinct_batches ___________
+
+contract_run = {'output': 'Compiling 7 files (.ex)\n\n    error: undefined function authorize_if/1 (there is no such import)\n    │\n...ve been logged)\n    (ash 3.31.0) expanding macro: Ash.Policy.Authorizer.policies/1\n', 'results': {}, 'returncode': 1}
+
+    def test_s07_separate_archive_operations_use_distinct_batches(contract_run):
+>       _scenario(contract_run, "s07_separate_archive_operations_use_distinct_batches")
+
+tests/test_final_state.py:775: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+contract_run = {'output': 'Compiling 7 files (.ex)\n\n    error: undefined function authorize_if/1 (there is no such import)\n    │\n...ve been logged)\n    (ash 3.31.0) expanding macro: Ash.Policy.Authorizer.policies/1\n', 'results': {}, 'returncode': 1}
+name = 's07_separate_archive_operations_use_distinct_batches'
+
+    def _scenario(contract_run, name):
+        results = contract_run["results"]
+        if name not in results:
+>           pytest.fail(
+                f"Scenario {name!r} never reported a result. The Ash project at "
+                f"{PROJECT_DIR} most likely failed to compile or to boot "
+                f"(mix run exit code {contract_run['returncode']}).\n"
+                f"Combined output:\n{contract_run['output'][-8000:]}"
+            )
+E           Failed: Scenario 's07_separate_archive_operations_use_distinct_batches' never reported a result. The Ash project at /home/user/forum most likely failed to compile or to boot (mix run exit code 1).
+E           Combined output:
+E           Compiling 7 files (.ex)
+E           
+E               error: undefined function authorize_if/1 (there is no such import)
+E               │
+E            61 │     authorize_if always()
+E               │     ^
+E               │
+E               └─ lib/forum/content/reaction.ex:61:5: Forum.Content.Reaction (module)
+E           
+E               error: undefined function authorize_if/1 (there is no such import)
+E               │
+E            60 │     authorize_if always()
+E               │     ^
+E               │
+E               └─ lib/forum/content/post.ex:60:5: Forum.Content.Post (module)
+E           
+E               error: undefined function authorize_if/1 (there is no such import)
+E               │
+E            62 │     authorize_if always()
+E               │     ^
+E               │
+E               └─ lib/forum/content/comment.ex:62:5: Forum.Content.Comment (module)
+E           
+E           
+E           == Compilation error in file lib/forum/content/post.ex ==
+E           ** (CompileError) lib/forum/content/post.ex: cannot compile module Forum.Content.Post (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Policy.Authorizer.policies/1
+
+tests/test_final_state.py:728: Failed
+_______ test_s08_archiving_a_comment_cascades_only_to_its_own_reactions ________
+
+contract_run = {'output': 'Compiling 7 files (.ex)\n\n    error: undefined function authorize_if/1 (there is no such import)\n    │\n...ve been logged)\n    (ash 3.31.0) expanding macro: Ash.Policy.Authorizer.policies/1\n', 'results': {}, 'returncode': 1}
+
+    def test_s08_archiving_a_comment_cascades_only_to_its_own_reactions(contract_run):
+>       _scenario(contract_run, "s08_archiving_a_comment_cascades_only_to_its_own_reactions")
+
+tests/test_final_state.py:778: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+contract_run = {'output': 'Compiling 7 files (.ex)\n\n    error: undefined function authorize_if/1 (there is no such import)\n    │\n...ve been logged)\n    (ash 3.31.0) expanding macro: Ash.Policy.Authorizer.policies/1\n', 'results': {}, 'returncode': 1}
+name = 's08_archiving_a_comment_cascades_only_to_its_own_reactions'
+
+    def _scenario(contract_run, name):
+        results = contract_run["results"]
+        if name not in results:
+>           pytest.fail(
+                f"Scenario {name!r} never reported a result. The Ash project at "
+                f"{PROJECT_DIR} most likely failed to compile or to boot "
+                f"(mix run exit code {contract_run['returncode']}).\n"
+                f"Combined output:\n{contract_run['output'][-8000:]}"
+            )
+E           Failed: Scenario 's08_archiving_a_comment_cascades_only_to_its_own_reactions' never reported a result. The Ash project at /home/user/forum most likely failed to compile or to boot (mix run exit code 1).
+E           Combined output:
+E           Compiling 7 files (.ex)
+E           
+E               error: undefined function authorize_if/1 (there is no such import)
+E               │
+E            61 │     authorize_if always()
+E               │     ^
+E               │
+E               └─ lib/forum/content/reaction.ex:61:5: Forum.Content.Reaction (module)
+E           
+E               error: undefined function authorize_if/1 (there is no such import)
+E               │
+E            60 │     authorize_if always()
+E               │     ^
+E               │
+E               └─ lib/forum/content/post.ex:60:5: Forum.Content.Post (module)
+E           
+E               error: undefined function authorize_if/1 (there is no such import)
+E               │
+E            62 │     authorize_if always()
+E               │     ^
+E               │
+E               └─ lib/forum/content/comment.ex:62:5: Forum.Content.Comment (module)
+E           
+E           
+E           == Compilation error in file lib/forum/content/post.ex ==
+E           ** (CompileError) lib/forum/content/post.ex: cannot compile module Forum.Content.Post (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Policy.Authorizer.policies/1
+
+tests/test_final_state.py:728: Failed
+______ test_s09_a_later_archive_leaves_earlier_archived_descendants_alone ______
+
+contract_run = {'output': 'Compiling 7 files (.ex)\n\n    error: undefined function authorize_if/1 (there is no such import)\n    │\n...ve been logged)\n    (ash 3.31.0) expanding macro: Ash.Policy.Authorizer.policies/1\n', 'results': {}, 'returncode': 1}
+
+    def test_s09_a_later_archive_leaves_earlier_archived_descendants_alone(contract_run):
+>       _scenario(contract_run, "s09_a_later_archive_leaves_earlier_archived_descendants_alone")
+
+tests/test_final_state.py:781: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+contract_run = {'output': 'Compiling 7 files (.ex)\n\n    error: undefined function authorize_if/1 (there is no such import)\n    │\n...ve been logged)\n    (ash 3.31.0) expanding macro: Ash.Policy.Authorizer.policies/1\n', 'results': {}, 'returncode': 1}
+name = 's09_a_later_archive_leaves_earlier_archived_descendants_alone'
+
+    def _scenario(contract_run, name):
+        results = contract_run["results"]
+        if name not in results:
+>           pytest.fail(
+                f"Scenario {name!r} never reported a result. The Ash project at "
+                f"{PROJECT_DIR} most likely failed to compile or to boot "
+                f"(mix run exit code {contract_run['returncode']}).\n"
+                f"Combined output:\n{contract_run['output'][-8000:]}"
+            )
+E           Failed: Scenario 's09_a_later_archive_leaves_earlier_archived_descendants_alone' never reported a result. The Ash project at /home/user/forum most likely failed to compile or to boot (mix run exit code 1).
+E           Combined output:
+E           Compiling 7 files (.ex)
+E           
+E               error: undefined function authorize_if/1 (there is no such import)
+E               │
+E            61 │     authorize_if always()
+E               │     ^
+E               │
+E               └─ lib/forum/content/reaction.ex:61:5: Forum.Content.Reaction (module)
+E           
+E               error: undefined function authorize_if/1 (there is no such import)
+E               │
+E            60 │     authorize_if always()
+E               │     ^
+E               │
+E               └─ lib/forum/content/post.ex:60:5: Forum.Content.Post (module)
+E           
+E               error: undefined function authorize_if/1 (there is no such import)
+E               │
+E            62 │     authorize_if always()
+E               │     ^
+E               │
+E               └─ lib/forum/content/comment.ex:62:5: Forum.Content.Comment (module)
+E           
+E           
+E           == Compilation error in file lib/forum/content/post.ex ==
+E           ** (CompileError) lib/forum/content/post.ex: cannot compile module Forum.Content.Post (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Policy.Authorizer.policies/1
+
+tests/test_final_state.py:728: Failed
+____________________ test_s10_archiving_twice_is_idempotent ____________________
+
+contract_run = {'output': 'Compiling 7 files (.ex)\n\n    error: undefined function authorize_if/1 (there is no such import)\n    │\n...ve been logged)\n    (ash 3.31.0) expanding macro: Ash.Policy.Authorizer.policies/1\n', 'results': {}, 'returncode': 1}
+
+    def test_s10_archiving_twice_is_idempotent(contract_run):
+>       _scenario(contract_run, "s10_archiving_twice_is_idempotent")
+
+tests/test_final_state.py:784: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+contract_run = {'output': 'Compiling 7 files (.ex)\n\n    error: undefined function authorize_if/1 (there is no such import)\n    │\n...ve been logged)\n    (ash 3.31.0) expanding macro: Ash.Policy.Authorizer.policies/1\n', 'results': {}, 'returncode': 1}
+name = 's10_archiving_twice_is_idempotent'
+
+    def _scenario(contract_run, name):
+        results = contract_run["results"]
+        if name not in results:
+>           pytest.fail(
+                f"Scenario {name!r} never reported a result. The Ash project at "
+                f"{PROJECT_DIR} most likely failed to compile or to boot "
+                f"(mix run exit code {contract_run['returncode']}).\n"
+                f"Combined output:\n{contract_run['output'][-8000:]}"
+            )
+E           Failed: Scenario 's10_archiving_twice_is_idempotent' never reported a result. The Ash project at /home/user/forum most likely failed to compile or to boot (mix run exit code 1).
+E           Combined output:
+E           Compiling 7 files (.ex)
+E           
+E               error: undefined function authorize_if/1 (there is no such import)
+E               │
+E            61 │     authorize_if always()
+E               │     ^
+E               │
+E               └─ lib/forum/content/reaction.ex:61:5: Forum.Content.Reaction (module)
+E           
+E               error: undefined function authorize_if/1 (there is no such import)
+E               │
+E            60 │     authorize_if always()
+E               │     ^
+E               │
+E               └─ lib/forum/content/post.ex:60:5: Forum.Content.Post (module)
+E           
+E               error: undefined function authorize_if/1 (there is no such import)
+E               │
+E            62 │     authorize_if always()
+E               │     ^
+E               │
+E               └─ lib/forum/content/comment.ex:62:5: Forum.Content.Comment (module)
+E           
+E           
+E           == Compilation error in file lib/forum/content/post.ex ==
+E           ** (CompileError) lib/forum/content/post.ex: cannot compile module Forum.Content.Post (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Policy.Authorizer.policies/1
+
+tests/test_final_state.py:728: Failed
+_______________ test_s11_restore_only_brings_back_its_own_batch ________________
+
+contract_run = {'output': 'Compiling 7 files (.ex)\n\n    error: undefined function authorize_if/1 (there is no such import)\n    │\n...ve been logged)\n    (ash 3.31.0) expanding macro: Ash.Policy.Authorizer.policies/1\n', 'results': {}, 'returncode': 1}
+
+    def test_s11_restore_only_brings_back_its_own_batch(contract_run):
+>       _scenario(contract_run, "s11_restore_only_brings_back_its_own_batch")
+
+tests/test_final_state.py:787: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+contract_run = {'output': 'Compiling 7 files (.ex)\n\n    error: undefined function authorize_if/1 (there is no such import)\n    │\n...ve been logged)\n    (ash 3.31.0) expanding macro: Ash.Policy.Authorizer.policies/1\n', 'results': {}, 'returncode': 1}
+name = 's11_restore_only_brings_back_its_own_batch'
+
+    def _scenario(contract_run, name):
+        results = contract_run["results"]
+        if name not in results:
+>           pytest.fail(
+                f"Scenario {name!r} never reported a result. The Ash project at "
+                f"{PROJECT_DIR} most likely failed to compile or to boot "
+                f"(mix run exit code {contract_run['returncode']}).\n"
+                f"Combined output:\n{contract_run['output'][-8000:]}"
+            )
+E           Failed: Scenario 's11_restore_only_brings_back_its_own_batch' never reported a result. The Ash project at /home/user/forum most likely failed to compile or to boot (mix run exit code 1).
+E           Combined output:
+E           Compiling 7 files (.ex)
+E           
+E               error: undefined function authorize_if/1 (there is no such import)
+E               │
+E            61 │     authorize_if always()
+E               │     ^
+E               │
+E               └─ lib/forum/content/reaction.ex:61:5: Forum.Content.Reaction (module)
+E           
+E               error: undefined function authorize_if/1 (there is no such import)
+E               │
+E            60 │     authorize_if always()
+E               │     ^
+E               │
+E               └─ lib/forum/content/post.ex:60:5: Forum.Content.Post (module)
+E           
+E               error: undefined function authorize_if/1 (there is no such import)
+E               │
+E            62 │     authorize_if always()
+E               │     ^
+E               │
+E               └─ lib/forum/content/comment.ex:62:5: Forum.Content.Comment (module)
+E           
+E           
+E           == Compilation error in file lib/forum/content/post.ex ==
+E           ** (CompileError) lib/forum/content/post.ex: cannot compile module Forum.Content.Post (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Policy.Authorizer.policies/1
+
+tests/test_final_state.py:728: Failed
+___________ test_s12_restoring_a_descendant_does_not_touch_ancestors ___________
+
+contract_run = {'output': 'Compiling 7 files (.ex)\n\n    error: undefined function authorize_if/1 (there is no such import)\n    │\n...ve been logged)\n    (ash 3.31.0) expanding macro: Ash.Policy.Authorizer.policies/1\n', 'results': {}, 'returncode': 1}
+
+    def test_s12_restoring_a_descendant_does_not_touch_ancestors(contract_run):
+>       _scenario(contract_run, "s12_restoring_a_descendant_does_not_touch_ancestors")
+
+tests/test_final_state.py:790: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+contract_run = {'output': 'Compiling 7 files (.ex)\n\n    error: undefined function authorize_if/1 (there is no such import)\n    │\n...ve been logged)\n    (ash 3.31.0) expanding macro: Ash.Policy.Authorizer.policies/1\n', 'results': {}, 'returncode': 1}
+name = 's12_restoring_a_descendant_does_not_touch_ancestors'
+
+    def _scenario(contract_run, name):
+        results = contract_run["results"]
+        if name not in results:
+>           pytest.fail(
+                f"Scenario {name!r} never reported a result. The Ash project at "
+                f"{PROJECT_DIR} most likely failed to compile or to boot "
+                f"(mix run exit code {contract_run['returncode']}).\n"
+                f"Combined output:\n{contract_run['output'][-8000:]}"
+            )
+E           Failed: Scenario 's12_restoring_a_descendant_does_not_touch_ancestors' never reported a result. The Ash project at /home/user/forum most likely failed to compile or to boot (mix run exit code 1).
+E           Combined output:
+E           Compiling 7 files (.ex)
+E           
+E               error: undefined function authorize_if/1 (there is no such import)
+E               │
+E            61 │     authorize_if always()
+E               │     ^
+E               │
+E               └─ lib/forum/content/reaction.ex:61:5: Forum.Content.Reaction (module)
+E           
+E               error: undefined function authorize_if/1 (there is no such import)
+E               │
+E            60 │     authorize_if always()
+E               │     ^
+E               │
+E               └─ lib/forum/content/post.ex:60:5: Forum.Content.Post (module)
+E           
+E               error: undefined function authorize_if/1 (there is no such import)
+E               │
+E            62 │     authorize_if always()
+E               │     ^
+E               │
+E               └─ lib/forum/content/comment.ex:62:5: Forum.Content.Comment (module)
+E           
+E           
+E           == Compilation error in file lib/forum/content/post.ex ==
+E           ** (CompileError) lib/forum/content/post.ex: cannot compile module Forum.Content.Post (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Policy.Authorizer.policies/1
+
+tests/test_final_state.py:728: Failed
+___________ test_s13_restore_is_idempotent_and_safe_on_live_records ____________
+
+contract_run = {'output': 'Compiling 7 files (.ex)\n\n    error: undefined function authorize_if/1 (there is no such import)\n    │\n...ve been logged)\n    (ash 3.31.0) expanding macro: Ash.Policy.Authorizer.policies/1\n', 'results': {}, 'returncode': 1}
+
+    def test_s13_restore_is_idempotent_and_safe_on_live_records(contract_run):
+>       _scenario(contract_run, "s13_restore_is_idempotent_and_safe_on_live_records")
+
+tests/test_final_state.py:793: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+contract_run = {'output': 'Compiling 7 files (.ex)\n\n    error: undefined function authorize_if/1 (there is no such import)\n    │\n...ve been logged)\n    (ash 3.31.0) expanding macro: Ash.Policy.Authorizer.policies/1\n', 'results': {}, 'returncode': 1}
+name = 's13_restore_is_idempotent_and_safe_on_live_records'
+
+    def _scenario(contract_run, name):
+        results = contract_run["results"]
+        if name not in results:
+>           pytest.fail(
+                f"Scenario {name!r} never reported a result. The Ash project at "
+                f"{PROJECT_DIR} most likely failed to compile or to boot "
+                f"(mix run exit code {contract_run['returncode']}).\n"
+                f"Combined output:\n{contract_run['output'][-8000:]}"
+            )
+E           Failed: Scenario 's13_restore_is_idempotent_and_safe_on_live_records' never reported a result. The Ash project at /home/user/forum most likely failed to compile or to boot (mix run exit code 1).
+E           Combined output:
+E           Compiling 7 files (.ex)
+E           
+E               error: undefined function authorize_if/1 (there is no such import)
+E               │
+E            61 │     authorize_if always()
+E               │     ^
+E               │
+E               └─ lib/forum/content/reaction.ex:61:5: Forum.Content.Reaction (module)
+E           
+E               error: undefined function authorize_if/1 (there is no such import)
+E               │
+E            60 │     authorize_if always()
+E               │     ^
+E               │
+E               └─ lib/forum/content/post.ex:60:5: Forum.Content.Post (module)
+E           
+E               error: undefined function authorize_if/1 (there is no such import)
+E               │
+E            62 │     authorize_if always()
+E               │     ^
+E               │
+E               └─ lib/forum/content/comment.ex:62:5: Forum.Content.Comment (module)
+E           
+E           
+E           == Compilation error in file lib/forum/content/post.ex ==
+E           ** (CompileError) lib/forum/content/post.ex: cannot compile module Forum.Content.Post (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Policy.Authorizer.policies/1
+
+tests/test_final_state.py:728: Failed
+_________________ test_s14_restore_clears_both_archive_markers _________________
+
+contract_run = {'output': 'Compiling 7 files (.ex)\n\n    error: undefined function authorize_if/1 (there is no such import)\n    │\n...ve been logged)\n    (ash 3.31.0) expanding macro: Ash.Policy.Authorizer.policies/1\n', 'results': {}, 'returncode': 1}
+
+    def test_s14_restore_clears_both_archive_markers(contract_run):
+>       _scenario(contract_run, "s14_restore_clears_both_archive_markers")
+
+tests/test_final_state.py:796: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+contract_run = {'output': 'Compiling 7 files (.ex)\n\n    error: undefined function authorize_if/1 (there is no such import)\n    │\n...ve been logged)\n    (ash 3.31.0) expanding macro: Ash.Policy.Authorizer.policies/1\n', 'results': {}, 'returncode': 1}
+name = 's14_restore_clears_both_archive_markers'
+
+    def _scenario(contract_run, name):
+        results = contract_run["results"]
+        if name not in results:
+>           pytest.fail(
+                f"Scenario {name!r} never reported a result. The Ash project at "
+                f"{PROJECT_DIR} most likely failed to compile or to boot "
+                f"(mix run exit code {contract_run['returncode']}).\n"
+                f"Combined output:\n{contract_run['output'][-8000:]}"
+            )
+E           Failed: Scenario 's14_restore_clears_both_archive_markers' never reported a result. The Ash project at /home/user/forum most likely failed to compile or to boot (mix run exit code 1).
+E           Combined output:
+E           Compiling 7 files (.ex)
+E           
+E               error: undefined function authorize_if/1 (there is no such import)
+E               │
+E            61 │     authorize_if always()
+E               │     ^
+E               │
+E               └─ lib/forum/content/reaction.ex:61:5: Forum.Content.Reaction (module)
+E           
+E               error: undefined function authorize_if/1 (there is no such import)
+E               │
+E            60 │     authorize_if always()
+E               │     ^
+E               │
+E               └─ lib/forum/content/post.ex:60:5: Forum.Content.Post (module)
+E           
+E               error: undefined function authorize_if/1 (there is no such import)
+E               │
+E            62 │     authorize_if always()
+E               │     ^
+E               │
+E               └─ lib/forum/content/comment.ex:62:5: Forum.Content.Comment (module)
+E           
+E           
+E           == Compilation error in file lib/forum/content/post.ex ==
+E           ** (CompileError) lib/forum/content/post.ex: cannot compile module Forum.Content.Post (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Policy.Authorizer.policies/1
+
+tests/test_final_state.py:728: Failed
+_____________ test_s15_count_aggregates_exclude_archived_children ______________
+
+contract_run = {'output': 'Compiling 7 files (.ex)\n\n    error: undefined function authorize_if/1 (there is no such import)\n    │\n...ve been logged)\n    (ash 3.31.0) expanding macro: Ash.Policy.Authorizer.policies/1\n', 'results': {}, 'returncode': 1}
+
+    def test_s15_count_aggregates_exclude_archived_children(contract_run):
+>       _scenario(contract_run, "s15_count_aggregates_exclude_archived_children")
+
+tests/test_final_state.py:799: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+contract_run = {'output': 'Compiling 7 files (.ex)\n\n    error: undefined function authorize_if/1 (there is no such import)\n    │\n...ve been logged)\n    (ash 3.31.0) expanding macro: Ash.Policy.Authorizer.policies/1\n', 'results': {}, 'returncode': 1}
+name = 's15_count_aggregates_exclude_archived_children'
+
+    def _scenario(contract_run, name):
+        results = contract_run["results"]
+        if name not in results:
+>           pytest.fail(
+                f"Scenario {name!r} never reported a result. The Ash project at "
+                f"{PROJECT_DIR} most likely failed to compile or to boot "
+                f"(mix run exit code {contract_run['returncode']}).\n"
+                f"Combined output:\n{contract_run['output'][-8000:]}"
+            )
+E           Failed: Scenario 's15_count_aggregates_exclude_archived_children' never reported a result. The Ash project at /home/user/forum most likely failed to compile or to boot (mix run exit code 1).
+E           Combined output:
+E           Compiling 7 files (.ex)
+E           
+E               error: undefined function authorize_if/1 (there is no such import)
+E               │
+E            61 │     authorize_if always()
+E               │     ^
+E               │
+E               └─ lib/forum/content/reaction.ex:61:5: Forum.Content.Reaction (module)
+E           
+E               error: undefined function authorize_if/1 (there is no such import)
+E               │
+E            60 │     authorize_if always()
+E               │     ^
+E               │
+E               └─ lib/forum/content/post.ex:60:5: Forum.Content.Post (module)
+E           
+E               error: undefined function authorize_if/1 (there is no such import)
+E               │
+E            62 │     authorize_if always()
+E               │     ^
+E               │
+E               └─ lib/forum/content/comment.ex:62:5: Forum.Content.Comment (module)
+E           
+E           
+E           == Compilation error in file lib/forum/content/post.ex ==
+E           ** (CompileError) lib/forum/content/post.ex: cannot compile module Forum.Content.Post (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Policy.Authorizer.policies/1
+
+tests/test_final_state.py:728: Failed
+____________ test_s16_relationship_loads_exclude_archived_children _____________
+
+contract_run = {'output': 'Compiling 7 files (.ex)\n\n    error: undefined function authorize_if/1 (there is no such import)\n    │\n...ve been logged)\n    (ash 3.31.0) expanding macro: Ash.Policy.Authorizer.policies/1\n', 'results': {}, 'returncode': 1}
+
+    def test_s16_relationship_loads_exclude_archived_children(contract_run):
+>       _scenario(contract_run, "s16_relationship_loads_exclude_archived_children")
+
+tests/test_final_state.py:802: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+contract_run = {'output': 'Compiling 7 files (.ex)\n\n    error: undefined function authorize_if/1 (there is no such import)\n    │\n...ve been logged)\n    (ash 3.31.0) expanding macro: Ash.Policy.Authorizer.policies/1\n', 'results': {}, 'returncode': 1}
+name = 's16_relationship_loads_exclude_archived_children'
+
+    def _scenario(contract_run, name):
+        results = contract_run["results"]
+        if name not in results:
+>           pytest.fail(
+                f"Scenario {name!r} never reported a result. The Ash project at "
+                f"{PROJECT_DIR} most likely failed to compile or to boot "
+                f"(mix run exit code {contract_run['returncode']}).\n"
+                f"Combined output:\n{contract_run['output'][-8000:]}"
+            )
+E           Failed: Scenario 's16_relationship_loads_exclude_archived_children' never reported a result. The Ash project at /home/user/forum most likely failed to compile or to boot (mix run exit code 1).
+E           Combined output:
+E           Compiling 7 files (.ex)
+E           
+E               error: undefined function authorize_if/1 (there is no such import)
+E               │
+E            61 │     authorize_if always()
+E               │     ^
+E               │
+E               └─ lib/forum/content/reaction.ex:61:5: Forum.Content.Reaction (module)
+E           
+E               error: undefined function authorize_if/1 (there is no such import)
+E               │
+E            60 │     authorize_if always()
+E               │     ^
+E               │
+E               └─ lib/forum/content/post.ex:60:5: Forum.Content.Post (module)
+E           
+E               error: undefined function authorize_if/1 (there is no such import)
+E               │
+E            62 │     authorize_if always()
+E               │     ^
+E               │
+E               └─ lib/forum/content/comment.ex:62:5: Forum.Content.Comment (module)
+E           
+E           
+E           == Compilation error in file lib/forum/content/post.ex ==
+E           ** (CompileError) lib/forum/content/post.ex: cannot compile module Forum.Content.Post (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Policy.Authorizer.policies/1
+
+tests/test_final_state.py:728: Failed
+_____________ test_s17_relationship_filters_exclude_archived_rows ______________
+
+contract_run = {'output': 'Compiling 7 files (.ex)\n\n    error: undefined function authorize_if/1 (there is no such import)\n    │\n...ve been logged)\n    (ash 3.31.0) expanding macro: Ash.Policy.Authorizer.policies/1\n', 'results': {}, 'returncode': 1}
+
+    def test_s17_relationship_filters_exclude_archived_rows(contract_run):
+>       _scenario(contract_run, "s17_relationship_filters_exclude_archived_rows")
+
+tests/test_final_state.py:805: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+contract_run = {'output': 'Compiling 7 files (.ex)\n\n    error: undefined function authorize_if/1 (there is no such import)\n    │\n...ve been logged)\n    (ash 3.31.0) expanding macro: Ash.Policy.Authorizer.policies/1\n', 'results': {}, 'returncode': 1}
+name = 's17_relationship_filters_exclude_archived_rows'
+
+    def _scenario(contract_run, name):
+        results = contract_run["results"]
+        if name not in results:
+>           pytest.fail(
+                f"Scenario {name!r} never reported a result. The Ash project at "
+                f"{PROJECT_DIR} most likely failed to compile or to boot "
+                f"(mix run exit code {contract_run['returncode']}).\n"
+                f"Combined output:\n{contract_run['output'][-8000:]}"
+            )
+E           Failed: Scenario 's17_relationship_filters_exclude_archived_rows' never reported a result. The Ash project at /home/user/forum most likely failed to compile or to boot (mix run exit code 1).
+E           Combined output:
+E           Compiling 7 files (.ex)
+E           
+E               error: undefined function authorize_if/1 (there is no such import)
+E               │
+E            61 │     authorize_if always()
+E               │     ^
+E               │
+E               └─ lib/forum/content/reaction.ex:61:5: Forum.Content.Reaction (module)
+E           
+E               error: undefined function authorize_if/1 (there is no such import)
+E               │
+E            60 │     authorize_if always()
+E               │     ^
+E               │
+E               └─ lib/forum/content/post.ex:60:5: Forum.Content.Post (module)
+E           
+E               error: undefined function authorize_if/1 (there is no such import)
+E               │
+E            62 │     authorize_if always()
+E               │     ^
+E               │
+E               └─ lib/forum/content/comment.ex:62:5: Forum.Content.Comment (module)
+E           
+E           
+E           == Compilation error in file lib/forum/content/post.ex ==
+E           ** (CompileError) lib/forum/content/post.ex: cannot compile module Forum.Content.Post (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Policy.Authorizer.policies/1
+
+tests/test_final_state.py:728: Failed
+______________ test_s18_the_archived_read_requires_an_admin_actor ______________
+
+contract_run = {'output': 'Compiling 7 files (.ex)\n\n    error: undefined function authorize_if/1 (there is no such import)\n    │\n...ve been logged)\n    (ash 3.31.0) expanding macro: Ash.Policy.Authorizer.policies/1\n', 'results': {}, 'returncode': 1}
+
+    def test_s18_the_archived_read_requires_an_admin_actor(contract_run):
+>       _scenario(contract_run, "s18_the_archived_read_requires_an_admin_actor")
+
+tests/test_final_state.py:808: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+contract_run = {'output': 'Compiling 7 files (.ex)\n\n    error: undefined function authorize_if/1 (there is no such import)\n    │\n...ve been logged)\n    (ash 3.31.0) expanding macro: Ash.Policy.Authorizer.policies/1\n', 'results': {}, 'returncode': 1}
+name = 's18_the_archived_read_requires_an_admin_actor'
+
+    def _scenario(contract_run, name):
+        results = contract_run["results"]
+        if name not in results:
+>           pytest.fail(
+                f"Scenario {name!r} never reported a result. The Ash project at "
+                f"{PROJECT_DIR} most likely failed to compile or to boot "
+                f"(mix run exit code {contract_run['returncode']}).\n"
+                f"Combined output:\n{contract_run['output'][-8000:]}"
+            )
+E           Failed: Scenario 's18_the_archived_read_requires_an_admin_actor' never reported a result. The Ash project at /home/user/forum most likely failed to compile or to boot (mix run exit code 1).
+E           Combined output:
+E           Compiling 7 files (.ex)
+E           
+E               error: undefined function authorize_if/1 (there is no such import)
+E               │
+E            61 │     authorize_if always()
+E               │     ^
+E               │
+E               └─ lib/forum/content/reaction.ex:61:5: Forum.Content.Reaction (module)
+E           
+E               error: undefined function authorize_if/1 (there is no such import)
+E               │
+E            60 │     authorize_if always()
+E               │     ^
+E               │
+E               └─ lib/forum/content/post.ex:60:5: Forum.Content.Post (module)
+E           
+E               error: undefined function authorize_if/1 (there is no such import)
+E               │
+E            62 │     authorize_if always()
+E               │     ^
+E               │
+E               └─ lib/forum/content/comment.ex:62:5: Forum.Content.Comment (module)
+E           
+E           
+E           == Compilation error in file lib/forum/content/post.ex ==
+E           ** (CompileError) lib/forum/content/post.ex: cannot compile module Forum.Content.Post (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Policy.Authorizer.policies/1
+
+tests/test_final_state.py:728: Failed
+_____________ test_s19_every_other_action_stays_open_to_any_actor ______________
+
+contract_run = {'output': 'Compiling 7 files (.ex)\n\n    error: undefined function authorize_if/1 (there is no such import)\n    │\n...ve been logged)\n    (ash 3.31.0) expanding macro: Ash.Policy.Authorizer.policies/1\n', 'results': {}, 'returncode': 1}
+
+    def test_s19_every_other_action_stays_open_to_any_actor(contract_run):
+>       _scenario(contract_run, "s19_every_other_action_stays_open_to_any_actor")
+
+tests/test_final_state.py:811: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+contract_run = {'output': 'Compiling 7 files (.ex)\n\n    error: undefined function authorize_if/1 (there is no such import)\n    │\n...ve been logged)\n    (ash 3.31.0) expanding macro: Ash.Policy.Authorizer.policies/1\n', 'results': {}, 'returncode': 1}
+name = 's19_every_other_action_stays_open_to_any_actor'
+
+    def _scenario(contract_run, name):
+        results = contract_run["results"]
+        if name not in results:
+>           pytest.fail(
+                f"Scenario {name!r} never reported a result. The Ash project at "
+                f"{PROJECT_DIR} most likely failed to compile or to boot "
+                f"(mix run exit code {contract_run['returncode']}).\n"
+                f"Combined output:\n{contract_run['output'][-8000:]}"
+            )
+E           Failed: Scenario 's19_every_other_action_stays_open_to_any_actor' never reported a result. The Ash project at /home/user/forum most likely failed to compile or to boot (mix run exit code 1).
+E           Combined output:
+E           Compiling 7 files (.ex)
+E           
+E               error: undefined function authorize_if/1 (there is no such import)
+E               │
+E            61 │     authorize_if always()
+E               │     ^
+E               │
+E               └─ lib/forum/content/reaction.ex:61:5: Forum.Content.Reaction (module)
+E           
+E               error: undefined function authorize_if/1 (there is no such import)
+E               │
+E            60 │     authorize_if always()
+E               │     ^
+E               │
+E               └─ lib/forum/content/post.ex:60:5: Forum.Content.Post (module)
+E           
+E               error: undefined function authorize_if/1 (there is no such import)
+E               │
+E            62 │     authorize_if always()
+E               │     ^
+E               │
+E               └─ lib/forum/content/comment.ex:62:5: Forum.Content.Comment (module)
+E           
+E           
+E           == Compilation error in file lib/forum/content/post.ex ==
+E           ** (CompileError) lib/forum/content/post.ex: cannot compile module Forum.Content.Post (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Policy.Authorizer.policies/1
+
+tests/test_final_state.py:728: Failed
+___________ test_s20_purge_refuses_a_live_record_and_changes_nothing ___________
+
+contract_run = {'output': 'Compiling 7 files (.ex)\n\n    error: undefined function authorize_if/1 (there is no such import)\n    │\n...ve been logged)\n    (ash 3.31.0) expanding macro: Ash.Policy.Authorizer.policies/1\n', 'results': {}, 'returncode': 1}
+
+    def test_s20_purge_refuses_a_live_record_and_changes_nothing(contract_run):
+>       _scenario(contract_run, "s20_purge_refuses_a_live_record_and_changes_nothing")
+
+tests/test_final_state.py:814: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+contract_run = {'output': 'Compiling 7 files (.ex)\n\n    error: undefined function authorize_if/1 (there is no such import)\n    │\n...ve been logged)\n    (ash 3.31.0) expanding macro: Ash.Policy.Authorizer.policies/1\n', 'results': {}, 'returncode': 1}
+name = 's20_purge_refuses_a_live_record_and_changes_nothing'
+
+    def _scenario(contract_run, name):
+        results = contract_run["results"]
+        if name not in results:
+>           pytest.fail(
+                f"Scenario {name!r} never reported a result. The Ash project at "
+                f"{PROJECT_DIR} most likely failed to compile or to boot "
+                f"(mix run exit code {contract_run['returncode']}).\n"
+                f"Combined output:\n{contract_run['output'][-8000:]}"
+            )
+E           Failed: Scenario 's20_purge_refuses_a_live_record_and_changes_nothing' never reported a result. The Ash project at /home/user/forum most likely failed to compile or to boot (mix run exit code 1).
+E           Combined output:
+E           Compiling 7 files (.ex)
+E           
+E               error: undefined function authorize_if/1 (there is no such import)
+E               │
+E            61 │     authorize_if always()
+E               │     ^
+E               │
+E               └─ lib/forum/content/reaction.ex:61:5: Forum.Content.Reaction (module)
+E           
+E               error: undefined function authorize_if/1 (there is no such import)
+E               │
+E            60 │     authorize_if always()
+E               │     ^
+E               │
+E               └─ lib/forum/content/post.ex:60:5: Forum.Content.Post (module)
+E           
+E               error: undefined function authorize_if/1 (there is no such import)
+E               │
+E            62 │     authorize_if always()
+E               │     ^
+E               │
+E               └─ lib/forum/content/comment.ex:62:5: Forum.Content.Comment (module)
+E           
+E           
+E           == Compilation error in file lib/forum/content/post.ex ==
+E           ** (CompileError) lib/forum/content/post.ex: cannot compile module Forum.Content.Post (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Policy.Authorizer.policies/1
+
+tests/test_final_state.py:728: Failed
+_________ test_s21_purging_an_archived_post_removes_the_whole_subtree __________
+
+contract_run = {'output': 'Compiling 7 files (.ex)\n\n    error: undefined function authorize_if/1 (there is no such import)\n    │\n...ve been logged)\n    (ash 3.31.0) expanding macro: Ash.Policy.Authorizer.policies/1\n', 'results': {}, 'returncode': 1}
+
+    def test_s21_purging_an_archived_post_removes_the_whole_subtree(contract_run):
+>       _scenario(contract_run, "s21_purging_an_archived_post_removes_the_whole_subtree")
+
+tests/test_final_state.py:817: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+contract_run = {'output': 'Compiling 7 files (.ex)\n\n    error: undefined function authorize_if/1 (there is no such import)\n    │\n...ve been logged)\n    (ash 3.31.0) expanding macro: Ash.Policy.Authorizer.policies/1\n', 'results': {}, 'returncode': 1}
+name = 's21_purging_an_archived_post_removes_the_whole_subtree'
+
+    def _scenario(contract_run, name):
+        results = contract_run["results"]
+        if name not in results:
+>           pytest.fail(
+                f"Scenario {name!r} never reported a result. The Ash project at "
+                f"{PROJECT_DIR} most likely failed to compile or to boot "
+                f"(mix run exit code {contract_run['returncode']}).\n"
+                f"Combined output:\n{contract_run['output'][-8000:]}"
+            )
+E           Failed: Scenario 's21_purging_an_archived_post_removes_the_whole_subtree' never reported a result. The Ash project at /home/user/forum most likely failed to compile or to boot (mix run exit code 1).
+E           Combined output:
+E           Compiling 7 files (.ex)
+E           
+E               error: undefined function authorize_if/1 (there is no such import)
+E               │
+E            61 │     authorize_if always()
+E               │     ^
+E               │
+E               └─ lib/forum/content/reaction.ex:61:5: Forum.Content.Reaction (module)
+E           
+E               error: undefined function authorize_if/1 (there is no such import)
+E               │
+E            60 │     authorize_if always()
+E               │     ^
+E               │
+E               └─ lib/forum/content/post.ex:60:5: Forum.Content.Post (module)
+E           
+E               error: undefined function authorize_if/1 (there is no such import)
+E               │
+E            62 │     authorize_if always()
+E               │     ^
+E               │
+E               └─ lib/forum/content/comment.ex:62:5: Forum.Content.Comment (module)
+E           
+E           
+E           == Compilation error in file lib/forum/content/post.ex ==
+E           ** (CompileError) lib/forum/content/post.ex: cannot compile module Forum.Content.Post (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Policy.Authorizer.policies/1
+
+tests/test_final_state.py:728: Failed
+_____________ test_s22_purging_a_comment_removes_only_that_branch ______________
+
+contract_run = {'output': 'Compiling 7 files (.ex)\n\n    error: undefined function authorize_if/1 (there is no such import)\n    │\n...ve been logged)\n    (ash 3.31.0) expanding macro: Ash.Policy.Authorizer.policies/1\n', 'results': {}, 'returncode': 1}
+
+    def test_s22_purging_a_comment_removes_only_that_branch(contract_run):
+>       _scenario(contract_run, "s22_purging_a_comment_removes_only_that_branch")
+
+tests/test_final_state.py:820: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+contract_run = {'output': 'Compiling 7 files (.ex)\n\n    error: undefined function authorize_if/1 (there is no such import)\n    │\n...ve been logged)\n    (ash 3.31.0) expanding macro: Ash.Policy.Authorizer.policies/1\n', 'results': {}, 'returncode': 1}
+name = 's22_purging_a_comment_removes_only_that_branch'
+
+    def _scenario(contract_run, name):
+        results = contract_run["results"]
+        if name not in results:
+>           pytest.fail(
+                f"Scenario {name!r} never reported a result. The Ash project at "
+                f"{PROJECT_DIR} most likely failed to compile or to boot "
+                f"(mix run exit code {contract_run['returncode']}).\n"
+                f"Combined output:\n{contract_run['output'][-8000:]}"
+            )
+E           Failed: Scenario 's22_purging_a_comment_removes_only_that_branch' never reported a result. The Ash project at /home/user/forum most likely failed to compile or to boot (mix run exit code 1).
+E           Combined output:
+E           Compiling 7 files (.ex)
+E           
+E               error: undefined function authorize_if/1 (there is no such import)
+E               │
+E            61 │     authorize_if always()
+E               │     ^
+E               │
+E               └─ lib/forum/content/reaction.ex:61:5: Forum.Content.Reaction (module)
+E           
+E               error: undefined function authorize_if/1 (there is no such import)
+E               │
+E            60 │     authorize_if always()
+E               │     ^
+E               │
+E               └─ lib/forum/content/post.ex:60:5: Forum.Content.Post (module)
+E           
+E               error: undefined function authorize_if/1 (there is no such import)
+E               │
+E            62 │     authorize_if always()
+E               │     ^
+E               │
+E               └─ lib/forum/content/comment.ex:62:5: Forum.Content.Comment (module)
+E           
+E           
+E           == Compilation error in file lib/forum/content/post.ex ==
+E           ** (CompileError) lib/forum/content/post.ex: cannot compile module Forum.Content.Post (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Policy.Authorizer.policies/1
+
+tests/test_final_state.py:728: Failed
+=========================== short test summary info ============================
+FAILED tests/test_final_state.py::test_contract_suite_executed - AssertionErr...
+FAILED tests/test_final_state.py::test_s01_structure_resources_actions_and_attributes
+FAILED tests/test_final_state.py::test_s02_shared_modules_are_reused_across_resources
+FAILED tests/test_final_state.py::test_s03_live_reads_return_every_record - F...
+FAILED tests/test_final_state.py::test_s04_archiving_a_post_hides_the_whole_subtree_from_the_primary_read
+FAILED tests/test_final_state.py::test_s05_archived_rows_survive_but_get_reports_not_found
+FAILED tests/test_final_state.py::test_s06_one_archive_operation_marks_exactly_one_generation
+FAILED tests/test_final_state.py::test_s07_separate_archive_operations_use_distinct_batches
+FAILED tests/test_final_state.py::test_s08_archiving_a_comment_cascades_only_to_its_own_reactions
+FAILED tests/test_final_state.py::test_s09_a_later_archive_leaves_earlier_archived_descendants_alone
+FAILED tests/test_final_state.py::test_s10_archiving_twice_is_idempotent - Fa...
+FAILED tests/test_final_state.py::test_s11_restore_only_brings_back_its_own_batch
+FAILED tests/test_final_state.py::test_s12_restoring_a_descendant_does_not_touch_ancestors
+FAILED tests/test_final_state.py::test_s13_restore_is_idempotent_and_safe_on_live_records
+FAILED tests/test_final_state.py::test_s14_restore_clears_both_archive_markers
+FAILED tests/test_final_state.py::test_s15_count_aggregates_exclude_archived_children
+FAILED tests/test_final_state.py::test_s16_relationship_loads_exclude_archived_children
+FAILED tests/test_final_state.py::test_s17_relationship_filters_exclude_archived_rows
+FAILED tests/test_final_state.py::test_s18_the_archived_read_requires_an_admin_actor
+FAILED tests/test_final_state.py::test_s19_every_other_action_stays_open_to_any_actor
+FAILED tests/test_final_state.py::test_s20_purge_refuses_a_live_record_and_changes_nothing
+FAILED tests/test_final_state.py::test_s21_purging_an_archived_post_removes_the_whole_subtree
+FAILED tests/test_final_state.py::test_s22_purging_a_comment_removes_only_that_branch
+============================== 23 failed in 2.49s ==============================

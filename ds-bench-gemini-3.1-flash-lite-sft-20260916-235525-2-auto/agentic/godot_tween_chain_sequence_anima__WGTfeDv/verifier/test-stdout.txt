@@ -1,0 +1,51 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0
+rootdir: /tests
+plugins: json-ctrf-0.5.3
+collected 12 items
+
+tests/test_final_state.py .........F..                                   [100%]
+
+=================================== FAILURES ===================================
+______________________ test_checkpoint_t_3_50_final_state ______________________
+
+    def test_checkpoint_t_3_50_final_state():
+        r = _run_harness()
+        sample = r.get("samples", {}).get("t_3_50")
+        assert sample is not None, "Missing checkpoint sample at t=3.50s."
+        assert _approx_vec(sample["position"], [200.0, 100.0], 0.5), (
+            f"At t=3.50s position must remain (200,100). got={sample['position']!r}"
+        )
+        assert _approx_vec(sample["scale"], [2.0, 2.0], 0.02), (
+            f"At t=3.50s scale must remain (2,2). got={sample['scale']!r}"
+        )
+        assert _approx(sample["rotation"], math.pi / 2, 0.01), (
+            f"At t=3.50s rotation must remain PI/2. got={sample['rotation']!r}"
+        )
+        modulate = sample["modulate"]
+        assert _approx(modulate[0], 0.5, 0.02), (
+            f"At t=3.50s modulate.r must be 0.5. got={modulate!r}"
+        )
+>       assert _approx(modulate[3], 1.0, 0.02), (
+            f"At t=3.50s modulate.a must be 1.0. got={modulate!r}"
+        )
+E       AssertionError: At t=3.50s modulate.a must be 1.0. got=[0.5, 1, 1, 0.5]
+E       assert False
+E        +  where False = _approx(0.5, 1.0, 0.02)
+
+tests/test_final_state.py:194: AssertionError
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED tests/test_final_state.py::test_scene_and_nodes_exist
+PASSED tests/test_final_state.py::test_required_signals_declared
+PASSED tests/test_final_state.py::test_initial_target_state
+PASSED tests/test_final_state.py::test_play_sequence_returns_tween
+PASSED tests/test_final_state.py::test_checkpoint_t_0_50_linear_position
+PASSED tests/test_final_state.py::test_checkpoint_t_1_00_step_a_complete
+PASSED tests/test_final_state.py::test_checkpoint_t_1_50_parallel_progress
+PASSED tests/test_final_state.py::test_checkpoint_t_2_00_step_b_complete
+PASSED tests/test_final_state.py::test_checkpoint_t_3_00_step_c_complete
+PASSED tests/test_final_state.py::test_all_signals_emitted_exactly_once
+PASSED tests/test_final_state.py::test_is_running_false_after_completion
+FAILED tests/test_final_state.py::test_checkpoint_t_3_50_final_state - Assert...
+========================= 1 failed, 11 passed in 8.18s =========================

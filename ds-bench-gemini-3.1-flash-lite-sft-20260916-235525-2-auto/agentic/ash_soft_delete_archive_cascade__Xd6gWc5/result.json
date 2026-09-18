@@ -1,0 +1,121 @@
+{
+    "id": "20780f45-fbfe-4136-b490-7c09e98d6dcf",
+    "task_name": "ash_soft_delete_archive_cascade",
+    "trial_name": "ash_soft_delete_archive_cascade__Xd6gWc5",
+    "trial_uri": "file:///home/kweizh/ollie/dataset/eval/results/ds-bench-gemini-3.1-flash-lite-sft-20260916-235525-2-20260917T182943/agentic/ash_soft_delete_archive_cascade__Xd6gWc5",
+    "task_id": {
+        "path": "/home/kweizh/ollie/dataset/eval/tasks/ds-bench/ash_soft_delete_archive_cascade"
+    },
+    "source": "ds-bench",
+    "task_checksum": "5fa0c8626fe8f32007aa4e6d65c033a0d01d27141bcd5f6a788d6360948fa5f2",
+    "config": {
+        "task": {
+            "path": "/home/kweizh/ollie/dataset/eval/tasks/ds-bench/ash_soft_delete_archive_cascade",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": "ds-bench"
+        },
+        "trial_name": "ash_soft_delete_archive_cascade__Xd6gWc5",
+        "trials_dir": "/home/kweizh/ollie/dataset/eval/results/ds-bench-gemini-3.1-flash-lite-sft-20260916-235525-2-20260917T182943/agentic",
+        "install_only": false,
+        "timeout_multiplier": 10.0,
+        "agent_timeout_multiplier": null,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": "ollie.agent:OllieAgent",
+            "import_path": null,
+            "model_name": "gemini-3.1-flash-lite-sft-20260916-235525@2",
+            "n_concurrent": null,
+            "concurrency_group": null,
+            "skills": [],
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "resume_trajectory": false,
+            "load_trajectory": null,
+            "extra_allowed_hosts": [],
+            "kwargs": {
+                "max_steps": 100,
+                "reasoning_effort": "auto"
+            },
+            "mcp_servers": []
+        },
+        "user_agent": null,
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "cpu_enforcement_policy": "auto",
+            "memory_enforcement_policy": "auto",
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "override_tpu": null,
+            "mounts": null,
+            "extra_docker_compose": [],
+            "kwargs": {},
+            "extra_allowed_hosts": []
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "disable": false
+        },
+        "artifacts": [],
+        "extra_instruction_paths": [],
+        "extra_instructions": [],
+        "job_id": "dfb1949a-43ba-4e75-8487-c0cd8d20370f",
+        "source_trial": null
+    },
+    "agent_info": {
+        "name": "ollie",
+        "version": "0.7.4",
+        "model_info": {
+            "name": "gemini-3.1-flash-lite-sft-20260916-235525@2",
+            "provider": null
+        }
+    },
+    "agent_result": {
+        "n_input_tokens": null,
+        "n_cache_tokens": null,
+        "n_output_tokens": null,
+        "cost_usd": null,
+        "model_usage": null,
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 0.0
+        }
+    },
+    "verifier_environment_mode": "shared",
+    "exception_info": null,
+    "started_at": "2026-09-17T10:29:52.858442Z",
+    "finished_at": "2026-09-17T10:36:12.493342Z",
+    "environment_setup": {
+        "started_at": "2026-09-17T10:29:53.490640Z",
+        "finished_at": "2026-09-17T10:29:58.981677Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-09-17T10:29:58.981715Z",
+        "finished_at": "2026-09-17T10:32:13.951652Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-09-17T10:32:13.953158Z",
+        "finished_at": "2026-09-17T10:35:55.250362Z"
+    },
+    "verifier": {
+        "started_at": "2026-09-17T10:35:55.863891Z",
+        "finished_at": "2026-09-17T10:35:59.324619Z"
+    },
+    "step_results": null
+}

@@ -1,0 +1,461 @@
+{
+    "reportFormat": "CTRF",
+    "specVersion": "0.0.0",
+    "timestamp": "2026-09-17T10:39:03.606642+00:00",
+    "generatedBy": "pytest",
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "7.4.4"
+        },
+        "summary": {
+            "tests": 40,
+            "passed": 16,
+            "failed": 24,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1789641537494,
+            "stop": 1789641543606
+        },
+        "environment": {
+            "buildName": "Pytest JSON CTRF Report",
+            "buildNumber": "000",
+            "buildUrl": "https://ctrf.io"
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_t01_currencies_and_exponents",
+                "status": "passed",
+                "duration": 5668,
+                "start": 1789641537539,
+                "stop": 1789641543207,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_t02_constructors",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789641543208,
+                "stop": 1789641543209,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_t03_canonical_string",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789641543210,
+                "stop": 1789641543211,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_t04_addition_and_subtraction",
+                "status": "passed",
+                "duration": 2,
+                "start": 1789641543212,
+                "stop": 1789641543214,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_t05_multiplication",
+                "status": "passed",
+                "duration": 2,
+                "start": 1789641543214,
+                "stop": 1789641543216,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_t06_sum",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789641543216,
+                "stop": 1789641543217,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_t07_comparison",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789641543218,
+                "stop": 1789641543219,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_t08_cast_shapes_agree",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 34,
+                "start": 1789641543220,
+                "stop": 1789641543254,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "suite_results = {'T01': ('pass', ''), 'T02': ('pass', ''), 'T03': ('pass', ''), 'T04': ('pass', ''), ...}\n\n    def test_t08_cast_shapes_agree(suite_results):\n>       _check(suite_results, \"T08\")\n\ntests/test_final_state.py:777: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresults = {'T01': ('pass', ''), 'T02': ('pass', ''), 'T03': ('pass', ''), 'T04': ('pass', ''), ...}\nidentifier = 'T08'\n\n    def _check(results: dict, identifier: str) -> None:\n        assert identifier in results, (\n            f\"Scenario {identifier} did not run. Scenarios reported: {sorted(results)}\"\n        )\n        status, detail = results[identifier]\n>       assert status == \"pass\", f\"Scenario {identifier} failed:\\n{detail}\"\nE       AssertionError: Scenario T08 failed:\nE           1) test T08 every accepted input shape produces the same value (HarborMoneyTest)\nE              /tmp/harbor_money_suite.exs:166\nE              ** (MatchError) no match of right hand side value: {:error, [message: \"amount must be a whole number of minor units\", reason: :fractional_minor_units]}\nE              code: Enum.map(inputs, fn input ->\nE              stacktrace:\nE                /tmp/harbor_money_suite.exs:178: anonymous fn/1 in HarborMoneyTest.\"test T08 every accepted input shape produces the same value\"/1\nE                (elixir 1.18.4) lib/enum.ex:1714: Enum.\"-map/2-lists^map/1-1-\"/2\nE                (elixir 1.18.4) lib/enum.ex:1714: Enum.\"-map/2-lists^map/1-1-\"/2\nE                /tmp/harbor_money_suite.exs:177: (test)\nE         \nE       assert 'fail' == 'pass'\nE         - pass\nE         + fail\n\ntests/test_final_state.py:745: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_t09_canonical_string_casting",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 16,
+                "start": 1789641543255,
+                "stop": 1789641543271,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "suite_results = {'T01': ('pass', ''), 'T02': ('pass', ''), 'T03': ('pass', ''), 'T04': ('pass', ''), ...}\n\n    def test_t09_canonical_string_casting(suite_results):\n>       _check(suite_results, \"T09\")\n\ntests/test_final_state.py:781: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresults = {'T01': ('pass', ''), 'T02': ('pass', ''), 'T03': ('pass', ''), 'T04': ('pass', ''), ...}\nidentifier = 'T09'\n\n    def _check(results: dict, identifier: str) -> None:\n        assert identifier in results, (\n            f\"Scenario {identifier} did not run. Scenarios reported: {sorted(results)}\"\n        )\n        status, detail = results[identifier]\n>       assert status == \"pass\", f\"Scenario {identifier} failed:\\n{detail}\"\nE       AssertionError: Scenario T09 failed:\nE           1) test T09 canonical strings round trip for every currency and sign (HarborMoneyTest)\nE              /tmp/harbor_money_suite.exs:190\nE              match (=) failed\nE              code:  assert {:ok, bhd} = H.cast(\"BHD 1.234\")\nE              left:  {:ok, bhd}\nE              right: {:error, [message: \"amount must be a whole number of minor units\", reason: :fractional_minor_units]}\nE              stacktrace:\nE                /tmp/harbor_money_suite.exs:195: (test)\nE         \nE       assert 'fail' == 'pass'\nE         - pass\nE         + fail\n\ntests/test_final_state.py:745: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_t10_unknown_currency_errors",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789641543272,
+                "stop": 1789641543273,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_t11_fractional_minor_units",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789641543274,
+                "stop": 1789641543275,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_t12_invalid_format",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 15,
+                "start": 1789641543276,
+                "stop": 1789641543291,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "suite_results = {'T01': ('pass', ''), 'T02': ('pass', ''), 'T03': ('pass', ''), 'T04': ('pass', ''), ...}\n\n    def test_t12_invalid_format(suite_results):\n>       _check(suite_results, \"T12\")\n\ntests/test_final_state.py:793: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresults = {'T01': ('pass', ''), 'T02': ('pass', ''), 'T03': ('pass', ''), 'T04': ('pass', ''), ...}\nidentifier = 'T12'\n\n    def _check(results: dict, identifier: str) -> None:\n        assert identifier in results, (\n            f\"Scenario {identifier} did not run. Scenarios reported: {sorted(results)}\"\n        )\n        status, detail = results[identifier]\n>       assert status == \"pass\", f\"Scenario {identifier} failed:\\n{detail}\"\nE       AssertionError: Scenario T12 failed:\nE           1) test T12 unusable input shapes are rejected (HarborMoneyTest)\nE              /tmp/harbor_money_suite.exs:236\nE              wrong message for %{currency: :usd}: [message: \"amount must be a whole number of minor units\", reason: :fractional_minor_units]\nE              code: for input <- inputs do\nE              stacktrace:\nE                /tmp/harbor_money_suite.exs:252: anonymous fn/1 in HarborMoneyTest.\"test T12 unusable input shapes are rejected\"/1\nE                (elixir 1.18.4) lib/enum.ex:1714: Enum.\"-map/2-lists^map/1-1-\"/2\nE                (elixir 1.18.4) lib/enum.ex:1714: Enum.\"-map/2-lists^map/1-1-\"/2\nE                /tmp/harbor_money_suite.exs:249: (test)\nE         \nE       assert 'fail' == 'pass'\nE         - pass\nE         + fail\n\ntests/test_final_state.py:745: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_t13_equality",
+                "status": "passed",
+                "duration": 2,
+                "start": 1789641543291,
+                "stop": 1789641543293,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_t14_storage_type",
+                "status": "passed",
+                "duration": 2,
+                "start": 1789641543293,
+                "stop": 1789641543295,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_t15_storage_round_trip",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 15,
+                "start": 1789641543295,
+                "stop": 1789641543310,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "suite_results = {'T01': ('pass', ''), 'T02': ('pass', ''), 'T03': ('pass', ''), 'T04': ('pass', ''), ...}\n\n    def test_t15_storage_round_trip(suite_results):\n>       _check(suite_results, \"T15\")\n\ntests/test_final_state.py:805: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresults = {'T01': ('pass', ''), 'T02': ('pass', ''), 'T03': ('pass', ''), 'T04': ('pass', ''), ...}\nidentifier = 'T15'\n\n    def _check(results: dict, identifier: str) -> None:\n        assert identifier in results, (\n            f\"Scenario {identifier} did not run. Scenarios reported: {sorted(results)}\"\n        )\n        status, detail = results[identifier]\n>       assert status == \"pass\", f\"Scenario {identifier} failed:\\n{detail}\"\nE       AssertionError: Scenario T15 failed:\nE           1) test T15 dumping and loading is lossless, including through JSON (HarborMoneyTest)\nE              /tmp/harbor_money_suite.exs:270\nE              match (=) failed\nE              code:  assert {:ok, from_json} = Ash.Type.cast_stored(H.type_mod(), round_tripped, [])\nE              left:  {:ok, from_json}\nE              right: {:error, [message: \"invalid money format\", reason: :invalid_format]}\nE              stacktrace:\nE                /tmp/harbor_money_suite.exs:278: anonymous fn/2 in HarborMoneyTest.\"test T15 dumping and loading is lossless, including through JSON\"/1\nE                (elixir 1.18.4) lib/enum.ex:2546: Enum.\"-reduce/3-lists^foldl/2-0-\"/3\nE                /tmp/harbor_money_suite.exs:271: (test)\nE         \nE       assert 'fail' == 'pass'\nE         - pass\nE         + fail\n\ntests/test_final_state.py:745: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_t16_array_and_nil_round_trip",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 15,
+                "start": 1789641543310,
+                "stop": 1789641543325,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "suite_results = {'T01': ('pass', ''), 'T02': ('pass', ''), 'T03': ('pass', ''), 'T04': ('pass', ''), ...}\n\n    def test_t16_array_and_nil_round_trip(suite_results):\n>       _check(suite_results, \"T16\")\n\ntests/test_final_state.py:809: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresults = {'T01': ('pass', ''), 'T02': ('pass', ''), 'T03': ('pass', ''), 'T04': ('pass', ''), ...}\nidentifier = 'T16'\n\n    def _check(results: dict, identifier: str) -> None:\n        assert identifier in results, (\n            f\"Scenario {identifier} did not run. Scenarios reported: {sorted(results)}\"\n        )\n        status, detail = results[identifier]\n>       assert status == \"pass\", f\"Scenario {identifier} failed:\\n{detail}\"\nE       AssertionError: Scenario T16 failed:\nE           1) test T16 arrays and nil survive the storage round trip (HarborMoneyTest)\nE              /tmp/harbor_money_suite.exs:283\nE              match (=) failed\nE              code:  assert {:ok, loaded} = Ash.Type.cast_stored({:array, H.type_mod()}, round_tripped, items: [])\nE              left:  {:ok, loaded}\nE              right: {:error, [[index: 2, message: \"invalid money format\", reason: :invalid_format]]}\nE              stacktrace:\nE                /tmp/harbor_money_suite.exs:291: (test)\nE         \nE       assert 'fail' == 'pass'\nE         - pass\nE         + fail\n\ntests/test_final_state.py:745: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_t17_invalid_stored_value",
+                "status": "passed",
+                "duration": 2,
+                "start": 1789641543325,
+                "stop": 1789641543327,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_t18_currencies_constraint",
+                "status": "passed",
+                "duration": 2,
+                "start": 1789641543327,
+                "stop": 1789641543329,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_t19_multiple_of_constraint",
+                "status": "passed",
+                "duration": 2,
+                "start": 1789641543329,
+                "stop": 1789641543331,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_t20_min_and_max_constraints",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 16,
+                "start": 1789641543331,
+                "stop": 1789641543347,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "suite_results = {'T01': ('pass', ''), 'T02': ('pass', ''), 'T03': ('pass', ''), 'T04': ('pass', ''), ...}\n\n    def test_t20_min_and_max_constraints(suite_results):\n>       _check(suite_results, \"T20\")\n\ntests/test_final_state.py:825: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresults = {'T01': ('pass', ''), 'T02': ('pass', ''), 'T03': ('pass', ''), 'T04': ('pass', ''), ...}\nidentifier = 'T20'\n\n    def _check(results: dict, identifier: str) -> None:\n        assert identifier in results, (\n            f\"Scenario {identifier} did not run. Scenarios reported: {sorted(results)}\"\n        )\n        status, detail = results[identifier]\n>       assert status == \"pass\", f\"Scenario {identifier} failed:\\n{detail}\"\nE       AssertionError: Scenario T20 failed:\nE           1) test T20 the min and max constraints are inclusive (HarborMoneyTest)\nE              /tmp/harbor_money_suite.exs:329\nE              ** (RuntimeError) expected an {:error, keyword} tuple, got: {:ok, #Ledger.Money<USD -0.01>}\nE              code: below = H.failure(H.constrain(H.m(-1, :usd), min: \"USD 0.00\"))\nE              stacktrace:\nE                /tmp/harbor_money_suite.exs:76: H.flunk_value/1\nE                /tmp/harbor_money_suite.exs:331: (test)\nE         \nE       assert 'fail' == 'pass'\nE         - pass\nE         + fail\n\ntests/test_final_state.py:745: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_t21_bound_currency_mismatch",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 15,
+                "start": 1789641543347,
+                "stop": 1789641543362,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "suite_results = {'T01': ('pass', ''), 'T02': ('pass', ''), 'T03': ('pass', ''), 'T04': ('pass', ''), ...}\n\n    def test_t21_bound_currency_mismatch(suite_results):\n>       _check(suite_results, \"T21\")\n\ntests/test_final_state.py:829: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresults = {'T01': ('pass', ''), 'T02': ('pass', ''), 'T03': ('pass', ''), 'T04': ('pass', ''), ...}\nidentifier = 'T21'\n\n    def _check(results: dict, identifier: str) -> None:\n        assert identifier in results, (\n            f\"Scenario {identifier} did not run. Scenarios reported: {sorted(results)}\"\n        )\n        status, detail = results[identifier]\n>       assert status == \"pass\", f\"Scenario {identifier} failed:\\n{detail}\"\nE       AssertionError: Scenario T21 failed:\nE           1) test T21 bounds in another currency are not comparable (HarborMoneyTest)\nE              /tmp/harbor_money_suite.exs:343\nE              ** (RuntimeError) expected an {:error, keyword} tuple, got: {:ok, #Ledger.Money<EUR 1.00>}\nE              code: failure = H.failure(H.constrain(H.m(100, :eur), min: \"USD 0.00\"))\nE              stacktrace:\nE                /tmp/harbor_money_suite.exs:76: H.flunk_value/1\nE                /tmp/harbor_money_suite.exs:344: (test)\nE         \nE       assert 'fail' == 'pass'\nE         - pass\nE         + fail\n\ntests/test_final_state.py:745: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_t22_constraint_ordering",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 14,
+                "start": 1789641543363,
+                "stop": 1789641543377,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "suite_results = {'T01': ('pass', ''), 'T02': ('pass', ''), 'T03': ('pass', ''), 'T04': ('pass', ''), ...}\n\n    def test_t22_constraint_ordering(suite_results):\n>       _check(suite_results, \"T22\")\n\ntests/test_final_state.py:833: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresults = {'T01': ('pass', ''), 'T02': ('pass', ''), 'T03': ('pass', ''), 'T04': ('pass', ''), ...}\nidentifier = 'T22'\n\n    def _check(results: dict, identifier: str) -> None:\n        assert identifier in results, (\n            f\"Scenario {identifier} did not run. Scenarios reported: {sorted(results)}\"\n        )\n        status, detail = results[identifier]\n>       assert status == \"pass\", f\"Scenario {identifier} failed:\\n{detail}\"\nE       AssertionError: Scenario T22 failed:\nE           1) test T22 constraints are checked in the documented order (HarborMoneyTest)\nE              /tmp/harbor_money_suite.exs:352\nE              ** (RuntimeError) expected an {:error, keyword} tuple, got: {:ok, #Ledger.Money<USD 0.50>}\nE              code: min_last = H.failure(H.constrain(H.m(50, :usd), constraints))\nE              stacktrace:\nE                /tmp/harbor_money_suite.exs:76: H.flunk_value/1\nE                /tmp/harbor_money_suite.exs:361: (test)\nE         \nE       assert 'fail' == 'pass'\nE         - pass\nE         + fail\n\ntests/test_final_state.py:745: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_t23_array_cast_index",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 16,
+                "start": 1789641543378,
+                "stop": 1789641543394,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "suite_results = {'T01': ('pass', ''), 'T02': ('pass', ''), 'T03': ('pass', ''), 'T04': ('pass', ''), ...}\n\n    def test_t23_array_cast_index(suite_results):\n>       _check(suite_results, \"T23\")\n\ntests/test_final_state.py:837: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresults = {'T01': ('pass', ''), 'T02': ('pass', ''), 'T03': ('pass', ''), 'T04': ('pass', ''), ...}\nidentifier = 'T23'\n\n    def _check(results: dict, identifier: str) -> None:\n        assert identifier in results, (\n            f\"Scenario {identifier} did not run. Scenarios reported: {sorted(results)}\"\n        )\n        status, detail = results[identifier]\n>       assert status == \"pass\", f\"Scenario {identifier} failed:\\n{detail}\"\nE       AssertionError: Scenario T23 failed:\nE           1) test T23 array casting reports the failing element index (HarborMoneyTest)\nE              /tmp/harbor_money_suite.exs:365\nE              match (=) failed\nE              code:  assert {:ok, casted} =\nE                       Ash.Type.cast_input({:array, H.type_mod()}, [%{currency: :usd, amount: 100}, \"USD 1.00\"],\nE                         items: []\nE                       )\nE              left:  {:ok, casted}\nE              right: {:error,\nE                      [\nE                        [\nE                          index: 1,\nE                          message: \"amount must be a whole number of minor units\",\nE                          reason: :fractional_minor_units,\nE                          path: [1]\nE                        ]\nE                      ]}\nE              stacktrace:\nE                /tmp/harbor_money_suite.exs:366: (test)\nE         \nE       assert 'fail' == 'pass'\nE         - pass\nE         + fail\n\ntests/test_final_state.py:745: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_t24_array_constraint_index",
+                "status": "passed",
+                "duration": 2,
+                "start": 1789641543394,
+                "stop": 1789641543396,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_t25_new_type_introspection",
+                "status": "passed",
+                "duration": 2,
+                "start": 1789641543396,
+                "stop": 1789641543398,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_t26_new_type_constraints",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 16,
+                "start": 1789641543398,
+                "stop": 1789641543414,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "suite_results = {'T01': ('pass', ''), 'T02': ('pass', ''), 'T03': ('pass', ''), 'T04': ('pass', ''), ...}\n\n    def test_t26_new_type_constraints(suite_results):\n>       _check(suite_results, \"T26\")\n\ntests/test_final_state.py:849: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresults = {'T01': ('pass', ''), 'T02': ('pass', ''), 'T03': ('pass', ''), 'T04': ('pass', ''), ...}\nidentifier = 'T26'\n\n    def _check(results: dict, identifier: str) -> None:\n        assert identifier in results, (\n            f\"Scenario {identifier} did not run. Scenarios reported: {sorted(results)}\"\n        )\n        status, detail = results[identifier]\n>       assert status == \"pass\", f\"Scenario {identifier} failed:\\n{detail}\"\nE       AssertionError: Scenario T26 failed:\nE           1) test T26 the narrowed type bakes in its constraints (HarborMoneyTest)\nE              /tmp/harbor_money_suite.exs:408\nE              Assertion with == failed\nE              code:  assert Keyword.get(H.vars(eur), :reason) == :currency_not_allowed\nE              left:  :fractional_minor_units\nE              right: :currency_not_allowed\nE              stacktrace:\nE                /tmp/harbor_money_suite.exs:410: (test)\nE         \nE       assert 'fail' == 'pass'\nE         - pass\nE         + fail\n\ntests/test_final_state.py:745: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_t27_resource_round_trip",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 16,
+                "start": 1789641543414,
+                "stop": 1789641543430,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "suite_results = {'T01': ('pass', ''), 'T02': ('pass', ''), 'T03': ('pass', ''), 'T04': ('pass', ''), ...}\n\n    def test_t27_resource_round_trip(suite_results):\n>       _check(suite_results, \"T27\")\n\ntests/test_final_state.py:853: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresults = {'T01': ('pass', ''), 'T02': ('pass', ''), 'T03': ('pass', ''), 'T04': ('pass', ''), ...}\nidentifier = 'T27'\n\n    def _check(results: dict, identifier: str) -> None:\n        assert identifier in results, (\n            f\"Scenario {identifier} did not run. Scenarios reported: {sorted(results)}\"\n        )\n        status, detail = results[identifier]\n>       assert status == \"pass\", f\"Scenario {identifier} failed:\\n{detail}\"\nE       AssertionError: Scenario T27 failed:\nE           1) test T27 money survives the data layer round trip (HarborMoneyTest)\nE              /tmp/harbor_money_suite.exs:436\nE              match (=) failed\nE              code:  assert {:ok, invoice} =\nE                       H.issue(%{\nE                         reference: \"INV-1\",\nE                         subtotal: %{\"currency\" => \"USD\", \"amount\" => 1250},\nE                         adjustments: [\"USD 0.05\", %{currency: :usd, amount: -10}],\nE                         credit_limit: \"USD 100.00\"\nE                       })\nE              left:  {:ok, invoice}\nE              right: {:error,\nE                      %Ash.Error.Invalid{\nE                        bread_crumbs: [\"Error returned from: Ledger.Billing.Invoice.issue\"], \nE                        changeset: \"#Changeset<>\", \nE                        errors: [\nE                          %Ash.Error.Changes.InvalidAttribute{\nE                            field: :adjustments,\nE                            message: \"amount must be a whole number of minor units\",\nE                            private_vars: nil,\nE                            value: [\"USD 0.05\", %{currency: :usd, amount: -10}],\nE                            has_value?: true,\nE                            splode: Ash.Error,\nE                            bread_crumbs: [\"Error returned from: Ledger.Billing.Invoice.issue\"],\nE                            vars: [index: 0, reason: :fractional_minor_units],\nE                            path: [0],\nE                            stacktrace: #Splode.Stacktrace<>,\nE                            class: :invalid\nE                          },\nE                          %Ash.Error.Changes.InvalidAttribute{\nE                            field: :credit_limit,\nE                            message: \"amount must be a whole number of minor units\",\nE                            private_vars: nil,\nE                            value: \"USD 100.00\",\nE                            has_value?: true,\nE                            splode: Ash.Error,\nE                            bread_crumbs: [\"Error returned from: Ledger.Billing.Invoice.issue\"],\nE                            vars: [reason: :fractional_minor_units],\nE                            path: [],\nE                            stacktrace: #Splode.Stacktrace<>,\nE                            class: :invalid\nE                          }\nE                        ]\nE                      }}\nE              stacktrace:\nE                /tmp/harbor_money_suite.exs:437: (test)\nE         \nE       assert 'fail' == 'pass'\nE         - pass\nE         + fail\n\ntests/test_final_state.py:745: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_t28_attribute_currency_constraint",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 15,
+                "start": 1789641543431,
+                "stop": 1789641543446,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "suite_results = {'T01': ('pass', ''), 'T02': ('pass', ''), 'T03': ('pass', ''), 'T04': ('pass', ''), ...}\n\n    def test_t28_attribute_currency_constraint(suite_results):\n>       _check(suite_results, \"T28\")\n\ntests/test_final_state.py:857: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresults = {'T01': ('pass', ''), 'T02': ('pass', ''), 'T03': ('pass', ''), 'T04': ('pass', ''), ...}\nidentifier = 'T28'\n\n    def _check(results: dict, identifier: str) -> None:\n        assert identifier in results, (\n            f\"Scenario {identifier} did not run. Scenarios reported: {sorted(results)}\"\n        )\n        status, detail = results[identifier]\n>       assert status == \"pass\", f\"Scenario {identifier} failed:\\n{detail}\"\nE       AssertionError: Scenario T28 failed:\nE           1) test T28 attribute currency constraints reject disallowed currencies (HarborMoneyTest)\nE              /tmp/harbor_money_suite.exs:459\nE              Assertion with == failed\nE              code:  assert error.message == \"currency is not allowed\"\nE              left:  \"amount must be a whole number of minor units\"\nE              right: \"currency is not allowed\"\nE              stacktrace:\nE                /tmp/harbor_money_suite.exs:462: (test)\nE         \nE       assert 'fail' == 'pass'\nE         - pass\nE         + fail\n\ntests/test_final_state.py:745: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_t29_resource_array_index",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 14,
+                "start": 1789641543446,
+                "stop": 1789641543460,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "suite_results = {'T01': ('pass', ''), 'T02': ('pass', ''), 'T03': ('pass', ''), 'T04': ('pass', ''), ...}\n\n    def test_t29_resource_array_index(suite_results):\n>       _check(suite_results, \"T29\")\n\ntests/test_final_state.py:861: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresults = {'T01': ('pass', ''), 'T02': ('pass', ''), 'T03': ('pass', ''), 'T04': ('pass', ''), ...}\nidentifier = 'T29'\n\n    def _check(results: dict, identifier: str) -> None:\n        assert identifier in results, (\n            f\"Scenario {identifier} did not run. Scenarios reported: {sorted(results)}\"\n        )\n        status, detail = results[identifier]\n>       assert status == \"pass\", f\"Scenario {identifier} failed:\\n{detail}\"\nE       AssertionError: Scenario T29 failed:\nE           1) test T29 array element constraints report the index on the resource (HarborMoneyTest)\nE              /tmp/harbor_money_suite.exs:467\nE              Assertion with == failed\nE              code:  assert Keyword.get(H.vars(error), :index) == 1\nE              left:  0\nE              right: 1\nE              stacktrace:\nE                /tmp/harbor_money_suite.exs:479: (test)\nE         \nE       assert 'fail' == 'pass'\nE         - pass\nE         + fail\n\ntests/test_final_state.py:745: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_t30_adjustment_currency_validation",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 14,
+                "start": 1789641543461,
+                "stop": 1789641543475,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "suite_results = {'T01': ('pass', ''), 'T02': ('pass', ''), 'T03': ('pass', ''), 'T04': ('pass', ''), ...}\n\n    def test_t30_adjustment_currency_validation(suite_results):\n>       _check(suite_results, \"T30\")\n\ntests/test_final_state.py:865: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresults = {'T01': ('pass', ''), 'T02': ('pass', ''), 'T03': ('pass', ''), 'T04': ('pass', ''), ...}\nidentifier = 'T30'\n\n    def _check(results: dict, identifier: str) -> None:\n        assert identifier in results, (\n            f\"Scenario {identifier} did not run. Scenarios reported: {sorted(results)}\"\n        )\n        status, detail = results[identifier]\n>       assert status == \"pass\", f\"Scenario {identifier} failed:\\n{detail}\"\nE       AssertionError: Scenario T30 failed:\nE           1) test T30 adjustments must use the currency of the subtotal (HarborMoneyTest)\nE              /tmp/harbor_money_suite.exs:483\nE              Assertion with == failed\nE              code:  assert error.message == \"must all use the currency of the subtotal\"\nE              left:  \"amount must be a whole number of minor units\"\nE              right: \"must all use the currency of the subtotal\"\nE              stacktrace:\nE                /tmp/harbor_money_suite.exs:491: (test)\nE         \nE       assert 'fail' == 'pass'\nE         - pass\nE         + fail\n\ntests/test_final_state.py:745: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_t31_apply_adjustment_appends",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 15,
+                "start": 1789641543476,
+                "stop": 1789641543491,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "suite_results = {'T01': ('pass', ''), 'T02': ('pass', ''), 'T03': ('pass', ''), 'T04': ('pass', ''), ...}\n\n    def test_t31_apply_adjustment_appends(suite_results):\n>       _check(suite_results, \"T31\")\n\ntests/test_final_state.py:869: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresults = {'T01': ('pass', ''), 'T02': ('pass', ''), 'T03': ('pass', ''), 'T04': ('pass', ''), ...}\nidentifier = 'T31'\n\n    def _check(results: dict, identifier: str) -> None:\n        assert identifier in results, (\n            f\"Scenario {identifier} did not run. Scenarios reported: {sorted(results)}\"\n        )\n        status, detail = results[identifier]\n>       assert status == \"pass\", f\"Scenario {identifier} failed:\\n{detail}\"\nE       AssertionError: Scenario T31 failed:\nE           1) test T31 applying adjustments appends them in order (HarborMoneyTest)\nE              /tmp/harbor_money_suite.exs:494\nE              match (=) failed\nE              code:  assert {:ok, invoice} = H.issue(%{reference: \"ADJ\", subtotal: \"USD 12.50\"})\nE              left:  {:ok, invoice}\nE              right: {:error,\nE                      %Ash.Error.Invalid{\nE                        bread_crumbs: [\"Error returned from: Ledger.Billing.Invoice.issue\"], \nE                        changeset: \"#Changeset<>\", \nE                        errors: [\nE                          %Ash.Error.Changes.InvalidAttribute{\nE                            field: :subtotal,\nE                            message: \"amount must be a whole number of minor units\",\nE                            private_vars: nil,\nE                            value: \"USD 12.50\",\nE                            has_value?: true,\nE                            splode: Ash.Error,\nE                            bread_crumbs: [\"Error returned from: Ledger.Billing.Invoice.issue\"],\nE                            vars: [reason: :fractional_minor_units],\nE                            path: [],\nE                            stacktrace: #Splode.Stacktrace<>,\nE                            class: :invalid\nE                          }\nE                        ]\nE                      }}\nE              stacktrace:\nE                /tmp/harbor_money_suite.exs:495: (test)\nE         \nE       assert 'fail' == 'pass'\nE         - pass\nE         + fail\n\ntests/test_final_state.py:745: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_t32_apply_adjustment_currency_mismatch",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 15,
+                "start": 1789641543491,
+                "stop": 1789641543506,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "suite_results = {'T01': ('pass', ''), 'T02': ('pass', ''), 'T03': ('pass', ''), 'T04': ('pass', ''), ...}\n\n    def test_t32_apply_adjustment_currency_mismatch(suite_results):\n>       _check(suite_results, \"T32\")\n\ntests/test_final_state.py:873: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresults = {'T01': ('pass', ''), 'T02': ('pass', ''), 'T03': ('pass', ''), 'T04': ('pass', ''), ...}\nidentifier = 'T32'\n\n    def _check(results: dict, identifier: str) -> None:\n        assert identifier in results, (\n            f\"Scenario {identifier} did not run. Scenarios reported: {sorted(results)}\"\n        )\n        status, detail = results[identifier]\n>       assert status == \"pass\", f\"Scenario {identifier} failed:\\n{detail}\"\nE       AssertionError: Scenario T32 failed:\nE           1) test T32 an adjustment in another currency is rejected without touching the record (HarborMoneyTest)\nE              /tmp/harbor_money_suite.exs:506\nE              match (=) failed\nE              code:  assert {:ok, invoice} = H.issue(%{reference: \"ADJ2\", subtotal: \"USD 12.50\"})\nE              left:  {:ok, invoice}\nE              right: {:error,\nE                      %Ash.Error.Invalid{\nE                        bread_crumbs: [\"Error returned from: Ledger.Billing.Invoice.issue\"], \nE                        changeset: \"#Changeset<>\", \nE                        errors: [\nE                          %Ash.Error.Changes.InvalidAttribute{\nE                            field: :subtotal,\nE                            message: \"amount must be a whole number of minor units\",\nE                            private_vars: nil,\nE                            value: \"USD 12.50\",\nE                            has_value?: true,\nE                            splode: Ash.Error,\nE                            bread_crumbs: [\"Error returned from: Ledger.Billing.Invoice.issue\"],\nE                            vars: [reason: :fractional_minor_units],\nE                            path: [],\nE                            stacktrace: #Splode.Stacktrace<>,\nE                            class: :invalid\nE                          }\nE                        ]\nE                      }}\nE              stacktrace:\nE                /tmp/harbor_money_suite.exs:507: (test)\nE         \nE       assert 'fail' == 'pass'\nE         - pass\nE         + fail\n\ntests/test_final_state.py:745: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_t33_apply_adjustment_element_constraint",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 15,
+                "start": 1789641543506,
+                "stop": 1789641543521,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "suite_results = {'T01': ('pass', ''), 'T02': ('pass', ''), 'T03': ('pass', ''), 'T04': ('pass', ''), ...}\n\n    def test_t33_apply_adjustment_element_constraint(suite_results):\n>       _check(suite_results, \"T33\")\n\ntests/test_final_state.py:877: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresults = {'T01': ('pass', ''), 'T02': ('pass', ''), 'T03': ('pass', ''), 'T04': ('pass', ''), ...}\nidentifier = 'T33'\n\n    def _check(results: dict, identifier: str) -> None:\n        assert identifier in results, (\n            f\"Scenario {identifier} did not run. Scenarios reported: {sorted(results)}\"\n        )\n        status, detail = results[identifier]\n>       assert status == \"pass\", f\"Scenario {identifier} failed:\\n{detail}\"\nE       AssertionError: Scenario T33 failed:\nE           1) test T33 an adjustment breaking the element constraint leaves the record untouched (HarborMoneyTest)\nE              /tmp/harbor_money_suite.exs:519\nE              match (=) failed\nE              code:  assert {:ok, invoice} = H.issue(%{reference: \"ADJ3\", subtotal: \"USD 12.50\"})\nE              left:  {:ok, invoice}\nE              right: {:error,\nE                      %Ash.Error.Invalid{\nE                        bread_crumbs: [\"Error returned from: Ledger.Billing.Invoice.issue\"], \nE                        changeset: \"#Changeset<>\", \nE                        errors: [\nE                          %Ash.Error.Changes.InvalidAttribute{\nE                            field: :subtotal,\nE                            message: \"amount must be a whole number of minor units\",\nE                            private_vars: nil,\nE                            value: \"USD 12.50\",\nE                            has_value?: true,\nE                            splode: Ash.Error,\nE                            bread_crumbs: [\"Error returned from: Ledger.Billing.Invoice.issue\"],\nE                            vars: [reason: :fractional_minor_units],\nE                            path: [],\nE                            stacktrace: #Splode.Stacktrace<>,\nE                            class: :invalid\nE                          }\nE                        ]\nE                      }}\nE              stacktrace:\nE                /tmp/harbor_money_suite.exs:520: (test)\nE         \nE       assert 'fail' == 'pass'\nE         - pass\nE         + fail\n\ntests/test_final_state.py:745: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_t34_total_calculation",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 15,
+                "start": 1789641543521,
+                "stop": 1789641543536,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "suite_results = {'T01': ('pass', ''), 'T02': ('pass', ''), 'T03': ('pass', ''), 'T04': ('pass', ''), ...}\n\n    def test_t34_total_calculation(suite_results):\n>       _check(suite_results, \"T34\")\n\ntests/test_final_state.py:881: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresults = {'T01': ('pass', ''), 'T02': ('pass', ''), 'T03': ('pass', ''), 'T04': ('pass', ''), ...}\nidentifier = 'T34'\n\n    def _check(results: dict, identifier: str) -> None:\n        assert identifier in results, (\n            f\"Scenario {identifier} did not run. Scenarios reported: {sorted(results)}\"\n        )\n        status, detail = results[identifier]\n>       assert status == \"pass\", f\"Scenario {identifier} failed:\\n{detail}\"\nE       AssertionError: Scenario T34 failed:\nE           1) test T34 the total calculation folds the adjustments in (HarborMoneyTest)\nE              /tmp/harbor_money_suite.exs:529\nE              match (=) failed\nE              code:  assert {:ok, invoice} =\nE                       H.issue(%{reference: \"CALC\", subtotal: \"USD 12.50\", adjustments: [\"USD 0.05\", \"USD -0.10\"]})\nE              left:  {:ok, invoice}\nE              right: {:error,\nE                      %Ash.Error.Invalid{\nE                        bread_crumbs: [\"Error returned from: Ledger.Billing.Invoice.issue\"], \nE                        changeset: \"#Changeset<>\", \nE                        errors: [\nE                          %Ash.Error.Changes.InvalidAttribute{\nE                            field: :subtotal,\nE                            message: \"amount must be a whole number of minor units\",\nE                            private_vars: nil,\nE                            value: \"USD 12.50\",\nE                            has_value?: true,\nE                            splode: Ash.Error,\nE                            bread_crumbs: [\"Error returned from: Ledger.Billing.Invoice.issue\"],\nE                            vars: [reason: :fractional_minor_units],\nE                            path: [],\nE                            stacktrace: #Splode.Stacktrace<>,\nE                            class: :invalid\nE                          },\nE                          %Ash.Error.Changes.InvalidAttribute{\nE                            field: :adjustments,\nE                            message: \"amount must be a whole number of minor units\",\nE                            private_vars: nil,\nE                            value: [\"USD 0.05\", \"USD -0.10\"],\nE                            has_value?: true,\nE                            splode: Ash.Error,\nE                            bread_crumbs: [\"Error returned from: Ledger.Billing.Invoice.issue\"],\nE                            vars: [index: 0, reason: :fractional_minor_units],\nE                            path: [0],\nE                            stacktrace: #Splode.Stacktrace<>,\nE                            class: :invalid\nE                          }\nE                        ]\nE                      }}\nE              stacktrace:\nE                /tmp/harbor_money_suite.exs:530: (test)\nE         \nE       assert 'fail' == 'pass'\nE         - pass\nE         + fail\n\ntests/test_final_state.py:745: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_t35_payments_aggregate_and_balance",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 15,
+                "start": 1789641543536,
+                "stop": 1789641543551,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "suite_results = {'T01': ('pass', ''), 'T02': ('pass', ''), 'T03': ('pass', ''), 'T04': ('pass', ''), ...}\n\n    def test_t35_payments_aggregate_and_balance(suite_results):\n>       _check(suite_results, \"T35\")\n\ntests/test_final_state.py:885: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresults = {'T01': ('pass', ''), 'T02': ('pass', ''), 'T03': ('pass', ''), 'T04': ('pass', ''), ...}\nidentifier = 'T35'\n\n    def _check(results: dict, identifier: str) -> None:\n        assert identifier in results, (\n            f\"Scenario {identifier} did not run. Scenarios reported: {sorted(results)}\"\n        )\n        status, detail = results[identifier]\n>       assert status == \"pass\", f\"Scenario {identifier} failed:\\n{detail}\"\nE       AssertionError: Scenario T35 failed:\nE           1) test T35 payments feed the aggregate and the balance (HarborMoneyTest)\nE              /tmp/harbor_money_suite.exs:547\nE              match (=) failed\nE              code:  assert {:ok, invoice} = H.issue(%{reference: \"PAY\", subtotal: \"USD 12.50\"})\nE              left:  {:ok, invoice}\nE              right: {:error,\nE                      %Ash.Error.Invalid{\nE                        bread_crumbs: [\"Error returned from: Ledger.Billing.Invoice.issue\"], \nE                        changeset: \"#Changeset<>\", \nE                        errors: [\nE                          %Ash.Error.Changes.InvalidAttribute{\nE                            field: :subtotal,\nE                            message: \"amount must be a whole number of minor units\",\nE                            private_vars: nil,\nE                            value: \"USD 12.50\",\nE                            has_value?: true,\nE                            splode: Ash.Error,\nE                            bread_crumbs: [\"Error returned from: Ledger.Billing.Invoice.issue\"],\nE                            vars: [reason: :fractional_minor_units],\nE                            path: [],\nE                            stacktrace: #Splode.Stacktrace<>,\nE                            class: :invalid\nE                          }\nE                        ]\nE                      }}\nE              stacktrace:\nE                /tmp/harbor_money_suite.exs:548: (test)\nE         \nE       assert 'fail' == 'pass'\nE         - pass\nE         + fail\n\ntests/test_final_state.py:745: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_t36_derived_columns_are_not_writable",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 16,
+                "start": 1789641543551,
+                "stop": 1789641543567,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "suite_results = {'T01': ('pass', ''), 'T02': ('pass', ''), 'T03': ('pass', ''), 'T04': ('pass', ''), ...}\n\n    def test_t36_derived_columns_are_not_writable(suite_results):\n>       _check(suite_results, \"T36\")\n\ntests/test_final_state.py:889: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresults = {'T01': ('pass', ''), 'T02': ('pass', ''), 'T03': ('pass', ''), 'T04': ('pass', ''), ...}\nidentifier = 'T36'\n\n    def _check(results: dict, identifier: str) -> None:\n        assert identifier in results, (\n            f\"Scenario {identifier} did not run. Scenarios reported: {sorted(results)}\"\n        )\n        status, detail = results[identifier]\n>       assert status == \"pass\", f\"Scenario {identifier} failed:\\n{detail}\"\nE       AssertionError: Scenario T36 failed:\nE           1) test T36 derived payment columns cannot be supplied and currencies are enforced (HarborMoneyTest)\nE              /tmp/harbor_money_suite.exs:564\nE              match (=) failed\nE              code:  assert {:ok, invoice} = H.issue(%{reference: \"PAY2\", subtotal: \"USD 12.50\"})\nE              left:  {:ok, invoice}\nE              right: {:error,\nE                      %Ash.Error.Invalid{\nE                        bread_crumbs: [\"Error returned from: Ledger.Billing.Invoice.issue\"], \nE                        changeset: \"#Changeset<>\", \nE                        errors: [\nE                          %Ash.Error.Changes.InvalidAttribute{\nE                            field: :subtotal,\nE                            message: \"amount must be a whole number of minor units\",\nE                            private_vars: nil,\nE                            value: \"USD 12.50\",\nE                            has_value?: true,\nE                            splode: Ash.Error,\nE                            bread_crumbs: [\"Error returned from: Ledger.Billing.Invoice.issue\"],\nE                            vars: [reason: :fractional_minor_units],\nE                            path: [],\nE                            stacktrace: #Splode.Stacktrace<>,\nE                            class: :invalid\nE                          }\nE                        ]\nE                      }}\nE              stacktrace:\nE                /tmp/harbor_money_suite.exs:565: (test)\nE         \nE       assert 'fail' == 'pass'\nE         - pass\nE         + fail\n\ntests/test_final_state.py:745: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_t37_minor_unit_column_is_queryable",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 10,
+                "start": 1789641543567,
+                "stop": 1789641543577,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "suite_results = {'T01': ('pass', ''), 'T02': ('pass', ''), 'T03': ('pass', ''), 'T04': ('pass', ''), ...}\n\n    def test_t37_minor_unit_column_is_queryable(suite_results):\n>       _check(suite_results, \"T37\")\n\ntests/test_final_state.py:893: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresults = {'T01': ('pass', ''), 'T02': ('pass', ''), 'T03': ('pass', ''), 'T04': ('pass', ''), ...}\nidentifier = 'T37'\n\n    def _check(results: dict, identifier: str) -> None:\n        assert identifier in results, (\n            f\"Scenario {identifier} did not run. Scenarios reported: {sorted(results)}\"\n        )\n        status, detail = results[identifier]\n>       assert status == \"pass\", f\"Scenario {identifier} failed:\\n{detail}\"\nE       AssertionError: Scenario T37 failed:\nE           1) test T37 the derived minor unit column is an ordinary queryable integer (HarborMoneyTest)\nE              /tmp/harbor_money_suite.exs:584\nE              match (=) failed\nE              code:  assert {:ok, invoice} = H.issue(%{reference: \"PAY3\", subtotal: \"USD 100.00\"})\nE              left:  {:ok, invoice}\nE              right: {:error,\nE                      %Ash.Error.Invalid{\nE                        bread_crumbs: [\"Error returned from: Ledger.Billing.Invoice.issue\"], \nE                        changeset: \"#Changeset<>\", \nE                        errors: [\nE                          %Ash.Error.Changes.InvalidAttribute{\nE                            field: :subtotal,\nE                            message: \"amount must be a whole number of minor units\",\nE                            private_vars: nil,\nE                            value: \"USD 100.00\",\nE                            has_value?: true,\nE                            splode: Ash.Error,\nE                            bread_crumbs: [\"Error returned from: Ledger.Billing.Invoice.issue\"],\nE                            vars: [reason: :fractional_minor_units],\nE                            path: [],\nE                            stacktrace: #Splode.Stacktrace<>,\nE                            class: :invalid\nE                          }\nE                        ]\nE                      }}\nE              stacktrace:\nE                /tmp/harbor_money_suite.exs:585: (test)\nE         \nE       assert 'fail' == 'pass'\nE         - pass\nE         + fail\n\ntests/test_final_state.py:745: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_t38_generic_action_returns_money",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 9,
+                "start": 1789641543578,
+                "stop": 1789641543587,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "suite_results = {'T01': ('pass', ''), 'T02': ('pass', ''), 'T03': ('pass', ''), 'T04': ('pass', ''), ...}\n\n    def test_t38_generic_action_returns_money(suite_results):\n>       _check(suite_results, \"T38\")\n\ntests/test_final_state.py:897: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresults = {'T01': ('pass', ''), 'T02': ('pass', ''), 'T03': ('pass', ''), 'T04': ('pass', ''), ...}\nidentifier = 'T38'\n\n    def _check(results: dict, identifier: str) -> None:\n        assert identifier in results, (\n            f\"Scenario {identifier} did not run. Scenarios reported: {sorted(results)}\"\n        )\n        status, detail = results[identifier]\n>       assert status == \"pass\", f\"Scenario {identifier} failed:\\n{detail}\"\nE       AssertionError: Scenario T38 failed:\nE           1) test T38 the generic action returns money (HarborMoneyTest)\nE              /tmp/harbor_money_suite.exs:600\nE              match (=) failed\nE              code:  assert {:ok, priced} = H.bill(:price_for, [\"USD 1.25\", 4])\nE              left:  {:ok, priced}\nE              right: {:error,\nE                      %Ash.Error.Invalid{\nE                        errors: [\nE                          %Ash.Error.Action.InvalidArgument{\nE                            field: :unit_price,\nE                            message: \"amount must be a whole number of minor units\",\nE                            value: \"USD 1.25\",\nE                            splode: Ash.Error,\nE                            bread_crumbs: [],\nE                            vars: [reason: :fractional_minor_units],\nE                            path: [],\nE                            stacktrace: #Splode.Stacktrace<>,\nE                            class: :invalid\nE                          }\nE                        ]\nE                      }}\nE              stacktrace:\nE                /tmp/harbor_money_suite.exs:601: (test)\nE         \nE       assert 'fail' == 'pass'\nE         - pass\nE         + fail\n\ntests/test_final_state.py:745: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_t39_sorting_by_money",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 9,
+                "start": 1789641543587,
+                "stop": 1789641543596,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "suite_results = {'T01': ('pass', ''), 'T02': ('pass', ''), 'T03': ('pass', ''), 'T04': ('pass', ''), ...}\n\n    def test_t39_sorting_by_money(suite_results):\n>       _check(suite_results, \"T39\")\n\ntests/test_final_state.py:901: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresults = {'T01': ('pass', ''), 'T02': ('pass', ''), 'T03': ('pass', ''), 'T04': ('pass', ''), ...}\nidentifier = 'T39'\n\n    def _check(results: dict, identifier: str) -> None:\n        assert identifier in results, (\n            f\"Scenario {identifier} did not run. Scenarios reported: {sorted(results)}\"\n        )\n        status, detail = results[identifier]\n>       assert status == \"pass\", f\"Scenario {identifier} failed:\\n{detail}\"\nE       AssertionError: Scenario T39 failed:\nE           1) test T39 sorting by money orders by amount, not lexicographically (HarborMoneyTest)\nE              /tmp/harbor_money_suite.exs:612\nE              match (=) failed\nE              code:  assert {:ok, _} = H.issue(%{reference: reference, subtotal: subtotal})\nE              left:  {:ok, _}\nE              right: {:error,\nE                      %Ash.Error.Invalid{\nE                        bread_crumbs: [\"Error returned from: Ledger.Billing.Invoice.issue\"], \nE                        changeset: \"#Changeset<>\", \nE                        errors: [\nE                          %Ash.Error.Changes.InvalidAttribute{\nE                            field: :subtotal,\nE                            message: \"amount must be a whole number of minor units\",\nE                            private_vars: nil,\nE                            value: \"USD 0.05\",\nE                            has_value?: true,\nE                            splode: Ash.Error,\nE                            bread_crumbs: [\"Error returned from: Ledger.Billing.Invoice.issue\"],\nE                            vars: [reason: :fractional_minor_units],\nE                            path: [],\nE                            stacktrace: #Splode.Stacktrace<>,\nE                            class: :invalid\nE                          }\nE                        ]\nE                      }}\nE              stacktrace:\nE                /tmp/harbor_money_suite.exs:619: anonymous fn/2 in HarborMoneyTest.\"test T39 sorting by money orders by amount, not lexicographically\"/1\nE                (elixir 1.18.4) lib/enum.ex:2546: Enum.\"-reduce/3-lists^foldl/2-0-\"/3\nE                /tmp/harbor_money_suite.exs:613: (test)\nE         \nE       assert 'fail' == 'pass'\nE         - pass\nE         + fail\n\ntests/test_final_state.py:745: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_t40_equality_filter",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 10,
+                "start": 1789641543596,
+                "stop": 1789641543606,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "suite_results = {'T01': ('pass', ''), 'T02': ('pass', ''), 'T03': ('pass', ''), 'T04': ('pass', ''), ...}\n\n    def test_t40_equality_filter(suite_results):\n>       _check(suite_results, \"T40\")\n\ntests/test_final_state.py:905: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresults = {'T01': ('pass', ''), 'T02': ('pass', ''), 'T03': ('pass', ''), 'T04': ('pass', ''), ...}\nidentifier = 'T40'\n\n    def _check(results: dict, identifier: str) -> None:\n        assert identifier in results, (\n            f\"Scenario {identifier} did not run. Scenarios reported: {sorted(results)}\"\n        )\n        status, detail = results[identifier]\n>       assert status == \"pass\", f\"Scenario {identifier} failed:\\n{detail}\"\nE       AssertionError: Scenario T40 failed:\nE           1) test T40 equality filters match currency and amount together (HarborMoneyTest)\nE              /tmp/harbor_money_suite.exs:637\nE              match (=) failed\nE              code:  assert {:ok, _} = H.issue(%{reference: \"F-USD\", subtotal: \"USD 9.00\"})\nE              left:  {:ok, _}\nE              right: {:error,\nE                      %Ash.Error.Invalid{\nE                        bread_crumbs: [\"Error returned from: Ledger.Billing.Invoice.issue\"], \nE                        changeset: \"#Changeset<>\", \nE                        errors: [\nE                          %Ash.Error.Changes.InvalidAttribute{\nE                            field: :subtotal,\nE                            message: \"amount must be a whole number of minor units\",\nE                            private_vars: nil,\nE                            value: \"USD 9.00\",\nE                            has_value?: true,\nE                            splode: Ash.Error,\nE                            bread_crumbs: [\"Error returned from: Ledger.Billing.Invoice.issue\"],\nE                            vars: [reason: :fractional_minor_units],\nE                            path: [],\nE                            stacktrace: #Splode.Stacktrace<>,\nE                            class: :invalid\nE                          }\nE                        ]\nE                      }}\nE              stacktrace:\nE                /tmp/harbor_money_suite.exs:638: (test)\nE         \nE       assert 'fail' == 'pass'\nE         - pass\nE         + fail\n\ntests/test_final_state.py:745: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            }
+        ]
+    }
+}

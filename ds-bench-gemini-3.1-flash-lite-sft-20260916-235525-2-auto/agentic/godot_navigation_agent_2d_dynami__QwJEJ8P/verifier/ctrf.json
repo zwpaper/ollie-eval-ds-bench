@@ -1,0 +1,128 @@
+{
+    "reportFormat": "CTRF",
+    "specVersion": "0.0.0",
+    "timestamp": "2026-09-17T12:12:11.251386+00:00",
+    "generatedBy": "pytest",
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "7.4.4"
+        },
+        "summary": {
+            "tests": 9,
+            "passed": 3,
+            "failed": 6,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1789647130440,
+            "stop": 1789647131251
+        },
+        "environment": {
+            "buildName": "Pytest JSON CTRF Report",
+            "buildNumber": "000",
+            "buildUrl": "https://ctrf.io"
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_nav_world_script_exists",
+                "status": "passed",
+                "duration": 2,
+                "start": 1789647130469,
+                "stop": 1789647130471,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_nav_agent_script_exists",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789647130471,
+                "stop": 1789647130472,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_nav_world_scene_exists",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789647130472,
+                "stop": 1789647130473,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_headless_harness_executes_successfully",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 752,
+                "start": 1789647130473,
+                "stop": 1789647131225,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_headless_harness_executes_successfully():\n        result = _run_harness()\n>       assert result.returncode == 0, (\n            \"Headless test harness exited with non-zero status.\\n\"\n            f\"stdout:\\n{result.stdout}\\n\\nstderr:\\n{result.stderr}\"\n        )\nE       AssertionError: Headless test harness exited with non-zero status.\nE         stdout:\nE         Godot Engine v4.3.stable.official.77dcf97d8 - https://godotengine.org\nE         \nE         [PASS] scene_structure_valid \u2014 {  }\nE         [PASS] nav_agent_api_present \u2014 {  }\nE         [PASS] nav_world_api_present \u2014 {  }\nE         \nE         \nE         stderr:\nE         SCRIPT ERROR: Invalid assignment of property or key 'bake_navigation_mesh' with value of type 'bool' on a base object of type 'NavigationRegion2D'.\nE                   at: _ready (res://scripts/nav_world.gd:15)\nE         WARNING: Function make_polygons_from_outlines() is deprecated.\nE         Use NavigationServer2D.parse_source_geometry_data() and NavigationServer2D.bake_from_source_geometry_data() instead.\nE              at: make_polygons_from_outlines (scene/resources/2d/navigation_polygon.cpp:280)\nE         terminate called after throwing an instance of 'std::system_error'\nE           what():  Resource deadlock avoided\nE         \nE       assert -6 == 0\nE        +  where -6 = CompletedProcess(args=['godot', '--headless', '--path', '/home/user/godot_project', '--script', 'res://tests/run_tests....cpp:280)\\nterminate called after throwing an instance of 'std::system_error'\\n  what():  Resource deadlock avoided\\n\").returncode\n\ntests/test_final_state.py:61: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_scene_structure_valid",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 5,
+                "start": 1789647131225,
+                "stop": 1789647131230,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_scene_structure_valid():\n>       results = _load_results()\n\ntests/test_final_state.py:75: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\n    def _load_results():\n>       assert os.path.isfile(RESULTS_PATH), (\n            f\"Test results file {RESULTS_PATH} was not produced by the harness.\"\n        )\nE       AssertionError: Test results file /home/user/godot_project/test_results.json was not produced by the harness.\nE       assert False\nE        +  where False = <function isfile at 0x7ff276fd8220>('/home/user/godot_project/test_results.json')\nE        +    where <function isfile at 0x7ff276fd8220> = <module 'posixpath' (frozen)>.isfile\nE        +      where <module 'posixpath' (frozen)> = os.path\n\ntests/test_final_state.py:31: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_nav_agent_api_present",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 5,
+                "start": 1789647131230,
+                "stop": 1789647131235,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_nav_agent_api_present():\n>       results = _load_results()\n\ntests/test_final_state.py:87: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\n    def _load_results():\n>       assert os.path.isfile(RESULTS_PATH), (\n            f\"Test results file {RESULTS_PATH} was not produced by the harness.\"\n        )\nE       AssertionError: Test results file /home/user/godot_project/test_results.json was not produced by the harness.\nE       assert False\nE        +  where False = <function isfile at 0x7ff276fd8220>('/home/user/godot_project/test_results.json')\nE        +    where <function isfile at 0x7ff276fd8220> = <module 'posixpath' (frozen)>.isfile\nE        +      where <module 'posixpath' (frozen)> = os.path\n\ntests/test_final_state.py:31: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_nav_world_api_present",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 5,
+                "start": 1789647131235,
+                "stop": 1789647131240,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_nav_world_api_present():\n>       results = _load_results()\n\ntests/test_final_state.py:96: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\n    def _load_results():\n>       assert os.path.isfile(RESULTS_PATH), (\n            f\"Test results file {RESULTS_PATH} was not produced by the harness.\"\n        )\nE       AssertionError: Test results file /home/user/godot_project/test_results.json was not produced by the harness.\nE       assert False\nE        +  where False = <function isfile at 0x7ff276fd8220>('/home/user/godot_project/test_results.json')\nE        +    where <function isfile at 0x7ff276fd8220> = <module 'posixpath' (frozen)>.isfile\nE        +      where <module 'posixpath' (frozen)> = os.path\n\ntests/test_final_state.py:31: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_agent_reaches_goal_with_obstacles",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 4,
+                "start": 1789647131241,
+                "stop": 1789647131245,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_agent_reaches_goal_with_obstacles():\n>       results = _load_results()\n\ntests/test_final_state.py:106: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\n    def _load_results():\n>       assert os.path.isfile(RESULTS_PATH), (\n            f\"Test results file {RESULTS_PATH} was not produced by the harness.\"\n        )\nE       AssertionError: Test results file /home/user/godot_project/test_results.json was not produced by the harness.\nE       assert False\nE        +  where False = <function isfile at 0x7ff276fd8220>('/home/user/godot_project/test_results.json')\nE        +    where <function isfile at 0x7ff276fd8220> = <module 'posixpath' (frozen)>.isfile\nE        +      where <module 'posixpath' (frozen)> = os.path\n\ntests/test_final_state.py:31: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_agent_reaches_goal_after_obstacles_moved",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 4,
+                "start": 1789647131246,
+                "stop": 1789647131250,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_agent_reaches_goal_after_obstacles_moved():\n>       results = _load_results()\n\ntests/test_final_state.py:116: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\n    def _load_results():\n>       assert os.path.isfile(RESULTS_PATH), (\n            f\"Test results file {RESULTS_PATH} was not produced by the harness.\"\n        )\nE       AssertionError: Test results file /home/user/godot_project/test_results.json was not produced by the harness.\nE       assert False\nE        +  where False = <function isfile at 0x7ff276fd8220>('/home/user/godot_project/test_results.json')\nE        +    where <function isfile at 0x7ff276fd8220> = <module 'posixpath' (frozen)>.isfile\nE        +      where <module 'posixpath' (frozen)> = os.path\n\ntests/test_final_state.py:31: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            }
+        ]
+    }
+}

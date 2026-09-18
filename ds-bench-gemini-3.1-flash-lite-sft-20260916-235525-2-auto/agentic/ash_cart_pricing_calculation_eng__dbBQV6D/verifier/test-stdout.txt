@@ -1,0 +1,1298 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0
+rootdir: /tests
+plugins: json-ctrf-0.5.3
+collected 26 items
+
+tests/test_final_state.py ...F.FFFFFFFFFFFFFFFFFFF..                     [100%]
+
+=================================== FAILURES ===================================
+_______________________ test_t04_composed_line_discount ________________________
+
+suite_run = {'output': 'Running ExUnit with seed: 0, max_cases: 16\n\n\n11:21:38.758 [debug] Creating CartPricing.Sales.Cart:\n\nS...e': 'CartPricing.Verification.PricingEngineTest', 'name': 'test T04 composed line discount', 'status': 'failed'}, ...}}
+
+    def test_t04_composed_line_discount(suite_run):
+>       _check(suite_run, "T04")
+
+tests/test_final_state.py:811: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': 'Running ExUnit with seed: 0, max_cases: 16\n\n\n11:21:38.758 [debug] Creating CartPricing.Sales.Cart:\n\nS...e': 'CartPricing.Verification.PricingEngineTest', 'name': 'test T04 composed line discount', 'status': 'failed'}, ...}}
+scenario = 'T04'
+
+    def _check(suite, scenario: str):
+        results = suite["results"]
+        matches = [
+            record
+            for name, record in results.items()
+            if name.startswith(f"test {scenario} ")
+        ]
+        if not matches:
+            tail = suite["output"][-6000:]
+            raise AssertionError(
+                f"Scenario {scenario} did not run. The project or the verification suite failed "
+                f"to compile or crashed.\n--- mix test output (tail) ---\n{tail}"
+            )
+        record = matches[0]
+        status = record.get("status")
+>       assert status == "passed", (
+            f"Scenario {scenario} ({record.get('name')}) reported status {status!r}.\n"
+            f"{record.get('message', '')}"
+        )
+E       AssertionError: Scenario T04 (test T04 composed line discount) reported status 'failed'.
+E           1) test T04 composed line discount (CartPricing.Verification.PricingEngineTest)
+E              test/verification/pricing_engine_test.exs:171
+E              ** (Ash.Error.Unknown) 
+E              Bread Crumbs:
+E                > Exception raised in: CartPricing.Sales.CartItem.read
+E         
+E              Unknown Error
+E         
+E              * ** (MatchError) no match of right hand side value: [%CartPricing.Sales.CartItem{id: "5fc0457d-4d74-4a30-a9d2-bccec2643a63", sku: "a", unit_price_cents: 333, quantity: 7, cart_id: "e3833c0a-1b0f-496d-b897-d3f843ce230d", line_total_cents: 2331, tier_discount_bps: 500, discounted_line_total_cents: #Ash.NotLoaded<:calculation, field: :discounted_line_total_cents>, cart: #Ash.NotLoaded<:relationship, field: :cart>, __meta__: #Ecto.Schema.Metadata<:loaded>}, %CartPricing.Sales.CartItem{id: "2c1d92a6-356f-44f2-bce5-c63ca8ce4e6e", sku: "b", unit_price_cents: 1999, quantity: 25, cart_id: "e3833c0a-1b0f-496d-b897-d3f843ce230d", line_total_cents: 49975, tier_discount_bps: 1500, discounted_line_total_cents: #Ash.NotLoaded<:calculation, field: :discounted_line_total_cents>, cart: #Ash.NotLoaded<:relationship, field: :cart>, __meta__: #Ecto.Schema.Metadata<:loaded>}]
+E                (cart_pricing 0.1.0) lib/cart_pricing/sales/calculations/discounted_line_total.ex:5: CartPricing.Sales.Calculations.DiscountedLineTotal.calculate/3
+E                (ash 3.31.0) lib/ash/actions/read/read.ex:88: Ash.Actions.Read.run/3
+E                (ash 3.31.0) lib/ash.ex:2938: Ash.read/2
+E                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2
+E                test/verification/pricing_engine_test.exs:176: CartPricing.Verification.PricingEngineTest."test T04 composed line discount"/1
+E                (ex_unit 1.18.4) lib/ex_unit/runner.ex:511: ExUnit.Runner.exec_test/2
+E                (stdlib 6.2.2) timer.erl:595: :timer.tc/2
+E                (ex_unit 1.18.4) lib/ex_unit/runner.ex:433: anonymous fn/6 in ExUnit.Runner.spawn_test_monitor/4
+E              code: loaded = items_of(cart, [:line_total_cents, :tier_discount_bps, :discounted_line_total_cents])
+E              stacktrace:
+E                (cart_pricing 0.1.0) lib/cart_pricing/sales/calculations/discounted_line_total.ex:5: CartPricing.Sales.Calculations.DiscountedLineTotal.calculate/3
+E                (ash 3.31.0) lib/ash/resource/calculation/calculation.ex:262: Ash.Resource.Calculation.calculate/4
+E                (ash 3.31.0) lib/ash/actions/read/calculations.ex:596: Ash.Actions.Read.Calculations.with_trace/4
+E                (ash 3.31.0) lib/ash/actions/read/calculations.ex:535: Ash.Actions.Read.Calculations.run_calculate/7
+E                (ash 3.31.0) lib/ash/actions/read/calculations.ex:515: Ash.Actions.Read.Calculations.run_calculation/3
+E                (ash 3.31.0) lib/ash/actions/read/calculations.ex:401: anonymous fn/3 in Ash.Actions.Read.Calculations.do_run_calcs/4
+E                (ash 3.31.0) lib/ash/actions/read/calculations.ex:396: Ash.Actions.Read.Calculations.do_run_calcs/4
+E                (ash 3.31.0) lib/ash/actions/read/calculations.ex:350: Ash.Actions.Read.Calculations.do_run_calculations/5
+E                (ash 3.31.0) lib/ash/actions/read/read.ex:474: Ash.Actions.Read.do_run/3
+E                (ash 3.31.0) lib/ash/actions/read/read.ex:89: anonymous fn/3 in Ash.Actions.Read.run/3
+E                (ash 3.31.0) lib/ash/actions/read/read.ex:88: Ash.Actions.Read.run/3
+E                (ash 3.31.0) lib/ash.ex:2938: Ash.read/2
+E                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2
+E                test/verification/pricing_engine_test.exs:176: (test)
+E         
+E       assert 'failed' == 'passed'
+E         - passed
+E         + failed
+
+tests/test_final_state.py:792: AssertionError
+_____________________________ test_t06_quote_shape _____________________________
+
+suite_run = {'output': 'Running ExUnit with seed: 0, max_cases: 16\n\n\n11:21:38.758 [debug] Creating CartPricing.Sales.Cart:\n\nS...e': 'CartPricing.Verification.PricingEngineTest', 'name': 'test T04 composed line discount', 'status': 'failed'}, ...}}
+
+    def test_t06_quote_shape(suite_run):
+>       _check(suite_run, "T06")
+
+tests/test_final_state.py:819: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': 'Running ExUnit with seed: 0, max_cases: 16\n\n\n11:21:38.758 [debug] Creating CartPricing.Sales.Cart:\n\nS...e': 'CartPricing.Verification.PricingEngineTest', 'name': 'test T04 composed line discount', 'status': 'failed'}, ...}}
+scenario = 'T06'
+
+    def _check(suite, scenario: str):
+        results = suite["results"]
+        matches = [
+            record
+            for name, record in results.items()
+            if name.startswith(f"test {scenario} ")
+        ]
+        if not matches:
+            tail = suite["output"][-6000:]
+            raise AssertionError(
+                f"Scenario {scenario} did not run. The project or the verification suite failed "
+                f"to compile or crashed.\n--- mix test output (tail) ---\n{tail}"
+            )
+        record = matches[0]
+        status = record.get("status")
+>       assert status == "passed", (
+            f"Scenario {scenario} ({record.get('name')}) reported status {status!r}.\n"
+            f"{record.get('message', '')}"
+        )
+E       AssertionError: Scenario T06 (test T06 quote shape) reported status 'failed'.
+E           1) test T06 quote shape (CartPricing.Verification.PricingEngineTest)
+E              test/verification/pricing_engine_test.exs:217
+E              ** (Ash.Error.Invalid) 
+E              Invalid Error
+E         
+E              * No such input `as_of` for calculation pricing_quote
+E         
+E              No valid inputs exist
+E         
+E                  at load
+E                (ash 3.31.0) lib/ash/query/query.ex:2312: Ash.Query.load_resource_calculation/4
+E                test/verification/pricing_engine_test.exs:63: CartPricing.Verification.PricingEngineTest.quote_via_query!/2
+E                test/verification/pricing_engine_test.exs:221: CartPricing.Verification.PricingEngineTest."test T06 quote shape"/1
+E                (ex_unit 1.18.4) lib/ex_unit/runner.ex:511: ExUnit.Runner.exec_test/2
+E                (stdlib 6.2.2) timer.erl:595: :timer.tc/2
+E                (ex_unit 1.18.4) lib/ex_unit/runner.ex:433: anonymous fn/6 in ExUnit.Runner.spawn_test_monitor/4
+E              code: assert_money(quote_via_query!(cart, %{as_of: @march}))
+E              stacktrace:
+E                (ash 3.31.0) lib/ash/actions/read/read.ex:32: Ash.Actions.Read.run/3
+E                (ash 3.31.0) lib/ash.ex:2938: Ash.read/2
+E                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2
+E                test/verification/pricing_engine_test.exs:64: CartPricing.Verification.PricingEngineTest.quote_via_query!/2
+E                test/verification/pricing_engine_test.exs:221: (test)
+E         
+E       assert 'failed' == 'passed'
+E         - passed
+E         + failed
+
+tests/test_final_state.py:792: AssertionError
+______________________ test_t07_no_coupon_zero_tax_region ______________________
+
+suite_run = {'output': 'Running ExUnit with seed: 0, max_cases: 16\n\n\n11:21:38.758 [debug] Creating CartPricing.Sales.Cart:\n\nS...e': 'CartPricing.Verification.PricingEngineTest', 'name': 'test T04 composed line discount', 'status': 'failed'}, ...}}
+
+    def test_t07_no_coupon_zero_tax_region(suite_run):
+>       _check(suite_run, "T07")
+
+tests/test_final_state.py:823: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': 'Running ExUnit with seed: 0, max_cases: 16\n\n\n11:21:38.758 [debug] Creating CartPricing.Sales.Cart:\n\nS...e': 'CartPricing.Verification.PricingEngineTest', 'name': 'test T04 composed line discount', 'status': 'failed'}, ...}}
+scenario = 'T07'
+
+    def _check(suite, scenario: str):
+        results = suite["results"]
+        matches = [
+            record
+            for name, record in results.items()
+            if name.startswith(f"test {scenario} ")
+        ]
+        if not matches:
+            tail = suite["output"][-6000:]
+            raise AssertionError(
+                f"Scenario {scenario} did not run. The project or the verification suite failed "
+                f"to compile or crashed.\n--- mix test output (tail) ---\n{tail}"
+            )
+        record = matches[0]
+        status = record.get("status")
+>       assert status == "passed", (
+            f"Scenario {scenario} ({record.get('name')}) reported status {status!r}.\n"
+            f"{record.get('message', '')}"
+        )
+E       AssertionError: Scenario T07 (test T07 no-coupon quote in a zero-tax region) reported status 'failed'.
+E           1) test T07 no-coupon quote in a zero-tax region (CartPricing.Verification.PricingEngineTest)
+E              test/verification/pricing_engine_test.exs:225
+E              ** (Ash.Error.Invalid) 
+E              Invalid Error
+E         
+E              * No such input `as_of` for calculation pricing_quote
+E         
+E              No valid inputs exist
+E         
+E                  at load
+E                (ash 3.31.0) lib/ash/query/query.ex:2312: Ash.Query.load_resource_calculation/4
+E                test/verification/pricing_engine_test.exs:63: CartPricing.Verification.PricingEngineTest.quote_via_query!/2
+E                test/verification/pricing_engine_test.exs:230: CartPricing.Verification.PricingEngineTest."test T07 no-coupon quote in a zero-tax region"/1
+E                (ex_unit 1.18.4) lib/ex_unit/runner.ex:511: ExUnit.Runner.exec_test/2
+E                (stdlib 6.2.2) timer.erl:595: :timer.tc/2
+E                (ex_unit 1.18.4) lib/ex_unit/runner.ex:433: anonymous fn/6 in ExUnit.Runner.spawn_test_monitor/4
+E              code: q = assert_money(quote_via_query!(cart, %{as_of: @march}))
+E              stacktrace:
+E                (ash 3.31.0) lib/ash/actions/read/read.ex:32: Ash.Actions.Read.run/3
+E                (ash 3.31.0) lib/ash.ex:2938: Ash.read/2
+E                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2
+E                test/verification/pricing_engine_test.exs:64: CartPricing.Verification.PricingEngineTest.quote_via_query!/2
+E                test/verification/pricing_engine_test.exs:230: (test)
+E         
+E       assert 'failed' == 'passed'
+E         - passed
+E         + failed
+
+tests/test_final_state.py:792: AssertionError
+_____________________________ test_t08_mixed_tiers _____________________________
+
+suite_run = {'output': 'Running ExUnit with seed: 0, max_cases: 16\n\n\n11:21:38.758 [debug] Creating CartPricing.Sales.Cart:\n\nS...e': 'CartPricing.Verification.PricingEngineTest', 'name': 'test T04 composed line discount', 'status': 'failed'}, ...}}
+
+    def test_t08_mixed_tiers(suite_run):
+>       _check(suite_run, "T08")
+
+tests/test_final_state.py:827: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': 'Running ExUnit with seed: 0, max_cases: 16\n\n\n11:21:38.758 [debug] Creating CartPricing.Sales.Cart:\n\nS...e': 'CartPricing.Verification.PricingEngineTest', 'name': 'test T04 composed line discount', 'status': 'failed'}, ...}}
+scenario = 'T08'
+
+    def _check(suite, scenario: str):
+        results = suite["results"]
+        matches = [
+            record
+            for name, record in results.items()
+            if name.startswith(f"test {scenario} ")
+        ]
+        if not matches:
+            tail = suite["output"][-6000:]
+            raise AssertionError(
+                f"Scenario {scenario} did not run. The project or the verification suite failed "
+                f"to compile or crashed.\n--- mix test output (tail) ---\n{tail}"
+            )
+        record = matches[0]
+        status = record.get("status")
+>       assert status == "passed", (
+            f"Scenario {scenario} ({record.get('name')}) reported status {status!r}.\n"
+            f"{record.get('message', '')}"
+        )
+E       AssertionError: Scenario T08 (test T08 mixed tiers aggregate correctly) reported status 'failed'.
+E           1) test T08 mixed tiers aggregate correctly (CartPricing.Verification.PricingEngineTest)
+E              test/verification/pricing_engine_test.exs:243
+E              ** (Ash.Error.Unknown) 
+E              Bread Crumbs:
+E                > Exception raised in: CartPricing.Sales.CartItem.read
+E         
+E              Unknown Error
+E         
+E              * ** (MatchError) no match of right hand side value: [%CartPricing.Sales.CartItem{id: "94e14aa2-0109-49dd-a9eb-a1d096e4716b", sku: "a", unit_price_cents: 700, quantity: 3, cart_id: "3465ae26-36b8-46a8-88d8-fca6e4a9e890", line_total_cents: 2100, tier_discount_bps: 0, discounted_line_total_cents: #Ash.NotLoaded<:calculation, field: :discounted_line_total_cents>, cart: #Ash.NotLoaded<:relationship, field: :cart>, __meta__: #Ecto.Schema.Metadata<:loaded>}, %CartPricing.Sales.CartItem{id: "b61d24aa-b24d-4a67-a2e4-64a36e416051", sku: "b", unit_price_cents: 700, quantity: 5, cart_id: "3465ae26-36b8-46a8-88d8-fca6e4a9e890", line_total_cents: 3500, tier_discount_bps: 500, discounted_line_total_cents: #Ash.NotLoaded<:calculation, field: :discounted_line_total_cents>, cart: #Ash.NotLoaded<:relationship, field: :cart>, __meta__: #Ecto.Schema.Metadata<:loaded>}, %CartPricing.Sales.CartItem{id: "1b7c2839-cecd-47b9-b0fb-d34fd50ca1d3", sku: "c", unit_price_cents: 700, quantity: 12, cart_id: "3465ae26-36b8-46a8-88d8-fca6e4a9e890", line_total_cents: 8400, tier_discount_bps: 1000, discounted_line_total_cents: #Ash.NotLoaded<:calculation, field: :discounted_line_total_cents>, cart: #Ash.NotLoaded<:relationship, field: :cart>, __meta__: #Ecto.Schema.Metadata<:loaded>}, %CartPricing.Sales.CartItem{id: "eb38152b-088a-4b63-b12c-24ac12cfab1e", sku: "d", unit_price_cents: 700, quantity: 40, cart_id: "3465ae26-36b8-46a8-88d8-fca6e4a9e890", line_total_cents: 28000, tier_discount_bps: 1500, discounted_line_total_cents: #Ash.NotLoaded<:calculation, field: :discounted_line_total_cents>, cart: #Ash.NotLoaded<:relationship, field: :cart>, __meta__: #Ecto.Schema.Metadata<:loaded>}]
+E                (cart_pricing 0.1.0) lib/cart_pricing/sales/calculations/discounted_line_total.ex:5: CartPricing.Sales.Calculations.DiscountedLineTotal.calculate/3
+E                (ash 3.31.0) lib/ash/actions/read/read.ex:88: Ash.Actions.Read.run/3
+E                (ash 3.31.0) lib/ash.ex:2938: Ash.read/2
+E                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2
+E                test/verification/pricing_engine_test.exs:250: CartPricing.Verification.PricingEngineTest."test T08 mixed tiers aggregate correctly"/1
+E                (ex_unit 1.18.4) lib/ex_unit/runner.ex:511: ExUnit.Runner.exec_test/2
+E                (stdlib 6.2.2) timer.erl:595: :timer.tc/2
+E                (ex_unit 1.18.4) lib/ex_unit/runner.ex:433: anonymous fn/6 in ExUnit.Runner.spawn_test_monitor/4
+E              code: lines = items_of(cart, [:line_total_cents, :discounted_line_total_cents])
+E              stacktrace:
+E                (cart_pricing 0.1.0) lib/cart_pricing/sales/calculations/discounted_line_total.ex:5: CartPricing.Sales.Calculations.DiscountedLineTotal.calculate/3
+E                (ash 3.31.0) lib/ash/resource/calculation/calculation.ex:262: Ash.Resource.Calculation.calculate/4
+E                (ash 3.31.0) lib/ash/actions/read/calculations.ex:596: Ash.Actions.Read.Calculations.with_trace/4
+E                (ash 3.31.0) lib/ash/actions/read/calculations.ex:535: Ash.Actions.Read.Calculations.run_calculate/7
+E                (ash 3.31.0) lib/ash/actions/read/calculations.ex:515: Ash.Actions.Read.Calculations.run_calculation/3
+E                (ash 3.31.0) lib/ash/actions/read/calculations.ex:401: anonymous fn/3 in Ash.Actions.Read.Calculations.do_run_calcs/4
+E                (ash 3.31.0) lib/ash/actions/read/calculations.ex:396: Ash.Actions.Read.Calculations.do_run_calcs/4
+E                (ash 3.31.0) lib/ash/actions/read/calculations.ex:350: Ash.Actions.Read.Calculations.do_run_calculations/5
+E                (ash 3.31.0) lib/ash/actions/read/read.ex:474: Ash.Actions.Read.do_run/3
+E                (ash 3.31.0) lib/ash/actions/read/read.ex:89: anonymous fn/3 in Ash.Actions.Read.run/3
+E                (ash 3.31.0) lib/ash/actions/read/read.ex:88: Ash.Actions.Read.run/3
+E                (ash 3.31.0) lib/ash.ex:2938: Ash.read/2
+E                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2
+E                test/verification/pricing_engine_test.exs:250: (test)
+E         
+E       assert 'failed' == 'passed'
+E         - passed
+E         + failed
+
+tests/test_final_state.py:792: AssertionError
+___________________________ test_t09_nil_coupon_code ___________________________
+
+suite_run = {'output': 'Running ExUnit with seed: 0, max_cases: 16\n\n\n11:21:38.758 [debug] Creating CartPricing.Sales.Cart:\n\nS...e': 'CartPricing.Verification.PricingEngineTest', 'name': 'test T04 composed line discount', 'status': 'failed'}, ...}}
+
+    def test_t09_nil_coupon_code(suite_run):
+>       _check(suite_run, "T09")
+
+tests/test_final_state.py:831: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': 'Running ExUnit with seed: 0, max_cases: 16\n\n\n11:21:38.758 [debug] Creating CartPricing.Sales.Cart:\n\nS...e': 'CartPricing.Verification.PricingEngineTest', 'name': 'test T04 composed line discount', 'status': 'failed'}, ...}}
+scenario = 'T09'
+
+    def _check(suite, scenario: str):
+        results = suite["results"]
+        matches = [
+            record
+            for name, record in results.items()
+            if name.startswith(f"test {scenario} ")
+        ]
+        if not matches:
+            tail = suite["output"][-6000:]
+            raise AssertionError(
+                f"Scenario {scenario} did not run. The project or the verification suite failed "
+                f"to compile or crashed.\n--- mix test output (tail) ---\n{tail}"
+            )
+        record = matches[0]
+        status = record.get("status")
+>       assert status == "passed", (
+            f"Scenario {scenario} ({record.get('name')}) reported status {status!r}.\n"
+            f"{record.get('message', '')}"
+        )
+E       AssertionError: Scenario T09 (test T09 nil coupon code) reported status 'failed'.
+E           1) test T09 nil coupon code (CartPricing.Verification.PricingEngineTest)
+E              test/verification/pricing_engine_test.exs:262
+E              ** (Ash.Error.Invalid) 
+E              Invalid Error
+E         
+E              * No such input `as_of` for calculation pricing_quote
+E         
+E              No valid inputs exist
+E         
+E                  at load
+E                (ash 3.31.0) lib/ash/query/query.ex:2312: Ash.Query.load_resource_calculation/4
+E                test/verification/pricing_engine_test.exs:63: CartPricing.Verification.PricingEngineTest.quote_via_query!/2
+E                test/verification/pricing_engine_test.exs:266: CartPricing.Verification.PricingEngineTest."test T09 nil coupon code"/1
+E                (ex_unit 1.18.4) lib/ex_unit/runner.ex:511: ExUnit.Runner.exec_test/2
+E                (stdlib 6.2.2) timer.erl:595: :timer.tc/2
+E                (ex_unit 1.18.4) lib/ex_unit/runner.ex:433: anonymous fn/6 in ExUnit.Runner.spawn_test_monitor/4
+E              code: without = assert_money(quote_via_query!(cart, %{as_of: @march}))
+E              stacktrace:
+E                (ash 3.31.0) lib/ash/actions/read/read.ex:32: Ash.Actions.Read.run/3
+E                (ash 3.31.0) lib/ash.ex:2938: Ash.read/2
+E                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2
+E                test/verification/pricing_engine_test.exs:64: CartPricing.Verification.PricingEngineTest.quote_via_query!/2
+E                test/verification/pricing_engine_test.exs:266: (test)
+E         
+E       assert 'failed' == 'passed'
+E         - passed
+E         + failed
+
+tests/test_final_state.py:792: AssertionError
+_________________________ test_t10_unknown_coupon_code _________________________
+
+suite_run = {'output': 'Running ExUnit with seed: 0, max_cases: 16\n\n\n11:21:38.758 [debug] Creating CartPricing.Sales.Cart:\n\nS...e': 'CartPricing.Verification.PricingEngineTest', 'name': 'test T04 composed line discount', 'status': 'failed'}, ...}}
+
+    def test_t10_unknown_coupon_code(suite_run):
+>       _check(suite_run, "T10")
+
+tests/test_final_state.py:835: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': 'Running ExUnit with seed: 0, max_cases: 16\n\n\n11:21:38.758 [debug] Creating CartPricing.Sales.Cart:\n\nS...e': 'CartPricing.Verification.PricingEngineTest', 'name': 'test T04 composed line discount', 'status': 'failed'}, ...}}
+scenario = 'T10'
+
+    def _check(suite, scenario: str):
+        results = suite["results"]
+        matches = [
+            record
+            for name, record in results.items()
+            if name.startswith(f"test {scenario} ")
+        ]
+        if not matches:
+            tail = suite["output"][-6000:]
+            raise AssertionError(
+                f"Scenario {scenario} did not run. The project or the verification suite failed "
+                f"to compile or crashed.\n--- mix test output (tail) ---\n{tail}"
+            )
+        record = matches[0]
+        status = record.get("status")
+>       assert status == "passed", (
+            f"Scenario {scenario} ({record.get('name')}) reported status {status!r}.\n"
+            f"{record.get('message', '')}"
+        )
+E       AssertionError: Scenario T10 (test T10 unknown coupon code) reported status 'failed'.
+E           1) test T10 unknown coupon code (CartPricing.Verification.PricingEngineTest)
+E              test/verification/pricing_engine_test.exs:275
+E              ** (Ash.Error.Invalid) 
+E              Invalid Error
+E         
+E              * No such input `as_of` for calculation pricing_quote
+E         
+E              No valid inputs exist
+E         
+E                  at load
+E                (ash 3.31.0) lib/ash/query/query.ex:2312: Ash.Query.load_resource_calculation/4
+E                test/verification/pricing_engine_test.exs:63: CartPricing.Verification.PricingEngineTest.quote_via_query!/2
+E                test/verification/pricing_engine_test.exs:280: CartPricing.Verification.PricingEngineTest."test T10 unknown coupon code"/1
+E                (ex_unit 1.18.4) lib/ex_unit/runner.ex:511: ExUnit.Runner.exec_test/2
+E                (stdlib 6.2.2) timer.erl:595: :timer.tc/2
+E                (ex_unit 1.18.4) lib/ex_unit/runner.ex:433: anonymous fn/6 in ExUnit.Runner.spawn_test_monitor/4
+E              code: q = assert_money(quote_via_query!(cart, %{as_of: @march, coupon_code: "NOPE"}))
+E              stacktrace:
+E                (ash 3.31.0) lib/ash/actions/read/read.ex:32: Ash.Actions.Read.run/3
+E                (ash 3.31.0) lib/ash.ex:2938: Ash.read/2
+E                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2
+E                test/verification/pricing_engine_test.exs:64: CartPricing.Verification.PricingEngineTest.quote_via_query!/2
+E                test/verification/pricing_engine_test.exs:280: (test)
+E         
+E       assert 'failed' == 'passed'
+E         - passed
+E         + failed
+
+tests/test_final_state.py:792: AssertionError
+________________________ test_t11_window_start_boundary ________________________
+
+suite_run = {'output': 'Running ExUnit with seed: 0, max_cases: 16\n\n\n11:21:38.758 [debug] Creating CartPricing.Sales.Cart:\n\nS...e': 'CartPricing.Verification.PricingEngineTest', 'name': 'test T04 composed line discount', 'status': 'failed'}, ...}}
+
+    def test_t11_window_start_boundary(suite_run):
+>       _check(suite_run, "T11")
+
+tests/test_final_state.py:839: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': 'Running ExUnit with seed: 0, max_cases: 16\n\n\n11:21:38.758 [debug] Creating CartPricing.Sales.Cart:\n\nS...e': 'CartPricing.Verification.PricingEngineTest', 'name': 'test T04 composed line discount', 'status': 'failed'}, ...}}
+scenario = 'T11'
+
+    def _check(suite, scenario: str):
+        results = suite["results"]
+        matches = [
+            record
+            for name, record in results.items()
+            if name.startswith(f"test {scenario} ")
+        ]
+        if not matches:
+            tail = suite["output"][-6000:]
+            raise AssertionError(
+                f"Scenario {scenario} did not run. The project or the verification suite failed "
+                f"to compile or crashed.\n--- mix test output (tail) ---\n{tail}"
+            )
+        record = matches[0]
+        status = record.get("status")
+>       assert status == "passed", (
+            f"Scenario {scenario} ({record.get('name')}) reported status {status!r}.\n"
+            f"{record.get('message', '')}"
+        )
+E       AssertionError: Scenario T11 (test T11 window start boundary) reported status 'failed'.
+E           1) test T11 window start boundary (CartPricing.Verification.PricingEngineTest)
+E              test/verification/pricing_engine_test.exs:286
+E              ** (Ash.Error.Invalid) 
+E              Invalid Error
+E         
+E              * No such input `as_of` for calculation pricing_quote
+E         
+E              No valid inputs exist
+E         
+E                  at load
+E                (ash 3.31.0) lib/ash/query/query.ex:2312: Ash.Query.load_resource_calculation/4
+E                test/verification/pricing_engine_test.exs:63: CartPricing.Verification.PricingEngineTest.quote_via_query!/2
+E                test/verification/pricing_engine_test.exs:291: CartPricing.Verification.PricingEngineTest."test T11 window start boundary"/1
+E                (ex_unit 1.18.4) lib/ex_unit/runner.ex:511: ExUnit.Runner.exec_test/2
+E                (stdlib 6.2.2) timer.erl:595: :timer.tc/2
+E                (ex_unit 1.18.4) lib/ex_unit/runner.ex:433: anonymous fn/6 in ExUnit.Runner.spawn_test_monitor/4
+E              code: before = assert_money(quote_via_query!(cart, %{as_of: ~U[2026-02-28 23:59:59Z], coupon_code: "WINDOW11"}))
+E              stacktrace:
+E                (ash 3.31.0) lib/ash/actions/read/read.ex:32: Ash.Actions.Read.run/3
+E                (ash 3.31.0) lib/ash.ex:2938: Ash.read/2
+E                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2
+E                test/verification/pricing_engine_test.exs:64: CartPricing.Verification.PricingEngineTest.quote_via_query!/2
+E                test/verification/pricing_engine_test.exs:291: (test)
+E         
+E       assert 'failed' == 'passed'
+E         - passed
+E         + failed
+
+tests/test_final_state.py:792: AssertionError
+_________________________ test_t12_window_end_boundary _________________________
+
+suite_run = {'output': 'Running ExUnit with seed: 0, max_cases: 16\n\n\n11:21:38.758 [debug] Creating CartPricing.Sales.Cart:\n\nS...e': 'CartPricing.Verification.PricingEngineTest', 'name': 'test T04 composed line discount', 'status': 'failed'}, ...}}
+
+    def test_t12_window_end_boundary(suite_run):
+>       _check(suite_run, "T12")
+
+tests/test_final_state.py:843: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': 'Running ExUnit with seed: 0, max_cases: 16\n\n\n11:21:38.758 [debug] Creating CartPricing.Sales.Cart:\n\nS...e': 'CartPricing.Verification.PricingEngineTest', 'name': 'test T04 composed line discount', 'status': 'failed'}, ...}}
+scenario = 'T12'
+
+    def _check(suite, scenario: str):
+        results = suite["results"]
+        matches = [
+            record
+            for name, record in results.items()
+            if name.startswith(f"test {scenario} ")
+        ]
+        if not matches:
+            tail = suite["output"][-6000:]
+            raise AssertionError(
+                f"Scenario {scenario} did not run. The project or the verification suite failed "
+                f"to compile or crashed.\n--- mix test output (tail) ---\n{tail}"
+            )
+        record = matches[0]
+        status = record.get("status")
+>       assert status == "passed", (
+            f"Scenario {scenario} ({record.get('name')}) reported status {status!r}.\n"
+            f"{record.get('message', '')}"
+        )
+E       AssertionError: Scenario T12 (test T12 window end boundary) reported status 'failed'.
+E           1) test T12 window end boundary (CartPricing.Verification.PricingEngineTest)
+E              test/verification/pricing_engine_test.exs:302
+E              ** (Ash.Error.Invalid) 
+E              Invalid Error
+E         
+E              * No such input `as_of` for calculation pricing_quote
+E         
+E              No valid inputs exist
+E         
+E                  at load
+E                (ash 3.31.0) lib/ash/query/query.ex:2312: Ash.Query.load_resource_calculation/4
+E                test/verification/pricing_engine_test.exs:63: CartPricing.Verification.PricingEngineTest.quote_via_query!/2
+E                test/verification/pricing_engine_test.exs:307: CartPricing.Verification.PricingEngineTest."test T12 window end boundary"/1
+E                (ex_unit 1.18.4) lib/ex_unit/runner.ex:511: ExUnit.Runner.exec_test/2
+E                (stdlib 6.2.2) timer.erl:595: :timer.tc/2
+E                (ex_unit 1.18.4) lib/ex_unit/runner.ex:433: anonymous fn/6 in ExUnit.Runner.spawn_test_monitor/4
+E              code: at_end = assert_money(quote_via_query!(cart, %{as_of: ~U[2026-03-31 23:59:59Z], coupon_code: "WINDOW12"}))
+E              stacktrace:
+E                (ash 3.31.0) lib/ash/actions/read/read.ex:32: Ash.Actions.Read.run/3
+E                (ash 3.31.0) lib/ash.ex:2938: Ash.read/2
+E                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2
+E                test/verification/pricing_engine_test.exs:64: CartPricing.Verification.PricingEngineTest.quote_via_query!/2
+E                test/verification/pricing_engine_test.exs:307: (test)
+E         
+E       assert 'failed' == 'passed'
+E         - passed
+E         + failed
+
+tests/test_final_state.py:792: AssertionError
+___________________________ test_t13_redemption_cap ____________________________
+
+suite_run = {'output': 'Running ExUnit with seed: 0, max_cases: 16\n\n\n11:21:38.758 [debug] Creating CartPricing.Sales.Cart:\n\nS...e': 'CartPricing.Verification.PricingEngineTest', 'name': 'test T04 composed line discount', 'status': 'failed'}, ...}}
+
+    def test_t13_redemption_cap(suite_run):
+>       _check(suite_run, "T13")
+
+tests/test_final_state.py:847: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': 'Running ExUnit with seed: 0, max_cases: 16\n\n\n11:21:38.758 [debug] Creating CartPricing.Sales.Cart:\n\nS...e': 'CartPricing.Verification.PricingEngineTest', 'name': 'test T04 composed line discount', 'status': 'failed'}, ...}}
+scenario = 'T13'
+
+    def _check(suite, scenario: str):
+        results = suite["results"]
+        matches = [
+            record
+            for name, record in results.items()
+            if name.startswith(f"test {scenario} ")
+        ]
+        if not matches:
+            tail = suite["output"][-6000:]
+            raise AssertionError(
+                f"Scenario {scenario} did not run. The project or the verification suite failed "
+                f"to compile or crashed.\n--- mix test output (tail) ---\n{tail}"
+            )
+        record = matches[0]
+        status = record.get("status")
+>       assert status == "passed", (
+            f"Scenario {scenario} ({record.get('name')}) reported status {status!r}.\n"
+            f"{record.get('message', '')}"
+        )
+E       AssertionError: Scenario T13 (test T13 redemption cap) reported status 'failed'.
+E           1) test T13 redemption cap (CartPricing.Verification.PricingEngineTest)
+E              test/verification/pricing_engine_test.exs:317
+E              ** (Ash.Error.Invalid) 
+E              Invalid Error
+E         
+E              * No such input `as_of` for calculation pricing_quote
+E         
+E              No valid inputs exist
+E         
+E                  at load
+E                (ash 3.31.0) lib/ash/query/query.ex:2312: Ash.Query.load_resource_calculation/4
+E                test/verification/pricing_engine_test.exs:63: CartPricing.Verification.PricingEngineTest.quote_via_query!/2
+E                test/verification/pricing_engine_test.exs:325: CartPricing.Verification.PricingEngineTest."test T13 redemption cap"/1
+E                (ex_unit 1.18.4) lib/ex_unit/runner.ex:511: ExUnit.Runner.exec_test/2
+E                (stdlib 6.2.2) timer.erl:595: :timer.tc/2
+E                (ex_unit 1.18.4) lib/ex_unit/runner.ex:433: anonymous fn/6 in ExUnit.Runner.spawn_test_monitor/4
+E              code: under = assert_money(quote_via_query!(cart, %{as_of: @march, coupon_code: "CAP4"}))
+E              stacktrace:
+E                (ash 3.31.0) lib/ash/actions/read/read.ex:32: Ash.Actions.Read.run/3
+E                (ash 3.31.0) lib/ash.ex:2938: Ash.read/2
+E                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2
+E                test/verification/pricing_engine_test.exs:64: CartPricing.Verification.PricingEngineTest.quote_via_query!/2
+E                test/verification/pricing_engine_test.exs:325: (test)
+E         
+E       assert 'failed' == 'passed'
+E         - passed
+E         + failed
+
+tests/test_final_state.py:792: AssertionError
+__________________________ test_t14_minimum_subtotal ___________________________
+
+suite_run = {'output': 'Running ExUnit with seed: 0, max_cases: 16\n\n\n11:21:38.758 [debug] Creating CartPricing.Sales.Cart:\n\nS...e': 'CartPricing.Verification.PricingEngineTest', 'name': 'test T04 composed line discount', 'status': 'failed'}, ...}}
+
+    def test_t14_minimum_subtotal(suite_run):
+>       _check(suite_run, "T14")
+
+tests/test_final_state.py:851: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': 'Running ExUnit with seed: 0, max_cases: 16\n\n\n11:21:38.758 [debug] Creating CartPricing.Sales.Cart:\n\nS...e': 'CartPricing.Verification.PricingEngineTest', 'name': 'test T04 composed line discount', 'status': 'failed'}, ...}}
+scenario = 'T14'
+
+    def _check(suite, scenario: str):
+        results = suite["results"]
+        matches = [
+            record
+            for name, record in results.items()
+            if name.startswith(f"test {scenario} ")
+        ]
+        if not matches:
+            tail = suite["output"][-6000:]
+            raise AssertionError(
+                f"Scenario {scenario} did not run. The project or the verification suite failed "
+                f"to compile or crashed.\n--- mix test output (tail) ---\n{tail}"
+            )
+        record = matches[0]
+        status = record.get("status")
+>       assert status == "passed", (
+            f"Scenario {scenario} ({record.get('name')}) reported status {status!r}.\n"
+            f"{record.get('message', '')}"
+        )
+E       AssertionError: Scenario T14 (test T14 minimum subtotal) reported status 'failed'.
+E           1) test T14 minimum subtotal (CartPricing.Verification.PricingEngineTest)
+E              test/verification/pricing_engine_test.exs:338
+E              ** (Ash.Error.Invalid) 
+E              Invalid Error
+E         
+E              * No such input `as_of` for calculation pricing_quote
+E         
+E              No valid inputs exist
+E         
+E                  at load
+E                (ash 3.31.0) lib/ash/query/query.ex:2312: Ash.Query.load_resource_calculation/4
+E                test/verification/pricing_engine_test.exs:63: CartPricing.Verification.PricingEngineTest.quote_via_query!/2
+E                test/verification/pricing_engine_test.exs:347: CartPricing.Verification.PricingEngineTest."test T14 minimum subtotal"/1
+E                (ex_unit 1.18.4) lib/ex_unit/runner.ex:511: ExUnit.Runner.exec_test/2
+E                (stdlib 6.2.2) timer.erl:595: :timer.tc/2
+E                (ex_unit 1.18.4) lib/ex_unit/runner.ex:433: anonymous fn/6 in ExUnit.Runner.spawn_test_monitor/4
+E              code: q_below = assert_money(quote_via_query!(below, %{as_of: @march, coupon_code: "MIN"}))
+E              stacktrace:
+E                (ash 3.31.0) lib/ash/actions/read/read.ex:32: Ash.Actions.Read.run/3
+E                (ash 3.31.0) lib/ash.ex:2938: Ash.read/2
+E                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2
+E                test/verification/pricing_engine_test.exs:64: CartPricing.Verification.PricingEngineTest.quote_via_query!/2
+E                test/verification/pricing_engine_test.exs:347: (test)
+E         
+E       assert 'failed' == 'passed'
+E         - passed
+E         + failed
+
+tests/test_final_state.py:792: AssertionError
+__________________ test_t15_coupon_discount_rounding_and_cap ___________________
+
+suite_run = {'output': 'Running ExUnit with seed: 0, max_cases: 16\n\n\n11:21:38.758 [debug] Creating CartPricing.Sales.Cart:\n\nS...e': 'CartPricing.Verification.PricingEngineTest', 'name': 'test T04 composed line discount', 'status': 'failed'}, ...}}
+
+    def test_t15_coupon_discount_rounding_and_cap(suite_run):
+>       _check(suite_run, "T15")
+
+tests/test_final_state.py:855: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': 'Running ExUnit with seed: 0, max_cases: 16\n\n\n11:21:38.758 [debug] Creating CartPricing.Sales.Cart:\n\nS...e': 'CartPricing.Verification.PricingEngineTest', 'name': 'test T04 composed line discount', 'status': 'failed'}, ...}}
+scenario = 'T15'
+
+    def _check(suite, scenario: str):
+        results = suite["results"]
+        matches = [
+            record
+            for name, record in results.items()
+            if name.startswith(f"test {scenario} ")
+        ]
+        if not matches:
+            tail = suite["output"][-6000:]
+            raise AssertionError(
+                f"Scenario {scenario} did not run. The project or the verification suite failed "
+                f"to compile or crashed.\n--- mix test output (tail) ---\n{tail}"
+            )
+        record = matches[0]
+        status = record.get("status")
+>       assert status == "passed", (
+            f"Scenario {scenario} ({record.get('name')}) reported status {status!r}.\n"
+            f"{record.get('message', '')}"
+        )
+E       AssertionError: Scenario T15 (test T15 coupon discount rounding and cap) reported status 'failed'.
+E           1) test T15 coupon discount rounding and cap (CartPricing.Verification.PricingEngineTest)
+E              test/verification/pricing_engine_test.exs:358
+E              ** (Ash.Error.Invalid) 
+E              Invalid Error
+E         
+E              * No such input `as_of` for calculation pricing_quote
+E         
+E              No valid inputs exist
+E         
+E                  at load
+E                (ash 3.31.0) lib/ash/query/query.ex:2312: Ash.Query.load_resource_calculation/4
+E                test/verification/pricing_engine_test.exs:63: CartPricing.Verification.PricingEngineTest.quote_via_query!/2
+E                test/verification/pricing_engine_test.exs:371: CartPricing.Verification.PricingEngineTest."test T15 coupon discount rounding and cap"/1
+E                (ex_unit 1.18.4) lib/ex_unit/runner.ex:511: ExUnit.Runner.exec_test/2
+E                (stdlib 6.2.2) timer.erl:595: :timer.tc/2
+E                (ex_unit 1.18.4) lib/ex_unit/runner.ex:433: anonymous fn/6 in ExUnit.Runner.spawn_test_monitor/4
+E              code: odd = assert_money(quote_via_query!(odd_cart, %{as_of: @march, coupon_code: "ODD"}))
+E              stacktrace:
+E                (ash 3.31.0) lib/ash/actions/read/read.ex:32: Ash.Actions.Read.run/3
+E                (ash 3.31.0) lib/ash.ex:2938: Ash.read/2
+E                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2
+E                test/verification/pricing_engine_test.exs:64: CartPricing.Verification.PricingEngineTest.quote_via_query!/2
+E                test/verification/pricing_engine_test.exs:371: (test)
+E         
+E       assert 'failed' == 'passed'
+E         - passed
+E         + failed
+
+tests/test_final_state.py:792: AssertionError
+___________________________ test_t16_rule_precedence ___________________________
+
+suite_run = {'output': 'Running ExUnit with seed: 0, max_cases: 16\n\n\n11:21:38.758 [debug] Creating CartPricing.Sales.Cart:\n\nS...e': 'CartPricing.Verification.PricingEngineTest', 'name': 'test T04 composed line discount', 'status': 'failed'}, ...}}
+
+    def test_t16_rule_precedence(suite_run):
+>       _check(suite_run, "T16")
+
+tests/test_final_state.py:859: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': 'Running ExUnit with seed: 0, max_cases: 16\n\n\n11:21:38.758 [debug] Creating CartPricing.Sales.Cart:\n\nS...e': 'CartPricing.Verification.PricingEngineTest', 'name': 'test T04 composed line discount', 'status': 'failed'}, ...}}
+scenario = 'T16'
+
+    def _check(suite, scenario: str):
+        results = suite["results"]
+        matches = [
+            record
+            for name, record in results.items()
+            if name.startswith(f"test {scenario} ")
+        ]
+        if not matches:
+            tail = suite["output"][-6000:]
+            raise AssertionError(
+                f"Scenario {scenario} did not run. The project or the verification suite failed "
+                f"to compile or crashed.\n--- mix test output (tail) ---\n{tail}"
+            )
+        record = matches[0]
+        status = record.get("status")
+>       assert status == "passed", (
+            f"Scenario {scenario} ({record.get('name')}) reported status {status!r}.\n"
+            f"{record.get('message', '')}"
+        )
+E       AssertionError: Scenario T16 (test T16 rule precedence) reported status 'failed'.
+E           1) test T16 rule precedence (CartPricing.Verification.PricingEngineTest)
+E              test/verification/pricing_engine_test.exs:384
+E              ** (Ash.Error.Invalid) 
+E              Invalid Error
+E         
+E              * No such input `as_of` for calculation pricing_quote
+E         
+E              No valid inputs exist
+E         
+E                  at load
+E                (ash 3.31.0) lib/ash/query/query.ex:2312: Ash.Query.load_resource_calculation/4
+E                test/verification/pricing_engine_test.exs:63: CartPricing.Verification.PricingEngineTest.quote_via_query!/2
+E                test/verification/pricing_engine_test.exs:408: CartPricing.Verification.PricingEngineTest."test T16 rule precedence"/1
+E                (ex_unit 1.18.4) lib/ex_unit/runner.ex:511: ExUnit.Runner.exec_test/2
+E                (stdlib 6.2.2) timer.erl:595: :timer.tc/2
+E                (ex_unit 1.18.4) lib/ex_unit/runner.ex:433: anonymous fn/6 in ExUnit.Runner.spawn_test_monitor/4
+E              code: worst = assert_money(quote_via_query!(cart, %{as_of: @march, coupon_code: "WORST"}))
+E              stacktrace:
+E                (ash 3.31.0) lib/ash/actions/read/read.ex:32: Ash.Actions.Read.run/3
+E                (ash 3.31.0) lib/ash.ex:2938: Ash.read/2
+E                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2
+E                test/verification/pricing_engine_test.exs:64: CartPricing.Verification.PricingEngineTest.quote_via_query!/2
+E                test/verification/pricing_engine_test.exs:408: (test)
+E         
+E       assert 'failed' == 'passed'
+E         - passed
+E         + failed
+
+tests/test_final_state.py:792: AssertionError
+______________________ test_t17_us_ca_half_away_from_zero ______________________
+
+suite_run = {'output': 'Running ExUnit with seed: 0, max_cases: 16\n\n\n11:21:38.758 [debug] Creating CartPricing.Sales.Cart:\n\nS...e': 'CartPricing.Verification.PricingEngineTest', 'name': 'test T04 composed line discount', 'status': 'failed'}, ...}}
+
+    def test_t17_us_ca_half_away_from_zero(suite_run):
+>       _check(suite_run, "T17")
+
+tests/test_final_state.py:863: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': 'Running ExUnit with seed: 0, max_cases: 16\n\n\n11:21:38.758 [debug] Creating CartPricing.Sales.Cart:\n\nS...e': 'CartPricing.Verification.PricingEngineTest', 'name': 'test T04 composed line discount', 'status': 'failed'}, ...}}
+scenario = 'T17'
+
+    def _check(suite, scenario: str):
+        results = suite["results"]
+        matches = [
+            record
+            for name, record in results.items()
+            if name.startswith(f"test {scenario} ")
+        ]
+        if not matches:
+            tail = suite["output"][-6000:]
+            raise AssertionError(
+                f"Scenario {scenario} did not run. The project or the verification suite failed "
+                f"to compile or crashed.\n--- mix test output (tail) ---\n{tail}"
+            )
+        record = matches[0]
+        status = record.get("status")
+>       assert status == "passed", (
+            f"Scenario {scenario} ({record.get('name')}) reported status {status!r}.\n"
+            f"{record.get('message', '')}"
+        )
+E       AssertionError: Scenario T17 (test T17 us_ca half-away-from-zero rounding) reported status 'failed'.
+E           1) test T17 us_ca half-away-from-zero rounding (CartPricing.Verification.PricingEngineTest)
+E              test/verification/pricing_engine_test.exs:415
+E              ** (Ash.Error.Invalid) 
+E              Invalid Error
+E         
+E              * No such input `as_of` for calculation pricing_quote
+E         
+E              No valid inputs exist
+E         
+E                  at load
+E                (ash 3.31.0) lib/ash/query/query.ex:2312: Ash.Query.load_resource_calculation/4
+E                test/verification/pricing_engine_test.exs:63: CartPricing.Verification.PricingEngineTest.quote_via_query!/2
+E                test/verification/pricing_engine_test.exs:422: CartPricing.Verification.PricingEngineTest."test T17 us_ca half-away-from-zero rounding"/1
+E                (ex_unit 1.18.4) lib/ex_unit/runner.ex:511: ExUnit.Runner.exec_test/2
+E                (stdlib 6.2.2) timer.erl:595: :timer.tc/2
+E                (ex_unit 1.18.4) lib/ex_unit/runner.ex:433: anonymous fn/6 in ExUnit.Runner.spawn_test_monitor/4
+E              code: q_tie = assert_money(quote_via_query!(tie, %{as_of: @march}))
+E              stacktrace:
+E                (ash 3.31.0) lib/ash/actions/read/read.ex:32: Ash.Actions.Read.run/3
+E                (ash 3.31.0) lib/ash.ex:2938: Ash.read/2
+E                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2
+E                test/verification/pricing_engine_test.exs:64: CartPricing.Verification.PricingEngineTest.quote_via_query!/2
+E                test/verification/pricing_engine_test.exs:422: (test)
+E         
+E       assert 'failed' == 'passed'
+E         - passed
+E         + failed
+
+tests/test_final_state.py:792: AssertionError
+_________________________ test_t18_eu_de_half_to_even __________________________
+
+suite_run = {'output': 'Running ExUnit with seed: 0, max_cases: 16\n\n\n11:21:38.758 [debug] Creating CartPricing.Sales.Cart:\n\nS...e': 'CartPricing.Verification.PricingEngineTest', 'name': 'test T04 composed line discount', 'status': 'failed'}, ...}}
+
+    def test_t18_eu_de_half_to_even(suite_run):
+>       _check(suite_run, "T18")
+
+tests/test_final_state.py:867: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': 'Running ExUnit with seed: 0, max_cases: 16\n\n\n11:21:38.758 [debug] Creating CartPricing.Sales.Cart:\n\nS...e': 'CartPricing.Verification.PricingEngineTest', 'name': 'test T04 composed line discount', 'status': 'failed'}, ...}}
+scenario = 'T18'
+
+    def _check(suite, scenario: str):
+        results = suite["results"]
+        matches = [
+            record
+            for name, record in results.items()
+            if name.startswith(f"test {scenario} ")
+        ]
+        if not matches:
+            tail = suite["output"][-6000:]
+            raise AssertionError(
+                f"Scenario {scenario} did not run. The project or the verification suite failed "
+                f"to compile or crashed.\n--- mix test output (tail) ---\n{tail}"
+            )
+        record = matches[0]
+        status = record.get("status")
+>       assert status == "passed", (
+            f"Scenario {scenario} ({record.get('name')}) reported status {status!r}.\n"
+            f"{record.get('message', '')}"
+        )
+E       AssertionError: Scenario T18 (test T18 eu_de half-to-even rounding) reported status 'failed'.
+E           1) test T18 eu_de half-to-even rounding (CartPricing.Verification.PricingEngineTest)
+E              test/verification/pricing_engine_test.exs:433
+E              ** (Ash.Error.Invalid) 
+E              Invalid Error
+E         
+E              * No such input `as_of` for calculation pricing_quote
+E         
+E              No valid inputs exist
+E         
+E                  at load
+E                (ash 3.31.0) lib/ash/query/query.ex:2312: Ash.Query.load_resource_calculation/4
+E                test/verification/pricing_engine_test.exs:63: CartPricing.Verification.PricingEngineTest.quote_via_query!/2
+E                test/verification/pricing_engine_test.exs:443: CartPricing.Verification.PricingEngineTest."test T18 eu_de half-to-even rounding"/1
+E                (ex_unit 1.18.4) lib/ex_unit/runner.ex:511: ExUnit.Runner.exec_test/2
+E                (stdlib 6.2.2) timer.erl:595: :timer.tc/2
+E                (ex_unit 1.18.4) lib/ex_unit/runner.ex:433: anonymous fn/6 in ExUnit.Runner.spawn_test_monitor/4
+E              code: q_even = assert_money(quote_via_query!(even_tie, %{as_of: @march}))
+E              stacktrace:
+E                (ash 3.31.0) lib/ash/actions/read/read.ex:32: Ash.Actions.Read.run/3
+E                (ash 3.31.0) lib/ash.ex:2938: Ash.read/2
+E                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2
+E                test/verification/pricing_engine_test.exs:64: CartPricing.Verification.PricingEngineTest.quote_via_query!/2
+E                test/verification/pricing_engine_test.exs:443: (test)
+E         
+E       assert 'failed' == 'passed'
+E         - passed
+E         + failed
+
+tests/test_final_state.py:792: AssertionError
+___________________ test_t19_jp_13_truncation_and_us_or_zero ___________________
+
+suite_run = {'output': 'Running ExUnit with seed: 0, max_cases: 16\n\n\n11:21:38.758 [debug] Creating CartPricing.Sales.Cart:\n\nS...e': 'CartPricing.Verification.PricingEngineTest', 'name': 'test T04 composed line discount', 'status': 'failed'}, ...}}
+
+    def test_t19_jp_13_truncation_and_us_or_zero(suite_run):
+>       _check(suite_run, "T19")
+
+tests/test_final_state.py:871: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': 'Running ExUnit with seed: 0, max_cases: 16\n\n\n11:21:38.758 [debug] Creating CartPricing.Sales.Cart:\n\nS...e': 'CartPricing.Verification.PricingEngineTest', 'name': 'test T04 composed line discount', 'status': 'failed'}, ...}}
+scenario = 'T19'
+
+    def _check(suite, scenario: str):
+        results = suite["results"]
+        matches = [
+            record
+            for name, record in results.items()
+            if name.startswith(f"test {scenario} ")
+        ]
+        if not matches:
+            tail = suite["output"][-6000:]
+            raise AssertionError(
+                f"Scenario {scenario} did not run. The project or the verification suite failed "
+                f"to compile or crashed.\n--- mix test output (tail) ---\n{tail}"
+            )
+        record = matches[0]
+        status = record.get("status")
+>       assert status == "passed", (
+            f"Scenario {scenario} ({record.get('name')}) reported status {status!r}.\n"
+            f"{record.get('message', '')}"
+        )
+E       AssertionError: Scenario T19 (test T19 jp_13 truncation and us_or zero) reported status 'failed'.
+E           1) test T19 jp_13 truncation and us_or zero (CartPricing.Verification.PricingEngineTest)
+E              test/verification/pricing_engine_test.exs:456
+E              ** (Ash.Error.Invalid) 
+E              Invalid Error
+E         
+E              * No such input `as_of` for calculation pricing_quote
+E         
+E              No valid inputs exist
+E         
+E                  at load
+E                (ash 3.31.0) lib/ash/query/query.ex:2312: Ash.Query.load_resource_calculation/4
+E                test/verification/pricing_engine_test.exs:63: CartPricing.Verification.PricingEngineTest.quote_via_query!/2
+E                test/verification/pricing_engine_test.exs:466: CartPricing.Verification.PricingEngineTest."test T19 jp_13 truncation and us_or zero"/1
+E                (ex_unit 1.18.4) lib/ex_unit/runner.ex:511: ExUnit.Runner.exec_test/2
+E                (stdlib 6.2.2) timer.erl:595: :timer.tc/2
+E                (ex_unit 1.18.4) lib/ex_unit/runner.ex:433: anonymous fn/6 in ExUnit.Runner.spawn_test_monitor/4
+E              code: q_tie = assert_money(quote_via_query!(tie, %{as_of: @march}))
+E              stacktrace:
+E                (ash 3.31.0) lib/ash/actions/read/read.ex:32: Ash.Actions.Read.run/3
+E                (ash 3.31.0) lib/ash.ex:2938: Ash.read/2
+E                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2
+E                test/verification/pricing_engine_test.exs:64: CartPricing.Verification.PricingEngineTest.quote_via_query!/2
+E                test/verification/pricing_engine_test.exs:466: (test)
+E         
+E       assert 'failed' == 'passed'
+E         - passed
+E         + failed
+
+tests/test_final_state.py:792: AssertionError
+_________________________ test_t20_batch_load_pairing __________________________
+
+suite_run = {'output': 'Running ExUnit with seed: 0, max_cases: 16\n\n\n11:21:38.758 [debug] Creating CartPricing.Sales.Cart:\n\nS...e': 'CartPricing.Verification.PricingEngineTest', 'name': 'test T04 composed line discount', 'status': 'failed'}, ...}}
+
+    def test_t20_batch_load_pairing(suite_run):
+>       _check(suite_run, "T20")
+
+tests/test_final_state.py:875: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': 'Running ExUnit with seed: 0, max_cases: 16\n\n\n11:21:38.758 [debug] Creating CartPricing.Sales.Cart:\n\nS...e': 'CartPricing.Verification.PricingEngineTest', 'name': 'test T04 composed line discount', 'status': 'failed'}, ...}}
+scenario = 'T20'
+
+    def _check(suite, scenario: str):
+        results = suite["results"]
+        matches = [
+            record
+            for name, record in results.items()
+            if name.startswith(f"test {scenario} ")
+        ]
+        if not matches:
+            tail = suite["output"][-6000:]
+            raise AssertionError(
+                f"Scenario {scenario} did not run. The project or the verification suite failed "
+                f"to compile or crashed.\n--- mix test output (tail) ---\n{tail}"
+            )
+        record = matches[0]
+        status = record.get("status")
+>       assert status == "passed", (
+            f"Scenario {scenario} ({record.get('name')}) reported status {status!r}.\n"
+            f"{record.get('message', '')}"
+        )
+E       AssertionError: Scenario T20 (test T20 batch load keeps per-record pairing) reported status 'failed'.
+E           1) test T20 batch load keeps per-record pairing (CartPricing.Verification.PricingEngineTest)
+E              test/verification/pricing_engine_test.exs:499
+E              ** (Ash.Error.Invalid) 
+E              Invalid Error
+E         
+E              * No such input `as_of` for calculation pricing_quote
+E         
+E              No valid inputs exist
+E         
+E                  at load
+E                (ash 3.31.0) lib/ash/query/query.ex:2312: Ash.Query.load_resource_calculation/4
+E                test/verification/pricing_engine_test.exs:508: CartPricing.Verification.PricingEngineTest."test T20 batch load keeps per-record pairing"/1
+E                (ex_unit 1.18.4) lib/ex_unit/runner.ex:511: ExUnit.Runner.exec_test/2
+E                (stdlib 6.2.2) timer.erl:595: :timer.tc/2
+E                (ex_unit 1.18.4) lib/ex_unit/runner.ex:433: anonymous fn/6 in ExUnit.Runner.spawn_test_monitor/4
+E              code: |> Ash.read!()
+E              stacktrace:
+E                (ash 3.31.0) lib/ash/actions/read/read.ex:32: Ash.Actions.Read.run/3
+E                (ash 3.31.0) lib/ash.ex:2938: Ash.read/2
+E                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2
+E                test/verification/pricing_engine_test.exs:509: (test)
+E         
+E       assert 'failed' == 'passed'
+E         - passed
+E         + failed
+
+tests/test_final_state.py:792: AssertionError
+___________________________ test_t21_post_fetch_load ___________________________
+
+suite_run = {'output': 'Running ExUnit with seed: 0, max_cases: 16\n\n\n11:21:38.758 [debug] Creating CartPricing.Sales.Cart:\n\nS...e': 'CartPricing.Verification.PricingEngineTest', 'name': 'test T04 composed line discount', 'status': 'failed'}, ...}}
+
+    def test_t21_post_fetch_load(suite_run):
+>       _check(suite_run, "T21")
+
+tests/test_final_state.py:879: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': 'Running ExUnit with seed: 0, max_cases: 16\n\n\n11:21:38.758 [debug] Creating CartPricing.Sales.Cart:\n\nS...e': 'CartPricing.Verification.PricingEngineTest', 'name': 'test T04 composed line discount', 'status': 'failed'}, ...}}
+scenario = 'T21'
+
+    def _check(suite, scenario: str):
+        results = suite["results"]
+        matches = [
+            record
+            for name, record in results.items()
+            if name.startswith(f"test {scenario} ")
+        ]
+        if not matches:
+            tail = suite["output"][-6000:]
+            raise AssertionError(
+                f"Scenario {scenario} did not run. The project or the verification suite failed "
+                f"to compile or crashed.\n--- mix test output (tail) ---\n{tail}"
+            )
+        record = matches[0]
+        status = record.get("status")
+>       assert status == "passed", (
+            f"Scenario {scenario} ({record.get('name')}) reported status {status!r}.\n"
+            f"{record.get('message', '')}"
+        )
+E       AssertionError: Scenario T21 (test T21 post-fetch load on unprepared structs) reported status 'failed'.
+E           1) test T21 post-fetch load on unprepared structs (CartPricing.Verification.PricingEngineTest)
+E              test/verification/pricing_engine_test.exs:523
+E              ** (Ash.Error.Invalid) 
+E              Invalid Error
+E         
+E              * No such input `as_of` for calculation pricing_quote
+E         
+E              No valid inputs exist
+E         
+E                  at load
+E                (ash 3.31.0) lib/ash/query/query.ex:2312: Ash.Query.load_resource_calculation/4
+E                (ash 3.31.0) lib/ash.ex:2672: Ash.load/3
+E                (ash 3.31.0) lib/ash.ex:2540: Ash.load!/3
+E                test/verification/pricing_engine_test.exs:534: CartPricing.Verification.PricingEngineTest."test T21 post-fetch load on unprepared structs"/1
+E                (ex_unit 1.18.4) lib/ex_unit/runner.ex:511: ExUnit.Runner.exec_test/2
+E                (stdlib 6.2.2) timer.erl:595: :timer.tc/2
+E                (ex_unit 1.18.4) lib/ex_unit/runner.ex:433: anonymous fn/6 in ExUnit.Runner.spawn_test_monitor/4
+E              code: loaded = Ash.load!(carts, pricing_quote: %{as_of: @march})
+E              stacktrace:
+E                (ash 3.31.0) lib/ash/error/error.ex:114: Ash.Error.to_error_class/2
+E                (ash 3.31.0) lib/ash.ex:2693: anonymous fn/1 in Ash.load/3
+E                (ash 3.31.0) lib/ash.ex:2540: Ash.load!/3
+E                test/verification/pricing_engine_test.exs:534: (test)
+E         
+E       assert 'failed' == 'passed'
+E         - passed
+E         + failed
+
+tests/test_final_state.py:792: AssertionError
+_____________________________ test_t22_empty_cart ______________________________
+
+suite_run = {'output': 'Running ExUnit with seed: 0, max_cases: 16\n\n\n11:21:38.758 [debug] Creating CartPricing.Sales.Cart:\n\nS...e': 'CartPricing.Verification.PricingEngineTest', 'name': 'test T04 composed line discount', 'status': 'failed'}, ...}}
+
+    def test_t22_empty_cart(suite_run):
+>       _check(suite_run, "T22")
+
+tests/test_final_state.py:883: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': 'Running ExUnit with seed: 0, max_cases: 16\n\n\n11:21:38.758 [debug] Creating CartPricing.Sales.Cart:\n\nS...e': 'CartPricing.Verification.PricingEngineTest', 'name': 'test T04 composed line discount', 'status': 'failed'}, ...}}
+scenario = 'T22'
+
+    def _check(suite, scenario: str):
+        results = suite["results"]
+        matches = [
+            record
+            for name, record in results.items()
+            if name.startswith(f"test {scenario} ")
+        ]
+        if not matches:
+            tail = suite["output"][-6000:]
+            raise AssertionError(
+                f"Scenario {scenario} did not run. The project or the verification suite failed "
+                f"to compile or crashed.\n--- mix test output (tail) ---\n{tail}"
+            )
+        record = matches[0]
+        status = record.get("status")
+>       assert status == "passed", (
+            f"Scenario {scenario} ({record.get('name')}) reported status {status!r}.\n"
+            f"{record.get('message', '')}"
+        )
+E       AssertionError: Scenario T22 (test T22 empty cart) reported status 'failed'.
+E           1) test T22 empty cart (CartPricing.Verification.PricingEngineTest)
+E              test/verification/pricing_engine_test.exs:544
+E              ** (Ash.Error.Invalid) 
+E              Invalid Error
+E         
+E              * No such input `as_of` for calculation pricing_quote
+E         
+E              No valid inputs exist
+E         
+E                  at load
+E                (ash 3.31.0) lib/ash/query/query.ex:2312: Ash.Query.load_resource_calculation/4
+E                test/verification/pricing_engine_test.exs:63: CartPricing.Verification.PricingEngineTest.quote_via_query!/2
+E                test/verification/pricing_engine_test.exs:549: CartPricing.Verification.PricingEngineTest."test T22 empty cart"/1
+E                (ex_unit 1.18.4) lib/ex_unit/runner.ex:511: ExUnit.Runner.exec_test/2
+E                (stdlib 6.2.2) timer.erl:595: :timer.tc/2
+E                (ex_unit 1.18.4) lib/ex_unit/runner.ex:433: anonymous fn/6 in ExUnit.Runner.spawn_test_monitor/4
+E              code: plain = assert_money(quote_via_query!(cart, %{as_of: @march}))
+E              stacktrace:
+E                (ash 3.31.0) lib/ash/actions/read/read.ex:32: Ash.Actions.Read.run/3
+E                (ash 3.31.0) lib/ash.ex:2938: Ash.read/2
+E                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2
+E                test/verification/pricing_engine_test.exs:64: CartPricing.Verification.PricingEngineTest.quote_via_query!/2
+E                test/verification/pricing_engine_test.exs:549: (test)
+E         
+E       assert 'failed' == 'passed'
+E         - passed
+E         + failed
+
+tests/test_final_state.py:792: AssertionError
+_____________________ test_t23_arguments_honoured_per_load _____________________
+
+suite_run = {'output': 'Running ExUnit with seed: 0, max_cases: 16\n\n\n11:21:38.758 [debug] Creating CartPricing.Sales.Cart:\n\nS...e': 'CartPricing.Verification.PricingEngineTest', 'name': 'test T04 composed line discount', 'status': 'failed'}, ...}}
+
+    def test_t23_arguments_honoured_per_load(suite_run):
+>       _check(suite_run, "T23")
+
+tests/test_final_state.py:887: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': 'Running ExUnit with seed: 0, max_cases: 16\n\n\n11:21:38.758 [debug] Creating CartPricing.Sales.Cart:\n\nS...e': 'CartPricing.Verification.PricingEngineTest', 'name': 'test T04 composed line discount', 'status': 'failed'}, ...}}
+scenario = 'T23'
+
+    def _check(suite, scenario: str):
+        results = suite["results"]
+        matches = [
+            record
+            for name, record in results.items()
+            if name.startswith(f"test {scenario} ")
+        ]
+        if not matches:
+            tail = suite["output"][-6000:]
+            raise AssertionError(
+                f"Scenario {scenario} did not run. The project or the verification suite failed "
+                f"to compile or crashed.\n--- mix test output (tail) ---\n{tail}"
+            )
+        record = matches[0]
+        status = record.get("status")
+>       assert status == "passed", (
+            f"Scenario {scenario} ({record.get('name')}) reported status {status!r}.\n"
+            f"{record.get('message', '')}"
+        )
+E       AssertionError: Scenario T23 (test T23 arguments are honoured per load) reported status 'failed'.
+E           1) test T23 arguments are honoured per load (CartPricing.Verification.PricingEngineTest)
+E              test/verification/pricing_engine_test.exs:567
+E              ** (Ash.Error.Invalid) 
+E              Invalid Error
+E         
+E              * No such input `as_of` for calculation pricing_quote
+E         
+E              No valid inputs exist
+E         
+E                  at load
+E                (ash 3.31.0) lib/ash/query/query.ex:2312: Ash.Query.load_resource_calculation/4
+E                (ash 3.31.0) lib/ash.ex:2672: Ash.load/3
+E                (ash 3.31.0) lib/ash.ex:2636: Ash.load/3
+E                (ash 3.31.0) lib/ash.ex:2540: Ash.load!/3
+E                test/verification/pricing_engine_test.exs:576: CartPricing.Verification.PricingEngineTest."test T23 arguments are honoured per load"/1
+E                (ex_unit 1.18.4) lib/ex_unit/runner.ex:511: ExUnit.Runner.exec_test/2
+E                (stdlib 6.2.2) timer.erl:595: :timer.tc/2
+E                (ex_unit 1.18.4) lib/ex_unit/runner.ex:433: anonymous fn/6 in ExUnit.Runner.spawn_test_monitor/4
+E              code: Ash.load!(fetched, pricing_quote: %{as_of: ~U[2026-02-01 00:00:00Z], coupon_code: "SEASON"}).pricing_quote
+E              stacktrace:
+E                (ash 3.31.0) lib/ash/error/error.ex:114: Ash.Error.to_error_class/2
+E                (ash 3.31.0) lib/ash.ex:2693: anonymous fn/1 in Ash.load/3
+E                (ash 3.31.0) lib/ash.ex:2636: Ash.load/3
+E                (ash 3.31.0) lib/ash.ex:2540: Ash.load!/3
+E                test/verification/pricing_engine_test.exs:576: (test)
+E         
+E       assert 'failed' == 'passed'
+E         - passed
+E         + failed
+
+tests/test_final_state.py:792: AssertionError
+_________________________ test_t24_large_exact_values __________________________
+
+suite_run = {'output': 'Running ExUnit with seed: 0, max_cases: 16\n\n\n11:21:38.758 [debug] Creating CartPricing.Sales.Cart:\n\nS...e': 'CartPricing.Verification.PricingEngineTest', 'name': 'test T04 composed line discount', 'status': 'failed'}, ...}}
+
+    def test_t24_large_exact_values(suite_run):
+>       _check(suite_run, "T24")
+
+tests/test_final_state.py:891: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': 'Running ExUnit with seed: 0, max_cases: 16\n\n\n11:21:38.758 [debug] Creating CartPricing.Sales.Cart:\n\nS...e': 'CartPricing.Verification.PricingEngineTest', 'name': 'test T04 composed line discount', 'status': 'failed'}, ...}}
+scenario = 'T24'
+
+    def _check(suite, scenario: str):
+        results = suite["results"]
+        matches = [
+            record
+            for name, record in results.items()
+            if name.startswith(f"test {scenario} ")
+        ]
+        if not matches:
+            tail = suite["output"][-6000:]
+            raise AssertionError(
+                f"Scenario {scenario} did not run. The project or the verification suite failed "
+                f"to compile or crashed.\n--- mix test output (tail) ---\n{tail}"
+            )
+        record = matches[0]
+        status = record.get("status")
+>       assert status == "passed", (
+            f"Scenario {scenario} ({record.get('name')}) reported status {status!r}.\n"
+            f"{record.get('message', '')}"
+        )
+E       AssertionError: Scenario T24 (test T24 large exact values) reported status 'failed'.
+E           1) test T24 large exact values (CartPricing.Verification.PricingEngineTest)
+E              test/verification/pricing_engine_test.exs:595
+E              ** (Ash.Error.Invalid) 
+E              Invalid Error
+E         
+E              * No such input `as_of` for calculation pricing_quote
+E         
+E              No valid inputs exist
+E         
+E                  at load
+E                (ash 3.31.0) lib/ash/query/query.ex:2312: Ash.Query.load_resource_calculation/4
+E                test/verification/pricing_engine_test.exs:63: CartPricing.Verification.PricingEngineTest.quote_via_query!/2
+E                test/verification/pricing_engine_test.exs:600: CartPricing.Verification.PricingEngineTest."test T24 large exact values"/1
+E                (ex_unit 1.18.4) lib/ex_unit/runner.ex:511: ExUnit.Runner.exec_test/2
+E                (stdlib 6.2.2) timer.erl:595: :timer.tc/2
+E                (ex_unit 1.18.4) lib/ex_unit/runner.ex:433: anonymous fn/6 in ExUnit.Runner.spawn_test_monitor/4
+E              code: q = assert_money(quote_via_query!(cart, %{as_of: @march}))
+E              stacktrace:
+E                (ash 3.31.0) lib/ash/actions/read/read.ex:32: Ash.Actions.Read.run/3
+E                (ash 3.31.0) lib/ash.ex:2938: Ash.read/2
+E                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2
+E                test/verification/pricing_engine_test.exs:64: CartPricing.Verification.PricingEngineTest.quote_via_query!/2
+E                test/verification/pricing_engine_test.exs:600: (test)
+E         
+E       assert 'failed' == 'passed'
+E         - passed
+E         + failed
+
+tests/test_final_state.py:792: AssertionError
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED tests/test_final_state.py::test_t01_line_totals
+PASSED tests/test_final_state.py::test_t02_tier_table
+PASSED tests/test_final_state.py::test_t03_filter_and_sort_on_derived_item_fields
+PASSED tests/test_final_state.py::test_t05_item_count_aggregate
+PASSED tests/test_final_state.py::test_t25_write_validation
+PASSED tests/test_final_state.py::test_t26_required_quote_argument
+FAILED tests/test_final_state.py::test_t04_composed_line_discount - Assertion...
+FAILED tests/test_final_state.py::test_t06_quote_shape - AssertionError: Scen...
+FAILED tests/test_final_state.py::test_t07_no_coupon_zero_tax_region - Assert...
+FAILED tests/test_final_state.py::test_t08_mixed_tiers - AssertionError: Scen...
+FAILED tests/test_final_state.py::test_t09_nil_coupon_code - AssertionError: ...
+FAILED tests/test_final_state.py::test_t10_unknown_coupon_code - AssertionErr...
+FAILED tests/test_final_state.py::test_t11_window_start_boundary - AssertionE...
+FAILED tests/test_final_state.py::test_t12_window_end_boundary - AssertionErr...
+FAILED tests/test_final_state.py::test_t13_redemption_cap - AssertionError: S...
+FAILED tests/test_final_state.py::test_t14_minimum_subtotal - AssertionError:...
+FAILED tests/test_final_state.py::test_t15_coupon_discount_rounding_and_cap
+FAILED tests/test_final_state.py::test_t16_rule_precedence - AssertionError: ...
+FAILED tests/test_final_state.py::test_t17_us_ca_half_away_from_zero - Assert...
+FAILED tests/test_final_state.py::test_t18_eu_de_half_to_even - AssertionErro...
+FAILED tests/test_final_state.py::test_t19_jp_13_truncation_and_us_or_zero - ...
+FAILED tests/test_final_state.py::test_t20_batch_load_pairing - AssertionErro...
+FAILED tests/test_final_state.py::test_t21_post_fetch_load - AssertionError: ...
+FAILED tests/test_final_state.py::test_t22_empty_cart - AssertionError: Scena...
+FAILED tests/test_final_state.py::test_t23_arguments_honoured_per_load - Asse...
+FAILED tests/test_final_state.py::test_t24_large_exact_values - AssertionErro...
+========================= 20 failed, 6 passed in 3.29s =========================

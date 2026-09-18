@@ -1,0 +1,128 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0
+rootdir: /tests
+plugins: json-ctrf-0.5.3
+collected 13 items
+
+tests/test_final_state.py ....FF.......                                  [100%]
+
+=================================== FAILURES ===================================
+________________________ test_saved_resource_instances _________________________
+
+checker = {'built': {'buffer': [0.5, 0, 0, 0, 0.5, 0, ...], 'class': 'MultiMesh', 'instance_count': 120, 'ok': True, ...}, 'cull... [], 'resource': {'buffer': [0.5, 0, 0, 0, 0.5, 0, ...], 'class': 'MultiMesh', 'instance_count': 120, 'ok': True, ...}}
+
+    def test_saved_resource_instances(checker):
+>       _assert_config_and_buffer(checker["resource"], "field.res")
+
+tests/test_final_state.py:299: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+dump = {'buffer': [0.5, 0, 0, 0, 0.5, 0, ...], 'class': 'MultiMesh', 'instance_count': 120, 'ok': True, ...}
+label = 'field.res'
+
+    def _assert_config_and_buffer(dump, label):
+        assert dump.get("ok") is True, f"{label}: not a valid MultiMesh."
+        assert dump.get("transform_format") == 1, (
+            f"{label}: transform_format must be 1 (TRANSFORM_3D), got "
+            f"{dump.get('transform_format')}."
+        )
+        assert dump.get("use_colors") is True, f"{label}: use_colors must be true."
+        assert dump.get("use_custom_data") is True, f"{label}: use_custom_data must be true."
+        assert dump.get("instance_count") == 120, (
+            f"{label}: instance_count must be 120, got {dump.get('instance_count')}."
+        )
+        buffer = dump.get("buffer", [])
+        assert len(buffer) == 120 * STRIDE, (
+            f"{label}: expected an instance buffer of {120 * STRIDE} floats "
+            f"(120 instances x {STRIDE}), got {len(buffer)}. In headless mode the "
+            f"per-instance data must be stored in the MultiMesh buffer."
+        )
+    
+        for i in range(120):
+            e = expected_instance(i)
+            got = decode_instance(buffer, i)
+            s = e["s"]
+            a = e["a"]
+    
+            # Origin drives culling and must be exact.
+            for axis, exp_v, got_v in zip("xyz", e["origin"], got["origin"]):
+>               assert abs(exp_v - got_v) <= TOL, (
+                    f"{label}: instance {i} origin.{axis} expected {exp_v}, got {got_v}."
+                )
+E               AssertionError: field.res: instance 0 origin.x expected -5.0, got 0.
+E               assert 5.0 <= 0.001
+E                +  where 5.0 = abs((-5.0 - 0))
+
+tests/test_final_state.py:233: AssertionError
+__________________________ test_built_field_instances __________________________
+
+checker = {'built': {'buffer': [0.5, 0, 0, 0, 0.5, 0, ...], 'class': 'MultiMesh', 'instance_count': 120, 'ok': True, ...}, 'cull... [], 'resource': {'buffer': [0.5, 0, 0, 0, 0.5, 0, ...], 'class': 'MultiMesh', 'instance_count': 120, 'ok': True, ...}}
+
+    def test_built_field_instances(checker):
+>       _assert_config_and_buffer(checker["built"], "InstanceField.build()")
+
+tests/test_final_state.py:306: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+dump = {'buffer': [0.5, 0, 0, 0, 0.5, 0, ...], 'class': 'MultiMesh', 'instance_count': 120, 'ok': True, ...}
+label = 'InstanceField.build()'
+
+    def _assert_config_and_buffer(dump, label):
+        assert dump.get("ok") is True, f"{label}: not a valid MultiMesh."
+        assert dump.get("transform_format") == 1, (
+            f"{label}: transform_format must be 1 (TRANSFORM_3D), got "
+            f"{dump.get('transform_format')}."
+        )
+        assert dump.get("use_colors") is True, f"{label}: use_colors must be true."
+        assert dump.get("use_custom_data") is True, f"{label}: use_custom_data must be true."
+        assert dump.get("instance_count") == 120, (
+            f"{label}: instance_count must be 120, got {dump.get('instance_count')}."
+        )
+        buffer = dump.get("buffer", [])
+        assert len(buffer) == 120 * STRIDE, (
+            f"{label}: expected an instance buffer of {120 * STRIDE} floats "
+            f"(120 instances x {STRIDE}), got {len(buffer)}. In headless mode the "
+            f"per-instance data must be stored in the MultiMesh buffer."
+        )
+    
+        for i in range(120):
+            e = expected_instance(i)
+            got = decode_instance(buffer, i)
+            s = e["s"]
+            a = e["a"]
+    
+            # Origin drives culling and must be exact.
+            for axis, exp_v, got_v in zip("xyz", e["origin"], got["origin"]):
+>               assert abs(exp_v - got_v) <= TOL, (
+                    f"{label}: instance {i} origin.{axis} expected {exp_v}, got {got_v}."
+                )
+E               AssertionError: InstanceField.build(): instance 0 origin.x expected -5.0, got 0.
+E               assert 5.0 <= 0.001
+E                +  where 5.0 = abs((-5.0 - 0))
+
+tests/test_final_state.py:233: AssertionError
+==================================== PASSES ====================================
+_________________________ test_checker_no_load_errors __________________________
+---------------------------- Captured stdout setup -----------------------------
+=== checker stdout ===
+Godot Engine v4.3.stable.official.77dcf97d8 - https://godotengine.org
+
+CHECKER_DONE
+
+=== checker stderr ===
+
+=========================== short test summary info ============================
+PASSED tests/test_final_state.py::test_class_script_exists
+PASSED tests/test_final_state.py::test_field_resource_exists
+PASSED tests/test_final_state.py::test_report_json_exists
+PASSED tests/test_final_state.py::test_checker_no_load_errors
+PASSED tests/test_final_state.py::test_report_json_content
+PASSED tests/test_final_state.py::test_cull_report_box
+PASSED tests/test_final_state.py::test_cull_matches_oracle[report_box]
+PASSED tests/test_final_state.py::test_cull_matches_oracle[all]
+PASSED tests/test_final_state.py::test_cull_matches_oracle[none]
+PASSED tests/test_final_state.py::test_cull_matches_oracle[single]
+PASSED tests/test_final_state.py::test_cull_matches_oracle[slab]
+FAILED tests/test_final_state.py::test_saved_resource_instances - AssertionEr...
+FAILED tests/test_final_state.py::test_built_field_instances - AssertionError...
+========================= 2 failed, 11 passed in 0.43s =========================

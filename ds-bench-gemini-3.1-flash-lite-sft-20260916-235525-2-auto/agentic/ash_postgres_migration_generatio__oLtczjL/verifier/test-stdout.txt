@@ -1,0 +1,1166 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0
+rootdir: /tests
+plugins: json-ctrf-0.5.3
+collected 49 items
+
+tests/test_final_state.py .........F......F.F..F....FFFFFFFFFFFFFFFFFFFF [ 93%]
+FFF                                                                      [100%]
+
+=================================== FAILURES ===================================
+____________________ test_t06_scheduled_for_is_timestamptz _____________________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=0, stdout='Getting extensions in curre...parcels_non_negative on table warehouses\n\n10:49:42.770 [info] == Migrated 20260917104830 in 0.0s\n', stderr=''), ...}
+
+    def test_t06_scheduled_for_is_timestamptz(harness):
+>       _scenario(harness, "T06")
+
+tests/test_final_state.py:1182: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=0, stdout='Getting extensions in curre...parcels_non_negative on table warehouses\n\n10:49:42.770 [info] == Migrated 20260917104830 in 0.0s\n', stderr=''), ...}
+scenario_id = 'T06'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+        assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+        name = matches[0]
+        status, detail = harness["results"][name]
+>       assert status == "pass", f"Scenario {scenario_id} failed: {name}\n{detail}"
+E       AssertionError: Scenario T06 failed: test T06 shipments.scheduled_for is stored as timestamp with time zone
+E           1) test T06 shipments.scheduled_for is stored as timestamp with time zone (Harbor.Suite)
+E              /tmp/harbor_pgmigrate_final.exs:237
+E              Assertion with == failed
+E              code:  assert {"timestamp with time zone", false, nil} == H.columns("shipments")["scheduled_for"]
+E              left:  {"timestamp with time zone", false, nil}
+E              right: {"timestamp(0) without time zone", false, nil}
+E              stacktrace:
+E                /tmp/harbor_pgmigrate_final.exs:238: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+tests/test_final_state.py:1115: AssertionError
+_____________________ test_t13_foreign_key_backing_indexes _____________________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=0, stdout='Getting extensions in curre...parcels_non_negative on table warehouses\n\n10:49:42.770 [info] == Migrated 20260917104830 in 0.0s\n', stderr=''), ...}
+
+    def test_t13_foreign_key_backing_indexes(harness):
+>       _scenario(harness, "T13")
+
+tests/test_final_state.py:1210: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=0, stdout='Getting extensions in curre...parcels_non_negative on table warehouses\n\n10:49:42.770 [info] == Migrated 20260917104830 in 0.0s\n', stderr=''), ...}
+scenario_id = 'T13'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+        assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+        name = matches[0]
+        status, detail = harness["results"][name]
+>       assert status == "pass", f"Scenario {scenario_id} failed: {name}\n{detail}"
+E       AssertionError: Scenario T13 failed: test T13 plain btree indexes back every foreign key column
+E           1) test T13 plain btree indexes back every foreign key column (Harbor.Suite)
+E              /tmp/harbor_pgmigrate_final.exs:323
+E              index shipments_carrier_id_index is missing
+E              code: for name <- [
+E              stacktrace:
+E                /tmp/harbor_pgmigrate_final.exs:333: anonymous fn/2 in Harbor.Suite."test T13 plain btree indexes back every foreign key column"/1
+E                (elixir 1.18.4) lib/enum.ex:1714: Enum."-map/2-lists^map/1-1-"/2
+E                /tmp/harbor_pgmigrate_final.exs:326: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+tests/test_final_state.py:1115: AssertionError
+___________________ test_t15_warehouses_partial_unique_index ___________________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=0, stdout='Getting extensions in curre...parcels_non_negative on table warehouses\n\n10:49:42.770 [info] == Migrated 20260917104830 in 0.0s\n', stderr=''), ...}
+
+    def test_t15_warehouses_partial_unique_index(harness):
+>       _scenario(harness, "T15")
+
+tests/test_final_state.py:1218: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=0, stdout='Getting extensions in curre...parcels_non_negative on table warehouses\n\n10:49:42.770 [info] == Migrated 20260917104830 in 0.0s\n', stderr=''), ...}
+scenario_id = 'T15'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+        assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+        name = matches[0]
+        status, detail = harness["results"][name]
+>       assert status == "pass", f"Scenario {scenario_id} failed: {name}\n{detail}"
+E       AssertionError: Scenario T15 failed: test T15 warehouses_unique_active_code_index is partial on decommissioned = false
+E           1) test T15 warehouses_unique_active_code_index is partial on decommissioned = false (Harbor.Suite)
+E              /tmp/harbor_pgmigrate_final.exs:348
+E              warehouses_unique_active_code_index is missing
+E              code: assert index, "warehouses_unique_active_code_index is missing"
+E              stacktrace:
+E                /tmp/harbor_pgmigrate_final.exs:350: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+tests/test_final_state.py:1115: AssertionError
+________________________ test_t18_no_unexpected_indexes ________________________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=0, stdout='Getting extensions in curre...parcels_non_negative on table warehouses\n\n10:49:42.770 [info] == Migrated 20260917104830 in 0.0s\n', stderr=''), ...}
+
+    def test_t18_no_unexpected_indexes(harness):
+>       _scenario(harness, "T18")
+
+tests/test_final_state.py:1230: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=0, stdout='Getting extensions in curre...parcels_non_negative on table warehouses\n\n10:49:42.770 [info] == Migrated 20260917104830 in 0.0s\n', stderr=''), ...}
+scenario_id = 'T18'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+        assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+        name = matches[0]
+        status, detail = harness["results"][name]
+>       assert status == "pass", f"Scenario {scenario_id} failed: {name}\n{detail}"
+E       AssertionError: Scenario T18 failed: test T18 no unexpected indexes exist in the public schema
+E           1) test T18 no unexpected indexes exist in the public schema (Harbor.Suite)
+E              /tmp/harbor_pgmigrate_final.exs:385
+E              Assertion with == failed
+E              code:  assert H.indexes() |> Map.keys() |> Enum.sort() == [
+E                       "carriers_pkey",
+E                       "carriers_unique_code_index",
+E                       "parcels_pkey",
+E                       "parcels_shipment_id_index",
+E                       "parcels_single_fragile_per_shipment_index",
+E                       "parcels_unique_tracking_code_index",
+E                       "shipment_legs_pkey",
+E                       "shipment_legs_shipment_id_index",
+E                       "shipment_legs_unique_leg_sequence_index",
+E                       "shipment_legs_warehouse_id_index",
+E                       "shipments_carrier_id_index",
+E                       "shipments_pkey",
+E                       "shipments_unique_reference_index",
+E                       "warehouses_pkey",
+E                       "warehouses_unique_active_code_index"
+E                     ]
+E              left:  ["carriers_pkey", "carriers_unique_code_index", "parcels_pkey", "parcels_single_fragile_per_shipment_index", "parcels_unique_tracking_code_index", "shipment_legs_pkey",
+E                      "shipment_legs_unique_leg_sequence_index", "shipments_pkey", "shipments_unique_reference_index", "warehouses_pkey"]
+E              right: ["carriers_pkey", "carriers_unique_code_index", "parcels_pkey", "parcels_shipment_id_index", "parcels_single_fragile_per_shipment_index", "parcels_unique_tracking_code_index",
+E                      "shipment_legs_pkey", "shipment_legs_shipment_id_index", "shipment_legs_unique_leg_sequence_index", "shipment_legs_warehouse_id_index", "shipments_carrier_id_index",
+E                      "shipments_pkey", "shipments_unique_reference_index", "warehouses_pkey", "warehouses_unique_active_code_index"]
+E              stacktrace:
+E                /tmp/harbor_pgmigrate_final.exs:386: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+tests/test_final_state.py:1115: AssertionError
+_______________ test_t23_carrier_code_unique_case_insensitively ________________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=0, stdout='Getting extensions in curre...parcels_non_negative on table warehouses\n\n10:49:42.770 [info] == Migrated 20260917104830 in 0.0s\n', stderr=''), ...}
+
+    def test_t23_carrier_code_unique_case_insensitively(harness):
+>       _scenario(harness, "T23")
+
+tests/test_final_state.py:1250: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=0, stdout='Getting extensions in curre...parcels_non_negative on table warehouses\n\n10:49:42.770 [info] == Migrated 20260917104830 in 0.0s\n', stderr=''), ...}
+scenario_id = 'T23'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+        assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+        name = matches[0]
+        status, detail = harness["results"][name]
+>       assert status == "pass", f"Scenario {scenario_id} failed: {name}\n{detail}"
+E       AssertionError: Scenario T23 failed: test T23 carrier codes are unique case-insensitively
+E           1) test T23 carrier codes are unique case-insensitively (Harbor.Suite)
+E              /tmp/harbor_pgmigrate_final.exs:494
+E              ** (MatchError) no match of right hand side value: {:error, %Ash.Error.Invalid{bread_crumbs: ["Error returned from: Logistics.Freight.Carrier.create"],  changeset: "#Changeset<>",  errors: [%Ash.Error.Invalid.NoSuchInput{calculation: nil, resource: Logistics.Freight.Carrier, action: :create, input: :code, inputs: MapSet.new([]), did_you_mean: [], splode: Ash.Error, bread_crumbs: ["Error returned from: Logistics.Freight.Carrier.create"], vars: [], path: [], stacktrace: #Splode.Stacktrace<>, class: :invalid}, %Ash.Error.Invalid.NoSuchInput{calculation: nil, resource: Logistics.Freight.Carrier, action: :create, input: :name, inputs: MapSet.new([]), did_you_mean: [], splode: Ash.Error, bread_crumbs: ["Error returned from: Logistics.Freight.Carrier.create"], vars: [], path: [], stacktrace: #Splode.Stacktrace<>, class: :invalid}]}}
+E              code: H.create!(H.carrier(), :create, %{code: "acme", name: "Acme Freight"})
+E              stacktrace:
+E                /tmp/harbor_pgmigrate_final.exs:57: Harbor.H.create!/3
+E                /tmp/harbor_pgmigrate_final.exs:495: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+tests/test_final_state.py:1115: AssertionError
+________________ test_t24_carrier_code_reads_case_insensitively ________________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=0, stdout='Getting extensions in curre...parcels_non_negative on table warehouses\n\n10:49:42.770 [info] == Migrated 20260917104830 in 0.0s\n', stderr=''), ...}
+
+    def test_t24_carrier_code_reads_case_insensitively(harness):
+>       _scenario(harness, "T24")
+
+tests/test_final_state.py:1254: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=0, stdout='Getting extensions in curre...parcels_non_negative on table warehouses\n\n10:49:42.770 [info] == Migrated 20260917104830 in 0.0s\n', stderr=''), ...}
+scenario_id = 'T24'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+        assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+        name = matches[0]
+        status, detail = harness["results"][name]
+>       assert status == "pass", f"Scenario {scenario_id} failed: {name}\n{detail}"
+E       AssertionError: Scenario T24 failed: test T24 carrier codes compare case-insensitively when reading
+E           1) test T24 carrier codes compare case-insensitively when reading (Harbor.Suite)
+E              /tmp/harbor_pgmigrate_final.exs:504
+E              ** (MatchError) no match of right hand side value: {:error, %Ash.Error.Invalid{bread_crumbs: ["Error returned from: Logistics.Freight.Carrier.create"],  changeset: "#Changeset<>",  errors: [%Ash.Error.Invalid.NoSuchInput{calculation: nil, resource: Logistics.Freight.Carrier, action: :create, input: :code, inputs: MapSet.new([]), did_you_mean: [], splode: Ash.Error, bread_crumbs: ["Error returned from: Logistics.Freight.Carrier.create"], vars: [], path: [], stacktrace: #Splode.Stacktrace<>, class: :invalid}, %Ash.Error.Invalid.NoSuchInput{calculation: nil, resource: Logistics.Freight.Carrier, action: :create, input: :name, inputs: MapSet.new([]), did_you_mean: [], splode: Ash.Error, bread_crumbs: ["Error returned from: Logistics.Freight.Carrier.create"], vars: [], path: [], stacktrace: #Splode.Stacktrace<>, class: :invalid}]}}
+E              code: H.create!(H.carrier(), :create, %{code: "acme", name: "Acme Freight"})
+E              stacktrace:
+E                /tmp/harbor_pgmigrate_final.exs:57: Harbor.H.create!/3
+E                /tmp/harbor_pgmigrate_final.exs:505: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+tests/test_final_state.py:1115: AssertionError
+___________ test_t25_retired_carriers_are_hidden_and_free_their_code ___________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=0, stdout='Getting extensions in curre...parcels_non_negative on table warehouses\n\n10:49:42.770 [info] == Migrated 20260917104830 in 0.0s\n', stderr=''), ...}
+
+    def test_t25_retired_carriers_are_hidden_and_free_their_code(harness):
+>       _scenario(harness, "T25")
+
+tests/test_final_state.py:1258: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=0, stdout='Getting extensions in curre...parcels_non_negative on table warehouses\n\n10:49:42.770 [info] == Migrated 20260917104830 in 0.0s\n', stderr=''), ...}
+scenario_id = 'T25'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+        assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+        name = matches[0]
+        status, detail = harness["results"][name]
+>       assert status == "pass", f"Scenario {scenario_id} failed: {name}\n{detail}"
+E       AssertionError: Scenario T25 failed: test T25 retired carriers disappear from reads but stay in the table and free their code
+E           1) test T25 retired carriers disappear from reads but stay in the table and free their code (Harbor.Suite)
+E              /tmp/harbor_pgmigrate_final.exs:516
+E              ** (MatchError) no match of right hand side value: {:error, %Ash.Error.Invalid{bread_crumbs: ["Error returned from: Logistics.Freight.Carrier.create"],  changeset: "#Changeset<>",  errors: [%Ash.Error.Invalid.NoSuchInput{calculation: nil, resource: Logistics.Freight.Carrier, action: :create, input: :code, inputs: MapSet.new([]), did_you_mean: [], splode: Ash.Error, bread_crumbs: ["Error returned from: Logistics.Freight.Carrier.create"], vars: [], path: [], stacktrace: #Splode.Stacktrace<>, class: :invalid}, %Ash.Error.Invalid.NoSuchInput{calculation: nil, resource: Logistics.Freight.Carrier, action: :create, input: :name, inputs: MapSet.new([]), did_you_mean: [], splode: Ash.Error, bread_crumbs: ["Error returned from: Logistics.Freight.Carrier.create"], vars: [], path: [], stacktrace: #Splode.Stacktrace<>, class: :invalid}]}}
+E              code: carrier = H.create!(H.carrier(), :create, %{code: "acme", name: "Acme Freight"})
+E              stacktrace:
+E                /tmp/harbor_pgmigrate_final.exs:57: Harbor.H.create!/3
+E                /tmp/harbor_pgmigrate_final.exs:517: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+tests/test_final_state.py:1115: AssertionError
+_________________ test_t26_warehouse_codes_unique_among_active _________________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=0, stdout='Getting extensions in curre...parcels_non_negative on table warehouses\n\n10:49:42.770 [info] == Migrated 20260917104830 in 0.0s\n', stderr=''), ...}
+
+    def test_t26_warehouse_codes_unique_among_active(harness):
+>       _scenario(harness, "T26")
+
+tests/test_final_state.py:1262: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=0, stdout='Getting extensions in curre...parcels_non_negative on table warehouses\n\n10:49:42.770 [info] == Migrated 20260917104830 in 0.0s\n', stderr=''), ...}
+scenario_id = 'T26'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+        assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+        name = matches[0]
+        status, detail = harness["results"][name]
+>       assert status == "pass", f"Scenario {scenario_id} failed: {name}\n{detail}"
+E       AssertionError: Scenario T26 failed: test T26 warehouse codes are unique among active warehouses only
+E           1) test T26 warehouse codes are unique among active warehouses only (Harbor.Suite)
+E              /tmp/harbor_pgmigrate_final.exs:533
+E              ** (MatchError) no match of right hand side value: {:error, %Ash.Error.Invalid{bread_crumbs: ["Error returned from: Logistics.Freight.Warehouse.create"],  changeset: "#Changeset<>",  errors: [%Ash.Error.Invalid.NoSuchInput{calculation: nil, resource: Logistics.Freight.Warehouse, action: :create, input: :code, inputs: MapSet.new([]), did_you_mean: [], splode: Ash.Error, bread_crumbs: ["Error returned from: Logistics.Freight.Warehouse.create"], vars: [], path: [], stacktrace: #Splode.Stacktrace<>, class: :invalid}, %Ash.Error.Invalid.NoSuchInput{calculation: nil, resource: Logistics.Freight.Warehouse, action: :create, input: :name, inputs: MapSet.new([]), did_you_mean: [], splode: Ash.Error, bread_crumbs: ["Error returned from: Logistics.Freight.Warehouse.create"], vars: [], path: [], stacktrace: #Splode.Stacktrace<>, class: :invalid}, %Ash.Error.Invalid.NoSuchInput{calculation: nil, resource: Logistics.Freight.Warehouse, action: :create, input: :region, inputs: MapSet.new([]), did_you_mean: [], splode: Ash.Error, bread_crumbs: ["Error returned from: Logistics.Freight.Warehouse.create"], vars: [], path: [], stacktrace: #Splode.Stacktrace<>, class: :invalid}, %Ash.Error.Invalid.NoSuchInput{calculation: nil, resource: Logistics.Freight.Warehouse, action: :create, input: :capacity_parcels, inputs: MapSet.new([]), did_you_mean: [], splode: Ash.Error, bread_crumbs: ["Error returned from: Logistics.Freight.Warehouse.create"], vars: [], path: [], stacktrace: #Splode.Stacktrace<>, class: :invalid}]}}
+E              code: H.create!(H.warehouse(), :create, %{
+E              stacktrace:
+E                /tmp/harbor_pgmigrate_final.exs:57: Harbor.H.create!/3
+E                /tmp/harbor_pgmigrate_final.exs:535: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+tests/test_final_state.py:1115: AssertionError
+_________________ test_t27_warehouse_capacity_check_constraint _________________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=0, stdout='Getting extensions in curre...parcels_non_negative on table warehouses\n\n10:49:42.770 [info] == Migrated 20260917104830 in 0.0s\n', stderr=''), ...}
+
+    def test_t27_warehouse_capacity_check_constraint(harness):
+>       _scenario(harness, "T27")
+
+tests/test_final_state.py:1266: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=0, stdout='Getting extensions in curre...parcels_non_negative on table warehouses\n\n10:49:42.770 [info] == Migrated 20260917104830 in 0.0s\n', stderr=''), ...}
+scenario_id = 'T27'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+        assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+        name = matches[0]
+        status, detail = harness["results"][name]
+>       assert status == "pass", f"Scenario {scenario_id} failed: {name}\n{detail}"
+E       AssertionError: Scenario T27 failed: test T27 negative warehouse capacity is rejected by the database check constraint
+E           1) test T27 negative warehouse capacity is rejected by the database check constraint (Harbor.Suite)
+E              /tmp/harbor_pgmigrate_final.exs:560
+E              match (=) failed
+E              code:  assert {:error, %@invalid{errors: [%@invalid_attribute{field: :capacity_parcels, message: message}]}} =
+E                       H.create(H.warehouse(), :create, %{
+E                         code: "WH-9",
+E                         name: "Bad",
+E                         region: "north",
+E                         capacity_parcels: -1
+E                       })
+E              left:  {:error,
+E                      %Ash.Error.Invalid{
+E                        errors: [%Ash.Error.Changes.InvalidAttribute{field: :capacity_parcels, message: message}]
+E                      }}
+E              right: {:error,
+E                      %Ash.Error.Invalid{
+E                        bread_crumbs: ["Error returned from: Logistics.Freight.Warehouse.create"], 
+E                        changeset: "#Changeset<>", 
+E                        errors: [
+E                          %Ash.Error.Invalid.NoSuchInput{
+E                            calculation: nil,
+E                            resource: Logistics.Freight.Warehouse,
+E                            action: :create,
+E                            input: :code,
+E                            inputs: MapSet.new([]),
+E                            did_you_mean: [],
+E                            splode: Ash.Error,
+E                            bread_crumbs: ["Error returned from: Logistics.Freight.Warehouse.create"],
+E                            vars: [],
+E                            path: [],
+E                            stacktrace: #Splode.Stacktrace<>,
+E                            class: :invalid
+E                          },
+E                          %Ash.Error.Invalid.NoSuchInput{
+E                            calculation: nil,
+E                            resource: Logistics.Freight.Warehouse,
+E                            action: :create,
+E                            input: :name,
+E                            inputs: MapSet.new([]),
+E                            did_you_mean: [],
+E                            splode: Ash.Error,
+E                            bread_crumbs: ["Error returned from: Logistics.Freight.Warehouse.create"],
+E                            vars: [],
+E                            path: [],
+E                            stacktrace: #Splode.Stacktrace<>,
+E                            class: :invalid
+E                          },
+E                          %Ash.Error.Invalid.NoSuchInput{
+E                            calculation: nil,
+E                            resource: Logistics.Freight.Warehouse,
+E                            action: :create,
+E                            input: :region,
+E                            inputs: MapSet.new([]),
+E                            did_you_mean: [],
+E                            splode: Ash.Error,
+E                            bread_crumbs: ["Error returned from: Logistics.Freight.Warehouse.create"],
+E                            vars: [],
+E                            path: [],
+E                            stacktrace: #Splode.Stacktrace<>,
+E                            class: :invalid
+E                          },
+E                          %Ash.Error.Invalid.NoSuchInput{
+E                            calculation: nil,
+E                            resource: Logistics.Freight.Warehouse,
+E                            action: :create,
+E                            input: :capacity_parcels,
+E                            inputs: MapSet.new([]),
+E                            did_you_mean: [],
+E                            splode: Ash.Error,
+E                            bread_crumbs: ["Error returned from: Logistics.Freight.Warehouse.create"],
+E                            vars: [],
+E                            path: [],
+E                            stacktrace: #Splode.Stacktrace<>,
+E                            class: :invalid
+E                          }
+E                        ]
+E                      }}
+E              stacktrace:
+E                /tmp/harbor_pgmigrate_final.exs:561: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+tests/test_final_state.py:1115: AssertionError
+______________ test_t28_shipment_declared_value_check_constraint _______________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=0, stdout='Getting extensions in curre...parcels_non_negative on table warehouses\n\n10:49:42.770 [info] == Migrated 20260917104830 in 0.0s\n', stderr=''), ...}
+
+    def test_t28_shipment_declared_value_check_constraint(harness):
+>       _scenario(harness, "T28")
+
+tests/test_final_state.py:1270: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=0, stdout='Getting extensions in curre...parcels_non_negative on table warehouses\n\n10:49:42.770 [info] == Migrated 20260917104830 in 0.0s\n', stderr=''), ...}
+scenario_id = 'T28'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+        assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+        name = matches[0]
+        status, detail = harness["results"][name]
+>       assert status == "pass", f"Scenario {scenario_id} failed: {name}\n{detail}"
+E       AssertionError: Scenario T28 failed: test T28 a negative declared value is rejected by the database check constraint
+E           1) test T28 a negative declared value is rejected by the database check constraint (Harbor.Suite)
+E              /tmp/harbor_pgmigrate_final.exs:576
+E              ** (MatchError) no match of right hand side value: {:error, %Ash.Error.Invalid{bread_crumbs: ["Error returned from: Logistics.Freight.Carrier.create"],  changeset: "#Changeset<>",  errors: [%Ash.Error.Invalid.NoSuchInput{calculation: nil, resource: Logistics.Freight.Carrier, action: :create, input: :code, inputs: MapSet.new([]), did_you_mean: [], splode: Ash.Error, bread_crumbs: ["Error returned from: Logistics.Freight.Carrier.create"], vars: [], path: [], stacktrace: #Splode.Stacktrace<>, class: :invalid}, %Ash.Error.Invalid.NoSuchInput{calculation: nil, resource: Logistics.Freight.Carrier, action: :create, input: :name, inputs: MapSet.new([]), did_you_mean: [], splode: Ash.Error, bread_crumbs: ["Error returned from: Logistics.Freight.Carrier.create"], vars: [], path: [], stacktrace: #Splode.Stacktrace<>, class: :invalid}]}}
+E              code: carrier = H.create!(H.carrier(), :create, %{code: "acme", name: "Acme"})
+E              stacktrace:
+E                /tmp/harbor_pgmigrate_final.exs:57: Harbor.H.create!/3
+E                /tmp/harbor_pgmigrate_final.exs:577: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+tests/test_final_state.py:1115: AssertionError
+___________________ test_t29_parcel_weight_check_constraint ____________________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=0, stdout='Getting extensions in curre...parcels_non_negative on table warehouses\n\n10:49:42.770 [info] == Migrated 20260917104830 in 0.0s\n', stderr=''), ...}
+
+    def test_t29_parcel_weight_check_constraint(harness):
+>       _scenario(harness, "T29")
+
+tests/test_final_state.py:1274: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=0, stdout='Getting extensions in curre...parcels_non_negative on table warehouses\n\n10:49:42.770 [info] == Migrated 20260917104830 in 0.0s\n', stderr=''), ...}
+scenario_id = 'T29'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+        assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+        name = matches[0]
+        status, detail = harness["results"][name]
+>       assert status == "pass", f"Scenario {scenario_id} failed: {name}\n{detail}"
+E       AssertionError: Scenario T29 failed: test T29 a non-positive parcel weight is rejected by the database check constraint
+E           1) test T29 a non-positive parcel weight is rejected by the database check constraint (Harbor.Suite)
+E              /tmp/harbor_pgmigrate_final.exs:593
+E              ** (MatchError) no match of right hand side value: {:error, %Ash.Error.Invalid{bread_crumbs: ["Error returned from: Logistics.Freight.Carrier.create"],  changeset: "#Changeset<>",  errors: [%Ash.Error.Invalid.NoSuchInput{calculation: nil, resource: Logistics.Freight.Carrier, action: :create, input: :code, inputs: MapSet.new([]), did_you_mean: [], splode: Ash.Error, bread_crumbs: ["Error returned from: Logistics.Freight.Carrier.create"], vars: [], path: [], stacktrace: #Splode.Stacktrace<>, class: :invalid}, %Ash.Error.Invalid.NoSuchInput{calculation: nil, resource: Logistics.Freight.Carrier, action: :create, input: :name, inputs: MapSet.new([]), did_you_mean: [], splode: Ash.Error, bread_crumbs: ["Error returned from: Logistics.Freight.Carrier.create"], vars: [], path: [], stacktrace: #Splode.Stacktrace<>, class: :invalid}]}}
+E              code: shipment = fixture_shipment("S-1")
+E              stacktrace:
+E                /tmp/harbor_pgmigrate_final.exs:57: Harbor.H.create!/3
+E                /tmp/harbor_pgmigrate_final.exs:974: Harbor.Suite.fixture_shipment/1
+E                /tmp/harbor_pgmigrate_final.exs:594: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+tests/test_final_state.py:1115: AssertionError
+____________________ test_t30_leg_sequence_check_constraint ____________________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=0, stdout='Getting extensions in curre...parcels_non_negative on table warehouses\n\n10:49:42.770 [info] == Migrated 20260917104830 in 0.0s\n', stderr=''), ...}
+
+    def test_t30_leg_sequence_check_constraint(harness):
+>       _scenario(harness, "T30")
+
+tests/test_final_state.py:1278: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=0, stdout='Getting extensions in curre...parcels_non_negative on table warehouses\n\n10:49:42.770 [info] == Migrated 20260917104830 in 0.0s\n', stderr=''), ...}
+scenario_id = 'T30'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+        assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+        name = matches[0]
+        status, detail = harness["results"][name]
+>       assert status == "pass", f"Scenario {scenario_id} failed: {name}\n{detail}"
+E       AssertionError: Scenario T30 failed: test T30 a zero leg sequence is rejected by the database check constraint
+E           1) test T30 a zero leg sequence is rejected by the database check constraint (Harbor.Suite)
+E              /tmp/harbor_pgmigrate_final.exs:608
+E              ** (MatchError) no match of right hand side value: {:error, %Ash.Error.Invalid{bread_crumbs: ["Error returned from: Logistics.Freight.Carrier.create"],  changeset: "#Changeset<>",  errors: [%Ash.Error.Invalid.NoSuchInput{calculation: nil, resource: Logistics.Freight.Carrier, action: :create, input: :code, inputs: MapSet.new([]), did_you_mean: [], splode: Ash.Error, bread_crumbs: ["Error returned from: Logistics.Freight.Carrier.create"], vars: [], path: [], stacktrace: #Splode.Stacktrace<>, class: :invalid}, %Ash.Error.Invalid.NoSuchInput{calculation: nil, resource: Logistics.Freight.Carrier, action: :create, input: :name, inputs: MapSet.new([]), did_you_mean: [], splode: Ash.Error, bread_crumbs: ["Error returned from: Logistics.Freight.Carrier.create"], vars: [], path: [], stacktrace: #Splode.Stacktrace<>, class: :invalid}]}}
+E              code: shipment = fixture_shipment("S-1")
+E              stacktrace:
+E                /tmp/harbor_pgmigrate_final.exs:57: Harbor.H.create!/3
+E                /tmp/harbor_pgmigrate_final.exs:974: Harbor.Suite.fixture_shipment/1
+E                /tmp/harbor_pgmigrate_final.exs:609: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+tests/test_final_state.py:1115: AssertionError
+______________________ test_t31_shipment_reference_unique ______________________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=0, stdout='Getting extensions in curre...parcels_non_negative on table warehouses\n\n10:49:42.770 [info] == Migrated 20260917104830 in 0.0s\n', stderr=''), ...}
+
+    def test_t31_shipment_reference_unique(harness):
+>       _scenario(harness, "T31")
+
+tests/test_final_state.py:1282: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=0, stdout='Getting extensions in curre...parcels_non_negative on table warehouses\n\n10:49:42.770 [info] == Migrated 20260917104830 in 0.0s\n', stderr=''), ...}
+scenario_id = 'T31'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+        assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+        name = matches[0]
+        status, detail = harness["results"][name]
+>       assert status == "pass", f"Scenario {scenario_id} failed: {name}\n{detail}"
+E       AssertionError: Scenario T31 failed: test T31 shipment references are unique
+E           1) test T31 shipment references are unique (Harbor.Suite)
+E              /tmp/harbor_pgmigrate_final.exs:623
+E              ** (MatchError) no match of right hand side value: {:error, %Ash.Error.Invalid{bread_crumbs: ["Error returned from: Logistics.Freight.Carrier.create"],  changeset: "#Changeset<>",  errors: [%Ash.Error.Invalid.NoSuchInput{calculation: nil, resource: Logistics.Freight.Carrier, action: :create, input: :code, inputs: MapSet.new([]), did_you_mean: [], splode: Ash.Error, bread_crumbs: ["Error returned from: Logistics.Freight.Carrier.create"], vars: [], path: [], stacktrace: #Splode.Stacktrace<>, class: :invalid}, %Ash.Error.Invalid.NoSuchInput{calculation: nil, resource: Logistics.Freight.Carrier, action: :create, input: :name, inputs: MapSet.new([]), did_you_mean: [], splode: Ash.Error, bread_crumbs: ["Error returned from: Logistics.Freight.Carrier.create"], vars: [], path: [], stacktrace: #Splode.Stacktrace<>, class: :invalid}]}}
+E              code: carrier = H.create!(H.carrier(), :create, %{code: "acme", name: "Acme"})
+E              stacktrace:
+E                /tmp/harbor_pgmigrate_final.exs:57: Harbor.H.create!/3
+E                /tmp/harbor_pgmigrate_final.exs:624: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+tests/test_final_state.py:1115: AssertionError
+_____________________ test_t32_parcel_tracking_code_unique _____________________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=0, stdout='Getting extensions in curre...parcels_non_negative on table warehouses\n\n10:49:42.770 [info] == Migrated 20260917104830 in 0.0s\n', stderr=''), ...}
+
+    def test_t32_parcel_tracking_code_unique(harness):
+>       _scenario(harness, "T32")
+
+tests/test_final_state.py:1286: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=0, stdout='Getting extensions in curre...parcels_non_negative on table warehouses\n\n10:49:42.770 [info] == Migrated 20260917104830 in 0.0s\n', stderr=''), ...}
+scenario_id = 'T32'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+        assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+        name = matches[0]
+        status, detail = harness["results"][name]
+>       assert status == "pass", f"Scenario {scenario_id} failed: {name}\n{detail}"
+E       AssertionError: Scenario T32 failed: test T32 parcel tracking codes are unique across shipments
+E           1) test T32 parcel tracking codes are unique across shipments (Harbor.Suite)
+E              /tmp/harbor_pgmigrate_final.exs:634
+E              ** (MatchError) no match of right hand side value: {:error, %Ash.Error.Invalid{bread_crumbs: ["Error returned from: Logistics.Freight.Carrier.create"],  changeset: "#Changeset<>",  errors: [%Ash.Error.Invalid.NoSuchInput{calculation: nil, resource: Logistics.Freight.Carrier, action: :create, input: :code, inputs: MapSet.new([]), did_you_mean: [], splode: Ash.Error, bread_crumbs: ["Error returned from: Logistics.Freight.Carrier.create"], vars: [], path: [], stacktrace: #Splode.Stacktrace<>, class: :invalid}, %Ash.Error.Invalid.NoSuchInput{calculation: nil, resource: Logistics.Freight.Carrier, action: :create, input: :name, inputs: MapSet.new([]), did_you_mean: [], splode: Ash.Error, bread_crumbs: ["Error returned from: Logistics.Freight.Carrier.create"], vars: [], path: [], stacktrace: #Splode.Stacktrace<>, class: :invalid}]}}
+E              code: first = fixture_shipment("S-1")
+E              stacktrace:
+E                /tmp/harbor_pgmigrate_final.exs:57: Harbor.H.create!/3
+E                /tmp/harbor_pgmigrate_final.exs:974: Harbor.Suite.fixture_shipment/1
+E                /tmp/harbor_pgmigrate_final.exs:635: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+tests/test_final_state.py:1115: AssertionError
+_________________ test_t33_single_fragile_parcel_per_shipment __________________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=0, stdout='Getting extensions in curre...parcels_non_negative on table warehouses\n\n10:49:42.770 [info] == Migrated 20260917104830 in 0.0s\n', stderr=''), ...}
+
+    def test_t33_single_fragile_parcel_per_shipment(harness):
+>       _scenario(harness, "T33")
+
+tests/test_final_state.py:1290: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=0, stdout='Getting extensions in curre...parcels_non_negative on table warehouses\n\n10:49:42.770 [info] == Migrated 20260917104830 in 0.0s\n', stderr=''), ...}
+scenario_id = 'T33'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+        assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+        name = matches[0]
+        status, detail = harness["results"][name]
+>       assert status == "pass", f"Scenario {scenario_id} failed: {name}\n{detail}"
+E       AssertionError: Scenario T33 failed: test T33 at most one fragile parcel is allowed per shipment
+E           1) test T33 at most one fragile parcel is allowed per shipment (Harbor.Suite)
+E              /tmp/harbor_pgmigrate_final.exs:656
+E              ** (MatchError) no match of right hand side value: {:error, %Ash.Error.Invalid{bread_crumbs: ["Error returned from: Logistics.Freight.Carrier.create"],  changeset: "#Changeset<>",  errors: [%Ash.Error.Invalid.NoSuchInput{calculation: nil, resource: Logistics.Freight.Carrier, action: :create, input: :code, inputs: MapSet.new([]), did_you_mean: [], splode: Ash.Error, bread_crumbs: ["Error returned from: Logistics.Freight.Carrier.create"], vars: [], path: [], stacktrace: #Splode.Stacktrace<>, class: :invalid}, %Ash.Error.Invalid.NoSuchInput{calculation: nil, resource: Logistics.Freight.Carrier, action: :create, input: :name, inputs: MapSet.new([]), did_you_mean: [], splode: Ash.Error, bread_crumbs: ["Error returned from: Logistics.Freight.Carrier.create"], vars: [], path: [], stacktrace: #Splode.Stacktrace<>, class: :invalid}]}}
+E              code: shipment = fixture_shipment("S-1")
+E              stacktrace:
+E                /tmp/harbor_pgmigrate_final.exs:57: Harbor.H.create!/3
+E                /tmp/harbor_pgmigrate_final.exs:974: Harbor.Suite.fixture_shipment/1
+E                /tmp/harbor_pgmigrate_final.exs:657: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+tests/test_final_state.py:1115: AssertionError
+__________________ test_t34_leg_sequence_unique_per_shipment ___________________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=0, stdout='Getting extensions in curre...parcels_non_negative on table warehouses\n\n10:49:42.770 [info] == Migrated 20260917104830 in 0.0s\n', stderr=''), ...}
+
+    def test_t34_leg_sequence_unique_per_shipment(harness):
+>       _scenario(harness, "T34")
+
+tests/test_final_state.py:1294: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=0, stdout='Getting extensions in curre...parcels_non_negative on table warehouses\n\n10:49:42.770 [info] == Migrated 20260917104830 in 0.0s\n', stderr=''), ...}
+scenario_id = 'T34'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+        assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+        name = matches[0]
+        status, detail = harness["results"][name]
+>       assert status == "pass", f"Scenario {scenario_id} failed: {name}\n{detail}"
+E       AssertionError: Scenario T34 failed: test T34 a shipment cannot have two legs with the same sequence
+E           1) test T34 a shipment cannot have two legs with the same sequence (Harbor.Suite)
+E              /tmp/harbor_pgmigrate_final.exs:688
+E              ** (MatchError) no match of right hand side value: {:error, %Ash.Error.Invalid{bread_crumbs: ["Error returned from: Logistics.Freight.Carrier.create"],  changeset: "#Changeset<>",  errors: [%Ash.Error.Invalid.NoSuchInput{calculation: nil, resource: Logistics.Freight.Carrier, action: :create, input: :code, inputs: MapSet.new([]), did_you_mean: [], splode: Ash.Error, bread_crumbs: ["Error returned from: Logistics.Freight.Carrier.create"], vars: [], path: [], stacktrace: #Splode.Stacktrace<>, class: :invalid}, %Ash.Error.Invalid.NoSuchInput{calculation: nil, resource: Logistics.Freight.Carrier, action: :create, input: :name, inputs: MapSet.new([]), did_you_mean: [], splode: Ash.Error, bread_crumbs: ["Error returned from: Logistics.Freight.Carrier.create"], vars: [], path: [], stacktrace: #Splode.Stacktrace<>, class: :invalid}]}}
+E              code: shipment = fixture_shipment("S-1")
+E              stacktrace:
+E                /tmp/harbor_pgmigrate_final.exs:57: Harbor.H.create!/3
+E                /tmp/harbor_pgmigrate_final.exs:974: Harbor.Suite.fixture_shipment/1
+E                /tmp/harbor_pgmigrate_final.exs:689: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+tests/test_final_state.py:1115: AssertionError
+_____________________ test_t35_carrier_destroy_restricted ______________________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=0, stdout='Getting extensions in curre...parcels_non_negative on table warehouses\n\n10:49:42.770 [info] == Migrated 20260917104830 in 0.0s\n', stderr=''), ...}
+
+    def test_t35_carrier_destroy_restricted(harness):
+>       _scenario(harness, "T35")
+
+tests/test_final_state.py:1298: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=0, stdout='Getting extensions in curre...parcels_non_negative on table warehouses\n\n10:49:42.770 [info] == Migrated 20260917104830 in 0.0s\n', stderr=''), ...}
+scenario_id = 'T35'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+        assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+        name = matches[0]
+        status, detail = harness["results"][name]
+>       assert status == "pass", f"Scenario {scenario_id} failed: {name}\n{detail}"
+E       AssertionError: Scenario T35 failed: test T35 a carrier that still has shipments cannot be destroyed
+E           1) test T35 a carrier that still has shipments cannot be destroyed (Harbor.Suite)
+E              /tmp/harbor_pgmigrate_final.exs:716
+E              ** (MatchError) no match of right hand side value: {:error, %Ash.Error.Invalid{bread_crumbs: ["Error returned from: Logistics.Freight.Carrier.create"],  changeset: "#Changeset<>",  errors: [%Ash.Error.Invalid.NoSuchInput{calculation: nil, resource: Logistics.Freight.Carrier, action: :create, input: :code, inputs: MapSet.new([]), did_you_mean: [], splode: Ash.Error, bread_crumbs: ["Error returned from: Logistics.Freight.Carrier.create"], vars: [], path: [], stacktrace: #Splode.Stacktrace<>, class: :invalid}, %Ash.Error.Invalid.NoSuchInput{calculation: nil, resource: Logistics.Freight.Carrier, action: :create, input: :name, inputs: MapSet.new([]), did_you_mean: [], splode: Ash.Error, bread_crumbs: ["Error returned from: Logistics.Freight.Carrier.create"], vars: [], path: [], stacktrace: #Splode.Stacktrace<>, class: :invalid}]}}
+E              code: carrier = H.create!(H.carrier(), :create, %{code: "acme", name: "Acme"})
+E              stacktrace:
+E                /tmp/harbor_pgmigrate_final.exs:57: Harbor.H.create!/3
+E                /tmp/harbor_pgmigrate_final.exs:717: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+tests/test_final_state.py:1115: AssertionError
+____________________ test_t36_warehouse_destroy_restricted _____________________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=0, stdout='Getting extensions in curre...parcels_non_negative on table warehouses\n\n10:49:42.770 [info] == Migrated 20260917104830 in 0.0s\n', stderr=''), ...}
+
+    def test_t36_warehouse_destroy_restricted(harness):
+>       _scenario(harness, "T36")
+
+tests/test_final_state.py:1302: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=0, stdout='Getting extensions in curre...parcels_non_negative on table warehouses\n\n10:49:42.770 [info] == Migrated 20260917104830 in 0.0s\n', stderr=''), ...}
+scenario_id = 'T36'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+        assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+        name = matches[0]
+        status, detail = harness["results"][name]
+>       assert status == "pass", f"Scenario {scenario_id} failed: {name}\n{detail}"
+E       AssertionError: Scenario T36 failed: test T36 a warehouse that still has shipment legs cannot be destroyed
+E           1) test T36 a warehouse that still has shipment legs cannot be destroyed (Harbor.Suite)
+E              /tmp/harbor_pgmigrate_final.exs:727
+E              ** (MatchError) no match of right hand side value: {:error, %Ash.Error.Invalid{bread_crumbs: ["Error returned from: Logistics.Freight.Carrier.create"],  changeset: "#Changeset<>",  errors: [%Ash.Error.Invalid.NoSuchInput{calculation: nil, resource: Logistics.Freight.Carrier, action: :create, input: :code, inputs: MapSet.new([]), did_you_mean: [], splode: Ash.Error, bread_crumbs: ["Error returned from: Logistics.Freight.Carrier.create"], vars: [], path: [], stacktrace: #Splode.Stacktrace<>, class: :invalid}, %Ash.Error.Invalid.NoSuchInput{calculation: nil, resource: Logistics.Freight.Carrier, action: :create, input: :name, inputs: MapSet.new([]), did_you_mean: [], splode: Ash.Error, bread_crumbs: ["Error returned from: Logistics.Freight.Carrier.create"], vars: [], path: [], stacktrace: #Splode.Stacktrace<>, class: :invalid}]}}
+E              code: shipment = fixture_shipment("S-1")
+E              stacktrace:
+E                /tmp/harbor_pgmigrate_final.exs:57: Harbor.H.create!/3
+E                /tmp/harbor_pgmigrate_final.exs:974: Harbor.Suite.fixture_shipment/1
+E                /tmp/harbor_pgmigrate_final.exs:728: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+tests/test_final_state.py:1115: AssertionError
+______________________ test_t37_shipment_destroy_cascades ______________________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=0, stdout='Getting extensions in curre...parcels_non_negative on table warehouses\n\n10:49:42.770 [info] == Migrated 20260917104830 in 0.0s\n', stderr=''), ...}
+
+    def test_t37_shipment_destroy_cascades(harness):
+>       _scenario(harness, "T37")
+
+tests/test_final_state.py:1306: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=0, stdout='Getting extensions in curre...parcels_non_negative on table warehouses\n\n10:49:42.770 [info] == Migrated 20260917104830 in 0.0s\n', stderr=''), ...}
+scenario_id = 'T37'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+        assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+        name = matches[0]
+        status, detail = harness["results"][name]
+>       assert status == "pass", f"Scenario {scenario_id} failed: {name}\n{detail}"
+E       AssertionError: Scenario T37 failed: test T37 destroying a shipment cascades to its parcels and legs
+E           1) test T37 destroying a shipment cascades to its parcels and legs (Harbor.Suite)
+E              /tmp/harbor_pgmigrate_final.exs:744
+E              ** (MatchError) no match of right hand side value: {:error, %Ash.Error.Invalid{bread_crumbs: ["Error returned from: Logistics.Freight.Carrier.create"],  changeset: "#Changeset<>",  errors: [%Ash.Error.Invalid.NoSuchInput{calculation: nil, resource: Logistics.Freight.Carrier, action: :create, input: :code, inputs: MapSet.new([]), did_you_mean: [], splode: Ash.Error, bread_crumbs: ["Error returned from: Logistics.Freight.Carrier.create"], vars: [], path: [], stacktrace: #Splode.Stacktrace<>, class: :invalid}, %Ash.Error.Invalid.NoSuchInput{calculation: nil, resource: Logistics.Freight.Carrier, action: :create, input: :name, inputs: MapSet.new([]), did_you_mean: [], splode: Ash.Error, bread_crumbs: ["Error returned from: Logistics.Freight.Carrier.create"], vars: [], path: [], stacktrace: #Splode.Stacktrace<>, class: :invalid}]}}
+E              code: shipment = fixture_shipment("S-1")
+E              stacktrace:
+E                /tmp/harbor_pgmigrate_final.exs:57: Harbor.H.create!/3
+E                /tmp/harbor_pgmigrate_final.exs:974: Harbor.Suite.fixture_shipment/1
+E                /tmp/harbor_pgmigrate_final.exs:745: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+tests/test_final_state.py:1115: AssertionError
+__________________ test_t38_origin_warehouse_destroy_nilifies __________________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=0, stdout='Getting extensions in curre...parcels_non_negative on table warehouses\n\n10:49:42.770 [info] == Migrated 20260917104830 in 0.0s\n', stderr=''), ...}
+
+    def test_t38_origin_warehouse_destroy_nilifies(harness):
+>       _scenario(harness, "T38")
+
+tests/test_final_state.py:1310: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=0, stdout='Getting extensions in curre...parcels_non_negative on table warehouses\n\n10:49:42.770 [info] == Migrated 20260917104830 in 0.0s\n', stderr=''), ...}
+scenario_id = 'T38'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+        assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+        name = matches[0]
+        status, detail = harness["results"][name]
+>       assert status == "pass", f"Scenario {scenario_id} failed: {name}\n{detail}"
+E       AssertionError: Scenario T38 failed: test T38 destroying an origin warehouse nils the reference on its shipments
+E           1) test T38 destroying an origin warehouse nils the reference on its shipments (Harbor.Suite)
+E              /tmp/harbor_pgmigrate_final.exs:767
+E              ** (MatchError) no match of right hand side value: {:error, %Ash.Error.Invalid{bread_crumbs: ["Error returned from: Logistics.Freight.Carrier.create"],  changeset: "#Changeset<>",  errors: [%Ash.Error.Invalid.NoSuchInput{calculation: nil, resource: Logistics.Freight.Carrier, action: :create, input: :code, inputs: MapSet.new([]), did_you_mean: [], splode: Ash.Error, bread_crumbs: ["Error returned from: Logistics.Freight.Carrier.create"], vars: [], path: [], stacktrace: #Splode.Stacktrace<>, class: :invalid}, %Ash.Error.Invalid.NoSuchInput{calculation: nil, resource: Logistics.Freight.Carrier, action: :create, input: :name, inputs: MapSet.new([]), did_you_mean: [], splode: Ash.Error, bread_crumbs: ["Error returned from: Logistics.Freight.Carrier.create"], vars: [], path: [], stacktrace: #Splode.Stacktrace<>, class: :invalid}]}}
+E              code: carrier = H.create!(H.carrier(), :create, %{code: "acme", name: "Acme"})
+E              stacktrace:
+E                /tmp/harbor_pgmigrate_final.exs:57: Harbor.H.create!/3
+E                /tmp/harbor_pgmigrate_final.exs:768: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+tests/test_final_state.py:1115: AssertionError
+________________ test_t39_intake_rolls_back_on_rejected_parcel _________________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=0, stdout='Getting extensions in curre...parcels_non_negative on table warehouses\n\n10:49:42.770 [info] == Migrated 20260917104830 in 0.0s\n', stderr=''), ...}
+
+    def test_t39_intake_rolls_back_on_rejected_parcel(harness):
+>       _scenario(harness, "T39")
+
+tests/test_final_state.py:1314: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=0, stdout='Getting extensions in curre...parcels_non_negative on table warehouses\n\n10:49:42.770 [info] == Migrated 20260917104830 in 0.0s\n', stderr=''), ...}
+scenario_id = 'T39'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+        assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+        name = matches[0]
+        status, detail = harness["results"][name]
+>       assert status == "pass", f"Scenario {scenario_id} failed: {name}\n{detail}"
+E       AssertionError: Scenario T39 failed: test T39 a rejected parcel rolls the whole intake back
+E           1) test T39 a rejected parcel rolls the whole intake back (Harbor.Suite)
+E              /tmp/harbor_pgmigrate_final.exs:785
+E              ** (MatchError) no match of right hand side value: {:error, %Ash.Error.Invalid{bread_crumbs: ["Error returned from: Logistics.Freight.Carrier.create"],  changeset: "#Changeset<>",  errors: [%Ash.Error.Invalid.NoSuchInput{calculation: nil, resource: Logistics.Freight.Carrier, action: :create, input: :code, inputs: MapSet.new([]), did_you_mean: [], splode: Ash.Error, bread_crumbs: ["Error returned from: Logistics.Freight.Carrier.create"], vars: [], path: [], stacktrace: #Splode.Stacktrace<>, class: :invalid}, %Ash.Error.Invalid.NoSuchInput{calculation: nil, resource: Logistics.Freight.Carrier, action: :create, input: :name, inputs: MapSet.new([]), did_you_mean: [], splode: Ash.Error, bread_crumbs: ["Error returned from: Logistics.Freight.Carrier.create"], vars: [], path: [], stacktrace: #Splode.Stacktrace<>, class: :invalid}]}}
+E              code: carrier = H.create!(H.carrier(), :create, %{code: "acme", name: "Acme"})
+E              stacktrace:
+E                /tmp/harbor_pgmigrate_final.exs:57: Harbor.H.create!/3
+E                /tmp/harbor_pgmigrate_final.exs:786: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+tests/test_final_state.py:1115: AssertionError
+________________ test_t40_intake_commits_shipment_with_parcels _________________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=0, stdout='Getting extensions in curre...parcels_non_negative on table warehouses\n\n10:49:42.770 [info] == Migrated 20260917104830 in 0.0s\n', stderr=''), ...}
+
+    def test_t40_intake_commits_shipment_with_parcels(harness):
+>       _scenario(harness, "T40")
+
+tests/test_final_state.py:1318: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=0, stdout='Getting extensions in curre...parcels_non_negative on table warehouses\n\n10:49:42.770 [info] == Migrated 20260917104830 in 0.0s\n', stderr=''), ...}
+scenario_id = 'T40'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+        assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+        name = matches[0]
+        status, detail = harness["results"][name]
+>       assert status == "pass", f"Scenario {scenario_id} failed: {name}\n{detail}"
+E       AssertionError: Scenario T40 failed: test T40 a successful intake commits the shipment together with its parcels
+E           1) test T40 a successful intake commits the shipment together with its parcels (Harbor.Suite)
+E              /tmp/harbor_pgmigrate_final.exs:802
+E              ** (MatchError) no match of right hand side value: {:error, %Ash.Error.Invalid{bread_crumbs: ["Error returned from: Logistics.Freight.Carrier.create"],  changeset: "#Changeset<>",  errors: [%Ash.Error.Invalid.NoSuchInput{calculation: nil, resource: Logistics.Freight.Carrier, action: :create, input: :code, inputs: MapSet.new([]), did_you_mean: [], splode: Ash.Error, bread_crumbs: ["Error returned from: Logistics.Freight.Carrier.create"], vars: [], path: [], stacktrace: #Splode.Stacktrace<>, class: :invalid}, %Ash.Error.Invalid.NoSuchInput{calculation: nil, resource: Logistics.Freight.Carrier, action: :create, input: :name, inputs: MapSet.new([]), did_you_mean: [], splode: Ash.Error, bread_crumbs: ["Error returned from: Logistics.Freight.Carrier.create"], vars: [], path: [], stacktrace: #Splode.Stacktrace<>, class: :invalid}]}}
+E              code: carrier = H.create!(H.carrier(), :create, %{code: "acme", name: "Acme"})
+E              stacktrace:
+E                /tmp/harbor_pgmigrate_final.exs:57: Harbor.H.create!/3
+E                /tmp/harbor_pgmigrate_final.exs:803: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+tests/test_final_state.py:1115: AssertionError
+______________________ test_t41_aggregates_are_filterable ______________________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=0, stdout='Getting extensions in curre...parcels_non_negative on table warehouses\n\n10:49:42.770 [info] == Migrated 20260917104830 in 0.0s\n', stderr=''), ...}
+
+    def test_t41_aggregates_are_filterable(harness):
+>       _scenario(harness, "T41")
+
+tests/test_final_state.py:1322: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=0, stdout='Getting extensions in curre...parcels_non_negative on table warehouses\n\n10:49:42.770 [info] == Migrated 20260917104830 in 0.0s\n', stderr=''), ...}
+scenario_id = 'T41'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+        assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+        name = matches[0]
+        status, detail = harness["results"][name]
+>       assert status == "pass", f"Scenario {scenario_id} failed: {name}\n{detail}"
+E       AssertionError: Scenario T41 failed: test T41 the parcel_count and total_weight_grams aggregates are filterable
+E           1) test T41 the parcel_count and total_weight_grams aggregates are filterable (Harbor.Suite)
+E              /tmp/harbor_pgmigrate_final.exs:832
+E              ** (MatchError) no match of right hand side value: {:error, %Ash.Error.Invalid{bread_crumbs: ["Error returned from: Logistics.Freight.Carrier.create"],  changeset: "#Changeset<>",  errors: [%Ash.Error.Invalid.NoSuchInput{calculation: nil, resource: Logistics.Freight.Carrier, action: :create, input: :code, inputs: MapSet.new([]), did_you_mean: [], splode: Ash.Error, bread_crumbs: ["Error returned from: Logistics.Freight.Carrier.create"], vars: [], path: [], stacktrace: #Splode.Stacktrace<>, class: :invalid}, %Ash.Error.Invalid.NoSuchInput{calculation: nil, resource: Logistics.Freight.Carrier, action: :create, input: :name, inputs: MapSet.new([]), did_you_mean: [], splode: Ash.Error, bread_crumbs: ["Error returned from: Logistics.Freight.Carrier.create"], vars: [], path: [], stacktrace: #Splode.Stacktrace<>, class: :invalid}]}}
+E              code: carrier = H.create!(H.carrier(), :create, %{code: "acme", name: "Acme"})
+E              stacktrace:
+E                /tmp/harbor_pgmigrate_final.exs:57: Harbor.H.create!/3
+E                /tmp/harbor_pgmigrate_final.exs:833: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+tests/test_final_state.py:1115: AssertionError
+___________________ test_t42_heavy_calculation_is_filterable ___________________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=0, stdout='Getting extensions in curre...parcels_non_negative on table warehouses\n\n10:49:42.770 [info] == Migrated 20260917104830 in 0.0s\n', stderr=''), ...}
+
+    def test_t42_heavy_calculation_is_filterable(harness):
+>       _scenario(harness, "T42")
+
+tests/test_final_state.py:1326: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=0, stdout='Getting extensions in curre...parcels_non_negative on table warehouses\n\n10:49:42.770 [info] == Migrated 20260917104830 in 0.0s\n', stderr=''), ...}
+scenario_id = 'T42'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+        assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+        name = matches[0]
+        status, detail = harness["results"][name]
+>       assert status == "pass", f"Scenario {scenario_id} failed: {name}\n{detail}"
+E       AssertionError: Scenario T42 failed: test T42 the heavy? calculation is filterable
+E           1) test T42 the heavy? calculation is filterable (Harbor.Suite)
+E              /tmp/harbor_pgmigrate_final.exs:861
+E              ** (MatchError) no match of right hand side value: {:error, %Ash.Error.Invalid{bread_crumbs: ["Error returned from: Logistics.Freight.Carrier.create"],  changeset: "#Changeset<>",  errors: [%Ash.Error.Invalid.NoSuchInput{calculation: nil, resource: Logistics.Freight.Carrier, action: :create, input: :code, inputs: MapSet.new([]), did_you_mean: [], splode: Ash.Error, bread_crumbs: ["Error returned from: Logistics.Freight.Carrier.create"], vars: [], path: [], stacktrace: #Splode.Stacktrace<>, class: :invalid}, %Ash.Error.Invalid.NoSuchInput{calculation: nil, resource: Logistics.Freight.Carrier, action: :create, input: :name, inputs: MapSet.new([]), did_you_mean: [], splode: Ash.Error, bread_crumbs: ["Error returned from: Logistics.Freight.Carrier.create"], vars: [], path: [], stacktrace: #Splode.Stacktrace<>, class: :invalid}]}}
+E              code: carrier = H.create!(H.carrier(), :create, %{code: "acme", name: "Acme"})
+E              stacktrace:
+E                /tmp/harbor_pgmigrate_final.exs:57: Harbor.H.create!/3
+E                /tmp/harbor_pgmigrate_final.exs:862: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+tests/test_final_state.py:1115: AssertionError
+________________ test_t43_aggregate_read_hits_the_database_once ________________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=0, stdout='Getting extensions in curre...parcels_non_negative on table warehouses\n\n10:49:42.770 [info] == Migrated 20260917104830 in 0.0s\n', stderr=''), ...}
+
+    def test_t43_aggregate_read_hits_the_database_once(harness):
+>       _scenario(harness, "T43")
+
+tests/test_final_state.py:1330: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=0, stdout='Getting extensions in curre...parcels_non_negative on table warehouses\n\n10:49:42.770 [info] == Migrated 20260917104830 in 0.0s\n', stderr=''), ...}
+scenario_id = 'T43'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+        assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+        name = matches[0]
+        status, detail = harness["results"][name]
+>       assert status == "pass", f"Scenario {scenario_id} failed: {name}\n{detail}"
+E       AssertionError: Scenario T43 failed: test T43 an aggregate-filtered read reaches the database exactly once
+E           1) test T43 an aggregate-filtered read reaches the database exactly once (Harbor.Suite)
+E              /tmp/harbor_pgmigrate_final.exs:896
+E              ** (MatchError) no match of right hand side value: {:error, %Ash.Error.Invalid{bread_crumbs: ["Error returned from: Logistics.Freight.Carrier.create"],  changeset: "#Changeset<>",  errors: [%Ash.Error.Invalid.NoSuchInput{calculation: nil, resource: Logistics.Freight.Carrier, action: :create, input: :code, inputs: MapSet.new([]), did_you_mean: [], splode: Ash.Error, bread_crumbs: ["Error returned from: Logistics.Freight.Carrier.create"], vars: [], path: [], stacktrace: #Splode.Stacktrace<>, class: :invalid}, %Ash.Error.Invalid.NoSuchInput{calculation: nil, resource: Logistics.Freight.Carrier, action: :create, input: :name, inputs: MapSet.new([]), did_you_mean: [], splode: Ash.Error, bread_crumbs: ["Error returned from: Logistics.Freight.Carrier.create"], vars: [], path: [], stacktrace: #Splode.Stacktrace<>, class: :invalid}]}}
+E              code: carrier = H.create!(H.carrier(), :create, %{code: "acme", name: "Acme"})
+E              stacktrace:
+E                /tmp/harbor_pgmigrate_final.exs:57: Harbor.H.create!/3
+E                /tmp/harbor_pgmigrate_final.exs:897: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+tests/test_final_state.py:1115: AssertionError
+____________ test_t44_booked_at_default_and_scheduled_for_roundtrip ____________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=0, stdout='Getting extensions in curre...parcels_non_negative on table warehouses\n\n10:49:42.770 [info] == Migrated 20260917104830 in 0.0s\n', stderr=''), ...}
+
+    def test_t44_booked_at_default_and_scheduled_for_roundtrip(harness):
+>       _scenario(harness, "T44")
+
+tests/test_final_state.py:1334: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=0, stdout='Getting extensions in curre...parcels_non_negative on table warehouses\n\n10:49:42.770 [info] == Migrated 20260917104830 in 0.0s\n', stderr=''), ...}
+scenario_id = 'T44'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+        assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+        name = matches[0]
+        status, detail = harness["results"][name]
+>       assert status == "pass", f"Scenario {scenario_id} failed: {name}\n{detail}"
+E       AssertionError: Scenario T44 failed: test T44 booked_at falls back to the database default and scheduled_for round-trips
+E           1) test T44 booked_at falls back to the database default and scheduled_for round-trips (Harbor.Suite)
+E              /tmp/harbor_pgmigrate_final.exs:930
+E              ** (MatchError) no match of right hand side value: {:error, %Ash.Error.Invalid{bread_crumbs: ["Error returned from: Logistics.Freight.Carrier.create"],  changeset: "#Changeset<>",  errors: [%Ash.Error.Invalid.NoSuchInput{calculation: nil, resource: Logistics.Freight.Carrier, action: :create, input: :code, inputs: MapSet.new([]), did_you_mean: [], splode: Ash.Error, bread_crumbs: ["Error returned from: Logistics.Freight.Carrier.create"], vars: [], path: [], stacktrace: #Splode.Stacktrace<>, class: :invalid}, %Ash.Error.Invalid.NoSuchInput{calculation: nil, resource: Logistics.Freight.Carrier, action: :create, input: :name, inputs: MapSet.new([]), did_you_mean: [], splode: Ash.Error, bread_crumbs: ["Error returned from: Logistics.Freight.Carrier.create"], vars: [], path: [], stacktrace: #Splode.Stacktrace<>, class: :invalid}]}}
+E              code: carrier = H.create!(H.carrier(), :create, %{code: "acme", name: "Acme"})
+E              stacktrace:
+E                /tmp/harbor_pgmigrate_final.exs:57: Harbor.H.create!/3
+E                /tmp/harbor_pgmigrate_final.exs:931: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+tests/test_final_state.py:1115: AssertionError
+______________ test_t45_repo_transaction_rollback_writes_nothing _______________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=0, stdout='Getting extensions in curre...parcels_non_negative on table warehouses\n\n10:49:42.770 [info] == Migrated 20260917104830 in 0.0s\n', stderr=''), ...}
+
+    def test_t45_repo_transaction_rollback_writes_nothing(harness):
+>       _scenario(harness, "T45")
+
+tests/test_final_state.py:1338: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=0, stdout='Getting extensions in curre...parcels_non_negative on table warehouses\n\n10:49:42.770 [info] == Migrated 20260917104830 in 0.0s\n', stderr=''), ...}
+scenario_id = 'T45'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+        assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+        name = matches[0]
+        status, detail = harness["results"][name]
+>       assert status == "pass", f"Scenario {scenario_id} failed: {name}\n{detail}"
+E       AssertionError: Scenario T45 failed: test T45 a rolled back repo transaction writes nothing
+E           1) test T45 a rolled back repo transaction writes nothing (Harbor.Suite)
+E              /tmp/harbor_pgmigrate_final.exs:948
+E              ** (MatchError) no match of right hand side value: {:error, %Ash.Error.Invalid{bread_crumbs: ["Error returned from: Logistics.Freight.Carrier.create"],  changeset: "#Changeset<>",  errors: [%Ash.Error.Invalid.NoSuchInput{calculation: nil, resource: Logistics.Freight.Carrier, action: :create, input: :code, inputs: MapSet.new([]), did_you_mean: [], splode: Ash.Error, bread_crumbs: ["Error returned from: Logistics.Freight.Carrier.create"], vars: [], path: [], stacktrace: #Splode.Stacktrace<>, class: :invalid}, %Ash.Error.Invalid.NoSuchInput{calculation: nil, resource: Logistics.Freight.Carrier, action: :create, input: :name, inputs: MapSet.new([]), did_you_mean: [], splode: Ash.Error, bread_crumbs: ["Error returned from: Logistics.Freight.Carrier.create"], vars: [], path: [], stacktrace: #Splode.Stacktrace<>, class: :invalid}]}}
+E              code: H.repo().transaction(fn ->
+E              stacktrace:
+E                /tmp/harbor_pgmigrate_final.exs:57: Harbor.H.create!/3
+E                /tmp/harbor_pgmigrate_final.exs:951: anonymous fn/0 in Harbor.Suite."test T45 a rolled back repo transaction writes nothing"/1
+E                (logistics 0.1.0) lib/logistics/repo.ex:2: anonymous fn/1 in Logistics.Repo."transaction (overridable 1)"/2
+E                (ecto 3.14.2) lib/ecto/repo/transaction.ex:11: anonymous fn/3 in Ecto.Repo.Transaction.transact/4
+E                (ecto_sql 3.14.0) lib/ecto/adapters/sql.ex:1481: anonymous fn/3 in Ecto.Adapters.SQL.checkout_or_transaction/4
+E                (db_connection 2.10.2) lib/db_connection.ex:1760: DBConnection.run_transaction/5
+E                /tmp/harbor_pgmigrate_final.exs:950: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+tests/test_final_state.py:1115: AssertionError
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED tests/test_final_state.py::test_project_compiles
+PASSED tests/test_final_state.py::test_codegen_reports_no_pending_changes
+PASSED tests/test_final_state.py::test_ash_reset_rebuilds_the_database
+PASSED tests/test_final_state.py::test_probe_suite_executed
+PASSED tests/test_final_state.py::test_t01_public_schema_contains_exactly_the_five_tables
+PASSED tests/test_final_state.py::test_t02_citext_uuid_ossp_and_ash_functions_installed
+PASSED tests/test_final_state.py::test_t03_carriers_columns
+PASSED tests/test_final_state.py::test_t04_warehouses_columns
+PASSED tests/test_final_state.py::test_t05_shipments_columns
+PASSED tests/test_final_state.py::test_t07_booked_at_defaults_to_now
+PASSED tests/test_final_state.py::test_t08_parcels_and_shipment_legs_columns
+PASSED tests/test_final_state.py::test_t09_primary_keys
+PASSED tests/test_final_state.py::test_t10_shipments_foreign_keys
+PASSED tests/test_final_state.py::test_t11_parcels_and_leg_foreign_keys
+PASSED tests/test_final_state.py::test_t12_exactly_five_foreign_keys
+PASSED tests/test_final_state.py::test_t14_carriers_partial_unique_index
+PASSED tests/test_final_state.py::test_t16_single_fragile_parcel_partial_index
+PASSED tests/test_final_state.py::test_t17_remaining_unique_indexes
+PASSED tests/test_final_state.py::test_t19_check_constraints
+PASSED tests/test_final_state.py::test_t20_generated_migrations_and_snapshots
+PASSED tests/test_final_state.py::test_t21_repo_contract
+PASSED tests/test_final_state.py::test_t22_resources_wired_to_postgres
+FAILED tests/test_final_state.py::test_t06_scheduled_for_is_timestamptz - Ass...
+FAILED tests/test_final_state.py::test_t13_foreign_key_backing_indexes - Asse...
+FAILED tests/test_final_state.py::test_t15_warehouses_partial_unique_index - ...
+FAILED tests/test_final_state.py::test_t18_no_unexpected_indexes - AssertionE...
+FAILED tests/test_final_state.py::test_t23_carrier_code_unique_case_insensitively
+FAILED tests/test_final_state.py::test_t24_carrier_code_reads_case_insensitively
+FAILED tests/test_final_state.py::test_t25_retired_carriers_are_hidden_and_free_their_code
+FAILED tests/test_final_state.py::test_t26_warehouse_codes_unique_among_active
+FAILED tests/test_final_state.py::test_t27_warehouse_capacity_check_constraint
+FAILED tests/test_final_state.py::test_t28_shipment_declared_value_check_constraint
+FAILED tests/test_final_state.py::test_t29_parcel_weight_check_constraint - A...
+FAILED tests/test_final_state.py::test_t30_leg_sequence_check_constraint - As...
+FAILED tests/test_final_state.py::test_t31_shipment_reference_unique - Assert...
+FAILED tests/test_final_state.py::test_t32_parcel_tracking_code_unique - Asse...
+FAILED tests/test_final_state.py::test_t33_single_fragile_parcel_per_shipment
+FAILED tests/test_final_state.py::test_t34_leg_sequence_unique_per_shipment
+FAILED tests/test_final_state.py::test_t35_carrier_destroy_restricted - Asser...
+FAILED tests/test_final_state.py::test_t36_warehouse_destroy_restricted - Ass...
+FAILED tests/test_final_state.py::test_t37_shipment_destroy_cascades - Assert...
+FAILED tests/test_final_state.py::test_t38_origin_warehouse_destroy_nilifies
+FAILED tests/test_final_state.py::test_t39_intake_rolls_back_on_rejected_parcel
+FAILED tests/test_final_state.py::test_t40_intake_commits_shipment_with_parcels
+FAILED tests/test_final_state.py::test_t41_aggregates_are_filterable - Assert...
+FAILED tests/test_final_state.py::test_t42_heavy_calculation_is_filterable - ...
+FAILED tests/test_final_state.py::test_t43_aggregate_read_hits_the_database_once
+FAILED tests/test_final_state.py::test_t44_booked_at_default_and_scheduled_for_roundtrip
+FAILED tests/test_final_state.py::test_t45_repo_transaction_rollback_writes_nothing
+======================== 27 failed, 22 passed in 14.57s ========================

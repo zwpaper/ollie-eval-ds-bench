@@ -1,0 +1,2027 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0
+rootdir: /tests
+plugins: json-ctrf-0.5.3
+collected 42 items
+
+tests/test_final_state.py FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF     [100%]
+
+=================================== FAILURES ===================================
+_____________ test_t01_document_is_authorized_by_policy_authorizer _____________
+
+suite_results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+
+    def test_t01_document_is_authorized_by_policy_authorizer(suite_results):
+>       _check(suite_results, "T01")
+
+tests/test_final_state.py:745: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+scenario = 'T01'
+
+    def _check(results: dict[str, tuple[str, str]], scenario: str) -> None:
+        if "__error__" in results:
+>           pytest.fail(results["__error__"][1])
+E           Failed: The ExUnit contract suite produced no results (exit code 1). Output tail:
+E           Compiling 10 files (.ex)
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor == nil || actor.status != :suspended}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/suspended_check.ex:11:7
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor != nil && actor.global_role == :break_glass}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/break_glass_check.ex:11:7
+E           
+E               error: module Ash.Action is not loaded and could not be found
+E               │
+E             2 │   use Ash.Action
+E               │   ^^^^^^^^^^^^^^
+E               │
+E               └─ lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+E           
+E           
+E           == Compilation error in file lib/orgguard/access/relocate_action.ex ==
+E           ** (CompileError) lib/orgguard/access/relocate_action.ex: cannot compile module OrgGuard.Access.RelocateAction (errors have been logged)
+E               (elixir 1.18.4) expanding macro: Kernel.use/1
+E               lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+
+tests/test_final_state.py:735: Failed
+______________________ test_t02_policies_contain_a_bypass ______________________
+
+suite_results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+
+    def test_t02_policies_contain_a_bypass(suite_results):
+>       _check(suite_results, "T02")
+
+tests/test_final_state.py:749: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+scenario = 'T02'
+
+    def _check(results: dict[str, tuple[str, str]], scenario: str) -> None:
+        if "__error__" in results:
+>           pytest.fail(results["__error__"][1])
+E           Failed: The ExUnit contract suite produced no results (exit code 1). Output tail:
+E           Compiling 10 files (.ex)
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor == nil || actor.status != :suspended}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/suspended_check.ex:11:7
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor != nil && actor.global_role == :break_glass}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/break_glass_check.ex:11:7
+E           
+E               error: module Ash.Action is not loaded and could not be found
+E               │
+E             2 │   use Ash.Action
+E               │   ^^^^^^^^^^^^^^
+E               │
+E               └─ lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+E           
+E           
+E           == Compilation error in file lib/orgguard/access/relocate_action.ex ==
+E           ** (CompileError) lib/orgguard/access/relocate_action.ex: cannot compile module OrgGuard.Access.RelocateAction (errors have been logged)
+E               (elixir 1.18.4) expanding macro: Kernel.use/1
+E               lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+
+tests/test_final_state.py:735: Failed
+____________________ test_t03_a_custom_filter_check_is_used ____________________
+
+suite_results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+
+    def test_t03_a_custom_filter_check_is_used(suite_results):
+>       _check(suite_results, "T03")
+
+tests/test_final_state.py:753: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+scenario = 'T03'
+
+    def _check(results: dict[str, tuple[str, str]], scenario: str) -> None:
+        if "__error__" in results:
+>           pytest.fail(results["__error__"][1])
+E           Failed: The ExUnit contract suite produced no results (exit code 1). Output tail:
+E           Compiling 10 files (.ex)
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor == nil || actor.status != :suspended}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/suspended_check.ex:11:7
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor != nil && actor.global_role == :break_glass}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/break_glass_check.ex:11:7
+E           
+E               error: module Ash.Action is not loaded and could not be found
+E               │
+E             2 │   use Ash.Action
+E               │   ^^^^^^^^^^^^^^
+E               │
+E               └─ lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+E           
+E           
+E           == Compilation error in file lib/orgguard/access/relocate_action.ex ==
+E           ** (CompileError) lib/orgguard/access/relocate_action.ex: cannot compile module OrgGuard.Access.RelocateAction (errors have been logged)
+E               (elixir 1.18.4) expanding macro: Kernel.use/1
+E               lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+
+tests/test_final_state.py:735: Failed
+____________________ test_t04_a_custom_simple_check_is_used ____________________
+
+suite_results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+
+    def test_t04_a_custom_simple_check_is_used(suite_results):
+>       _check(suite_results, "T04")
+
+tests/test_final_state.py:757: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+scenario = 'T04'
+
+    def _check(results: dict[str, tuple[str, str]], scenario: str) -> None:
+        if "__error__" in results:
+>           pytest.fail(results["__error__"][1])
+E           Failed: The ExUnit contract suite produced no results (exit code 1). Output tail:
+E           Compiling 10 files (.ex)
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor == nil || actor.status != :suspended}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/suspended_check.ex:11:7
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor != nil && actor.global_role == :break_glass}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/break_glass_check.ex:11:7
+E           
+E               error: module Ash.Action is not loaded and could not be found
+E               │
+E             2 │   use Ash.Action
+E               │   ^^^^^^^^^^^^^^
+E               │
+E               └─ lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+E           
+E           
+E           == Compilation error in file lib/orgguard/access/relocate_action.ex ==
+E           ** (CompileError) lib/orgguard/access/relocate_action.ex: cannot compile module OrgGuard.Access.RelocateAction (errors have been logged)
+E               (elixir 1.18.4) expanding macro: Kernel.use/1
+E               lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+
+tests/test_final_state.py:735: Failed
+___________________ test_t05_budget_cents_has_a_field_policy ___________________
+
+suite_results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+
+    def test_t05_budget_cents_has_a_field_policy(suite_results):
+>       _check(suite_results, "T05")
+
+tests/test_final_state.py:761: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+scenario = 'T05'
+
+    def _check(results: dict[str, tuple[str, str]], scenario: str) -> None:
+        if "__error__" in results:
+>           pytest.fail(results["__error__"][1])
+E           Failed: The ExUnit contract suite produced no results (exit code 1). Output tail:
+E           Compiling 10 files (.ex)
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor == nil || actor.status != :suspended}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/suspended_check.ex:11:7
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor != nil && actor.global_role == :break_glass}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/break_glass_check.ex:11:7
+E           
+E               error: module Ash.Action is not loaded and could not be found
+E               │
+E             2 │   use Ash.Action
+E               │   ^^^^^^^^^^^^^^
+E               │
+E               └─ lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+E           
+E           
+E           == Compilation error in file lib/orgguard/access/relocate_action.ex ==
+E           ** (CompileError) lib/orgguard/access/relocate_action.ex: cannot compile module OrgGuard.Access.RelocateAction (errors have been logged)
+E               (elixir 1.18.4) expanding macro: Kernel.use/1
+E               lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+
+tests/test_final_state.py:735: Failed
+__________ test_t06_relocate_is_a_generic_action_with_uuid_arguments ___________
+
+suite_results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+
+    def test_t06_relocate_is_a_generic_action_with_uuid_arguments(suite_results):
+>       _check(suite_results, "T06")
+
+tests/test_final_state.py:765: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+scenario = 'T06'
+
+    def _check(results: dict[str, tuple[str, str]], scenario: str) -> None:
+        if "__error__" in results:
+>           pytest.fail(results["__error__"][1])
+E           Failed: The ExUnit contract suite produced no results (exit code 1). Output tail:
+E           Compiling 10 files (.ex)
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor == nil || actor.status != :suspended}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/suspended_check.ex:11:7
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor != nil && actor.global_role == :break_glass}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/break_glass_check.ex:11:7
+E           
+E               error: module Ash.Action is not loaded and could not be found
+E               │
+E             2 │   use Ash.Action
+E               │   ^^^^^^^^^^^^^^
+E               │
+E               └─ lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+E           
+E           
+E           == Compilation error in file lib/orgguard/access/relocate_action.ex ==
+E           ** (CompileError) lib/orgguard/access/relocate_action.ex: cannot compile module OrgGuard.Access.RelocateAction (errors have been logged)
+E               (elixir 1.18.4) expanding macro: Kernel.use/1
+E               lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+
+tests/test_final_state.py:735: Failed
+__________ test_t07_seeded_fixture_is_readable_without_authorization ___________
+
+suite_results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+
+    def test_t07_seeded_fixture_is_readable_without_authorization(suite_results):
+>       _check(suite_results, "T07")
+
+tests/test_final_state.py:769: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+scenario = 'T07'
+
+    def _check(results: dict[str, tuple[str, str]], scenario: str) -> None:
+        if "__error__" in results:
+>           pytest.fail(results["__error__"][1])
+E           Failed: The ExUnit contract suite produced no results (exit code 1). Output tail:
+E           Compiling 10 files (.ex)
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor == nil || actor.status != :suspended}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/suspended_check.ex:11:7
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor != nil && actor.global_role == :break_glass}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/break_glass_check.ex:11:7
+E           
+E               error: module Ash.Action is not loaded and could not be found
+E               │
+E             2 │   use Ash.Action
+E               │   ^^^^^^^^^^^^^^
+E               │
+E               └─ lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+E           
+E           
+E           == Compilation error in file lib/orgguard/access/relocate_action.ex ==
+E           ** (CompileError) lib/orgguard/access/relocate_action.ex: cannot compile module OrgGuard.Access.RelocateAction (errors have been logged)
+E               (elixir 1.18.4) expanding macro: Kernel.use/1
+E               lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+
+tests/test_final_state.py:735: Failed
+______________ test_t08_root_grant_is_inherited_by_the_whole_tree ______________
+
+suite_results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+
+    def test_t08_root_grant_is_inherited_by_the_whole_tree(suite_results):
+>       _check(suite_results, "T08")
+
+tests/test_final_state.py:773: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+scenario = 'T08'
+
+    def _check(results: dict[str, tuple[str, str]], scenario: str) -> None:
+        if "__error__" in results:
+>           pytest.fail(results["__error__"][1])
+E           Failed: The ExUnit contract suite produced no results (exit code 1). Output tail:
+E           Compiling 10 files (.ex)
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor == nil || actor.status != :suspended}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/suspended_check.ex:11:7
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor != nil && actor.global_role == :break_glass}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/break_glass_check.ex:11:7
+E           
+E               error: module Ash.Action is not loaded and could not be found
+E               │
+E             2 │   use Ash.Action
+E               │   ^^^^^^^^^^^^^^
+E               │
+E               └─ lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+E           
+E           
+E           == Compilation error in file lib/orgguard/access/relocate_action.ex ==
+E           ** (CompileError) lib/orgguard/access/relocate_action.ex: cannot compile module OrgGuard.Access.RelocateAction (errors have been logged)
+E               (elixir 1.18.4) expanding macro: Kernel.use/1
+E               lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+
+tests/test_final_state.py:735: Failed
+_______________ test_t09_subtree_grant_reaches_three_levels_down _______________
+
+suite_results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+
+    def test_t09_subtree_grant_reaches_three_levels_down(suite_results):
+>       _check(suite_results, "T09")
+
+tests/test_final_state.py:777: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+scenario = 'T09'
+
+    def _check(results: dict[str, tuple[str, str]], scenario: str) -> None:
+        if "__error__" in results:
+>           pytest.fail(results["__error__"][1])
+E           Failed: The ExUnit contract suite produced no results (exit code 1). Output tail:
+E           Compiling 10 files (.ex)
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor == nil || actor.status != :suspended}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/suspended_check.ex:11:7
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor != nil && actor.global_role == :break_glass}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/break_glass_check.ex:11:7
+E           
+E               error: module Ash.Action is not loaded and could not be found
+E               │
+E             2 │   use Ash.Action
+E               │   ^^^^^^^^^^^^^^
+E               │
+E               └─ lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+E           
+E           
+E           == Compilation error in file lib/orgguard/access/relocate_action.ex ==
+E           ** (CompileError) lib/orgguard/access/relocate_action.ex: cannot compile module OrgGuard.Access.RelocateAction (errors have been logged)
+E               (elixir 1.18.4) expanding macro: Kernel.use/1
+E               lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+
+tests/test_final_state.py:735: Failed
+__________ test_t10_deny_at_a_descendant_cuts_off_the_inherited_grant __________
+
+suite_results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+
+    def test_t10_deny_at_a_descendant_cuts_off_the_inherited_grant(suite_results):
+>       _check(suite_results, "T10")
+
+tests/test_final_state.py:781: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+scenario = 'T10'
+
+    def _check(results: dict[str, tuple[str, str]], scenario: str) -> None:
+        if "__error__" in results:
+>           pytest.fail(results["__error__"][1])
+E           Failed: The ExUnit contract suite produced no results (exit code 1). Output tail:
+E           Compiling 10 files (.ex)
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor == nil || actor.status != :suspended}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/suspended_check.ex:11:7
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor != nil && actor.global_role == :break_glass}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/break_glass_check.ex:11:7
+E           
+E               error: module Ash.Action is not loaded and could not be found
+E               │
+E             2 │   use Ash.Action
+E               │   ^^^^^^^^^^^^^^
+E               │
+E               └─ lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+E           
+E           
+E           == Compilation error in file lib/orgguard/access/relocate_action.ex ==
+E           ** (CompileError) lib/orgguard/access/relocate_action.ex: cannot compile module OrgGuard.Access.RelocateAction (errors have been logged)
+E               (elixir 1.18.4) expanding macro: Kernel.use/1
+E               lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+
+tests/test_final_state.py:735: Failed
+______________ test_t11_grant_below_a_deny_re_establishes_access _______________
+
+suite_results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+
+    def test_t11_grant_below_a_deny_re_establishes_access(suite_results):
+>       _check(suite_results, "T11")
+
+tests/test_final_state.py:785: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+scenario = 'T11'
+
+    def _check(results: dict[str, tuple[str, str]], scenario: str) -> None:
+        if "__error__" in results:
+>           pytest.fail(results["__error__"][1])
+E           Failed: The ExUnit contract suite produced no results (exit code 1). Output tail:
+E           Compiling 10 files (.ex)
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor == nil || actor.status != :suspended}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/suspended_check.ex:11:7
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor != nil && actor.global_role == :break_glass}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/break_glass_check.ex:11:7
+E           
+E               error: module Ash.Action is not loaded and could not be found
+E               │
+E             2 │   use Ash.Action
+E               │   ^^^^^^^^^^^^^^
+E               │
+E               └─ lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+E           
+E           
+E           == Compilation error in file lib/orgguard/access/relocate_action.ex ==
+E           ** (CompileError) lib/orgguard/access/relocate_action.ex: cannot compile module OrgGuard.Access.RelocateAction (errors have been logged)
+E               (elixir 1.18.4) expanding macro: Kernel.use/1
+E               lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+
+tests/test_final_state.py:735: Failed
+_______________ test_t12_actor_without_roles_gets_an_empty_list ________________
+
+suite_results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+
+    def test_t12_actor_without_roles_gets_an_empty_list(suite_results):
+>       _check(suite_results, "T12")
+
+tests/test_final_state.py:789: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+scenario = 'T12'
+
+    def _check(results: dict[str, tuple[str, str]], scenario: str) -> None:
+        if "__error__" in results:
+>           pytest.fail(results["__error__"][1])
+E           Failed: The ExUnit contract suite produced no results (exit code 1). Output tail:
+E           Compiling 10 files (.ex)
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor == nil || actor.status != :suspended}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/suspended_check.ex:11:7
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor != nil && actor.global_role == :break_glass}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/break_glass_check.ex:11:7
+E           
+E               error: module Ash.Action is not loaded and could not be found
+E               │
+E             2 │   use Ash.Action
+E               │   ^^^^^^^^^^^^^^
+E               │
+E               └─ lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+E           
+E           
+E           == Compilation error in file lib/orgguard/access/relocate_action.ex ==
+E           ** (CompileError) lib/orgguard/access/relocate_action.ex: cannot compile module OrgGuard.Access.RelocateAction (errors have been logged)
+E               (elixir 1.18.4) expanding macro: Kernel.use/1
+E               lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+
+tests/test_final_state.py:735: Failed
+____________________ test_t13_nil_actor_gets_an_empty_list _____________________
+
+suite_results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+
+    def test_t13_nil_actor_gets_an_empty_list(suite_results):
+>       _check(suite_results, "T13")
+
+tests/test_final_state.py:793: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+scenario = 'T13'
+
+    def _check(results: dict[str, tuple[str, str]], scenario: str) -> None:
+        if "__error__" in results:
+>           pytest.fail(results["__error__"][1])
+E           Failed: The ExUnit contract suite produced no results (exit code 1). Output tail:
+E           Compiling 10 files (.ex)
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor == nil || actor.status != :suspended}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/suspended_check.ex:11:7
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor != nil && actor.global_role == :break_glass}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/break_glass_check.ex:11:7
+E           
+E               error: module Ash.Action is not loaded and could not be found
+E               │
+E             2 │   use Ash.Action
+E               │   ^^^^^^^^^^^^^^
+E               │
+E               └─ lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+E           
+E           
+E           == Compilation error in file lib/orgguard/access/relocate_action.ex ==
+E           ** (CompileError) lib/orgguard/access/relocate_action.ex: cannot compile module OrgGuard.Access.RelocateAction (errors have been logged)
+E               (elixir 1.18.4) expanding macro: Kernel.use/1
+E               lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+
+tests/test_final_state.py:735: Failed
+_______________ test_t14_suspended_actor_with_roles_is_forbidden _______________
+
+suite_results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+
+    def test_t14_suspended_actor_with_roles_is_forbidden(suite_results):
+>       _check(suite_results, "T14")
+
+tests/test_final_state.py:797: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+scenario = 'T14'
+
+    def _check(results: dict[str, tuple[str, str]], scenario: str) -> None:
+        if "__error__" in results:
+>           pytest.fail(results["__error__"][1])
+E           Failed: The ExUnit contract suite produced no results (exit code 1). Output tail:
+E           Compiling 10 files (.ex)
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor == nil || actor.status != :suspended}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/suspended_check.ex:11:7
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor != nil && actor.global_role == :break_glass}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/break_glass_check.ex:11:7
+E           
+E               error: module Ash.Action is not loaded and could not be found
+E               │
+E             2 │   use Ash.Action
+E               │   ^^^^^^^^^^^^^^
+E               │
+E               └─ lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+E           
+E           
+E           == Compilation error in file lib/orgguard/access/relocate_action.ex ==
+E           ** (CompileError) lib/orgguard/access/relocate_action.ex: cannot compile module OrgGuard.Access.RelocateAction (errors have been logged)
+E               (elixir 1.18.4) expanding macro: Kernel.use/1
+E               lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+
+tests/test_final_state.py:735: Failed
+_____________ test_t15_suspended_actor_without_roles_is_forbidden ______________
+
+suite_results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+
+    def test_t15_suspended_actor_without_roles_is_forbidden(suite_results):
+>       _check(suite_results, "T15")
+
+tests/test_final_state.py:801: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+scenario = 'T15'
+
+    def _check(results: dict[str, tuple[str, str]], scenario: str) -> None:
+        if "__error__" in results:
+>           pytest.fail(results["__error__"][1])
+E           Failed: The ExUnit contract suite produced no results (exit code 1). Output tail:
+E           Compiling 10 files (.ex)
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor == nil || actor.status != :suspended}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/suspended_check.ex:11:7
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor != nil && actor.global_role == :break_glass}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/break_glass_check.ex:11:7
+E           
+E               error: module Ash.Action is not loaded and could not be found
+E               │
+E             2 │   use Ash.Action
+E               │   ^^^^^^^^^^^^^^
+E               │
+E               └─ lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+E           
+E           
+E           == Compilation error in file lib/orgguard/access/relocate_action.ex ==
+E           ** (CompileError) lib/orgguard/access/relocate_action.ex: cannot compile module OrgGuard.Access.RelocateAction (errors have been logged)
+E               (elixir 1.18.4) expanding macro: Kernel.use/1
+E               lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+
+tests/test_final_state.py:735: Failed
+________________ test_t16_break_glass_actor_sees_every_document ________________
+
+suite_results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+
+    def test_t16_break_glass_actor_sees_every_document(suite_results):
+>       _check(suite_results, "T16")
+
+tests/test_final_state.py:805: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+scenario = 'T16'
+
+    def _check(results: dict[str, tuple[str, str]], scenario: str) -> None:
+        if "__error__" in results:
+>           pytest.fail(results["__error__"][1])
+E           Failed: The ExUnit contract suite produced no results (exit code 1). Output tail:
+E           Compiling 10 files (.ex)
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor == nil || actor.status != :suspended}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/suspended_check.ex:11:7
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor != nil && actor.global_role == :break_glass}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/break_glass_check.ex:11:7
+E           
+E               error: module Ash.Action is not loaded and could not be found
+E               │
+E             2 │   use Ash.Action
+E               │   ^^^^^^^^^^^^^^
+E               │
+E               └─ lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+E           
+E           
+E           == Compilation error in file lib/orgguard/access/relocate_action.ex ==
+E           ** (CompileError) lib/orgguard/access/relocate_action.ex: cannot compile module OrgGuard.Access.RelocateAction (errors have been logged)
+E               (elixir 1.18.4) expanding macro: Kernel.use/1
+E               lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+
+tests/test_final_state.py:735: Failed
+____________ test_t17_break_glass_takes_precedence_over_suspension _____________
+
+suite_results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+
+    def test_t17_break_glass_takes_precedence_over_suspension(suite_results):
+>       _check(suite_results, "T17")
+
+tests/test_final_state.py:809: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+scenario = 'T17'
+
+    def _check(results: dict[str, tuple[str, str]], scenario: str) -> None:
+        if "__error__" in results:
+>           pytest.fail(results["__error__"][1])
+E           Failed: The ExUnit contract suite produced no results (exit code 1). Output tail:
+E           Compiling 10 files (.ex)
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor == nil || actor.status != :suspended}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/suspended_check.ex:11:7
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor != nil && actor.global_role == :break_glass}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/break_glass_check.ex:11:7
+E           
+E               error: module Ash.Action is not loaded and could not be found
+E               │
+E             2 │   use Ash.Action
+E               │   ^^^^^^^^^^^^^^
+E               │
+E               └─ lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+E           
+E           
+E           == Compilation error in file lib/orgguard/access/relocate_action.ex ==
+E           ** (CompileError) lib/orgguard/access/relocate_action.ex: cannot compile module OrgGuard.Access.RelocateAction (errors have been logged)
+E               (elixir 1.18.4) expanding macro: Kernel.use/1
+E               lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+
+tests/test_final_state.py:735: Failed
+________________ test_t18_filtered_out_fetch_by_id_is_not_found ________________
+
+suite_results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+
+    def test_t18_filtered_out_fetch_by_id_is_not_found(suite_results):
+>       _check(suite_results, "T18")
+
+tests/test_final_state.py:813: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+scenario = 'T18'
+
+    def _check(results: dict[str, tuple[str, str]], scenario: str) -> None:
+        if "__error__" in results:
+>           pytest.fail(results["__error__"][1])
+E           Failed: The ExUnit contract suite produced no results (exit code 1). Output tail:
+E           Compiling 10 files (.ex)
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor == nil || actor.status != :suspended}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/suspended_check.ex:11:7
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor != nil && actor.global_role == :break_glass}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/break_glass_check.ex:11:7
+E           
+E               error: module Ash.Action is not loaded and could not be found
+E               │
+E             2 │   use Ash.Action
+E               │   ^^^^^^^^^^^^^^
+E               │
+E               └─ lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+E           
+E           
+E           == Compilation error in file lib/orgguard/access/relocate_action.ex ==
+E           ** (CompileError) lib/orgguard/access/relocate_action.ex: cannot compile module OrgGuard.Access.RelocateAction (errors have been logged)
+E               (elixir 1.18.4) expanding macro: Kernel.use/1
+E               lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+
+tests/test_final_state.py:735: Failed
+___________________ test_t19_permitted_fetch_by_id_succeeds ____________________
+
+suite_results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+
+    def test_t19_permitted_fetch_by_id_succeeds(suite_results):
+>       _check(suite_results, "T19")
+
+tests/test_final_state.py:817: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+scenario = 'T19'
+
+    def _check(results: dict[str, tuple[str, str]], scenario: str) -> None:
+        if "__error__" in results:
+>           pytest.fail(results["__error__"][1])
+E           Failed: The ExUnit contract suite produced no results (exit code 1). Output tail:
+E           Compiling 10 files (.ex)
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor == nil || actor.status != :suspended}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/suspended_check.ex:11:7
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor != nil && actor.global_role == :break_glass}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/break_glass_check.ex:11:7
+E           
+E               error: module Ash.Action is not loaded and could not be found
+E               │
+E             2 │   use Ash.Action
+E               │   ^^^^^^^^^^^^^^
+E               │
+E               └─ lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+E           
+E           
+E           == Compilation error in file lib/orgguard/access/relocate_action.ex ==
+E           ** (CompileError) lib/orgguard/access/relocate_action.ex: cannot compile module OrgGuard.Access.RelocateAction (errors have been logged)
+E               (elixir 1.18.4) expanding macro: Kernel.use/1
+E               lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+
+tests/test_final_state.py:735: Failed
+_________________ test_t20_nil_actor_fetch_by_id_is_not_found __________________
+
+suite_results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+
+    def test_t20_nil_actor_fetch_by_id_is_not_found(suite_results):
+>       _check(suite_results, "T20")
+
+tests/test_final_state.py:821: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+scenario = 'T20'
+
+    def _check(results: dict[str, tuple[str, str]], scenario: str) -> None:
+        if "__error__" in results:
+>           pytest.fail(results["__error__"][1])
+E           Failed: The ExUnit contract suite produced no results (exit code 1). Output tail:
+E           Compiling 10 files (.ex)
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor == nil || actor.status != :suspended}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/suspended_check.ex:11:7
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor != nil && actor.global_role == :break_glass}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/break_glass_check.ex:11:7
+E           
+E               error: module Ash.Action is not loaded and could not be found
+E               │
+E             2 │   use Ash.Action
+E               │   ^^^^^^^^^^^^^^
+E               │
+E               └─ lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+E           
+E           
+E           == Compilation error in file lib/orgguard/access/relocate_action.ex ==
+E           ** (CompileError) lib/orgguard/access/relocate_action.ex: cannot compile module OrgGuard.Access.RelocateAction (errors have been logged)
+E               (elixir 1.18.4) expanding macro: Kernel.use/1
+E               lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+
+tests/test_final_state.py:735: Failed
+______________ test_t21_suspended_actor_fetch_by_id_is_forbidden _______________
+
+suite_results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+
+    def test_t21_suspended_actor_fetch_by_id_is_forbidden(suite_results):
+>       _check(suite_results, "T21")
+
+tests/test_final_state.py:825: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+scenario = 'T21'
+
+    def _check(results: dict[str, tuple[str, str]], scenario: str) -> None:
+        if "__error__" in results:
+>           pytest.fail(results["__error__"][1])
+E           Failed: The ExUnit contract suite produced no results (exit code 1). Output tail:
+E           Compiling 10 files (.ex)
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor == nil || actor.status != :suspended}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/suspended_check.ex:11:7
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor != nil && actor.global_role == :break_glass}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/break_glass_check.ex:11:7
+E           
+E               error: module Ash.Action is not loaded and could not be found
+E               │
+E             2 │   use Ash.Action
+E               │   ^^^^^^^^^^^^^^
+E               │
+E               └─ lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+E           
+E           
+E           == Compilation error in file lib/orgguard/access/relocate_action.ex ==
+E           ** (CompileError) lib/orgguard/access/relocate_action.ex: cannot compile module OrgGuard.Access.RelocateAction (errors have been logged)
+E               (elixir 1.18.4) expanding macro: Kernel.use/1
+E               lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+
+tests/test_final_state.py:735: Failed
+_____________________ test_t22_editor_may_update_the_title _____________________
+
+suite_results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+
+    def test_t22_editor_may_update_the_title(suite_results):
+>       _check(suite_results, "T22")
+
+tests/test_final_state.py:829: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+scenario = 'T22'
+
+    def _check(results: dict[str, tuple[str, str]], scenario: str) -> None:
+        if "__error__" in results:
+>           pytest.fail(results["__error__"][1])
+E           Failed: The ExUnit contract suite produced no results (exit code 1). Output tail:
+E           Compiling 10 files (.ex)
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor == nil || actor.status != :suspended}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/suspended_check.ex:11:7
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor != nil && actor.global_role == :break_glass}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/break_glass_check.ex:11:7
+E           
+E               error: module Ash.Action is not loaded and could not be found
+E               │
+E             2 │   use Ash.Action
+E               │   ^^^^^^^^^^^^^^
+E               │
+E               └─ lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+E           
+E           
+E           == Compilation error in file lib/orgguard/access/relocate_action.ex ==
+E           ** (CompileError) lib/orgguard/access/relocate_action.ex: cannot compile module OrgGuard.Access.RelocateAction (errors have been logged)
+E               (elixir 1.18.4) expanding macro: Kernel.use/1
+E               lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+
+tests/test_final_state.py:735: Failed
+________________________ test_t23_viewer_may_not_update ________________________
+
+suite_results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+
+    def test_t23_viewer_may_not_update(suite_results):
+>       _check(suite_results, "T23")
+
+tests/test_final_state.py:833: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+scenario = 'T23'
+
+    def _check(results: dict[str, tuple[str, str]], scenario: str) -> None:
+        if "__error__" in results:
+>           pytest.fail(results["__error__"][1])
+E           Failed: The ExUnit contract suite produced no results (exit code 1). Output tail:
+E           Compiling 10 files (.ex)
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor == nil || actor.status != :suspended}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/suspended_check.ex:11:7
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor != nil && actor.global_role == :break_glass}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/break_glass_check.ex:11:7
+E           
+E               error: module Ash.Action is not loaded and could not be found
+E               │
+E             2 │   use Ash.Action
+E               │   ^^^^^^^^^^^^^^
+E               │
+E               └─ lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+E           
+E           
+E           == Compilation error in file lib/orgguard/access/relocate_action.ex ==
+E           ** (CompileError) lib/orgguard/access/relocate_action.ex: cannot compile module OrgGuard.Access.RelocateAction (errors have been logged)
+E               (elixir 1.18.4) expanding macro: Kernel.use/1
+E               lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+
+tests/test_final_state.py:735: Failed
+_________ test_t24_write_without_view_budget_cannot_change_the_budget __________
+
+suite_results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+
+    def test_t24_write_without_view_budget_cannot_change_the_budget(suite_results):
+>       _check(suite_results, "T24")
+
+tests/test_final_state.py:837: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+scenario = 'T24'
+
+    def _check(results: dict[str, tuple[str, str]], scenario: str) -> None:
+        if "__error__" in results:
+>           pytest.fail(results["__error__"][1])
+E           Failed: The ExUnit contract suite produced no results (exit code 1). Output tail:
+E           Compiling 10 files (.ex)
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor == nil || actor.status != :suspended}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/suspended_check.ex:11:7
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor != nil && actor.global_role == :break_glass}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/break_glass_check.ex:11:7
+E           
+E               error: module Ash.Action is not loaded and could not be found
+E               │
+E             2 │   use Ash.Action
+E               │   ^^^^^^^^^^^^^^
+E               │
+E               └─ lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+E           
+E           
+E           == Compilation error in file lib/orgguard/access/relocate_action.ex ==
+E           ** (CompileError) lib/orgguard/access/relocate_action.ex: cannot compile module OrgGuard.Access.RelocateAction (errors have been logged)
+E               (elixir 1.18.4) expanding macro: Kernel.use/1
+E               lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+
+tests/test_final_state.py:735: Failed
+____________ test_t25_write_plus_view_budget_may_change_the_budget _____________
+
+suite_results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+
+    def test_t25_write_plus_view_budget_may_change_the_budget(suite_results):
+>       _check(suite_results, "T25")
+
+tests/test_final_state.py:841: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+scenario = 'T25'
+
+    def _check(results: dict[str, tuple[str, str]], scenario: str) -> None:
+        if "__error__" in results:
+>           pytest.fail(results["__error__"][1])
+E           Failed: The ExUnit contract suite produced no results (exit code 1). Output tail:
+E           Compiling 10 files (.ex)
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor == nil || actor.status != :suspended}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/suspended_check.ex:11:7
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor != nil && actor.global_role == :break_glass}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/break_glass_check.ex:11:7
+E           
+E               error: module Ash.Action is not loaded and could not be found
+E               │
+E             2 │   use Ash.Action
+E               │   ^^^^^^^^^^^^^^
+E               │
+E               └─ lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+E           
+E           
+E           == Compilation error in file lib/orgguard/access/relocate_action.ex ==
+E           ** (CompileError) lib/orgguard/access/relocate_action.ex: cannot compile module OrgGuard.Access.RelocateAction (errors have been logged)
+E               (elixir 1.18.4) expanding macro: Kernel.use/1
+E               lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+
+tests/test_final_state.py:735: Failed
+_________ test_t26_unit_admin_inherits_the_right_to_change_the_budget __________
+
+suite_results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+
+    def test_t26_unit_admin_inherits_the_right_to_change_the_budget(suite_results):
+>       _check(suite_results, "T26")
+
+tests/test_final_state.py:845: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+scenario = 'T26'
+
+    def _check(results: dict[str, tuple[str, str]], scenario: str) -> None:
+        if "__error__" in results:
+>           pytest.fail(results["__error__"][1])
+E           Failed: The ExUnit contract suite produced no results (exit code 1). Output tail:
+E           Compiling 10 files (.ex)
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor == nil || actor.status != :suspended}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/suspended_check.ex:11:7
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor != nil && actor.global_role == :break_glass}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/break_glass_check.ex:11:7
+E           
+E               error: module Ash.Action is not loaded and could not be found
+E               │
+E             2 │   use Ash.Action
+E               │   ^^^^^^^^^^^^^^
+E               │
+E               └─ lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+E           
+E           
+E           == Compilation error in file lib/orgguard/access/relocate_action.ex ==
+E           ** (CompileError) lib/orgguard/access/relocate_action.ex: cannot compile module OrgGuard.Access.RelocateAction (errors have been logged)
+E               (elixir 1.18.4) expanding macro: Kernel.use/1
+E               lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+
+tests/test_final_state.py:735: Failed
+___________________ test_t27_break_glass_may_update_anything ___________________
+
+suite_results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+
+    def test_t27_break_glass_may_update_anything(suite_results):
+>       _check(suite_results, "T27")
+
+tests/test_final_state.py:849: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+scenario = 'T27'
+
+    def _check(results: dict[str, tuple[str, str]], scenario: str) -> None:
+        if "__error__" in results:
+>           pytest.fail(results["__error__"][1])
+E           Failed: The ExUnit contract suite produced no results (exit code 1). Output tail:
+E           Compiling 10 files (.ex)
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor == nil || actor.status != :suspended}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/suspended_check.ex:11:7
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor != nil && actor.global_role == :break_glass}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/break_glass_check.ex:11:7
+E           
+E               error: module Ash.Action is not loaded and could not be found
+E               │
+E             2 │   use Ash.Action
+E               │   ^^^^^^^^^^^^^^
+E               │
+E               └─ lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+E           
+E           
+E           == Compilation error in file lib/orgguard/access/relocate_action.ex ==
+E           ** (CompileError) lib/orgguard/access/relocate_action.ex: cannot compile module OrgGuard.Access.RelocateAction (errors have been logged)
+E               (elixir 1.18.4) expanding macro: Kernel.use/1
+E               lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+
+tests/test_final_state.py:735: Failed
+_______________ test_t28_auditor_sees_the_budgets_in_its_subtree _______________
+
+suite_results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+
+    def test_t28_auditor_sees_the_budgets_in_its_subtree(suite_results):
+>       _check(suite_results, "T28")
+
+tests/test_final_state.py:853: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+scenario = 'T28'
+
+    def _check(results: dict[str, tuple[str, str]], scenario: str) -> None:
+        if "__error__" in results:
+>           pytest.fail(results["__error__"][1])
+E           Failed: The ExUnit contract suite produced no results (exit code 1). Output tail:
+E           Compiling 10 files (.ex)
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor == nil || actor.status != :suspended}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/suspended_check.ex:11:7
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor != nil && actor.global_role == :break_glass}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/break_glass_check.ex:11:7
+E           
+E               error: module Ash.Action is not loaded and could not be found
+E               │
+E             2 │   use Ash.Action
+E               │   ^^^^^^^^^^^^^^
+E               │
+E               └─ lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+E           
+E           
+E           == Compilation error in file lib/orgguard/access/relocate_action.ex ==
+E           ** (CompileError) lib/orgguard/access/relocate_action.ex: cannot compile module OrgGuard.Access.RelocateAction (errors have been logged)
+E               (elixir 1.18.4) expanding macro: Kernel.use/1
+E               lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+
+tests/test_final_state.py:735: Failed
+_____ test_t29_reader_without_view_budget_gets_the_forbidden_field_marker ______
+
+suite_results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+
+    def test_t29_reader_without_view_budget_gets_the_forbidden_field_marker(suite_results):
+>       _check(suite_results, "T29")
+
+tests/test_final_state.py:857: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+scenario = 'T29'
+
+    def _check(results: dict[str, tuple[str, str]], scenario: str) -> None:
+        if "__error__" in results:
+>           pytest.fail(results["__error__"][1])
+E           Failed: The ExUnit contract suite produced no results (exit code 1). Output tail:
+E           Compiling 10 files (.ex)
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor == nil || actor.status != :suspended}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/suspended_check.ex:11:7
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor != nil && actor.global_role == :break_glass}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/break_glass_check.ex:11:7
+E           
+E               error: module Ash.Action is not loaded and could not be found
+E               │
+E             2 │   use Ash.Action
+E               │   ^^^^^^^^^^^^^^
+E               │
+E               └─ lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+E           
+E           
+E           == Compilation error in file lib/orgguard/access/relocate_action.ex ==
+E           ** (CompileError) lib/orgguard/access/relocate_action.ex: cannot compile module OrgGuard.Access.RelocateAction (errors have been logged)
+E               (elixir 1.18.4) expanding macro: Kernel.use/1
+E               lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+
+tests/test_final_state.py:735: Failed
+____________________ test_t30_break_glass_sees_every_budget ____________________
+
+suite_results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+
+    def test_t30_break_glass_sees_every_budget(suite_results):
+>       _check(suite_results, "T30")
+
+tests/test_final_state.py:861: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+scenario = 'T30'
+
+    def _check(results: dict[str, tuple[str, str]], scenario: str) -> None:
+        if "__error__" in results:
+>           pytest.fail(results["__error__"][1])
+E           Failed: The ExUnit contract suite produced no results (exit code 1). Output tail:
+E           Compiling 10 files (.ex)
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor == nil || actor.status != :suspended}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/suspended_check.ex:11:7
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor != nil && actor.global_role == :break_glass}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/break_glass_check.ex:11:7
+E           
+E               error: module Ash.Action is not loaded and could not be found
+E               │
+E             2 │   use Ash.Action
+E               │   ^^^^^^^^^^^^^^
+E               │
+E               └─ lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+E           
+E           
+E           == Compilation error in file lib/orgguard/access/relocate_action.ex ==
+E           ** (CompileError) lib/orgguard/access/relocate_action.ex: cannot compile module OrgGuard.Access.RelocateAction (errors have been logged)
+E               (elixir 1.18.4) expanding macro: Kernel.use/1
+E               lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+
+tests/test_final_state.py:735: Failed
+______________________ test_t31_view_budget_is_inherited _______________________
+
+suite_results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+
+    def test_t31_view_budget_is_inherited(suite_results):
+>       _check(suite_results, "T31")
+
+tests/test_final_state.py:865: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+scenario = 'T31'
+
+    def _check(results: dict[str, tuple[str, str]], scenario: str) -> None:
+        if "__error__" in results:
+>           pytest.fail(results["__error__"][1])
+E           Failed: The ExUnit contract suite produced no results (exit code 1). Output tail:
+E           Compiling 10 files (.ex)
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor == nil || actor.status != :suspended}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/suspended_check.ex:11:7
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor != nil && actor.global_role == :break_glass}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/break_glass_check.ex:11:7
+E           
+E               error: module Ash.Action is not loaded and could not be found
+E               │
+E             2 │   use Ash.Action
+E               │   ^^^^^^^^^^^^^^
+E               │
+E               └─ lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+E           
+E           
+E           == Compilation error in file lib/orgguard/access/relocate_action.ex ==
+E           ** (CompileError) lib/orgguard/access/relocate_action.ex: cannot compile module OrgGuard.Access.RelocateAction (errors have been logged)
+E               (elixir 1.18.4) expanding macro: Kernel.use/1
+E               lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+
+tests/test_final_state.py:735: Failed
+_________ test_t32_destroy_without_the_delete_capability_is_forbidden __________
+
+suite_results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+
+    def test_t32_destroy_without_the_delete_capability_is_forbidden(suite_results):
+>       _check(suite_results, "T32")
+
+tests/test_final_state.py:869: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+scenario = 'T32'
+
+    def _check(results: dict[str, tuple[str, str]], scenario: str) -> None:
+        if "__error__" in results:
+>           pytest.fail(results["__error__"][1])
+E           Failed: The ExUnit contract suite produced no results (exit code 1). Output tail:
+E           Compiling 10 files (.ex)
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor == nil || actor.status != :suspended}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/suspended_check.ex:11:7
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor != nil && actor.global_role == :break_glass}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/break_glass_check.ex:11:7
+E           
+E               error: module Ash.Action is not loaded and could not be found
+E               │
+E             2 │   use Ash.Action
+E               │   ^^^^^^^^^^^^^^
+E               │
+E               └─ lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+E           
+E           
+E           == Compilation error in file lib/orgguard/access/relocate_action.ex ==
+E           ** (CompileError) lib/orgguard/access/relocate_action.ex: cannot compile module OrgGuard.Access.RelocateAction (errors have been logged)
+E               (elixir 1.18.4) expanding macro: Kernel.use/1
+E               lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+
+tests/test_final_state.py:735: Failed
+_______________ test_t33_unit_admin_and_break_glass_may_destroy ________________
+
+suite_results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+
+    def test_t33_unit_admin_and_break_glass_may_destroy(suite_results):
+>       _check(suite_results, "T33")
+
+tests/test_final_state.py:873: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+scenario = 'T33'
+
+    def _check(results: dict[str, tuple[str, str]], scenario: str) -> None:
+        if "__error__" in results:
+>           pytest.fail(results["__error__"][1])
+E           Failed: The ExUnit contract suite produced no results (exit code 1). Output tail:
+E           Compiling 10 files (.ex)
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor == nil || actor.status != :suspended}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/suspended_check.ex:11:7
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor != nil && actor.global_role == :break_glass}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/break_glass_check.ex:11:7
+E           
+E               error: module Ash.Action is not loaded and could not be found
+E               │
+E             2 │   use Ash.Action
+E               │   ^^^^^^^^^^^^^^
+E               │
+E               └─ lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+E           
+E           
+E           == Compilation error in file lib/orgguard/access/relocate_action.ex ==
+E           ** (CompileError) lib/orgguard/access/relocate_action.ex: cannot compile module OrgGuard.Access.RelocateAction (errors have been logged)
+E               (elixir 1.18.4) expanding macro: Kernel.use/1
+E               lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+
+tests/test_final_state.py:735: Failed
+______________ test_t34_create_with_the_write_capability_succeeds ______________
+
+suite_results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+
+    def test_t34_create_with_the_write_capability_succeeds(suite_results):
+>       _check(suite_results, "T34")
+
+tests/test_final_state.py:877: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+scenario = 'T34'
+
+    def _check(results: dict[str, tuple[str, str]], scenario: str) -> None:
+        if "__error__" in results:
+>           pytest.fail(results["__error__"][1])
+E           Failed: The ExUnit contract suite produced no results (exit code 1). Output tail:
+E           Compiling 10 files (.ex)
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor == nil || actor.status != :suspended}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/suspended_check.ex:11:7
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor != nil && actor.global_role == :break_glass}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/break_glass_check.ex:11:7
+E           
+E               error: module Ash.Action is not loaded and could not be found
+E               │
+E             2 │   use Ash.Action
+E               │   ^^^^^^^^^^^^^^
+E               │
+E               └─ lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+E           
+E           
+E           == Compilation error in file lib/orgguard/access/relocate_action.ex ==
+E           ** (CompileError) lib/orgguard/access/relocate_action.ex: cannot compile module OrgGuard.Access.RelocateAction (errors have been logged)
+E               (elixir 1.18.4) expanding macro: Kernel.use/1
+E               lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+
+tests/test_final_state.py:735: Failed
+__________ test_t35_create_without_the_write_capability_is_forbidden ___________
+
+suite_results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+
+    def test_t35_create_without_the_write_capability_is_forbidden(suite_results):
+>       _check(suite_results, "T35")
+
+tests/test_final_state.py:881: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+scenario = 'T35'
+
+    def _check(results: dict[str, tuple[str, str]], scenario: str) -> None:
+        if "__error__" in results:
+>           pytest.fail(results["__error__"][1])
+E           Failed: The ExUnit contract suite produced no results (exit code 1). Output tail:
+E           Compiling 10 files (.ex)
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor == nil || actor.status != :suspended}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/suspended_check.ex:11:7
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor != nil && actor.global_role == :break_glass}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/break_glass_check.ex:11:7
+E           
+E               error: module Ash.Action is not loaded and could not be found
+E               │
+E             2 │   use Ash.Action
+E               │   ^^^^^^^^^^^^^^
+E               │
+E               └─ lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+E           
+E           
+E           == Compilation error in file lib/orgguard/access/relocate_action.ex ==
+E           ** (CompileError) lib/orgguard/access/relocate_action.ex: cannot compile module OrgGuard.Access.RelocateAction (errors have been logged)
+E               (elixir 1.18.4) expanding macro: Kernel.use/1
+E               lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+
+tests/test_final_state.py:735: Failed
+___________ test_t36_relocation_succeeds_when_both_ends_are_in_scope ___________
+
+suite_results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+
+    def test_t36_relocation_succeeds_when_both_ends_are_in_scope(suite_results):
+>       _check(suite_results, "T36")
+
+tests/test_final_state.py:885: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+scenario = 'T36'
+
+    def _check(results: dict[str, tuple[str, str]], scenario: str) -> None:
+        if "__error__" in results:
+>           pytest.fail(results["__error__"][1])
+E           Failed: The ExUnit contract suite produced no results (exit code 1). Output tail:
+E           Compiling 10 files (.ex)
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor == nil || actor.status != :suspended}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/suspended_check.ex:11:7
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor != nil && actor.global_role == :break_glass}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/break_glass_check.ex:11:7
+E           
+E               error: module Ash.Action is not loaded and could not be found
+E               │
+E             2 │   use Ash.Action
+E               │   ^^^^^^^^^^^^^^
+E               │
+E               └─ lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+E           
+E           
+E           == Compilation error in file lib/orgguard/access/relocate_action.ex ==
+E           ** (CompileError) lib/orgguard/access/relocate_action.ex: cannot compile module OrgGuard.Access.RelocateAction (errors have been logged)
+E               (elixir 1.18.4) expanding macro: Kernel.use/1
+E               lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+
+tests/test_final_state.py:735: Failed
+___________ test_t37_relocation_without_the_capability_is_forbidden ____________
+
+suite_results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+
+    def test_t37_relocation_without_the_capability_is_forbidden(suite_results):
+>       _check(suite_results, "T37")
+
+tests/test_final_state.py:889: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+scenario = 'T37'
+
+    def _check(results: dict[str, tuple[str, str]], scenario: str) -> None:
+        if "__error__" in results:
+>           pytest.fail(results["__error__"][1])
+E           Failed: The ExUnit contract suite produced no results (exit code 1). Output tail:
+E           Compiling 10 files (.ex)
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor == nil || actor.status != :suspended}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/suspended_check.ex:11:7
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor != nil && actor.global_role == :break_glass}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/break_glass_check.ex:11:7
+E           
+E               error: module Ash.Action is not loaded and could not be found
+E               │
+E             2 │   use Ash.Action
+E               │   ^^^^^^^^^^^^^^
+E               │
+E               └─ lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+E           
+E           
+E           == Compilation error in file lib/orgguard/access/relocate_action.ex ==
+E           ** (CompileError) lib/orgguard/access/relocate_action.ex: cannot compile module OrgGuard.Access.RelocateAction (errors have been logged)
+E               (elixir 1.18.4) expanding macro: Kernel.use/1
+E               lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+
+tests/test_final_state.py:735: Failed
+________ test_t38_relocation_with_only_the_source_in_scope_is_forbidden ________
+
+suite_results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+
+    def test_t38_relocation_with_only_the_source_in_scope_is_forbidden(suite_results):
+>       _check(suite_results, "T38")
+
+tests/test_final_state.py:893: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+scenario = 'T38'
+
+    def _check(results: dict[str, tuple[str, str]], scenario: str) -> None:
+        if "__error__" in results:
+>           pytest.fail(results["__error__"][1])
+E           Failed: The ExUnit contract suite produced no results (exit code 1). Output tail:
+E           Compiling 10 files (.ex)
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor == nil || actor.status != :suspended}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/suspended_check.ex:11:7
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor != nil && actor.global_role == :break_glass}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/break_glass_check.ex:11:7
+E           
+E               error: module Ash.Action is not loaded and could not be found
+E               │
+E             2 │   use Ash.Action
+E               │   ^^^^^^^^^^^^^^
+E               │
+E               └─ lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+E           
+E           
+E           == Compilation error in file lib/orgguard/access/relocate_action.ex ==
+E           ** (CompileError) lib/orgguard/access/relocate_action.ex: cannot compile module OrgGuard.Access.RelocateAction (errors have been logged)
+E               (elixir 1.18.4) expanding macro: Kernel.use/1
+E               lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+
+tests/test_final_state.py:735: Failed
+___________ test_t39_can_update_document_matches_the_update_contract ___________
+
+suite_results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+
+    def test_t39_can_update_document_matches_the_update_contract(suite_results):
+>       _check(suite_results, "T39")
+
+tests/test_final_state.py:897: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+scenario = 'T39'
+
+    def _check(results: dict[str, tuple[str, str]], scenario: str) -> None:
+        if "__error__" in results:
+>           pytest.fail(results["__error__"][1])
+E           Failed: The ExUnit contract suite produced no results (exit code 1). Output tail:
+E           Compiling 10 files (.ex)
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor == nil || actor.status != :suspended}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/suspended_check.ex:11:7
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor != nil && actor.global_role == :break_glass}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/break_glass_check.ex:11:7
+E           
+E               error: module Ash.Action is not loaded and could not be found
+E               │
+E             2 │   use Ash.Action
+E               │   ^^^^^^^^^^^^^^
+E               │
+E               └─ lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+E           
+E           
+E           == Compilation error in file lib/orgguard/access/relocate_action.ex ==
+E           ** (CompileError) lib/orgguard/access/relocate_action.ex: cannot compile module OrgGuard.Access.RelocateAction (errors have been logged)
+E               (elixir 1.18.4) expanding macro: Kernel.use/1
+E               lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+
+tests/test_final_state.py:735: Failed
+__________ test_t40_can_destroy_document_matches_the_destroy_contract __________
+
+suite_results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+
+    def test_t40_can_destroy_document_matches_the_destroy_contract(suite_results):
+>       _check(suite_results, "T40")
+
+tests/test_final_state.py:901: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+scenario = 'T40'
+
+    def _check(results: dict[str, tuple[str, str]], scenario: str) -> None:
+        if "__error__" in results:
+>           pytest.fail(results["__error__"][1])
+E           Failed: The ExUnit contract suite produced no results (exit code 1). Output tail:
+E           Compiling 10 files (.ex)
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor == nil || actor.status != :suspended}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/suspended_check.ex:11:7
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor != nil && actor.global_role == :break_glass}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/break_glass_check.ex:11:7
+E           
+E               error: module Ash.Action is not loaded and could not be found
+E               │
+E             2 │   use Ash.Action
+E               │   ^^^^^^^^^^^^^^
+E               │
+E               └─ lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+E           
+E           
+E           == Compilation error in file lib/orgguard/access/relocate_action.ex ==
+E           ** (CompileError) lib/orgguard/access/relocate_action.ex: cannot compile module OrgGuard.Access.RelocateAction (errors have been logged)
+E               (elixir 1.18.4) expanding macro: Kernel.use/1
+E               lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+
+tests/test_final_state.py:735: Failed
+___________ test_t41_can_create_document_matches_the_create_contract ___________
+
+suite_results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+
+    def test_t41_can_create_document_matches_the_create_contract(suite_results):
+>       _check(suite_results, "T41")
+
+tests/test_final_state.py:905: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+scenario = 'T41'
+
+    def _check(results: dict[str, tuple[str, str]], scenario: str) -> None:
+        if "__error__" in results:
+>           pytest.fail(results["__error__"][1])
+E           Failed: The ExUnit contract suite produced no results (exit code 1). Output tail:
+E           Compiling 10 files (.ex)
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor == nil || actor.status != :suspended}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/suspended_check.ex:11:7
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor != nil && actor.global_role == :break_glass}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/break_glass_check.ex:11:7
+E           
+E               error: module Ash.Action is not loaded and could not be found
+E               │
+E             2 │   use Ash.Action
+E               │   ^^^^^^^^^^^^^^
+E               │
+E               └─ lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+E           
+E           
+E           == Compilation error in file lib/orgguard/access/relocate_action.ex ==
+E           ** (CompileError) lib/orgguard/access/relocate_action.ex: cannot compile module OrgGuard.Access.RelocateAction (errors have been logged)
+E               (elixir 1.18.4) expanding macro: Kernel.use/1
+E               lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+
+tests/test_final_state.py:735: Failed
+________ test_t42_can_relocate_document_matches_the_relocation_contract ________
+
+suite_results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+
+    def test_t42_can_relocate_document_matches_the_relocation_contract(suite_results):
+>       _check(suite_results, "T42")
+
+tests/test_final_state.py:909: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+results = {'__error__': ('failed', 'The ExUnit contract suite produced no results (exit code 1). Output tail:\nCompiling 10 file...expanding macro: Kernel.use/1\n    lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)')}
+scenario = 'T42'
+
+    def _check(results: dict[str, tuple[str, str]], scenario: str) -> None:
+        if "__error__" in results:
+>           pytest.fail(results["__error__"][1])
+E           Failed: The ExUnit contract suite produced no results (exit code 1). Output tail:
+E           Compiling 10 files (.ex)
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor == nil || actor.status != :suspended}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/suspended_check.ex:11:7
+E           
+E               warning: this clause for strict_check/3 cannot match because a previous clause at line 2 always matches
+E               │
+E            11 │   def strict_check(actor, _, _), do: {:ok, actor != nil && actor.global_role == :break_glass}
+E               │       ~
+E               │
+E               └─ lib/orgguard/access/break_glass_check.ex:11:7
+E           
+E               error: module Ash.Action is not loaded and could not be found
+E               │
+E             2 │   use Ash.Action
+E               │   ^^^^^^^^^^^^^^
+E               │
+E               └─ lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+E           
+E           
+E           == Compilation error in file lib/orgguard/access/relocate_action.ex ==
+E           ** (CompileError) lib/orgguard/access/relocate_action.ex: cannot compile module OrgGuard.Access.RelocateAction (errors have been logged)
+E               (elixir 1.18.4) expanding macro: Kernel.use/1
+E               lib/orgguard/access/relocate_action.ex:2: OrgGuard.Access.RelocateAction (module)
+
+tests/test_final_state.py:735: Failed
+=========================== short test summary info ============================
+FAILED tests/test_final_state.py::test_t01_document_is_authorized_by_policy_authorizer
+FAILED tests/test_final_state.py::test_t02_policies_contain_a_bypass - Failed...
+FAILED tests/test_final_state.py::test_t03_a_custom_filter_check_is_used - Fa...
+FAILED tests/test_final_state.py::test_t04_a_custom_simple_check_is_used - Fa...
+FAILED tests/test_final_state.py::test_t05_budget_cents_has_a_field_policy - ...
+FAILED tests/test_final_state.py::test_t06_relocate_is_a_generic_action_with_uuid_arguments
+FAILED tests/test_final_state.py::test_t07_seeded_fixture_is_readable_without_authorization
+FAILED tests/test_final_state.py::test_t08_root_grant_is_inherited_by_the_whole_tree
+FAILED tests/test_final_state.py::test_t09_subtree_grant_reaches_three_levels_down
+FAILED tests/test_final_state.py::test_t10_deny_at_a_descendant_cuts_off_the_inherited_grant
+FAILED tests/test_final_state.py::test_t11_grant_below_a_deny_re_establishes_access
+FAILED tests/test_final_state.py::test_t12_actor_without_roles_gets_an_empty_list
+FAILED tests/test_final_state.py::test_t13_nil_actor_gets_an_empty_list - Fai...
+FAILED tests/test_final_state.py::test_t14_suspended_actor_with_roles_is_forbidden
+FAILED tests/test_final_state.py::test_t15_suspended_actor_without_roles_is_forbidden
+FAILED tests/test_final_state.py::test_t16_break_glass_actor_sees_every_document
+FAILED tests/test_final_state.py::test_t17_break_glass_takes_precedence_over_suspension
+FAILED tests/test_final_state.py::test_t18_filtered_out_fetch_by_id_is_not_found
+FAILED tests/test_final_state.py::test_t19_permitted_fetch_by_id_succeeds - F...
+FAILED tests/test_final_state.py::test_t20_nil_actor_fetch_by_id_is_not_found
+FAILED tests/test_final_state.py::test_t21_suspended_actor_fetch_by_id_is_forbidden
+FAILED tests/test_final_state.py::test_t22_editor_may_update_the_title - Fail...
+FAILED tests/test_final_state.py::test_t23_viewer_may_not_update - Failed: Th...
+FAILED tests/test_final_state.py::test_t24_write_without_view_budget_cannot_change_the_budget
+FAILED tests/test_final_state.py::test_t25_write_plus_view_budget_may_change_the_budget
+FAILED tests/test_final_state.py::test_t26_unit_admin_inherits_the_right_to_change_the_budget
+FAILED tests/test_final_state.py::test_t27_break_glass_may_update_anything - ...
+FAILED tests/test_final_state.py::test_t28_auditor_sees_the_budgets_in_its_subtree
+FAILED tests/test_final_state.py::test_t29_reader_without_view_budget_gets_the_forbidden_field_marker
+FAILED tests/test_final_state.py::test_t30_break_glass_sees_every_budget - Fa...
+FAILED tests/test_final_state.py::test_t31_view_budget_is_inherited - Failed:...
+FAILED tests/test_final_state.py::test_t32_destroy_without_the_delete_capability_is_forbidden
+FAILED tests/test_final_state.py::test_t33_unit_admin_and_break_glass_may_destroy
+FAILED tests/test_final_state.py::test_t34_create_with_the_write_capability_succeeds
+FAILED tests/test_final_state.py::test_t35_create_without_the_write_capability_is_forbidden
+FAILED tests/test_final_state.py::test_t36_relocation_succeeds_when_both_ends_are_in_scope
+FAILED tests/test_final_state.py::test_t37_relocation_without_the_capability_is_forbidden
+FAILED tests/test_final_state.py::test_t38_relocation_with_only_the_source_in_scope_is_forbidden
+FAILED tests/test_final_state.py::test_t39_can_update_document_matches_the_update_contract
+FAILED tests/test_final_state.py::test_t40_can_destroy_document_matches_the_destroy_contract
+FAILED tests/test_final_state.py::test_t41_can_create_document_matches_the_create_contract
+FAILED tests/test_final_state.py::test_t42_can_relocate_document_matches_the_relocation_contract
+============================== 42 failed in 3.75s ==============================

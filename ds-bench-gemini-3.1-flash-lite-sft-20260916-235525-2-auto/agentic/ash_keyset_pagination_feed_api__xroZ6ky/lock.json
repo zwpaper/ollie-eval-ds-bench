@@ -1,0 +1,40 @@
+{
+    "schema_version": 2,
+    "task": {
+        "name": "ash_keyset_pagination_feed_api",
+        "type": "local",
+        "digest": "sha256:e96178679c0796d752ff643baa96dd85247f3953e71323167e8fe29d5e872d23",
+        "source": "ds-bench",
+        "path": "/home/kweizh/ollie/dataset/eval/tasks/ds-bench/ash_keyset_pagination_feed_api"
+    },
+    "install_only": false,
+    "timeout_multiplier": 10.0,
+    "agent": {
+        "name": "ollie.agent:OllieAgent",
+        "model_name": "gemini-3.1-flash-lite-sft-20260916-235525@2",
+        "skills": [],
+        "resume_trajectory": false,
+        "extra_allowed_hosts": [],
+        "kwargs": {
+            "max_steps": 100,
+            "reasoning_effort": "auto"
+        },
+        "mcp_servers": []
+    },
+    "bridge_inputs": {},
+    "skills": [],
+    "environment": {
+        "type": "docker",
+        "force_build": false,
+        "delete": true,
+        "cpu_enforcement_policy": "auto",
+        "memory_enforcement_policy": "auto",
+        "extra_docker_compose": [],
+        "kwargs": {},
+        "extra_allowed_hosts": []
+    },
+    "verifier": {
+        "disable": false,
+        "environment_mode": "shared"
+    }
+}

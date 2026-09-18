@@ -1,0 +1,398 @@
+{
+    "reportFormat": "CTRF",
+    "specVersion": "0.0.0",
+    "timestamp": "2026-09-17T11:04:41.229365+00:00",
+    "generatedBy": "pytest",
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "7.4.4"
+        },
+        "summary": {
+            "tests": 35,
+            "passed": 17,
+            "failed": 18,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1789643077477,
+            "stop": 1789643081229
+        },
+        "environment": {
+            "buildName": "Pytest JSON CTRF Report",
+            "buildNumber": "000",
+            "buildUrl": "https://ctrf.io"
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_t01_manual_relationships_declare_their_modules",
+                "status": "passed",
+                "duration": 3538,
+                "start": 1789643077502,
+                "stop": 1789643081040,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_t02_manual_actions_declare_their_modules",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789643081040,
+                "stop": 1789643081041,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_t03_manual_actions_expose_the_required_arguments",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789643081041,
+                "stop": 1789643081042,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_t04_reply_count_aggregate_counts_direct_replies",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789643081042,
+                "stop": 1789643081043,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_t05_recent_messages_is_a_per_thread_top_three",
+                "status": "passed",
+                "duration": 0,
+                "start": 1789643081044,
+                "stop": 1789643081044,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_t06_recent_messages_is_empty_for_a_thread_without_messages",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789643081044,
+                "stop": 1789643081045,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_t07_recent_messages_returns_fewer_than_three_when_available",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789643081045,
+                "stop": 1789643081046,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_t08_recent_messages_breaks_position_ties_by_ascending_id",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789643081046,
+                "stop": 1789643081047,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_t09_recent_messages_filters_before_truncating",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 22,
+                "start": 1789643081047,
+                "stop": 1789643081069,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "suite = ({'T01': ('PASS', ''), 'T02': ('PASS', ''), 'T03': ('PASS', ''), 'T04': ('PASS', ''), ...}, '`mix run /tmp/harbor_manu...n    \u2502\\n    \u2514\u2500 lib/thread_graph/forum/threads/fork_thread.ex:43:20: ThreadGraph.Forum.Threads.ForkThread.create/3\\n\\n')\n\n    def test_t09_recent_messages_filters_before_truncating(suite):\n>       _assert_scenario(suite, \"T09\")\n\n/tests/test_final_state.py:928: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nsuite = ({'T01': ('PASS', ''), 'T02': ('PASS', ''), 'T03': ('PASS', ''), 'T04': ('PASS', ''), ...}, '`mix run /tmp/harbor_manu...n    \u2502\\n    \u2514\u2500 lib/thread_graph/forum/threads/fork_thread.ex:43:20: ThreadGraph.Forum.Threads.ForkThread.create/3\\n\\n')\nscenario_id = 'T09'\n\n    def _assert_scenario(suite, scenario_id):\n        results, diagnostics = suite\n        assert scenario_id in results, (\n            f\"Scenario {scenario_id} did not run. The project most likely failed to \"\n            f\"compile or the suite crashed.\\n{diagnostics}\"\n        )\n        status, detail = results[scenario_id]\n>       assert status == \"PASS\", f\"Scenario {scenario_id} failed:\\n{detail}\"\nE       AssertionError: Scenario T09 failed:\nE           1) test T09 recent_messages applies the load query filter before truncating (Harbor.Suite)\nE              /tmp/harbor_manual_graph.exs:378\nE              Assertion with == failed\nE              code:  assert bodies(threads[\"t3\"].recent_messages) == [\"gamma-2\", \"gamma-4\"]\nE              left:  [\"gamma-3\", \"gamma-2\", \"gamma-1\"]\nE              right: [\"gamma-2\", \"gamma-4\"]\nE              stacktrace:\nE                /tmp/harbor_manual_graph.exs:385: (test)\nE         \nE       assert 'FAIL' == 'PASS'\nE         - PASS\nE         + FAIL\n\n/tests/test_final_state.py:892: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_t10_recent_messages_is_loaded_in_one_batch",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789643081070,
+                "stop": 1789643081071,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_t11_recent_messages_does_not_query_per_parent",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789643081071,
+                "stop": 1789643081072,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_t12_relationship_loads_under_a_manual_relationship",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789643081072,
+                "stop": 1789643081073,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_t13_aggregate_loads_under_a_manual_relationship",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789643081073,
+                "stop": 1789643081074,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_t14_manual_relationship_loads_under_a_manual_relationship",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 9,
+                "start": 1789643081074,
+                "stop": 1789643081083,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "suite = ({'T01': ('PASS', ''), 'T02': ('PASS', ''), 'T03': ('PASS', ''), 'T04': ('PASS', ''), ...}, '`mix run /tmp/harbor_manu...n    \u2502\\n    \u2514\u2500 lib/thread_graph/forum/threads/fork_thread.ex:43:20: ThreadGraph.Forum.Threads.ForkThread.create/3\\n\\n')\n\n    def test_t14_manual_relationship_loads_under_a_manual_relationship(suite):\n>       _assert_scenario(suite, \"T14\")\n\n/tests/test_final_state.py:948: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nsuite = ({'T01': ('PASS', ''), 'T02': ('PASS', ''), 'T03': ('PASS', ''), 'T04': ('PASS', ''), ...}, '`mix run /tmp/harbor_manu...n    \u2502\\n    \u2514\u2500 lib/thread_graph/forum/threads/fork_thread.ex:43:20: ThreadGraph.Forum.Threads.ForkThread.create/3\\n\\n')\nscenario_id = 'T14'\n\n    def _assert_scenario(suite, scenario_id):\n        results, diagnostics = suite\n        assert scenario_id in results, (\n            f\"Scenario {scenario_id} did not run. The project most likely failed to \"\n            f\"compile or the suite crashed.\\n{diagnostics}\"\n        )\n        status, detail = results[scenario_id]\n>       assert status == \"PASS\", f\"Scenario {scenario_id} failed:\\n{detail}\"\nE       AssertionError: Scenario T14 failed:\nE           1) test T14 a manual relationship loads underneath another manual relationship (Harbor.Suite)\nE              /tmp/harbor_manual_graph.exs:437\nE              ** (Ash.Error.Unknown) \nE              Bread Crumbs:\nE                > Exception raised in: ThreadGraph.Forum.Message.read\nE                > Exception raised in: ThreadGraph.Forum.Thread.read\nE         \nE              Unknown Error\nE         \nE              * ** (FunctionClauseError) no function clause matching in MapSet.member?/2\nE                (elixir 1.18.4) lib/map_set.ex:248: MapSet.member?([], \"a34ff16e-af8a-45fa-8723-d41435d9ffb0\")\nE                (thread_graph 0.1.0) lib/thread_graph/forum/messages/ancestor_messages.ex:20: ThreadGraph.Forum.Messages.AncestorMessages.ancestors/3\nE                (elixir 1.18.4) lib/enum.ex:1714: Enum.\"-map/2-lists^map/1-1-\"/2\nE                (thread_graph 0.1.0) lib/thread_graph/forum/messages/ancestor_messages.ex:12: ThreadGraph.Forum.Messages.AncestorMessages.load/3\nE                (ash 3.31.0) lib/ash/actions/read/read.ex:88: Ash.Actions.Read.run/3\nE                (ash 3.31.0) lib/ash.ex:2682: Ash.load/3\nE                (ash 3.31.0) lib/ash/actions/read/read.ex:88: Ash.Actions.Read.run/3\nE                (ash 3.31.0) lib/ash.ex:3181: Ash.do_read_one/3\nE                (ash 3.31.0) lib/ash.ex:3085: Ash.read_one/2\nE              stacktrace:\nE                (elixir 1.18.4) lib/map_set.ex:248: MapSet.member?([], \"a34ff16e-af8a-45fa-8723-d41435d9ffb0\")\nE                (thread_graph 0.1.0) lib/thread_graph/forum/messages/ancestor_messages.ex:20: ThreadGraph.Forum.Messages.AncestorMessages.ancestors/3\nE                (elixir 1.18.4) lib/enum.ex:1714: Enum.\"-map/2-lists^map/1-1-\"/2\nE                (thread_graph 0.1.0) lib/thread_graph/forum/messages/ancestor_messages.ex:12: ThreadGraph.Forum.Messages.AncestorMessages.load/3\nE                (ash 3.31.0) lib/ash/resource/manual_relationship/manual_relationship.ex:48: Ash.Resource.ManualRelationship.load/4\nE                (ash 3.31.0) lib/ash/actions/read/relationships.ex:613: anonymous fn/7 in Ash.Actions.Read.Relationships.do_fetch_related_records/5\nE                (ash 3.31.0) lib/ash/actions/read/relationships.ex:85: Ash.Actions.Read.Relationships.fetch_related_records/5\nE                (ash 3.31.0) lib/ash/actions/read/relationships.ex:30: Ash.Actions.Read.Relationships.load/4\nE                (ash 3.31.0) lib/ash/actions/read/read.ex:472: Ash.Actions.Read.do_run/3\nE                (ash 3.31.0) lib/ash/actions/read/read.ex:89: anonymous fn/3 in Ash.Actions.Read.run/3\nE                (ash 3.31.0) lib/ash/actions/read/read.ex:88: Ash.Actions.Read.run/3\nE                (ash 3.31.0) lib/ash.ex:2682: Ash.load/3\nE                (ash 3.31.0) lib/ash/actions/read/relationships.ex:650: anonymous fn/7 in Ash.Actions.Read.Relationships.do_fetch_related_records/5\nE                (ash 3.31.0) lib/ash/actions/read/relationships.ex:85: Ash.Actions.Read.Relationships.fetch_related_records/5\nE                (ash 3.31.0) lib/ash/actions/read/relationships.ex:30: Ash.Actions.Read.Relationships.load/4\nE                (ash 3.31.0) lib/ash/actions/read/read.ex:472: Ash.Actions.Read.do_run/3\nE                (ash 3.31.0) lib/ash/actions/read/read.ex:89: anonymous fn/3 in Ash.Actions.Read.run/3\nE                (ash 3.31.0) lib/ash/actions/read/read.ex:88: Ash.Actions.Read.run/3\nE                (ash 3.31.0) lib/ash.ex:3181: Ash.do_read_one/3\nE                (ash 3.31.0) lib/ash.ex:3085: Ash.read_one/2\nE         \nE       assert 'FAIL' == 'PASS'\nE         - PASS\nE         + FAIL\n\n/tests/test_final_state.py:892: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_t15_ancestor_messages_is_ordered_outermost_first",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 10,
+                "start": 1789643081083,
+                "stop": 1789643081093,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "suite = ({'T01': ('PASS', ''), 'T02': ('PASS', ''), 'T03': ('PASS', ''), 'T04': ('PASS', ''), ...}, '`mix run /tmp/harbor_manu...n    \u2502\\n    \u2514\u2500 lib/thread_graph/forum/threads/fork_thread.ex:43:20: ThreadGraph.Forum.Threads.ForkThread.create/3\\n\\n')\n\n    def test_t15_ancestor_messages_is_ordered_outermost_first(suite):\n>       _assert_scenario(suite, \"T15\")\n\n/tests/test_final_state.py:952: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nsuite = ({'T01': ('PASS', ''), 'T02': ('PASS', ''), 'T03': ('PASS', ''), 'T04': ('PASS', ''), ...}, '`mix run /tmp/harbor_manu...n    \u2502\\n    \u2514\u2500 lib/thread_graph/forum/threads/fork_thread.ex:43:20: ThreadGraph.Forum.Threads.ForkThread.create/3\\n\\n')\nscenario_id = 'T15'\n\n    def _assert_scenario(suite, scenario_id):\n        results, diagnostics = suite\n        assert scenario_id in results, (\n            f\"Scenario {scenario_id} did not run. The project most likely failed to \"\n            f\"compile or the suite crashed.\\n{diagnostics}\"\n        )\n        status, detail = results[scenario_id]\n>       assert status == \"PASS\", f\"Scenario {scenario_id} failed:\\n{detail}\"\nE       AssertionError: Scenario T15 failed:\nE           1) test T15 ancestor_messages walks the whole parent chain, outermost first (Harbor.Suite)\nE              /tmp/harbor_manual_graph.exs:451\nE              ** (Ash.Error.Unknown) \nE              Bread Crumbs:\nE                > Exception raised in: ThreadGraph.Forum.Message.read\nE         \nE              Unknown Error\nE         \nE              * ** (FunctionClauseError) no function clause matching in MapSet.member?/2\nE                (elixir 1.18.4) lib/map_set.ex:248: MapSet.member?([], \"d8fee60f-229c-4984-955f-38c969455035\")\nE                (thread_graph 0.1.0) lib/thread_graph/forum/messages/ancestor_messages.ex:20: ThreadGraph.Forum.Messages.AncestorMessages.ancestors/3\nE                (elixir 1.18.4) lib/enum.ex:1714: Enum.\"-map/2-lists^map/1-1-\"/2\nE                (thread_graph 0.1.0) lib/thread_graph/forum/messages/ancestor_messages.ex:12: ThreadGraph.Forum.Messages.AncestorMessages.load/3\nE                (ash 3.31.0) lib/ash/actions/read/read.ex:88: Ash.Actions.Read.run/3\nE                (ash 3.31.0) lib/ash.ex:2682: Ash.load/3\nE                (ash 3.31.0) lib/ash.ex:2540: Ash.load!/3\nE                /tmp/harbor_manual_graph.exs:769: Harbor.Suite.load_ancestors/0\nE                /tmp/harbor_manual_graph.exs:452: Harbor.Suite.\"test T15 ancestor_messages walks the whole parent chain, outermost first\"/1\nE                (ex_unit 1.18.4) lib/ex_unit/runner.ex:511: ExUnit.Runner.exec_test/2\nE                (stdlib 6.2.2) timer.erl:595: :timer.tc/2\nE                (ex_unit 1.18.4) lib/ex_unit/runner.ex:433: anonymous fn/6 in ExUnit.Runner.spawn_test_monitor/4\nE              code: ancestors = load_ancestors()\nE              stacktrace:\nE                (elixir 1.18.4) lib/map_set.ex:248: MapSet.member?([], \"d8fee60f-229c-4984-955f-38c969455035\")\nE                (thread_graph 0.1.0) lib/thread_graph/forum/messages/ancestor_messages.ex:20: ThreadGraph.Forum.Messages.AncestorMessages.ancestors/3\nE                (elixir 1.18.4) lib/enum.ex:1714: Enum.\"-map/2-lists^map/1-1-\"/2\nE                (thread_graph 0.1.0) lib/thread_graph/forum/messages/ancestor_messages.ex:12: ThreadGraph.Forum.Messages.AncestorMessages.load/3\nE                (ash 3.31.0) lib/ash/resource/manual_relationship/manual_relationship.ex:48: Ash.Resource.ManualRelationship.load/4\nE                (ash 3.31.0) lib/ash/actions/read/relationships.ex:613: anonymous fn/7 in Ash.Actions.Read.Relationships.do_fetch_related_records/5\nE                (ash 3.31.0) lib/ash/actions/read/relationships.ex:85: Ash.Actions.Read.Relationships.fetch_related_records/5\nE                (ash 3.31.0) lib/ash/actions/read/relationships.ex:30: Ash.Actions.Read.Relationships.load/4\nE                (ash 3.31.0) lib/ash/actions/read/read.ex:472: Ash.Actions.Read.do_run/3\nE                (ash 3.31.0) lib/ash/actions/read/read.ex:89: anonymous fn/3 in Ash.Actions.Read.run/3\nE                (ash 3.31.0) lib/ash/actions/read/read.ex:88: Ash.Actions.Read.run/3\nE                (ash 3.31.0) lib/ash.ex:2682: Ash.load/3\nE                (ash 3.31.0) lib/ash.ex:2540: Ash.load!/3\nE                /tmp/harbor_manual_graph.exs:769: Harbor.Suite.load_ancestors/0\nE                /tmp/harbor_manual_graph.exs:452: (test)\nE         \nE       assert 'FAIL' == 'PASS'\nE         - PASS\nE         + FAIL\n\n/tests/test_final_state.py:892: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_t16_ancestor_messages_terminates_on_a_cycle",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 9,
+                "start": 1789643081093,
+                "stop": 1789643081102,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "suite = ({'T01': ('PASS', ''), 'T02': ('PASS', ''), 'T03': ('PASS', ''), 'T04': ('PASS', ''), ...}, '`mix run /tmp/harbor_manu...n    \u2502\\n    \u2514\u2500 lib/thread_graph/forum/threads/fork_thread.ex:43:20: ThreadGraph.Forum.Threads.ForkThread.create/3\\n\\n')\n\n    def test_t16_ancestor_messages_terminates_on_a_cycle(suite):\n>       _assert_scenario(suite, \"T16\")\n\n/tests/test_final_state.py:956: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nsuite = ({'T01': ('PASS', ''), 'T02': ('PASS', ''), 'T03': ('PASS', ''), 'T04': ('PASS', ''), ...}, '`mix run /tmp/harbor_manu...n    \u2502\\n    \u2514\u2500 lib/thread_graph/forum/threads/fork_thread.ex:43:20: ThreadGraph.Forum.Threads.ForkThread.create/3\\n\\n')\nscenario_id = 'T16'\n\n    def _assert_scenario(suite, scenario_id):\n        results, diagnostics = suite\n        assert scenario_id in results, (\n            f\"Scenario {scenario_id} did not run. The project most likely failed to \"\n            f\"compile or the suite crashed.\\n{diagnostics}\"\n        )\n        status, detail = results[scenario_id]\n>       assert status == \"PASS\", f\"Scenario {scenario_id} failed:\\n{detail}\"\nE       AssertionError: Scenario T16 failed:\nE           1) test T16 ancestor_messages terminates on a cyclic parent chain (Harbor.Suite)\nE              /tmp/harbor_manual_graph.exs:461\nE              ** (Ash.Error.Unknown) \nE              Bread Crumbs:\nE                > Exception raised in: ThreadGraph.Forum.Message.read\nE         \nE              Unknown Error\nE         \nE              * ** (FunctionClauseError) no function clause matching in MapSet.member?/2\nE                (elixir 1.18.4) lib/map_set.ex:248: MapSet.member?([], \"d8fee60f-229c-4984-955f-38c969455035\")\nE                (thread_graph 0.1.0) lib/thread_graph/forum/messages/ancestor_messages.ex:20: ThreadGraph.Forum.Messages.AncestorMessages.ancestors/3\nE                (elixir 1.18.4) lib/enum.ex:1714: Enum.\"-map/2-lists^map/1-1-\"/2\nE                (thread_graph 0.1.0) lib/thread_graph/forum/messages/ancestor_messages.ex:12: ThreadGraph.Forum.Messages.AncestorMessages.load/3\nE                (ash 3.31.0) lib/ash/actions/read/read.ex:88: Ash.Actions.Read.run/3\nE                (ash 3.31.0) lib/ash.ex:2682: Ash.load/3\nE                (ash 3.31.0) lib/ash.ex:2540: Ash.load!/3\nE                /tmp/harbor_manual_graph.exs:769: Harbor.Suite.load_ancestors/0\nE                /tmp/harbor_manual_graph.exs:462: Harbor.Suite.\"test T16 ancestor_messages terminates on a cyclic parent chain\"/1\nE                (ex_unit 1.18.4) lib/ex_unit/runner.ex:511: ExUnit.Runner.exec_test/2\nE                (stdlib 6.2.2) timer.erl:595: :timer.tc/2\nE                (ex_unit 1.18.4) lib/ex_unit/runner.ex:433: anonymous fn/6 in ExUnit.Runner.spawn_test_monitor/4\nE              code: ancestors = load_ancestors()\nE              stacktrace:\nE                (elixir 1.18.4) lib/map_set.ex:248: MapSet.member?([], \"d8fee60f-229c-4984-955f-38c969455035\")\nE                (thread_graph 0.1.0) lib/thread_graph/forum/messages/ancestor_messages.ex:20: ThreadGraph.Forum.Messages.AncestorMessages.ancestors/3\nE                (elixir 1.18.4) lib/enum.ex:1714: Enum.\"-map/2-lists^map/1-1-\"/2\nE                (thread_graph 0.1.0) lib/thread_graph/forum/messages/ancestor_messages.ex:12: ThreadGraph.Forum.Messages.AncestorMessages.load/3\nE                (ash 3.31.0) lib/ash/resource/manual_relationship/manual_relationship.ex:48: Ash.Resource.ManualRelationship.load/4\nE                (ash 3.31.0) lib/ash/actions/read/relationships.ex:613: anonymous fn/7 in Ash.Actions.Read.Relationships.do_fetch_related_records/5\nE                (ash 3.31.0) lib/ash/actions/read/relationships.ex:85: Ash.Actions.Read.Relationships.fetch_related_records/5\nE                (ash 3.31.0) lib/ash/actions/read/relationships.ex:30: Ash.Actions.Read.Relationships.load/4\nE                (ash 3.31.0) lib/ash/actions/read/read.ex:472: Ash.Actions.Read.do_run/3\nE                (ash 3.31.0) lib/ash/actions/read/read.ex:89: anonymous fn/3 in Ash.Actions.Read.run/3\nE                (ash 3.31.0) lib/ash/actions/read/read.ex:88: Ash.Actions.Read.run/3\nE                (ash 3.31.0) lib/ash.ex:2682: Ash.load/3\nE                (ash 3.31.0) lib/ash.ex:2540: Ash.load!/3\nE                /tmp/harbor_manual_graph.exs:769: Harbor.Suite.load_ancestors/0\nE                /tmp/harbor_manual_graph.exs:462: (test)\nE         \nE       assert 'FAIL' == 'PASS'\nE         - PASS\nE         + FAIL\n\n/tests/test_final_state.py:892: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_t17_ancestor_messages_is_batched",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 9,
+                "start": 1789643081102,
+                "stop": 1789643081111,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "suite = ({'T01': ('PASS', ''), 'T02': ('PASS', ''), 'T03': ('PASS', ''), 'T04': ('PASS', ''), ...}, '`mix run /tmp/harbor_manu...n    \u2502\\n    \u2514\u2500 lib/thread_graph/forum/threads/fork_thread.ex:43:20: ThreadGraph.Forum.Threads.ForkThread.create/3\\n\\n')\n\n    def test_t17_ancestor_messages_is_batched(suite):\n>       _assert_scenario(suite, \"T17\")\n\n/tests/test_final_state.py:960: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nsuite = ({'T01': ('PASS', ''), 'T02': ('PASS', ''), 'T03': ('PASS', ''), 'T04': ('PASS', ''), ...}, '`mix run /tmp/harbor_manu...n    \u2502\\n    \u2514\u2500 lib/thread_graph/forum/threads/fork_thread.ex:43:20: ThreadGraph.Forum.Threads.ForkThread.create/3\\n\\n')\nscenario_id = 'T17'\n\n    def _assert_scenario(suite, scenario_id):\n        results, diagnostics = suite\n        assert scenario_id in results, (\n            f\"Scenario {scenario_id} did not run. The project most likely failed to \"\n            f\"compile or the suite crashed.\\n{diagnostics}\"\n        )\n        status, detail = results[scenario_id]\n>       assert status == \"PASS\", f\"Scenario {scenario_id} failed:\\n{detail}\"\nE       AssertionError: Scenario T17 failed:\nE           1) test T17 ancestor_messages is batched and does not issue a read per parent record (Harbor.Suite)\nE              /tmp/harbor_manual_graph.exs:468\nE              ** (Ash.Error.Unknown) \nE              Bread Crumbs:\nE                > Exception raised in: ThreadGraph.Forum.Message.read\nE         \nE              Unknown Error\nE         \nE              * ** (FunctionClauseError) no function clause matching in MapSet.member?/2\nE                (elixir 1.18.4) lib/map_set.ex:248: MapSet.member?([], \"d8fee60f-229c-4984-955f-38c969455035\")\nE                (thread_graph 0.1.0) lib/thread_graph/forum/messages/ancestor_messages.ex:20: ThreadGraph.Forum.Messages.AncestorMessages.ancestors/3\nE                (elixir 1.18.4) lib/enum.ex:1714: Enum.\"-map/2-lists^map/1-1-\"/2\nE                (thread_graph 0.1.0) lib/thread_graph/forum/messages/ancestor_messages.ex:12: ThreadGraph.Forum.Messages.AncestorMessages.load/3\nE                (ash 3.31.0) lib/ash/actions/read/read.ex:88: Ash.Actions.Read.run/3\nE                (ash 3.31.0) lib/ash.ex:2682: Ash.load/3\nE                (ash 3.31.0) lib/ash.ex:2540: Ash.load!/3\nE                /tmp/harbor_manual_graph.exs:186: Harbor.Helpers.with_read_count/1\nE                /tmp/harbor_manual_graph.exs:474: Harbor.Suite.\"test T17 ancestor_messages is batched and does not issue a read per parent record\"/1\nE                (ex_unit 1.18.4) lib/ex_unit/runner.ex:511: ExUnit.Runner.exec_test/2\nE                (stdlib 6.2.2) timer.erl:595: :timer.tc/2\nE                (ex_unit 1.18.4) lib/ex_unit/runner.ex:433: anonymous fn/6 in ExUnit.Runner.spawn_test_monitor/4\nE              code: {loaded, reads} = with_read_count(fn -> Ash.load!(messages, :ancestor_messages) end)\nE              stacktrace:\nE                (elixir 1.18.4) lib/map_set.ex:248: MapSet.member?([], \"d8fee60f-229c-4984-955f-38c969455035\")\nE                (thread_graph 0.1.0) lib/thread_graph/forum/messages/ancestor_messages.ex:20: ThreadGraph.Forum.Messages.AncestorMessages.ancestors/3\nE                (elixir 1.18.4) lib/enum.ex:1714: Enum.\"-map/2-lists^map/1-1-\"/2\nE                (thread_graph 0.1.0) lib/thread_graph/forum/messages/ancestor_messages.ex:12: ThreadGraph.Forum.Messages.AncestorMessages.load/3\nE                (ash 3.31.0) lib/ash/resource/manual_relationship/manual_relationship.ex:48: Ash.Resource.ManualRelationship.load/4\nE                (ash 3.31.0) lib/ash/actions/read/relationships.ex:613: anonymous fn/7 in Ash.Actions.Read.Relationships.do_fetch_related_records/5\nE                (ash 3.31.0) lib/ash/actions/read/relationships.ex:85: Ash.Actions.Read.Relationships.fetch_related_records/5\nE                (ash 3.31.0) lib/ash/actions/read/relationships.ex:30: Ash.Actions.Read.Relationships.load/4\nE                (ash 3.31.0) lib/ash/actions/read/read.ex:472: Ash.Actions.Read.do_run/3\nE                (ash 3.31.0) lib/ash/actions/read/read.ex:89: anonymous fn/3 in Ash.Actions.Read.run/3\nE                (ash 3.31.0) lib/ash/actions/read/read.ex:88: Ash.Actions.Read.run/3\nE                (ash 3.31.0) lib/ash.ex:2682: Ash.load/3\nE                (ash 3.31.0) lib/ash.ex:2540: Ash.load!/3\nE                /tmp/harbor_manual_graph.exs:186: Harbor.Helpers.with_read_count/1\nE                /tmp/harbor_manual_graph.exs:474: (test)\nE         \nE       assert 'FAIL' == 'PASS'\nE         - PASS\nE         + FAIL\n\n/tests/test_final_state.py:892: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_t18_linked_messages_is_a_transitive_closure",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789643081111,
+                "stop": 1789643081112,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_t19_linked_messages_excludes_self_and_handles_leaves",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789643081112,
+                "stop": 1789643081113,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_t20_linked_messages_ignores_kind_and_shares_targets",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789643081113,
+                "stop": 1789643081114,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_t21_linked_messages_is_batched",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789643081114,
+                "stop": 1789643081115,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_t22_highlights_scopes_by_board_with_default_ordering",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 8,
+                "start": 1789643081115,
+                "stop": 1789643081123,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "suite = ({'T01': ('PASS', ''), 'T02': ('PASS', ''), 'T03': ('PASS', ''), 'T04': ('PASS', ''), ...}, '`mix run /tmp/harbor_manu...n    \u2502\\n    \u2514\u2500 lib/thread_graph/forum/threads/fork_thread.ex:43:20: ThreadGraph.Forum.Threads.ForkThread.create/3\\n\\n')\n\n    def test_t22_highlights_scopes_by_board_with_default_ordering(suite):\n>       _assert_scenario(suite, \"T22\")\n\n/tests/test_final_state.py:980: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nsuite = ({'T01': ('PASS', ''), 'T02': ('PASS', ''), 'T03': ('PASS', ''), 'T04': ('PASS', ''), ...}, '`mix run /tmp/harbor_manu...n    \u2502\\n    \u2514\u2500 lib/thread_graph/forum/threads/fork_thread.ex:43:20: ThreadGraph.Forum.Threads.ForkThread.create/3\\n\\n')\nscenario_id = 'T22'\n\n    def _assert_scenario(suite, scenario_id):\n        results, diagnostics = suite\n        assert scenario_id in results, (\n            f\"Scenario {scenario_id} did not run. The project most likely failed to \"\n            f\"compile or the suite crashed.\\n{diagnostics}\"\n        )\n        status, detail = results[scenario_id]\n>       assert status == \"PASS\", f\"Scenario {scenario_id} failed:\\n{detail}\"\nE       AssertionError: Scenario T22 failed:\nE           1) test T22 cross_board_highlights scopes by board and applies the default ordering (Harbor.Suite)\nE              /tmp/harbor_manual_graph.exs:518\nE              Assertion with == failed\nE              code:  assert bodies(highlights([\"general\"], 0)) == [\nE                       \"alpha-1\",\nE                       \"beta-1\",\nE                       \"zeta-1\",\nE                       \"alpha-2\",\nE                       \"zeta-2\",\nE                       \"alpha-3\",\nE                       \"alpha-4\",\nE                       \"alpha-5\",\nE                       \"beta-2\",\nE                       \"beta-3\"\nE                     ]\nE              left:  []\nE              right: [\"alpha-1\", \"beta-1\", \"zeta-1\", \"alpha-2\", \"zeta-2\", \"alpha-3\", \"alpha-4\", \"alpha-5\", \"beta-2\", \"beta-3\"]\nE              stacktrace:\nE                /tmp/harbor_manual_graph.exs:519: (test)\nE         \nE       assert 'FAIL' == 'PASS'\nE         - PASS\nE         + FAIL\n\n/tests/test_final_state.py:892: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_t23_highlights_honours_min_endorsements",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 8,
+                "start": 1789643081124,
+                "stop": 1789643081132,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "suite = ({'T01': ('PASS', ''), 'T02': ('PASS', ''), 'T03': ('PASS', ''), 'T04': ('PASS', ''), ...}, '`mix run /tmp/harbor_manu...n    \u2502\\n    \u2514\u2500 lib/thread_graph/forum/threads/fork_thread.ex:43:20: ThreadGraph.Forum.Threads.ForkThread.create/3\\n\\n')\n\n    def test_t23_highlights_honours_min_endorsements(suite):\n>       _assert_scenario(suite, \"T23\")\n\n/tests/test_final_state.py:984: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nsuite = ({'T01': ('PASS', ''), 'T02': ('PASS', ''), 'T03': ('PASS', ''), 'T04': ('PASS', ''), ...}, '`mix run /tmp/harbor_manu...n    \u2502\\n    \u2514\u2500 lib/thread_graph/forum/threads/fork_thread.ex:43:20: ThreadGraph.Forum.Threads.ForkThread.create/3\\n\\n')\nscenario_id = 'T23'\n\n    def _assert_scenario(suite, scenario_id):\n        results, diagnostics = suite\n        assert scenario_id in results, (\n            f\"Scenario {scenario_id} did not run. The project most likely failed to \"\n            f\"compile or the suite crashed.\\n{diagnostics}\"\n        )\n        status, detail = results[scenario_id]\n>       assert status == \"PASS\", f\"Scenario {scenario_id} failed:\\n{detail}\"\nE       AssertionError: Scenario T23 failed:\nE           1) test T23 cross_board_highlights honours the min_endorsements threshold (Harbor.Suite)\nE              /tmp/harbor_manual_graph.exs:533\nE              Assertion with == failed\nE              code:  assert bodies(highlights([\"general\"], 2)) == [\"alpha-1\", \"beta-1\"]\nE              left:  []\nE              right: [\"alpha-1\", \"beta-1\"]\nE              stacktrace:\nE                /tmp/harbor_manual_graph.exs:534: (test)\nE         \nE       assert 'FAIL' == 'PASS'\nE         - PASS\nE         + FAIL\n\n/tests/test_final_state.py:892: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_t24_highlights_merges_several_boards",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 9,
+                "start": 1789643081132,
+                "stop": 1789643081141,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "suite = ({'T01': ('PASS', ''), 'T02': ('PASS', ''), 'T03': ('PASS', ''), 'T04': ('PASS', ''), ...}, '`mix run /tmp/harbor_manu...n    \u2502\\n    \u2514\u2500 lib/thread_graph/forum/threads/fork_thread.ex:43:20: ThreadGraph.Forum.Threads.ForkThread.create/3\\n\\n')\n\n    def test_t24_highlights_merges_several_boards(suite):\n>       _assert_scenario(suite, \"T24\")\n\n/tests/test_final_state.py:988: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nsuite = ({'T01': ('PASS', ''), 'T02': ('PASS', ''), 'T03': ('PASS', ''), 'T04': ('PASS', ''), ...}, '`mix run /tmp/harbor_manu...n    \u2502\\n    \u2514\u2500 lib/thread_graph/forum/threads/fork_thread.ex:43:20: ThreadGraph.Forum.Threads.ForkThread.create/3\\n\\n')\nscenario_id = 'T24'\n\n    def _assert_scenario(suite, scenario_id):\n        results, diagnostics = suite\n        assert scenario_id in results, (\n            f\"Scenario {scenario_id} did not run. The project most likely failed to \"\n            f\"compile or the suite crashed.\\n{diagnostics}\"\n        )\n        status, detail = results[scenario_id]\n>       assert status == \"PASS\", f\"Scenario {scenario_id} failed:\\n{detail}\"\nE       AssertionError: Scenario T24 failed:\nE           1) test T24 cross_board_highlights merges several boards (Harbor.Suite)\nE              /tmp/harbor_manual_graph.exs:538\nE              Assertion with == failed\nE              code:  assert bodies(highlights([\"general\", \"random\"], 0)) == [\nE                       \"alpha-1\",\nE                       \"beta-1\",\nE                       \"zeta-1\",\nE                       \"alpha-2\",\nE                       \"zeta-2\",\nE                       \"alpha-3\",\nE                       \"alpha-4\",\nE                       \"alpha-5\",\nE                       \"gamma-4\",\nE                       \"gamma-1\",\nE                       \"gamma-2\",\nE                       \"gamma-3\",\nE                       \"beta-2\",\nE                       \"beta-3\"\nE                     ]\nE              left:  []\nE              right: [\"alpha-1\", \"beta-1\", \"zeta-1\", \"alpha-2\", \"zeta-2\", \"alpha-3\", \"alpha-4\", \"alpha-5\", \"gamma-4\", \"gamma-1\", \"gamma-2\", \"gamma-3\", \"beta-2\",\nE                      \"beta-3\"]\nE              stacktrace:\nE                /tmp/harbor_manual_graph.exs:539: (test)\nE         \nE       assert 'FAIL' == 'PASS'\nE         - PASS\nE         + FAIL\n\n/tests/test_final_state.py:892: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_t25_highlights_attaches_endorsement_count_metadata",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 8,
+                "start": 1789643081141,
+                "stop": 1789643081149,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "suite = ({'T01': ('PASS', ''), 'T02': ('PASS', ''), 'T03': ('PASS', ''), 'T04': ('PASS', ''), ...}, '`mix run /tmp/harbor_manu...n    \u2502\\n    \u2514\u2500 lib/thread_graph/forum/threads/fork_thread.ex:43:20: ThreadGraph.Forum.Threads.ForkThread.create/3\\n\\n')\n\n    def test_t25_highlights_attaches_endorsement_count_metadata(suite):\n>       _assert_scenario(suite, \"T25\")\n\n/tests/test_final_state.py:992: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nsuite = ({'T01': ('PASS', ''), 'T02': ('PASS', ''), 'T03': ('PASS', ''), 'T04': ('PASS', ''), ...}, '`mix run /tmp/harbor_manu...n    \u2502\\n    \u2514\u2500 lib/thread_graph/forum/threads/fork_thread.ex:43:20: ThreadGraph.Forum.Threads.ForkThread.create/3\\n\\n')\nscenario_id = 'T25'\n\n    def _assert_scenario(suite, scenario_id):\n        results, diagnostics = suite\n        assert scenario_id in results, (\n            f\"Scenario {scenario_id} did not run. The project most likely failed to \"\n            f\"compile or the suite crashed.\\n{diagnostics}\"\n        )\n        status, detail = results[scenario_id]\n>       assert status == \"PASS\", f\"Scenario {scenario_id} failed:\\n{detail}\"\nE       AssertionError: Scenario T25 failed:\nE           1) test T25 cross_board_highlights attaches the endorsement count as metadata (Harbor.Suite)\nE              /tmp/harbor_manual_graph.exs:557\nE              Assertion with == failed\nE              code:  assert counts == [3, 2, 1, 1]\nE              left:  []\nE              right: [3, 2, 1, 1]\nE              stacktrace:\nE                /tmp/harbor_manual_graph.exs:563: (test)\nE         \nE       assert 'FAIL' == 'PASS'\nE         - PASS\nE         + FAIL\n\n/tests/test_final_state.py:892: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_t26_highlights_honours_a_query_filter",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789643081149,
+                "stop": 1789643081150,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_t27_highlights_honours_a_query_sort",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 8,
+                "start": 1789643081150,
+                "stop": 1789643081158,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "suite = ({'T01': ('PASS', ''), 'T02': ('PASS', ''), 'T03': ('PASS', ''), 'T04': ('PASS', ''), ...}, '`mix run /tmp/harbor_manu...n    \u2502\\n    \u2514\u2500 lib/thread_graph/forum/threads/fork_thread.ex:43:20: ThreadGraph.Forum.Threads.ForkThread.create/3\\n\\n')\n\n    def test_t27_highlights_honours_a_query_sort(suite):\n>       _assert_scenario(suite, \"T27\")\n\n/tests/test_final_state.py:1000: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nsuite = ({'T01': ('PASS', ''), 'T02': ('PASS', ''), 'T03': ('PASS', ''), 'T04': ('PASS', ''), ...}, '`mix run /tmp/harbor_manu...n    \u2502\\n    \u2514\u2500 lib/thread_graph/forum/threads/fork_thread.ex:43:20: ThreadGraph.Forum.Threads.ForkThread.create/3\\n\\n')\nscenario_id = 'T27'\n\n    def _assert_scenario(suite, scenario_id):\n        results, diagnostics = suite\n        assert scenario_id in results, (\n            f\"Scenario {scenario_id} did not run. The project most likely failed to \"\n            f\"compile or the suite crashed.\\n{diagnostics}\"\n        )\n        status, detail = results[scenario_id]\n>       assert status == \"PASS\", f\"Scenario {scenario_id} failed:\\n{detail}\"\nE       AssertionError: Scenario T27 failed:\nE           1) test T27 a sort carried by the query replaces the default ordering (Harbor.Suite)\nE              /tmp/harbor_manual_graph.exs:579\nE              Assertion with == failed\nE              code:  assert bodies(results) == [\"alpha-1\", \"alpha-2\", \"beta-1\", \"zeta-1\"]\nE              left:  []\nE              right: [\"alpha-1\", \"alpha-2\", \"beta-1\", \"zeta-1\"]\nE              stacktrace:\nE                /tmp/harbor_manual_graph.exs:586: (test)\nE         \nE       assert 'FAIL' == 'PASS'\nE         - PASS\nE         + FAIL\n\n/tests/test_final_state.py:892: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_t28_highlights_honours_limit_and_offset",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 8,
+                "start": 1789643081159,
+                "stop": 1789643081167,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "suite = ({'T01': ('PASS', ''), 'T02': ('PASS', ''), 'T03': ('PASS', ''), 'T04': ('PASS', ''), ...}, '`mix run /tmp/harbor_manu...n    \u2502\\n    \u2514\u2500 lib/thread_graph/forum/threads/fork_thread.ex:43:20: ThreadGraph.Forum.Threads.ForkThread.create/3\\n\\n')\n\n    def test_t28_highlights_honours_limit_and_offset(suite):\n>       _assert_scenario(suite, \"T28\")\n\n/tests/test_final_state.py:1004: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nsuite = ({'T01': ('PASS', ''), 'T02': ('PASS', ''), 'T03': ('PASS', ''), 'T04': ('PASS', ''), ...}, '`mix run /tmp/harbor_manu...n    \u2502\\n    \u2514\u2500 lib/thread_graph/forum/threads/fork_thread.ex:43:20: ThreadGraph.Forum.Threads.ForkThread.create/3\\n\\n')\nscenario_id = 'T28'\n\n    def _assert_scenario(suite, scenario_id):\n        results, diagnostics = suite\n        assert scenario_id in results, (\n            f\"Scenario {scenario_id} did not run. The project most likely failed to \"\n            f\"compile or the suite crashed.\\n{diagnostics}\"\n        )\n        status, detail = results[scenario_id]\n>       assert status == \"PASS\", f\"Scenario {scenario_id} failed:\\n{detail}\"\nE       AssertionError: Scenario T28 failed:\nE           1) test T28 cross_board_highlights honours limit and offset (Harbor.Suite)\nE              /tmp/harbor_manual_graph.exs:589\nE              Assertion with == failed\nE              code:  assert bodies(limited) == [\"alpha-1\", \"alpha-2\", \"alpha-3\"]\nE              left:  []\nE              right: [\"alpha-1\", \"alpha-2\", \"alpha-3\"]\nE              stacktrace:\nE                /tmp/harbor_manual_graph.exs:597: (test)\nE         \nE       assert 'FAIL' == 'PASS'\nE         - PASS\nE         + FAIL\n\n/tests/test_final_state.py:892: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_t29_highlights_code_interface_runs_the_action_once",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 8,
+                "start": 1789643081167,
+                "stop": 1789643081175,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "suite = ({'T01': ('PASS', ''), 'T02': ('PASS', ''), 'T03': ('PASS', ''), 'T04': ('PASS', ''), ...}, '`mix run /tmp/harbor_manu...n    \u2502\\n    \u2514\u2500 lib/thread_graph/forum/threads/fork_thread.ex:43:20: ThreadGraph.Forum.Threads.ForkThread.create/3\\n\\n')\n\n    def test_t29_highlights_code_interface_runs_the_action_once(suite):\n>       _assert_scenario(suite, \"T29\")\n\n/tests/test_final_state.py:1008: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nsuite = ({'T01': ('PASS', ''), 'T02': ('PASS', ''), 'T03': ('PASS', ''), 'T04': ('PASS', ''), ...}, '`mix run /tmp/harbor_manu...n    \u2502\\n    \u2514\u2500 lib/thread_graph/forum/threads/fork_thread.ex:43:20: ThreadGraph.Forum.Threads.ForkThread.create/3\\n\\n')\nscenario_id = 'T29'\n\n    def _assert_scenario(suite, scenario_id):\n        results, diagnostics = suite\n        assert scenario_id in results, (\n            f\"Scenario {scenario_id} did not run. The project most likely failed to \"\n            f\"compile or the suite crashed.\\n{diagnostics}\"\n        )\n        status, detail = results[scenario_id]\n>       assert status == \"PASS\", f\"Scenario {scenario_id} failed:\\n{detail}\"\nE       AssertionError: Scenario T29 failed:\nE           1) test T29 the code interface exposes cross_board_highlights and runs it once (Harbor.Suite)\nE              /tmp/harbor_manual_graph.exs:610\nE              Assertion with == failed\nE              code:  assert bodies(list) == [\"alpha-1\", \"beta-1\", \"zeta-1\", \"alpha-2\"]\nE              left:  []\nE              right: [\"alpha-1\", \"beta-1\", \"zeta-1\", \"alpha-2\"]\nE              stacktrace:\nE                /tmp/harbor_manual_graph.exs:619: (test)\nE         \nE       assert 'FAIL' == 'PASS'\nE         - PASS\nE         + FAIL\n\n/tests/test_final_state.py:892: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_t30_fork_copies_the_source_subtree",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 9,
+                "start": 1789643081175,
+                "stop": 1789643081184,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "suite = ({'T01': ('PASS', ''), 'T02': ('PASS', ''), 'T03': ('PASS', ''), 'T04': ('PASS', ''), ...}, '`mix run /tmp/harbor_manu...n    \u2502\\n    \u2514\u2500 lib/thread_graph/forum/threads/fork_thread.ex:43:20: ThreadGraph.Forum.Threads.ForkThread.create/3\\n\\n')\n\n    def test_t30_fork_copies_the_source_subtree(suite):\n>       _assert_scenario(suite, \"T30\")\n\n/tests/test_final_state.py:1012: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nsuite = ({'T01': ('PASS', ''), 'T02': ('PASS', ''), 'T03': ('PASS', ''), 'T04': ('PASS', ''), ...}, '`mix run /tmp/harbor_manu...n    \u2502\\n    \u2514\u2500 lib/thread_graph/forum/threads/fork_thread.ex:43:20: ThreadGraph.Forum.Threads.ForkThread.create/3\\n\\n')\nscenario_id = 'T30'\n\n    def _assert_scenario(suite, scenario_id):\n        results, diagnostics = suite\n        assert scenario_id in results, (\n            f\"Scenario {scenario_id} did not run. The project most likely failed to \"\n            f\"compile or the suite crashed.\\n{diagnostics}\"\n        )\n        status, detail = results[scenario_id]\n>       assert status == \"PASS\", f\"Scenario {scenario_id} failed:\\n{detail}\"\nE       AssertionError: Scenario T30 failed:\nE           1) test T30 fork copies the source message and its descendants into a new thread (Harbor.Suite)\nE              /tmp/harbor_manual_graph.exs:622\nE              ** (Ash.Error.Unknown) \nE              Bread Crumbs:\nE                > Exception raised in: ThreadGraph.Forum.Thread.fork\nE         \nE              Unknown Error\nE         \nE              * ** (UndefinedFunctionError) function Ash.Domain.transaction/2 is undefined or private\nE                (ash 3.31.0) lib/ash/actions/create/create.ex:89: Ash.Actions.Create.run/4\nE                (ash 3.31.0) lib/ash.ex:3228: Ash.create!/3\nE                /tmp/harbor_manual_graph.exs:623: Harbor.Suite.\"test T30 fork copies the source message and its descendants into a new thread\"/1\nE                (ex_unit 1.18.4) lib/ex_unit/runner.ex:511: ExUnit.Runner.exec_test/2\nE                (stdlib 6.2.2) timer.erl:595: :timer.tc/2\nE                (ex_unit 1.18.4) lib/ex_unit/runner.ex:433: anonymous fn/6 in ExUnit.Runner.spawn_test_monitor/4\nE              code: thread = apply(ThreadGraph.Forum, :fork_thread!, [F.message_id(\"fork-2\"), \"fk-a\", \"Fork A\"])\nE              stacktrace:\nE                (ash 3.31.0) Ash.Domain.transaction(ThreadGraph.Forum, #Function<1.11048409/0 in ThreadGraph.Forum.Threads.ForkThread.create/3>)\nE                (ash 3.31.0) lib/ash/behaviour_helpers.ex:62: Ash.BehaviourHelpers.call_and_validate_return/5\nE                (ash 3.31.0) lib/ash/actions/create/create.ex:379: anonymous fn/8 in Ash.Actions.Create.commit/3\nE                (ash 3.31.0) lib/ash/changeset/changeset.ex:5146: Ash.Changeset.run_around_actions/2\nE                (ash 3.31.0) lib/ash/changeset/changeset.ex:4824: anonymous fn/2 in Ash.Changeset.transaction_hooks/2\nE                (ash 3.31.0) lib/ash/changeset/changeset.ex:4725: Ash.Changeset.with_hooks/3\nE                (ash 3.31.0) lib/ash/actions/create/create.ex:323: Ash.Actions.Create.commit/3\nE                (ash 3.31.0) lib/ash/actions/create/create.ex:186: Ash.Actions.Create.do_run/4\nE                (ash 3.31.0) lib/ash/actions/create/create.ex:89: Ash.Actions.Create.run/4\nE                (ash 3.31.0) lib/ash.ex:3228: Ash.create!/3\nE                /tmp/harbor_manual_graph.exs:623: (test)\nE         \nE       assert 'FAIL' == 'PASS'\nE         - PASS\nE         + FAIL\n\n/tests/test_final_state.py:892: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_t31_fork_renumbers_positions_by_position_order",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 8,
+                "start": 1789643081185,
+                "stop": 1789643081193,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "suite = ({'T01': ('PASS', ''), 'T02': ('PASS', ''), 'T03': ('PASS', ''), 'T04': ('PASS', ''), ...}, '`mix run /tmp/harbor_manu...n    \u2502\\n    \u2514\u2500 lib/thread_graph/forum/threads/fork_thread.ex:43:20: ThreadGraph.Forum.Threads.ForkThread.create/3\\n\\n')\n\n    def test_t31_fork_renumbers_positions_by_position_order(suite):\n>       _assert_scenario(suite, \"T31\")\n\n/tests/test_final_state.py:1016: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nsuite = ({'T01': ('PASS', ''), 'T02': ('PASS', ''), 'T03': ('PASS', ''), 'T04': ('PASS', ''), ...}, '`mix run /tmp/harbor_manu...n    \u2502\\n    \u2514\u2500 lib/thread_graph/forum/threads/fork_thread.ex:43:20: ThreadGraph.Forum.Threads.ForkThread.create/3\\n\\n')\nscenario_id = 'T31'\n\n    def _assert_scenario(suite, scenario_id):\n        results, diagnostics = suite\n        assert scenario_id in results, (\n            f\"Scenario {scenario_id} did not run. The project most likely failed to \"\n            f\"compile or the suite crashed.\\n{diagnostics}\"\n        )\n        status, detail = results[scenario_id]\n>       assert status == \"PASS\", f\"Scenario {scenario_id} failed:\\n{detail}\"\nE       AssertionError: Scenario T31 failed:\nE           1) test T31 fork renumbers positions by position order and ignores unrelated messages (Harbor.Suite)\nE              /tmp/harbor_manual_graph.exs:644\nE              ** (Ash.Error.Unknown) \nE              Bread Crumbs:\nE                > Exception raised in: ThreadGraph.Forum.Thread.fork\nE         \nE              Unknown Error\nE         \nE              * ** (UndefinedFunctionError) function Ash.Domain.transaction/2 is undefined or private\nE                (ash 3.31.0) lib/ash/actions/create/create.ex:89: Ash.Actions.Create.run/4\nE                (ash 3.31.0) lib/ash.ex:3228: Ash.create!/3\nE                /tmp/harbor_manual_graph.exs:645: Harbor.Suite.\"test T31 fork renumbers positions by position order and ignores unrelated messages\"/1\nE                (ex_unit 1.18.4) lib/ex_unit/runner.ex:511: ExUnit.Runner.exec_test/2\nE                (stdlib 6.2.2) timer.erl:595: :timer.tc/2\nE                (ex_unit 1.18.4) lib/ex_unit/runner.ex:433: anonymous fn/6 in ExUnit.Runner.spawn_test_monitor/4\nE              code: thread = apply(ThreadGraph.Forum, :fork_thread!, [F.message_id(\"fork-1\"), \"fk-b\", \"Fork B\"])\nE              stacktrace:\nE                (ash 3.31.0) Ash.Domain.transaction(ThreadGraph.Forum, #Function<1.11048409/0 in ThreadGraph.Forum.Threads.ForkThread.create/3>)\nE                (ash 3.31.0) lib/ash/behaviour_helpers.ex:62: Ash.BehaviourHelpers.call_and_validate_return/5\nE                (ash 3.31.0) lib/ash/actions/create/create.ex:379: anonymous fn/8 in Ash.Actions.Create.commit/3\nE                (ash 3.31.0) lib/ash/changeset/changeset.ex:5146: Ash.Changeset.run_around_actions/2\nE                (ash 3.31.0) lib/ash/changeset/changeset.ex:4824: anonymous fn/2 in Ash.Changeset.transaction_hooks/2\nE                (ash 3.31.0) lib/ash/changeset/changeset.ex:4725: Ash.Changeset.with_hooks/3\nE                (ash 3.31.0) lib/ash/actions/create/create.ex:323: Ash.Actions.Create.commit/3\nE                (ash 3.31.0) lib/ash/actions/create/create.ex:186: Ash.Actions.Create.do_run/4\nE                (ash 3.31.0) lib/ash/actions/create/create.ex:89: Ash.Actions.Create.run/4\nE                (ash 3.31.0) lib/ash.ex:3228: Ash.create!/3\nE                /tmp/harbor_manual_graph.exs:645: (test)\nE         \nE       assert 'FAIL' == 'PASS'\nE         - PASS\nE         + FAIL\n\n/tests/test_final_state.py:892: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_t32_fork_records_a_single_fork_of_link",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 8,
+                "start": 1789643081194,
+                "stop": 1789643081202,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "suite = ({'T01': ('PASS', ''), 'T02': ('PASS', ''), 'T03': ('PASS', ''), 'T04': ('PASS', ''), ...}, '`mix run /tmp/harbor_manu...n    \u2502\\n    \u2514\u2500 lib/thread_graph/forum/threads/fork_thread.ex:43:20: ThreadGraph.Forum.Threads.ForkThread.create/3\\n\\n')\n\n    def test_t32_fork_records_a_single_fork_of_link(suite):\n>       _assert_scenario(suite, \"T32\")\n\n/tests/test_final_state.py:1020: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nsuite = ({'T01': ('PASS', ''), 'T02': ('PASS', ''), 'T03': ('PASS', ''), 'T04': ('PASS', ''), ...}, '`mix run /tmp/harbor_manu...n    \u2502\\n    \u2514\u2500 lib/thread_graph/forum/threads/fork_thread.ex:43:20: ThreadGraph.Forum.Threads.ForkThread.create/3\\n\\n')\nscenario_id = 'T32'\n\n    def _assert_scenario(suite, scenario_id):\n        results, diagnostics = suite\n        assert scenario_id in results, (\n            f\"Scenario {scenario_id} did not run. The project most likely failed to \"\n            f\"compile or the suite crashed.\\n{diagnostics}\"\n        )\n        status, detail = results[scenario_id]\n>       assert status == \"PASS\", f\"Scenario {scenario_id} failed:\\n{detail}\"\nE       AssertionError: Scenario T32 failed:\nE           1) test T32 fork records exactly one :fork_of link from the new root to the source (Harbor.Suite)\nE              /tmp/harbor_manual_graph.exs:661\nE              ** (Ash.Error.Unknown) \nE              Bread Crumbs:\nE                > Exception raised in: ThreadGraph.Forum.Thread.fork\nE         \nE              Unknown Error\nE         \nE              * ** (UndefinedFunctionError) function Ash.Domain.transaction/2 is undefined or private\nE                (ash 3.31.0) lib/ash/actions/create/create.ex:89: Ash.Actions.Create.run/4\nE                (ash 3.31.0) lib/ash.ex:3228: Ash.create!/3\nE                /tmp/harbor_manual_graph.exs:662: Harbor.Suite.\"test T32 fork records exactly one :fork_of link from the new root to the source\"/1\nE                (ex_unit 1.18.4) lib/ex_unit/runner.ex:511: ExUnit.Runner.exec_test/2\nE                (stdlib 6.2.2) timer.erl:595: :timer.tc/2\nE                (ex_unit 1.18.4) lib/ex_unit/runner.ex:433: anonymous fn/6 in ExUnit.Runner.spawn_test_monitor/4\nE              code: thread = apply(ThreadGraph.Forum, :fork_thread!, [F.message_id(\"fork-5\"), \"fk-c\", \"Fork C\"])\nE              stacktrace:\nE                (ash 3.31.0) Ash.Domain.transaction(ThreadGraph.Forum, #Function<1.11048409/0 in ThreadGraph.Forum.Threads.ForkThread.create/3>)\nE                (ash 3.31.0) lib/ash/behaviour_helpers.ex:62: Ash.BehaviourHelpers.call_and_validate_return/5\nE                (ash 3.31.0) lib/ash/actions/create/create.ex:379: anonymous fn/8 in Ash.Actions.Create.commit/3\nE                (ash 3.31.0) lib/ash/changeset/changeset.ex:5146: Ash.Changeset.run_around_actions/2\nE                (ash 3.31.0) lib/ash/changeset/changeset.ex:4824: anonymous fn/2 in Ash.Changeset.transaction_hooks/2\nE                (ash 3.31.0) lib/ash/changeset/changeset.ex:4725: Ash.Changeset.with_hooks/3\nE                (ash 3.31.0) lib/ash/actions/create/create.ex:323: Ash.Actions.Create.commit/3\nE                (ash 3.31.0) lib/ash/actions/create/create.ex:186: Ash.Actions.Create.do_run/4\nE                (ash 3.31.0) lib/ash/actions/create/create.ex:89: Ash.Actions.Create.run/4\nE                (ash 3.31.0) lib/ash.ex:3228: Ash.create!/3\nE                /tmp/harbor_manual_graph.exs:662: (test)\nE         \nE       assert 'FAIL' == 'PASS'\nE         - PASS\nE         + FAIL\n\n/tests/test_final_state.py:892: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_t33_fork_rejects_an_unknown_source_message",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 8,
+                "start": 1789643081203,
+                "stop": 1789643081211,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "suite = ({'T01': ('PASS', ''), 'T02': ('PASS', ''), 'T03': ('PASS', ''), 'T04': ('PASS', ''), ...}, '`mix run /tmp/harbor_manu...n    \u2502\\n    \u2514\u2500 lib/thread_graph/forum/threads/fork_thread.ex:43:20: ThreadGraph.Forum.Threads.ForkThread.create/3\\n\\n')\n\n    def test_t33_fork_rejects_an_unknown_source_message(suite):\n>       _assert_scenario(suite, \"T33\")\n\n/tests/test_final_state.py:1024: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nsuite = ({'T01': ('PASS', ''), 'T02': ('PASS', ''), 'T03': ('PASS', ''), 'T04': ('PASS', ''), ...}, '`mix run /tmp/harbor_manu...n    \u2502\\n    \u2514\u2500 lib/thread_graph/forum/threads/fork_thread.ex:43:20: ThreadGraph.Forum.Threads.ForkThread.create/3\\n\\n')\nscenario_id = 'T33'\n\n    def _assert_scenario(suite, scenario_id):\n        results, diagnostics = suite\n        assert scenario_id in results, (\n            f\"Scenario {scenario_id} did not run. The project most likely failed to \"\n            f\"compile or the suite crashed.\\n{diagnostics}\"\n        )\n        status, detail = results[scenario_id]\n>       assert status == \"PASS\", f\"Scenario {scenario_id} failed:\\n{detail}\"\nE       AssertionError: Scenario T33 failed:\nE           1) test T33 fork rejects an unknown source message without writing anything (Harbor.Suite)\nE              /tmp/harbor_manual_graph.exs:680\nE              ** (Ash.Error.Unknown) \nE              Bread Crumbs:\nE                > Exception raised in: ThreadGraph.Forum.Thread.fork\nE         \nE              Unknown Error\nE         \nE              * ** (UndefinedFunctionError) function Ash.Domain.transaction/2 is undefined or private\nE                (ash 3.31.0) lib/ash/actions/create/create.ex:89: Ash.Actions.Create.run/4\nE                /tmp/harbor_manual_graph.exs:690: Harbor.Suite.\"test T33 fork rejects an unknown source message without writing anything\"/1\nE                (ex_unit 1.18.4) lib/ex_unit/runner.ex:511: ExUnit.Runner.exec_test/2\nE                (stdlib 6.2.2) timer.erl:595: :timer.tc/2\nE                (ex_unit 1.18.4) lib/ex_unit/runner.ex:433: anonymous fn/6 in ExUnit.Runner.spawn_test_monitor/4\nE              code: |> Ash.create()\nE              stacktrace:\nE                (ash 3.31.0) Ash.Domain.transaction(ThreadGraph.Forum, #Function<1.11048409/0 in ThreadGraph.Forum.Threads.ForkThread.create/3>)\nE                (ash 3.31.0) lib/ash/behaviour_helpers.ex:62: Ash.BehaviourHelpers.call_and_validate_return/5\nE                (ash 3.31.0) lib/ash/actions/create/create.ex:379: anonymous fn/8 in Ash.Actions.Create.commit/3\nE                (ash 3.31.0) lib/ash/changeset/changeset.ex:5146: Ash.Changeset.run_around_actions/2\nE                (ash 3.31.0) lib/ash/changeset/changeset.ex:4824: anonymous fn/2 in Ash.Changeset.transaction_hooks/2\nE                (ash 3.31.0) lib/ash/changeset/changeset.ex:4725: Ash.Changeset.with_hooks/3\nE                (ash 3.31.0) lib/ash/actions/create/create.ex:323: Ash.Actions.Create.commit/3\nE                (ash 3.31.0) lib/ash/actions/create/create.ex:186: Ash.Actions.Create.do_run/4\nE                (ash 3.31.0) lib/ash/actions/create/create.ex:89: Ash.Actions.Create.run/4\nE                /tmp/harbor_manual_graph.exs:690: (test)\nE         \nE       assert 'FAIL' == 'PASS'\nE         - PASS\nE         + FAIL\n\n/tests/test_final_state.py:892: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_t34_fork_rejects_a_locked_source_thread",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 9,
+                "start": 1789643081211,
+                "stop": 1789643081220,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "suite = ({'T01': ('PASS', ''), 'T02': ('PASS', ''), 'T03': ('PASS', ''), 'T04': ('PASS', ''), ...}, '`mix run /tmp/harbor_manu...n    \u2502\\n    \u2514\u2500 lib/thread_graph/forum/threads/fork_thread.ex:43:20: ThreadGraph.Forum.Threads.ForkThread.create/3\\n\\n')\n\n    def test_t34_fork_rejects_a_locked_source_thread(suite):\n>       _assert_scenario(suite, \"T34\")\n\n/tests/test_final_state.py:1028: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nsuite = ({'T01': ('PASS', ''), 'T02': ('PASS', ''), 'T03': ('PASS', ''), 'T04': ('PASS', ''), ...}, '`mix run /tmp/harbor_manu...n    \u2502\\n    \u2514\u2500 lib/thread_graph/forum/threads/fork_thread.ex:43:20: ThreadGraph.Forum.Threads.ForkThread.create/3\\n\\n')\nscenario_id = 'T34'\n\n    def _assert_scenario(suite, scenario_id):\n        results, diagnostics = suite\n        assert scenario_id in results, (\n            f\"Scenario {scenario_id} did not run. The project most likely failed to \"\n            f\"compile or the suite crashed.\\n{diagnostics}\"\n        )\n        status, detail = results[scenario_id]\n>       assert status == \"PASS\", f\"Scenario {scenario_id} failed:\\n{detail}\"\nE       AssertionError: Scenario T34 failed:\nE           1) test T34 fork rejects a locked source thread without writing anything (Harbor.Suite)\nE              /tmp/harbor_manual_graph.exs:706\nE              ** (Ash.Error.Unknown) \nE              Bread Crumbs:\nE                > Exception raised in: ThreadGraph.Forum.Thread.fork\nE         \nE              Unknown Error\nE         \nE              * ** (UndefinedFunctionError) function Ash.Domain.transaction/2 is undefined or private\nE                (ash 3.31.0) lib/ash/actions/create/create.ex:89: Ash.Actions.Create.run/4\nE                /tmp/harbor_manual_graph.exs:716: Harbor.Suite.\"test T34 fork rejects a locked source thread without writing anything\"/1\nE                (ex_unit 1.18.4) lib/ex_unit/runner.ex:511: ExUnit.Runner.exec_test/2\nE                (stdlib 6.2.2) timer.erl:595: :timer.tc/2\nE                (ex_unit 1.18.4) lib/ex_unit/runner.ex:433: anonymous fn/6 in ExUnit.Runner.spawn_test_monitor/4\nE              code: |> Ash.create()\nE              stacktrace:\nE                (ash 3.31.0) Ash.Domain.transaction(ThreadGraph.Forum, #Function<1.11048409/0 in ThreadGraph.Forum.Threads.ForkThread.create/3>)\nE                (ash 3.31.0) lib/ash/behaviour_helpers.ex:62: Ash.BehaviourHelpers.call_and_validate_return/5\nE                (ash 3.31.0) lib/ash/actions/create/create.ex:379: anonymous fn/8 in Ash.Actions.Create.commit/3\nE                (ash 3.31.0) lib/ash/changeset/changeset.ex:5146: Ash.Changeset.run_around_actions/2\nE                (ash 3.31.0) lib/ash/changeset/changeset.ex:4824: anonymous fn/2 in Ash.Changeset.transaction_hooks/2\nE                (ash 3.31.0) lib/ash/changeset/changeset.ex:4725: Ash.Changeset.with_hooks/3\nE                (ash 3.31.0) lib/ash/actions/create/create.ex:323: Ash.Actions.Create.commit/3\nE                (ash 3.31.0) lib/ash/actions/create/create.ex:186: Ash.Actions.Create.do_run/4\nE                (ash 3.31.0) lib/ash/actions/create/create.ex:89: Ash.Actions.Create.run/4\nE                /tmp/harbor_manual_graph.exs:716: (test)\nE         \nE       assert 'FAIL' == 'PASS'\nE         - PASS\nE         + FAIL\n\n/tests/test_final_state.py:892: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_t35_fork_code_interface_runs_the_action_once",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 8,
+                "start": 1789643081220,
+                "stop": 1789643081228,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "suite = ({'T01': ('PASS', ''), 'T02': ('PASS', ''), 'T03': ('PASS', ''), 'T04': ('PASS', ''), ...}, '`mix run /tmp/harbor_manu...n    \u2502\\n    \u2514\u2500 lib/thread_graph/forum/threads/fork_thread.ex:43:20: ThreadGraph.Forum.Threads.ForkThread.create/3\\n\\n')\n\n    def test_t35_fork_code_interface_runs_the_action_once(suite):\n>       _assert_scenario(suite, \"T35\")\n\n/tests/test_final_state.py:1032: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nsuite = ({'T01': ('PASS', ''), 'T02': ('PASS', ''), 'T03': ('PASS', ''), 'T04': ('PASS', ''), ...}, '`mix run /tmp/harbor_manu...n    \u2502\\n    \u2514\u2500 lib/thread_graph/forum/threads/fork_thread.ex:43:20: ThreadGraph.Forum.Threads.ForkThread.create/3\\n\\n')\nscenario_id = 'T35'\n\n    def _assert_scenario(suite, scenario_id):\n        results, diagnostics = suite\n        assert scenario_id in results, (\n            f\"Scenario {scenario_id} did not run. The project most likely failed to \"\n            f\"compile or the suite crashed.\\n{diagnostics}\"\n        )\n        status, detail = results[scenario_id]\n>       assert status == \"PASS\", f\"Scenario {scenario_id} failed:\\n{detail}\"\nE       AssertionError: Scenario T35 failed:\nE           1) test T35 the fork code interface runs the manual action exactly once (Harbor.Suite)\nE              /tmp/harbor_manual_graph.exs:732\nE              ** (Ash.Error.Unknown) \nE              Bread Crumbs:\nE                > Exception raised in: ThreadGraph.Forum.Thread.fork\nE         \nE              Unknown Error\nE         \nE              * ** (UndefinedFunctionError) function Ash.Domain.transaction/2 is undefined or private\nE                (ash 3.31.0) lib/ash/actions/create/create.ex:89: Ash.Actions.Create.run/4\nE                /tmp/harbor_manual_graph.exs:736: Harbor.Suite.\"test T35 the fork code interface runs the manual action exactly once\"/1\nE                (ex_unit 1.18.4) lib/ex_unit/runner.ex:511: ExUnit.Runner.exec_test/2\nE                (stdlib 6.2.2) timer.erl:595: :timer.tc/2\nE                (ex_unit 1.18.4) lib/ex_unit/runner.ex:433: anonymous fn/6 in ExUnit.Runner.spawn_test_monitor/4\nE              code: apply(ThreadGraph.Forum, :fork_thread, [F.message_id(\"fork-4\"), \"fk-d\", \"Fork D\"])\nE              stacktrace:\nE                (ash 3.31.0) Ash.Domain.transaction(ThreadGraph.Forum, #Function<1.11048409/0 in ThreadGraph.Forum.Threads.ForkThread.create/3>)\nE                (ash 3.31.0) lib/ash/behaviour_helpers.ex:62: Ash.BehaviourHelpers.call_and_validate_return/5\nE                (ash 3.31.0) lib/ash/actions/create/create.ex:379: anonymous fn/8 in Ash.Actions.Create.commit/3\nE                (ash 3.31.0) lib/ash/changeset/changeset.ex:5146: Ash.Changeset.run_around_actions/2\nE                (ash 3.31.0) lib/ash/changeset/changeset.ex:4824: anonymous fn/2 in Ash.Changeset.transaction_hooks/2\nE                (ash 3.31.0) lib/ash/changeset/changeset.ex:4725: Ash.Changeset.with_hooks/3\nE                (ash 3.31.0) lib/ash/actions/create/create.ex:323: Ash.Actions.Create.commit/3\nE                (ash 3.31.0) lib/ash/actions/create/create.ex:186: Ash.Actions.Create.do_run/4\nE                (ash 3.31.0) lib/ash/actions/create/create.ex:89: Ash.Actions.Create.run/4\nE                /tmp/harbor_manual_graph.exs:736: (test)\nE         \nE       assert 'FAIL' == 'PASS'\nE         - PASS\nE         + FAIL\n\n/tests/test_final_state.py:892: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            }
+        ]
+    }
+}

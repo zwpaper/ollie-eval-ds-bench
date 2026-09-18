@@ -1,0 +1,146 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0
+rootdir: /tests
+plugins: json-ctrf-0.5.3
+collected 9 items
+
+tests/test_final_state.py ...FFFFFF                                      [100%]
+
+=================================== FAILURES ===================================
+_________________ test_headless_harness_executes_successfully __________________
+
+    def test_headless_harness_executes_successfully():
+        result = _run_harness()
+>       assert result.returncode == 0, (
+            "Headless test harness exited with non-zero status.\n"
+            f"stdout:\n{result.stdout}\n\nstderr:\n{result.stderr}"
+        )
+E       AssertionError: Headless test harness exited with non-zero status.
+E         stdout:
+E         Godot Engine v4.3.stable.official.77dcf97d8 - https://godotengine.org
+E         
+E         [PASS] scene_structure_valid — {  }
+E         [PASS] nav_agent_api_present — {  }
+E         [PASS] nav_world_api_present — {  }
+E         
+E         
+E         stderr:
+E         SCRIPT ERROR: Invalid assignment of property or key 'bake_navigation_mesh' with value of type 'bool' on a base object of type 'NavigationRegion2D'.
+E                   at: _ready (res://scripts/nav_world.gd:15)
+E         WARNING: Function make_polygons_from_outlines() is deprecated.
+E         Use NavigationServer2D.parse_source_geometry_data() and NavigationServer2D.bake_from_source_geometry_data() instead.
+E              at: make_polygons_from_outlines (scene/resources/2d/navigation_polygon.cpp:280)
+E         terminate called after throwing an instance of 'std::system_error'
+E           what():  Resource deadlock avoided
+E         
+E       assert -6 == 0
+E        +  where -6 = CompletedProcess(args=['godot', '--headless', '--path', '/home/user/godot_project', '--script', 'res://tests/run_tests....cpp:280)\nterminate called after throwing an instance of 'std::system_error'\n  what():  Resource deadlock avoided\n").returncode
+
+tests/test_final_state.py:61: AssertionError
+__________________________ test_scene_structure_valid __________________________
+
+    def test_scene_structure_valid():
+>       results = _load_results()
+
+tests/test_final_state.py:75: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _load_results():
+>       assert os.path.isfile(RESULTS_PATH), (
+            f"Test results file {RESULTS_PATH} was not produced by the harness."
+        )
+E       AssertionError: Test results file /home/user/godot_project/test_results.json was not produced by the harness.
+E       assert False
+E        +  where False = <function isfile at 0x7ff276fd8220>('/home/user/godot_project/test_results.json')
+E        +    where <function isfile at 0x7ff276fd8220> = <module 'posixpath' (frozen)>.isfile
+E        +      where <module 'posixpath' (frozen)> = os.path
+
+tests/test_final_state.py:31: AssertionError
+__________________________ test_nav_agent_api_present __________________________
+
+    def test_nav_agent_api_present():
+>       results = _load_results()
+
+tests/test_final_state.py:87: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _load_results():
+>       assert os.path.isfile(RESULTS_PATH), (
+            f"Test results file {RESULTS_PATH} was not produced by the harness."
+        )
+E       AssertionError: Test results file /home/user/godot_project/test_results.json was not produced by the harness.
+E       assert False
+E        +  where False = <function isfile at 0x7ff276fd8220>('/home/user/godot_project/test_results.json')
+E        +    where <function isfile at 0x7ff276fd8220> = <module 'posixpath' (frozen)>.isfile
+E        +      where <module 'posixpath' (frozen)> = os.path
+
+tests/test_final_state.py:31: AssertionError
+__________________________ test_nav_world_api_present __________________________
+
+    def test_nav_world_api_present():
+>       results = _load_results()
+
+tests/test_final_state.py:96: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _load_results():
+>       assert os.path.isfile(RESULTS_PATH), (
+            f"Test results file {RESULTS_PATH} was not produced by the harness."
+        )
+E       AssertionError: Test results file /home/user/godot_project/test_results.json was not produced by the harness.
+E       assert False
+E        +  where False = <function isfile at 0x7ff276fd8220>('/home/user/godot_project/test_results.json')
+E        +    where <function isfile at 0x7ff276fd8220> = <module 'posixpath' (frozen)>.isfile
+E        +      where <module 'posixpath' (frozen)> = os.path
+
+tests/test_final_state.py:31: AssertionError
+____________________ test_agent_reaches_goal_with_obstacles ____________________
+
+    def test_agent_reaches_goal_with_obstacles():
+>       results = _load_results()
+
+tests/test_final_state.py:106: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _load_results():
+>       assert os.path.isfile(RESULTS_PATH), (
+            f"Test results file {RESULTS_PATH} was not produced by the harness."
+        )
+E       AssertionError: Test results file /home/user/godot_project/test_results.json was not produced by the harness.
+E       assert False
+E        +  where False = <function isfile at 0x7ff276fd8220>('/home/user/godot_project/test_results.json')
+E        +    where <function isfile at 0x7ff276fd8220> = <module 'posixpath' (frozen)>.isfile
+E        +      where <module 'posixpath' (frozen)> = os.path
+
+tests/test_final_state.py:31: AssertionError
+________________ test_agent_reaches_goal_after_obstacles_moved _________________
+
+    def test_agent_reaches_goal_after_obstacles_moved():
+>       results = _load_results()
+
+tests/test_final_state.py:116: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _load_results():
+>       assert os.path.isfile(RESULTS_PATH), (
+            f"Test results file {RESULTS_PATH} was not produced by the harness."
+        )
+E       AssertionError: Test results file /home/user/godot_project/test_results.json was not produced by the harness.
+E       assert False
+E        +  where False = <function isfile at 0x7ff276fd8220>('/home/user/godot_project/test_results.json')
+E        +    where <function isfile at 0x7ff276fd8220> = <module 'posixpath' (frozen)>.isfile
+E        +      where <module 'posixpath' (frozen)> = os.path
+
+tests/test_final_state.py:31: AssertionError
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED tests/test_final_state.py::test_nav_world_script_exists
+PASSED tests/test_final_state.py::test_nav_agent_script_exists
+PASSED tests/test_final_state.py::test_nav_world_scene_exists
+FAILED tests/test_final_state.py::test_headless_harness_executes_successfully
+FAILED tests/test_final_state.py::test_scene_structure_valid - AssertionError...
+FAILED tests/test_final_state.py::test_nav_agent_api_present - AssertionError...
+FAILED tests/test_final_state.py::test_nav_world_api_present - AssertionError...
+FAILED tests/test_final_state.py::test_agent_reaches_goal_with_obstacles - As...
+FAILED tests/test_final_state.py::test_agent_reaches_goal_after_obstacles_moved
+========================= 6 failed, 3 passed in 0.81s ==========================

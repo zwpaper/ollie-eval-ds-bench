@@ -1,0 +1,18 @@
+{
+    "task": {
+        "path": "/home/kweizh/ollie/dataset/eval/tasks/ds-bench/godot_coroutine_scheduler",
+        "source": "ds-bench"
+    },
+    "trial_name": "godot_coroutine_scheduler__Tsi2Ve7",
+    "trials_dir": "/home/kweizh/ollie/dataset/eval/results/ds-bench-gemini-3.1-flash-lite-sft-20260916-235525-2-20260917T182943/agentic",
+    "timeout_multiplier": 10.0,
+    "agent": {
+        "name": "ollie.agent:OllieAgent",
+        "model_name": "gemini-3.1-flash-lite-sft-20260916-235525@2",
+        "kwargs": {
+            "max_steps": 100,
+            "reasoning_effort": "auto"
+        }
+    },
+    "job_id": "dfb1949a-43ba-4e75-8487-c0cd8d20370f"
+}
