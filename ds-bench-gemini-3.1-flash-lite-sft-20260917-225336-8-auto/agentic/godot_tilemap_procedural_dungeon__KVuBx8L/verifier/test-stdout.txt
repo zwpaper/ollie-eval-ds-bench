@@ -1,0 +1,94 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0
+rootdir: /tests
+plugins: json-ctrf-0.5.3
+collected 6 items
+
+tests/test_final_state.py .FFF.F                                         [100%]
+
+=================================== FAILURES ===================================
+___________________________ test_tileset_file_exists ___________________________
+
+    def test_tileset_file_exists():
+        path = os.path.join(PROJECT_DIR, "tilesets", "dungeon.tres")
+>       assert os.path.isfile(path), f"Required TileSet resource missing at {path}"
+E       AssertionError: Required TileSet resource missing at /home/user/myproject/tilesets/dungeon.tres
+E       assert False
+E        +  where False = <function isfile at 0x7f22fefa0220>('/home/user/myproject/tilesets/dungeon.tres')
+E        +    where <function isfile at 0x7f22fefa0220> = <module 'posixpath' (frozen)>.isfile
+E        +      where <module 'posixpath' (frozen)> = os.path
+
+tests/test_final_state.py:150: AssertionError
+_____________________ test_dungeon_generator_script_exists _____________________
+
+    def test_dungeon_generator_script_exists():
+        path = os.path.join(PROJECT_DIR, "scripts", "DungeonGenerator.gd")
+>       assert os.path.isfile(path), f"Required GDScript missing at {path}"
+E       AssertionError: Required GDScript missing at /home/user/myproject/scripts/DungeonGenerator.gd
+E       assert False
+E        +  where False = <function isfile at 0x7f22fefa0220>('/home/user/myproject/scripts/DungeonGenerator.gd')
+E        +    where <function isfile at 0x7f22fefa0220> = <module 'posixpath' (frozen)>.isfile
+E        +      where <module 'posixpath' (frozen)> = os.path
+
+tests/test_final_state.py:155: AssertionError
+____________________________ test_main_scene_exists ____________________________
+
+    def test_main_scene_exists():
+        path = os.path.join(PROJECT_DIR, "scenes", "Main.tscn")
+>       assert os.path.isfile(path), f"Required Main scene missing at {path}"
+E       AssertionError: Required Main scene missing at /home/user/myproject/scenes/Main.tscn
+E       assert False
+E        +  where False = <function isfile at 0x7f22fefa0220>('/home/user/myproject/scenes/Main.tscn')
+E        +    where <function isfile at 0x7f22fefa0220> = <module 'posixpath' (frozen)>.isfile
+E        +      where <module 'posixpath' (frozen)> = os.path
+
+tests/test_final_state.py:160: AssertionError
+_____________________________ test_harness_passes ______________________________
+
+    def test_harness_passes():
+        with open(HARNESS_PATH, "w") as f:
+            f.write(HARNESS_SCRIPT)
+    
+        try:
+            result = _run_godot(
+                ["--path", PROJECT_DIR, "--script", "res://zealt_harness.gd"],
+                timeout=240,
+            )
+        finally:
+            try:
+                os.remove(HARNESS_PATH)
+            except OSError:
+                pass
+    
+        combined = (result.stdout or "") + "\n" + (result.stderr or "")
+>       assert "ZEALT_RESULT: OK" in combined, (
+            f"Dungeon generator harness did not report success.\n"
+            f"exit code: {result.returncode}\n"
+            f"stdout:\n{result.stdout}\n"
+            f"stderr:\n{result.stderr}"
+        )
+E       AssertionError: Dungeon generator harness did not report success.
+E         exit code: 1
+E         stdout:
+E         Godot Engine v4.3.stable.official.77dcf97d8 - https://godotengine.org
+E         
+E         ZEALT_RESULT: FAIL tilesets/dungeon.tres did not load as TileSet
+E         
+E         stderr:
+E         ERROR: Cannot open file 'res://tilesets/dungeon.tres'.
+E            at: load (scene/resources/resource_format_text.cpp:1367)
+E         ERROR: Failed loading resource: res://tilesets/dungeon.tres. Make sure resources have been imported by opening the project in the editor at least once.
+E            at: _load (core/io/resource_loader.cpp:283)
+E         
+E       assert 'ZEALT_RESULT: OK' in 'Godot Engine v4.3.stable.official.77dcf97d8 - https://godotengine.org\n\nZEALT_RESULT: FAIL tilesets/dungeon.tres did...ve been imported by opening the project in the editor at least once.\n   at: _load (core/io/resource_loader.cpp:283)\n'
+
+tests/test_final_state.py:190: AssertionError
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED tests/test_final_state.py::test_project_godot_file_exists
+PASSED tests/test_final_state.py::test_project_imports_cleanly
+FAILED tests/test_final_state.py::test_tileset_file_exists - AssertionError: ...
+FAILED tests/test_final_state.py::test_dungeon_generator_script_exists - Asse...
+FAILED tests/test_final_state.py::test_main_scene_exists - AssertionError: Re...
+FAILED tests/test_final_state.py::test_harness_passes - AssertionError: Dunge...
+========================= 4 failed, 2 passed in 26.12s =========================

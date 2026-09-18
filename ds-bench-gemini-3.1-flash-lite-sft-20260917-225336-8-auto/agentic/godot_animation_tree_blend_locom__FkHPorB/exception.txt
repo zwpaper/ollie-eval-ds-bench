@@ -1,0 +1,31 @@
+Traceback (most recent call last):
+  File "/home/kweizh/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/trial/single_step.py", line 77, in _run_agent
+    await self._run_agent_phase(
+    ...<5 lines>...
+    )
+  File "/home/kweizh/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/trial/trial.py", line 554, in _run_agent_phase
+    await asyncio.wait_for(
+    ...<6 lines>...
+    )
+  File "/usr/lib/python3.13/asyncio/tasks.py", line 507, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "/home/kweizh/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/agents/installed/base.py", line 186, in wrapper
+    return await fn(self, instruction, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kweizh/ollie/agents/ollie/agent.py", line 494, in run
+    raise self._classify_exec_error(command, result)
+harbor.agents.installed.base.NonZeroAgentExitCodeError: Command failed (exit 1): [ -f "$HOME/.nvm"/nvm.sh ] && . "$HOME/.nvm"/nvm.sh; cat /logs/agent/prompt.txt | ollie --ndjson --model gemini-3.1-flash-lite-sft-20260917-225336@8 --max-steps 100 --mode native --reasoning-effort auto 2>&1 | stdbuf -oL tee /logs/agent/ollie.jsonl
+stdout: {"type":"text","text":"<think>Let me start by exploring the directory and godot project setup"}
+{"type":"text","text":"."}
+{"type":"text","text":"</think>"}
+{"type":"tool-call","toolName":"bash","input":{"command":"ls -la /home/user/godot_project 2>& ... [59735 chars truncated] ... ate=\", cur)\n\tget_tree().quit(0)\n"}}
+{"type":"tool-result","toolName":"writeFile","output":{"success":true}}
+{"type":"tool-call","toolName":"bash","input":{"command":"cd /home/user/godot_project && timeout 60 godot --headless _test_runner.tscn 2>&1 | tail -20"}}
+{"type":"tool-result","toolName":"bash","output":{"exitCode":0,"stdout":"Godot Engine v4.3.stable.official.77dcf97d8 - https://godotengine.org\n\nFAILED: anim_player not set on tree\n","stderr":""}}
+{"type":"text","text":"<think>Still failed: anim_player not set. Let me check the ."}
+{"type":"text","text":"tscn directly for anim_player property."}
+{"type":"text","text":"</think>"}
+{"type":"error","message":"Chat completion failed: Response stream ended without a finish reason."}
+
+stderr: None

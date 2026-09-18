@@ -1,0 +1,344 @@
+{
+    "reportFormat": "CTRF",
+    "specVersion": "0.0.0",
+    "timestamp": "2026-09-18T08:57:19.218906+00:00",
+    "generatedBy": "pytest",
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "7.4.4"
+        },
+        "summary": {
+            "tests": 35,
+            "passed": 35,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1789721838645,
+            "stop": 1789721839218
+        },
+        "environment": {
+            "buildName": "Pytest JSON CTRF Report",
+            "buildNumber": "000",
+            "buildUrl": "https://ctrf.io"
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_world_script_loads",
+                "status": "passed",
+                "duration": 474,
+                "start": 1789721838692,
+                "stop": 1789721839166,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_required_methods_present",
+                "status": "passed",
+                "duration": 2,
+                "start": 1789721839167,
+                "stop": 1789721839169,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_new_entity_is_alive",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789721839170,
+                "stop": 1789721839171,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_new_entity_in_empty_archetype",
+                "status": "passed",
+                "duration": 2,
+                "start": 1789721839171,
+                "stop": 1789721839173,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_query_all_matches_new_entity",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789721839173,
+                "stop": 1789721839174,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_exact_empty_archetype_matches_new_entity",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789721839174,
+                "stop": 1789721839175,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_add_component_returns_true",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789721839176,
+                "stop": 1789721839177,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_archetype_membership_after_adds",
+                "status": "passed",
+                "duration": 2,
+                "start": 1789721839177,
+                "stop": 1789721839179,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_remove_component_returns_true",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789721839179,
+                "stop": 1789721839180,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_archetype_membership_after_remove",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789721839181,
+                "stop": 1789721839182,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_remove_absent_component_returns_false",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789721839182,
+                "stop": 1789721839183,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_data_integrity_position_x",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789721839184,
+                "stop": 1789721839185,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_data_integrity_position_y",
+                "status": "passed",
+                "duration": 2,
+                "start": 1789721839185,
+                "stop": 1789721839187,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_data_integrity_health",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789721839187,
+                "stop": 1789721839188,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_update_existing_component_returns_true",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789721839188,
+                "stop": 1789721839189,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_update_existing_component_keeps_archetype",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789721839190,
+                "stop": 1789721839191,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_update_existing_component_changes_value",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789721839191,
+                "stop": 1789721839192,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_removed_component_reads_null",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789721839192,
+                "stop": 1789721839193,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_query_two_component_signature",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789721839194,
+                "stop": 1789721839195,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_query_single_component_signature",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789721839195,
+                "stop": 1789721839196,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_query_duplicate_types_treated_as_set",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789721839197,
+                "stop": 1789721839198,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_exact_archetype_excludes_supersets",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789721839198,
+                "stop": 1789721839199,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_exact_archetype_single_type",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789721839200,
+                "stop": 1789721839201,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_destroy_entity_returns_true",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789721839201,
+                "stop": 1789721839202,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_index_recycled_on_recreate",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789721839202,
+                "stop": 1789721839203,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_generation_bumped_on_recycle",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789721839204,
+                "stop": 1789721839205,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_stale_handle_not_alive",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789721839205,
+                "stop": 1789721839206,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_recycled_handle_alive",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789721839207,
+                "stop": 1789721839208,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_stale_has_component_false",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789721839208,
+                "stop": 1789721839209,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_stale_get_component_null",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789721839209,
+                "stop": 1789721839210,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_recycled_entity_starts_empty",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789721839211,
+                "stop": 1789721839212,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_recycled_entity_has_no_stale_data",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789721839212,
+                "stop": 1789721839213,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_stale_add_component_rejected",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789721839214,
+                "stop": 1789721839215,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_stale_add_does_not_affect_live_entity",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789721839215,
+                "stop": 1789721839216,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_destroy_stale_handle_returns_false",
+                "status": "passed",
+                "duration": 2,
+                "start": 1789721839216,
+                "stop": 1789721839218,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

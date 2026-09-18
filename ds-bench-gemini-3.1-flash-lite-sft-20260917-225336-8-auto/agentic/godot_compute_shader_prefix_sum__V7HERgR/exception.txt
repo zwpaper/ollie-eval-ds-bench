@@ -1,0 +1,29 @@
+Traceback (most recent call last):
+  File "/home/kweizh/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/trial/single_step.py", line 77, in _run_agent
+    await self._run_agent_phase(
+    ...<5 lines>...
+    )
+  File "/home/kweizh/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/trial/trial.py", line 554, in _run_agent_phase
+    await asyncio.wait_for(
+    ...<6 lines>...
+    )
+  File "/usr/lib/python3.13/asyncio/tasks.py", line 507, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "/home/kweizh/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/agents/installed/base.py", line 186, in wrapper
+    return await fn(self, instruction, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kweizh/ollie/agents/ollie/agent.py", line 494, in run
+    raise self._classify_exec_error(command, result)
+harbor.agents.installed.base.NonZeroAgentExitCodeError: Command failed (exit 1): [ -f "$HOME/.nvm"/nvm.sh ] && . "$HOME/.nvm"/nvm.sh; cat /logs/agent/prompt.txt | ollie --ndjson --model gemini-3.1-flash-lite-sft-20260917-225336@8 --max-steps 100 --mode native --reasoning-effort auto 2>&1 | stdbuf -oL tee /logs/agent/ollie.jsonl
+stdout: {"type":"tool-call","toolName":"bash","input":{"command":"ls -la /usr/local/bin/; godot --version 2>&1 | head; echo \"---\"; find / -name \"input.txt\" -size -10k 2>/dev/null; echo \"===\"; ls -la /home/user/ 2>/dev/null"}}
+{"type":"tool-result","too ... [199956 chars truncated] ...  after 600000 ms"}}
+{"type":"text","text":"<think>Timing out again. The timeout seems to be this environment"}
+{"type":"text","text":"'s execution timeout on long commands, not Godot hanging. In the very beginning `godot --version` ran fine"}
+{"type":"text","text":". Then runs are timing out. Perhaps there's an execution limit accumulating. Actually the FIRST godot-run attempt"}
+{"type":"text","text":" finished quickly (with OpenGL fallback). The timeout started happening after I added the `.godot` cache. Let me remove"}
+{"type":"text","text":" the .godot directory to avoid cache/lock interactions and try."}
+{"type":"text","text":"</think>"}
+{"type":"error","message":"Chat completion failed: Response stream ended without a finish reason."}
+
+stderr: None

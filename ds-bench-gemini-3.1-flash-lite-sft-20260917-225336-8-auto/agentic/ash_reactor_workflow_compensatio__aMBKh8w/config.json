@@ -1,0 +1,18 @@
+{
+    "task": {
+        "path": "/home/kweizh/ollie/dataset/eval/tasks/ds-bench/ash_reactor_workflow_compensation_graph",
+        "source": "ds-bench"
+    },
+    "trial_name": "ash_reactor_workflow_compensatio__aMBKh8w",
+    "trials_dir": "/home/kweizh/ollie/dataset/eval/results/ds-bench-gemini-3.1-flash-lite-sft-20260917-225336-8-20260918T164217/agentic",
+    "timeout_multiplier": 10.0,
+    "agent": {
+        "name": "ollie.agent:OllieAgent",
+        "model_name": "gemini-3.1-flash-lite-sft-20260917-225336@8",
+        "kwargs": {
+            "max_steps": 100,
+            "reasoning_effort": "auto"
+        }
+    },
+    "job_id": "d0039eb7-cddc-490c-8fd9-e446ad8cd843"
+}

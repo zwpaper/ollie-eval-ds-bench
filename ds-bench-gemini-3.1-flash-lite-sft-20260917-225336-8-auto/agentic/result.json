@@ -1,0 +1,108 @@
+{
+    "id": "d0039eb7-cddc-490c-8fd9-e446ad8cd843",
+    "started_at": "2026-09-18T16:42:19.556348",
+    "updated_at": "2026-09-18T18:27:39.446277",
+    "finished_at": "2026-09-18T18:27:39.446277",
+    "n_total_trials": 34,
+    "stats": {
+        "n_completed_trials": 34,
+        "n_errored_trials": 29,
+        "n_running_trials": 0,
+        "n_pending_trials": 0,
+        "n_cancelled_trials": 0,
+        "n_retries": 0,
+        "evals": {
+            "ollie__gemini-3.1-flash-lite-sft-20260917-225336@8__ds-bench": {
+                "n_trials": 34,
+                "n_errors": 29,
+                "metrics": [
+                    {
+                        "mean": 0.11764705882352941
+                    }
+                ],
+                "pass_at_k": {},
+                "reward_stats": {
+                    "reward": {
+                        "0.0": [
+                            "godot_dialog_branching_system__43TgmaZ",
+                            "godot_navigation_agent_2d_dynami__dRUfoKt",
+                            "ash_custom_expression_operators__nxMfsY9",
+                            "ash_custom_type_money_ledger__84ETyyW",
+                            "ash_notifier_transactional_outbo__iuPRgfa",
+                            "ash_soft_delete_archive_cascade__AZbpYyH",
+                            "godot_tilemap_procedural_dungeon__KVuBx8L",
+                            "godot_animation_tree_blend_locom__FkHPorB",
+                            "godot_coin_collector_inventory_h__4wu5ska",
+                            "godot_gdextension_cpp_vector_mat__qsAShz7",
+                            "godot_viewport_render_target_cam__XQvtC5T",
+                            "ash_keyset_pagination_feed_api__fJMb7oh",
+                            "godot_tween_chain_sequence_anima__M2cfJt2",
+                            "ash_postgres_migration_generatio__hYGoYfr",
+                            "godot_gridmap_meshlibrary_builde__Zs8Qixt",
+                            "godot_coroutine_scheduler__jr4VdDR",
+                            "ash_policy_bypass_rbac_hierarchy__X8mtGZa",
+                            "godot_multiplayer_synchronizer_l__XSYxJiA",
+                            "godot_multimesh_custom_instance__MGD2VNZ",
+                            "ash_phoenix_form_nested_resource__ccsaxh9",
+                            "godot_resource_preloader_scene_l__VbfVC2K",
+                            "ash_manual_relationship_read_act__mdEhDyW",
+                            "ash_event_sourcing_projection_re__m7PK97G",
+                            "godot_compute_shader_prefix_sum__V7HERgR",
+                            "godot_area_gravity_fields__5Rj5bNv",
+                            "ash_cart_pricing_calculation_eng__Hh6fu4r",
+                            "godot_enemy_stats_resource_spawn__3VtKmzD",
+                            "ash_json_api_resource_endpoints__pHybeyE",
+                            "godot_area3d_layered_gravity_fie__DZi82Cv",
+                            "ash_reactor_workflow_compensatio__aMBKh8w"
+                        ],
+                        "1.0": [
+                            "godot_ecs_archetype_framework__q5Qf5Fn",
+                            "godot_delaunay_navmesh_triangula__iQcGMBx",
+                            "godot_input_remap_action_set__yLQLwwQ",
+                            "godot_save_load_resource_seriali__Ycz2KDU"
+                        ]
+                    }
+                },
+                "exception_stats": {
+                    "NonZeroAgentExitCodeError": [
+                        "godot_dialog_branching_system__43TgmaZ",
+                        "godot_navigation_agent_2d_dynami__dRUfoKt",
+                        "ash_custom_expression_operators__nxMfsY9",
+                        "ash_custom_type_money_ledger__84ETyyW",
+                        "ash_notifier_transactional_outbo__iuPRgfa",
+                        "ash_soft_delete_archive_cascade__AZbpYyH",
+                        "godot_tilemap_procedural_dungeon__KVuBx8L",
+                        "godot_animation_tree_blend_locom__FkHPorB",
+                        "godot_coin_collector_inventory_h__4wu5ska",
+                        "godot_viewport_render_target_cam__XQvtC5T",
+                        "ash_keyset_pagination_feed_api__fJMb7oh",
+                        "godot_tween_chain_sequence_anima__M2cfJt2",
+                        "ash_postgres_migration_generatio__hYGoYfr",
+                        "godot_gridmap_meshlibrary_builde__Zs8Qixt",
+                        "godot_coroutine_scheduler__jr4VdDR",
+                        "ash_policy_bypass_rbac_hierarchy__X8mtGZa",
+                        "godot_multiplayer_synchronizer_l__XSYxJiA",
+                        "godot_multimesh_custom_instance__MGD2VNZ",
+                        "ash_phoenix_form_nested_resource__ccsaxh9",
+                        "ash_manual_relationship_read_act__mdEhDyW",
+                        "ash_event_sourcing_projection_re__m7PK97G",
+                        "godot_compute_shader_prefix_sum__V7HERgR",
+                        "godot_area_gravity_fields__5Rj5bNv",
+                        "ash_cart_pricing_calculation_eng__Hh6fu4r",
+                        "godot_save_load_resource_seriali__Ycz2KDU",
+                        "ash_json_api_resource_endpoints__pHybeyE",
+                        "godot_area3d_layered_gravity_fie__DZi82Cv",
+                        "ash_reactor_workflow_compensatio__aMBKh8w"
+                    ],
+                    "AgentTimeoutError": [
+                        "godot_gdextension_cpp_vector_mat__qsAShz7"
+                    ]
+                }
+            }
+        },
+        "n_input_tokens": 1734972,
+        "n_cache_tokens": 1333421,
+        "n_output_tokens": 59654,
+        "cost_usd": null
+    }
+}

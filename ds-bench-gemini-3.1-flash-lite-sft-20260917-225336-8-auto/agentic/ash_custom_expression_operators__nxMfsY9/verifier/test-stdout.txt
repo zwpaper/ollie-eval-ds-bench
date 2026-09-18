@@ -1,0 +1,2240 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0
+rootdir: /tests
+plugins: json-ctrf-0.5.3
+collected 37 items
+
+tests/test_final_state.py FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF          [100%]
+
+=================================== FAILURES ===================================
+_____________ test_t01_custom_expressions_are_registered_with_ash ______________
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+
+    def test_t01_custom_expressions_are_registered_with_ash(suite):
+        """T01 custom expressions are registered with ash"""
+>       check(suite, "T01")
+
+tests/test_final_state.py:653: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+scenario = 'T01'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+            pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+    
+        prefix = "test " + scenario + " "
+        matching = [name for name in results if name.startswith(prefix)]
+        assert matching, (
+            f"Scenario {scenario} did not run. Known scenarios: {sorted(results)}\n"
+            f"output:\n{suite['output']}"
+        )
+    
+        name = matching[0]
+        status, detail = results[name]
+>       assert status == "pass", f"Scenario {name} failed:\n{detail}"
+E       AssertionError: Scenario test T01 custom expressions are registered with ash failed:
+E           1) test T01 custom expressions are registered with ash (SlaLabSuite)
+E              /tmp/harbor_expr_suite.exs:75
+E              Assertion with == failed
+E              code:  assert Ash.Filter.custom_expression(:route_key, ["ams", "jfk"]) == {@route_key, ["ams", "jfk"]}
+E              left:  nil
+E              right: {SlaLab.Expressions.RouteKey, ["ams", "jfk"]}
+E              stacktrace:
+E                /tmp/harbor_expr_suite.exs:76: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+tests/test_final_state.py:648: AssertionError
+_______ test_t02_custom_expression_modules_report_name_0_and_arguments_0 _______
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+
+    def test_t02_custom_expression_modules_report_name_0_and_arguments_0(suite):
+        """T02 custom expression modules report name/0 and arguments/0"""
+>       check(suite, "T02")
+
+tests/test_final_state.py:658: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+scenario = 'T02'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+            pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+    
+        prefix = "test " + scenario + " "
+        matching = [name for name in results if name.startswith(prefix)]
+        assert matching, (
+            f"Scenario {scenario} did not run. Known scenarios: {sorted(results)}\n"
+            f"output:\n{suite['output']}"
+        )
+    
+        name = matching[0]
+        status, detail = results[name]
+>       assert status == "pass", f"Scenario {name} failed:\n{detail}"
+E       AssertionError: Scenario test T02 custom expression modules report name/0 and arguments/0 failed:
+E           1) test T02 custom expression modules report name/0 and arguments/0 (SlaLabSuite)
+E              /tmp/harbor_expr_suite.exs:83
+E              ** (UndefinedFunctionError) function SlaLab.Expressions.RouteKey.name/0 is undefined (module SlaLab.Expressions.RouteKey is not available)
+E              code: assert @route_key.name() == :route_key
+E              stacktrace:
+E                SlaLab.Expressions.RouteKey.name()
+E                /tmp/harbor_expr_suite.exs:84: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+tests/test_final_state.py:648: AssertionError
+_______________ test_t03_expression_2_dispatches_per_data_layer ________________
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+
+    def test_t03_expression_2_dispatches_per_data_layer(suite):
+        """T03 expression/2 dispatches per data layer"""
+>       check(suite, "T03")
+
+tests/test_final_state.py:663: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+scenario = 'T03'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+            pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+    
+        prefix = "test " + scenario + " "
+        matching = [name for name in results if name.startswith(prefix)]
+        assert matching, (
+            f"Scenario {scenario} did not run. Known scenarios: {sorted(results)}\n"
+            f"output:\n{suite['output']}"
+        )
+    
+        name = matching[0]
+        status, detail = results[name]
+>       assert status == "pass", f"Scenario {name} failed:\n{detail}"
+E       AssertionError: Scenario test T03 expression/2 dispatches per data layer failed:
+E           1) test T03 expression/2 dispatches per data layer (SlaLabSuite)
+E              /tmp/harbor_expr_suite.exs:90
+E              ** (UndefinedFunctionError) function SlaLab.Expressions.RouteKey.expression/2 is undefined (module SlaLab.Expressions.RouteKey is not available)
+E              code: assert {:ok, _} = Ash.CustomExpression.expression(@route_key, Ash.DataLayer.Ets, ["a", "b"])
+E              stacktrace:
+E                SlaLab.Expressions.RouteKey.expression(Ash.DataLayer.Ets, ["a", "b"])
+E                (ash 3.31.0) lib/ash/custom_expression.ex:80: Ash.CustomExpression.expression/3
+E                /tmp/harbor_expr_suite.exs:91: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+tests/test_final_state.py:648: AssertionError
+___________ test_t04_both_data_layer_clauses_produce_the_same_values ___________
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+
+    def test_t04_both_data_layer_clauses_produce_the_same_values(suite):
+        """T04 both data layer clauses produce the same values"""
+>       check(suite, "T04")
+
+tests/test_final_state.py:668: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+scenario = 'T04'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+            pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+    
+        prefix = "test " + scenario + " "
+        matching = [name for name in results if name.startswith(prefix)]
+        assert matching, (
+            f"Scenario {scenario} did not run. Known scenarios: {sorted(results)}\n"
+            f"output:\n{suite['output']}"
+        )
+    
+        name = matching[0]
+        status, detail = results[name]
+>       assert status == "pass", f"Scenario {name} failed:\n{detail}"
+E       AssertionError: Scenario test T04 both data layer clauses produce the same values failed:
+E           1) test T04 both data layer clauses produce the same values (SlaLabSuite)
+E              /tmp/harbor_expr_suite.exs:104
+E              ** (UndefinedFunctionError) function SlaLab.Expressions.RouteKey.expression/2 is undefined (module SlaLab.Expressions.RouteKey is not available)
+E              code: for data_layer <- [Ash.DataLayer.Ets, Ash.DataLayer.Simple] do
+E              stacktrace:
+E                SlaLab.Expressions.RouteKey.expression(Ash.DataLayer.Ets, ["jfk", "ams"])
+E                (ash 3.31.0) lib/ash/custom_expression.ex:80: Ash.CustomExpression.expression/3
+E                /tmp/harbor_expr_suite.exs:107: anonymous fn/2 in SlaLabSuite."test T04 both data layer clauses produce the same values"/1
+E                (elixir 1.18.4) lib/enum.ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3
+E                /tmp/harbor_expr_suite.exs:105: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+tests/test_final_state.py:648: AssertionError
+____________ test_t05_route_key_normalises_and_orders_its_arguments ____________
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+
+    def test_t05_route_key_normalises_and_orders_its_arguments(suite):
+        """T05 route_key normalises and orders its arguments"""
+>       check(suite, "T05")
+
+tests/test_final_state.py:673: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+scenario = 'T05'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+            pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+    
+        prefix = "test " + scenario + " "
+        matching = [name for name in results if name.startswith(prefix)]
+        assert matching, (
+            f"Scenario {scenario} did not run. Known scenarios: {sorted(results)}\n"
+            f"output:\n{suite['output']}"
+        )
+    
+        name = matching[0]
+        status, detail = results[name]
+>       assert status == "pass", f"Scenario {name} failed:\n{detail}"
+E       AssertionError: Scenario test T05 route_key normalises and orders its arguments failed:
+E           1) test T05 route_key normalises and orders its arguments (SlaLabSuite)
+E              /tmp/harbor_expr_suite.exs:120
+E              Assertion with == failed
+E              code:  assert ev(expr(route_key("ams", "jfk"))) == {:ok, "AMS|JFK"}
+E              left:  {:error,
+E                      %Ash.Error.Query.NoSuchFunction{
+E                        function: :route_key,
+E                        arity: nil,
+E                        resource: nil,
+E                        could_be_calculation?: false,
+E                        splode: nil,
+E                        bread_crumbs: [],
+E                        vars: [],
+E                        path: [],
+E                        stacktrace: #Splode.Stacktrace<>,
+E                        class: :invalid
+E                      }}
+E              right: {:ok, "AMS|JFK"}
+E              stacktrace:
+E                /tmp/harbor_expr_suite.exs:121: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+tests/test_final_state.py:648: AssertionError
+______________ test_t06_ratio_bps_computes_integral_basis_points _______________
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+
+    def test_t06_ratio_bps_computes_integral_basis_points(suite):
+        """T06 ratio_bps computes integral basis points"""
+>       check(suite, "T06")
+
+tests/test_final_state.py:678: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+scenario = 'T06'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+            pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+    
+        prefix = "test " + scenario + " "
+        matching = [name for name in results if name.startswith(prefix)]
+        assert matching, (
+            f"Scenario {scenario} did not run. Known scenarios: {sorted(results)}\n"
+            f"output:\n{suite['output']}"
+        )
+    
+        name = matching[0]
+        status, detail = results[name]
+>       assert status == "pass", f"Scenario {name} failed:\n{detail}"
+E       AssertionError: Scenario test T06 ratio_bps computes integral basis points failed:
+E           1) test T06 ratio_bps computes integral basis points (SlaLabSuite)
+E              /tmp/harbor_expr_suite.exs:129
+E              Assertion with == failed
+E              code:  assert ev(expr(ratio_bps(1, 3))) == {:ok, 3333}
+E              left:  {:error,
+E                      %Ash.Error.Query.NoSuchFunction{
+E                        function: :ratio_bps,
+E                        arity: nil,
+E                        resource: nil,
+E                        could_be_calculation?: false,
+E                        splode: nil,
+E                        bread_crumbs: [],
+E                        vars: [],
+E                        path: [],
+E                        stacktrace: #Splode.Stacktrace<>,
+E                        class: :invalid
+E                      }}
+E              right: {:ok, 3333}
+E              stacktrace:
+E                /tmp/harbor_expr_suite.exs:130: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+tests/test_final_state.py:648: AssertionError
+___________________ test_t07_ratio_bps_rounds_halves_upwards ___________________
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+
+    def test_t07_ratio_bps_rounds_halves_upwards(suite):
+        """T07 ratio_bps rounds halves upwards"""
+>       check(suite, "T07")
+
+tests/test_final_state.py:683: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+scenario = 'T07'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+            pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+    
+        prefix = "test " + scenario + " "
+        matching = [name for name in results if name.startswith(prefix)]
+        assert matching, (
+            f"Scenario {scenario} did not run. Known scenarios: {sorted(results)}\n"
+            f"output:\n{suite['output']}"
+        )
+    
+        name = matching[0]
+        status, detail = results[name]
+>       assert status == "pass", f"Scenario {name} failed:\n{detail}"
+E       AssertionError: Scenario test T07 ratio_bps rounds halves upwards failed:
+E           1) test T07 ratio_bps rounds halves upwards (SlaLabSuite)
+E              /tmp/harbor_expr_suite.exs:140
+E              Assertion with == failed
+E              code:  assert ev(expr(ratio_bps(1, 32))) == {:ok, 313}
+E              left:  {:error,
+E                      %Ash.Error.Query.NoSuchFunction{
+E                        function: :ratio_bps,
+E                        arity: nil,
+E                        resource: nil,
+E                        could_be_calculation?: false,
+E                        splode: nil,
+E                        bread_crumbs: [],
+E                        vars: [],
+E                        path: [],
+E                        stacktrace: #Splode.Stacktrace<>,
+E                        class: :invalid
+E                      }}
+E              right: {:ok, 313}
+E              stacktrace:
+E                /tmp/harbor_expr_suite.exs:141: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+tests/test_final_state.py:648: AssertionError
+____________ test_t08_ratio_bps_clamps_to_the_closed_range_0_20000 _____________
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+
+    def test_t08_ratio_bps_clamps_to_the_closed_range_0_20000(suite):
+        """T08 ratio_bps clamps to the closed range 0..20000"""
+>       check(suite, "T08")
+
+tests/test_final_state.py:688: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+scenario = 'T08'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+            pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+    
+        prefix = "test " + scenario + " "
+        matching = [name for name in results if name.startswith(prefix)]
+        assert matching, (
+            f"Scenario {scenario} did not run. Known scenarios: {sorted(results)}\n"
+            f"output:\n{suite['output']}"
+        )
+    
+        name = matching[0]
+        status, detail = results[name]
+>       assert status == "pass", f"Scenario {name} failed:\n{detail}"
+E       AssertionError: Scenario test T08 ratio_bps clamps to the closed range 0..20000 failed:
+E           1) test T08 ratio_bps clamps to the closed range 0..20000 (SlaLabSuite)
+E              /tmp/harbor_expr_suite.exs:148
+E              Assertion with == failed
+E              code:  assert ev(expr(ratio_bps(3, 1))) == {:ok, 20000}
+E              left:  {:error,
+E                      %Ash.Error.Query.NoSuchFunction{
+E                        function: :ratio_bps,
+E                        arity: nil,
+E                        resource: nil,
+E                        could_be_calculation?: false,
+E                        splode: nil,
+E                        bread_crumbs: [],
+E                        vars: [],
+E                        path: [],
+E                        stacktrace: #Splode.Stacktrace<>,
+E                        class: :invalid
+E                      }}
+E              right: {:ok, 20000}
+E              stacktrace:
+E                /tmp/harbor_expr_suite.exs:149: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+tests/test_final_state.py:648: AssertionError
+___ test_t09_ratio_bps_returns_nil_for_nil_arguments_and_a_zero_denominator ____
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+
+    def test_t09_ratio_bps_returns_nil_for_nil_arguments_and_a_zero_denominator(suite):
+        """T09 ratio_bps returns nil for nil arguments and a zero denominator"""
+>       check(suite, "T09")
+
+tests/test_final_state.py:693: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+scenario = 'T09'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+            pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+    
+        prefix = "test " + scenario + " "
+        matching = [name for name in results if name.startswith(prefix)]
+        assert matching, (
+            f"Scenario {scenario} did not run. Known scenarios: {sorted(results)}\n"
+            f"output:\n{suite['output']}"
+        )
+    
+        name = matching[0]
+        status, detail = results[name]
+>       assert status == "pass", f"Scenario {name} failed:\n{detail}"
+E       AssertionError: Scenario test T09 ratio_bps returns nil for nil arguments and a zero denominator failed:
+E           1) test T09 ratio_bps returns nil for nil arguments and a zero denominator (SlaLabSuite)
+E              /tmp/harbor_expr_suite.exs:156
+E              Assertion with == failed
+E              code:  assert ev(expr(ratio_bps(1, 0))) == {:ok, nil}
+E              left:  {:error,
+E                      %Ash.Error.Query.NoSuchFunction{
+E                        function: :ratio_bps,
+E                        arity: nil,
+E                        resource: nil,
+E                        could_be_calculation?: false,
+E                        splode: nil,
+E                        bread_crumbs: [],
+E                        vars: [],
+E                        path: [],
+E                        stacktrace: #Splode.Stacktrace<>,
+E                        class: :invalid
+E                      }}
+E              right: {:ok, nil}
+E              stacktrace:
+E                /tmp/harbor_expr_suite.exs:157: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+tests/test_final_state.py:648: AssertionError
+_____________ test_t10_custom_expressions_compose_with_each_other ______________
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+
+    def test_t10_custom_expressions_compose_with_each_other(suite):
+        """T10 custom expressions compose with each other"""
+>       check(suite, "T10")
+
+tests/test_final_state.py:698: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+scenario = 'T10'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+            pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+    
+        prefix = "test " + scenario + " "
+        matching = [name for name in results if name.startswith(prefix)]
+        assert matching, (
+            f"Scenario {scenario} did not run. Known scenarios: {sorted(results)}\n"
+            f"output:\n{suite['output']}"
+        )
+    
+        name = matching[0]
+        status, detail = results[name]
+>       assert status == "pass", f"Scenario {name} failed:\n{detail}"
+E       AssertionError: Scenario test T10 custom expressions compose with each other failed:
+E           1) test T10 custom expressions compose with each other (SlaLabSuite)
+E              /tmp/harbor_expr_suite.exs:163
+E              Assertion with == failed
+E              code:  assert ev(expr(route_key(route_key("b", "a"), "zzz"))) == {:ok, "A|B|ZZZ"}
+E              left:  {:error,
+E                      %Ash.Error.Query.NoSuchFunction{
+E                        function: :route_key,
+E                        arity: nil,
+E                        resource: nil,
+E                        could_be_calculation?: false,
+E                        splode: nil,
+E                        bread_crumbs: [],
+E                        vars: [],
+E                        path: [],
+E                        stacktrace: #Splode.Stacktrace<>,
+E                        class: :invalid
+E                      }}
+E              right: {:ok, "A|B|ZZZ"}
+E              stacktrace:
+E                /tmp/harbor_expr_suite.exs:164: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+tests/test_final_state.py:648: AssertionError
+___________ test_t11_custom_expressions_short_circuit_inside_if_cond ___________
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+
+    def test_t11_custom_expressions_short_circuit_inside_if_cond(suite):
+        """T11 custom expressions short circuit inside if/cond"""
+>       check(suite, "T11")
+
+tests/test_final_state.py:703: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+scenario = 'T11'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+            pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+    
+        prefix = "test " + scenario + " "
+        matching = [name for name in results if name.startswith(prefix)]
+        assert matching, (
+            f"Scenario {scenario} did not run. Known scenarios: {sorted(results)}\n"
+            f"output:\n{suite['output']}"
+        )
+    
+        name = matching[0]
+        status, detail = results[name]
+>       assert status == "pass", f"Scenario {name} failed:\n{detail}"
+E       AssertionError: Scenario test T11 custom expressions short circuit inside if/cond failed:
+E           1) test T11 custom expressions short circuit inside if/cond (SlaLabSuite)
+E              /tmp/harbor_expr_suite.exs:169
+E              Assertion with == failed
+E              code:  assert ev(
+E                       expr(
+E                         cond do
+E                           ratio_bps(3, 4) > 8000 -> "high"
+E                           ratio_bps(3, 4) > 5000 -> "mid"
+E                           true -> "low"
+E                         end
+E                       )
+E                     ) == {:ok, "mid"}
+E              left:  {:error,
+E                      %Ash.Error.Query.NoSuchFunction{
+E                        function: :ratio_bps,
+E                        arity: nil,
+E                        resource: nil,
+E                        could_be_calculation?: false,
+E                        splode: nil,
+E                        bread_crumbs: [],
+E                        vars: [],
+E                        path: [],
+E                        stacktrace: #Splode.Stacktrace<>,
+E                        class: :invalid
+E                      }}
+E              right: {:ok, "mid"}
+E              stacktrace:
+E                /tmp/harbor_expr_suite.exs:172: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+tests/test_final_state.py:648: AssertionError
+__________ test_t12_custom_expression_results_can_be_cast_with_type_2 __________
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+
+    def test_t12_custom_expression_results_can_be_cast_with_type_2(suite):
+        """T12 custom expression results can be cast with type/2"""
+>       check(suite, "T12")
+
+tests/test_final_state.py:708: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+scenario = 'T12'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+            pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+    
+        prefix = "test " + scenario + " "
+        matching = [name for name in results if name.startswith(prefix)]
+        assert matching, (
+            f"Scenario {scenario} did not run. Known scenarios: {sorted(results)}\n"
+            f"output:\n{suite['output']}"
+        )
+    
+        name = matching[0]
+        status, detail = results[name]
+>       assert status == "pass", f"Scenario {name} failed:\n{detail}"
+E       AssertionError: Scenario test T12 custom expression results can be cast with type/2 failed:
+E           1) test T12 custom expression results can be cast with type/2 (SlaLabSuite)
+E              /tmp/harbor_expr_suite.exs:185
+E              Assertion with == failed
+E              code:  assert ev(expr(type(ratio_bps(2, 3), :string))) == {:ok, "6667"}
+E              left:  {:error,
+E                      %Ash.Error.Query.NoSuchFunction{
+E                        function: :ratio_bps,
+E                        arity: nil,
+E                        resource: nil,
+E                        could_be_calculation?: false,
+E                        splode: nil,
+E                        bread_crumbs: [],
+E                        vars: [],
+E                        path: [],
+E                        stacktrace: #Splode.Stacktrace<>,
+E                        class: :invalid
+E                      }}
+E              right: {:ok, "6667"}
+E              stacktrace:
+E                /tmp/harbor_expr_suite.exs:186: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+tests/test_final_state.py:648: AssertionError
+__________ test_t13_arguments_outside_the_declared_types_are_rejected __________
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+
+    def test_t13_arguments_outside_the_declared_types_are_rejected(suite):
+        """T13 arguments outside the declared types are rejected"""
+>       check(suite, "T13")
+
+tests/test_final_state.py:713: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+scenario = 'T13'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+            pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+    
+        prefix = "test " + scenario + " "
+        matching = [name for name in results if name.startswith(prefix)]
+        assert matching, (
+            f"Scenario {scenario} did not run. Known scenarios: {sorted(results)}\n"
+            f"output:\n{suite['output']}"
+        )
+    
+        name = matching[0]
+        status, detail = results[name]
+>       assert status == "pass", f"Scenario {name} failed:\n{detail}"
+E       AssertionError: Scenario test T13 arguments outside the declared types are rejected failed:
+E           1) test T13 arguments outside the declared types are rejected (SlaLabSuite)
+E              /tmp/harbor_expr_suite.exs:192
+E              Assertion with == failed
+E              code:  assert Ash.Expr.eval(expr(ratio_bps(1, 2))) == {:ok, 5000}
+E              left:  {:error,
+E                      %Ash.Error.Query.NoSuchFunction{
+E                        function: :ratio_bps,
+E                        arity: nil,
+E                        resource: nil,
+E                        could_be_calculation?: false,
+E                        splode: nil,
+E                        bread_crumbs: [],
+E                        vars: [],
+E                        path: [],
+E                        stacktrace: #Splode.Stacktrace<>,
+E                        class: :invalid
+E                      }}
+E              right: {:ok, 5000}
+E              stacktrace:
+E                /tmp/harbor_expr_suite.exs:193: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+tests/test_final_state.py:648: AssertionError
+_________ test_t14_route_key_is_available_as_an_expression_calculation _________
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+
+    def test_t14_route_key_is_available_as_an_expression_calculation(suite):
+        """T14 route_key is available as an expression calculation"""
+>       check(suite, "T14")
+
+tests/test_final_state.py:718: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+scenario = 'T14'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+            pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+    
+        prefix = "test " + scenario + " "
+        matching = [name for name in results if name.startswith(prefix)]
+        assert matching, (
+            f"Scenario {scenario} did not run. Known scenarios: {sorted(results)}\n"
+            f"output:\n{suite['output']}"
+        )
+    
+        name = matching[0]
+        status, detail = results[name]
+>       assert status == "pass", f"Scenario {name} failed:\n{detail}"
+E       AssertionError: Scenario test T14 route_key is available as an expression calculation failed:
+E           1) test T14 route_key is available as an expression calculation (SlaLabSuite)
+E              /tmp/harbor_expr_suite.exs:210
+E              ** (Ash.Error.Invalid) 
+E              Invalid Error
+E         
+E              * :route_key is not a valid load
+E                  at load
+E                (ash 3.31.0) lib/ash/query/query.ex:2520: Ash.Query.do_load/3
+E                /tmp/harbor_expr_suite.exs:213: SlaLabSuite."test T14 route_key is available as an expression calculation"/1
+E                (ex_unit 1.18.4) lib/ex_unit/runner.ex:511: ExUnit.Runner.exec_test/2
+E                (stdlib 6.2.2) timer.erl:595: :timer.tc/2
+E                (ex_unit 1.18.4) lib/ex_unit/runner.ex:433: anonymous fn/6 in ExUnit.Runner.spawn_test_monitor/4
+E              code: |> read!()
+E              stacktrace:
+E                (ash 3.31.0) lib/ash/actions/read/read.ex:32: Ash.Actions.Read.run/3
+E                (ash 3.31.0) lib/ash.ex:2938: Ash.read/2
+E                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2
+E                /tmp/harbor_expr_suite.exs:214: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+tests/test_final_state.py:648: AssertionError
+_______ test_t15_sla_ratio_bps_is_available_as_an_expression_calculation _______
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+
+    def test_t15_sla_ratio_bps_is_available_as_an_expression_calculation(suite):
+        """T15 sla_ratio_bps is available as an expression calculation"""
+>       check(suite, "T15")
+
+tests/test_final_state.py:723: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+scenario = 'T15'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+            pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+    
+        prefix = "test " + scenario + " "
+        matching = [name for name in results if name.startswith(prefix)]
+        assert matching, (
+            f"Scenario {scenario} did not run. Known scenarios: {sorted(results)}\n"
+            f"output:\n{suite['output']}"
+        )
+    
+        name = matching[0]
+        status, detail = results[name]
+>       assert status == "pass", f"Scenario {name} failed:\n{detail}"
+E       AssertionError: Scenario test T15 sla_ratio_bps is available as an expression calculation failed:
+E           1) test T15 sla_ratio_bps is available as an expression calculation (SlaLabSuite)
+E              /tmp/harbor_expr_suite.exs:231
+E              ** (Ash.Error.Invalid) 
+E              Invalid Error
+E         
+E              * :sla_ratio_bps is not a valid load
+E                  at load
+E                (ash 3.31.0) lib/ash/query/query.ex:2520: Ash.Query.do_load/3
+E                /tmp/harbor_expr_suite.exs:234: SlaLabSuite."test T15 sla_ratio_bps is available as an expression calculation"/1
+E                (ex_unit 1.18.4) lib/ex_unit/runner.ex:511: ExUnit.Runner.exec_test/2
+E                (stdlib 6.2.2) timer.erl:595: :timer.tc/2
+E                (ex_unit 1.18.4) lib/ex_unit/runner.ex:433: anonymous fn/6 in ExUnit.Runner.spawn_test_monitor/4
+E              code: |> read!()
+E              stacktrace:
+E                (ash 3.31.0) lib/ash/actions/read/read.ex:32: Ash.Actions.Read.run/3
+E                (ash 3.31.0) lib/ash.ex:2938: Ash.read/2
+E                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2
+E                /tmp/harbor_expr_suite.exs:235: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+tests/test_final_state.py:648: AssertionError
+____ test_t16_status_label_composes_the_custom_expression_with_conditionals ____
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+
+    def test_t16_status_label_composes_the_custom_expression_with_conditionals(suite):
+        """T16 status_label composes the custom expression with conditionals"""
+>       check(suite, "T16")
+
+tests/test_final_state.py:728: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+scenario = 'T16'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+            pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+    
+        prefix = "test " + scenario + " "
+        matching = [name for name in results if name.startswith(prefix)]
+        assert matching, (
+            f"Scenario {scenario} did not run. Known scenarios: {sorted(results)}\n"
+            f"output:\n{suite['output']}"
+        )
+    
+        name = matching[0]
+        status, detail = results[name]
+>       assert status == "pass", f"Scenario {name} failed:\n{detail}"
+E       AssertionError: Scenario test T16 status_label composes the custom expression with conditionals failed:
+E           1) test T16 status_label composes the custom expression with conditionals (SlaLabSuite)
+E              /tmp/harbor_expr_suite.exs:254
+E              ** (Ash.Error.Invalid) 
+E              Invalid Error
+E         
+E              * :status_label is not a valid load
+E                  at load
+E                (ash 3.31.0) lib/ash/query/query.ex:2520: Ash.Query.do_load/3
+E                /tmp/harbor_expr_suite.exs:257: SlaLabSuite."test T16 status_label composes the custom expression with conditionals"/1
+E                (ex_unit 1.18.4) lib/ex_unit/runner.ex:511: ExUnit.Runner.exec_test/2
+E                (stdlib 6.2.2) timer.erl:595: :timer.tc/2
+E                (ex_unit 1.18.4) lib/ex_unit/runner.ex:433: anonymous fn/6 in ExUnit.Runner.spawn_test_monitor/4
+E              code: |> read!()
+E              stacktrace:
+E                (ash 3.31.0) lib/ash/actions/read/read.ex:32: Ash.Actions.Read.run/3
+E                (ash 3.31.0) lib/ash.ex:2938: Ash.read/2
+E                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2
+E                /tmp/harbor_expr_suite.exs:258: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+tests/test_final_state.py:648: AssertionError
+______ test_t17_the_on_route_read_action_filters_on_the_custom_expression ______
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+
+    def test_t17_the_on_route_read_action_filters_on_the_custom_expression(suite):
+        """T17 the on_route read action filters on the custom expression"""
+>       check(suite, "T17")
+
+tests/test_final_state.py:733: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+scenario = 'T17'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+            pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+    
+        prefix = "test " + scenario + " "
+        matching = [name for name in results if name.startswith(prefix)]
+        assert matching, (
+            f"Scenario {scenario} did not run. Known scenarios: {sorted(results)}\n"
+            f"output:\n{suite['output']}"
+        )
+    
+        name = matching[0]
+        status, detail = results[name]
+>       assert status == "pass", f"Scenario {name} failed:\n{detail}"
+E       AssertionError: Scenario test T17 the on_route read action filters on the custom expression failed:
+E           1) test T17 the on_route read action filters on the custom expression (SlaLabSuite)
+E              /tmp/harbor_expr_suite.exs:275
+E              ** (UndefinedFunctionError) function SlaLab.Ops.shipments_on_route!/3 is undefined or private
+E              code: assert refs(apply(@domain, :shipments_on_route!, ["AMS|LHR", %{}, [authorize?: false]])) ==
+E              stacktrace:
+E                (sla_lab 0.1.0) SlaLab.Ops.shipments_on_route!("AMS|LHR", %{}, [authorize?: false])
+E                /tmp/harbor_expr_suite.exs:276: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+tests/test_final_state.py:648: AssertionError
+______ test_t18_custom_expressions_can_be_used_directly_in_a_query_filter ______
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+
+    def test_t18_custom_expressions_can_be_used_directly_in_a_query_filter(suite):
+        """T18 custom expressions can be used directly in a query filter"""
+>       check(suite, "T18")
+
+tests/test_final_state.py:738: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+scenario = 'T18'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+            pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+    
+        prefix = "test " + scenario + " "
+        matching = [name for name in results if name.startswith(prefix)]
+        assert matching, (
+            f"Scenario {scenario} did not run. Known scenarios: {sorted(results)}\n"
+            f"output:\n{suite['output']}"
+        )
+    
+        name = matching[0]
+        status, detail = results[name]
+>       assert status == "pass", f"Scenario {name} failed:\n{detail}"
+E       AssertionError: Scenario test T18 custom expressions can be used directly in a query filter failed:
+E           1) test T18 custom expressions can be used directly in a query filter (SlaLabSuite)
+E              /tmp/harbor_expr_suite.exs:285
+E              ** (Ash.Error.Invalid) 
+E              Invalid Error
+E         
+E              * got %Ash.Error.Query.NoSuchFunction{function: :ratio_bps, arity: nil, resource: SlaLab.Ops.Shipment, could_be_calculation?: false, splode: Ash.Error, bread_crumbs: [], vars: [], path: [:filter], stacktrace: #Splode.Stacktrace<>, class: :invalid} while retrieving Exception.message/1 for %Ash.Error.Query.NoSuchFunction{function: :ratio_bps, arity: nil, resource: SlaLab.Ops.Shipment, could_be_calculation?: false, splode: Ash.Error, bread_crumbs: [], vars: [], path: [:filter], stacktrace: #Splode.Stacktrace<>, class: :invalid} (expected a string)
+E                  at filter
+E                (ash 3.31.0) lib/ash/query/query.ex:4017: Ash.Query.do_filter/3
+E                /tmp/harbor_expr_suite.exs:288: SlaLabSuite."test T18 custom expressions can be used directly in a query filter"/1
+E                (ex_unit 1.18.4) lib/ex_unit/runner.ex:511: ExUnit.Runner.exec_test/2
+E                (stdlib 6.2.2) timer.erl:595: :timer.tc/2
+E                (ex_unit 1.18.4) lib/ex_unit/runner.ex:433: anonymous fn/6 in ExUnit.Runner.spawn_test_monitor/4
+E              code: |> read!()
+E              stacktrace:
+E                (ash 3.31.0) lib/ash/actions/read/read.ex:32: Ash.Actions.Read.run/3
+E                (ash 3.31.0) lib/ash.ex:2938: Ash.read/2
+E                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2
+E                /tmp/harbor_expr_suite.exs:289: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+tests/test_final_state.py:648: AssertionError
+_______ test_t19_calculations_built_on_custom_expressions_are_filterable _______
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+
+    def test_t19_calculations_built_on_custom_expressions_are_filterable(suite):
+        """T19 calculations built on custom expressions are filterable"""
+>       check(suite, "T19")
+
+tests/test_final_state.py:743: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+scenario = 'T19'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+            pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+    
+        prefix = "test " + scenario + " "
+        matching = [name for name in results if name.startswith(prefix)]
+        assert matching, (
+            f"Scenario {scenario} did not run. Known scenarios: {sorted(results)}\n"
+            f"output:\n{suite['output']}"
+        )
+    
+        name = matching[0]
+        status, detail = results[name]
+>       assert status == "pass", f"Scenario {name} failed:\n{detail}"
+E       AssertionError: Scenario test T19 calculations built on custom expressions are filterable failed:
+E           1) test T19 calculations built on custom expressions are filterable (SlaLabSuite)
+E              /tmp/harbor_expr_suite.exs:301
+E              ** (Ash.Error.Unknown) 
+E              Unknown Error
+E         
+E              * Invalid reference sla_ratio_bps
+E                  at filter
+E                (ash 3.31.0) lib/ash/query/query.ex:4702: Ash.Query.add_error/3
+E                /tmp/harbor_expr_suite.exs:304: SlaLabSuite."test T19 calculations built on custom expressions are filterable"/1
+E                (ex_unit 1.18.4) lib/ex_unit/runner.ex:511: ExUnit.Runner.exec_test/2
+E                (stdlib 6.2.2) timer.erl:595: :timer.tc/2
+E                (ex_unit 1.18.4) lib/ex_unit/runner.ex:433: anonymous fn/6 in ExUnit.Runner.spawn_test_monitor/4
+E              code: |> read!()
+E              stacktrace:
+E                (ash 3.31.0) lib/ash/actions/read/read.ex:32: Ash.Actions.Read.run/3
+E                (ash 3.31.0) lib/ash.ex:2938: Ash.read/2
+E                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2
+E                /tmp/harbor_expr_suite.exs:305: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+tests/test_final_state.py:648: AssertionError
+________ test_t20_calculations_built_on_custom_expressions_are_sortable ________
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+
+    def test_t20_calculations_built_on_custom_expressions_are_sortable(suite):
+        """T20 calculations built on custom expressions are sortable"""
+>       check(suite, "T20")
+
+tests/test_final_state.py:748: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+scenario = 'T20'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+            pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+    
+        prefix = "test " + scenario + " "
+        matching = [name for name in results if name.startswith(prefix)]
+        assert matching, (
+            f"Scenario {scenario} did not run. Known scenarios: {sorted(results)}\n"
+            f"output:\n{suite['output']}"
+        )
+    
+        name = matching[0]
+        status, detail = results[name]
+>       assert status == "pass", f"Scenario {name} failed:\n{detail}"
+E       AssertionError: Scenario test T20 calculations built on custom expressions are sortable failed:
+E           1) test T20 calculations built on custom expressions are sortable (SlaLabSuite)
+E              /tmp/harbor_expr_suite.exs:317
+E              ** (Ash.Error.Invalid) 
+E              Invalid Error
+E         
+E              * No such field sla_ratio_bps for resource SlaLab.Ops.Shipment
+E                  at sort
+E                (ash 3.31.0) lib/ash/query/query.ex:4215: Ash.Query.sort/3
+E                /tmp/harbor_expr_suite.exs:321: SlaLabSuite."test T20 calculations built on custom expressions are sortable"/1
+E                (ex_unit 1.18.4) lib/ex_unit/runner.ex:511: ExUnit.Runner.exec_test/2
+E                (stdlib 6.2.2) timer.erl:595: :timer.tc/2
+E                (ex_unit 1.18.4) lib/ex_unit/runner.ex:433: anonymous fn/6 in ExUnit.Runner.spawn_test_monitor/4
+E              code: |> read!()
+E              stacktrace:
+E                (ash 3.31.0) lib/ash/actions/read/read.ex:32: Ash.Actions.Read.run/3
+E                (ash 3.31.0) lib/ash.ex:2938: Ash.read/2
+E                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2
+E                /tmp/harbor_expr_suite.exs:322: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+tests/test_final_state.py:648: AssertionError
+_____________ test_t21_custom_expressions_can_be_sorted_on_inline ______________
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+
+    def test_t21_custom_expressions_can_be_sorted_on_inline(suite):
+        """T21 custom expressions can be sorted on inline"""
+>       check(suite, "T21")
+
+tests/test_final_state.py:753: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+scenario = 'T21'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+            pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+    
+        prefix = "test " + scenario + " "
+        matching = [name for name in results if name.startswith(prefix)]
+        assert matching, (
+            f"Scenario {scenario} did not run. Known scenarios: {sorted(results)}\n"
+            f"output:\n{suite['output']}"
+        )
+    
+        name = matching[0]
+        status, detail = results[name]
+>       assert status == "pass", f"Scenario {name} failed:\n{detail}"
+E       AssertionError: Scenario test T21 custom expressions can be sorted on inline failed:
+E           1) test T21 custom expressions can be sorted on inline (SlaLabSuite)
+E              /tmp/harbor_expr_suite.exs:328
+E              ** (Ash.Error.Invalid) 
+E              Invalid Error
+E         
+E              * got %Ash.Error.Query.NoSuchFunction{function: :route_key, arity: nil, resource: SlaLab.Ops.Shipment, could_be_calculation?: false, splode: Ash.Error, bread_crumbs: [], vars: [], path: [:sort], stacktrace: #Splode.Stacktrace<>, class: :invalid} while retrieving Exception.message/1 for %Ash.Error.Query.NoSuchFunction{function: :route_key, arity: nil, resource: SlaLab.Ops.Shipment, could_be_calculation?: false, splode: Ash.Error, bread_crumbs: [], vars: [], path: [:sort], stacktrace: #Splode.Stacktrace<>, class: :invalid} (expected a string)
+E                  at sort
+E                (ash 3.31.0) lib/ash/query/query.ex:4215: Ash.Query.sort/3
+E                /tmp/harbor_expr_suite.exs:331: SlaLabSuite."test T21 custom expressions can be sorted on inline"/1
+E                (ex_unit 1.18.4) lib/ex_unit/runner.ex:511: ExUnit.Runner.exec_test/2
+E              code: |> read!()
+E              stacktrace:
+E                (ash 3.31.0) lib/ash/actions/read/read.ex:32: Ash.Actions.Read.run/3
+E                (ash 3.31.0) lib/ash.ex:2938: Ash.read/2
+E                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2
+E                /tmp/harbor_expr_suite.exs:335: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+tests/test_final_state.py:648: AssertionError
+_____________ test_t22_aggregate_filters_accept_custom_expressions _____________
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+
+    def test_t22_aggregate_filters_accept_custom_expressions(suite):
+        """T22 aggregate filters accept custom expressions"""
+>       check(suite, "T22")
+
+tests/test_final_state.py:758: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+scenario = 'T22'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+            pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+    
+        prefix = "test " + scenario + " "
+        matching = [name for name in results if name.startswith(prefix)]
+        assert matching, (
+            f"Scenario {scenario} did not run. Known scenarios: {sorted(results)}\n"
+            f"output:\n{suite['output']}"
+        )
+    
+        name = matching[0]
+        status, detail = results[name]
+>       assert status == "pass", f"Scenario {name} failed:\n{detail}"
+E       AssertionError: Scenario test T22 aggregate filters accept custom expressions failed:
+E           1) test T22 aggregate filters accept custom expressions (SlaLabSuite)
+E              /tmp/harbor_expr_suite.exs:341
+E              ** (Ash.Error.Invalid) 
+E              Invalid Error
+E         
+E              * :breach_count is not a valid load
+E                  at load
+E                (ash 3.31.0) lib/ash/query/query.ex:2520: Ash.Query.do_load/3
+E                /tmp/harbor_expr_suite.exs:344: SlaLabSuite."test T22 aggregate filters accept custom expressions"/1
+E                (ex_unit 1.18.4) lib/ex_unit/runner.ex:511: ExUnit.Runner.exec_test/2
+E                (stdlib 6.2.2) timer.erl:595: :timer.tc/2
+E                (ex_unit 1.18.4) lib/ex_unit/runner.ex:433: anonymous fn/6 in ExUnit.Runner.spawn_test_monitor/4
+E              * :delivered_count is not a valid load
+E                  at load
+E                (ash 3.31.0) lib/ash/query/query.ex:2520: Ash.Query.do_load/3
+E                /tmp/harbor_expr_suite.exs:344: SlaLabSuite."test T22 aggregate filters accept custom expressions"/1
+E                (ex_unit 1.18.4) lib/ex_unit/runner.ex:511: ExUnit.Runner.exec_test/2
+E                (stdlib 6.2.2) timer.erl:595: :timer.tc/2
+E                (ex_unit 1.18.4) lib/ex_unit/runner.ex:433: anonymous fn/6 in ExUnit.Runner.spawn_test_monitor/4
+E              code: |> read!()
+E              stacktrace:
+E                (ash 3.31.0) lib/ash/actions/read/read.ex:32: Ash.Actions.Read.run/3
+E                (ash 3.31.0) lib/ash.ex:2938: Ash.read/2
+E                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2
+E                /tmp/harbor_expr_suite.exs:345: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+tests/test_final_state.py:648: AssertionError
+___________ test_t23_custom_expressions_can_be_applied_to_aggregates ___________
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+
+    def test_t23_custom_expressions_can_be_applied_to_aggregates(suite):
+        """T23 custom expressions can be applied to aggregates"""
+>       check(suite, "T23")
+
+tests/test_final_state.py:763: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+scenario = 'T23'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+            pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+    
+        prefix = "test " + scenario + " "
+        matching = [name for name in results if name.startswith(prefix)]
+        assert matching, (
+            f"Scenario {scenario} did not run. Known scenarios: {sorted(results)}\n"
+            f"output:\n{suite['output']}"
+        )
+    
+        name = matching[0]
+        status, detail = results[name]
+>       assert status == "pass", f"Scenario {name} failed:\n{detail}"
+E       AssertionError: Scenario test T23 custom expressions can be applied to aggregates failed:
+E           1) test T23 custom expressions can be applied to aggregates (SlaLabSuite)
+E              /tmp/harbor_expr_suite.exs:355
+E              ** (Ash.Error.Invalid) 
+E              Invalid Error
+E         
+E              * :breach_rate_bps is not a valid load
+E                  at load
+E                (ash 3.31.0) lib/ash/query/query.ex:2520: Ash.Query.do_load/3
+E                /tmp/harbor_expr_suite.exs:358: SlaLabSuite."test T23 custom expressions can be applied to aggregates"/1
+E                (ex_unit 1.18.4) lib/ex_unit/runner.ex:511: ExUnit.Runner.exec_test/2
+E                (stdlib 6.2.2) timer.erl:595: :timer.tc/2
+E                (ex_unit 1.18.4) lib/ex_unit/runner.ex:433: anonymous fn/6 in ExUnit.Runner.spawn_test_monitor/4
+E              code: |> read!()
+E              stacktrace:
+E                (ash 3.31.0) lib/ash/actions/read/read.ex:32: Ash.Actions.Read.run/3
+E                (ash 3.31.0) lib/ash.ex:2938: Ash.read/2
+E                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2
+E                /tmp/harbor_expr_suite.exs:359: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+tests/test_final_state.py:648: AssertionError
+__________ test_t24_custom_expressions_over_aggregates_are_filterable __________
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+
+    def test_t24_custom_expressions_over_aggregates_are_filterable(suite):
+        """T24 custom expressions over aggregates are filterable"""
+>       check(suite, "T24")
+
+tests/test_final_state.py:768: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+scenario = 'T24'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+            pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+    
+        prefix = "test " + scenario + " "
+        matching = [name for name in results if name.startswith(prefix)]
+        assert matching, (
+            f"Scenario {scenario} did not run. Known scenarios: {sorted(results)}\n"
+            f"output:\n{suite['output']}"
+        )
+    
+        name = matching[0]
+        status, detail = results[name]
+>       assert status == "pass", f"Scenario {name} failed:\n{detail}"
+E       AssertionError: Scenario test T24 custom expressions over aggregates are filterable failed:
+E           1) test T24 custom expressions over aggregates are filterable (SlaLabSuite)
+E              /tmp/harbor_expr_suite.exs:365
+E              ** (Ash.Error.Unknown) 
+E              Unknown Error
+E         
+E              * Invalid reference breach_count
+E                  at filter
+E                (ash 3.31.0) lib/ash/query/query.ex:4702: Ash.Query.add_error/3
+E                /tmp/harbor_expr_suite.exs:368: SlaLabSuite."test T24 custom expressions over aggregates are filterable"/1
+E                (ex_unit 1.18.4) lib/ex_unit/runner.ex:511: ExUnit.Runner.exec_test/2
+E                (stdlib 6.2.2) timer.erl:595: :timer.tc/2
+E                (ex_unit 1.18.4) lib/ex_unit/runner.ex:433: anonymous fn/6 in ExUnit.Runner.spawn_test_monitor/4
+E              code: |> read!()
+E              stacktrace:
+E                (ash 3.31.0) lib/ash/actions/read/read.ex:32: Ash.Actions.Read.run/3
+E                (ash 3.31.0) lib/ash.ex:2938: Ash.read/2
+E                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2
+E                /tmp/harbor_expr_suite.exs:369: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+tests/test_final_state.py:648: AssertionError
+_______________ test_t25_custom_expressions_work_inside_exists_1 _______________
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+
+    def test_t25_custom_expressions_work_inside_exists_1(suite):
+        """T25 custom expressions work inside exists/1"""
+>       check(suite, "T25")
+
+tests/test_final_state.py:773: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+scenario = 'T25'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+            pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+    
+        prefix = "test " + scenario + " "
+        matching = [name for name in results if name.startswith(prefix)]
+        assert matching, (
+            f"Scenario {scenario} did not run. Known scenarios: {sorted(results)}\n"
+            f"output:\n{suite['output']}"
+        )
+    
+        name = matching[0]
+        status, detail = results[name]
+>       assert status == "pass", f"Scenario {name} failed:\n{detail}"
+E       AssertionError: Scenario test T25 custom expressions work inside exists/1 failed:
+E           1) test T25 custom expressions work inside exists/1 (SlaLabSuite)
+E              /tmp/harbor_expr_suite.exs:381
+E              ** (Ash.Error.Invalid) 
+E              Invalid Error
+E         
+E              * got %Ash.Error.Query.NoSuchFunction{function: :ratio_bps, arity: nil, resource: SlaLab.Ops.Shipment, could_be_calculation?: false, splode: Ash.Error, bread_crumbs: [], vars: [], path: [:filter], stacktrace: #Splode.Stacktrace<>, class: :invalid} while retrieving Exception.message/1 for %Ash.Error.Query.NoSuchFunction{function: :ratio_bps, arity: nil, resource: SlaLab.Ops.Shipment, could_be_calculation?: false, splode: Ash.Error, bread_crumbs: [], vars: [], path: [:filter], stacktrace: #Splode.Stacktrace<>, class: :invalid} (expected a string)
+E                  at filter
+E                (ash 3.31.0) lib/ash/query/query.ex:4017: Ash.Query.do_filter/3
+E                /tmp/harbor_expr_suite.exs:384: SlaLabSuite."test T25 custom expressions work inside exists/1"/1
+E              code: |> read!()
+E              stacktrace:
+E                (ash 3.31.0) lib/ash/actions/read/read.ex:32: Ash.Actions.Read.run/3
+E                (ash 3.31.0) lib/ash.ex:2938: Ash.read/2
+E                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2
+E                /tmp/harbor_expr_suite.exs:385: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+tests/test_final_state.py:648: AssertionError
+_____ test_t26_record_delivery_accepts_a_delivery_within_the_allowed_ratio _____
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+
+    def test_t26_record_delivery_accepts_a_delivery_within_the_allowed_ratio(suite):
+        """T26 record_delivery accepts a delivery within the allowed ratio"""
+>       check(suite, "T26")
+
+tests/test_final_state.py:778: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+scenario = 'T26'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+            pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+    
+        prefix = "test " + scenario + " "
+        matching = [name for name in results if name.startswith(prefix)]
+        assert matching, (
+            f"Scenario {scenario} did not run. Known scenarios: {sorted(results)}\n"
+            f"output:\n{suite['output']}"
+        )
+    
+        name = matching[0]
+        status, detail = results[name]
+>       assert status == "pass", f"Scenario {name} failed:\n{detail}"
+E       AssertionError: Scenario test T26 record_delivery accepts a delivery within the allowed ratio failed:
+E           1) test T26 record_delivery accepts a delivery within the allowed ratio (SlaLabSuite)
+E              /tmp/harbor_expr_suite.exs:394
+E              ** (KeyError) key :require_atomic? not found in: nil
+E         
+E              If you are using the dot syntax, such as map.field, make sure the left-hand side of the dot is a map
+E              code: assert action.require_atomic? == true
+E              stacktrace:
+E                /tmp/harbor_expr_suite.exs:396: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+tests/test_final_state.py:648: AssertionError
+_____ test_t27_record_delivery_rejects_a_delivery_beyond_the_allowed_ratio _____
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+
+    def test_t27_record_delivery_rejects_a_delivery_beyond_the_allowed_ratio(suite):
+        """T27 record_delivery rejects a delivery beyond the allowed ratio"""
+>       check(suite, "T27")
+
+tests/test_final_state.py:783: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+scenario = 'T27'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+            pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+    
+        prefix = "test " + scenario + " "
+        matching = [name for name in results if name.startswith(prefix)]
+        assert matching, (
+            f"Scenario {scenario} did not run. Known scenarios: {sorted(results)}\n"
+            f"output:\n{suite['output']}"
+        )
+    
+        name = matching[0]
+        status, detail = results[name]
+>       assert status == "pass", f"Scenario {name} failed:\n{detail}"
+E       AssertionError: Scenario test T27 record_delivery rejects a delivery beyond the allowed ratio failed:
+E           1) test T27 record_delivery rejects a delivery beyond the allowed ratio (SlaLabSuite)
+E              /tmp/harbor_expr_suite.exs:412
+E              ** (ArgumentError) No such update action on resource SlaLab.Ops.Shipment: :record_delivery
+E         
+E              Example Call:
+E         
+E                Ash.Changeset.for_update(changeset_or_record, :action_name, input, options)
+E         
+E              Available update actions:
+E         
+E         
+E         
+E              code: Ash.update(shipments["S03"], %{actual_hours: 37},
+E              stacktrace:
+E                (ash 3.31.0) lib/ash/changeset/changeset.ex:3415: Ash.Changeset.raise_no_action/3
+E                (ash 3.31.0) lib/ash.ex:3934: Ash.update/3
+E                /tmp/harbor_expr_suite.exs:416: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+tests/test_final_state.py:648: AssertionError
+___________ test_t28_the_delivery_validation_is_enforced_atomically ____________
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+
+    def test_t28_the_delivery_validation_is_enforced_atomically(suite):
+        """T28 the delivery validation is enforced atomically"""
+>       check(suite, "T28")
+
+tests/test_final_state.py:788: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+scenario = 'T28'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+            pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+    
+        prefix = "test " + scenario + " "
+        matching = [name for name in results if name.startswith(prefix)]
+        assert matching, (
+            f"Scenario {scenario} did not run. Known scenarios: {sorted(results)}\n"
+            f"output:\n{suite['output']}"
+        )
+    
+        name = matching[0]
+        status, detail = results[name]
+>       assert status == "pass", f"Scenario {name} failed:\n{detail}"
+E       AssertionError: Scenario test T28 the delivery validation is enforced atomically failed:
+E           1) test T28 the delivery validation is enforced atomically (SlaLabSuite)
+E              /tmp/harbor_expr_suite.exs:429
+E              ** (Ash.Error.Unknown) 
+E              Bread Crumbs:
+E                > Exception raised in bulk update: SlaLab.Ops.Shipment.record_delivery
+E         
+E              Unknown Error
+E         
+E              * ** (RuntimeError) No such update action SlaLab.Ops.Shipment.record_delivery
+E                (ash 3.31.0) lib/ash/actions/update/bulk.ex:78: Ash.Actions.Update.Bulk.run/6
+E                /tmp/harbor_expr_suite.exs:433: SlaLabSuite."test T28 the delivery validation is enforced atomically"/1
+E                (ex_unit 1.18.4) lib/ex_unit/runner.ex:511: ExUnit.Runner.exec_test/2
+E                (stdlib 6.2.2) timer.erl:595: :timer.tc/2
+E                (ex_unit 1.18.4) lib/ex_unit/runner.ex:433: anonymous fn/6 in ExUnit.Runner.spawn_test_monitor/4
+E              code: |> Ash.bulk_update(:record_delivery, %{actual_hours: 37},
+E              stacktrace:
+E                (ash 3.31.0) lib/ash/actions/update/bulk.ex:3993: Ash.Actions.Update.Bulk.get_read_action/3
+E                (ash 3.31.0) lib/ash/actions/update/bulk.ex:78: Ash.Actions.Update.Bulk.run/6
+E                /tmp/harbor_expr_suite.exs:433: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+tests/test_final_state.py:648: AssertionError
+_________ test_t29_the_read_policy_authorises_on_the_custom_expression _________
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+
+    def test_t29_the_read_policy_authorises_on_the_custom_expression(suite):
+        """T29 the read policy authorises on the custom expression"""
+>       check(suite, "T29")
+
+tests/test_final_state.py:793: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+scenario = 'T29'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+            pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+    
+        prefix = "test " + scenario + " "
+        matching = [name for name in results if name.startswith(prefix)]
+        assert matching, (
+            f"Scenario {scenario} did not run. Known scenarios: {sorted(results)}\n"
+            f"output:\n{suite['output']}"
+        )
+    
+        name = matching[0]
+        status, detail = results[name]
+>       assert status == "pass", f"Scenario {name} failed:\n{detail}"
+E       AssertionError: Scenario test T29 the read policy authorises on the custom expression failed:
+E           1) test T29 the read policy authorises on the custom expression (SlaLabSuite)
+E              /tmp/harbor_expr_suite.exs:458
+E              Assertion with == failed
+E              code:  assert refs(records) == ["S03", "S04"]
+E              left:  ["S01", "S02", "S03", "S04", "S05", "S06", "S07", "S08", "S09", "S10"]
+E              right: ["S03", "S04"]
+E              stacktrace:
+E                /tmp/harbor_expr_suite.exs:460: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+tests/test_final_state.py:648: AssertionError
+_ test_t30_admins_bypass_the_route_policy_and_anonymous_readers_are_forbidden __
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+
+    def test_t30_admins_bypass_the_route_policy_and_anonymous_readers_are_forbidden(suite):
+        """T30 admins bypass the route policy and anonymous readers are forbidden"""
+>       check(suite, "T30")
+
+tests/test_final_state.py:798: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+scenario = 'T30'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+            pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+    
+        prefix = "test " + scenario + " "
+        matching = [name for name in results if name.startswith(prefix)]
+        assert matching, (
+            f"Scenario {scenario} did not run. Known scenarios: {sorted(results)}\n"
+            f"output:\n{suite['output']}"
+        )
+    
+        name = matching[0]
+        status, detail = results[name]
+>       assert status == "pass", f"Scenario {name} failed:\n{detail}"
+E       AssertionError: Scenario test T30 admins bypass the route policy and anonymous readers are forbidden failed:
+E           1) test T30 admins bypass the route policy and anonymous readers are forbidden (SlaLabSuite)
+E              /tmp/harbor_expr_suite.exs:469
+E              match (=) failed
+E              code:  assert {:error, %Ash.Error.Forbidden{}} = Ash.read(@shipment, actor: nil)
+E              left:  {:error, %Ash.Error.Forbidden{}}
+E              right: {:ok,
+E                      [
+E                        %SlaLab.Ops.Shipment{
+E                          id: "08c5b0e8-c18e-4460-84de-68d7023ab809",
+E                          reference: "S01",
+E                          origin_zone: "ams",
+E                          destination_zone: "jfk",
+E                          promised_hours: 48,
+E                          actual_hours: 24,
+E                          priority: :standard,
+E                          carrier_id: "035d92af-0f49-47db-ada9-ce84d6258e45",
+E                          carrier: #Ash.NotLoaded<:relationship, field: :carrier>,
+E                          __meta__: #Ecto.Schema.Metadata<:loaded>
+E                        },
+E                        %SlaLab.Ops.Shipment{
+E                          id: "29943d51-dac9-4d4a-9e23-9a0614bc6433",
+E                          reference: "S04",
+E                          origin_zone: "lhr",
+E                          destination_zone: "ams",
+E                          promised_hours: 32,
+E                          actual_hours: 1,
+E                          priority: :standard,
+E                          carrier_id: "035d92af-0f49-47db-ada9-ce84d6258e45",
+E                          carrier: #Ash.NotLoaded<:relationship, field: :carrier>,
+E                          __meta__: #Ecto.Schema.Metadata<:loaded>
+E                        },
+E                        %SlaLab.Ops.Shipment{
+E                          id: "2b7c659a-976a-47f0-9d76-c08a764ee43e",
+E                          reference: "S03",
+E                          origin_zone: "ams",
+E                          destination_zone: "lhr",
+E                          promised_hours: 24,
+E                          actual_hours: nil,
+E                          priority: :critical,
+E                          carrier_id: "035d92af-0f49-47db-ada9-ce84d6258e45",
+E                          carrier: #Ash.NotLoaded<:relationship, field: :carrier>,
+E                          __meta__: #Ecto.Schema.Metadata<:loaded>
+E                        },
+E                        %SlaLab.Ops.Shipment{
+E                          id: "2c031df5-7f57-4449-95df-758f520ee98f",
+E                          reference: "S07",
+E                          origin_zone: "sin",
+E                          destination_zone: "nrt",
+E                          promised_hours: 32,
+E                          actual_hours: 3,
+E                          priority: :express,
+E                          carrier_id: "20e27c65-1b84-403d-bd4d-683caadd8b7b",
+E                          carrier: #Ash.NotLoaded<:relationship, field: :carrier>,
+E                          __meta__: #Ecto.Schema.Metadata<:loaded>
+E                        },
+E                        %SlaLab.Ops.Shipment{
+E                          id: "2e90a21d-a3d1-4e6c-9b09-34c1db841837",
+E                          reference: "S02",
+E                          origin_zone: "jfk",
+E                          destination_zone: "ams",
+E                          promised_hours: 48,
+E                          actual_hours: 96,
+E                          priority: :express,
+E                          carrier_id: "035d92af-0f49-47db-ada9-ce84d6258e45",
+E                          carrier: #Ash.NotLoaded<:relationship, field: :carrier>,
+E                          __meta__: #Ecto.Schema.Metadata<:loaded>
+E                        },
+E                        %SlaLab.Ops.Shipment{
+E                          id: "34c46e55-628a-457c-a192-82f2bb771a5b",
+E                          reference: "S06",
+E                          origin_zone: "hkg",
+E                          destination_zone: "sin",
+E                          promised_hours: 12,
+E                          actual_hours: 12,
+E                          priority: :standard,
+E                          carrier_id: "20e27c65-1b84-403d-bd4d-683caadd8b7b",
+E                          carrier: #Ash.NotLoaded<:relationship, field: :carrier>,
+E                          __meta__: #Ecto.Schema.Metadata<:loaded>
+E                        },
+E                        %SlaLab.Ops.Shipment{
+E                          id: "4df56ba6-d606-42ce-bca2-0a02166faf84",
+E                          reference: "S09",
+E                          origin_zone: "osl",
+E                          destination_zone: "ams",
+E                          promised_hours: 10,
+E                          actual_hours: nil,
+E                          priority: :standard,
+E                          carrier_id: "3b9f79d0-eb99-4471-a0fc-ce25267c5e95",
+E                          carrier: #Ash.NotLoaded<:relationship, field: :carrier>,
+E                          __meta__: #Ecto.Schema.Metadata<:loaded>
+E                        },
+E                        %SlaLab.Ops.Shipment{
+E                          id: "60edaac2-4a5d-464c-b70e-147e4bedc7f9",
+E                          reference: "S05",
+E                          origin_zone: "sin",
+E                          destination_zone: "hkg",
+E                          promised_hours: 12,
+E                          actual_hours: 18,
+E                          priority: :standard,
+E                          carrier_id: "20e27c65-1b84-403d-bd4d-683caadd8b7b",
+E                          carrier: #Ash.NotLoaded<:relationship, field: :carrier>,
+E                          __meta__: #Ecto.Schema.Metadata<:loaded>
+E                        },
+E                        %SlaLab.Ops.Shipment{
+E                          id: "8a0985e2-55cf-4855-9b0a-0e86fc5706f8",
+E                          reference: "S08",
+E                          origin_zone: "ams",
+E                          destination_zone: "osl",
+E                          promised_hours: 10,
+E                          actual_hours: nil,
+E                          priority: :standard,
+E                          carrier_id: "3b9f79d0-eb99-4471-a0fc-ce25267c5e95",
+E                          carrier: #Ash.NotLoaded<:relationship, field: :carrier>,
+E                          __meta__: #Ecto.Schema.Metadata<:loaded>
+E                        },
+E                        %SlaLab.Ops.Shipment{
+E                          id: "ce790680-610e-4d21-81f5-4d5865cac8b7",
+E                          reference: "S10",
+E                          origin_zone: "cdg",
+E                          destination_zone: "ams",
+E                          promised_hours: 8,
+E                          actual_hours: 40,
+E                          priority: :standard,
+E                          carrier_id: "035d92af-0f49-47db-ada9-ce84d6258e45",
+E                          carrier: #Ash.NotLoaded<:relationship, field: :carrier>,
+E                          __meta__: #Ecto.Schema.Metadata<:loaded>
+E                        }
+E                      ]}
+E              stacktrace:
+E                /tmp/harbor_expr_suite.exs:473: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+tests/test_final_state.py:648: AssertionError
+_______ test_t31_the_penalty_points_function_module_reports_its_contract _______
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+
+    def test_t31_the_penalty_points_function_module_reports_its_contract(suite):
+        """T31 the penalty_points function module reports its contract"""
+>       check(suite, "T31")
+
+tests/test_final_state.py:803: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+scenario = 'T31'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+            pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+    
+        prefix = "test " + scenario + " "
+        matching = [name for name in results if name.startswith(prefix)]
+        assert matching, (
+            f"Scenario {scenario} did not run. Known scenarios: {sorted(results)}\n"
+            f"output:\n{suite['output']}"
+        )
+    
+        name = matching[0]
+        status, detail = results[name]
+>       assert status == "pass", f"Scenario {name} failed:\n{detail}"
+E       AssertionError: Scenario test T31 the penalty_points function module reports its contract failed:
+E           1) test T31 the penalty_points function module reports its contract (SlaLabSuite)
+E              /tmp/harbor_expr_suite.exs:480
+E              ** (UndefinedFunctionError) function SlaLab.Expressions.PenaltyPoints.name/0 is undefined (module SlaLab.Expressions.PenaltyPoints is not available)
+E              code: assert @penalty.name() == :penalty_points
+E              stacktrace:
+E                SlaLab.Expressions.PenaltyPoints.name()
+E                /tmp/harbor_expr_suite.exs:481: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+tests/test_final_state.py:648: AssertionError
+_______ test_t32_penalty_points_evaluates_eagerly_for_literal_arguments ________
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+
+    def test_t32_penalty_points_evaluates_eagerly_for_literal_arguments(suite):
+        """T32 penalty_points evaluates eagerly for literal arguments"""
+>       check(suite, "T32")
+
+tests/test_final_state.py:808: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+scenario = 'T32'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+            pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+    
+        prefix = "test " + scenario + " "
+        matching = [name for name in results if name.startswith(prefix)]
+        assert matching, (
+            f"Scenario {scenario} did not run. Known scenarios: {sorted(results)}\n"
+            f"output:\n{suite['output']}"
+        )
+    
+        name = matching[0]
+        status, detail = results[name]
+>       assert status == "pass", f"Scenario {name} failed:\n{detail}"
+E       AssertionError: Scenario test T32 penalty_points evaluates eagerly for literal arguments failed:
+E           1) test T32 penalty_points evaluates eagerly for literal arguments (SlaLabSuite)
+E              /tmp/harbor_expr_suite.exs:488
+E              ** (UndefinedFunctionError) function SlaLab.Expressions.PenaltyPoints.args/0 is undefined (module SlaLab.Expressions.PenaltyPoints is not available)
+E              code: assert Ash.Query.Function.new(@penalty, [-5, 3]) == {:ok, 0}
+E              stacktrace:
+E                SlaLab.Expressions.PenaltyPoints.args()
+E                (ash 3.31.0) lib/ash/query/function/function.ex:68: Ash.Query.Function.new/2
+E                /tmp/harbor_expr_suite.exs:489: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+tests/test_final_state.py:648: AssertionError
+________ test_t33_penalty_points_is_never_evaluated_with_nil_arguments _________
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+
+    def test_t33_penalty_points_is_never_evaluated_with_nil_arguments(suite):
+        """T33 penalty_points is never evaluated with nil arguments"""
+>       check(suite, "T33")
+
+tests/test_final_state.py:813: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+scenario = 'T33'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+            pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+    
+        prefix = "test " + scenario + " "
+        matching = [name for name in results if name.startswith(prefix)]
+        assert matching, (
+            f"Scenario {scenario} did not run. Known scenarios: {sorted(results)}\n"
+            f"output:\n{suite['output']}"
+        )
+    
+        name = matching[0]
+        status, detail = results[name]
+>       assert status == "pass", f"Scenario {name} failed:\n{detail}"
+E       AssertionError: Scenario test T33 penalty_points is never evaluated with nil arguments failed:
+E           1) test T33 penalty_points is never evaluated with nil arguments (SlaLabSuite)
+E              /tmp/harbor_expr_suite.exs:497
+E              ** (UndefinedFunctionError) function SlaLab.Expressions.PenaltyPoints.args/0 is undefined (module SlaLab.Expressions.PenaltyPoints is not available)
+E              code: assert Ash.Query.Function.new(@penalty, [nil, 3]) == {:ok, nil}
+E              stacktrace:
+E                SlaLab.Expressions.PenaltyPoints.args()
+E                (ash 3.31.0) lib/ash/query/function/function.ex:68: Ash.Query.Function.new/2
+E                /tmp/harbor_expr_suite.exs:498: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+tests/test_final_state.py:648: AssertionError
+__________ test_t34_penalty_points_reports_unknown_and_invalid_inputs __________
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+
+    def test_t34_penalty_points_reports_unknown_and_invalid_inputs(suite):
+        """T34 penalty_points reports unknown and invalid inputs"""
+>       check(suite, "T34")
+
+tests/test_final_state.py:818: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+scenario = 'T34'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+            pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+    
+        prefix = "test " + scenario + " "
+        matching = [name for name in results if name.startswith(prefix)]
+        assert matching, (
+            f"Scenario {scenario} did not run. Known scenarios: {sorted(results)}\n"
+            f"output:\n{suite['output']}"
+        )
+    
+        name = matching[0]
+        status, detail = results[name]
+>       assert status == "pass", f"Scenario {name} failed:\n{detail}"
+E       AssertionError: Scenario test T34 penalty_points reports unknown and invalid inputs failed:
+E           1) test T34 penalty_points reports unknown and invalid inputs (SlaLabSuite)
+E              /tmp/harbor_expr_suite.exs:502
+E              ** (UndefinedFunctionError) function SlaLab.Expressions.PenaltyPoints.args/0 is undefined (module SlaLab.Expressions.PenaltyPoints is not available)
+E              code: assert {:error, message} = Ash.Query.Function.new(@penalty, [1, 2, 3])
+E              stacktrace:
+E                SlaLab.Expressions.PenaltyPoints.args()
+E                (ash 3.31.0) lib/ash/query/function/function.ex:68: Ash.Query.Function.new/2
+E                /tmp/harbor_expr_suite.exs:503: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+tests/test_final_state.py:648: AssertionError
+__________ test_t35_penalty_points_can_be_used_inside_a_query_filter ___________
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+
+    def test_t35_penalty_points_can_be_used_inside_a_query_filter(suite):
+        """T35 penalty_points can be used inside a query filter"""
+>       check(suite, "T35")
+
+tests/test_final_state.py:823: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+scenario = 'T35'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+            pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+    
+        prefix = "test " + scenario + " "
+        matching = [name for name in results if name.startswith(prefix)]
+        assert matching, (
+            f"Scenario {scenario} did not run. Known scenarios: {sorted(results)}\n"
+            f"output:\n{suite['output']}"
+        )
+    
+        name = matching[0]
+        status, detail = results[name]
+>       assert status == "pass", f"Scenario {name} failed:\n{detail}"
+E       AssertionError: Scenario test T35 penalty_points can be used inside a query filter failed:
+E           1) test T35 penalty_points can be used inside a query filter (SlaLabSuite)
+E              /tmp/harbor_expr_suite.exs:514
+E              ** (UndefinedFunctionError) function SlaLab.Expressions.PenaltyPoints.args/0 is undefined (module SlaLab.Expressions.PenaltyPoints is not available)
+E              code: Ash.Query.Function.new(@penalty, [expr(actual_hours - promised_hours), 2])
+E              stacktrace:
+E                SlaLab.Expressions.PenaltyPoints.args()
+E                (ash 3.31.0) lib/ash/query/function/function.ex:68: Ash.Query.Function.new/2
+E                /tmp/harbor_expr_suite.exs:516: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+tests/test_final_state.py:648: AssertionError
+______________ test_t36_penalty_points_evaluates_against_a_record ______________
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+
+    def test_t36_penalty_points_evaluates_against_a_record(suite):
+        """T36 penalty_points evaluates against a record"""
+>       check(suite, "T36")
+
+tests/test_final_state.py:828: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+scenario = 'T36'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+            pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+    
+        prefix = "test " + scenario + " "
+        matching = [name for name in results if name.startswith(prefix)]
+        assert matching, (
+            f"Scenario {scenario} did not run. Known scenarios: {sorted(results)}\n"
+            f"output:\n{suite['output']}"
+        )
+    
+        name = matching[0]
+        status, detail = results[name]
+>       assert status == "pass", f"Scenario {name} failed:\n{detail}"
+E       AssertionError: Scenario test T36 penalty_points evaluates against a record failed:
+E           1) test T36 penalty_points evaluates against a record (SlaLabSuite)
+E              /tmp/harbor_expr_suite.exs:533
+E              ** (UndefinedFunctionError) function SlaLab.Expressions.PenaltyPoints.args/0 is undefined (module SlaLab.Expressions.PenaltyPoints is not available)
+E              code: Ash.Query.Function.new(@penalty, [expr(actual_hours - promised_hours), 2])
+E              stacktrace:
+E                SlaLab.Expressions.PenaltyPoints.args()
+E                (ash 3.31.0) lib/ash/query/function/function.ex:68: Ash.Query.Function.new/2
+E                /tmp/harbor_expr_suite.exs:535: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+tests/test_final_state.py:648: AssertionError
+_________ test_t37_programmatically_parsed_filters_behave_identically __________
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+
+    def test_t37_programmatically_parsed_filters_behave_identically(suite):
+        """T37 programmatically parsed filters behave identically"""
+>       check(suite, "T37")
+
+tests/test_final_state.py:833: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': 'yX3N1aXRlLmV4czo0ODE6ICh0ZXN0KQo=\n@@HARBOR@@test T32 penalty_points evaluates eagerly for literal argumen...ex:2546: Enum."-reduce/3-lists^foldl/2-0-"/3\n       /tmp/harbor_expr_suite.exs:105: (test)\n'), ...}, 'returncode': 0}
+scenario = 'T37'
+
+    def check(suite, scenario):
+        results = suite["results"]
+        if not results:
+            pytest.fail(
+                "The ExUnit verification suite produced no results (the project most "
+                "likely does not compile).\n"
+                f"mix run exit code: {suite['returncode']}\n"
+                f"output:\n{suite['output']}"
+            )
+    
+        prefix = "test " + scenario + " "
+        matching = [name for name in results if name.startswith(prefix)]
+        assert matching, (
+            f"Scenario {scenario} did not run. Known scenarios: {sorted(results)}\n"
+            f"output:\n{suite['output']}"
+        )
+    
+        name = matching[0]
+        status, detail = results[name]
+>       assert status == "pass", f"Scenario {name} failed:\n{detail}"
+E       AssertionError: Scenario test T37 programmatically parsed filters behave identically failed:
+E           1) test T37 programmatically parsed filters behave identically (SlaLabSuite)
+E              /tmp/harbor_expr_suite.exs:547
+E              ** (Ash.Error.Invalid) 
+E              Invalid Error
+E         
+E              * got %Ash.Error.Query.NoSuchFunction{function: :ratio_bps, arity: nil, resource: SlaLab.Ops.Shipment, could_be_calculation?: false, splode: Ash.Error, bread_crumbs: [], vars: [], path: [:filter], stacktrace: #Splode.Stacktrace<>, class: :invalid} while retrieving Exception.message/1 for %Ash.Error.Query.NoSuchFunction{function: :ratio_bps, arity: nil, resource: SlaLab.Ops.Shipment, could_be_calculation?: false, splode: Ash.Error, bread_crumbs: [], vars: [], path: [:filter], stacktrace: #Splode.Stacktrace<>, class: :invalid} (expected a string)
+E                  at filter
+E                (ash 3.31.0) lib/ash/query/query.ex:4017: Ash.Query.do_filter/3
+E                /tmp/harbor_expr_suite.exs:550: SlaLabSuite."test T37 programmatically parsed filters behave identically"/1
+E                (ex_unit 1.18.4) lib/ex_unit/runner.ex:511: ExUnit.Runner.exec_test/2
+E                (stdlib 6.2.2) timer.erl:595: :timer.tc/2
+E                (ex_unit 1.18.4) lib/ex_unit/runner.ex:433: anonymous fn/6 in ExUnit.Runner.spawn_test_monitor/4
+E              code: |> read!()
+E              stacktrace:
+E                (ash 3.31.0) lib/ash/actions/read/read.ex:32: Ash.Actions.Read.run/3
+E                (ash 3.31.0) lib/ash.ex:2938: Ash.read/2
+E                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2
+E                /tmp/harbor_expr_suite.exs:551: (test)
+E         
+E       assert 'fail' == 'pass'
+E         - pass
+E         + fail
+
+tests/test_final_state.py:648: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_final_state.py::test_t01_custom_expressions_are_registered_with_ash
+FAILED tests/test_final_state.py::test_t02_custom_expression_modules_report_name_0_and_arguments_0
+FAILED tests/test_final_state.py::test_t03_expression_2_dispatches_per_data_layer
+FAILED tests/test_final_state.py::test_t04_both_data_layer_clauses_produce_the_same_values
+FAILED tests/test_final_state.py::test_t05_route_key_normalises_and_orders_its_arguments
+FAILED tests/test_final_state.py::test_t06_ratio_bps_computes_integral_basis_points
+FAILED tests/test_final_state.py::test_t07_ratio_bps_rounds_halves_upwards - ...
+FAILED tests/test_final_state.py::test_t08_ratio_bps_clamps_to_the_closed_range_0_20000
+FAILED tests/test_final_state.py::test_t09_ratio_bps_returns_nil_for_nil_arguments_and_a_zero_denominator
+FAILED tests/test_final_state.py::test_t10_custom_expressions_compose_with_each_other
+FAILED tests/test_final_state.py::test_t11_custom_expressions_short_circuit_inside_if_cond
+FAILED tests/test_final_state.py::test_t12_custom_expression_results_can_be_cast_with_type_2
+FAILED tests/test_final_state.py::test_t13_arguments_outside_the_declared_types_are_rejected
+FAILED tests/test_final_state.py::test_t14_route_key_is_available_as_an_expression_calculation
+FAILED tests/test_final_state.py::test_t15_sla_ratio_bps_is_available_as_an_expression_calculation
+FAILED tests/test_final_state.py::test_t16_status_label_composes_the_custom_expression_with_conditionals
+FAILED tests/test_final_state.py::test_t17_the_on_route_read_action_filters_on_the_custom_expression
+FAILED tests/test_final_state.py::test_t18_custom_expressions_can_be_used_directly_in_a_query_filter
+FAILED tests/test_final_state.py::test_t19_calculations_built_on_custom_expressions_are_filterable
+FAILED tests/test_final_state.py::test_t20_calculations_built_on_custom_expressions_are_sortable
+FAILED tests/test_final_state.py::test_t21_custom_expressions_can_be_sorted_on_inline
+FAILED tests/test_final_state.py::test_t22_aggregate_filters_accept_custom_expressions
+FAILED tests/test_final_state.py::test_t23_custom_expressions_can_be_applied_to_aggregates
+FAILED tests/test_final_state.py::test_t24_custom_expressions_over_aggregates_are_filterable
+FAILED tests/test_final_state.py::test_t25_custom_expressions_work_inside_exists_1
+FAILED tests/test_final_state.py::test_t26_record_delivery_accepts_a_delivery_within_the_allowed_ratio
+FAILED tests/test_final_state.py::test_t27_record_delivery_rejects_a_delivery_beyond_the_allowed_ratio
+FAILED tests/test_final_state.py::test_t28_the_delivery_validation_is_enforced_atomically
+FAILED tests/test_final_state.py::test_t29_the_read_policy_authorises_on_the_custom_expression
+FAILED tests/test_final_state.py::test_t30_admins_bypass_the_route_policy_and_anonymous_readers_are_forbidden
+FAILED tests/test_final_state.py::test_t31_the_penalty_points_function_module_reports_its_contract
+FAILED tests/test_final_state.py::test_t32_penalty_points_evaluates_eagerly_for_literal_arguments
+FAILED tests/test_final_state.py::test_t33_penalty_points_is_never_evaluated_with_nil_arguments
+FAILED tests/test_final_state.py::test_t34_penalty_points_reports_unknown_and_invalid_inputs
+FAILED tests/test_final_state.py::test_t35_penalty_points_can_be_used_inside_a_query_filter
+FAILED tests/test_final_state.py::test_t36_penalty_points_evaluates_against_a_record
+FAILED tests/test_final_state.py::test_t37_programmatically_parsed_filters_behave_identically
+============================== 37 failed in 7.66s ==============================

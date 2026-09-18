@@ -1,0 +1,525 @@
+{"type":"text","text":"<think>Let me explore the repo first."}
+{"type":"text","text":"</think>"}
+{"type":"tool-call","toolName":"bash","input":{"command":"cd /home/user/orgguard && ls -la && echo \"---\" && cat mix.exs 2>/dev/null | head -50"}}
+{"type":"tool-result","toolName":"bash","output":{"exitCode":0,"stdout":"total 64\ndrwxr-xr-x  1 root root 4096 Sep 18 08:58 .\ndrwxr-xr-x  1 root root 4096 Sep 18 08:58 ..\n-rw-r--r--  1 root root   97 Sep 18 08:58 .formatter.exs\ndrwxr-xr-x  4 root root 4096 Sep 18 09:03 _build\ndrwxr-xr-x  1 root root 4096 Sep 18 08:58 config\ndrwxr-xr-x 19 root root 4096 Sep 18 08:58 deps\ndrwxr-xr-x  1 root root 4096 Sep 18 08:58 lib\n-rw-r--r--  1 root root  465 Sep 18 08:58 mix.exs\n-rw-r--r--  1 root root 5918 Sep 18 08:58 mix.lock\ndrwxr-xr-x  1 root root 4096 Sep 18 08:58 test\n---\ndefmodule Orgguard.MixProject do\n  use Mix.Project\n\n  def project do\n    [\n      app: :orgguard,\n      version: \"0.1.0\",\n      elixir: \"~> 1.18\",\n      start_permanent: Mix.env() == :prod,\n      consolidate_protocols: Mix.env() != :dev,\n      deps: deps()\n    ]\n  end\n\n  def application do\n    [\n      extra_applications: [:logger]\n    ]\n  end\n\n  defp deps do\n    [\n      {:ash, \"~> 3.31.0\"},\n      {:simple_sat, \"~> 0.1\"},\n      {:jason, \"~> 1.4\"}\n    ]\n  end\nend\n","stderr":""}}
+{"type":"text","text":"<think>Now let me look at lib structure."}
+{"type":"text","text":"</think>"}
+{"type":"tool-call","toolName":"bash","input":{"command":"cd /home/user/orgguard && find lib -type f 2>/dev/null; echo \"---\"; find test -type f 2>/dev/null"}}
+{"type":"tool-result","toolName":"bash","output":{"exitCode":0,"stdout":"lib/orgguard/access.ex\nlib/orgguard.ex\n---\ntest/test_helper.exs\n","stderr":""}}
+{"type":"text","text":"<think>Now let me look at access.ex and the existing application structure."}
+{"type":"text","text":"</think>"}
+{"type":"tool-call","toolName":"bash","input":{"command":"cd /home/user/orgguard && for f in lib/orgguard/*.ex lib/*.ex; do echo \"===== $f =====\"; cat \"$f\"; done"}}
+{"type":"tool-result","toolName":"bash","output":{"exitCode":0,"stdout":"===== lib/orgguard/access.ex =====\ndefmodule OrgGuard.Access do\n  @moduledoc \"\"\"\n  The OrgGuard access-control domain.\n\n  Register the User, OrgUnit, RoleAssignment and Document resources here, together\n  with the code interface described in the task.\n  \"\"\"\n  use Ash.Domain, otp_app: :orgguard\n\n  resources do\n  end\nend\n===== lib/orgguard.ex =====\ndefmodule OrgGuard do\n  @moduledoc \"\"\"\n  OrgGuard — hierarchical organisation access control.\n  \"\"\"\nend\n","stderr":""}}
+{"type":"text","text":"<think>Now let me verify Ash.DataLayer.Ets configuration"}
+{"type":"text","text":" for shared ETS tables across processes. The default is `write_concurrency: false` etc., and for shared mode"}
+{"type":"text","text":", we need `table` option to specify the same name. Actually Ash.DataLayer.Ets creates the ETS"}
+{"type":"text","text":" table lazily per resource. To share across processes, we should use the same table name explicitly. Let me check the documentation concept"}
+{"type":"text","text":": when using Ets, tables are named `resource.__MODULE__.table`. By setting `opts` with `table` we can share"}
+{"type":"text","text":" them. Let me confirm with `Mix.Task.run \"ash.patch\"` perhaps doesn't exist. Let"}
+{"type":"text","text":" me check Ash hex docs for ETS shared table support.\n\nThe way to make Ets tables shared across processes: By"}
+{"type":"text","text":" default Ets names the table based on the resource name, scoped to the application node. So tables should be shared naturally"}
+{"type":"text","text":" between processes within same node. Let me test this assumption. Actually Ash documents state that tables are registered with shared names. But"}
+{"type":"text","text":" to be safe and deterministic, let me use explicit table names.\n\nActually the verifier seeds from one process and asserts"}
+{"type":"text","text":" from another - that's the same node, just different processes. ETS tables are already node-scoped (Shared). So defaults"}
+{"type":"text","text":" should work. But to guarantee determinism, I'll set explicit table names.\n\nNow let me plan the resources"}
+{"type":"text","text":"."}
+{"type":"text","text":"</think>"}
+{"type":"tool-call","toolName":"bash","input":{"command":"cd /home/user/orgguard && cat config/*.exs 2>/dev/null; echo \"---\"; cat lib/*.ex test/*.exs; echo \"---VERIFY---\""}}
+{"type":"tool-result","toolName":"bash","output":{"exitCode":0,"stdout":"import Config\n\n# The OrgGuard access-control domain.\nconfig :orgguard,\n  ash_domains: [OrgGuard.Access]\n\n# Keep the ETS data layer's debug chatter out of stdout.\nconfig :logger, level: :warning\n---\ndefmodule OrgGuard do\n  @moduledoc \"\"\"\n  OrgGuard — hierarchical organisation access control.\n  \"\"\"\nend\nExUnit.start()\n---VERIFY---\n","stderr":""}}
+{"type":"text","text":"<think>Now let me verify ETS shared nature. Let me write a test"}
+{"type":"text","text":". But I don't need test - I can just verify. Actually let me build the resources and test shared ETS."}
+{"type":"text","text":"\n\nLet me design the authorization. This is the complex part.\n\nThe RoleAssignment resolution is tree-based. Capabilities"}
+{"type":"text","text":" computed per org unit.\n\n`Document` requires Authorizer. Other 3 freely accessible.\n\n`relocate` is"}
+{"type":"text","text":" a generic action taking `document_id`, `target_org_unit_id` UUIDs. When allowed, moves"}
+{"type":"text","text":" document; otherwise leave untouched. Return struct.\n\n`budget_cents` field policy requires `view_budget` at"}
+{"type":"text","text":" document's org unit, or break-glass. Otherwise marker.\n\nCapabilities map:\n```\n:viewer -> read"}
+{"type":"text","text":"\n:editor -> read, write\n:auditor -> read, view_budget\n:unit_admin -> read,"}
+{"type":"text","text":" write, delete, relocate, view_budget\n```\n\nResolution (normative):\n1. Path U, parent("}
+{"type":"text","text":"U), ..., root, nearest first.\n2. Per role, stop at first unit with RoleAssignment for actor with that"}
+{"type":"text","text":" role.\n3. If none -> role not held.\n4. If stopping unit has _any_ assignment for actor"}
+{"type":"text","text":"+role with effect=:deny -> not held (even if grant present, even if ancestor granted).\n5. Otherwise"}
+{"type":"text","text":" held.\nCapabilities union of held roles.\n\nThis means a grant flows down full subtree, a deny at descendant cuts off"}
+{"type":"text","text":". Grant deeper reestablishes. This is exactly what the definition says.\n\nThe authorize needs to handle these. But this"}
+{"type":"text","text":" is data-dependent, so simple/filter checks won't easily express the whole recursion. However, Ash policies are"}
+{"type":"text","text":" evaluated within the query scope. Actually we need to filter records based on actor permissions. For the list read, we only"}
+{"type":"text","text":" return documents whose org unit grants read. That requires filtering based on the org unit tree.\n\nFor read authorization: the"}
+{"type":"text","text":" policy uses checks to filter the query. We need a filter check that given the actor, restricts the query to documents where the org"}
+{"type":"text","text":" unit grants read.\n\nBut recursion into tree inside filter is hard. The normative resolution depends on the whole tree structure."}
+{"type":"text","text":" However, there's a trick: the grant propagates down the subtree, and deny cuts off. Actually this is exactly what we can express"}
+{"type":"text","text":": an actor holds a role at unit U if the _nearest_ ancestor with any assignment for actor+role has effect"}
+{"type":"text","text":" :grant. So read is held if the actor has a read grant at some unit that is an ancestor of (or U"}
+{"type":"text","text":" itself), AND there is no closer ancestor with a deny.\n\nThis is equivalent to: unit U is in the set of"}
+{"type":"text","text":" units where the nearest assignment in ancestors is a grant.\n\nThis can be expressed as: U is readable if there is a Role"}
+{"type":"text","text":"Assignment(user_id=actor.id, role=:viewer,:editor,:auditor,:unit_admin — actually"}
+{"type":"text","text":" :unit_admin grants read, etc. But capabilities map: auditor and unit_admin grant view_budget too. We"}
+{"type":"text","text":" need to check read capability grant. The capabilities that include read are :viewer, :editor, :auditor, :unit_admin"}
+{"type":"text","text":" — all roles grant read. Actually yes, every role grants read. So for read, any role assignment counts as grant"}
+{"type":"text","text":" of read, unless there's a deny.)\n\nWait, actually we need to be careful: the assignment role must be one that"}
+{"type":"text","text":" grants read. Since all four roles grant read, then any assignment with role ∈ [:viewer,:editor,:auditor,:unit"}
+{"type":"text","text":"_admin] acts as read-grant (resp. deny). So read is held at U if nearest ancestor with any assignment among"}
+{"type":"text","text":" those roles has effect :grant.\n\nBut we only have the actor's id. We don't know the actor in"}
+{"type":"text","text":" advance for filter checks (actor comes at runtime). Ash filter checks receive the actor in the context. So a filter check can build"}
+{"type":"text","text":" a filter based on the actor.\n\nFor the list read, the policy filter would use a filter check that queries role"}
+{"type":"text","text":" assignments and org units to determine the readable org units and return a filter. But this runs once per request. The filter"}
+{"type":"text","text":" returned should constrain documents to those in readable org units.\n\nLet me think about how to represent the set of readable org units."}
+{"type":"text","text":" We can compute it by loading role assignments and org units, building the tree, and computing the set. But a filter check returns"}
+{"type":"text","text":" an Ash filter expression, not a concrete set. The filter expression must be in terms of document attributes. We need `document.org"}
+{"type":"text","text":"_unit_id in readable_ids`. So the check computes the set of readable org unit IDs and returns `org"}
+{"type":"text","text":"_unit_id in ids`.\n\nThis is computable. In the filter check's `match?` or `filter"}
+{"type":"text","text":"` callback, we can fetch all role assignments and org units, build the tree, and return `[org_unit_id: in"}
+{"type":"text","text":": readable_ids]`. But wait, Ash filter checks run in the filter engine - `filter` callback should return a"}
+{"type":"text","text":" filter expression. That works.\n\nBut there's a complexity: to load role assignments and org units we need to read"}
+{"type":"text","text":" those resources. During authorization of Document.read, we could read RoleAssignment and OrgUnit. Is it safe to call read"}
+{"type":"text","text":" in a filter check? Yes, but need to be careful about recursion. Since RoleAssignment and OrgUnit have no authorizer, reading"}
+{"type":"text","text":" them is fine. And use `authorize?: false`.\n\nBut actually the filter check runs inside query planning. We should not"}
+{"type":"text","text":" do blocking calls but within a single request it's okay. To be safe, fetch with `authorize?: false`."}
+{"type":"text","text":"\n\nNow for fetch by id: read returns NotFound when lacks read. That's handled by the same filter check ("}
+{"type":"text","text":"query for id will return nothing = NotFound). For list read, returns empty.\n\nFor create: needs write capability at org"}
+{"type":"text","text":"_unit_id. Simple check on the submitted attributes. The `input` will contain org_unit_id. Check"}
+{"type":"text","text":" queries the tree. Use simple check.\n\nFor update: needs write at doc's org unit, and if budget changes"}
+{"type":"text","text":" need view_budget at org unit. Simple check on actor + document.\n\nFor destroy: delete capability at doc's org unit"}
+{"type":"text","text":".\n\nFor relocate: relocate at both current and target.\n\nFor budget field policy: only view_budget or break"}
+{"type":"text","text":"-glass readable. This is a field policy with `read` authorization returning the forbidden marker otherwise. But field policies cannot"}
+{"type":"text","text":" easily filter read output - actually field policies on read strip the value. We can use a field policy with a read policy"}
+{"type":"text","text":" whose condition is \"actor has view_budget or break-glass\". If not allowed, field is replaced with forbidden marker. But"}
+{"type":"text","text":" field policy replaces field with a value, it doesn't filter the record. That's fine - records still returned"}
+{"type":"text","text":" but budget masked.\n\nNow, break-glass: bypass policy. If actor.global_role == :break_glass, all"}
+{"type":"text","text":" read/create/update/destroy/relocate allowed and budgets visible. Suspension: if actor suspended and not break-glass, Forbidden"}
+{"type":"text","text":".\n\nLet me write the filter check for read. The `filter` callback receives `context`. We can access `context"}
+{"type":"text","text":".actor`. If actor is nil or suspended (but not break-glass), the filter should be empty (or return none"}
+{"type":"text","text":"). Actually for suspended, list read returns Forbidden, not empty. So filter check shouldn't handle suspension. Let me"}
+{"type":"text","text":" use a separate skip/policy for suspension that raises Forbidden.\n\nHmm, but the filter check needs to run only when"}
+{"type":"text","text":" actor is not suspended. We can put the filter check in a policy that is only active when actor not suspended. Actually"}
+{"type":"text","text":" easier: the read policy has three:\n1. bypass: break-glass\n2. fail: suspended -> Forbidden\n3. check:"}
+{"type":"text","text":" filter check computes readable org unit ids\n\nBut filter check is a filter check, not a \"fail\" check. Filter checks"}
+{"type":"text","text":" filter records. To handle suspended Forbidden, use a separate check that raises Forbidden when suspended. A \"check\" module that is"}
+{"type":"text","text":" simple check with `check` callback returning :ok / :error. For read action, a check that raises Forbidden when suspended"}
+{"type":"text","text":". But we want this on list too. Use a check in the read policy.\n\nActually, cleaner: policy tree"}
+{"type":"text","text":":\n- authorize_if: break-glass bypass\n- forbid_if: suspended -> raises Forbidden\n- authorize"}
+{"type":"text","text":"_if: filter check (computes readable org unit ids, returns filter `org_unit_id in readable_"}
+{"type":"text","text":"ids`)\n\nWait, for the filter check to be used as `authorize_if`, it needs to be a check"}
+{"type":"text","text":" that returns filter. Ash supports filter checks in `authorize_if`.\n\nBut there's a problem: the filter check computes"}
+{"type":"text","text":" the set of readable org units. Since this is an in-memory ETS layer, we can fetch everything quickly.\n\nLet me now"}
+{"type":"text","text":" write the resources and the filter check.\n\nLet me start by creating the project structure and writing the code.\n\nFor ETS"}
+{"type":"text","text":" shared table, let me set `table` names. Actually default names `resource.__MODULE__.table` are already shared. Let me just leave"}
+{"type":"text","text":" default but add table name explicitly to guarantee. Wait, to avoid issues, let me set the table option on each resource."}
+{"type":"text","text":" In Ash.DataLayer.Ets, `table` option sets the ETS table name. Let me set it to "}
+{"type":"text","text":"`resource.__MODULE__` or similar. I'll use explicit table names.\n\nActually, the concern is whether the table"}
+{"type":"text","text":" is created by the resource process. Ash DataLayer Ets creates the table when the resource is first loaded. To ensure"}
+{"type":"text","text":" it's shared, using explicit name shared across processes. Since ETS tables by name are process-independent (scoped to node"}
+{"type":"text","text":"), explicit naming ensures all processes use same table. So set `table: OrgGuard.Access.User.Table`?"}
+{"type":"text","text":" No, let me just set it to the module name that's unique. I'll do `table: __MODULE"}
+{"type":"text","text":"__` and `write_concurrency: true`, etc. Actually default write_concurrency is false. For performance"}
+{"type":"text","text":"/concurrency, let me enable write_concurrency: true and read_concurrency: true. These don't affect correctness"}
+{"type":"text","text":" but help. Given we need inter-process access, these are fine.\n\nLet me write each resource with `ets"}
+{"type":"text","text":"` data layer.\n\nNow, for `relocate` generic action returning struct. The action should return the updated document. In the implementation"}
+{"type":"text","text":", read the current doc, update org_unit_id, save, return. But we need to define the action such"}
+{"type":"text","text":" that when allowed it moves, when not it's left untouched. The authorization should block it when not allowed (returns"}
+{"type":"text","text":" Forbidden), so the action never runs when denied. So when the action runs, we assume authorized. But to be safe and spec"}
+{"type":"text","text":"-compliant: the action checks authorization (the authorizer already checks), so we just perform. But the spec says \"when"}
+{"type":"text","text":" not allowed ... org_unit_id must be left untouched\". Since authorizer blocks, that's automatically satisfied. But let"}
+{"type":"text","text":" me implement the generic action using `run?` callback and use an internal resource function. Actually simpler: define a resource"}
+{"type":"text","text":" function (change) and use it in action using `run`. Let me use a `change` that updates org_unit_id, and"}
+{"type":"text","text":" an action with `run` calling that change.\n\nWait, for generic action, the standard is: action with `type"}
+{"type":"text","text":": :read/:create/...` — generic is `type: :action`? In Ash, generic action is `action"}
+{"type":"text","text":" name, type: :action`? No, it's `action name, type: :read/:update"}
+{"type":"text","text":"` with `read?`/`update?` flag. For relocate that updates a record, use `update` action type"}
+{"type":"text","text":", rename to `relocate`. Or it could be a `read` action returning a struct. The spec: return"}
+{"type":"text","text":" type `:struct` constrained to instances of Document. Use read? But it mutates. Let me use an `update` action named"}
+{"type":"text","text":" `relocate`, accepting document_id (as primary key — actually document_id is a separate UUID argument, not"}
+{"type":"text","text":" the primary key `id`). Hmm, the primary key is `id`. The action takes two UUID arguments `document_id"}
+{"type":"text","text":"` and `target_org_unit_id`, and updates the document identified by document_id.\n\nSo this is not a standard"}
+{"type":"text","text":" update action on the primary key. It's a read-like action that mutates a separate record. This is a generic"}
+{"type":"text","text":" action. In Ash, use `action :relocate, :read` with read?: true, and use a manual"}
+{"type":"text","text":" implementation. But we can't easily perform a mutation in a read action. Actually we can use `change` in"}
+{"type":"text","text":" the action and `ash_read` callback. The cleanest for generic actions is `manual? true` actions. Let me use `action"}
+{"type":"text","text":" :relocate, :update, read?: true` and implement with a manual function that reads the doc, updates,"}
+{"type":"text","text":" and saves. Actually let me use `action :relocate, :read, read?: true` with a manual function that does"}
+{"type":"text","text":" both fetch and update? No.\n\nBetter approach: Use an `update` action named `relocate` that takes `document_id"}
+{"type":"text","text":"` and `target_org_unit_id` as arguments and updates the record. But the primary key is `id`,"}
+{"type":"text","text":" so standard update update requires `id` as primary key arg. But arguments can be anything. We can make a manual action with `manual"}
+{"type":"text","text":"? true`. Then in the implementation (change/action), fetch doc by document_id, update org_unit_id, persist"}
+{"type":"text","text":", return. Since it's an update-type action, that fits. Let me mark `relocate` with"}
+{"type":"text","text":" `type: :update` and `manual? true`, accept `document_id` and `target_org_unit_"}
+{"type":"text","text":"id` arguments. The implementation callback receives changes and context. Actually for manual update, we get changeset. Let me use an"}
+{"type":"text","text":" action `change` callback or a manual action. Simplest: `action :relocate, :update, read?: true"}
+{"type":"text","text":"`? Let me look at Ash docs for generic actions with return struct.\n\nActually, the requirement for code interface: "}
+{"type":"text","text":"`can_relocate_document?/3` must exist and return true/false. This implies Ash generates the helper. The generated "}
+{"type":"text","text":"`can_*?` helpers are generated for every action with `read?`, `create?`, `update?`, `destroy"}
+{"type":"text","text":"?` set, or for actions. For generic update/read action, Ash generates `can_<action>?`. So"}
+{"type":"text","text":" `action :relocate, :update, read?: true` would generate `can_relocate_document?`. But"}
+{"type":"text","text":" we need to handle the update logic.\n\nLet me use a manual update action:\n```elixir\naction :relocate"}
+{"type":"text","text":", :update, manual?: true, read?: true do\n  argument :document_id, :uuid, allow"}
+{"type":"text","text":"_nil?: false\n  argument :target_org_unit_id, :uuid, allow_nil?: false\nend"}
+{"type":"text","text":"\n```\nThen I need to implement the manual action. The implementation module/function. Actually for Ets data layer, manual actions"}
+{"type":"text","text":" need to be handled. Since Ets is simple, we can't easily use manual with Ets data layer directly"}
+{"type":"text","text":" in the generated action without a custom implementation. The implementation can be a `change` module. Let me use `change {"}
+{"type":"text","text":"OrgGuard.Access.Relocate, [target_org_unit_id: arg(:target_org_unit_id)]}` but"}
+{"type":"text","text":" the document_id arg... Actually pass arguments to the change. The change will fetch the document by document_id and update. But"}
+{"type":"text","text":" the `actor` context is available in change. authorization is already checked by the authorizer. So the change just performs."}
+{"type":"text","text":"\n\nHmm, but wait - the manual action needs to return the updated document struct. Using a change module that does `Api"}
+{"type":"text","text":".get!(Document, doc_id); changeset |> change(org_unit_id: target); Api.update`."}
+{"type":"text","text":" That returns the struct. But since it's a manual action marked with read?: true, Ash returns the result. This should work.\n\n"}
+{"type":"text","text":"But there's subtlety with `manual? true` — the action won't be run by the data layer. Instead"}
+{"type":"text","text":" we supply an implementation. Using `change` inside a manual action... Actually if manual? is true, we need to handle"}
+{"type":"text","text":" everything. But we can use `change` to perform the logic and set the result. The change module's `change("}
+{"type":"text","text":"changeset, _opts, _context)`: fetch document, update, return changeset. But Ash won't automatically persist"}
+{"type":"text","text":". So we need `Api.update(changeset)`. Within the change, calling Api.update recursively? That's fine"}
+{"type":"text","text":" as long as it's a different action. Use `Api.update(changeset, action: :update)"}
+{"type":"text","text":"`? That would re-run authorization. But we're authorized already (authorizer ran before). The update action also"}
+{"type":"text","text":" has authorizer? Document has Authorizer. But inside the manual action, we've already authorized the relocate. Actually"}
+{"type":"text","text":" calling Api.update with authorize?: false is fine and needed. Let me call `Api.update(changeset, authorize?: false)"}
+{"type":"text","text":"`.\n\nWait, but `document_id` argument is passed. The change needs document_id to fetch. Pass"}
+{"type":"text","text":" `document_id` via argument to the change. Actually pass the argument into the change module via options. `argument"}
+{"type":"text","text":" :document_id` is an argument on the action, accessible as `arg(:document_id)`. Pass it via"}
+{"type":"text","text":" `{OrgGuard.Access.Relocate, target_org_unit_id: arg(:target_org_unit_id), document_"}
+{"type":"text","text":"id: arg(:document_id)}`. Then change module reads these and performs the update.\n\nBut there's a problem"}
+{"type":"text","text":": the change function:\n```elixir\ndef change(changeset, opts, context) do\n  doc_id = Keyword."}
+{"type":"text","text":"fetch!(opts, :document_id)\n  target = Keyword.fetch!(opts, :target_org_"}
+{"type":"text","text":"unit_id)\n  # fetch document\n  doc = OrgGuard.Access.get!(Document, doc_id"}
+{"type":"text","text":", authorize?: false)\n  changeset = Ash.Changeset.for_update(doc, :update,"}
+{"type":"text","text":" %{org_unit_id: target}, authorize?: false)\n  # but the changeset already contains data from the action?\n  "}
+{"type":"text","text":"# the action arguments are separate. The doc is fetched fresh.\n  changeset = Ash.Changeset.new"}
+{"type":"text","text":"(doc, %{org_unit_id: target})\n  # actually just change the org_unit_id\n  "}
+{"type":"text","text":"changeset = Ash.Changeset.change(changeset, org_unit_id: target)\n  # execute"}
+{"type":"text","text":" update\n  {:ok, updated} = OrgGuard.Access.update(changeset, authorize?: false)\n  # Now"}
+{"type":"text","text":" set result\n  Ash.Changeset.set_result(changeset, updated)\nend\n```\nWait "}
+{"type":"text","text":"`set_result` is for `after_action`. In `change`, we can't easily set the manual action's result directly"}
+{"type":"text","text":" like that. Actually for manual actions, the change should just return the changeset that, when processed, yields the result. But manual actions"}
+{"type":"text","text":" are not processed. The pattern for manual actions: use `run` callback instead of change. Let me use `run` callback"}
+{"type":"text","text":".\n\nActually the cleanest: Use a custom action with `run`:\n```elixir\naction :relocate, :read"}
+{"type":"text","text":", read?: true, manual?: true do\n  argument ...\n  run {OrgGuard.Access.Relocate,"}
+{"type":"text","text":" []}\nend\n```\nAnd module implements `c:Ash.Resource.ManualRead.read/2`? No, generic"}
+{"type":"text","text":" action with run. Let me use `action :relocate, :read, read?: true` but set implementation in "}
+{"type":"text","text":"`run`. Actually for read-like actions that return a single struct, the best is `manual?` read. But we"}
+{"type":"text","text":" want `can_relocate_document?` generated. Ash generates can_*? for update actions with update?: true. So"}
+{"type":"text","text":" let me keep `type: :update` with `read?: true` and `manual? true`, and use `run` callback"}
+{"type":"text","text":".\n\nActually I'll simplify: use an update action `:relocate`, add arguments `document_id`, `target_org_unit"}
+{"type":"text","text":"_id`. Use a change module to perform the update. Since manual? is true, we must implement. Let me"}
+{"type":"text","text":" use `change` and return the changeset. But Ash's manual update expects us to do the update. The cleanest"}
+{"type":"text","text":" way is to use an `after_action` hooks or `run`.\n\nHmm, this is getting complicated. Let me reconsider"}
+{"type":"text","text":": maybe use a normal update action but the document is identified by `id`? No, document_id is separate"}
+{"type":"text","text":". But wait - can we make `document_id` be the primary key `id` via `change`? No."}
+{"type":"text","text":"\n\nLet me go with `change` plus setting the result in an `after_action`. Actually simpler approach: the"}
+{"type":"text","text":" generic action does the work and returns the struct. I can implement the action's read logic manually using `read_with"}
+{"type":"text","text":"` / read callback. Let me use a manual read implementation that returns the updated document. But that doesn't trigger update"}
+{"type":"text","text":" side-effects / validation. That's acceptable since authorization already handled.\n\nActually, the cleanest: define the action with"}
+{"type":"text","text":" `type: :update`, `update?: true`, `manual? true`, and use a `run` function that:"}
+{"type":"text","text":"\n1. fetches doc by document_id\n2. updates it\n3. returns the struct\n\nBut Ash needs to return the result of"}
+{"type":"text","text":" a manual action. The `run` callback for a generic action receives `(changeset, context)`. It returns "}
+{"type":"text","text":"`{:ok, result}` or `{:ok, result, changeset}`. Returning `{:ok, updated}` should work —"}
+{"type":"text","text":" Ash uses the result and skips data layer. Since read?: true is set, it may try to reload. That should be fine.\n\nBut"}
+{"type":"text","text":" the document_id argument value — inside `run`, use `Ash.Changeset.get_argument(changeset, :document_"}
+{"type":"text","text":"id)`? Arguments are kept in changeset? Let me recall: arguments for actions are stored in changeset. Access via `Ash"}
+{"type":"text","text":".Changeset.get_argument(changeset, :document_id)`.\n\nLet me write the run callback"}
+{"type":"text","text":":\n```elixir\ndef run(changeset, _opts, context) do\n  doc_id = Ash.Changeset"}
+{"type":"text","text":".get_argument(changeset, :document_id)\n  target = Ash.Changeset.get_"}
+{"type":"text","text":"argument(changeset, :target_org_unit_id)\n  doc = OrgGuard.Access.get!("}
+{"type":"text","text":"Document, doc_id, authorize?: false)\n  {:ok, updated} = OrgGuard.Access.update("}
+{"type":"text","text":"Ash.Changeset.new(doc, %{org_unit_id: target}), authorize?: false)\n  {:ok, updated"}
+{"type":"text","text":"}\nend\n```\nBut wait, `run` with `type: :update` expects to receive changeset and"}
+{"type":"text","text":" options. The callback signature is `run(changeset, opts, context)`. For generic action, it's "}
+{"type":"text","text":"`run(changeset, opts, context)`. But is `run` a valid option for `type: :update`? Ash"}
+{"type":"text","text":" allows `run` on actions? Actually `run` is for `:read` manual actions / generic actions. For update"}
+{"type":"text","text":", there's no `run`. The equivalent is `change` / `after_action`. For manual update actions, the change"}
+{"type":"text","text":" should set the result via `set_result` inside an `after_action` hook added in `change`. That"}
+{"type":"text","text":"'s the idiomatic way.\n\nLet me use the `after_action` pattern: a change adds an `after_action` that"}
+{"type":"text","text":" performs the update and returns the document. But inside after_action, updating recursively is fine. And set result. Actually"}
+{"type":"text","text":" `after_action` expects to return `{:ok, record}`. So:\n```elixir\ndef change(changeset, _"}
+{"type":"text","text":"opts, _context) do\n  Ash.Changeset.after_action(changeset, fn changeset, _"}
+{"type":"text","text":"result ->\n    doc_id = Ash.Changeset.get_argument(changeset, :document_id)\n    target ="}
+{"type":"text","text":" Ash.Changeset.get_argument(changeset, :target_org_unit_id)\n    doc"}
+{"type":"text","text":" = OrgGuard.Access.get!(Document, doc_id, authorize?: false)\n    updated = doc |"}
+{"type":"text","text":"> Ash.Changeset.for_update(:update, %{org_unit_id: target}, authorize?: false) |>"}
+{"type":"text","text":" Ash.Changeset.new(doc) ...\n    # just update field directly\n    {:ok, updated} = doc"}
+{"type":"text","text":" |> Ash.Changeset.new(%{org_unit_id: target}) |> Ash.Changeset.for_"}
+{"type":"text","text":"update(:update, %{}, authorize?: false) |> OrgGuard.Access.update()\n    {:ok, updated}\n  "}
+{"type":"text","text":"end)\nend\n```\nWait, the `after_action` callback returns `{:ok, result}` —"}
+{"type":"text","text":" this becomes the result of the action. And since it's an update action with read?: true, it returns the struct."}
+{"type":"text","text":" That's good. But we call `OrgGuard.Access.update(...)` recursively — authorize?: false. Good"}
+{"type":"text","text":".\n\nBut there's a cycle concern if the same action calls itself. But we call `:update` action, not `:"}
+{"type":"text","text":"relocate`. So no cycle. Good.\n\nWait, actually calling `OrgGuard.Access.update` re-runs"}
+{"type":"text","text":" authorization for the :update action on Document, which has Authorizer. But authorize?: false avoids that. Good. And"}
+{"type":"text","text":" we use Ash.Changeset.new(doc, %{org_unit_id: target}) which builds changeset"}
+{"type":"text","text":", then for_update :update... Actually just `Ash.Changeset.change(doc, org_unit_id: target"}
+{"type":"text","text":")` is enough but we want to go through action path? To keep validations, use `for_update`. But we set"}
+{"type":"text","text":" authorizer false and the document_id is from our trusted arg. Fine. Actually just `Ash.Changeset.change"}
+{"type":"text","text":"` is safest to avoid re-running validation. Let me use `Ash.Changeset.new(doc, %{org"}
+{"type":"text","text":"_unit_id: target})` then `OrgGuard.Access.update`.\n\nHmm, but calling `OrgGuard.Access."}
+{"type":"text","text":"update(changeset)` — `update` is a function generated by Domain. That will use Document's update action `:"}
+{"type":"text","text":"update`. Since update has no authorizer (Document has Authorizer, but does the update action? The authorizer applies to all"}
+{"type":"text","text":" actions of Document). But we use authorize?: false. Good.\n\nBut wait — `Ash.Changeset.new(doc, %{"}
+{"type":"text","text":"org_unit_id: target})` creates changeset with the new value. Calling `Access.update(changeset)"}
+{"type":"text","text":"` runs it. But `update` also will validate the changeset against the action... with authorize?: false no authorizer runs"}
+{"type":"text","text":". But validations? `org_unit_id` is required, valid UUID — fine since doc.org_unit_id was"}
+{"type":"text","text":" valid. And target is uuid. Fine.\n\nBut there's a concern: the `after_action` runs"}
+{"type":"text","text":" inside the original `relocate` action's transaction/flow. Calling `Access.update` within same process —"}
+{"type":"text","text":" OK.\n\nNow, will `can_relocate_document?` be generated? Yes, update action generates it"}
+{"type":"text","text":".\n\nNow, do arguments `document_id` and `target_org_unit_id` need to be"}
+{"type":"text","text":" present and non-nil. Set allow_nil?: false. The verifier passes them positionally. Good.\n\nNow"}
+{"type":"text","text":" the Authorization for relocate: needs relocate capability at both current and target org unit. In authorizer, use a policy. But relocate"}
+{"type":"text","text":" is done manually; authorizer needs to check permission. We can add a policy for `:relocate` action. Use "}
+{"type":"text","text":"`access :restrict_to_actions`? Or in a global policy with actions filters. Ash policies can be scoped to actions. Use"}
+{"type":"text","text":" `policies do; policy action_types: [:update] ...`. But authorize_if/deny_if checks run"}
+{"type":"text","text":" for the action. We can add checks.\n\nLet me design the Authorizer more carefully.\n\nLet me now write the resources"}
+{"type":"text","text":". Let me design each file.\n\n`lib/orgguard/access/user.ex`:\n```el"}
+{"type":"text","text":"ixir\ndefmodule OrgGuard.Access.User do\n  use Ash.Resource,\n    data_layer: Ash"}
+{"type":"text","text":".DataLayer.Ets,\n    domain: OrgGuard.Access,\n    authorizer: nil,\n    not_found"}
+{"type":"text","text":"_error?: true\n\n  ets do\n    table __MODULE__\n    write_concurrency true\n    read_"}
+{"type":"text","text":"concurrency true\n  end\n\n  resource do\n    description \"Users of the document vault\"\n  end\n\n"}
+{"type":"text","text":"  attributes do\n    uuid_primary_key :id\n    attribute :email, :string, allow_nil?: false\n"}
+{"type":"text","text":"    attribute :status, :atom, allow_nil?: false, default: :active, constraints: [one_of: [:active"}
+{"type":"text","text":", :suspended]]\n    attribute :global_role, :atom, allow_nil?: false, default: :member, constraints"}
+{"type":"text","text":": [one_of: [:member, :break_glass]]\n  end\n\n  actions do\n    read :read"}
+{"type":"text","text":" do\n      primary? true\n    end\n    create :create do\n      primary? true\n      accept [:email, :"}
+{"type":"text","text":"status, :global_role]\n    end\n  end\nend\n```\n\n`lib/orgguard"}
+{"type":"text","text":"/access/org_unit.ex`:\n```elixir\ndefmodule OrgGuard.Access.OrgUnit do"}
+{"type":"text","text":"\n  use Ash.Resource,\n    data_layer: Ash.DataLayer.Ets,\n    domain"}
+{"type":"text","text":": OrgGuard.Access,\n    authorizer: nil,\n    not_found_error?: true\n\n  "}
+{"type":"text","text":"ets do\n    table __MODULE__\n    write_concurrency true\n    read_concurrency true\n  end\n\n  resource"}
+{"type":"text","text":" do\n    description \"Organisation units\"\n  end\n\n  attributes do\n    uuid_primary_key :id"}
+{"type":"text","text":"\n    attribute :code, :string, allow_nil?: false\n    attribute :name, :string, allow"}
+{"type":"text","text":"_nil?: false\n  end\n\n  relationships do\n    belongs_to :parent, OrgGuard.Access.OrgUnit do"}
+{"type":"text","text":"\n      api nil # not a domain API\n      attribute_writable? true\n    end\n    has_many :children"}
+{"type":"text","text":", OrgGuard.Access.OrgUnit, destination_attribute: :parent_id\n  end\n\n  actions do\n    read"}
+{"type":"text","text":" :read do\n      primary? true\n    end\n    create :create do\n      primary? true\n      "}
+{"type":"text","text":"accept [:code, :name, :parent_id]\n    end\n  end\nend\n```\n\nWait"}
+{"type":"text","text":", `belongs_to` with attribute_writable?true so parent_id writable in create. Good. `api nil"}
+{"type":"text","text":"` — for Ets domain not needed, but good practice.\n\nNow `role_assignment.ex`:\n```elixir\ndefmodule"}
+{"type":"text","text":" OrgGuard.Access.RoleAssignment do\n  use Ash.Resource,\n    data_layer: Ash.Data"}
+{"type":"text","text":"Layer.Ets,\n    domain: OrgGuard.Access,\n    authorizer: nil,\n    not"}
+{"type":"text","text":"_found_error?: true\n\n  ets do\n    table __MODULE__\n    write_concurrency true\n"}
+{"type":"text","text":"    read_concurrency true\n  end\n\n  attributes do\n    uuid_primary_key :id\n    "}
+{"type":"text","text":"attribute :role, :atom, allow_nil?: false, constraints: [one_of: [:viewer, :editor, :aud"}
+{"type":"text","text":"itor, :unit_admin]]\n    attribute :effect, :atom, allow_nil?: false, default: :grant, constraints"}
+{"type":"text","text":": [one_of: [:grant, :deny]]\n  end\n\n  relationships do\n    belongs_to :user, OrgGuard"}
+{"type":"text","text":".Access.User do\n      attribute_writable? true\n    end\n    belongs_to :org_unit, OrgGuard."}
+{"type":"text","text":"Access.OrgUnit do\n      attribute_writable? true\n    end\n  end\n\n  actions do\n    "}
+{"type":"text","text":"read :read do\n      primary? true\n    end\n    create :create do\n      primary? true\n      accept [:"}
+{"type":"text","text":"user_id, :org_unit_id, :role, :effect]\n    end\n  end\n"}
+{"type":"text","text":"end\n```\n\nWait, `belongs_to` requires source attribute. Ash auto-adds `user_id"}
+{"type":"text","text":"` uuid attribute. Good. writable: true makes them writable in create. Good.\n\nNow `document.ex` with Authorizer.\n\nNow"}
+{"type":"text","text":" the Authorization logic — the hard part. Let me design the Authorizer check.\n\nI need a filter check for the read permission"}
+{"type":"text","text":" and also simple checks for other operations. Let me create check modules.\n\nThe filter check computes the set of readable org unit IDs for the current"}
+{"type":"text","text":" actor and returns `org_unit_id in readable_ids` filter. This is used in the read policy as"}
+{"type":"text","text":" `filter`. But for suspended actors, read should fail Forbidden, not return empty list. So handle suspension separately.\n\nLet me"}
+{"type":"text","text":" define a policy for read:\n```\npolicy action_types: [:read] do\n  authorize_if {"}
+{"type":"text","text":"BreakGlass, []}  # bypass if break_glass\n  forbid_if {Suspended, []}      "}
+{"type":"text","text":"# Forbidden if suspended\n  authorize_if {ReadableOrgUnit, []}  # filter check\nend\n"}
+{"type":"text","text":"```\n\nWait, for list read, `filter` on the read policy adds to the query filter. If suspended reaches `filter"}
+{"type":"text","text":"`, it'd return empty set -> empty list (not Forbidden). So must forbid suspended before. But `forbid_if"}
+{"type":"text","text":"` is a deny check — if true, raises Forbidden. This works for fetch-by-id too (returns NotFound?"}
+{"type":"text","text":" No, Forbidden). Good.\n\nBut does forbid_if run for list read? Yes, for the policy evaluation. Good"}
+{"type":"text","text":".\n\nFor fetch-by-id: when the actor is suspended and has read? Actually for suspended, the read"}
+{"type":"text","text":" always forbidden → Forbidden (not NotFound). That's what the spec says: \"For any other actor whose status is :"}
+{"type":"text","text":"suspended, every document operation fails with Ash.Error.Forbidden — including list reads and fetches by id, and including operations"}
+{"type":"text","text":" the actor's roles would otherwise permit.\" So yes, forbidden even if role would permit. So forbid_if suspended"}
+{"type":"text","text":" handles it, returning Forbidden. Good.\n\nNow the filter check `ReadableOrgUnit`. It's a filter check:"}
+{"type":"text","text":" module implements `Ash.FilterCheck`, with functions `filter(filter, context)`, `init(opts)`, maybe `match"}
+{"type":"text","text":"?`. For a filter check that returns a filter, we implement `filter(filter, context)`. The context contains"}
+{"type":"text","text":" `context.actor`. We need to return an Ash keyword query `[org_unit_id: in: readable"}
+{"type":"text","text":"_ids]`.\n\nWait, filter check's `filter` callback receives the current filter and the context. It should return a filter"}
+{"type":"text","text":" that is ANDed into the query. We return `[org_unit_id: in: readable_ids]`. That"}
+{"type":"text","text":"'s an Ash keyword filter — `[org_unit_id: [in: readable_ids]]` equivalent"}
+{"type":"text","text":". Good.\n\nBut we must ensure this filter doesn't conflict. Returning `[org_unit_id: in: readable_"}
+{"type":"text","text":"ids]` is fine.\n\nNow within the filter check:\n1. Check actor: if nil, read is allowed"}
+{"type":"text","text":"? Spec: read with nil actor — \"a list read returns exactly the documents whose org unit grants the read capability;"}
+{"type":"text","text":" it never returns an error, not even for nil\". So nil actor should return empty list (no roles = no read"}
+{"type":"text","text":" grants). And fetch by id NotFound. So the filter check with nil actor should return a filter that matches nothing. Return"}
+{"type":"text","text":" `[id: nil]` or `[org_unit_id: nil]` which never matches. Actually `"}
+{"type":"text","text":"[id: nil]` returns NotFound/empty. Good.\n\n2. Build tree and compute readable org unit ids.\n-"}
+{"type":"text","text":" Fetch all OrgUnit records (authorize?: false).\n- Fetch all RoleAssignment records for actor (filter by user_id =="}
+{"type":"text","text":" actor.id, authorize?: false).\n- Build the tree: map org_unit_id -> parent_id (with"}
+{"type":"text","text":" parent_id being the parent). OrgUnit has `parent_id` attribute.\n- Then for each org unit"}
+{"type":"text","text":", determine whether actor holds read role. Read is held if the nearest ancestor (scanning from unit up to root, nearest"}
+{"type":"text","text":" first) with any RoleAssignment for this actor+role has effect :grant. Here role = any read-granting role. All"}
+{"type":"text","text":" four roles grant read. So any RoleAssignment record for this actor (with any of the four roles) acts as a grant"}
+{"type":"text","text":"/deny. Actually we check each role separately, but since read is held if the nearest assignment anywhere on path is :grant for"}
+{"type":"text","text":" *any* read-granting role... hmm.\n\nLet me re-read carefully: \"An actor's effective"}
+{"type":"text","text":" roles at an org unit U are resolved per role, independently... capabilities at U are the union of the capabilities of every role held at"}
+{"type":"text","text":" U.\"\n\nSo read is held if the actor holds at least one role at U whose capabilities include read. All four roles include"}
+{"type":"text","text":" read. So read held if actor holds ANY role at U.\n\nNow: does the actor hold role R at U? —"}
+{"type":"text","text":" resolved per role. But since any read-granting role is equivalent for our purpose, we can just say read held"}
+{"type":"text","text":" if actor holds any role. Let me verify. Suppose actor has RoleAssignment(role=:viewer, effect=:grant) at unit"}
+{"type":"text","text":" A, and RoleAssignment(role=:editor, effect=:deny) at unit B (parent of A). For role"}
+{"type":"text","text":"=:viewer, path U(sub)→A→B→root. Nearest with role=:viewer is A (grant"}
+{"type":"text","text":") -> holds viewer? Wait, at B there's deny for editor, not viewer. So viewer held at U"}
+{"type":"text","text":". For role=:editor, nearest with role=:editor is B (deny) -> editor not held at U. Since"}
+{"type":"text","text":" actor holds viewer at U, read held at U.\n\nBut now if we just pooled all roles and said \"nearest ancestor"}
+{"type":"text","text":" with any read-granting role\", for U we'd see A has viewer (grant) and B has editor (deny). Nearest is"}
+{"type":"text","text":" A (grant) -> read held. Same result.\n\nBut counterexample: what if for a role there is a grant at nearest"}
+{"type":"text","text":" but also a deny at same unit? Spec: \"if the stopping unit carries any assignment for this actor and role with"}
+{"type":"text","text":" effect: :deny, the actor does not hold R at U — even if ... same unit also carries a grant for it"}
+{"type":"text","text":".\" So deny at stopping unit overrides grant at same unit for that role. But that's per-role. So if same"}
+{"type":"text","text":" unit has viewer:grant and editor:deny, then viewer is held, editor not. So read is held (viewer"}
+{"type":"text","text":").\n\nIf we pool all read-granting roles, we'd see grant and deny at same unit -> result"}
+{"type":"text","text":" depends on processing order. That could give wrong result. So pooling is NOT safe. We must resolve per role independently.\n\nBut"}
+{"type":"text","text":" wait — for read, we want the set of org units where actor holds at least one role with read capability. Since all roles"}
+{"type":"text","text":" have read capability, this is the set of units where actor holds ANY role (i.e. at least one role R"}
+{"type":"text","text":" with R held at U). That's equivalent to: U is included if there exists some role R s.t. nearest"}
+{"type":"text","text":" assignment on path for R is :grant.\n\nThis is NOT the same as pooling. We must compute per-role sets"}
+{"type":"text","text":" and union them.\n\nSo the algorithm for the filter check:\n1. Load all OrgUnits -> map id →"}
+{"type":"text","text":" parent_id.\n2. Load all RoleAssignments for actor → group by role, then by org_unit_id."}
+{"type":"text","text":" Actually we need map: role → (org_unit_id → effect).\n3. Compute set `readable"}
+{"type":"text","text":"` of org unit IDs. Initialize empty.\n4. Iterate over all org units U (each UUID). For each,"}
+{"type":"text","text":" determine if any read-granting role is held at U.\n   For each read-granting role R ∈ [:"}
+{"type":"text","text":"viewer,:editor,:auditor,:unit_admin]:\n     - walk path from U up to root.\n     - stop"}
+{"type":"text","text":" at first org unit that has an assignment for actor+R.\n     - if no such unit, role R not held.\n     -"}
+{"type":"text","text":" if stopping unit has any assignment for actor+R with effect=:deny, role R not held.\n     - else role"}
+{"type":"text","text":" R held.\n   If any R held, U ∈ readable.\n5. Return filter `[org_unit_id: in"}
+{"type":"text","text":": readable]`.\n\nBut walk path: Need to go from U → parent → ... → root. OrgUnit has `parent_id"}
+{"type":"text","text":"` pointing to parent. Build adj map: child → parent. Walk by following parent_id until no parent. Stop"}
+{"type":"text","text":" conditions: when unit has assignment for this role in our map (org_unit_id → effect map for that role).\n\nActually"}
+{"type":"text","text":" the stopping unit is the first ancestor (or self) that has any assignment for actor+role. So walk until we find a unit present"}
+{"type":"text","text":" as key in the role's assignment map.\n\nAlso handle potential cycles (tree should have no cycles, but good to"}
+{"type":"text","text":" cap path length). Use max depth.\n\nBut building the tree: all OrgUnits loaded. parent_id references are"}
+{"type":"text","text":" foreign keys. Some parent_id might refer to a unit not loaded? Load ALL OrgUnits, so every parent_id that"}
+{"type":"text","text":" exists in system is loaded. Parent-child links are within the set. Fine.\n\nOptimization: instead of walking per unit (which is O"}
+{"type":"text","text":"(N*path)), precompute held roles? For each role, we could propagate grant/deny down the tree."}
+{"type":"text","text":" But with arbitrary structure and denies, it's a DAG/tree. A grant at ancestor flows to descendants unless cut by deny. But deny"}
+{"type":"text","text":" at descendant can be overridden by grant further down. This is the tree-based permission inheritance with subtree override. We can do"}
+{"type":"text","text":" it with a top-down propagation. Let me think.\n\nActually simpler correct approach: Do it per role top-down. The value of"}
+{"type":"text","text":" role R at U is determined by the nearest ancestor with assignment. Let V(U) = the (role, effect) assigned"}
+{"type":"text","text":" at U (or nil if none). Then effective value E(U) = the first non-nil V(ancest"}
+{"type":"text","text":"or) encountered walking up. If E(U) is :deny, role not held. If :grant, role"}
+{"type":"text","text":" held. If nil, not held.\n\nThis is exactly top-down. We can compute E(U) for all U"}
+{"type":"text","text":" with a single top-down pass starting from roots. Roots are org units with no parent. For each root, traverse subtree"}
+{"type":"text","text":" top-down: keep track of the active (role, effect) inherited. When we enter a node V(U):"}
+{"type":"text","text":"\n- If V(U) exists, it overrides inherited value for that role (because nearest). But within a role, the"}
+{"type":"text","text":" nearest is the current one (at U). So the effective role at U for role R is V_R(U)"}
+{"type":"text","text":" if V_R(U) present, else inherited V_R. Actually wait — at node U, the values"}
+{"type":"text","text":" V_R(U) (for all roles) are the nearest for R for all descendants in U's subtree (and"}
+{"type":"text","text":" for U itself). So as we descend, the values at current node become the \"current nearest\" for the subtree.\n\nWait but"}
+{"type":"text","text":" we process top-down: root → children. At root, the active inherited for role R is nil. We process"}
+{"type":"text","text":" root: compute E_R(root) = (root has assignment? V_R(root) : nil). E"}
+{"type":"text","text":"_R(root) :deny => not held, :grant => held. Then pass the active value for R down to children as"}
+{"type":"text","text":" the inherited value for that role. When descending to a child, the new inherited value for R is the one from U: the nearest"}
+{"type":"text","text":" assignment encountered so far is the nearest of {V_R(root), V_R(root_children), ...}."}
+{"type":"text","text":" That is exactly V_R(node_nearest_above). So at node, the active inherited value for R is the value of"}
+{"type":"text","text":" R at the most recent ancestor that had an assignment. Yes!\n\nSo top-down traversal: each node receives inherited"}
+{"type":"text","text":" (role, effect) from parent for each role. For node U:\n- effective E_R(U) ="}
+{"type":"text","text":" V_R(U) if V_R(U) present, else inherited_R.\n- if E_R(U)"}
+{"type":"text","text":" == :grant, role R held at U → U is readable.\n- then pass to children: new_inherited"}
+{"type":"text","text":"_R = V_R(U) if present, else inherited_R.\n\nThis computes held per role."}
+{"type":"text","text":" Then U is readable if any role held.\n\nRoots: units with no parent_id (or parent_id not among"}
+{"type":"text","text":" loaded units). But all loaded so parent_id among loaded. Roots = units where parent_id is nil. But"}
+{"type":"text","text":" some roots might be children of other units? The tree structure: nodes. A root is a node with no parent. But a"}
+{"type":"text","text":" node with no parent_id is a root. Fine — build from all units that have parent_id == nil.\n\nWhat"}
+{"type":"text","text":" about nodes that are reachable from a parent but the parent has no assignment? They inherit nil until a grant. Fine.\n\nWhat"}
+{"type":"text","text":" about islands (components with no root)? In a proper tree every node has a root path. But user could create orphan"}
+{"type":"text","text":" units. Handle by finding all roots (parent_id == nil). Any node reachable? Traverse all units: for each,"}
+{"type":"text","text":" walk to root and stop at first assignment. That's the per-unit walk approach (correct and simpler).\n\n"}
+{"type":"text","text":"Let me use the per-unit walk approach for robustness against orphans/cycles. Each unit independently walks to root and finds its"}
+{"type":"text","text":" status. O(N*depth). N is number of org units. How many? Test fixtures... probably small. Fine"}
+{"type":"text","text":".\n\nWait — but there's a problem: what about nodes whose path to root reaches a unit not loaded (not possible"}
+{"type":"text","text":" since we load all OrgUnits). Good. But a unit's parent_id points to a unit that exists but"}
+{"type":"text","text":" is marked destroyed? We load with authorize?: false, all records. Good.\n\nActually wait: there's subtle"}
+{"type":"text","text":" case. The walk goes U → parent(U) → ... → root. At each step we need parent(U). We have"}
+{"type":"text","text":" OrgUnit map. Fine. Stop when unit not in role's assignment map. The assignment map contains all assignments for that role"}
+{"type":"text","text":" for that actor. Correct.\n\nBut what if a role has no assignments at all? Map empty -> stop immediately at U"}
+{"type":"text","text":", role not held. Fine.\n\nBut there's edge: U itself is the stopping unit (U has assignment for role"}
+{"type":"text","text":"). The nearest is U. If deny -> not held. Correct.\n\nNow what about the case where U is NOT in assignment map but"}
+{"type":"text","text":" its ancestor has assignment that's a deny. The walk continues past U to ancestor, hits deny -> role not held at"}
+{"type":"text","text":" U. Correct.\n\nNow read held at U if ANY read-granting role is held. So we compute readable"}
+{"type":"text","text":" ids and return.\n\nNow consider nil actor: read policy should return empty list. Filter check with nil actor -> return empty"}
+{"type":"text","text":". Good. But also for nil actor, the read policy has `authorize_if {BreakGlass, []}` (nil actor"}
+{"type":"text","text":" not break-glass), `forbid_if {Suspended, []}` (nil not suspended — wait. Does nil actor cause"}
+{"type":"text","text":" suspended check to explode? actor.status). We should handle nil actor in Suspended check. Let me make Suspended check handle nil actor"}
+{"type":"text","text":" gracefully: if actor nil return :ok (or skip). Actually forbid_if suspended: if actor nil → not suspended"}
+{"type":"text","text":" → don't forbid. Fine. But we need to define the check. Let me have Suspended check return `:"}
+{"type":"text","text":"ok` when actor nil. Then filter check: nil → return empty. Good, returns empty list.\n\nBut wait"}
+{"type":"text","text":": for nil actor, list read returns empty list. Good. And get-by-id with nil actor: returns"}
+{"type":"text","text":" NotFound. Actually filter check returning empty → query returns empty → NotFound. Good. But wait — get-by-id filters"}
+{"type":"text","text":" by id. If we AND [org_unit_id: in: empty], the whole query returns nothing → NotFound. Perfect"}
+{"type":"text","text":".\n\nNow Suspended check: a simple check that forbids suspended actors. In `read` policy: `forbid_if {"}
+{"type":"text","text":"Suspended, []}`. Forbid means: if check returns error, raise Forbidden. For nil actor we want it NOT"}
+{"type":"text","text":" to forbid (let filter return empty). So return :ok for nil.\n\nBut wait: if for nil actor the"}
+{"type":"text","text":" read is forbidden → should it return Forbidden? Spec: \"a list read returns exactly the documents whose org unit grants the"}
+{"type":"text","text":" read capability; it never returns an error, not even for nil and not even when the actor holds no roles at all\"."}
+{"type":"text","text":" So nil actor → NOT error → empty list. Good, our design handles that (nil not suspended, filter empty →"}
+{"type":"text","text":" empty list). But what if nil actor — should get-by-id return NotFound or Forbidden? \"it never returns an error, not"}
+{"type":"text","text":" even for nil\". But get-by-id missing grants should return NotFound. Nil actor has no grants → NotFound. Our"}
+{"type":"text","text":" design returns empty/NotFound. Good.\n\nBut wait: the spec also says for suspended: \"every document operation fails with Ash"}
+{"type":"text","text":".Error.Forbidden — including list reads and fetches by id\". So suspended always Forbidden. Good, forbid_if handles that.\n\n"}
+{"type":"text","text":"Now what about nil actor being passed to the read? Ash with authorize?: false skips authorizer → returns everything (real values"}
+{"type":"text","text":"). This is for seeding fixtures. Good.\n\nNow the filter check: needs `Ash.FilterCheck` behavior."}
+{"type":"text","text":" It implements `filter(filter, context)`. But for a filter check used in `authorize_if`/`filter`, the function"}
+{"type":"text","text":" name in API 3.0: `check` or `filter`? In Ash 3.0, filter"}
+{"type":"text","text":" checks implement `filter(filter, context)`. Actually let me recall Ash 3.0 API. It's "}
+{"type":"text","text":"`Ash.FilterCheck.c:filter/2`. Returns an Ash keyword query or filter struct. Good.\n\nBut"}
+{"type":"text","text":" the filter check is used in the `read` policy as a plain check? `authorize_if {ReadableOrgUnit, []}` treats"}
+{"type":"text","text":" ReadableOrgUnit as a \"check\". If it returns a filter, Ash applies it. But wait, `authorize_if"}
+{"type":"text","text":" {Module, opts}` expects the module to implement `Ash.Check`. Ash Checks have `check(changeset, context)` returning"}
+{"type":"text","text":" :ok/:error, and `filter(context)` returning filter. For a check used as filter, Ash calls `filter(context)"}
+{"type":"text","text":"` to constrain the query. So implementing `filter(context)` is correct. Let me use `Ash.Check` behavior and"}
+{"type":"text","text":" implement `filter(context)` (and return filter to use for filtering) + `check` for authorize (not used for filter"}
+{"type":"text","text":" path but required). Actually Ash 3.0 separate filter checks vs checks. Let me use `Ash.FilterCheck` explicitly"}
+{"type":"text","text":" as a filter check since it's cleaner and intended for filtering. But a filter check module also works as a check? In "}
+{"type":"text","text":"3.0 they're distinct. Let me use `Ash.FilterCheck` and put it in the policy as `authorize_if {"}
+{"type":"text","text":"ReadableOrgUnit, []}` — Ash filter checks can be used as authorization checks? Let me check. In Ash 3.0 docs"}
+{"type":"text","text":", filter checks are used in filters. But for policies we use `Ash.Check` modules. But a check'"}
+{"type":"text","text":"s `filter` callback returns a filter. So implement `Ash.Check` with `filter(context)`.\n\nActually"}
+{"type":"text","text":", to be safe and clean, let me check: The `filter` option on a policy computes additional filters. And"}
+{"type":"text","text":" `authorize_if` with a module that implements `filter` applies it. Let me use `Ash.Check`."}
+{"type":"text","text":" But actually let me reconsider: filter checks are designed to filter records. For the read policy to filter the list read to"}
+{"type":"text","text":" only readable documents, using a filter check is the right approach. Let me use `Ash.FilterCheck` and include"}
+{"type":"text","text":" it in the policy via `filter {ReadableOrgUnit, []}` option on the policy? No, Ash policies have `filter` option"}
+{"type":"text","text":" but only for the filter of the read. Actually Ash supports:\n```\npolicy action_types: [:read]"}
+{"type":"text","text":" do\n  authorize_if ...\n  forbid_if ...\n  authorize_if {Ash.FilterCheck."}
+{"type":"text","text":"Module, opts}\nend\n```\nWhen `authorize_if` uses a filter check module, it applies the filter"}
+{"type":"text","text":". Let me confirm Ash 3.0 `authorize_if` accepts filter checks. Actually reading Ash 3.0 docs"}
+{"type":"text","text":": \"You can use a filter check as an authorization check...\" — it works. But to be safest, let me use a"}
+{"type":"text","text":" regular check `Ash.Check` implementing `filter(context)`. Both work. I'll use `Ash."}
+{"type":"text","text":"FilterCheck` since it's a dedicated filter check. Actually the requirement says \"At least one check module ... must be a"}
+{"type":"text","text":" filter check ... defined by you ... At least one ... simple check\". So I need both types.\n\nFor the filter check:"}
+{"type":"text","text":" I'll use `Ash.FilterCheck` behaviour, implement `c:filter/2`. It will be used"}
+{"type":"text","text":" in the read policy.\n\nFor the simple check: I need a simple check. Simple checks implement `Ash.Simple"}
+{"type":"text","text":"Check` with `check(changeset, context)` and `match?(changeset, context)` (boolean for caching"}
+{"type":"text","text":"). Simple checks are used in policies. Let me use simple check for create/update/destroy capability checks. E.g., a"}
+{"type":"text","text":" simple check `WriteCapable` that checks if the actor has write capability at the org unit of the document/target. This"}
+{"type":"text","text":" simple check would be used in `authorize_if {WriteCapable, []}`. That satisfies the simple check requirement.\n\nLet me"}
+{"type":"text","text":" design the simple checks:\n- `WriteCapable`: for update/destroy (needs write at doc's org unit), and"}
+{"type":"text","text":" create (write at target org_unit_id).\n- Actually create needs write at target org unit (not doc"}
+{"type":"text","text":" yet). Update needs write at doc's org unit. Destroy delete. Relocate relocate at both current and target.\n- view"}
+{"type":"text","text":"_budget check for budget field policy read authorization.\n\nLet me create generic simple check `CapabilityCheck` parameterized by capability"}
+{"type":"text","text":" name(s). But simple checks need `check(changeset, context)` to return :ok/:error and `match?"}
+{"type":"text","text":"`. Parameters passed in opts. We can make a single simple check module `OrgGuard.Access.Check.Capability"}
+{"type":"text","text":"` that takes `capability: :write` or `capabilities: [:write, :delete]` etc. and checks whether the actor has any"}
+{"type":"text","text":" of those capabilities at the relevant org unit.\n\nBut \"relevant org unit\": for create it's target_org_unit"}
+{"type":"text","text":"_id from attributes; for update/destroy it's doc.org_unit_id; for field policy it"}
+{"type":"text","text":"'s doc.org_unit_id. So the check needs to know which org unit to use. We can pass"}
+{"type":"text","text":" `org_unit_source: :attribute/:field` etc. or just always check at \"document's org unit"}
+{"type":"text","text":"\" and \"target\" separately. Actually simpler: create separate simple checks per case. Let me create:\n- "}
+{"type":"text","text":"`WritableOrgUnit`: check write capability at document's org unit (for update/destroy).\n- `WriteTarget"}
+{"type":"text","text":"OrgUnit`: check write capability at target_org_unit_id (for create).\n- `DeleteCapable`:"}
+{"type":"text","text":" check delete at doc's org unit.\n- `RelocateCapable`: check relocate at both doc's org unit and target org"}
+{"type":"text","text":" unit.\n- `ViewBudgetCapable`: check view_budget at doc's org unit (for field policy read).\n\n"}
+{"type":"text","text":"Wait, but for field policy read authorization, the check receives `(changeset, context)`? No, field policies for"}
+{"type":"text","text":" read use a policy with `read` authorization. Let me check: field policies on read — the `read` block"}
+{"type":"text","text":" authorization. The context includes the record being read? For field read policy, the `check` receives changeset of what? In"}
+{"type":"text","text":" Ash 3.0, a field read policy check receives… Actually field read policy checks receive the record being read (the read action returns"}
+{"type":"text","text":" records). Let me recall: `field :budget_cents` with `read` authorization block uses a check that gets"}
+{"type":"text","text":" `(changeset, context)` — the changeset of the read action? Actually field policies work by... For read, the policy is"}
+{"type":"text","text":" evaluated per record and if denied, the field value is replaced by forbidden_field_marker. The check receives the record?"}
+{"type":"text","text":" Let me recall. In Ash, for read field policy, the check receives `context` and the record is available as `context"}
+{"type":"text","text":".record`. Let me check Ash docs.\n\nActually to be safe and simple, I'll define the field policy with"}
+{"type":"text","text":" `read` authorization and use a check. The check module will be a simple check that checks view_budget. For"}
+{"type":"text","text":" read authorization on a field, the check's `check(changeset, context)` — does it get the record?"}
+{"type":"text","text":" Let me check the Ash guide \"Field Policies\". For read, it says the policy is checked against each record. The"}
+{"type":"text","text":" check receives `context`. The record being authorized is available in `context.record` (actually `context.authorization."}
+{"type":"text","text":"record`). hmm.\n\nTo avoid uncertainty, let me use the approach: define field policy `read` block with `authorize"}
+{"type":"text","text":"_if {ViewBudgetOrBreakGlass, []}` where the simple check implementation in `check(changeset, context)` accesses"}
+{"type":"text","text":" `context` and if not allowed returns error (then field masked). But the difficulty: how to get the org unit"}
+{"type":"text","text":" and actor. context has actor. The record: for read field policy in Ash 3.0, the check callback"}
+{"type":"text","text":" `check(changeset, context)`. The record being read... Let me just access `changeset.data`? Actually for"}
+{"type":"text","text":" read, the data layer returns loaded records; the field policy runs on them. The changeset passed to check might have data"}
+{"type":"text","text":" = the record. Let me check `context` has the record at `context.record` in Ash 3.0"}
+{"type":"text","text":" authorization.\n\nActually I'm not certain. Let me look at Ash API via the vendored source. Let me check"}
+{"type":"text","text":" `deps/ash`.\n\nLet me start by verifying Ash version and exploring the source for field policy checks signature."}
+{"type":"text","text":"</think>"}
+{"type":"tool-call","toolName":"bash","input":{"command":"cd /home/user/orgguard && cat deps/ash/mix.exs 2>/dev/null | head -1; echo \"---\"; find deps/ash -type f -name '*.ex' 2>/dev/null | grep -i \"field.*policy\\|policy.*check\\|check_impl\" | grep -v test | head; echo \"---doc---\"; find deps/ash -type f -name '*.ex' 2>/dev/null | grep -i \"field\" | head"}}
+{"type":"tool-result","toolName":"bash","output":{"exitCode":0,"stdout":"# SPDX-FileCopyrightText: 2019 ash contributors <https://github.com/ash-project/ash/graphs/contributors>\n---\ndeps/ash/lib/ash/policy/field_policy.ex\ndeps/ash/lib/ash/policy/simple_check.ex\ndeps/ash/lib/ash/policy/filter_check.ex\ndeps/ash/lib/ash/policy/check.ex\ndeps/ash/lib/ash/policy/check/expression.ex\ndeps/ash/lib/ash/policy/check/action.ex\ndeps/ash/lib/ash/policy/check/matches.ex\ndeps/ash/lib/ash/policy/check/private_action.ex\ndeps/ash/lib/ash/policy/check/changing_relationships.ex\ndeps/ash/lib/ash/policy/check/selecting.ex\n---doc---\ndeps/ash/lib/ash/resource/verifiers/no_reserved_field_names.ex\ndeps/ash/lib/ash/resource/verifiers/validate_aggregate_field.ex\ndeps/ash/lib/ash/resource/transformers/has_destination_field.ex\ndeps/ash/lib/ash/resource/transformers/require_unique_field_names.ex\ndeps/ash/lib/ash/info/manifest/field.ex\ndeps/ash/lib/ash/error/query/no_such_field.ex\ndeps/ash/lib/ash/error/query/unsortable_field.ex\ndeps/ash/lib/ash/error/forbidden/forbidden_field.ex\ndeps/ash/lib/ash/forbidden_field.ex\ndeps/ash/lib/ash/policy/field_policy.ex\n","stderr":""}}
+{"type":"text","text":"<think>Let me look at field_policy.ex, check"}
+{"type":"text","text":".ex, and simple_check.ex."}
+{"type":"text","text":"</think>"}
+{"type":"error","message":"Chat completion failed: Response stream ended without a finish reason."}

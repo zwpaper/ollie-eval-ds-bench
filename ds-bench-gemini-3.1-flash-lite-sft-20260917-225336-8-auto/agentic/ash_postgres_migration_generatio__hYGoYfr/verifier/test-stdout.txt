@@ -1,0 +1,2674 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0
+rootdir: /tests
+plugins: json-ctrf-0.5.3
+collected 49 items
+
+tests/test_final_state.py .FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF [ 93%]
+FFF                                                                      [100%]
+
+=================================== FAILURES ===================================
+___________________ test_codegen_reports_no_pending_changes ____________________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+
+    def test_codegen_reports_no_pending_changes(harness):
+        proc = harness["codegen"]
+        assert proc is not None, f"`mix ash.codegen --check` was not run.\n\n{_diagnostics(harness)}"
+>       assert proc.returncode == 0, (
+            "`mix ash.codegen --check` exited non-zero, so the committed migrations and "
+            "resource snapshots do not match the resources (a second codegen run would "
+            "produce new files).\n"
+            f"stdout tail:\n{_tail(proc.stdout)}\nstderr tail:\n{_tail(proc.stderr)}"
+        )
+E       AssertionError: `mix ash.codegen --check` exited non-zero, so the committed migrations and resource snapshots do not match the resources (a second codegen run would produce new files).
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running codegen for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Freight, error: :nofile. 
+E         
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in current project.....unning codegen for AshPostgres.DataLayer...\n', stderr='** (Mix) Could not load Logistics.Freight, error: :nofile. \n').returncode
+
+tests/test_final_state.py:1132: AssertionError
+_____________________ test_ash_reset_rebuilds_the_database _____________________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+
+    def test_ash_reset_rebuilds_the_database(harness):
+        proc = harness["reset"]
+        assert proc is not None, f"`mix ash.reset` was not run.\n\n{_diagnostics(harness)}"
+>       assert proc.returncode == 0, (
+            "`mix ash.reset` failed, so the database cannot be rebuilt from the generated "
+            "migrations.\n"
+            f"stdout tail:\n{_tail(proc.stdout)}\nstderr tail:\n{_tail(proc.stderr)}"
+        )
+E       AssertionError: `mix ash.reset` failed, so the database cannot be rebuilt from the generated migrations.
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running tear_down for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.
+E         
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['mix', 'ash.reset'], returncode=1, stdout='Getting extensions in current project...\nRunning te...d not load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n').returncode
+
+tests/test_final_state.py:1143: AssertionError
+__________________________ test_probe_suite_executed ___________________________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+
+    def test_probe_suite_executed(harness):
+        proc = harness["run"]
+>       assert proc is not None, f"The ExUnit probe suite was never started.\n\n{_diagnostics(harness)}"
+E       AssertionError: The ExUnit probe suite was never started.
+E         
+E         [pg] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [compile] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [codegen] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running codegen for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Freight, error: :nofile. 
+E         
+E         
+E         [reset] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running tear_down for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.
+E         
+E         
+E         [run] not executed
+E       assert None is not None
+
+tests/test_final_state.py:1152: AssertionError
+___________ test_t01_public_schema_contains_exactly_the_five_tables ____________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+
+    def test_t01_public_schema_contains_exactly_the_five_tables(harness):
+>       _scenario(harness, "T01")
+
+tests/test_final_state.py:1162: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+scenario_id = 'T01'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+>       assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+E       AssertionError: Scenario T01 produced no result. The ExUnit suite did not run or crashed before reaching it.
+E         
+E         [pg] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [compile] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [codegen] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running codegen for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Freight, error: :nofile. 
+E         
+E         
+E         [reset] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running tear_down for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.
+E         
+E         
+E         [run] not executed
+E       assert []
+
+tests/test_final_state.py:1109: AssertionError
+____________ test_t02_citext_uuid_ossp_and_ash_functions_installed _____________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+
+    def test_t02_citext_uuid_ossp_and_ash_functions_installed(harness):
+>       _scenario(harness, "T02")
+
+tests/test_final_state.py:1166: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+scenario_id = 'T02'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+>       assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+E       AssertionError: Scenario T02 produced no result. The ExUnit suite did not run or crashed before reaching it.
+E         
+E         [pg] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [compile] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [codegen] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running codegen for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Freight, error: :nofile. 
+E         
+E         
+E         [reset] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running tear_down for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.
+E         
+E         
+E         [run] not executed
+E       assert []
+
+tests/test_final_state.py:1109: AssertionError
+__________________________ test_t03_carriers_columns ___________________________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+
+    def test_t03_carriers_columns(harness):
+>       _scenario(harness, "T03")
+
+tests/test_final_state.py:1170: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+scenario_id = 'T03'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+>       assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+E       AssertionError: Scenario T03 produced no result. The ExUnit suite did not run or crashed before reaching it.
+E         
+E         [pg] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [compile] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [codegen] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running codegen for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Freight, error: :nofile. 
+E         
+E         
+E         [reset] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running tear_down for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.
+E         
+E         
+E         [run] not executed
+E       assert []
+
+tests/test_final_state.py:1109: AssertionError
+_________________________ test_t04_warehouses_columns __________________________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+
+    def test_t04_warehouses_columns(harness):
+>       _scenario(harness, "T04")
+
+tests/test_final_state.py:1174: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+scenario_id = 'T04'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+>       assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+E       AssertionError: Scenario T04 produced no result. The ExUnit suite did not run or crashed before reaching it.
+E         
+E         [pg] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [compile] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [codegen] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running codegen for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Freight, error: :nofile. 
+E         
+E         
+E         [reset] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running tear_down for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.
+E         
+E         
+E         [run] not executed
+E       assert []
+
+tests/test_final_state.py:1109: AssertionError
+__________________________ test_t05_shipments_columns __________________________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+
+    def test_t05_shipments_columns(harness):
+>       _scenario(harness, "T05")
+
+tests/test_final_state.py:1178: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+scenario_id = 'T05'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+>       assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+E       AssertionError: Scenario T05 produced no result. The ExUnit suite did not run or crashed before reaching it.
+E         
+E         [pg] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [compile] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [codegen] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running codegen for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Freight, error: :nofile. 
+E         
+E         
+E         [reset] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running tear_down for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.
+E         
+E         
+E         [run] not executed
+E       assert []
+
+tests/test_final_state.py:1109: AssertionError
+____________________ test_t06_scheduled_for_is_timestamptz _____________________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+
+    def test_t06_scheduled_for_is_timestamptz(harness):
+>       _scenario(harness, "T06")
+
+tests/test_final_state.py:1182: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+scenario_id = 'T06'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+>       assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+E       AssertionError: Scenario T06 produced no result. The ExUnit suite did not run or crashed before reaching it.
+E         
+E         [pg] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [compile] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [codegen] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running codegen for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Freight, error: :nofile. 
+E         
+E         
+E         [reset] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running tear_down for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.
+E         
+E         
+E         [run] not executed
+E       assert []
+
+tests/test_final_state.py:1109: AssertionError
+______________________ test_t07_booked_at_defaults_to_now ______________________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+
+    def test_t07_booked_at_defaults_to_now(harness):
+>       _scenario(harness, "T07")
+
+tests/test_final_state.py:1186: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+scenario_id = 'T07'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+>       assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+E       AssertionError: Scenario T07 produced no result. The ExUnit suite did not run or crashed before reaching it.
+E         
+E         [pg] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [compile] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [codegen] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running codegen for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Freight, error: :nofile. 
+E         
+E         
+E         [reset] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running tear_down for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.
+E         
+E         
+E         [run] not executed
+E       assert []
+
+tests/test_final_state.py:1109: AssertionError
+__________________ test_t08_parcels_and_shipment_legs_columns __________________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+
+    def test_t08_parcels_and_shipment_legs_columns(harness):
+>       _scenario(harness, "T08")
+
+tests/test_final_state.py:1190: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+scenario_id = 'T08'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+>       assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+E       AssertionError: Scenario T08 produced no result. The ExUnit suite did not run or crashed before reaching it.
+E         
+E         [pg] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [compile] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [codegen] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running codegen for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Freight, error: :nofile. 
+E         
+E         
+E         [reset] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running tear_down for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.
+E         
+E         
+E         [run] not executed
+E       assert []
+
+tests/test_final_state.py:1109: AssertionError
+____________________________ test_t09_primary_keys _____________________________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+
+    def test_t09_primary_keys(harness):
+>       _scenario(harness, "T09")
+
+tests/test_final_state.py:1194: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+scenario_id = 'T09'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+>       assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+E       AssertionError: Scenario T09 produced no result. The ExUnit suite did not run or crashed before reaching it.
+E         
+E         [pg] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [compile] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [codegen] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running codegen for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Freight, error: :nofile. 
+E         
+E         
+E         [reset] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running tear_down for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.
+E         
+E         
+E         [run] not executed
+E       assert []
+
+tests/test_final_state.py:1109: AssertionError
+_______________________ test_t10_shipments_foreign_keys ________________________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+
+    def test_t10_shipments_foreign_keys(harness):
+>       _scenario(harness, "T10")
+
+tests/test_final_state.py:1198: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+scenario_id = 'T10'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+>       assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+E       AssertionError: Scenario T10 produced no result. The ExUnit suite did not run or crashed before reaching it.
+E         
+E         [pg] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [compile] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [codegen] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running codegen for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Freight, error: :nofile. 
+E         
+E         
+E         [reset] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running tear_down for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.
+E         
+E         
+E         [run] not executed
+E       assert []
+
+tests/test_final_state.py:1109: AssertionError
+____________________ test_t11_parcels_and_leg_foreign_keys _____________________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+
+    def test_t11_parcels_and_leg_foreign_keys(harness):
+>       _scenario(harness, "T11")
+
+tests/test_final_state.py:1202: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+scenario_id = 'T11'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+>       assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+E       AssertionError: Scenario T11 produced no result. The ExUnit suite did not run or crashed before reaching it.
+E         
+E         [pg] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [compile] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [codegen] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running codegen for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Freight, error: :nofile. 
+E         
+E         
+E         [reset] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running tear_down for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.
+E         
+E         
+E         [run] not executed
+E       assert []
+
+tests/test_final_state.py:1109: AssertionError
+______________________ test_t12_exactly_five_foreign_keys ______________________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+
+    def test_t12_exactly_five_foreign_keys(harness):
+>       _scenario(harness, "T12")
+
+tests/test_final_state.py:1206: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+scenario_id = 'T12'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+>       assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+E       AssertionError: Scenario T12 produced no result. The ExUnit suite did not run or crashed before reaching it.
+E         
+E         [pg] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [compile] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [codegen] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running codegen for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Freight, error: :nofile. 
+E         
+E         
+E         [reset] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running tear_down for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.
+E         
+E         
+E         [run] not executed
+E       assert []
+
+tests/test_final_state.py:1109: AssertionError
+_____________________ test_t13_foreign_key_backing_indexes _____________________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+
+    def test_t13_foreign_key_backing_indexes(harness):
+>       _scenario(harness, "T13")
+
+tests/test_final_state.py:1210: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+scenario_id = 'T13'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+>       assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+E       AssertionError: Scenario T13 produced no result. The ExUnit suite did not run or crashed before reaching it.
+E         
+E         [pg] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [compile] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [codegen] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running codegen for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Freight, error: :nofile. 
+E         
+E         
+E         [reset] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running tear_down for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.
+E         
+E         
+E         [run] not executed
+E       assert []
+
+tests/test_final_state.py:1109: AssertionError
+____________________ test_t14_carriers_partial_unique_index ____________________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+
+    def test_t14_carriers_partial_unique_index(harness):
+>       _scenario(harness, "T14")
+
+tests/test_final_state.py:1214: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+scenario_id = 'T14'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+>       assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+E       AssertionError: Scenario T14 produced no result. The ExUnit suite did not run or crashed before reaching it.
+E         
+E         [pg] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [compile] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [codegen] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running codegen for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Freight, error: :nofile. 
+E         
+E         
+E         [reset] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running tear_down for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.
+E         
+E         
+E         [run] not executed
+E       assert []
+
+tests/test_final_state.py:1109: AssertionError
+___________________ test_t15_warehouses_partial_unique_index ___________________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+
+    def test_t15_warehouses_partial_unique_index(harness):
+>       _scenario(harness, "T15")
+
+tests/test_final_state.py:1218: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+scenario_id = 'T15'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+>       assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+E       AssertionError: Scenario T15 produced no result. The ExUnit suite did not run or crashed before reaching it.
+E         
+E         [pg] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [compile] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [codegen] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running codegen for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Freight, error: :nofile. 
+E         
+E         
+E         [reset] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running tear_down for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.
+E         
+E         
+E         [run] not executed
+E       assert []
+
+tests/test_final_state.py:1109: AssertionError
+_________________ test_t16_single_fragile_parcel_partial_index _________________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+
+    def test_t16_single_fragile_parcel_partial_index(harness):
+>       _scenario(harness, "T16")
+
+tests/test_final_state.py:1222: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+scenario_id = 'T16'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+>       assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+E       AssertionError: Scenario T16 produced no result. The ExUnit suite did not run or crashed before reaching it.
+E         
+E         [pg] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [compile] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [codegen] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running codegen for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Freight, error: :nofile. 
+E         
+E         
+E         [reset] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running tear_down for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.
+E         
+E         
+E         [run] not executed
+E       assert []
+
+tests/test_final_state.py:1109: AssertionError
+______________________ test_t17_remaining_unique_indexes _______________________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+
+    def test_t17_remaining_unique_indexes(harness):
+>       _scenario(harness, "T17")
+
+tests/test_final_state.py:1226: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+scenario_id = 'T17'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+>       assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+E       AssertionError: Scenario T17 produced no result. The ExUnit suite did not run or crashed before reaching it.
+E         
+E         [pg] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [compile] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [codegen] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running codegen for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Freight, error: :nofile. 
+E         
+E         
+E         [reset] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running tear_down for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.
+E         
+E         
+E         [run] not executed
+E       assert []
+
+tests/test_final_state.py:1109: AssertionError
+________________________ test_t18_no_unexpected_indexes ________________________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+
+    def test_t18_no_unexpected_indexes(harness):
+>       _scenario(harness, "T18")
+
+tests/test_final_state.py:1230: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+scenario_id = 'T18'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+>       assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+E       AssertionError: Scenario T18 produced no result. The ExUnit suite did not run or crashed before reaching it.
+E         
+E         [pg] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [compile] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [codegen] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running codegen for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Freight, error: :nofile. 
+E         
+E         
+E         [reset] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running tear_down for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.
+E         
+E         
+E         [run] not executed
+E       assert []
+
+tests/test_final_state.py:1109: AssertionError
+__________________________ test_t19_check_constraints __________________________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+
+    def test_t19_check_constraints(harness):
+>       _scenario(harness, "T19")
+
+tests/test_final_state.py:1234: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+scenario_id = 'T19'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+>       assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+E       AssertionError: Scenario T19 produced no result. The ExUnit suite did not run or crashed before reaching it.
+E         
+E         [pg] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [compile] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [codegen] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running codegen for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Freight, error: :nofile. 
+E         
+E         
+E         [reset] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running tear_down for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.
+E         
+E         
+E         [run] not executed
+E       assert []
+
+tests/test_final_state.py:1109: AssertionError
+_________________ test_t20_generated_migrations_and_snapshots __________________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+
+    def test_t20_generated_migrations_and_snapshots(harness):
+>       _scenario(harness, "T20")
+
+tests/test_final_state.py:1238: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+scenario_id = 'T20'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+>       assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+E       AssertionError: Scenario T20 produced no result. The ExUnit suite did not run or crashed before reaching it.
+E         
+E         [pg] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [compile] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [codegen] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running codegen for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Freight, error: :nofile. 
+E         
+E         
+E         [reset] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running tear_down for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.
+E         
+E         
+E         [run] not executed
+E       assert []
+
+tests/test_final_state.py:1109: AssertionError
+____________________________ test_t21_repo_contract ____________________________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+
+    def test_t21_repo_contract(harness):
+>       _scenario(harness, "T21")
+
+tests/test_final_state.py:1242: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+scenario_id = 'T21'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+>       assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+E       AssertionError: Scenario T21 produced no result. The ExUnit suite did not run or crashed before reaching it.
+E         
+E         [pg] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [compile] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [codegen] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running codegen for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Freight, error: :nofile. 
+E         
+E         
+E         [reset] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running tear_down for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.
+E         
+E         
+E         [run] not executed
+E       assert []
+
+tests/test_final_state.py:1109: AssertionError
+_____________________ test_t22_resources_wired_to_postgres _____________________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+
+    def test_t22_resources_wired_to_postgres(harness):
+>       _scenario(harness, "T22")
+
+tests/test_final_state.py:1246: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+scenario_id = 'T22'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+>       assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+E       AssertionError: Scenario T22 produced no result. The ExUnit suite did not run or crashed before reaching it.
+E         
+E         [pg] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [compile] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [codegen] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running codegen for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Freight, error: :nofile. 
+E         
+E         
+E         [reset] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running tear_down for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.
+E         
+E         
+E         [run] not executed
+E       assert []
+
+tests/test_final_state.py:1109: AssertionError
+_______________ test_t23_carrier_code_unique_case_insensitively ________________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+
+    def test_t23_carrier_code_unique_case_insensitively(harness):
+>       _scenario(harness, "T23")
+
+tests/test_final_state.py:1250: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+scenario_id = 'T23'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+>       assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+E       AssertionError: Scenario T23 produced no result. The ExUnit suite did not run or crashed before reaching it.
+E         
+E         [pg] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [compile] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [codegen] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running codegen for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Freight, error: :nofile. 
+E         
+E         
+E         [reset] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running tear_down for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.
+E         
+E         
+E         [run] not executed
+E       assert []
+
+tests/test_final_state.py:1109: AssertionError
+________________ test_t24_carrier_code_reads_case_insensitively ________________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+
+    def test_t24_carrier_code_reads_case_insensitively(harness):
+>       _scenario(harness, "T24")
+
+tests/test_final_state.py:1254: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+scenario_id = 'T24'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+>       assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+E       AssertionError: Scenario T24 produced no result. The ExUnit suite did not run or crashed before reaching it.
+E         
+E         [pg] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [compile] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [codegen] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running codegen for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Freight, error: :nofile. 
+E         
+E         
+E         [reset] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running tear_down for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.
+E         
+E         
+E         [run] not executed
+E       assert []
+
+tests/test_final_state.py:1109: AssertionError
+___________ test_t25_retired_carriers_are_hidden_and_free_their_code ___________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+
+    def test_t25_retired_carriers_are_hidden_and_free_their_code(harness):
+>       _scenario(harness, "T25")
+
+tests/test_final_state.py:1258: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+scenario_id = 'T25'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+>       assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+E       AssertionError: Scenario T25 produced no result. The ExUnit suite did not run or crashed before reaching it.
+E         
+E         [pg] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [compile] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [codegen] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running codegen for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Freight, error: :nofile. 
+E         
+E         
+E         [reset] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running tear_down for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.
+E         
+E         
+E         [run] not executed
+E       assert []
+
+tests/test_final_state.py:1109: AssertionError
+_________________ test_t26_warehouse_codes_unique_among_active _________________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+
+    def test_t26_warehouse_codes_unique_among_active(harness):
+>       _scenario(harness, "T26")
+
+tests/test_final_state.py:1262: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+scenario_id = 'T26'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+>       assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+E       AssertionError: Scenario T26 produced no result. The ExUnit suite did not run or crashed before reaching it.
+E         
+E         [pg] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [compile] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [codegen] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running codegen for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Freight, error: :nofile. 
+E         
+E         
+E         [reset] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running tear_down for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.
+E         
+E         
+E         [run] not executed
+E       assert []
+
+tests/test_final_state.py:1109: AssertionError
+_________________ test_t27_warehouse_capacity_check_constraint _________________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+
+    def test_t27_warehouse_capacity_check_constraint(harness):
+>       _scenario(harness, "T27")
+
+tests/test_final_state.py:1266: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+scenario_id = 'T27'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+>       assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+E       AssertionError: Scenario T27 produced no result. The ExUnit suite did not run or crashed before reaching it.
+E         
+E         [pg] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [compile] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [codegen] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running codegen for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Freight, error: :nofile. 
+E         
+E         
+E         [reset] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running tear_down for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.
+E         
+E         
+E         [run] not executed
+E       assert []
+
+tests/test_final_state.py:1109: AssertionError
+______________ test_t28_shipment_declared_value_check_constraint _______________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+
+    def test_t28_shipment_declared_value_check_constraint(harness):
+>       _scenario(harness, "T28")
+
+tests/test_final_state.py:1270: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+scenario_id = 'T28'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+>       assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+E       AssertionError: Scenario T28 produced no result. The ExUnit suite did not run or crashed before reaching it.
+E         
+E         [pg] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [compile] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [codegen] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running codegen for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Freight, error: :nofile. 
+E         
+E         
+E         [reset] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running tear_down for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.
+E         
+E         
+E         [run] not executed
+E       assert []
+
+tests/test_final_state.py:1109: AssertionError
+___________________ test_t29_parcel_weight_check_constraint ____________________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+
+    def test_t29_parcel_weight_check_constraint(harness):
+>       _scenario(harness, "T29")
+
+tests/test_final_state.py:1274: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+scenario_id = 'T29'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+>       assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+E       AssertionError: Scenario T29 produced no result. The ExUnit suite did not run or crashed before reaching it.
+E         
+E         [pg] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [compile] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [codegen] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running codegen for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Freight, error: :nofile. 
+E         
+E         
+E         [reset] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running tear_down for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.
+E         
+E         
+E         [run] not executed
+E       assert []
+
+tests/test_final_state.py:1109: AssertionError
+____________________ test_t30_leg_sequence_check_constraint ____________________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+
+    def test_t30_leg_sequence_check_constraint(harness):
+>       _scenario(harness, "T30")
+
+tests/test_final_state.py:1278: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+scenario_id = 'T30'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+>       assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+E       AssertionError: Scenario T30 produced no result. The ExUnit suite did not run or crashed before reaching it.
+E         
+E         [pg] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [compile] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [codegen] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running codegen for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Freight, error: :nofile. 
+E         
+E         
+E         [reset] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running tear_down for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.
+E         
+E         
+E         [run] not executed
+E       assert []
+
+tests/test_final_state.py:1109: AssertionError
+______________________ test_t31_shipment_reference_unique ______________________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+
+    def test_t31_shipment_reference_unique(harness):
+>       _scenario(harness, "T31")
+
+tests/test_final_state.py:1282: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+scenario_id = 'T31'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+>       assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+E       AssertionError: Scenario T31 produced no result. The ExUnit suite did not run or crashed before reaching it.
+E         
+E         [pg] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [compile] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [codegen] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running codegen for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Freight, error: :nofile. 
+E         
+E         
+E         [reset] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running tear_down for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.
+E         
+E         
+E         [run] not executed
+E       assert []
+
+tests/test_final_state.py:1109: AssertionError
+_____________________ test_t32_parcel_tracking_code_unique _____________________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+
+    def test_t32_parcel_tracking_code_unique(harness):
+>       _scenario(harness, "T32")
+
+tests/test_final_state.py:1286: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+scenario_id = 'T32'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+>       assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+E       AssertionError: Scenario T32 produced no result. The ExUnit suite did not run or crashed before reaching it.
+E         
+E         [pg] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [compile] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [codegen] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running codegen for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Freight, error: :nofile. 
+E         
+E         
+E         [reset] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running tear_down for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.
+E         
+E         
+E         [run] not executed
+E       assert []
+
+tests/test_final_state.py:1109: AssertionError
+_________________ test_t33_single_fragile_parcel_per_shipment __________________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+
+    def test_t33_single_fragile_parcel_per_shipment(harness):
+>       _scenario(harness, "T33")
+
+tests/test_final_state.py:1290: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+scenario_id = 'T33'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+>       assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+E       AssertionError: Scenario T33 produced no result. The ExUnit suite did not run or crashed before reaching it.
+E         
+E         [pg] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [compile] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [codegen] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running codegen for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Freight, error: :nofile. 
+E         
+E         
+E         [reset] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running tear_down for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.
+E         
+E         
+E         [run] not executed
+E       assert []
+
+tests/test_final_state.py:1109: AssertionError
+__________________ test_t34_leg_sequence_unique_per_shipment ___________________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+
+    def test_t34_leg_sequence_unique_per_shipment(harness):
+>       _scenario(harness, "T34")
+
+tests/test_final_state.py:1294: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+scenario_id = 'T34'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+>       assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+E       AssertionError: Scenario T34 produced no result. The ExUnit suite did not run or crashed before reaching it.
+E         
+E         [pg] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [compile] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [codegen] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running codegen for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Freight, error: :nofile. 
+E         
+E         
+E         [reset] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running tear_down for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.
+E         
+E         
+E         [run] not executed
+E       assert []
+
+tests/test_final_state.py:1109: AssertionError
+_____________________ test_t35_carrier_destroy_restricted ______________________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+
+    def test_t35_carrier_destroy_restricted(harness):
+>       _scenario(harness, "T35")
+
+tests/test_final_state.py:1298: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+scenario_id = 'T35'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+>       assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+E       AssertionError: Scenario T35 produced no result. The ExUnit suite did not run or crashed before reaching it.
+E         
+E         [pg] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [compile] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [codegen] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running codegen for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Freight, error: :nofile. 
+E         
+E         
+E         [reset] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running tear_down for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.
+E         
+E         
+E         [run] not executed
+E       assert []
+
+tests/test_final_state.py:1109: AssertionError
+____________________ test_t36_warehouse_destroy_restricted _____________________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+
+    def test_t36_warehouse_destroy_restricted(harness):
+>       _scenario(harness, "T36")
+
+tests/test_final_state.py:1302: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+scenario_id = 'T36'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+>       assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+E       AssertionError: Scenario T36 produced no result. The ExUnit suite did not run or crashed before reaching it.
+E         
+E         [pg] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [compile] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [codegen] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running codegen for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Freight, error: :nofile. 
+E         
+E         
+E         [reset] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running tear_down for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.
+E         
+E         
+E         [run] not executed
+E       assert []
+
+tests/test_final_state.py:1109: AssertionError
+______________________ test_t37_shipment_destroy_cascades ______________________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+
+    def test_t37_shipment_destroy_cascades(harness):
+>       _scenario(harness, "T37")
+
+tests/test_final_state.py:1306: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+scenario_id = 'T37'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+>       assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+E       AssertionError: Scenario T37 produced no result. The ExUnit suite did not run or crashed before reaching it.
+E         
+E         [pg] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [compile] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [codegen] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running codegen for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Freight, error: :nofile. 
+E         
+E         
+E         [reset] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running tear_down for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.
+E         
+E         
+E         [run] not executed
+E       assert []
+
+tests/test_final_state.py:1109: AssertionError
+__________________ test_t38_origin_warehouse_destroy_nilifies __________________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+
+    def test_t38_origin_warehouse_destroy_nilifies(harness):
+>       _scenario(harness, "T38")
+
+tests/test_final_state.py:1310: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+scenario_id = 'T38'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+>       assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+E       AssertionError: Scenario T38 produced no result. The ExUnit suite did not run or crashed before reaching it.
+E         
+E         [pg] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [compile] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [codegen] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running codegen for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Freight, error: :nofile. 
+E         
+E         
+E         [reset] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running tear_down for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.
+E         
+E         
+E         [run] not executed
+E       assert []
+
+tests/test_final_state.py:1109: AssertionError
+________________ test_t39_intake_rolls_back_on_rejected_parcel _________________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+
+    def test_t39_intake_rolls_back_on_rejected_parcel(harness):
+>       _scenario(harness, "T39")
+
+tests/test_final_state.py:1314: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+scenario_id = 'T39'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+>       assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+E       AssertionError: Scenario T39 produced no result. The ExUnit suite did not run or crashed before reaching it.
+E         
+E         [pg] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [compile] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [codegen] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running codegen for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Freight, error: :nofile. 
+E         
+E         
+E         [reset] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running tear_down for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.
+E         
+E         
+E         [run] not executed
+E       assert []
+
+tests/test_final_state.py:1109: AssertionError
+________________ test_t40_intake_commits_shipment_with_parcels _________________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+
+    def test_t40_intake_commits_shipment_with_parcels(harness):
+>       _scenario(harness, "T40")
+
+tests/test_final_state.py:1318: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+scenario_id = 'T40'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+>       assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+E       AssertionError: Scenario T40 produced no result. The ExUnit suite did not run or crashed before reaching it.
+E         
+E         [pg] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [compile] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [codegen] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running codegen for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Freight, error: :nofile. 
+E         
+E         
+E         [reset] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running tear_down for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.
+E         
+E         
+E         [run] not executed
+E       assert []
+
+tests/test_final_state.py:1109: AssertionError
+______________________ test_t41_aggregates_are_filterable ______________________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+
+    def test_t41_aggregates_are_filterable(harness):
+>       _scenario(harness, "T41")
+
+tests/test_final_state.py:1322: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+scenario_id = 'T41'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+>       assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+E       AssertionError: Scenario T41 produced no result. The ExUnit suite did not run or crashed before reaching it.
+E         
+E         [pg] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [compile] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [codegen] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running codegen for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Freight, error: :nofile. 
+E         
+E         
+E         [reset] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running tear_down for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.
+E         
+E         
+E         [run] not executed
+E       assert []
+
+tests/test_final_state.py:1109: AssertionError
+___________________ test_t42_heavy_calculation_is_filterable ___________________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+
+    def test_t42_heavy_calculation_is_filterable(harness):
+>       _scenario(harness, "T42")
+
+tests/test_final_state.py:1326: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+scenario_id = 'T42'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+>       assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+E       AssertionError: Scenario T42 produced no result. The ExUnit suite did not run or crashed before reaching it.
+E         
+E         [pg] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [compile] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [codegen] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running codegen for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Freight, error: :nofile. 
+E         
+E         
+E         [reset] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running tear_down for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.
+E         
+E         
+E         [run] not executed
+E       assert []
+
+tests/test_final_state.py:1109: AssertionError
+________________ test_t43_aggregate_read_hits_the_database_once ________________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+
+    def test_t43_aggregate_read_hits_the_database_once(harness):
+>       _scenario(harness, "T43")
+
+tests/test_final_state.py:1330: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+scenario_id = 'T43'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+>       assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+E       AssertionError: Scenario T43 produced no result. The ExUnit suite did not run or crashed before reaching it.
+E         
+E         [pg] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [compile] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [codegen] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running codegen for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Freight, error: :nofile. 
+E         
+E         
+E         [reset] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running tear_down for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.
+E         
+E         
+E         [run] not executed
+E       assert []
+
+tests/test_final_state.py:1109: AssertionError
+____________ test_t44_booked_at_default_and_scheduled_for_roundtrip ____________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+
+    def test_t44_booked_at_default_and_scheduled_for_roundtrip(harness):
+>       _scenario(harness, "T44")
+
+tests/test_final_state.py:1334: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+scenario_id = 'T44'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+>       assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+E       AssertionError: Scenario T44 produced no result. The ExUnit suite did not run or crashed before reaching it.
+E         
+E         [pg] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [compile] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [codegen] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running codegen for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Freight, error: :nofile. 
+E         
+E         
+E         [reset] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running tear_down for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.
+E         
+E         
+E         [run] not executed
+E       assert []
+
+tests/test_final_state.py:1109: AssertionError
+______________ test_t45_repo_transaction_rollback_writes_nothing _______________
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+
+    def test_t45_repo_transaction_rollback_writes_nothing(harness):
+>       _scenario(harness, "T45")
+
+tests/test_final_state.py:1338: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+harness = {'codegen': CompletedProcess(args=['mix', 'ash.codegen', '--check'], returncode=1, stdout='Getting extensions in curre...load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.\n'), ...}
+scenario_id = 'T45'
+
+    def _scenario(harness, scenario_id):
+        prefix = f"test {scenario_id} "
+        matches = [name for name in harness["results"] if name.startswith(prefix)]
+>       assert matches, (
+            f"Scenario {scenario_id} produced no result. The ExUnit suite did not run "
+            f"or crashed before reaching it.\n\n{_diagnostics(harness)}"
+        )
+E       AssertionError: Scenario T45 produced no result. The ExUnit suite did not run or crashed before reaching it.
+E         
+E         [pg] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [compile] exit=0
+E         stdout tail:
+E         
+E         stderr tail:
+E         
+E         
+E         [codegen] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running codegen for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Freight, error: :nofile. 
+E         
+E         
+E         [reset] exit=1
+E         stdout tail:
+E         Getting extensions in current project...
+E         Running tear_down for AshPostgres.DataLayer...
+E         
+E         stderr tail:
+E         ** (Mix) Could not load Logistics.Repo, error: :nofile. Please configure your app accordingly or pass a repo with the -r option.
+E         
+E         
+E         [run] not executed
+E       assert []
+
+tests/test_final_state.py:1109: AssertionError
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED tests/test_final_state.py::test_project_compiles
+FAILED tests/test_final_state.py::test_codegen_reports_no_pending_changes - A...
+FAILED tests/test_final_state.py::test_ash_reset_rebuilds_the_database - Asse...
+FAILED tests/test_final_state.py::test_probe_suite_executed - AssertionError:...
+FAILED tests/test_final_state.py::test_t01_public_schema_contains_exactly_the_five_tables
+FAILED tests/test_final_state.py::test_t02_citext_uuid_ossp_and_ash_functions_installed
+FAILED tests/test_final_state.py::test_t03_carriers_columns - AssertionError:...
+FAILED tests/test_final_state.py::test_t04_warehouses_columns - AssertionErro...
+FAILED tests/test_final_state.py::test_t05_shipments_columns - AssertionError...
+FAILED tests/test_final_state.py::test_t06_scheduled_for_is_timestamptz - Ass...
+FAILED tests/test_final_state.py::test_t07_booked_at_defaults_to_now - Assert...
+FAILED tests/test_final_state.py::test_t08_parcels_and_shipment_legs_columns
+FAILED tests/test_final_state.py::test_t09_primary_keys - AssertionError: Sce...
+FAILED tests/test_final_state.py::test_t10_shipments_foreign_keys - Assertion...
+FAILED tests/test_final_state.py::test_t11_parcels_and_leg_foreign_keys - Ass...
+FAILED tests/test_final_state.py::test_t12_exactly_five_foreign_keys - Assert...
+FAILED tests/test_final_state.py::test_t13_foreign_key_backing_indexes - Asse...
+FAILED tests/test_final_state.py::test_t14_carriers_partial_unique_index - As...
+FAILED tests/test_final_state.py::test_t15_warehouses_partial_unique_index - ...
+FAILED tests/test_final_state.py::test_t16_single_fragile_parcel_partial_index
+FAILED tests/test_final_state.py::test_t17_remaining_unique_indexes - Asserti...
+FAILED tests/test_final_state.py::test_t18_no_unexpected_indexes - AssertionE...
+FAILED tests/test_final_state.py::test_t19_check_constraints - AssertionError...
+FAILED tests/test_final_state.py::test_t20_generated_migrations_and_snapshots
+FAILED tests/test_final_state.py::test_t21_repo_contract - AssertionError: Sc...
+FAILED tests/test_final_state.py::test_t22_resources_wired_to_postgres - Asse...
+FAILED tests/test_final_state.py::test_t23_carrier_code_unique_case_insensitively
+FAILED tests/test_final_state.py::test_t24_carrier_code_reads_case_insensitively
+FAILED tests/test_final_state.py::test_t25_retired_carriers_are_hidden_and_free_their_code
+FAILED tests/test_final_state.py::test_t26_warehouse_codes_unique_among_active
+FAILED tests/test_final_state.py::test_t27_warehouse_capacity_check_constraint
+FAILED tests/test_final_state.py::test_t28_shipment_declared_value_check_constraint
+FAILED tests/test_final_state.py::test_t29_parcel_weight_check_constraint - A...
+FAILED tests/test_final_state.py::test_t30_leg_sequence_check_constraint - As...
+FAILED tests/test_final_state.py::test_t31_shipment_reference_unique - Assert...
+FAILED tests/test_final_state.py::test_t32_parcel_tracking_code_unique - Asse...
+FAILED tests/test_final_state.py::test_t33_single_fragile_parcel_per_shipment
+FAILED tests/test_final_state.py::test_t34_leg_sequence_unique_per_shipment
+FAILED tests/test_final_state.py::test_t35_carrier_destroy_restricted - Asser...
+FAILED tests/test_final_state.py::test_t36_warehouse_destroy_restricted - Ass...
+FAILED tests/test_final_state.py::test_t37_shipment_destroy_cascades - Assert...
+FAILED tests/test_final_state.py::test_t38_origin_warehouse_destroy_nilifies
+FAILED tests/test_final_state.py::test_t39_intake_rolls_back_on_rejected_parcel
+FAILED tests/test_final_state.py::test_t40_intake_commits_shipment_with_parcels
+FAILED tests/test_final_state.py::test_t41_aggregates_are_filterable - Assert...
+FAILED tests/test_final_state.py::test_t42_heavy_calculation_is_filterable - ...
+FAILED tests/test_final_state.py::test_t43_aggregate_read_hits_the_database_once
+FAILED tests/test_final_state.py::test_t44_booked_at_default_and_scheduled_for_roundtrip
+FAILED tests/test_final_state.py::test_t45_repo_transaction_rollback_writes_nothing
+======================== 48 failed, 1 passed in 14.82s =========================

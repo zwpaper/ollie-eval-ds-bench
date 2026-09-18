@@ -1,0 +1,2428 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0
+rootdir: /tests
+plugins: json-ctrf-0.5.3
+collected 42 items
+
+tests/test_final_state.py FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF     [100%]
+
+=================================== FAILURES ===================================
+____________________________ test_project_compiles _____________________________
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+
+    def test_project_compiles(suite: Dict[str, Any]) -> None:
+>       assert suite["compiled"].returncode == 0, (
+            "`mix compile` failed for the solved project.\n" + _diagnostics(suite)
+        )
+E       AssertionError: `mix compile` failed for the solved project.
+E         `mix compile` exit=1
+E         --- compile stdout (tail) ---
+E         Compiling 4 files (.ex)
+E         
+E         --- compile stderr (tail) ---
+E             error: undefined function read/3 (there is no such import)
+E             │
+E          72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E             │     ^
+E             │
+E             └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E         
+E         
+E         == Compilation error in file lib/feed/timeline/activity.ex ==
+E         ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E             (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+E         
+E         `mix run` exit=1
+E         --- run stdout (tail) ---
+E         Compiling 4 files (.ex)
+E         
+E         --- run stderr (tail) ---
+E             error: undefined function read/3 (there is no such import)
+E             │
+E          72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E             │     ^
+E             │
+E             └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E         
+E         
+E         == Compilation error in file lib/feed/timeline/activity.ex ==
+E         ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E             (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+E         
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    error: undefin...dule Feed.Timeline.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n').returncode
+
+tests/test_final_state.py:831: AssertionError
+______________________ test_contract_suite_ran_completely ______________________
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+
+    def test_contract_suite_ran_completely(suite: Dict[str, Any]) -> None:
+>       assert len(suite["results"]) == 40, (
+            f"Expected 40 contract scenarios to run, saw {len(suite['results'])}.\n"
+            + _diagnostics(suite)
+        )
+E       AssertionError: Expected 40 contract scenarios to run, saw 0.
+E         `mix compile` exit=1
+E         --- compile stdout (tail) ---
+E         Compiling 4 files (.ex)
+E         
+E         --- compile stderr (tail) ---
+E             error: undefined function read/3 (there is no such import)
+E             │
+E          72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E             │     ^
+E             │
+E             └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E         
+E         
+E         == Compilation error in file lib/feed/timeline/activity.ex ==
+E         ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E             (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+E         
+E         `mix run` exit=1
+E         --- run stdout (tail) ---
+E         Compiling 4 files (.ex)
+E         
+E         --- run stderr (tail) ---
+E             error: undefined function read/3 (there is no such import)
+E             │
+E          72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E             │     ^
+E             │
+E             └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E         
+E         
+E         == Compilation error in file lib/feed/timeline/activity.ex ==
+E         ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E             (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+E         
+E       assert 0 == 40
+E        +  where 0 = len({})
+
+tests/test_final_state.py:837: AssertionError
+___________ test_t01_feed_action_declares_keyset_pagination_contract ___________
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+
+    def test_t01_feed_action_declares_keyset_pagination_contract(suite: Dict[str, Any]) -> None:
+>       _scenario(suite, "T01")
+
+tests/test_final_state.py:844: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+scenario_id = 'T01'
+
+    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit contract suite produced no results at all, which normally means "
+                "the project failed to compile or the script crashed before running.\n"
+                + _diagnostics(suite)
+            )
+E           Failed: The ExUnit contract suite produced no results at all, which normally means the project failed to compile or the script crashed before running.
+E           `mix compile` exit=1
+E           --- compile stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- compile stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+E           
+E           `mix run` exit=1
+E           --- run stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- run stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+
+tests/test_final_state.py:813: Failed
+________ test_t02_other_feed_actions_declare_their_pagination_contracts ________
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+
+    def test_t02_other_feed_actions_declare_their_pagination_contracts(suite: Dict[str, Any]) -> None:
+>       _scenario(suite, "T02")
+
+tests/test_final_state.py:848: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+scenario_id = 'T02'
+
+    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit contract suite produced no results at all, which normally means "
+                "the project failed to compile or the script crashed before running.\n"
+                + _diagnostics(suite)
+            )
+E           Failed: The ExUnit contract suite produced no results at all, which normally means the project failed to compile or the script crashed before running.
+E           `mix compile` exit=1
+E           --- compile stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- compile stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+E           
+E           `mix run` exit=1
+E           --- run stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- run stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+
+tests/test_final_state.py:813: Failed
+________________ test_t03_first_keyset_page_struct_and_metadata ________________
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+
+    def test_t03_first_keyset_page_struct_and_metadata(suite: Dict[str, Any]) -> None:
+>       _scenario(suite, "T03")
+
+tests/test_final_state.py:852: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+scenario_id = 'T03'
+
+    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit contract suite produced no results at all, which normally means "
+                "the project failed to compile or the script crashed before running.\n"
+                + _diagnostics(suite)
+            )
+E           Failed: The ExUnit contract suite produced no results at all, which normally means the project failed to compile or the script crashed before running.
+E           `mix compile` exit=1
+E           --- compile stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- compile stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+E           
+E           `mix run` exit=1
+E           --- run stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- run stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+
+tests/test_final_state.py:813: Failed
+___________________ test_t04_keyset_page_carries_full_count ____________________
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+
+    def test_t04_keyset_page_carries_full_count(suite: Dict[str, Any]) -> None:
+>       _scenario(suite, "T04")
+
+tests/test_final_state.py:856: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+scenario_id = 'T04'
+
+    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit contract suite produced no results at all, which normally means "
+                "the project failed to compile or the script crashed before running.\n"
+                + _diagnostics(suite)
+            )
+E           Failed: The ExUnit contract suite produced no results at all, which normally means the project failed to compile or the script crashed before running.
+E           `mix compile` exit=1
+E           --- compile stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- compile stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+E           
+E           `mix run` exit=1
+E           --- run stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- run stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+
+tests/test_final_state.py:813: Failed
+_________________ test_t05_default_limit_applies_when_omitted __________________
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+
+    def test_t05_default_limit_applies_when_omitted(suite: Dict[str, Any]) -> None:
+>       _scenario(suite, "T05")
+
+tests/test_final_state.py:860: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+scenario_id = 'T05'
+
+    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit contract suite produced no results at all, which normally means "
+                "the project failed to compile or the script crashed before running.\n"
+                + _diagnostics(suite)
+            )
+E           Failed: The ExUnit contract suite produced no results at all, which normally means the project failed to compile or the script crashed before running.
+E           `mix compile` exit=1
+E           --- compile stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- compile stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+E           
+E           `mix run` exit=1
+E           --- run stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- run stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+
+tests/test_final_state.py:813: Failed
+___________ test_t06_forward_keyset_chaining_walks_disjoint_windows ____________
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+
+    def test_t06_forward_keyset_chaining_walks_disjoint_windows(suite: Dict[str, Any]) -> None:
+>       _scenario(suite, "T06")
+
+tests/test_final_state.py:864: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+scenario_id = 'T06'
+
+    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit contract suite produced no results at all, which normally means "
+                "the project failed to compile or the script crashed before running.\n"
+                + _diagnostics(suite)
+            )
+E           Failed: The ExUnit contract suite produced no results at all, which normally means the project failed to compile or the script crashed before running.
+E           `mix compile` exit=1
+E           --- compile stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- compile stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+E           
+E           `mix run` exit=1
+E           --- run stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- run stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+
+tests/test_final_state.py:813: Failed
+________ test_t07_backward_keyset_chaining_reproduces_previous_windows _________
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+
+    def test_t07_backward_keyset_chaining_reproduces_previous_windows(suite: Dict[str, Any]) -> None:
+>       _scenario(suite, "T07")
+
+tests/test_final_state.py:868: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+scenario_id = 'T07'
+
+    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit contract suite produced no results at all, which normally means "
+                "the project failed to compile or the script crashed before running.\n"
+                + _diagnostics(suite)
+            )
+E           Failed: The ExUnit contract suite produced no results at all, which normally means the project failed to compile or the script crashed before running.
+E           `mix compile` exit=1
+E           --- compile stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- compile stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+E           
+E           `mix run` exit=1
+E           --- run stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- run stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+
+tests/test_final_state.py:813: Failed
+_____________ test_t08_ash_page_continues_rewinds_replays_restarts _____________
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+
+    def test_t08_ash_page_continues_rewinds_replays_restarts(suite: Dict[str, Any]) -> None:
+>       _scenario(suite, "T08")
+
+tests/test_final_state.py:872: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+scenario_id = 'T08'
+
+    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit contract suite produced no results at all, which normally means "
+                "the project failed to compile or the script crashed before running.\n"
+                + _diagnostics(suite)
+            )
+E           Failed: The ExUnit contract suite produced no results at all, which normally means the project failed to compile or the script crashed before running.
+E           `mix compile` exit=1
+E           --- compile stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- compile stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+E           
+E           `mix run` exit=1
+E           --- run stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- run stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+
+tests/test_final_state.py:813: Failed
+________________ test_t09_continuing_past_end_yields_empty_page ________________
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+
+    def test_t09_continuing_past_end_yields_empty_page(suite: Dict[str, Any]) -> None:
+>       _scenario(suite, "T09")
+
+tests/test_final_state.py:876: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+scenario_id = 'T09'
+
+    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit contract suite produced no results at all, which normally means "
+                "the project failed to compile or the script crashed before running.\n"
+                + _diagnostics(suite)
+            )
+E           Failed: The ExUnit contract suite produced no results at all, which normally means the project failed to compile or the script crashed before running.
+E           `mix compile` exit=1
+E           --- compile stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- compile stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+E           
+E           `mix run` exit=1
+E           --- run stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- run stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+
+tests/test_final_state.py:813: Failed
+_______ test_t10_offset_feed_reports_offset_limit_more_and_default_count _______
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+
+    def test_t10_offset_feed_reports_offset_limit_more_and_default_count(suite: Dict[str, Any]) -> None:
+>       _scenario(suite, "T10")
+
+tests/test_final_state.py:880: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+scenario_id = 'T10'
+
+    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit contract suite produced no results at all, which normally means "
+                "the project failed to compile or the script crashed before running.\n"
+                + _diagnostics(suite)
+            )
+E           Failed: The ExUnit contract suite produced no results at all, which normally means the project failed to compile or the script crashed before running.
+E           `mix compile` exit=1
+E           --- compile stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- compile stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+E           
+E           `mix run` exit=1
+E           --- run stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- run stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+
+tests/test_final_state.py:813: Failed
+____________ test_t11_ash_page_seeks_offset_page_by_last_and_number ____________
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+
+    def test_t11_ash_page_seeks_offset_page_by_last_and_number(suite: Dict[str, Any]) -> None:
+>       _scenario(suite, "T11")
+
+tests/test_final_state.py:884: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+scenario_id = 'T11'
+
+    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit contract suite produced no results at all, which normally means "
+                "the project failed to compile or the script crashed before running.\n"
+                + _diagnostics(suite)
+            )
+E           Failed: The ExUnit contract suite produced no results at all, which normally means the project failed to compile or the script crashed before running.
+E           `mix compile` exit=1
+E           --- compile stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- compile stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+E           
+E           `mix run` exit=1
+E           --- run stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- run stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+
+tests/test_final_state.py:813: Failed
+_________________ test_t12_max_page_size_caps_over_large_limit _________________
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+
+    def test_t12_max_page_size_caps_over_large_limit(suite: Dict[str, Any]) -> None:
+>       _scenario(suite, "T12")
+
+tests/test_final_state.py:888: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+scenario_id = 'T12'
+
+    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit contract suite produced no results at all, which normally means "
+                "the project failed to compile or the script crashed before running.\n"
+                + _diagnostics(suite)
+            )
+E           Failed: The ExUnit contract suite produced no results at all, which normally means the project failed to compile or the script crashed before running.
+E           `mix compile` exit=1
+E           --- compile stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- compile stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+E           
+E           `mix run` exit=1
+E           --- run stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- run stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+
+tests/test_final_state.py:813: Failed
+__________ test_t13_author_feed_filters_and_caps_at_own_max_page_size __________
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+
+    def test_t13_author_feed_filters_and_caps_at_own_max_page_size(suite: Dict[str, Any]) -> None:
+>       _scenario(suite, "T13")
+
+tests/test_final_state.py:892: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+scenario_id = 'T13'
+
+    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit contract suite produced no results at all, which normally means "
+                "the project failed to compile or the script crashed before running.\n"
+                + _diagnostics(suite)
+            )
+E           Failed: The ExUnit contract suite produced no results at all, which normally means the project failed to compile or the script crashed before running.
+E           `mix compile` exit=1
+E           --- compile stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- compile stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+E           
+E           `mix run` exit=1
+E           --- run stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- run stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+
+tests/test_final_state.py:813: Failed
+_________ test_t14_disabling_pagination_on_required_action_is_refused __________
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+
+    def test_t14_disabling_pagination_on_required_action_is_refused(suite: Dict[str, Any]) -> None:
+>       _scenario(suite, "T14")
+
+tests/test_final_state.py:896: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+scenario_id = 'T14'
+
+    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit contract suite produced no results at all, which normally means "
+                "the project failed to compile or the script crashed before running.\n"
+                + _diagnostics(suite)
+            )
+E           Failed: The ExUnit contract suite produced no results at all, which normally means the project failed to compile or the script crashed before running.
+E           `mix compile` exit=1
+E           --- compile stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- compile stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+E           
+E           `mix run` exit=1
+E           --- run stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- run stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+
+tests/test_final_state.py:813: Failed
+______________ test_t15_action_without_default_limit_demands_one _______________
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+
+    def test_t15_action_without_default_limit_demands_one(suite: Dict[str, Any]) -> None:
+>       _scenario(suite, "T15")
+
+tests/test_final_state.py:900: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+scenario_id = 'T15'
+
+    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit contract suite produced no results at all, which normally means "
+                "the project failed to compile or the script crashed before running.\n"
+                + _diagnostics(suite)
+            )
+E           Failed: The ExUnit contract suite produced no results at all, which normally means the project failed to compile or the script crashed before running.
+E           `mix compile` exit=1
+E           --- compile stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- compile stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+E           
+E           `mix run` exit=1
+E           --- run stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- run stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+
+tests/test_final_state.py:813: Failed
+_________________ test_t16_non_countable_action_refuses_count __________________
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+
+    def test_t16_non_countable_action_refuses_count(suite: Dict[str, Any]) -> None:
+>       _scenario(suite, "T16")
+
+tests/test_final_state.py:904: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+scenario_id = 'T16'
+
+    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit contract suite produced no results at all, which normally means "
+                "the project failed to compile or the script crashed before running.\n"
+                + _diagnostics(suite)
+            )
+E           Failed: The ExUnit contract suite produced no results at all, which normally means the project failed to compile or the script crashed before running.
+E           `mix compile` exit=1
+E           --- compile stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- compile stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+E           
+E           `mix run` exit=1
+E           --- run stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- run stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+
+tests/test_final_state.py:813: Failed
+_________ test_t17_dual_mode_action_is_optional_and_switches_page_type _________
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+
+    def test_t17_dual_mode_action_is_optional_and_switches_page_type(suite: Dict[str, Any]) -> None:
+>       _scenario(suite, "T17")
+
+tests/test_final_state.py:908: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+scenario_id = 'T17'
+
+    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit contract suite produced no results at all, which normally means "
+                "the project failed to compile or the script crashed before running.\n"
+                + _diagnostics(suite)
+            )
+E           Failed: The ExUnit contract suite produced no results at all, which normally means the project failed to compile or the script crashed before running.
+E           `mix compile` exit=1
+E           --- compile stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- compile stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+E           
+E           `mix run` exit=1
+E           --- run stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- run stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+
+tests/test_final_state.py:813: Failed
+____________________ test_t18_malformed_keyset_is_rejected _____________________
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+
+    def test_t18_malformed_keyset_is_rejected(suite: Dict[str, Any]) -> None:
+>       _scenario(suite, "T18")
+
+tests/test_final_state.py:912: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+scenario_id = 'T18'
+
+    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit contract suite produced no results at all, which normally means "
+                "the project failed to compile or the script crashed before running.\n"
+                + _diagnostics(suite)
+            )
+E           Failed: The ExUnit contract suite produced no results at all, which normally means the project failed to compile or the script crashed before running.
+E           `mix compile` exit=1
+E           --- compile stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- compile stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+E           
+E           `mix run` exit=1
+E           --- run stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- run stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+
+tests/test_final_state.py:813: Failed
+_____________ test_t19_public_feed_filters_and_counts_public_only ______________
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+
+    def test_t19_public_feed_filters_and_counts_public_only(suite: Dict[str, Any]) -> None:
+>       _scenario(suite, "T19")
+
+tests/test_final_state.py:916: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+scenario_id = 'T19'
+
+    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit contract suite produced no results at all, which normally means "
+                "the project failed to compile or the script crashed before running.\n"
+                + _diagnostics(suite)
+            )
+E           Failed: The ExUnit contract suite produced no results at all, which normally means the project failed to compile or the script crashed before running.
+E           `mix compile` exit=1
+E           --- compile stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- compile stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+E           
+E           `mix run` exit=1
+E           --- run stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- run stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+
+tests/test_final_state.py:813: Failed
+___________ test_t20_hot_feed_orders_by_score_then_reactions_then_id ___________
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+
+    def test_t20_hot_feed_orders_by_score_then_reactions_then_id(suite: Dict[str, Any]) -> None:
+>       _scenario(suite, "T20")
+
+tests/test_final_state.py:920: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+scenario_id = 'T20'
+
+    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit contract suite produced no results at all, which normally means "
+                "the project failed to compile or the script crashed before running.\n"
+                + _diagnostics(suite)
+            )
+E           Failed: The ExUnit contract suite produced no results at all, which normally means the project failed to compile or the script crashed before running.
+E           `mix compile` exit=1
+E           --- compile stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- compile stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+E           
+E           `mix run` exit=1
+E           --- run stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- run stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+
+tests/test_final_state.py:813: Failed
+___________ test_t21_hot_feed_keyset_walk_visits_every_activity_once ___________
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+
+    def test_t21_hot_feed_keyset_walk_visits_every_activity_once(suite: Dict[str, Any]) -> None:
+>       _scenario(suite, "T21")
+
+tests/test_final_state.py:924: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+scenario_id = 'T21'
+
+    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit contract suite produced no results at all, which normally means "
+                "the project failed to compile or the script crashed before running.\n"
+                + _diagnostics(suite)
+            )
+E           Failed: The ExUnit contract suite produced no results at all, which normally means the project failed to compile or the script crashed before running.
+E           `mix compile` exit=1
+E           --- compile stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- compile stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+E           
+E           `mix run` exit=1
+E           --- run stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- run stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+
+tests/test_final_state.py:813: Failed
+__________ test_t22_heat_feed_keyset_walk_visits_every_activity_once ___________
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+
+    def test_t22_heat_feed_keyset_walk_visits_every_activity_once(suite: Dict[str, Any]) -> None:
+>       _scenario(suite, "T22")
+
+tests/test_final_state.py:928: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+scenario_id = 'T22'
+
+    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit contract suite produced no results at all, which normally means "
+                "the project failed to compile or the script crashed before running.\n"
+                + _diagnostics(suite)
+            )
+E           Failed: The ExUnit contract suite produced no results at all, which normally means the project failed to compile or the script crashed before running.
+E           `mix compile` exit=1
+E           --- compile stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- compile stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+E           
+E           `mix run` exit=1
+E           --- run stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- run stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+
+tests/test_final_state.py:813: Failed
+_________ test_t23_aggregate_calculation_and_relationship_load_on_page _________
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+
+    def test_t23_aggregate_calculation_and_relationship_load_on_page(suite: Dict[str, Any]) -> None:
+>       _scenario(suite, "T23")
+
+tests/test_final_state.py:932: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+scenario_id = 'T23'
+
+    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit contract suite produced no results at all, which normally means "
+                "the project failed to compile or the script crashed before running.\n"
+                + _diagnostics(suite)
+            )
+E           Failed: The ExUnit contract suite produced no results at all, which normally means the project failed to compile or the script crashed before running.
+E           `mix compile` exit=1
+E           --- compile stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- compile stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+E           
+E           `mix run` exit=1
+E           --- run stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- run stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+
+tests/test_final_state.py:813: Failed
+________________ test_t24_api_fetch_returns_documented_envelope ________________
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+
+    def test_t24_api_fetch_returns_documented_envelope(suite: Dict[str, Any]) -> None:
+>       _scenario(suite, "T24")
+
+tests/test_final_state.py:936: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+scenario_id = 'T24'
+
+    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit contract suite produced no results at all, which normally means "
+                "the project failed to compile or the script crashed before running.\n"
+                + _diagnostics(suite)
+            )
+E           Failed: The ExUnit contract suite produced no results at all, which normally means the project failed to compile or the script crashed before running.
+E           `mix compile` exit=1
+E           --- compile stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- compile stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+E           
+E           `mix run` exit=1
+E           --- run stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- run stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+
+tests/test_final_state.py:813: Failed
+_______________ test_t25_cursor_codec_round_trips_and_is_opaque ________________
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+
+    def test_t25_cursor_codec_round_trips_and_is_opaque(suite: Dict[str, Any]) -> None:
+>       _scenario(suite, "T25")
+
+tests/test_final_state.py:940: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+scenario_id = 'T25'
+
+    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit contract suite produced no results at all, which normally means "
+                "the project failed to compile or the script crashed before running.\n"
+                + _diagnostics(suite)
+            )
+E           Failed: The ExUnit contract suite produced no results at all, which normally means the project failed to compile or the script crashed before running.
+E           `mix compile` exit=1
+E           --- compile stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- compile stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+E           
+E           `mix run` exit=1
+E           --- run stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- run stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+
+tests/test_final_state.py:813: Failed
+___________ test_t26_cursor_codec_rejects_corrupt_and_forged_cursors ___________
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+
+    def test_t26_cursor_codec_rejects_corrupt_and_forged_cursors(suite: Dict[str, Any]) -> None:
+>       _scenario(suite, "T26")
+
+tests/test_final_state.py:944: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+scenario_id = 'T26'
+
+    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit contract suite produced no results at all, which normally means "
+                "the project failed to compile or the script crashed before running.\n"
+                + _diagnostics(suite)
+            )
+E           Failed: The ExUnit contract suite produced no results at all, which normally means the project failed to compile or the script crashed before running.
+E           `mix compile` exit=1
+E           --- compile stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- compile stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+E           
+E           `mix run` exit=1
+E           --- run stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- run stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+
+tests/test_final_state.py:813: Failed
+_________ test_t27_api_forward_cursor_paging_matches_raw_keyset_chain __________
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+
+    def test_t27_api_forward_cursor_paging_matches_raw_keyset_chain(suite: Dict[str, Any]) -> None:
+>       _scenario(suite, "T27")
+
+tests/test_final_state.py:948: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+scenario_id = 'T27'
+
+    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit contract suite produced no results at all, which normally means "
+                "the project failed to compile or the script crashed before running.\n"
+                + _diagnostics(suite)
+            )
+E           Failed: The ExUnit contract suite produced no results at all, which normally means the project failed to compile or the script crashed before running.
+E           `mix compile` exit=1
+E           --- compile stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- compile stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+E           
+E           `mix run` exit=1
+E           --- run stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- run stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+
+tests/test_final_state.py:813: Failed
+_________ test_t28_api_backward_cursor_paging_returns_reversed_windows _________
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+
+    def test_t28_api_backward_cursor_paging_returns_reversed_windows(suite: Dict[str, Any]) -> None:
+>       _scenario(suite, "T28")
+
+tests/test_final_state.py:952: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+scenario_id = 'T28'
+
+    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit contract suite produced no results at all, which normally means "
+                "the project failed to compile or the script crashed before running.\n"
+                + _diagnostics(suite)
+            )
+E           Failed: The ExUnit contract suite produced no results at all, which normally means the project failed to compile or the script crashed before running.
+E           `mix compile` exit=1
+E           --- compile stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- compile stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+E           
+E           `mix run` exit=1
+E           --- run stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- run stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+
+tests/test_final_state.py:813: Failed
+_____________ test_t29_cursor_from_one_feed_is_refused_by_another ______________
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+
+    def test_t29_cursor_from_one_feed_is_refused_by_another(suite: Dict[str, Any]) -> None:
+>       _scenario(suite, "T29")
+
+tests/test_final_state.py:956: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+scenario_id = 'T29'
+
+    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit contract suite produced no results at all, which normally means "
+                "the project failed to compile or the script crashed before running.\n"
+                + _diagnostics(suite)
+            )
+E           Failed: The ExUnit contract suite produced no results at all, which normally means the project failed to compile or the script crashed before running.
+E           `mix compile` exit=1
+E           --- compile stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- compile stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+E           
+E           `mix run` exit=1
+E           --- run stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- run stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+
+tests/test_final_state.py:813: Failed
+___________ test_t30_cursor_failures_surface_as_codec_or_ash_errors ____________
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+
+    def test_t30_cursor_failures_surface_as_codec_or_ash_errors(suite: Dict[str, Any]) -> None:
+>       _scenario(suite, "T30")
+
+tests/test_final_state.py:960: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+scenario_id = 'T30'
+
+    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit contract suite produced no results at all, which normally means "
+                "the project failed to compile or the script crashed before running.\n"
+                + _diagnostics(suite)
+            )
+E           Failed: The ExUnit contract suite produced no results at all, which normally means the project failed to compile or the script crashed before running.
+E           `mix compile` exit=1
+E           --- compile stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- compile stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+E           
+E           `mix run` exit=1
+E           --- run stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- run stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+
+tests/test_final_state.py:813: Failed
+__________ test_t31_api_enforces_max_page_size_and_rejects_bad_limits __________
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+
+    def test_t31_api_enforces_max_page_size_and_rejects_bad_limits(suite: Dict[str, Any]) -> None:
+>       _scenario(suite, "T31")
+
+tests/test_final_state.py:964: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+scenario_id = 'T31'
+
+    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit contract suite produced no results at all, which normally means "
+                "the project failed to compile or the script crashed before running.\n"
+                + _diagnostics(suite)
+            )
+E           Failed: The ExUnit contract suite produced no results at all, which normally means the project failed to compile or the script crashed before running.
+E           `mix compile` exit=1
+E           --- compile stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- compile stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+E           
+E           `mix run` exit=1
+E           --- run stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- run stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+
+tests/test_final_state.py:813: Failed
+_____________ test_t32_api_validates_feed_name_and_author_argument _____________
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+
+    def test_t32_api_validates_feed_name_and_author_argument(suite: Dict[str, Any]) -> None:
+>       _scenario(suite, "T32")
+
+tests/test_final_state.py:968: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+scenario_id = 'T32'
+
+    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit contract suite produced no results at all, which normally means "
+                "the project failed to compile or the script crashed before running.\n"
+                + _diagnostics(suite)
+            )
+E           Failed: The ExUnit contract suite produced no results at all, which normally means the project failed to compile or the script crashed before running.
+E           `mix compile` exit=1
+E           --- compile stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- compile stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+E           
+E           `mix run` exit=1
+E           --- run stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- run stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+
+tests/test_final_state.py:813: Failed
+______________ test_t33_forward_walk_terminates_with_exact_totals ______________
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+
+    def test_t33_forward_walk_terminates_with_exact_totals(suite: Dict[str, Any]) -> None:
+>       _scenario(suite, "T33")
+
+tests/test_final_state.py:972: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+scenario_id = 'T33'
+
+    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit contract suite produced no results at all, which normally means "
+                "the project failed to compile or the script crashed before running.\n"
+                + _diagnostics(suite)
+            )
+E           Failed: The ExUnit contract suite produced no results at all, which normally means the project failed to compile or the script crashed before running.
+E           `mix compile` exit=1
+E           --- compile stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- compile stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+E           
+E           `mix run` exit=1
+E           --- run stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- run stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+
+tests/test_final_state.py:813: Failed
+_______________ test_t34_walk_of_filtered_feed_and_of_empty_feed _______________
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+
+    def test_t34_walk_of_filtered_feed_and_of_empty_feed(suite: Dict[str, Any]) -> None:
+>       _scenario(suite, "T34")
+
+tests/test_final_state.py:976: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+scenario_id = 'T34'
+
+    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit contract suite produced no results at all, which normally means "
+                "the project failed to compile or the script crashed before running.\n"
+                + _diagnostics(suite)
+            )
+E           Failed: The ExUnit contract suite produced no results at all, which normally means the project failed to compile or the script crashed before running.
+E           `mix compile` exit=1
+E           --- compile stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- compile stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+E           
+E           `mix run` exit=1
+E           --- run stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- run stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+
+tests/test_final_state.py:813: Failed
+____________ test_t35_walk_back_visits_exactly_the_reversed_windows ____________
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+
+    def test_t35_walk_back_visits_exactly_the_reversed_windows(suite: Dict[str, Any]) -> None:
+>       _scenario(suite, "T35")
+
+tests/test_final_state.py:980: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+scenario_id = 'T35'
+
+    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit contract suite produced no results at all, which normally means "
+                "the project failed to compile or the script crashed before running.\n"
+                + _diagnostics(suite)
+            )
+E           Failed: The ExUnit contract suite produced no results at all, which normally means the project failed to compile or the script crashed before running.
+E           `mix compile` exit=1
+E           --- compile stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- compile stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+E           
+E           `mix run` exit=1
+E           --- run stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- run stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+
+tests/test_final_state.py:813: Failed
+________ test_t36_insertion_between_pages_neither_duplicates_nor_skips _________
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+
+    def test_t36_insertion_between_pages_neither_duplicates_nor_skips(suite: Dict[str, Any]) -> None:
+>       _scenario(suite, "T36")
+
+tests/test_final_state.py:984: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+scenario_id = 'T36'
+
+    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit contract suite produced no results at all, which normally means "
+                "the project failed to compile or the script crashed before running.\n"
+                + _diagnostics(suite)
+            )
+E           Failed: The ExUnit contract suite produced no results at all, which normally means the project failed to compile or the script crashed before running.
+E           `mix compile` exit=1
+E           --- compile stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- compile stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+E           
+E           `mix run` exit=1
+E           --- run stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- run stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+
+tests/test_final_state.py:813: Failed
+___________ test_t37_offset_paging_over_same_insertion_repeats_rows ____________
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+
+    def test_t37_offset_paging_over_same_insertion_repeats_rows(suite: Dict[str, Any]) -> None:
+>       _scenario(suite, "T37")
+
+tests/test_final_state.py:988: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+scenario_id = 'T37'
+
+    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit contract suite produced no results at all, which normally means "
+                "the project failed to compile or the script crashed before running.\n"
+                + _diagnostics(suite)
+            )
+E           Failed: The ExUnit contract suite produced no results at all, which normally means the project failed to compile or the script crashed before running.
+E           `mix compile` exit=1
+E           --- compile stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- compile stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+E           
+E           `mix run` exit=1
+E           --- run stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- run stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+
+tests/test_final_state.py:813: Failed
+___________ test_t38_deletion_between_pages_does_not_skip_survivors ____________
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+
+    def test_t38_deletion_between_pages_does_not_skip_survivors(suite: Dict[str, Any]) -> None:
+>       _scenario(suite, "T38")
+
+tests/test_final_state.py:992: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+scenario_id = 'T38'
+
+    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit contract suite produced no results at all, which normally means "
+                "the project failed to compile or the script crashed before running.\n"
+                + _diagnostics(suite)
+            )
+E           Failed: The ExUnit contract suite produced no results at all, which normally means the project failed to compile or the script crashed before running.
+E           `mix compile` exit=1
+E           --- compile stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- compile stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+E           
+E           `mix run` exit=1
+E           --- run stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- run stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+
+tests/test_final_state.py:813: Failed
+____________ test_t39_rescoring_between_pages_keeps_window_anchored ____________
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+
+    def test_t39_rescoring_between_pages_keeps_window_anchored(suite: Dict[str, Any]) -> None:
+>       _scenario(suite, "T39")
+
+tests/test_final_state.py:996: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+scenario_id = 'T39'
+
+    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit contract suite produced no results at all, which normally means "
+                "the project failed to compile or the script crashed before running.\n"
+                + _diagnostics(suite)
+            )
+E           Failed: The ExUnit contract suite produced no results at all, which normally means the project failed to compile or the script crashed before running.
+E           `mix compile` exit=1
+E           --- compile stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- compile stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+E           
+E           `mix run` exit=1
+E           --- run stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- run stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+
+tests/test_final_state.py:813: Failed
+_____________ test_t40_reported_total_stays_filtered_while_paging ______________
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+
+    def test_t40_reported_total_stays_filtered_while_paging(suite: Dict[str, Any]) -> None:
+>       _scenario(suite, "T40")
+
+tests/test_final_state.py:1000: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 4 files (.ex)\n', stderr='    e...ne.Activity (errors have been logged)\n    (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1\n'), 'results': {}}
+scenario_id = 'T40'
+
+    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:
+        results = suite["results"]
+        if not results:
+>           pytest.fail(
+                "The ExUnit contract suite produced no results at all, which normally means "
+                "the project failed to compile or the script crashed before running.\n"
+                + _diagnostics(suite)
+            )
+E           Failed: The ExUnit contract suite produced no results at all, which normally means the project failed to compile or the script crashed before running.
+E           `mix compile` exit=1
+E           --- compile stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- compile stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+E           
+E           `mix run` exit=1
+E           --- run stdout (tail) ---
+E           Compiling 4 files (.ex)
+E           
+E           --- run stderr (tail) ---
+E               error: undefined function read/3 (there is no such import)
+E               │
+E            72 │     read :feed, sort: [published_at: :desc, id: :asc] do
+E               │     ^
+E               │
+E               └─ lib/feed/timeline/activity.ex:72:5: Feed.Timeline.Activity (module)
+E           
+E           
+E           == Compilation error in file lib/feed/timeline/activity.ex ==
+E           ** (CompileError) lib/feed/timeline/activity.ex: cannot compile module Feed.Timeline.Activity (errors have been logged)
+E               (ash 3.31.0) expanding macro: Ash.Resource.Dsl.actions/1
+
+tests/test_final_state.py:813: Failed
+=========================== short test summary info ============================
+FAILED tests/test_final_state.py::test_project_compiles - AssertionError: `mi...
+FAILED tests/test_final_state.py::test_contract_suite_ran_completely - Assert...
+FAILED tests/test_final_state.py::test_t01_feed_action_declares_keyset_pagination_contract
+FAILED tests/test_final_state.py::test_t02_other_feed_actions_declare_their_pagination_contracts
+FAILED tests/test_final_state.py::test_t03_first_keyset_page_struct_and_metadata
+FAILED tests/test_final_state.py::test_t04_keyset_page_carries_full_count - F...
+FAILED tests/test_final_state.py::test_t05_default_limit_applies_when_omitted
+FAILED tests/test_final_state.py::test_t06_forward_keyset_chaining_walks_disjoint_windows
+FAILED tests/test_final_state.py::test_t07_backward_keyset_chaining_reproduces_previous_windows
+FAILED tests/test_final_state.py::test_t08_ash_page_continues_rewinds_replays_restarts
+FAILED tests/test_final_state.py::test_t09_continuing_past_end_yields_empty_page
+FAILED tests/test_final_state.py::test_t10_offset_feed_reports_offset_limit_more_and_default_count
+FAILED tests/test_final_state.py::test_t11_ash_page_seeks_offset_page_by_last_and_number
+FAILED tests/test_final_state.py::test_t12_max_page_size_caps_over_large_limit
+FAILED tests/test_final_state.py::test_t13_author_feed_filters_and_caps_at_own_max_page_size
+FAILED tests/test_final_state.py::test_t14_disabling_pagination_on_required_action_is_refused
+FAILED tests/test_final_state.py::test_t15_action_without_default_limit_demands_one
+FAILED tests/test_final_state.py::test_t16_non_countable_action_refuses_count
+FAILED tests/test_final_state.py::test_t17_dual_mode_action_is_optional_and_switches_page_type
+FAILED tests/test_final_state.py::test_t18_malformed_keyset_is_rejected - Fai...
+FAILED tests/test_final_state.py::test_t19_public_feed_filters_and_counts_public_only
+FAILED tests/test_final_state.py::test_t20_hot_feed_orders_by_score_then_reactions_then_id
+FAILED tests/test_final_state.py::test_t21_hot_feed_keyset_walk_visits_every_activity_once
+FAILED tests/test_final_state.py::test_t22_heat_feed_keyset_walk_visits_every_activity_once
+FAILED tests/test_final_state.py::test_t23_aggregate_calculation_and_relationship_load_on_page
+FAILED tests/test_final_state.py::test_t24_api_fetch_returns_documented_envelope
+FAILED tests/test_final_state.py::test_t25_cursor_codec_round_trips_and_is_opaque
+FAILED tests/test_final_state.py::test_t26_cursor_codec_rejects_corrupt_and_forged_cursors
+FAILED tests/test_final_state.py::test_t27_api_forward_cursor_paging_matches_raw_keyset_chain
+FAILED tests/test_final_state.py::test_t28_api_backward_cursor_paging_returns_reversed_windows
+FAILED tests/test_final_state.py::test_t29_cursor_from_one_feed_is_refused_by_another
+FAILED tests/test_final_state.py::test_t30_cursor_failures_surface_as_codec_or_ash_errors
+FAILED tests/test_final_state.py::test_t31_api_enforces_max_page_size_and_rejects_bad_limits
+FAILED tests/test_final_state.py::test_t32_api_validates_feed_name_and_author_argument
+FAILED tests/test_final_state.py::test_t33_forward_walk_terminates_with_exact_totals
+FAILED tests/test_final_state.py::test_t34_walk_of_filtered_feed_and_of_empty_feed
+FAILED tests/test_final_state.py::test_t35_walk_back_visits_exactly_the_reversed_windows
+FAILED tests/test_final_state.py::test_t36_insertion_between_pages_neither_duplicates_nor_skips
+FAILED tests/test_final_state.py::test_t37_offset_paging_over_same_insertion_repeats_rows
+FAILED tests/test_final_state.py::test_t38_deletion_between_pages_does_not_skip_survivors
+FAILED tests/test_final_state.py::test_t39_rescoring_between_pages_keeps_window_anchored
+FAILED tests/test_final_state.py::test_t40_reported_total_stays_filtered_while_paging
+============================== 42 failed in 9.01s ==============================

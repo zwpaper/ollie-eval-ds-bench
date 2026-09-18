@@ -1,0 +1,26 @@
+Traceback (most recent call last):
+  File "/home/kweizh/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/trial/single_step.py", line 77, in _run_agent
+    await self._run_agent_phase(
+    ...<5 lines>...
+    )
+  File "/home/kweizh/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/trial/trial.py", line 554, in _run_agent_phase
+    await asyncio.wait_for(
+    ...<6 lines>...
+    )
+  File "/usr/lib/python3.13/asyncio/tasks.py", line 507, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "/home/kweizh/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/agents/installed/base.py", line 186, in wrapper
+    return await fn(self, instruction, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kweizh/ollie/agents/ollie/agent.py", line 494, in run
+    raise self._classify_exec_error(command, result)
+harbor.agents.installed.base.NonZeroAgentExitCodeError: Command failed (exit 1): [ -f "$HOME/.nvm"/nvm.sh ] && . "$HOME/.nvm"/nvm.sh; cat /logs/agent/prompt.txt | ollie --ndjson --model gemini-3.1-flash-lite-sft-20260917-225336@8 --max-steps 100 --mode native --reasoning-effort auto 2>&1 | stdbuf -oL tee /logs/agent/ollie.jsonl
+stdout: {"type":"tool-call","toolName":"bash","input":{"command":"mkdir -p /home/user/godot_project/scenes /home/user/godot_project/scripts\ncd /home/user/godot_project\ngodot --version 2>/dev/null; echo \"exit=$?\""}}
+{"type":"tool-result","toolName":"bash" ... [15663 chars truncated] ... n\")\n\troot.free()\n\tget_tree().quit(0)\n"}}
+{"type":"tool-result","toolName":"writeFile","output":{"success":true}}
+{"type":"tool-call","toolName":"bash","input":{"command":"cd /home/user/godot_project && godot --headless --script gen_scene.gd 2>&1 | tail -20"}}
+{"type":"tool-result","toolName":"bash","output":{"exitCode":0,"stdout":"Godot Engine v4.3.stable.official.77dcf97d8 - https://godotengine.org\n\nCan't load the script \"gen_scene.gd\" as it doesn't inherit from SceneTree or MainLoop.\nERROR: Can't load the script \"gen_scene.gd\" as it doesn't inherit from SceneTree or MainLoop.\n   at: start (main/main.cpp:3545)\n","stderr":""}}
+{"type":"error","message":"Chat completion failed: Response stream ended without a finish reason."}
+
+stderr: None

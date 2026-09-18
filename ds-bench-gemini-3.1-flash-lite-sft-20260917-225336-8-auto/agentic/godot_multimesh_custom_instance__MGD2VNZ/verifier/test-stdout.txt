@@ -1,0 +1,251 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0
+rootdir: /tests
+plugins: json-ctrf-0.5.3
+collected 13 items
+
+tests/test_final_state.py .FFFFFFFFFFFF                                  [100%]
+
+=================================== FAILURES ===================================
+__________________________ test_field_resource_exists __________________________
+
+    def test_field_resource_exists():
+>       assert os.path.isfile(FIELD_RES), f"Expected saved MultiMesh at {FIELD_RES}."
+E       AssertionError: Expected saved MultiMesh at /home/user/instancing_project/build/field.res.
+E       assert False
+E        +  where False = <function isfile at 0x7f00dbe28220>('/home/user/instancing_project/build/field.res')
+E        +    where <function isfile at 0x7f00dbe28220> = <module 'posixpath' (frozen)>.isfile
+E        +      where <module 'posixpath' (frozen)> = os.path
+
+tests/test_final_state.py:284: AssertionError
+___________________________ test_report_json_exists ____________________________
+
+    def test_report_json_exists():
+>       assert os.path.isfile(REPORT_JSON), f"Expected report at {REPORT_JSON}."
+E       AssertionError: Expected report at /home/user/instancing_project/build/report.json.
+E       assert False
+E        +  where False = <function isfile at 0x7f00dbe28220>('/home/user/instancing_project/build/report.json')
+E        +    where <function isfile at 0x7f00dbe28220> = <module 'posixpath' (frozen)>.isfile
+E        +      where <module 'posixpath' (frozen)> = os.path
+
+tests/test_final_state.py:288: AssertionError
+_________________________ test_checker_no_load_errors __________________________
+
+checker = {'built': {'ok': False}, 'culls': {'all': {'count': -1, 'flagged_count': -1, 'indices': [], 'max': [100, 100, 100], .....indices': [], 'max': [-5, 0, -3], ...}, ...}, 'errors': ['res://build/field.res not found'], 'resource': {'ok': False}}
+
+    def test_checker_no_load_errors(checker):
+>       assert not checker.get("errors"), f"Checker reported errors: {checker.get('errors')}"
+E       AssertionError: Checker reported errors: ['res://build/field.res not found']
+E       assert not ['res://build/field.res not found']
+E        +  where ['res://build/field.res not found'] = <built-in method get of dict object at 0x7f00db258580>('errors')
+E        +    where <built-in method get of dict object at 0x7f00db258580> = {'built': {'ok': False}, 'culls': {'all': {'count': -1, 'flagged_count': -1, 'indices': [], 'max': [100, 100, 100], .....indices': [], 'max': [-5, 0, -3], ...}, ...}, 'errors': ['res://build/field.res not found'], 'resource': {'ok': False}}.get
+
+tests/test_final_state.py:295: AssertionError
+---------------------------- Captured stdout setup -----------------------------
+=== checker stdout ===
+Godot Engine v4.3.stable.official.77dcf97d8 - https://godotengine.org
+
+CHECKER_DONE
+
+=== checker stderr ===
+SCRIPT ERROR: Invalid assignment of property or key 'color_format' with value of type 'int' on a base object of type 'MultiMesh'.
+          at: InstanceField.build (res://instancing/instance_field.gd:45)
+SCRIPT ERROR: Assertion failed: build() must be called before cull()
+          at: InstanceField.cull (res://instancing/instance_field.gd:95)
+SCRIPT ERROR: Assertion failed: build() must be called before cull()
+          at: InstanceField.cull (res://instancing/instance_field.gd:95)
+SCRIPT ERROR: Assertion failed: build() must be called before cull()
+          at: InstanceField.cull (res://instancing/instance_field.gd:95)
+SCRIPT ERROR: Assertion failed: build() must be called before cull()
+          at: InstanceField.cull (res://instancing/instance_field.gd:95)
+SCRIPT ERROR: Assertion failed: build() must be called before cull()
+          at: InstanceField.cull (res://instancing/instance_field.gd:95)
+
+________________________ test_saved_resource_instances _________________________
+
+checker = {'built': {'ok': False}, 'culls': {'all': {'count': -1, 'flagged_count': -1, 'indices': [], 'max': [100, 100, 100], .....indices': [], 'max': [-5, 0, -3], ...}, ...}, 'errors': ['res://build/field.res not found'], 'resource': {'ok': False}}
+
+    def test_saved_resource_instances(checker):
+>       _assert_config_and_buffer(checker["resource"], "field.res")
+
+tests/test_final_state.py:299: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+dump = {'ok': False}, label = 'field.res'
+
+    def _assert_config_and_buffer(dump, label):
+>       assert dump.get("ok") is True, f"{label}: not a valid MultiMesh."
+E       AssertionError: field.res: not a valid MultiMesh.
+E       assert False is True
+E        +  where False = <built-in method get of dict object at 0x7f00db25a8c0>('ok')
+E        +    where <built-in method get of dict object at 0x7f00db25a8c0> = {'ok': False}.get
+
+tests/test_final_state.py:208: AssertionError
+__________________________ test_built_field_instances __________________________
+
+checker = {'built': {'ok': False}, 'culls': {'all': {'count': -1, 'flagged_count': -1, 'indices': [], 'max': [100, 100, 100], .....indices': [], 'max': [-5, 0, -3], ...}, ...}, 'errors': ['res://build/field.res not found'], 'resource': {'ok': False}}
+
+    def test_built_field_instances(checker):
+>       _assert_config_and_buffer(checker["built"], "InstanceField.build()")
+
+tests/test_final_state.py:306: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+dump = {'ok': False}, label = 'InstanceField.build()'
+
+    def _assert_config_and_buffer(dump, label):
+>       assert dump.get("ok") is True, f"{label}: not a valid MultiMesh."
+E       AssertionError: InstanceField.build(): not a valid MultiMesh.
+E       assert False is True
+E        +  where False = <built-in method get of dict object at 0x7f00db259e80>('ok')
+E        +    where <built-in method get of dict object at 0x7f00db259e80> = {'ok': False}.get
+
+tests/test_final_state.py:208: AssertionError
+___________________________ test_report_json_content ___________________________
+
+    def test_report_json_content():
+>       with open(REPORT_JSON) as fh:
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/instancing_project/build/report.json'
+
+tests/test_final_state.py:313: FileNotFoundError
+_____________________________ test_cull_report_box _____________________________
+
+checker = {'built': {'ok': False}, 'culls': {'all': {'count': -1, 'flagged_count': -1, 'indices': [], 'max': [100, 100, 100], .....indices': [], 'max': [-5, 0, -3], ...}, ...}, 'errors': ['res://build/field.res not found'], 'resource': {'ok': False}}
+
+    def test_cull_report_box(checker):
+        entry = checker["culls"]["report_box"]
+>       assert list(entry["indices"]) == REPORT_INDICES, (
+            f"cull(report box) indices mismatch: {entry['indices']}"
+        )
+E       AssertionError: cull(report box) indices mismatch: []
+E       assert [] == [2, 3, 4, 5, 8, 9, ...]
+E         Right contains 48 more items, first extra item: 2
+E         Use -v to get more diff
+
+tests/test_final_state.py:350: AssertionError
+_____________________ test_cull_matches_oracle[report_box] _____________________
+
+checker = {'built': {'ok': False}, 'culls': {'all': {'count': -1, 'flagged_count': -1, 'indices': [], 'max': [100, 100, 100], .....indices': [], 'max': [-5, 0, -3], ...}, ...}, 'errors': ['res://build/field.res not found'], 'resource': {'ok': False}}
+name = 'report_box'
+
+    @pytest.mark.parametrize("name", [b[0] for b in BOXES])
+    def test_cull_matches_oracle(checker, name):
+        box = next(b for b in BOXES if b[0] == name)
+        _, bmin, bmax = box
+        exp_indices, exp_weight, exp_flagged = cull_expected(bmin, bmax)
+    
+        entry = checker["culls"][name]
+>       assert sorted(entry["indices"]) == exp_indices, (
+            f"cull({name}) indices mismatch. expected {exp_indices}, got {entry['indices']}."
+        )
+E       AssertionError: cull(report_box) indices mismatch. expected [2, 3, 4, 5, 8, 9, 10, 11, 14, 15, 16, 17, 20, 21, 22, 23, 32, 33, 34, 35, 38, 39, 40, 41, 44, 45, 46, 47, 50, 51, 52, 53, 62, 63, 64, 65, 68, 69, 70, 71, 74, 75, 76, 77, 80, 81, 82, 83], got [].
+E       assert [] == [2, 3, 4, 5, 8, 9, ...]
+E         Right contains 48 more items, first extra item: 2
+E         Use -v to get more diff
+
+tests/test_final_state.py:372: AssertionError
+________________________ test_cull_matches_oracle[all] _________________________
+
+checker = {'built': {'ok': False}, 'culls': {'all': {'count': -1, 'flagged_count': -1, 'indices': [], 'max': [100, 100, 100], .....indices': [], 'max': [-5, 0, -3], ...}, ...}, 'errors': ['res://build/field.res not found'], 'resource': {'ok': False}}
+name = 'all'
+
+    @pytest.mark.parametrize("name", [b[0] for b in BOXES])
+    def test_cull_matches_oracle(checker, name):
+        box = next(b for b in BOXES if b[0] == name)
+        _, bmin, bmax = box
+        exp_indices, exp_weight, exp_flagged = cull_expected(bmin, bmax)
+    
+        entry = checker["culls"][name]
+>       assert sorted(entry["indices"]) == exp_indices, (
+            f"cull({name}) indices mismatch. expected {exp_indices}, got {entry['indices']}."
+        )
+E       AssertionError: cull(all) indices mismatch. expected [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119], got [].
+E       assert [] == [0, 1, 2, 3, 4, 5, ...]
+E         Right contains 120 more items, first extra item: 0
+E         Use -v to get more diff
+
+tests/test_final_state.py:372: AssertionError
+________________________ test_cull_matches_oracle[none] ________________________
+
+checker = {'built': {'ok': False}, 'culls': {'all': {'count': -1, 'flagged_count': -1, 'indices': [], 'max': [100, 100, 100], .....indices': [], 'max': [-5, 0, -3], ...}, ...}, 'errors': ['res://build/field.res not found'], 'resource': {'ok': False}}
+name = 'none'
+
+    @pytest.mark.parametrize("name", [b[0] for b in BOXES])
+    def test_cull_matches_oracle(checker, name):
+        box = next(b for b in BOXES if b[0] == name)
+        _, bmin, bmax = box
+        exp_indices, exp_weight, exp_flagged = cull_expected(bmin, bmax)
+    
+        entry = checker["culls"][name]
+        assert sorted(entry["indices"]) == exp_indices, (
+            f"cull({name}) indices mismatch. expected {exp_indices}, got {entry['indices']}."
+        )
+        assert list(entry["indices"]) == exp_indices, (
+            f"cull({name}) indices must be sorted ascending, got {entry['indices']}."
+        )
+>       assert entry["count"] == len(exp_indices), (
+            f"cull({name}) count expected {len(exp_indices)}, got {entry['count']}."
+        )
+E       AssertionError: cull(none) count expected 0, got -1.
+E       assert -1 == 0
+E        +  where 0 = len([])
+
+tests/test_final_state.py:378: AssertionError
+_______________________ test_cull_matches_oracle[single] _______________________
+
+checker = {'built': {'ok': False}, 'culls': {'all': {'count': -1, 'flagged_count': -1, 'indices': [], 'max': [100, 100, 100], .....indices': [], 'max': [-5, 0, -3], ...}, ...}, 'errors': ['res://build/field.res not found'], 'resource': {'ok': False}}
+name = 'single'
+
+    @pytest.mark.parametrize("name", [b[0] for b in BOXES])
+    def test_cull_matches_oracle(checker, name):
+        box = next(b for b in BOXES if b[0] == name)
+        _, bmin, bmax = box
+        exp_indices, exp_weight, exp_flagged = cull_expected(bmin, bmax)
+    
+        entry = checker["culls"][name]
+>       assert sorted(entry["indices"]) == exp_indices, (
+            f"cull({name}) indices mismatch. expected {exp_indices}, got {entry['indices']}."
+        )
+E       AssertionError: cull(single) indices mismatch. expected [0], got [].
+E       assert [] == [0]
+E         Right contains one more item: 0
+E         Use -v to get more diff
+
+tests/test_final_state.py:372: AssertionError
+________________________ test_cull_matches_oracle[slab] ________________________
+
+checker = {'built': {'ok': False}, 'culls': {'all': {'count': -1, 'flagged_count': -1, 'indices': [], 'max': [100, 100, 100], .....indices': [], 'max': [-5, 0, -3], ...}, ...}, 'errors': ['res://build/field.res not found'], 'resource': {'ok': False}}
+name = 'slab'
+
+    @pytest.mark.parametrize("name", [b[0] for b in BOXES])
+    def test_cull_matches_oracle(checker, name):
+        box = next(b for b in BOXES if b[0] == name)
+        _, bmin, bmax = box
+        exp_indices, exp_weight, exp_flagged = cull_expected(bmin, bmax)
+    
+        entry = checker["culls"][name]
+>       assert sorted(entry["indices"]) == exp_indices, (
+            f"cull({name}) indices mismatch. expected {exp_indices}, got {entry['indices']}."
+        )
+E       AssertionError: cull(slab) indices mismatch. expected [2, 3, 8, 9, 14, 15, 20, 21, 26, 27, 32, 33, 38, 39, 44, 45, 50, 51, 56, 57, 62, 63, 68, 69, 74, 75, 80, 81, 86, 87, 92, 93, 98, 99, 104, 105, 110, 111, 116, 117], got [].
+E       assert [] == [2, 3, 8, 9, 14, 15, ...]
+E         Right contains 40 more items, first extra item: 2
+E         Use -v to get more diff
+
+tests/test_final_state.py:372: AssertionError
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED tests/test_final_state.py::test_class_script_exists
+FAILED tests/test_final_state.py::test_field_resource_exists - AssertionError...
+FAILED tests/test_final_state.py::test_report_json_exists - AssertionError: E...
+FAILED tests/test_final_state.py::test_checker_no_load_errors - AssertionErro...
+FAILED tests/test_final_state.py::test_saved_resource_instances - AssertionEr...
+FAILED tests/test_final_state.py::test_built_field_instances - AssertionError...
+FAILED tests/test_final_state.py::test_report_json_content - FileNotFoundErro...
+FAILED tests/test_final_state.py::test_cull_report_box - AssertionError: cull...
+FAILED tests/test_final_state.py::test_cull_matches_oracle[report_box] - Asse...
+FAILED tests/test_final_state.py::test_cull_matches_oracle[all] - AssertionEr...
+FAILED tests/test_final_state.py::test_cull_matches_oracle[none] - AssertionE...
+FAILED tests/test_final_state.py::test_cull_matches_oracle[single] - Assertio...
+FAILED tests/test_final_state.py::test_cull_matches_oracle[slab] - AssertionE...
+========================= 12 failed, 1 passed in 0.85s =========================

@@ -1,0 +1,7 @@
+{"type":"text","text":"<think>Let me explore the existing project structure."}
+{"type":"text","text":"</think>"}
+{"type":"tool-call","toolName":"bash","input":{"command":"cd /home/user/vault && ls -la && echo \"---\" && cat mix.exs | head -100"}}
+{"type":"tool-result","toolName":"bash","output":{"exitCode":0,"stdout":"total 56\ndrwxrwxrwx  1 ubuntu ubuntu 4096 Sep 18 09:03 .\ndrwxr-xr-x  1 root   root   4096 Sep 18 09:03 ..\n-rw-rw-rw-  1 ubuntu ubuntu  408 Sep 18 09:03 README.md\ndrwxrwxrwx  3 ubuntu ubuntu 4096 Sep 18 09:03 _build\ndrwxrwxrwx  1 ubuntu ubuntu 4096 Sep 18 09:03 config\ndrwxrwxrwx 18 ubuntu ubuntu 4096 Sep 18 09:03 deps\ndrwxrwxrwx  1 ubuntu ubuntu 4096 Sep 18 09:03 lib\n-rw-rw-rw-  1 ubuntu ubuntu  436 Sep 18 09:03 mix.exs\n-rw-rw-rw-  1 ubuntu ubuntu 5715 Sep 18 09:03 mix.lock\n---\ndefmodule Vault.MixProject do\n  use Mix.Project\n\n  def project do\n    [\n      app: :vault,\n      version: \"0.1.0\",\n      elixir: \"~> 1.18\",\n      start_permanent: Mix.env() == :prod,\n      consolidate_protocols: Mix.env() != :dev,\n      deps: deps()\n    ]\n  end\n\n  def application do\n    [\n      extra_applications: [:logger],\n      mod: {Vault.Application, []}\n    ]\n  end\n\n  defp deps do\n    [\n      {:ash, \"~> 3.31\"}\n    ]\n  end\nend\n","stderr":""}}
+{"type":"text","text":"<think>Let me look at the existing Hook module and configuration."}
+{"type":"text","text":"</think>"}
+{"type":"error","message":"Chat completion failed: Response stream ended without a finish reason."}

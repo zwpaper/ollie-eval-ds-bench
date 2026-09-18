@@ -1,0 +1,30 @@
+Traceback (most recent call last):
+  File "/home/kweizh/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/trial/single_step.py", line 77, in _run_agent
+    await self._run_agent_phase(
+    ...<5 lines>...
+    )
+  File "/home/kweizh/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/trial/trial.py", line 554, in _run_agent_phase
+    await asyncio.wait_for(
+    ...<6 lines>...
+    )
+  File "/usr/lib/python3.13/asyncio/tasks.py", line 507, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "/home/kweizh/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/agents/installed/base.py", line 186, in wrapper
+    return await fn(self, instruction, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kweizh/ollie/agents/ollie/agent.py", line 494, in run
+    raise self._classify_exec_error(command, result)
+harbor.agents.installed.base.NonZeroAgentExitCodeError: Command failed (exit 1): [ -f "$HOME/.nvm"/nvm.sh ] && . "$HOME/.nvm"/nvm.sh; cat /logs/agent/prompt.txt | ollie --ndjson --model gemini-3.1-flash-lite-sft-20260917-225336@8 --max-steps 100 --mode native --reasoning-effort auto 2>&1 | stdbuf -oL tee /logs/agent/ollie.jsonl
+stdout: {"type":"text","text":"<think>Let me explore the current state."}
+{"type":"text","text":"</think>"}
+{"type":"tool-call","toolName":"bash","input":{"command":"cd /home/user/forum && ls -la && echo \"===config===\" && cat config/config.exs"}}
+{"type":" ... [67425 chars truncated] ... xt","text":" [title, archived_at, archive_batch_id] for post, [body, archived_at, archive_batch_id] for comment,"}
+{"type":"text","text":" [emoji, archived_at, archive_batch_id] for reaction to be safe.\n\nNow let me write the resources. Let"}
+{"type":"text","text":" me make helpers for shared policy and actions... but keep it simple, just write each file to avoid issues. Actually I can"}
+{"type":"text","text":" share by defining a module that constructs options but that might get complicated. Let me just write each resource fully but keep them"}
+{"type":"text","text":" similar.\n\nLet me write Post first."}
+{"type":"text","text":"</think>"}
+{"type":"error","message":"Chat completion failed: Response stream ended without a finish reason."}
+
+stderr: None
