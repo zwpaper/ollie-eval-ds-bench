@@ -1,0 +1,289 @@
+Agent 'ollie' does not declare an options_model; leftover kwargs are ignored
+Agent 'ollie' does not declare an options_model; leftover kwargs are ignored
+Agent 'ollie' does not declare an options_model; leftover kwargs are ignored
+Agent 'ollie' does not declare an options_model; leftover kwargs are ignored
+Agent 'ollie' does not declare an options_model; leftover kwargs are ignored
+Agent 'ollie' does not declare an options_model; leftover kwargs are ignored
+Agent 'ollie' does not declare an options_model; leftover kwargs are ignored
+Agent 'ollie' does not declare an options_model; leftover kwargs are ignored
+Agent 'ollie' does not declare an options_model; leftover kwargs are ignored
+Agent 'ollie' does not declare an options_model; leftover kwargs are ignored
+Agent 'ollie' does not declare an options_model; leftover kwargs are ignored
+Agent 'ollie' does not declare an options_model; leftover kwargs are ignored
+Agent 'ollie' does not declare an options_model; leftover kwargs are ignored
+Agent 'ollie' does not declare an options_model; leftover kwargs are ignored
+Agent 'ollie' does not declare an options_model; leftover kwargs are ignored
+Skipping image OS validation for hb__6253ebbf48d73ff96d97091f796442f4: docker inspect returned 1
+Skipping image OS validation for hb__109f6dff3076c7eaab91e7a2e8eb69d0: docker inspect returned 1
+Skipping image OS validation for hb__881c3a5a6e8e08b9b43a28f594b81680: docker inspect returned 1
+Skipping image OS validation for hb__f73991f1d392e9ad0a74fa32d79ef147: docker inspect returned 1
+Skipping image OS validation for hb__be3027955e3e43ab315210c60d28f137: docker inspect returned 1
+Skipping image OS validation for hb__bc44fd7dd6628146fd537f52b836ab89: docker inspect returned 1
+Skipping image OS validation for hb__3eaa73c032622388728a1b8e3268bfcd: docker inspect returned 1
+Skipping image OS validation for hb__77a70f377190947474f70a26cdf497ed: docker inspect returned 1
+Skipping image OS validation for hb__3cd23df64f45029a52300318d10fe26f: docker inspect returned 1
+Skipping image OS validation for hb__4972866293f6db01bb8ab8e544425479: docker inspect returned 1
+Skipping image OS validation for hb__f1173911c667eae2d3c00f4a2e77ddde: docker inspect returned 1
+Skipping image OS validation for hb__a6d9ae23521d4883fa4b2e5c5890ec93: docker inspect returned 1
+Skipping image OS validation for hb__1ab4e4c5ef50a0d8b9730c8bcf9b3c74: docker inspect returned 1
+Skipping image OS validation for hb__07d808db7fcd6f998326b384228df402: docker inspect returned 1
+Skipping image OS validation for hb__2b18ce267f053613efe187db25bfa147: docker inspect returned 1
+Running command: export NVM_DIR="$HOME/.nvm" && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | env -u NODE_VERSION -u XDG_CONFIG_HOME NVM_DIR="$HOME/.nvm" bash && . "$NVM_DIR/nvm.sh" || true && command -v nvm &>/dev/null || { echo 'Error: NVM failed to load' >&2; exit 1; } && nvm install 22 && nvm alias default 22 && npm -v && npm install -g @getollie/cli@latest && ollie --version
+Running command: export NVM_DIR="$HOME/.nvm" && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | env -u NODE_VERSION -u XDG_CONFIG_HOME NVM_DIR="$HOME/.nvm" bash && . "$NVM_DIR/nvm.sh" || true && command -v nvm &>/dev/null || { echo 'Error: NVM failed to load' >&2; exit 1; } && nvm install 22 && nvm alias default 22 && npm -v && npm install -g @getollie/cli@latest && ollie --version
+Running command: export NVM_DIR="$HOME/.nvm" && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | env -u NODE_VERSION -u XDG_CONFIG_HOME NVM_DIR="$HOME/.nvm" bash && . "$NVM_DIR/nvm.sh" || true && command -v nvm &>/dev/null || { echo 'Error: NVM failed to load' >&2; exit 1; } && nvm install 22 && nvm alias default 22 && npm -v && npm install -g @getollie/cli@latest && ollie --version
+Running command: export NVM_DIR="$HOME/.nvm" && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | env -u NODE_VERSION -u XDG_CONFIG_HOME NVM_DIR="$HOME/.nvm" bash && . "$NVM_DIR/nvm.sh" || true && command -v nvm &>/dev/null || { echo 'Error: NVM failed to load' >&2; exit 1; } && nvm install 22 && nvm alias default 22 && npm -v && npm install -g @getollie/cli@latest && ollie --version
+Running command: export NVM_DIR="$HOME/.nvm" && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | env -u NODE_VERSION -u XDG_CONFIG_HOME NVM_DIR="$HOME/.nvm" bash && . "$NVM_DIR/nvm.sh" || true && command -v nvm &>/dev/null || { echo 'Error: NVM failed to load' >&2; exit 1; } && nvm install 22 && nvm alias default 22 && npm -v && npm install -g @getollie/cli@latest && ollie --version
+Running command: export NVM_DIR="$HOME/.nvm" && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | env -u NODE_VERSION -u XDG_CONFIG_HOME NVM_DIR="$HOME/.nvm" bash && . "$NVM_DIR/nvm.sh" || true && command -v nvm &>/dev/null || { echo 'Error: NVM failed to load' >&2; exit 1; } && nvm install 22 && nvm alias default 22 && npm -v && npm install -g @getollie/cli@latest && ollie --version
+Running command: export NVM_DIR="$HOME/.nvm" && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | env -u NODE_VERSION -u XDG_CONFIG_HOME NVM_DIR="$HOME/.nvm" bash && . "$NVM_DIR/nvm.sh" || true && command -v nvm &>/dev/null || { echo 'Error: NVM failed to load' >&2; exit 1; } && nvm install 22 && nvm alias default 22 && npm -v && npm install -g @getollie/cli@latest && ollie --version
+Running command: export NVM_DIR="$HOME/.nvm" && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | env -u NODE_VERSION -u XDG_CONFIG_HOME NVM_DIR="$HOME/.nvm" bash && . "$NVM_DIR/nvm.sh" || true && command -v nvm &>/dev/null || { echo 'Error: NVM failed to load' >&2; exit 1; } && nvm install 22 && nvm alias default 22 && npm -v && npm install -g @getollie/cli@latest && ollie --version
+Running command: export NVM_DIR="$HOME/.nvm" && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | env -u NODE_VERSION -u XDG_CONFIG_HOME NVM_DIR="$HOME/.nvm" bash && . "$NVM_DIR/nvm.sh" || true && command -v nvm &>/dev/null || { echo 'Error: NVM failed to load' >&2; exit 1; } && nvm install 22 && nvm alias default 22 && npm -v && npm install -g @getollie/cli@latest && ollie --version
+Running command: export NVM_DIR="$HOME/.nvm" && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | env -u NODE_VERSION -u XDG_CONFIG_HOME NVM_DIR="$HOME/.nvm" bash && . "$NVM_DIR/nvm.sh" || true && command -v nvm &>/dev/null || { echo 'Error: NVM failed to load' >&2; exit 1; } && nvm install 22 && nvm alias default 22 && npm -v && npm install -g @getollie/cli@latest && ollie --version
+Running command: export NVM_DIR="$HOME/.nvm" && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | env -u NODE_VERSION -u XDG_CONFIG_HOME NVM_DIR="$HOME/.nvm" bash && . "$NVM_DIR/nvm.sh" || true && command -v nvm &>/dev/null || { echo 'Error: NVM failed to load' >&2; exit 1; } && nvm install 22 && nvm alias default 22 && npm -v && npm install -g @getollie/cli@latest && ollie --version
+Running command: export NVM_DIR="$HOME/.nvm" && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | env -u NODE_VERSION -u XDG_CONFIG_HOME NVM_DIR="$HOME/.nvm" bash && . "$NVM_DIR/nvm.sh" || true && command -v nvm &>/dev/null || { echo 'Error: NVM failed to load' >&2; exit 1; } && nvm install 22 && nvm alias default 22 && npm -v && npm install -g @getollie/cli@latest && ollie --version
+Running command: export NVM_DIR="$HOME/.nvm" && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | env -u NODE_VERSION -u XDG_CONFIG_HOME NVM_DIR="$HOME/.nvm" bash && . "$NVM_DIR/nvm.sh" || true && command -v nvm &>/dev/null || { echo 'Error: NVM failed to load' >&2; exit 1; } && nvm install 22 && nvm alias default 22 && npm -v && npm install -g @getollie/cli@latest && ollie --version
+Running command: export NVM_DIR="$HOME/.nvm" && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | env -u NODE_VERSION -u XDG_CONFIG_HOME NVM_DIR="$HOME/.nvm" bash && . "$NVM_DIR/nvm.sh" || true && command -v nvm &>/dev/null || { echo 'Error: NVM failed to load' >&2; exit 1; } && nvm install 22 && nvm alias default 22 && npm -v && npm install -g @getollie/cli@latest && ollie --version
+Running command: export NVM_DIR="$HOME/.nvm" && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | env -u NODE_VERSION -u XDG_CONFIG_HOME NVM_DIR="$HOME/.nvm" bash && . "$NVM_DIR/nvm.sh" || true && command -v nvm &>/dev/null || { echo 'Error: NVM failed to load' >&2; exit 1; } && nvm install 22 && nvm alias default 22 && npm -v && npm install -g @getollie/cli@latest && ollie --version
+Command outputs captured
+Command outputs captured
+Command outputs captured
+Command outputs captured
+Command outputs captured
+Command outputs captured
+Command outputs captured
+Command outputs captured
+Running command: mkdir -p /logs/agent
+Command outputs captured
+Command outputs captured
+Running command: [ -f "$HOME/.nvm"/nvm.sh ] && . "$HOME/.nvm"/nvm.sh; cat /logs/agent/prompt.txt | ollie --ndjson --model gemini-3.1-flash-lite-sft-20260920-181429@3 --max-steps 100 --mode native --reasoning-effort auto 2>&1 | stdbuf -oL tee /logs/agent/ollie.jsonl
+Command outputs captured
+Command outputs captured
+Command outputs captured
+Command outputs captured
+Running command: mkdir -p /logs/agent
+Running command: mkdir -p /logs/agent
+Running command: mkdir -p /logs/agent
+Command outputs captured
+Command outputs captured
+Command outputs captured
+Command outputs captured
+Running command: [ -f "$HOME/.nvm"/nvm.sh ] && . "$HOME/.nvm"/nvm.sh; cat /logs/agent/prompt.txt | ollie --ndjson --model gemini-3.1-flash-lite-sft-20260920-181429@3 --max-steps 100 --mode native --reasoning-effort auto 2>&1 | stdbuf -oL tee /logs/agent/ollie.jsonl
+Running command: mkdir -p /logs/agent
+Command outputs captured
+Running command: [ -f "$HOME/.nvm"/nvm.sh ] && . "$HOME/.nvm"/nvm.sh; cat /logs/agent/prompt.txt | ollie --ndjson --model gemini-3.1-flash-lite-sft-20260920-181429@3 --max-steps 100 --mode native --reasoning-effort auto 2>&1 | stdbuf -oL tee /logs/agent/ollie.jsonl
+Running command: [ -f "$HOME/.nvm"/nvm.sh ] && . "$HOME/.nvm"/nvm.sh; cat /logs/agent/prompt.txt | ollie --ndjson --model gemini-3.1-flash-lite-sft-20260920-181429@3 --max-steps 100 --mode native --reasoning-effort auto 2>&1 | stdbuf -oL tee /logs/agent/ollie.jsonl
+Command outputs captured
+Running command: mkdir -p /logs/agent
+Running command: [ -f "$HOME/.nvm"/nvm.sh ] && . "$HOME/.nvm"/nvm.sh; cat /logs/agent/prompt.txt | ollie --ndjson --model gemini-3.1-flash-lite-sft-20260920-181429@3 --max-steps 100 --mode native --reasoning-effort auto 2>&1 | stdbuf -oL tee /logs/agent/ollie.jsonl
+Command outputs captured
+Running command: [ -f "$HOME/.nvm"/nvm.sh ] && . "$HOME/.nvm"/nvm.sh; cat /logs/agent/prompt.txt | ollie --ndjson --model gemini-3.1-flash-lite-sft-20260920-181429@3 --max-steps 100 --mode native --reasoning-effort auto 2>&1 | stdbuf -oL tee /logs/agent/ollie.jsonl
+Running command: mkdir -p /logs/agent
+Running command: mkdir -p /logs/agent
+Command outputs captured
+Command outputs captured
+Running command: mkdir -p /logs/agent
+Running command: [ -f "$HOME/.nvm"/nvm.sh ] && . "$HOME/.nvm"/nvm.sh; cat /logs/agent/prompt.txt | ollie --ndjson --model gemini-3.1-flash-lite-sft-20260920-181429@3 --max-steps 100 --mode native --reasoning-effort auto 2>&1 | stdbuf -oL tee /logs/agent/ollie.jsonl
+Running command: [ -f "$HOME/.nvm"/nvm.sh ] && . "$HOME/.nvm"/nvm.sh; cat /logs/agent/prompt.txt | ollie --ndjson --model gemini-3.1-flash-lite-sft-20260920-181429@3 --max-steps 100 --mode native --reasoning-effort auto 2>&1 | stdbuf -oL tee /logs/agent/ollie.jsonl
+Command outputs captured
+Running command: [ -f "$HOME/.nvm"/nvm.sh ] && . "$HOME/.nvm"/nvm.sh; cat /logs/agent/prompt.txt | ollie --ndjson --model gemini-3.1-flash-lite-sft-20260920-181429@3 --max-steps 100 --mode native --reasoning-effort auto 2>&1 | stdbuf -oL tee /logs/agent/ollie.jsonl
+Running command: mkdir -p /logs/agent
+Command outputs captured
+Running command: [ -f "$HOME/.nvm"/nvm.sh ] && . "$HOME/.nvm"/nvm.sh; cat /logs/agent/prompt.txt | ollie --ndjson --model gemini-3.1-flash-lite-sft-20260920-181429@3 --max-steps 100 --mode native --reasoning-effort auto 2>&1 | stdbuf -oL tee /logs/agent/ollie.jsonl
+Running command: mkdir -p /logs/agent
+Running command: mkdir -p /logs/agent
+Running command: mkdir -p /logs/agent
+Command outputs captured
+Command outputs captured
+Running command: [ -f "$HOME/.nvm"/nvm.sh ] && . "$HOME/.nvm"/nvm.sh; cat /logs/agent/prompt.txt | ollie --ndjson --model gemini-3.1-flash-lite-sft-20260920-181429@3 --max-steps 100 --mode native --reasoning-effort auto 2>&1 | stdbuf -oL tee /logs/agent/ollie.jsonl
+Running command: [ -f "$HOME/.nvm"/nvm.sh ] && . "$HOME/.nvm"/nvm.sh; cat /logs/agent/prompt.txt | ollie --ndjson --model gemini-3.1-flash-lite-sft-20260920-181429@3 --max-steps 100 --mode native --reasoning-effort auto 2>&1 | stdbuf -oL tee /logs/agent/ollie.jsonl
+Command outputs captured
+Running command: [ -f "$HOME/.nvm"/nvm.sh ] && . "$HOME/.nvm"/nvm.sh; cat /logs/agent/prompt.txt | ollie --ndjson --model gemini-3.1-flash-lite-sft-20260920-181429@3 --max-steps 100 --mode native --reasoning-effort auto 2>&1 | stdbuf -oL tee /logs/agent/ollie.jsonl
+Running command: mkdir -p /logs/agent
+Command outputs captured
+Running command: mkdir -p /logs/agent
+Running command: [ -f "$HOME/.nvm"/nvm.sh ] && . "$HOME/.nvm"/nvm.sh; cat /logs/agent/prompt.txt | ollie --ndjson --model gemini-3.1-flash-lite-sft-20260920-181429@3 --max-steps 100 --mode native --reasoning-effort auto 2>&1 | stdbuf -oL tee /logs/agent/ollie.jsonl
+Command outputs captured
+Running command: [ -f "$HOME/.nvm"/nvm.sh ] && . "$HOME/.nvm"/nvm.sh; cat /logs/agent/prompt.txt | ollie --ndjson --model gemini-3.1-flash-lite-sft-20260920-181429@3 --max-steps 100 --mode native --reasoning-effort auto 2>&1 | stdbuf -oL tee /logs/agent/ollie.jsonl
+Collecting main service artifacts
+Not retrying trial because the maximum number of retries has been reached
+Agent 'ollie' does not declare an options_model; leftover kwargs are ignored
+Skipping image OS validation for hb__40cf096083910512482281160b52a6c2: docker inspect returned 1
+Running command: export NVM_DIR="$HOME/.nvm" && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | env -u NODE_VERSION -u XDG_CONFIG_HOME NVM_DIR="$HOME/.nvm" bash && . "$NVM_DIR/nvm.sh" || true && command -v nvm &>/dev/null || { echo 'Error: NVM failed to load' >&2; exit 1; } && nvm install 22 && nvm alias default 22 && npm -v && npm install -g @getollie/cli@latest && ollie --version
+Command outputs captured
+Running command: mkdir -p /logs/agent
+Command outputs captured
+Running command: [ -f "$HOME/.nvm"/nvm.sh ] && . "$HOME/.nvm"/nvm.sh; cat /logs/agent/prompt.txt | ollie --ndjson --model gemini-3.1-flash-lite-sft-20260920-181429@3 --max-steps 100 --mode native --reasoning-effort auto 2>&1 | stdbuf -oL tee /logs/agent/ollie.jsonl
+Collecting main service artifacts
+Collecting main service artifacts
+Agent 'ollie' does not declare an options_model; leftover kwargs are ignored
+Skipping image OS validation for hb__6598bf852b6f564e19e6a0b2925ced6a: docker inspect returned 1
+Running command: export NVM_DIR="$HOME/.nvm" && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | env -u NODE_VERSION -u XDG_CONFIG_HOME NVM_DIR="$HOME/.nvm" bash && . "$NVM_DIR/nvm.sh" || true && command -v nvm &>/dev/null || { echo 'Error: NVM failed to load' >&2; exit 1; } && nvm install 22 && nvm alias default 22 && npm -v && npm install -g @getollie/cli@latest && ollie --version
+Agent 'ollie' does not declare an options_model; leftover kwargs are ignored
+Skipping image OS validation for hb__eae3966e2ebb50d4436ce5e87fa64a6d: docker inspect returned 1
+Running command: export NVM_DIR="$HOME/.nvm" && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | env -u NODE_VERSION -u XDG_CONFIG_HOME NVM_DIR="$HOME/.nvm" bash && . "$NVM_DIR/nvm.sh" || true && command -v nvm &>/dev/null || { echo 'Error: NVM failed to load' >&2; exit 1; } && nvm install 22 && nvm alias default 22 && npm -v && npm install -g @getollie/cli@latest && ollie --version
+Command outputs captured
+Running command: mkdir -p /logs/agent
+Command outputs captured
+Running command: [ -f "$HOME/.nvm"/nvm.sh ] && . "$HOME/.nvm"/nvm.sh; cat /logs/agent/prompt.txt | ollie --ndjson --model gemini-3.1-flash-lite-sft-20260920-181429@3 --max-steps 100 --mode native --reasoning-effort auto 2>&1 | stdbuf -oL tee /logs/agent/ollie.jsonl
+Command outputs captured
+Running command: mkdir -p /logs/agent
+Command outputs captured
+Running command: [ -f "$HOME/.nvm"/nvm.sh ] && . "$HOME/.nvm"/nvm.sh; cat /logs/agent/prompt.txt | ollie --ndjson --model gemini-3.1-flash-lite-sft-20260920-181429@3 --max-steps 100 --mode native --reasoning-effort auto 2>&1 | stdbuf -oL tee /logs/agent/ollie.jsonl
+Collecting main service artifacts
+Agent 'ollie' does not declare an options_model; leftover kwargs are ignored
+Skipping image OS validation for hb__1e39fe1fa10d2b19e07efe753a93a9ed: docker inspect returned 1
+Running command: export NVM_DIR="$HOME/.nvm" && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | env -u NODE_VERSION -u XDG_CONFIG_HOME NVM_DIR="$HOME/.nvm" bash && . "$NVM_DIR/nvm.sh" || true && command -v nvm &>/dev/null || { echo 'Error: NVM failed to load' >&2; exit 1; } && nvm install 22 && nvm alias default 22 && npm -v && npm install -g @getollie/cli@latest && ollie --version
+Command outputs captured
+Running command: mkdir -p /logs/agent
+Command outputs captured
+Running command: [ -f "$HOME/.nvm"/nvm.sh ] && . "$HOME/.nvm"/nvm.sh; cat /logs/agent/prompt.txt | ollie --ndjson --model gemini-3.1-flash-lite-sft-20260920-181429@3 --max-steps 100 --mode native --reasoning-effort auto 2>&1 | stdbuf -oL tee /logs/agent/ollie.jsonl
+Collecting main service artifacts
+Not retrying trial because the maximum number of retries has been reached
+Agent 'ollie' does not declare an options_model; leftover kwargs are ignored
+Skipping image OS validation for hb__5fbd4ebe2fdb0991aae4a3aa09e4dcf5: docker inspect returned 1
+Running command: export NVM_DIR="$HOME/.nvm" && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | env -u NODE_VERSION -u XDG_CONFIG_HOME NVM_DIR="$HOME/.nvm" bash && . "$NVM_DIR/nvm.sh" || true && command -v nvm &>/dev/null || { echo 'Error: NVM failed to load' >&2; exit 1; } && nvm install 22 && nvm alias default 22 && npm -v && npm install -g @getollie/cli@latest && ollie --version
+Ollie exhausted its step budget; keeping the workspace as-is for evaluation (set fail_on_max_steps=true to fail instead)
+Collecting main service artifacts
+Command outputs captured
+Running command: mkdir -p /logs/agent
+Command outputs captured
+Running command: [ -f "$HOME/.nvm"/nvm.sh ] && . "$HOME/.nvm"/nvm.sh; cat /logs/agent/prompt.txt | ollie --ndjson --model gemini-3.1-flash-lite-sft-20260920-181429@3 --max-steps 100 --mode native --reasoning-effort auto 2>&1 | stdbuf -oL tee /logs/agent/ollie.jsonl
+Collecting main service artifacts
+Agent 'ollie' does not declare an options_model; leftover kwargs are ignored
+Skipping image OS validation for hb__c68dd2307a2f454fb1483eaed61ec135: docker inspect returned 1
+Running command: export NVM_DIR="$HOME/.nvm" && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | env -u NODE_VERSION -u XDG_CONFIG_HOME NVM_DIR="$HOME/.nvm" bash && . "$NVM_DIR/nvm.sh" || true && command -v nvm &>/dev/null || { echo 'Error: NVM failed to load' >&2; exit 1; } && nvm install 22 && nvm alias default 22 && npm -v && npm install -g @getollie/cli@latest && ollie --version
+Not retrying trial because the maximum number of retries has been reached
+Agent 'ollie' does not declare an options_model; leftover kwargs are ignored
+Skipping image OS validation for hb__b9410ebe3b20e9226f84f003def6dca3: docker inspect returned 1
+Running command: export NVM_DIR="$HOME/.nvm" && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | env -u NODE_VERSION -u XDG_CONFIG_HOME NVM_DIR="$HOME/.nvm" bash && . "$NVM_DIR/nvm.sh" || true && command -v nvm &>/dev/null || { echo 'Error: NVM failed to load' >&2; exit 1; } && nvm install 22 && nvm alias default 22 && npm -v && npm install -g @getollie/cli@latest && ollie --version
+Command outputs captured
+Running command: mkdir -p /logs/agent
+Command outputs captured
+Running command: [ -f "$HOME/.nvm"/nvm.sh ] && . "$HOME/.nvm"/nvm.sh; cat /logs/agent/prompt.txt | ollie --ndjson --model gemini-3.1-flash-lite-sft-20260920-181429@3 --max-steps 100 --mode native --reasoning-effort auto 2>&1 | stdbuf -oL tee /logs/agent/ollie.jsonl
+Command outputs captured
+Running command: mkdir -p /logs/agent
+Command outputs captured
+Running command: [ -f "$HOME/.nvm"/nvm.sh ] && . "$HOME/.nvm"/nvm.sh; cat /logs/agent/prompt.txt | ollie --ndjson --model gemini-3.1-flash-lite-sft-20260920-181429@3 --max-steps 100 --mode native --reasoning-effort auto 2>&1 | stdbuf -oL tee /logs/agent/ollie.jsonl
+Collecting main service artifacts
+Ollie exhausted its step budget; keeping the workspace as-is for evaluation (set fail_on_max_steps=true to fail instead)
+Collecting main service artifacts
+Not retrying trial because the maximum number of retries has been reached
+Agent 'ollie' does not declare an options_model; leftover kwargs are ignored
+Skipping image OS validation for hb__f221ea2495579bd32da57c49a157e568: docker inspect returned 1
+Running command: export NVM_DIR="$HOME/.nvm" && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | env -u NODE_VERSION -u XDG_CONFIG_HOME NVM_DIR="$HOME/.nvm" bash && . "$NVM_DIR/nvm.sh" || true && command -v nvm &>/dev/null || { echo 'Error: NVM failed to load' >&2; exit 1; } && nvm install 22 && nvm alias default 22 && npm -v && npm install -g @getollie/cli@latest && ollie --version
+Agent 'ollie' does not declare an options_model; leftover kwargs are ignored
+Skipping image OS validation for hb__20ecf7bc183e618507ff5315c3bc263a: docker inspect returned 1
+Running command: export NVM_DIR="$HOME/.nvm" && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | env -u NODE_VERSION -u XDG_CONFIG_HOME NVM_DIR="$HOME/.nvm" bash && . "$NVM_DIR/nvm.sh" || true && command -v nvm &>/dev/null || { echo 'Error: NVM failed to load' >&2; exit 1; } && nvm install 22 && nvm alias default 22 && npm -v && npm install -g @getollie/cli@latest && ollie --version
+Command outputs captured
+Running command: mkdir -p /logs/agent
+Command outputs captured
+Running command: [ -f "$HOME/.nvm"/nvm.sh ] && . "$HOME/.nvm"/nvm.sh; cat /logs/agent/prompt.txt | ollie --ndjson --model gemini-3.1-flash-lite-sft-20260920-181429@3 --max-steps 100 --mode native --reasoning-effort auto 2>&1 | stdbuf -oL tee /logs/agent/ollie.jsonl
+Command outputs captured
+Running command: mkdir -p /logs/agent
+Command outputs captured
+Running command: [ -f "$HOME/.nvm"/nvm.sh ] && . "$HOME/.nvm"/nvm.sh; cat /logs/agent/prompt.txt | ollie --ndjson --model gemini-3.1-flash-lite-sft-20260920-181429@3 --max-steps 100 --mode native --reasoning-effort auto 2>&1 | stdbuf -oL tee /logs/agent/ollie.jsonl
+Collecting main service artifacts
+Agent 'ollie' does not declare an options_model; leftover kwargs are ignored
+Skipping image OS validation for hb__e602736c2fe8331590b9503c81eec829: docker inspect returned 1
+Running command: export NVM_DIR="$HOME/.nvm" && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | env -u NODE_VERSION -u XDG_CONFIG_HOME NVM_DIR="$HOME/.nvm" bash && . "$NVM_DIR/nvm.sh" || true && command -v nvm &>/dev/null || { echo 'Error: NVM failed to load' >&2; exit 1; } && nvm install 22 && nvm alias default 22 && npm -v && npm install -g @getollie/cli@latest && ollie --version
+Ollie exhausted its step budget; keeping the workspace as-is for evaluation (set fail_on_max_steps=true to fail instead)
+Collecting main service artifacts
+Command outputs captured
+Running command: mkdir -p /logs/agent
+Command outputs captured
+Running command: [ -f "$HOME/.nvm"/nvm.sh ] && . "$HOME/.nvm"/nvm.sh; cat /logs/agent/prompt.txt | ollie --ndjson --model gemini-3.1-flash-lite-sft-20260920-181429@3 --max-steps 100 --mode native --reasoning-effort auto 2>&1 | stdbuf -oL tee /logs/agent/ollie.jsonl
+Agent 'ollie' does not declare an options_model; leftover kwargs are ignored
+Skipping image OS validation for hb__fe3a016fe4fe147c8091d4cf068ed56b: docker inspect returned 1
+Running command: export NVM_DIR="$HOME/.nvm" && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | env -u NODE_VERSION -u XDG_CONFIG_HOME NVM_DIR="$HOME/.nvm" bash && . "$NVM_DIR/nvm.sh" || true && command -v nvm &>/dev/null || { echo 'Error: NVM failed to load' >&2; exit 1; } && nvm install 22 && nvm alias default 22 && npm -v && npm install -g @getollie/cli@latest && ollie --version
+Command outputs captured
+Running command: mkdir -p /logs/agent
+Command outputs captured
+Running command: [ -f "$HOME/.nvm"/nvm.sh ] && . "$HOME/.nvm"/nvm.sh; cat /logs/agent/prompt.txt | ollie --ndjson --model gemini-3.1-flash-lite-sft-20260920-181429@3 --max-steps 100 --mode native --reasoning-effort auto 2>&1 | stdbuf -oL tee /logs/agent/ollie.jsonl
+Collecting main service artifacts
+Collecting main service artifacts
+Agent 'ollie' does not declare an options_model; leftover kwargs are ignored
+Skipping image OS validation for hb__bfffb0d41c36bf375da8671f802f53d6: docker inspect returned 1
+Running command: export NVM_DIR="$HOME/.nvm" && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | env -u NODE_VERSION -u XDG_CONFIG_HOME NVM_DIR="$HOME/.nvm" bash && . "$NVM_DIR/nvm.sh" || true && command -v nvm &>/dev/null || { echo 'Error: NVM failed to load' >&2; exit 1; } && nvm install 22 && nvm alias default 22 && npm -v && npm install -g @getollie/cli@latest && ollie --version
+Not retrying trial because the maximum number of retries has been reached
+Agent 'ollie' does not declare an options_model; leftover kwargs are ignored
+Skipping image OS validation for hb__2ba02046af28bcea732fe8fdb7390b84: docker inspect returned 1
+Command outputs captured
+Ollie exhausted its step budget; keeping the workspace as-is for evaluation (set fail_on_max_steps=true to fail instead)
+Running command: export NVM_DIR="$HOME/.nvm" && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | env -u NODE_VERSION -u XDG_CONFIG_HOME NVM_DIR="$HOME/.nvm" bash && . "$NVM_DIR/nvm.sh" || true && command -v nvm &>/dev/null || { echo 'Error: NVM failed to load' >&2; exit 1; } && nvm install 22 && nvm alias default 22 && npm -v && npm install -g @getollie/cli@latest && ollie --version
+Collecting main service artifacts
+Running command: mkdir -p /logs/agent
+Command outputs captured
+Running command: [ -f "$HOME/.nvm"/nvm.sh ] && . "$HOME/.nvm"/nvm.sh; cat /logs/agent/prompt.txt | ollie --ndjson --model gemini-3.1-flash-lite-sft-20260920-181429@3 --max-steps 100 --mode native --reasoning-effort auto 2>&1 | stdbuf -oL tee /logs/agent/ollie.jsonl
+Collecting main service artifacts
+Agent 'ollie' does not declare an options_model; leftover kwargs are ignored
+Skipping image OS validation for hb__16695e1a28ff70d03c5e08b5e54e332b: docker inspect returned 1
+Running command: export NVM_DIR="$HOME/.nvm" && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | env -u NODE_VERSION -u XDG_CONFIG_HOME NVM_DIR="$HOME/.nvm" bash && . "$NVM_DIR/nvm.sh" || true && command -v nvm &>/dev/null || { echo 'Error: NVM failed to load' >&2; exit 1; } && nvm install 22 && nvm alias default 22 && npm -v && npm install -g @getollie/cli@latest && ollie --version
+Agent 'ollie' does not declare an options_model; leftover kwargs are ignored
+Skipping image OS validation for hb__6f164101dead3c0921cf02e67b7e54b8: docker inspect returned 1
+Running command: export NVM_DIR="$HOME/.nvm" && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | env -u NODE_VERSION -u XDG_CONFIG_HOME NVM_DIR="$HOME/.nvm" bash && . "$NVM_DIR/nvm.sh" || true && command -v nvm &>/dev/null || { echo 'Error: NVM failed to load' >&2; exit 1; } && nvm install 22 && nvm alias default 22 && npm -v && npm install -g @getollie/cli@latest && ollie --version
+Command outputs captured
+Running command: mkdir -p /logs/agent
+Command outputs captured
+Running command: [ -f "$HOME/.nvm"/nvm.sh ] && . "$HOME/.nvm"/nvm.sh; cat /logs/agent/prompt.txt | ollie --ndjson --model gemini-3.1-flash-lite-sft-20260920-181429@3 --max-steps 100 --mode native --reasoning-effort auto 2>&1 | stdbuf -oL tee /logs/agent/ollie.jsonl
+Command outputs captured
+Running command: mkdir -p /logs/agent
+Command outputs captured
+Running command: [ -f "$HOME/.nvm"/nvm.sh ] && . "$HOME/.nvm"/nvm.sh; cat /logs/agent/prompt.txt | ollie --ndjson --model gemini-3.1-flash-lite-sft-20260920-181429@3 --max-steps 100 --mode native --reasoning-effort auto 2>&1 | stdbuf -oL tee /logs/agent/ollie.jsonl
+Command outputs captured
+Running command: mkdir -p /logs/agent
+Command outputs captured
+Running command: [ -f "$HOME/.nvm"/nvm.sh ] && . "$HOME/.nvm"/nvm.sh; cat /logs/agent/prompt.txt | ollie --ndjson --model gemini-3.1-flash-lite-sft-20260920-181429@3 --max-steps 100 --mode native --reasoning-effort auto 2>&1 | stdbuf -oL tee /logs/agent/ollie.jsonl
+Ollie exhausted its step budget; keeping the workspace as-is for evaluation (set fail_on_max_steps=true to fail instead)
+Collecting main service artifacts
+Agent 'ollie' does not declare an options_model; leftover kwargs are ignored
+Skipping image OS validation for hb__eacf0bcd48cfc680ee9624dae407d223: docker inspect returned 1
+Running command: export NVM_DIR="$HOME/.nvm" && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | env -u NODE_VERSION -u XDG_CONFIG_HOME NVM_DIR="$HOME/.nvm" bash && . "$NVM_DIR/nvm.sh" || true && command -v nvm &>/dev/null || { echo 'Error: NVM failed to load' >&2; exit 1; } && nvm install 22 && nvm alias default 22 && npm -v && npm install -g @getollie/cli@latest && ollie --version
+Command outputs captured
+Running command: mkdir -p /logs/agent
+Command outputs captured
+Running command: [ -f "$HOME/.nvm"/nvm.sh ] && . "$HOME/.nvm"/nvm.sh; cat /logs/agent/prompt.txt | ollie --ndjson --model gemini-3.1-flash-lite-sft-20260920-181429@3 --max-steps 100 --mode native --reasoning-effort auto 2>&1 | stdbuf -oL tee /logs/agent/ollie.jsonl
+Collecting main service artifacts
+Agent 'ollie' does not declare an options_model; leftover kwargs are ignored
+Skipping image OS validation for hb__915e9ad630ff50d44e50d6c109a7467d: docker inspect returned 1
+Running command: export NVM_DIR="$HOME/.nvm" && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | env -u NODE_VERSION -u XDG_CONFIG_HOME NVM_DIR="$HOME/.nvm" bash && . "$NVM_DIR/nvm.sh" || true && command -v nvm &>/dev/null || { echo 'Error: NVM failed to load' >&2; exit 1; } && nvm install 22 && nvm alias default 22 && npm -v && npm install -g @getollie/cli@latest && ollie --version
+Command outputs captured
+Running command: mkdir -p /logs/agent
+Command outputs captured
+Running command: [ -f "$HOME/.nvm"/nvm.sh ] && . "$HOME/.nvm"/nvm.sh; cat /logs/agent/prompt.txt | ollie --ndjson --model gemini-3.1-flash-lite-sft-20260920-181429@3 --max-steps 100 --mode native --reasoning-effort auto 2>&1 | stdbuf -oL tee /logs/agent/ollie.jsonl
+Collecting main service artifacts
+Agent 'ollie' does not declare an options_model; leftover kwargs are ignored
+Skipping image OS validation for hb__db124c20ab7edeb7899a9076372d8d8a: docker inspect returned 1
+Running command: export NVM_DIR="$HOME/.nvm" && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | env -u NODE_VERSION -u XDG_CONFIG_HOME NVM_DIR="$HOME/.nvm" bash && . "$NVM_DIR/nvm.sh" || true && command -v nvm &>/dev/null || { echo 'Error: NVM failed to load' >&2; exit 1; } && nvm install 22 && nvm alias default 22 && npm -v && npm install -g @getollie/cli@latest && ollie --version
+Collecting main service artifacts
+Not retrying trial because the maximum number of retries has been reached
+Agent 'ollie' does not declare an options_model; leftover kwargs are ignored
+Skipping image OS validation for hb__37649396a678dfaccbd51b2a9fc6a782: docker inspect returned 1
+Command outputs captured
+Running command: export NVM_DIR="$HOME/.nvm" && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | env -u NODE_VERSION -u XDG_CONFIG_HOME NVM_DIR="$HOME/.nvm" bash && . "$NVM_DIR/nvm.sh" || true && command -v nvm &>/dev/null || { echo 'Error: NVM failed to load' >&2; exit 1; } && nvm install 22 && nvm alias default 22 && npm -v && npm install -g @getollie/cli@latest && ollie --version
+Running command: mkdir -p /logs/agent
+Command outputs captured
+Running command: [ -f "$HOME/.nvm"/nvm.sh ] && . "$HOME/.nvm"/nvm.sh; cat /logs/agent/prompt.txt | ollie --ndjson --model gemini-3.1-flash-lite-sft-20260920-181429@3 --max-steps 100 --mode native --reasoning-effort auto 2>&1 | stdbuf -oL tee /logs/agent/ollie.jsonl
+Collecting main service artifacts
+Collecting main service artifacts
+Command outputs captured
+Running command: mkdir -p /logs/agent
+Command outputs captured
+Running command: [ -f "$HOME/.nvm"/nvm.sh ] && . "$HOME/.nvm"/nvm.sh; cat /logs/agent/prompt.txt | ollie --ndjson --model gemini-3.1-flash-lite-sft-20260920-181429@3 --max-steps 100 --mode native --reasoning-effort auto 2>&1 | stdbuf -oL tee /logs/agent/ollie.jsonl
+Collecting main service artifacts
+Classified failed command as ApiRateLimitError (pattern: 'rate.?limit')
+Collecting main service artifacts
+Not retrying trial because the maximum number of retries has been reached
+Not retrying trial because the maximum number of retries has been reached
+Collecting main service artifacts
+Not retrying trial because the maximum number of retries has been reached
+Collecting main service artifacts
+Collecting main service artifacts
+Collecting main service artifacts
+Not retrying trial because the maximum number of retries has been reached
+Collecting main service artifacts
+Collecting main service artifacts
+Collecting main service artifacts
+Not retrying trial because the maximum number of retries has been reached
+Collecting main service artifacts
+Collecting main service artifacts
+Collecting main service artifacts
+Collecting main service artifacts

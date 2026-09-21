@@ -1,0 +1,469 @@
+{
+    "reportFormat": "CTRF",
+    "specVersion": "0.0.0",
+    "timestamp": "2026-09-21T04:26:38.850548+00:00",
+    "generatedBy": "pytest",
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "7.4.4"
+        },
+        "summary": {
+            "tests": 44,
+            "passed": 0,
+            "failed": 44,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1789964796568,
+            "stop": 1789964798850
+        },
+        "environment": {
+            "buildName": "Pytest JSON CTRF Report",
+            "buildNumber": "000",
+            "buildUrl": "https://ctrf.io"
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 2022,
+                "start": 1789964796594,
+                "stop": 1789964798616,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 20 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/changes.ex ==\nE         ** (RuntimeError) Must define at least one of the following functions in Vault.Ledger.Changes:\nE         \nE             def change(changeset, opts, context)\nE         \nE             def batch_change(changesets, opts, context)\nE         \nE             def atomic(changeset, opts, context)\nE         \nE         Perhaps you have a typo or have incorrectly defined one of the above functions?\nE         \nE             /home/user/vault/lib/vault/ledger/changes.ex:1: (file)\nE             (stdlib 6.2.2) erl_eval.erl:919: :erl_eval.do_apply/7\nE             (stdlib 6.2.2) erl_eval.erl:271: :erl_eval.exprs/6\nE             (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 20 files (.ex)\\n', stderr='\\n== Compilation ....exprs/6\\n    (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 6,
+                "start": 1789964798616,
+                "stop": 1789964798622,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 20 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/changes.ex ==\nE         ** (RuntimeError) Must define at least one of the following functions in Vault.Ledger.Changes:\nE         \nE             def change(changeset, opts, context)\nE         \nE             def batch_change(changesets, opts, context)\nE         \nE             def atomic(changeset, opts, context)\nE         \nE         Perhaps you have a typo or have incorrectly defined one of the above functions?\nE         \nE             /home/user/vault/lib/vault/ledger/changes.ex:1: (file)\nE             (stdlib 6.2.2) erl_eval.erl:919: :erl_eval.do_apply/7\nE             (stdlib 6.2.2) erl_eval.erl:271: :erl_eval.exprs/6\nE             (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 20 files (.ex)\\n', stderr='\\n== Compilation ....exprs/6\\n    (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 6,
+                "start": 1789964798622,
+                "stop": 1789964798628,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 20 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/changes.ex ==\nE         ** (RuntimeError) Must define at least one of the following functions in Vault.Ledger.Changes:\nE         \nE             def change(changeset, opts, context)\nE         \nE             def batch_change(changesets, opts, context)\nE         \nE             def atomic(changeset, opts, context)\nE         \nE         Perhaps you have a typo or have incorrectly defined one of the above functions?\nE         \nE             /home/user/vault/lib/vault/ledger/changes.ex:1: (file)\nE             (stdlib 6.2.2) erl_eval.erl:919: :erl_eval.do_apply/7\nE             (stdlib 6.2.2) erl_eval.erl:271: :erl_eval.exprs/6\nE             (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 20 files (.ex)\\n', stderr='\\n== Compilation ....exprs/6\\n    (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 6,
+                "start": 1789964798628,
+                "stop": 1789964798634,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 20 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/changes.ex ==\nE         ** (RuntimeError) Must define at least one of the following functions in Vault.Ledger.Changes:\nE         \nE             def change(changeset, opts, context)\nE         \nE             def batch_change(changesets, opts, context)\nE         \nE             def atomic(changeset, opts, context)\nE         \nE         Perhaps you have a typo or have incorrectly defined one of the above functions?\nE         \nE             /home/user/vault/lib/vault/ledger/changes.ex:1: (file)\nE             (stdlib 6.2.2) erl_eval.erl:919: :erl_eval.do_apply/7\nE             (stdlib 6.2.2) erl_eval.erl:271: :erl_eval.exprs/6\nE             (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 20 files (.ex)\\n', stderr='\\n== Compilation ....exprs/6\\n    (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 5,
+                "start": 1789964798634,
+                "stop": 1789964798639,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 20 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/changes.ex ==\nE         ** (RuntimeError) Must define at least one of the following functions in Vault.Ledger.Changes:\nE         \nE             def change(changeset, opts, context)\nE         \nE             def batch_change(changesets, opts, context)\nE         \nE             def atomic(changeset, opts, context)\nE         \nE         Perhaps you have a typo or have incorrectly defined one of the above functions?\nE         \nE             /home/user/vault/lib/vault/ledger/changes.ex:1: (file)\nE             (stdlib 6.2.2) erl_eval.erl:919: :erl_eval.do_apply/7\nE             (stdlib 6.2.2) erl_eval.erl:271: :erl_eval.exprs/6\nE             (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 20 files (.ex)\\n', stderr='\\n== Compilation ....exprs/6\\n    (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 5,
+                "start": 1789964798639,
+                "stop": 1789964798644,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 20 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/changes.ex ==\nE         ** (RuntimeError) Must define at least one of the following functions in Vault.Ledger.Changes:\nE         \nE             def change(changeset, opts, context)\nE         \nE             def batch_change(changesets, opts, context)\nE         \nE             def atomic(changeset, opts, context)\nE         \nE         Perhaps you have a typo or have incorrectly defined one of the above functions?\nE         \nE             /home/user/vault/lib/vault/ledger/changes.ex:1: (file)\nE             (stdlib 6.2.2) erl_eval.erl:919: :erl_eval.do_apply/7\nE             (stdlib 6.2.2) erl_eval.erl:271: :erl_eval.exprs/6\nE             (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 20 files (.ex)\\n', stderr='\\n== Compilation ....exprs/6\\n    (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 5,
+                "start": 1789964798644,
+                "stop": 1789964798649,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 20 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/changes.ex ==\nE         ** (RuntimeError) Must define at least one of the following functions in Vault.Ledger.Changes:\nE         \nE             def change(changeset, opts, context)\nE         \nE             def batch_change(changesets, opts, context)\nE         \nE             def atomic(changeset, opts, context)\nE         \nE         Perhaps you have a typo or have incorrectly defined one of the above functions?\nE         \nE             /home/user/vault/lib/vault/ledger/changes.ex:1: (file)\nE             (stdlib 6.2.2) erl_eval.erl:919: :erl_eval.do_apply/7\nE             (stdlib 6.2.2) erl_eval.erl:271: :erl_eval.exprs/6\nE             (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 20 files (.ex)\\n', stderr='\\n== Compilation ....exprs/6\\n    (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 6,
+                "start": 1789964798649,
+                "stop": 1789964798655,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 20 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/changes.ex ==\nE         ** (RuntimeError) Must define at least one of the following functions in Vault.Ledger.Changes:\nE         \nE             def change(changeset, opts, context)\nE         \nE             def batch_change(changesets, opts, context)\nE         \nE             def atomic(changeset, opts, context)\nE         \nE         Perhaps you have a typo or have incorrectly defined one of the above functions?\nE         \nE             /home/user/vault/lib/vault/ledger/changes.ex:1: (file)\nE             (stdlib 6.2.2) erl_eval.erl:919: :erl_eval.do_apply/7\nE             (stdlib 6.2.2) erl_eval.erl:271: :erl_eval.exprs/6\nE             (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 20 files (.ex)\\n', stderr='\\n== Compilation ....exprs/6\\n    (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 5,
+                "start": 1789964798655,
+                "stop": 1789964798660,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 20 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/changes.ex ==\nE         ** (RuntimeError) Must define at least one of the following functions in Vault.Ledger.Changes:\nE         \nE             def change(changeset, opts, context)\nE         \nE             def batch_change(changesets, opts, context)\nE         \nE             def atomic(changeset, opts, context)\nE         \nE         Perhaps you have a typo or have incorrectly defined one of the above functions?\nE         \nE             /home/user/vault/lib/vault/ledger/changes.ex:1: (file)\nE             (stdlib 6.2.2) erl_eval.erl:919: :erl_eval.do_apply/7\nE             (stdlib 6.2.2) erl_eval.erl:271: :erl_eval.exprs/6\nE             (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 20 files (.ex)\\n', stderr='\\n== Compilation ....exprs/6\\n    (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 5,
+                "start": 1789964798660,
+                "stop": 1789964798665,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 20 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/changes.ex ==\nE         ** (RuntimeError) Must define at least one of the following functions in Vault.Ledger.Changes:\nE         \nE             def change(changeset, opts, context)\nE         \nE             def batch_change(changesets, opts, context)\nE         \nE             def atomic(changeset, opts, context)\nE         \nE         Perhaps you have a typo or have incorrectly defined one of the above functions?\nE         \nE             /home/user/vault/lib/vault/ledger/changes.ex:1: (file)\nE             (stdlib 6.2.2) erl_eval.erl:919: :erl_eval.do_apply/7\nE             (stdlib 6.2.2) erl_eval.erl:271: :erl_eval.exprs/6\nE             (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 20 files (.ex)\\n', stderr='\\n== Compilation ....exprs/6\\n    (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 5,
+                "start": 1789964798665,
+                "stop": 1789964798670,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 20 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/changes.ex ==\nE         ** (RuntimeError) Must define at least one of the following functions in Vault.Ledger.Changes:\nE         \nE             def change(changeset, opts, context)\nE         \nE             def batch_change(changesets, opts, context)\nE         \nE             def atomic(changeset, opts, context)\nE         \nE         Perhaps you have a typo or have incorrectly defined one of the above functions?\nE         \nE             /home/user/vault/lib/vault/ledger/changes.ex:1: (file)\nE             (stdlib 6.2.2) erl_eval.erl:919: :erl_eval.do_apply/7\nE             (stdlib 6.2.2) erl_eval.erl:271: :erl_eval.exprs/6\nE             (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 20 files (.ex)\\n', stderr='\\n== Compilation ....exprs/6\\n    (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 5,
+                "start": 1789964798671,
+                "stop": 1789964798676,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 20 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/changes.ex ==\nE         ** (RuntimeError) Must define at least one of the following functions in Vault.Ledger.Changes:\nE         \nE             def change(changeset, opts, context)\nE         \nE             def batch_change(changesets, opts, context)\nE         \nE             def atomic(changeset, opts, context)\nE         \nE         Perhaps you have a typo or have incorrectly defined one of the above functions?\nE         \nE             /home/user/vault/lib/vault/ledger/changes.ex:1: (file)\nE             (stdlib 6.2.2) erl_eval.erl:919: :erl_eval.do_apply/7\nE             (stdlib 6.2.2) erl_eval.erl:271: :erl_eval.exprs/6\nE             (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 20 files (.ex)\\n', stderr='\\n== Compilation ....exprs/6\\n    (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 5,
+                "start": 1789964798676,
+                "stop": 1789964798681,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 20 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/changes.ex ==\nE         ** (RuntimeError) Must define at least one of the following functions in Vault.Ledger.Changes:\nE         \nE             def change(changeset, opts, context)\nE         \nE             def batch_change(changesets, opts, context)\nE         \nE             def atomic(changeset, opts, context)\nE         \nE         Perhaps you have a typo or have incorrectly defined one of the above functions?\nE         \nE             /home/user/vault/lib/vault/ledger/changes.ex:1: (file)\nE             (stdlib 6.2.2) erl_eval.erl:919: :erl_eval.do_apply/7\nE             (stdlib 6.2.2) erl_eval.erl:271: :erl_eval.exprs/6\nE             (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 20 files (.ex)\\n', stderr='\\n== Compilation ....exprs/6\\n    (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 5,
+                "start": 1789964798681,
+                "stop": 1789964798686,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 20 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/changes.ex ==\nE         ** (RuntimeError) Must define at least one of the following functions in Vault.Ledger.Changes:\nE         \nE             def change(changeset, opts, context)\nE         \nE             def batch_change(changesets, opts, context)\nE         \nE             def atomic(changeset, opts, context)\nE         \nE         Perhaps you have a typo or have incorrectly defined one of the above functions?\nE         \nE             /home/user/vault/lib/vault/ledger/changes.ex:1: (file)\nE             (stdlib 6.2.2) erl_eval.erl:919: :erl_eval.do_apply/7\nE             (stdlib 6.2.2) erl_eval.erl:271: :erl_eval.exprs/6\nE             (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 20 files (.ex)\\n', stderr='\\n== Compilation ....exprs/6\\n    (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 6,
+                "start": 1789964798686,
+                "stop": 1789964798692,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 20 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/changes.ex ==\nE         ** (RuntimeError) Must define at least one of the following functions in Vault.Ledger.Changes:\nE         \nE             def change(changeset, opts, context)\nE         \nE             def batch_change(changesets, opts, context)\nE         \nE             def atomic(changeset, opts, context)\nE         \nE         Perhaps you have a typo or have incorrectly defined one of the above functions?\nE         \nE             /home/user/vault/lib/vault/ledger/changes.ex:1: (file)\nE             (stdlib 6.2.2) erl_eval.erl:919: :erl_eval.do_apply/7\nE             (stdlib 6.2.2) erl_eval.erl:271: :erl_eval.exprs/6\nE             (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 20 files (.ex)\\n', stderr='\\n== Compilation ....exprs/6\\n    (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 5,
+                "start": 1789964798692,
+                "stop": 1789964798697,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 20 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/changes.ex ==\nE         ** (RuntimeError) Must define at least one of the following functions in Vault.Ledger.Changes:\nE         \nE             def change(changeset, opts, context)\nE         \nE             def batch_change(changesets, opts, context)\nE         \nE             def atomic(changeset, opts, context)\nE         \nE         Perhaps you have a typo or have incorrectly defined one of the above functions?\nE         \nE             /home/user/vault/lib/vault/ledger/changes.ex:1: (file)\nE             (stdlib 6.2.2) erl_eval.erl:919: :erl_eval.do_apply/7\nE             (stdlib 6.2.2) erl_eval.erl:271: :erl_eval.exprs/6\nE             (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 20 files (.ex)\\n', stderr='\\n== Compilation ....exprs/6\\n    (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 6,
+                "start": 1789964798697,
+                "stop": 1789964798703,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 20 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/changes.ex ==\nE         ** (RuntimeError) Must define at least one of the following functions in Vault.Ledger.Changes:\nE         \nE             def change(changeset, opts, context)\nE         \nE             def batch_change(changesets, opts, context)\nE         \nE             def atomic(changeset, opts, context)\nE         \nE         Perhaps you have a typo or have incorrectly defined one of the above functions?\nE         \nE             /home/user/vault/lib/vault/ledger/changes.ex:1: (file)\nE             (stdlib 6.2.2) erl_eval.erl:919: :erl_eval.do_apply/7\nE             (stdlib 6.2.2) erl_eval.erl:271: :erl_eval.exprs/6\nE             (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 20 files (.ex)\\n', stderr='\\n== Compilation ....exprs/6\\n    (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 5,
+                "start": 1789964798703,
+                "stop": 1789964798708,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 20 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/changes.ex ==\nE         ** (RuntimeError) Must define at least one of the following functions in Vault.Ledger.Changes:\nE         \nE             def change(changeset, opts, context)\nE         \nE             def batch_change(changesets, opts, context)\nE         \nE             def atomic(changeset, opts, context)\nE         \nE         Perhaps you have a typo or have incorrectly defined one of the above functions?\nE         \nE             /home/user/vault/lib/vault/ledger/changes.ex:1: (file)\nE             (stdlib 6.2.2) erl_eval.erl:919: :erl_eval.do_apply/7\nE             (stdlib 6.2.2) erl_eval.erl:271: :erl_eval.exprs/6\nE             (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 20 files (.ex)\\n', stderr='\\n== Compilation ....exprs/6\\n    (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 5,
+                "start": 1789964798708,
+                "stop": 1789964798713,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 20 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/changes.ex ==\nE         ** (RuntimeError) Must define at least one of the following functions in Vault.Ledger.Changes:\nE         \nE             def change(changeset, opts, context)\nE         \nE             def batch_change(changesets, opts, context)\nE         \nE             def atomic(changeset, opts, context)\nE         \nE         Perhaps you have a typo or have incorrectly defined one of the above functions?\nE         \nE             /home/user/vault/lib/vault/ledger/changes.ex:1: (file)\nE             (stdlib 6.2.2) erl_eval.erl:919: :erl_eval.do_apply/7\nE             (stdlib 6.2.2) erl_eval.erl:271: :erl_eval.exprs/6\nE             (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 20 files (.ex)\\n', stderr='\\n== Compilation ....exprs/6\\n    (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 5,
+                "start": 1789964798714,
+                "stop": 1789964798719,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 20 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/changes.ex ==\nE         ** (RuntimeError) Must define at least one of the following functions in Vault.Ledger.Changes:\nE         \nE             def change(changeset, opts, context)\nE         \nE             def batch_change(changesets, opts, context)\nE         \nE             def atomic(changeset, opts, context)\nE         \nE         Perhaps you have a typo or have incorrectly defined one of the above functions?\nE         \nE             /home/user/vault/lib/vault/ledger/changes.ex:1: (file)\nE             (stdlib 6.2.2) erl_eval.erl:919: :erl_eval.do_apply/7\nE             (stdlib 6.2.2) erl_eval.erl:271: :erl_eval.exprs/6\nE             (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 20 files (.ex)\\n', stderr='\\n== Compilation ....exprs/6\\n    (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 5,
+                "start": 1789964798719,
+                "stop": 1789964798724,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 20 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/changes.ex ==\nE         ** (RuntimeError) Must define at least one of the following functions in Vault.Ledger.Changes:\nE         \nE             def change(changeset, opts, context)\nE         \nE             def batch_change(changesets, opts, context)\nE         \nE             def atomic(changeset, opts, context)\nE         \nE         Perhaps you have a typo or have incorrectly defined one of the above functions?\nE         \nE             /home/user/vault/lib/vault/ledger/changes.ex:1: (file)\nE             (stdlib 6.2.2) erl_eval.erl:919: :erl_eval.do_apply/7\nE             (stdlib 6.2.2) erl_eval.erl:271: :erl_eval.exprs/6\nE             (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 20 files (.ex)\\n', stderr='\\n== Compilation ....exprs/6\\n    (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 5,
+                "start": 1789964798725,
+                "stop": 1789964798730,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 20 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/changes.ex ==\nE         ** (RuntimeError) Must define at least one of the following functions in Vault.Ledger.Changes:\nE         \nE             def change(changeset, opts, context)\nE         \nE             def batch_change(changesets, opts, context)\nE         \nE             def atomic(changeset, opts, context)\nE         \nE         Perhaps you have a typo or have incorrectly defined one of the above functions?\nE         \nE             /home/user/vault/lib/vault/ledger/changes.ex:1: (file)\nE             (stdlib 6.2.2) erl_eval.erl:919: :erl_eval.do_apply/7\nE             (stdlib 6.2.2) erl_eval.erl:271: :erl_eval.exprs/6\nE             (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 20 files (.ex)\\n', stderr='\\n== Compilation ....exprs/6\\n    (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 5,
+                "start": 1789964798730,
+                "stop": 1789964798735,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 20 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/changes.ex ==\nE         ** (RuntimeError) Must define at least one of the following functions in Vault.Ledger.Changes:\nE         \nE             def change(changeset, opts, context)\nE         \nE             def batch_change(changesets, opts, context)\nE         \nE             def atomic(changeset, opts, context)\nE         \nE         Perhaps you have a typo or have incorrectly defined one of the above functions?\nE         \nE             /home/user/vault/lib/vault/ledger/changes.ex:1: (file)\nE             (stdlib 6.2.2) erl_eval.erl:919: :erl_eval.do_apply/7\nE             (stdlib 6.2.2) erl_eval.erl:271: :erl_eval.exprs/6\nE             (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 20 files (.ex)\\n', stderr='\\n== Compilation ....exprs/6\\n    (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 5,
+                "start": 1789964798736,
+                "stop": 1789964798741,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 20 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/changes.ex ==\nE         ** (RuntimeError) Must define at least one of the following functions in Vault.Ledger.Changes:\nE         \nE             def change(changeset, opts, context)\nE         \nE             def batch_change(changesets, opts, context)\nE         \nE             def atomic(changeset, opts, context)\nE         \nE         Perhaps you have a typo or have incorrectly defined one of the above functions?\nE         \nE             /home/user/vault/lib/vault/ledger/changes.ex:1: (file)\nE             (stdlib 6.2.2) erl_eval.erl:919: :erl_eval.do_apply/7\nE             (stdlib 6.2.2) erl_eval.erl:271: :erl_eval.exprs/6\nE             (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 20 files (.ex)\\n', stderr='\\n== Compilation ....exprs/6\\n    (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 5,
+                "start": 1789964798741,
+                "stop": 1789964798746,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 20 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/changes.ex ==\nE         ** (RuntimeError) Must define at least one of the following functions in Vault.Ledger.Changes:\nE         \nE             def change(changeset, opts, context)\nE         \nE             def batch_change(changesets, opts, context)\nE         \nE             def atomic(changeset, opts, context)\nE         \nE         Perhaps you have a typo or have incorrectly defined one of the above functions?\nE         \nE             /home/user/vault/lib/vault/ledger/changes.ex:1: (file)\nE             (stdlib 6.2.2) erl_eval.erl:919: :erl_eval.do_apply/7\nE             (stdlib 6.2.2) erl_eval.erl:271: :erl_eval.exprs/6\nE             (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 20 files (.ex)\\n', stderr='\\n== Compilation ....exprs/6\\n    (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 5,
+                "start": 1789964798747,
+                "stop": 1789964798752,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 20 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/changes.ex ==\nE         ** (RuntimeError) Must define at least one of the following functions in Vault.Ledger.Changes:\nE         \nE             def change(changeset, opts, context)\nE         \nE             def batch_change(changesets, opts, context)\nE         \nE             def atomic(changeset, opts, context)\nE         \nE         Perhaps you have a typo or have incorrectly defined one of the above functions?\nE         \nE             /home/user/vault/lib/vault/ledger/changes.ex:1: (file)\nE             (stdlib 6.2.2) erl_eval.erl:919: :erl_eval.do_apply/7\nE             (stdlib 6.2.2) erl_eval.erl:271: :erl_eval.exprs/6\nE             (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 20 files (.ex)\\n', stderr='\\n== Compilation ....exprs/6\\n    (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 6,
+                "start": 1789964798752,
+                "stop": 1789964798758,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 20 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/changes.ex ==\nE         ** (RuntimeError) Must define at least one of the following functions in Vault.Ledger.Changes:\nE         \nE             def change(changeset, opts, context)\nE         \nE             def batch_change(changesets, opts, context)\nE         \nE             def atomic(changeset, opts, context)\nE         \nE         Perhaps you have a typo or have incorrectly defined one of the above functions?\nE         \nE             /home/user/vault/lib/vault/ledger/changes.ex:1: (file)\nE             (stdlib 6.2.2) erl_eval.erl:919: :erl_eval.do_apply/7\nE             (stdlib 6.2.2) erl_eval.erl:271: :erl_eval.exprs/6\nE             (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 20 files (.ex)\\n', stderr='\\n== Compilation ....exprs/6\\n    (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 5,
+                "start": 1789964798758,
+                "stop": 1789964798763,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 20 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/changes.ex ==\nE         ** (RuntimeError) Must define at least one of the following functions in Vault.Ledger.Changes:\nE         \nE             def change(changeset, opts, context)\nE         \nE             def batch_change(changesets, opts, context)\nE         \nE             def atomic(changeset, opts, context)\nE         \nE         Perhaps you have a typo or have incorrectly defined one of the above functions?\nE         \nE             /home/user/vault/lib/vault/ledger/changes.ex:1: (file)\nE             (stdlib 6.2.2) erl_eval.erl:919: :erl_eval.do_apply/7\nE             (stdlib 6.2.2) erl_eval.erl:271: :erl_eval.exprs/6\nE             (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 20 files (.ex)\\n', stderr='\\n== Compilation ....exprs/6\\n    (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 5,
+                "start": 1789964798763,
+                "stop": 1789964798768,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 20 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/changes.ex ==\nE         ** (RuntimeError) Must define at least one of the following functions in Vault.Ledger.Changes:\nE         \nE             def change(changeset, opts, context)\nE         \nE             def batch_change(changesets, opts, context)\nE         \nE             def atomic(changeset, opts, context)\nE         \nE         Perhaps you have a typo or have incorrectly defined one of the above functions?\nE         \nE             /home/user/vault/lib/vault/ledger/changes.ex:1: (file)\nE             (stdlib 6.2.2) erl_eval.erl:919: :erl_eval.do_apply/7\nE             (stdlib 6.2.2) erl_eval.erl:271: :erl_eval.exprs/6\nE             (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 20 files (.ex)\\n', stderr='\\n== Compilation ....exprs/6\\n    (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 5,
+                "start": 1789964798768,
+                "stop": 1789964798773,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 20 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/changes.ex ==\nE         ** (RuntimeError) Must define at least one of the following functions in Vault.Ledger.Changes:\nE         \nE             def change(changeset, opts, context)\nE         \nE             def batch_change(changesets, opts, context)\nE         \nE             def atomic(changeset, opts, context)\nE         \nE         Perhaps you have a typo or have incorrectly defined one of the above functions?\nE         \nE             /home/user/vault/lib/vault/ledger/changes.ex:1: (file)\nE             (stdlib 6.2.2) erl_eval.erl:919: :erl_eval.do_apply/7\nE             (stdlib 6.2.2) erl_eval.erl:271: :erl_eval.exprs/6\nE             (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 20 files (.ex)\\n', stderr='\\n== Compilation ....exprs/6\\n    (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 5,
+                "start": 1789964798773,
+                "stop": 1789964798778,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 20 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/changes.ex ==\nE         ** (RuntimeError) Must define at least one of the following functions in Vault.Ledger.Changes:\nE         \nE             def change(changeset, opts, context)\nE         \nE             def batch_change(changesets, opts, context)\nE         \nE             def atomic(changeset, opts, context)\nE         \nE         Perhaps you have a typo or have incorrectly defined one of the above functions?\nE         \nE             /home/user/vault/lib/vault/ledger/changes.ex:1: (file)\nE             (stdlib 6.2.2) erl_eval.erl:919: :erl_eval.do_apply/7\nE             (stdlib 6.2.2) erl_eval.erl:271: :erl_eval.exprs/6\nE             (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 20 files (.ex)\\n', stderr='\\n== Compilation ....exprs/6\\n    (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 5,
+                "start": 1789964798779,
+                "stop": 1789964798784,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 20 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/changes.ex ==\nE         ** (RuntimeError) Must define at least one of the following functions in Vault.Ledger.Changes:\nE         \nE             def change(changeset, opts, context)\nE         \nE             def batch_change(changesets, opts, context)\nE         \nE             def atomic(changeset, opts, context)\nE         \nE         Perhaps you have a typo or have incorrectly defined one of the above functions?\nE         \nE             /home/user/vault/lib/vault/ledger/changes.ex:1: (file)\nE             (stdlib 6.2.2) erl_eval.erl:919: :erl_eval.do_apply/7\nE             (stdlib 6.2.2) erl_eval.erl:271: :erl_eval.exprs/6\nE             (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 20 files (.ex)\\n', stderr='\\n== Compilation ....exprs/6\\n    (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 5,
+                "start": 1789964798784,
+                "stop": 1789964798789,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 20 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/changes.ex ==\nE         ** (RuntimeError) Must define at least one of the following functions in Vault.Ledger.Changes:\nE         \nE             def change(changeset, opts, context)\nE         \nE             def batch_change(changesets, opts, context)\nE         \nE             def atomic(changeset, opts, context)\nE         \nE         Perhaps you have a typo or have incorrectly defined one of the above functions?\nE         \nE             /home/user/vault/lib/vault/ledger/changes.ex:1: (file)\nE             (stdlib 6.2.2) erl_eval.erl:919: :erl_eval.do_apply/7\nE             (stdlib 6.2.2) erl_eval.erl:271: :erl_eval.exprs/6\nE             (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 20 files (.ex)\\n', stderr='\\n== Compilation ....exprs/6\\n    (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 5,
+                "start": 1789964798789,
+                "stop": 1789964798794,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 20 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/changes.ex ==\nE         ** (RuntimeError) Must define at least one of the following functions in Vault.Ledger.Changes:\nE         \nE             def change(changeset, opts, context)\nE         \nE             def batch_change(changesets, opts, context)\nE         \nE             def atomic(changeset, opts, context)\nE         \nE         Perhaps you have a typo or have incorrectly defined one of the above functions?\nE         \nE             /home/user/vault/lib/vault/ledger/changes.ex:1: (file)\nE             (stdlib 6.2.2) erl_eval.erl:919: :erl_eval.do_apply/7\nE             (stdlib 6.2.2) erl_eval.erl:271: :erl_eval.exprs/6\nE             (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 20 files (.ex)\\n', stderr='\\n== Compilation ....exprs/6\\n    (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 5,
+                "start": 1789964798794,
+                "stop": 1789964798799,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 20 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/changes.ex ==\nE         ** (RuntimeError) Must define at least one of the following functions in Vault.Ledger.Changes:\nE         \nE             def change(changeset, opts, context)\nE         \nE             def batch_change(changesets, opts, context)\nE         \nE             def atomic(changeset, opts, context)\nE         \nE         Perhaps you have a typo or have incorrectly defined one of the above functions?\nE         \nE             /home/user/vault/lib/vault/ledger/changes.ex:1: (file)\nE             (stdlib 6.2.2) erl_eval.erl:919: :erl_eval.do_apply/7\nE             (stdlib 6.2.2) erl_eval.erl:271: :erl_eval.exprs/6\nE             (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 20 files (.ex)\\n', stderr='\\n== Compilation ....exprs/6\\n    (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 5,
+                "start": 1789964798800,
+                "stop": 1789964798805,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 20 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/changes.ex ==\nE         ** (RuntimeError) Must define at least one of the following functions in Vault.Ledger.Changes:\nE         \nE             def change(changeset, opts, context)\nE         \nE             def batch_change(changesets, opts, context)\nE         \nE             def atomic(changeset, opts, context)\nE         \nE         Perhaps you have a typo or have incorrectly defined one of the above functions?\nE         \nE             /home/user/vault/lib/vault/ledger/changes.ex:1: (file)\nE             (stdlib 6.2.2) erl_eval.erl:919: :erl_eval.do_apply/7\nE             (stdlib 6.2.2) erl_eval.erl:271: :erl_eval.exprs/6\nE             (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 20 files (.ex)\\n', stderr='\\n== Compilation ....exprs/6\\n    (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 5,
+                "start": 1789964798805,
+                "stop": 1789964798810,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 20 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/changes.ex ==\nE         ** (RuntimeError) Must define at least one of the following functions in Vault.Ledger.Changes:\nE         \nE             def change(changeset, opts, context)\nE         \nE             def batch_change(changesets, opts, context)\nE         \nE             def atomic(changeset, opts, context)\nE         \nE         Perhaps you have a typo or have incorrectly defined one of the above functions?\nE         \nE             /home/user/vault/lib/vault/ledger/changes.ex:1: (file)\nE             (stdlib 6.2.2) erl_eval.erl:919: :erl_eval.do_apply/7\nE             (stdlib 6.2.2) erl_eval.erl:271: :erl_eval.exprs/6\nE             (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 20 files (.ex)\\n', stderr='\\n== Compilation ....exprs/6\\n    (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 6,
+                "start": 1789964798810,
+                "stop": 1789964798816,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 20 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/changes.ex ==\nE         ** (RuntimeError) Must define at least one of the following functions in Vault.Ledger.Changes:\nE         \nE             def change(changeset, opts, context)\nE         \nE             def batch_change(changesets, opts, context)\nE         \nE             def atomic(changeset, opts, context)\nE         \nE         Perhaps you have a typo or have incorrectly defined one of the above functions?\nE         \nE             /home/user/vault/lib/vault/ledger/changes.ex:1: (file)\nE             (stdlib 6.2.2) erl_eval.erl:919: :erl_eval.do_apply/7\nE             (stdlib 6.2.2) erl_eval.erl:271: :erl_eval.exprs/6\nE             (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 20 files (.ex)\\n', stderr='\\n== Compilation ....exprs/6\\n    (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 5,
+                "start": 1789964798816,
+                "stop": 1789964798821,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 20 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/changes.ex ==\nE         ** (RuntimeError) Must define at least one of the following functions in Vault.Ledger.Changes:\nE         \nE             def change(changeset, opts, context)\nE         \nE             def batch_change(changesets, opts, context)\nE         \nE             def atomic(changeset, opts, context)\nE         \nE         Perhaps you have a typo or have incorrectly defined one of the above functions?\nE         \nE             /home/user/vault/lib/vault/ledger/changes.ex:1: (file)\nE             (stdlib 6.2.2) erl_eval.erl:919: :erl_eval.do_apply/7\nE             (stdlib 6.2.2) erl_eval.erl:271: :erl_eval.exprs/6\nE             (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 20 files (.ex)\\n', stderr='\\n== Compilation ....exprs/6\\n    (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 5,
+                "start": 1789964798822,
+                "stop": 1789964798827,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 20 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/changes.ex ==\nE         ** (RuntimeError) Must define at least one of the following functions in Vault.Ledger.Changes:\nE         \nE             def change(changeset, opts, context)\nE         \nE             def batch_change(changesets, opts, context)\nE         \nE             def atomic(changeset, opts, context)\nE         \nE         Perhaps you have a typo or have incorrectly defined one of the above functions?\nE         \nE             /home/user/vault/lib/vault/ledger/changes.ex:1: (file)\nE             (stdlib 6.2.2) erl_eval.erl:919: :erl_eval.do_apply/7\nE             (stdlib 6.2.2) erl_eval.erl:271: :erl_eval.exprs/6\nE             (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 20 files (.ex)\\n', stderr='\\n== Compilation ....exprs/6\\n    (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 5,
+                "start": 1789964798827,
+                "stop": 1789964798832,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 20 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/changes.ex ==\nE         ** (RuntimeError) Must define at least one of the following functions in Vault.Ledger.Changes:\nE         \nE             def change(changeset, opts, context)\nE         \nE             def batch_change(changesets, opts, context)\nE         \nE             def atomic(changeset, opts, context)\nE         \nE         Perhaps you have a typo or have incorrectly defined one of the above functions?\nE         \nE             /home/user/vault/lib/vault/ledger/changes.ex:1: (file)\nE             (stdlib 6.2.2) erl_eval.erl:919: :erl_eval.do_apply/7\nE             (stdlib 6.2.2) erl_eval.erl:271: :erl_eval.exprs/6\nE             (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 20 files (.ex)\\n', stderr='\\n== Compilation ....exprs/6\\n    (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 5,
+                "start": 1789964798833,
+                "stop": 1789964798838,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 20 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/changes.ex ==\nE         ** (RuntimeError) Must define at least one of the following functions in Vault.Ledger.Changes:\nE         \nE             def change(changeset, opts, context)\nE         \nE             def batch_change(changesets, opts, context)\nE         \nE             def atomic(changeset, opts, context)\nE         \nE         Perhaps you have a typo or have incorrectly defined one of the above functions?\nE         \nE             /home/user/vault/lib/vault/ledger/changes.ex:1: (file)\nE             (stdlib 6.2.2) erl_eval.erl:919: :erl_eval.do_apply/7\nE             (stdlib 6.2.2) erl_eval.erl:271: :erl_eval.exprs/6\nE             (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 20 files (.ex)\\n', stderr='\\n== Compilation ....exprs/6\\n    (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 6,
+                "start": 1789964798838,
+                "stop": 1789964798844,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 20 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/changes.ex ==\nE         ** (RuntimeError) Must define at least one of the following functions in Vault.Ledger.Changes:\nE         \nE             def change(changeset, opts, context)\nE         \nE             def batch_change(changesets, opts, context)\nE         \nE             def atomic(changeset, opts, context)\nE         \nE         Perhaps you have a typo or have incorrectly defined one of the above functions?\nE         \nE             /home/user/vault/lib/vault/ledger/changes.ex:1: (file)\nE             (stdlib 6.2.2) erl_eval.erl:919: :erl_eval.do_apply/7\nE             (stdlib 6.2.2) erl_eval.erl:271: :erl_eval.exprs/6\nE             (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 20 files (.ex)\\n', stderr='\\n== Compilation ....exprs/6\\n    (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_scenario",
+                "status": "failed",
+                "duration": 6,
+                "start": 1789964798844,
+                "stop": 1789964798850,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def suite_results():\n        \"\"\"Compile the project, run the ExUnit contract suite, and parse its output.\"\"\"\n        compiled = _run([\"mix\", \"compile\"])\n>       assert compiled.returncode == 0, (\n            \"`mix compile` failed in \"\n            f\"{PROJECT_DIR}:\\nSTDOUT:\\n{compiled.stdout}\\nSTDERR:\\n{compiled.stderr}\"\n        )\nE       AssertionError: `mix compile` failed in /home/user/vault:\nE         STDOUT:\nE         Compiling 20 files (.ex)\nE         \nE         STDERR:\nE         \nE         == Compilation error in file lib/vault/ledger/changes.ex ==\nE         ** (RuntimeError) Must define at least one of the following functions in Vault.Ledger.Changes:\nE         \nE             def change(changeset, opts, context)\nE         \nE             def batch_change(changesets, opts, context)\nE         \nE             def atomic(changeset, opts, context)\nE         \nE         Perhaps you have a typo or have incorrectly defined one of the above functions?\nE         \nE             /home/user/vault/lib/vault/ledger/changes.ex:1: (file)\nE             (stdlib 6.2.2) erl_eval.erl:919: :erl_eval.do_apply/7\nE             (stdlib 6.2.2) erl_eval.erl:271: :erl_eval.exprs/6\nE             (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['mix', 'compile'], returncode=1, stdout='Compiling 20 files (.ex)\\n', stderr='\\n== Compilation ....exprs/6\\n    (ash 3.33.6) /home/user/vault/lib/vault/ledger/changes.ex:1: Ash.Resource.Change.__before_compile__/1\\n').returncode\n\ntests/test_final_state.py:1461: AssertionError"
+            }
+        ]
+    }
+}

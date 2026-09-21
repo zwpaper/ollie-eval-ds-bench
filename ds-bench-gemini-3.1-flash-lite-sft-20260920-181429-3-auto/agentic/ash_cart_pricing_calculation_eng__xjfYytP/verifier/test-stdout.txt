@@ -1,0 +1,791 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0
+rootdir: /tests
+plugins: json-ctrf-0.5.3
+collected 26 items
+
+tests/test_final_state.py FFFFFFFFFFFFFFFFFFFFFFFFFF                     [100%]
+
+=================================== FAILURES ===================================
+_____________________________ test_t01_line_totals _____________________________
+
+suite_run = {'output': '\n', 'results': {}}
+
+    def test_t01_line_totals(suite_run):
+>       _check(suite_run, "T01")
+
+tests/test_final_state.py:799: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': '\n', 'results': {}}, scenario = 'T01'
+
+    def _check(suite, scenario: str):
+        results = suite["results"]
+        matches = [
+            record
+            for name, record in results.items()
+            if name.startswith(f"test {scenario} ")
+        ]
+        if not matches:
+            tail = suite["output"][-6000:]
+>           raise AssertionError(
+                f"Scenario {scenario} did not run. The project or the verification suite failed "
+                f"to compile or crashed.\n--- mix test output (tail) ---\n{tail}"
+            )
+E           AssertionError: Scenario T01 did not run. The project or the verification suite failed to compile or crashed.
+E           --- mix test output (tail) ---
+
+tests/test_final_state.py:786: AssertionError
+_____________________________ test_t02_tier_table ______________________________
+
+suite_run = {'output': '\n', 'results': {}}
+
+    def test_t02_tier_table(suite_run):
+>       _check(suite_run, "T02")
+
+tests/test_final_state.py:803: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': '\n', 'results': {}}, scenario = 'T02'
+
+    def _check(suite, scenario: str):
+        results = suite["results"]
+        matches = [
+            record
+            for name, record in results.items()
+            if name.startswith(f"test {scenario} ")
+        ]
+        if not matches:
+            tail = suite["output"][-6000:]
+>           raise AssertionError(
+                f"Scenario {scenario} did not run. The project or the verification suite failed "
+                f"to compile or crashed.\n--- mix test output (tail) ---\n{tail}"
+            )
+E           AssertionError: Scenario T02 did not run. The project or the verification suite failed to compile or crashed.
+E           --- mix test output (tail) ---
+
+tests/test_final_state.py:786: AssertionError
+_______________ test_t03_filter_and_sort_on_derived_item_fields ________________
+
+suite_run = {'output': '\n', 'results': {}}
+
+    def test_t03_filter_and_sort_on_derived_item_fields(suite_run):
+>       _check(suite_run, "T03")
+
+tests/test_final_state.py:807: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': '\n', 'results': {}}, scenario = 'T03'
+
+    def _check(suite, scenario: str):
+        results = suite["results"]
+        matches = [
+            record
+            for name, record in results.items()
+            if name.startswith(f"test {scenario} ")
+        ]
+        if not matches:
+            tail = suite["output"][-6000:]
+>           raise AssertionError(
+                f"Scenario {scenario} did not run. The project or the verification suite failed "
+                f"to compile or crashed.\n--- mix test output (tail) ---\n{tail}"
+            )
+E           AssertionError: Scenario T03 did not run. The project or the verification suite failed to compile or crashed.
+E           --- mix test output (tail) ---
+
+tests/test_final_state.py:786: AssertionError
+_______________________ test_t04_composed_line_discount ________________________
+
+suite_run = {'output': '\n', 'results': {}}
+
+    def test_t04_composed_line_discount(suite_run):
+>       _check(suite_run, "T04")
+
+tests/test_final_state.py:811: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': '\n', 'results': {}}, scenario = 'T04'
+
+    def _check(suite, scenario: str):
+        results = suite["results"]
+        matches = [
+            record
+            for name, record in results.items()
+            if name.startswith(f"test {scenario} ")
+        ]
+        if not matches:
+            tail = suite["output"][-6000:]
+>           raise AssertionError(
+                f"Scenario {scenario} did not run. The project or the verification suite failed "
+                f"to compile or crashed.\n--- mix test output (tail) ---\n{tail}"
+            )
+E           AssertionError: Scenario T04 did not run. The project or the verification suite failed to compile or crashed.
+E           --- mix test output (tail) ---
+
+tests/test_final_state.py:786: AssertionError
+________________________ test_t05_item_count_aggregate _________________________
+
+suite_run = {'output': '\n', 'results': {}}
+
+    def test_t05_item_count_aggregate(suite_run):
+>       _check(suite_run, "T05")
+
+tests/test_final_state.py:815: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': '\n', 'results': {}}, scenario = 'T05'
+
+    def _check(suite, scenario: str):
+        results = suite["results"]
+        matches = [
+            record
+            for name, record in results.items()
+            if name.startswith(f"test {scenario} ")
+        ]
+        if not matches:
+            tail = suite["output"][-6000:]
+>           raise AssertionError(
+                f"Scenario {scenario} did not run. The project or the verification suite failed "
+                f"to compile or crashed.\n--- mix test output (tail) ---\n{tail}"
+            )
+E           AssertionError: Scenario T05 did not run. The project or the verification suite failed to compile or crashed.
+E           --- mix test output (tail) ---
+
+tests/test_final_state.py:786: AssertionError
+_____________________________ test_t06_quote_shape _____________________________
+
+suite_run = {'output': '\n', 'results': {}}
+
+    def test_t06_quote_shape(suite_run):
+>       _check(suite_run, "T06")
+
+tests/test_final_state.py:819: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': '\n', 'results': {}}, scenario = 'T06'
+
+    def _check(suite, scenario: str):
+        results = suite["results"]
+        matches = [
+            record
+            for name, record in results.items()
+            if name.startswith(f"test {scenario} ")
+        ]
+        if not matches:
+            tail = suite["output"][-6000:]
+>           raise AssertionError(
+                f"Scenario {scenario} did not run. The project or the verification suite failed "
+                f"to compile or crashed.\n--- mix test output (tail) ---\n{tail}"
+            )
+E           AssertionError: Scenario T06 did not run. The project or the verification suite failed to compile or crashed.
+E           --- mix test output (tail) ---
+
+tests/test_final_state.py:786: AssertionError
+______________________ test_t07_no_coupon_zero_tax_region ______________________
+
+suite_run = {'output': '\n', 'results': {}}
+
+    def test_t07_no_coupon_zero_tax_region(suite_run):
+>       _check(suite_run, "T07")
+
+tests/test_final_state.py:823: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': '\n', 'results': {}}, scenario = 'T07'
+
+    def _check(suite, scenario: str):
+        results = suite["results"]
+        matches = [
+            record
+            for name, record in results.items()
+            if name.startswith(f"test {scenario} ")
+        ]
+        if not matches:
+            tail = suite["output"][-6000:]
+>           raise AssertionError(
+                f"Scenario {scenario} did not run. The project or the verification suite failed "
+                f"to compile or crashed.\n--- mix test output (tail) ---\n{tail}"
+            )
+E           AssertionError: Scenario T07 did not run. The project or the verification suite failed to compile or crashed.
+E           --- mix test output (tail) ---
+
+tests/test_final_state.py:786: AssertionError
+_____________________________ test_t08_mixed_tiers _____________________________
+
+suite_run = {'output': '\n', 'results': {}}
+
+    def test_t08_mixed_tiers(suite_run):
+>       _check(suite_run, "T08")
+
+tests/test_final_state.py:827: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': '\n', 'results': {}}, scenario = 'T08'
+
+    def _check(suite, scenario: str):
+        results = suite["results"]
+        matches = [
+            record
+            for name, record in results.items()
+            if name.startswith(f"test {scenario} ")
+        ]
+        if not matches:
+            tail = suite["output"][-6000:]
+>           raise AssertionError(
+                f"Scenario {scenario} did not run. The project or the verification suite failed "
+                f"to compile or crashed.\n--- mix test output (tail) ---\n{tail}"
+            )
+E           AssertionError: Scenario T08 did not run. The project or the verification suite failed to compile or crashed.
+E           --- mix test output (tail) ---
+
+tests/test_final_state.py:786: AssertionError
+___________________________ test_t09_nil_coupon_code ___________________________
+
+suite_run = {'output': '\n', 'results': {}}
+
+    def test_t09_nil_coupon_code(suite_run):
+>       _check(suite_run, "T09")
+
+tests/test_final_state.py:831: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': '\n', 'results': {}}, scenario = 'T09'
+
+    def _check(suite, scenario: str):
+        results = suite["results"]
+        matches = [
+            record
+            for name, record in results.items()
+            if name.startswith(f"test {scenario} ")
+        ]
+        if not matches:
+            tail = suite["output"][-6000:]
+>           raise AssertionError(
+                f"Scenario {scenario} did not run. The project or the verification suite failed "
+                f"to compile or crashed.\n--- mix test output (tail) ---\n{tail}"
+            )
+E           AssertionError: Scenario T09 did not run. The project or the verification suite failed to compile or crashed.
+E           --- mix test output (tail) ---
+
+tests/test_final_state.py:786: AssertionError
+_________________________ test_t10_unknown_coupon_code _________________________
+
+suite_run = {'output': '\n', 'results': {}}
+
+    def test_t10_unknown_coupon_code(suite_run):
+>       _check(suite_run, "T10")
+
+tests/test_final_state.py:835: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': '\n', 'results': {}}, scenario = 'T10'
+
+    def _check(suite, scenario: str):
+        results = suite["results"]
+        matches = [
+            record
+            for name, record in results.items()
+            if name.startswith(f"test {scenario} ")
+        ]
+        if not matches:
+            tail = suite["output"][-6000:]
+>           raise AssertionError(
+                f"Scenario {scenario} did not run. The project or the verification suite failed "
+                f"to compile or crashed.\n--- mix test output (tail) ---\n{tail}"
+            )
+E           AssertionError: Scenario T10 did not run. The project or the verification suite failed to compile or crashed.
+E           --- mix test output (tail) ---
+
+tests/test_final_state.py:786: AssertionError
+________________________ test_t11_window_start_boundary ________________________
+
+suite_run = {'output': '\n', 'results': {}}
+
+    def test_t11_window_start_boundary(suite_run):
+>       _check(suite_run, "T11")
+
+tests/test_final_state.py:839: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': '\n', 'results': {}}, scenario = 'T11'
+
+    def _check(suite, scenario: str):
+        results = suite["results"]
+        matches = [
+            record
+            for name, record in results.items()
+            if name.startswith(f"test {scenario} ")
+        ]
+        if not matches:
+            tail = suite["output"][-6000:]
+>           raise AssertionError(
+                f"Scenario {scenario} did not run. The project or the verification suite failed "
+                f"to compile or crashed.\n--- mix test output (tail) ---\n{tail}"
+            )
+E           AssertionError: Scenario T11 did not run. The project or the verification suite failed to compile or crashed.
+E           --- mix test output (tail) ---
+
+tests/test_final_state.py:786: AssertionError
+_________________________ test_t12_window_end_boundary _________________________
+
+suite_run = {'output': '\n', 'results': {}}
+
+    def test_t12_window_end_boundary(suite_run):
+>       _check(suite_run, "T12")
+
+tests/test_final_state.py:843: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': '\n', 'results': {}}, scenario = 'T12'
+
+    def _check(suite, scenario: str):
+        results = suite["results"]
+        matches = [
+            record
+            for name, record in results.items()
+            if name.startswith(f"test {scenario} ")
+        ]
+        if not matches:
+            tail = suite["output"][-6000:]
+>           raise AssertionError(
+                f"Scenario {scenario} did not run. The project or the verification suite failed "
+                f"to compile or crashed.\n--- mix test output (tail) ---\n{tail}"
+            )
+E           AssertionError: Scenario T12 did not run. The project or the verification suite failed to compile or crashed.
+E           --- mix test output (tail) ---
+
+tests/test_final_state.py:786: AssertionError
+___________________________ test_t13_redemption_cap ____________________________
+
+suite_run = {'output': '\n', 'results': {}}
+
+    def test_t13_redemption_cap(suite_run):
+>       _check(suite_run, "T13")
+
+tests/test_final_state.py:847: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': '\n', 'results': {}}, scenario = 'T13'
+
+    def _check(suite, scenario: str):
+        results = suite["results"]
+        matches = [
+            record
+            for name, record in results.items()
+            if name.startswith(f"test {scenario} ")
+        ]
+        if not matches:
+            tail = suite["output"][-6000:]
+>           raise AssertionError(
+                f"Scenario {scenario} did not run. The project or the verification suite failed "
+                f"to compile or crashed.\n--- mix test output (tail) ---\n{tail}"
+            )
+E           AssertionError: Scenario T13 did not run. The project or the verification suite failed to compile or crashed.
+E           --- mix test output (tail) ---
+
+tests/test_final_state.py:786: AssertionError
+__________________________ test_t14_minimum_subtotal ___________________________
+
+suite_run = {'output': '\n', 'results': {}}
+
+    def test_t14_minimum_subtotal(suite_run):
+>       _check(suite_run, "T14")
+
+tests/test_final_state.py:851: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': '\n', 'results': {}}, scenario = 'T14'
+
+    def _check(suite, scenario: str):
+        results = suite["results"]
+        matches = [
+            record
+            for name, record in results.items()
+            if name.startswith(f"test {scenario} ")
+        ]
+        if not matches:
+            tail = suite["output"][-6000:]
+>           raise AssertionError(
+                f"Scenario {scenario} did not run. The project or the verification suite failed "
+                f"to compile or crashed.\n--- mix test output (tail) ---\n{tail}"
+            )
+E           AssertionError: Scenario T14 did not run. The project or the verification suite failed to compile or crashed.
+E           --- mix test output (tail) ---
+
+tests/test_final_state.py:786: AssertionError
+__________________ test_t15_coupon_discount_rounding_and_cap ___________________
+
+suite_run = {'output': '\n', 'results': {}}
+
+    def test_t15_coupon_discount_rounding_and_cap(suite_run):
+>       _check(suite_run, "T15")
+
+tests/test_final_state.py:855: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': '\n', 'results': {}}, scenario = 'T15'
+
+    def _check(suite, scenario: str):
+        results = suite["results"]
+        matches = [
+            record
+            for name, record in results.items()
+            if name.startswith(f"test {scenario} ")
+        ]
+        if not matches:
+            tail = suite["output"][-6000:]
+>           raise AssertionError(
+                f"Scenario {scenario} did not run. The project or the verification suite failed "
+                f"to compile or crashed.\n--- mix test output (tail) ---\n{tail}"
+            )
+E           AssertionError: Scenario T15 did not run. The project or the verification suite failed to compile or crashed.
+E           --- mix test output (tail) ---
+
+tests/test_final_state.py:786: AssertionError
+___________________________ test_t16_rule_precedence ___________________________
+
+suite_run = {'output': '\n', 'results': {}}
+
+    def test_t16_rule_precedence(suite_run):
+>       _check(suite_run, "T16")
+
+tests/test_final_state.py:859: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': '\n', 'results': {}}, scenario = 'T16'
+
+    def _check(suite, scenario: str):
+        results = suite["results"]
+        matches = [
+            record
+            for name, record in results.items()
+            if name.startswith(f"test {scenario} ")
+        ]
+        if not matches:
+            tail = suite["output"][-6000:]
+>           raise AssertionError(
+                f"Scenario {scenario} did not run. The project or the verification suite failed "
+                f"to compile or crashed.\n--- mix test output (tail) ---\n{tail}"
+            )
+E           AssertionError: Scenario T16 did not run. The project or the verification suite failed to compile or crashed.
+E           --- mix test output (tail) ---
+
+tests/test_final_state.py:786: AssertionError
+______________________ test_t17_us_ca_half_away_from_zero ______________________
+
+suite_run = {'output': '\n', 'results': {}}
+
+    def test_t17_us_ca_half_away_from_zero(suite_run):
+>       _check(suite_run, "T17")
+
+tests/test_final_state.py:863: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': '\n', 'results': {}}, scenario = 'T17'
+
+    def _check(suite, scenario: str):
+        results = suite["results"]
+        matches = [
+            record
+            for name, record in results.items()
+            if name.startswith(f"test {scenario} ")
+        ]
+        if not matches:
+            tail = suite["output"][-6000:]
+>           raise AssertionError(
+                f"Scenario {scenario} did not run. The project or the verification suite failed "
+                f"to compile or crashed.\n--- mix test output (tail) ---\n{tail}"
+            )
+E           AssertionError: Scenario T17 did not run. The project or the verification suite failed to compile or crashed.
+E           --- mix test output (tail) ---
+
+tests/test_final_state.py:786: AssertionError
+_________________________ test_t18_eu_de_half_to_even __________________________
+
+suite_run = {'output': '\n', 'results': {}}
+
+    def test_t18_eu_de_half_to_even(suite_run):
+>       _check(suite_run, "T18")
+
+tests/test_final_state.py:867: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': '\n', 'results': {}}, scenario = 'T18'
+
+    def _check(suite, scenario: str):
+        results = suite["results"]
+        matches = [
+            record
+            for name, record in results.items()
+            if name.startswith(f"test {scenario} ")
+        ]
+        if not matches:
+            tail = suite["output"][-6000:]
+>           raise AssertionError(
+                f"Scenario {scenario} did not run. The project or the verification suite failed "
+                f"to compile or crashed.\n--- mix test output (tail) ---\n{tail}"
+            )
+E           AssertionError: Scenario T18 did not run. The project or the verification suite failed to compile or crashed.
+E           --- mix test output (tail) ---
+
+tests/test_final_state.py:786: AssertionError
+___________________ test_t19_jp_13_truncation_and_us_or_zero ___________________
+
+suite_run = {'output': '\n', 'results': {}}
+
+    def test_t19_jp_13_truncation_and_us_or_zero(suite_run):
+>       _check(suite_run, "T19")
+
+tests/test_final_state.py:871: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': '\n', 'results': {}}, scenario = 'T19'
+
+    def _check(suite, scenario: str):
+        results = suite["results"]
+        matches = [
+            record
+            for name, record in results.items()
+            if name.startswith(f"test {scenario} ")
+        ]
+        if not matches:
+            tail = suite["output"][-6000:]
+>           raise AssertionError(
+                f"Scenario {scenario} did not run. The project or the verification suite failed "
+                f"to compile or crashed.\n--- mix test output (tail) ---\n{tail}"
+            )
+E           AssertionError: Scenario T19 did not run. The project or the verification suite failed to compile or crashed.
+E           --- mix test output (tail) ---
+
+tests/test_final_state.py:786: AssertionError
+_________________________ test_t20_batch_load_pairing __________________________
+
+suite_run = {'output': '\n', 'results': {}}
+
+    def test_t20_batch_load_pairing(suite_run):
+>       _check(suite_run, "T20")
+
+tests/test_final_state.py:875: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': '\n', 'results': {}}, scenario = 'T20'
+
+    def _check(suite, scenario: str):
+        results = suite["results"]
+        matches = [
+            record
+            for name, record in results.items()
+            if name.startswith(f"test {scenario} ")
+        ]
+        if not matches:
+            tail = suite["output"][-6000:]
+>           raise AssertionError(
+                f"Scenario {scenario} did not run. The project or the verification suite failed "
+                f"to compile or crashed.\n--- mix test output (tail) ---\n{tail}"
+            )
+E           AssertionError: Scenario T20 did not run. The project or the verification suite failed to compile or crashed.
+E           --- mix test output (tail) ---
+
+tests/test_final_state.py:786: AssertionError
+___________________________ test_t21_post_fetch_load ___________________________
+
+suite_run = {'output': '\n', 'results': {}}
+
+    def test_t21_post_fetch_load(suite_run):
+>       _check(suite_run, "T21")
+
+tests/test_final_state.py:879: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': '\n', 'results': {}}, scenario = 'T21'
+
+    def _check(suite, scenario: str):
+        results = suite["results"]
+        matches = [
+            record
+            for name, record in results.items()
+            if name.startswith(f"test {scenario} ")
+        ]
+        if not matches:
+            tail = suite["output"][-6000:]
+>           raise AssertionError(
+                f"Scenario {scenario} did not run. The project or the verification suite failed "
+                f"to compile or crashed.\n--- mix test output (tail) ---\n{tail}"
+            )
+E           AssertionError: Scenario T21 did not run. The project or the verification suite failed to compile or crashed.
+E           --- mix test output (tail) ---
+
+tests/test_final_state.py:786: AssertionError
+_____________________________ test_t22_empty_cart ______________________________
+
+suite_run = {'output': '\n', 'results': {}}
+
+    def test_t22_empty_cart(suite_run):
+>       _check(suite_run, "T22")
+
+tests/test_final_state.py:883: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': '\n', 'results': {}}, scenario = 'T22'
+
+    def _check(suite, scenario: str):
+        results = suite["results"]
+        matches = [
+            record
+            for name, record in results.items()
+            if name.startswith(f"test {scenario} ")
+        ]
+        if not matches:
+            tail = suite["output"][-6000:]
+>           raise AssertionError(
+                f"Scenario {scenario} did not run. The project or the verification suite failed "
+                f"to compile or crashed.\n--- mix test output (tail) ---\n{tail}"
+            )
+E           AssertionError: Scenario T22 did not run. The project or the verification suite failed to compile or crashed.
+E           --- mix test output (tail) ---
+
+tests/test_final_state.py:786: AssertionError
+_____________________ test_t23_arguments_honoured_per_load _____________________
+
+suite_run = {'output': '\n', 'results': {}}
+
+    def test_t23_arguments_honoured_per_load(suite_run):
+>       _check(suite_run, "T23")
+
+tests/test_final_state.py:887: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': '\n', 'results': {}}, scenario = 'T23'
+
+    def _check(suite, scenario: str):
+        results = suite["results"]
+        matches = [
+            record
+            for name, record in results.items()
+            if name.startswith(f"test {scenario} ")
+        ]
+        if not matches:
+            tail = suite["output"][-6000:]
+>           raise AssertionError(
+                f"Scenario {scenario} did not run. The project or the verification suite failed "
+                f"to compile or crashed.\n--- mix test output (tail) ---\n{tail}"
+            )
+E           AssertionError: Scenario T23 did not run. The project or the verification suite failed to compile or crashed.
+E           --- mix test output (tail) ---
+
+tests/test_final_state.py:786: AssertionError
+_________________________ test_t24_large_exact_values __________________________
+
+suite_run = {'output': '\n', 'results': {}}
+
+    def test_t24_large_exact_values(suite_run):
+>       _check(suite_run, "T24")
+
+tests/test_final_state.py:891: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': '\n', 'results': {}}, scenario = 'T24'
+
+    def _check(suite, scenario: str):
+        results = suite["results"]
+        matches = [
+            record
+            for name, record in results.items()
+            if name.startswith(f"test {scenario} ")
+        ]
+        if not matches:
+            tail = suite["output"][-6000:]
+>           raise AssertionError(
+                f"Scenario {scenario} did not run. The project or the verification suite failed "
+                f"to compile or crashed.\n--- mix test output (tail) ---\n{tail}"
+            )
+E           AssertionError: Scenario T24 did not run. The project or the verification suite failed to compile or crashed.
+E           --- mix test output (tail) ---
+
+tests/test_final_state.py:786: AssertionError
+__________________________ test_t25_write_validation ___________________________
+
+suite_run = {'output': '\n', 'results': {}}
+
+    def test_t25_write_validation(suite_run):
+>       _check(suite_run, "T25")
+
+tests/test_final_state.py:895: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': '\n', 'results': {}}, scenario = 'T25'
+
+    def _check(suite, scenario: str):
+        results = suite["results"]
+        matches = [
+            record
+            for name, record in results.items()
+            if name.startswith(f"test {scenario} ")
+        ]
+        if not matches:
+            tail = suite["output"][-6000:]
+>           raise AssertionError(
+                f"Scenario {scenario} did not run. The project or the verification suite failed "
+                f"to compile or crashed.\n--- mix test output (tail) ---\n{tail}"
+            )
+E           AssertionError: Scenario T25 did not run. The project or the verification suite failed to compile or crashed.
+E           --- mix test output (tail) ---
+
+tests/test_final_state.py:786: AssertionError
+_______________________ test_t26_required_quote_argument _______________________
+
+suite_run = {'output': '\n', 'results': {}}
+
+    def test_t26_required_quote_argument(suite_run):
+>       _check(suite_run, "T26")
+
+tests/test_final_state.py:899: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = {'output': '\n', 'results': {}}, scenario = 'T26'
+
+    def _check(suite, scenario: str):
+        results = suite["results"]
+        matches = [
+            record
+            for name, record in results.items()
+            if name.startswith(f"test {scenario} ")
+        ]
+        if not matches:
+            tail = suite["output"][-6000:]
+>           raise AssertionError(
+                f"Scenario {scenario} did not run. The project or the verification suite failed "
+                f"to compile or crashed.\n--- mix test output (tail) ---\n{tail}"
+            )
+E           AssertionError: Scenario T26 did not run. The project or the verification suite failed to compile or crashed.
+E           --- mix test output (tail) ---
+
+tests/test_final_state.py:786: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_final_state.py::test_t01_line_totals - AssertionError: Scen...
+FAILED tests/test_final_state.py::test_t02_tier_table - AssertionError: Scena...
+FAILED tests/test_final_state.py::test_t03_filter_and_sort_on_derived_item_fields
+FAILED tests/test_final_state.py::test_t04_composed_line_discount - Assertion...
+FAILED tests/test_final_state.py::test_t05_item_count_aggregate - AssertionEr...
+FAILED tests/test_final_state.py::test_t06_quote_shape - AssertionError: Scen...
+FAILED tests/test_final_state.py::test_t07_no_coupon_zero_tax_region - Assert...
+FAILED tests/test_final_state.py::test_t08_mixed_tiers - AssertionError: Scen...
+FAILED tests/test_final_state.py::test_t09_nil_coupon_code - AssertionError: ...
+FAILED tests/test_final_state.py::test_t10_unknown_coupon_code - AssertionErr...
+FAILED tests/test_final_state.py::test_t11_window_start_boundary - AssertionE...
+FAILED tests/test_final_state.py::test_t12_window_end_boundary - AssertionErr...
+FAILED tests/test_final_state.py::test_t13_redemption_cap - AssertionError: S...
+FAILED tests/test_final_state.py::test_t14_minimum_subtotal - AssertionError:...
+FAILED tests/test_final_state.py::test_t15_coupon_discount_rounding_and_cap
+FAILED tests/test_final_state.py::test_t16_rule_precedence - AssertionError: ...
+FAILED tests/test_final_state.py::test_t17_us_ca_half_away_from_zero - Assert...
+FAILED tests/test_final_state.py::test_t18_eu_de_half_to_even - AssertionErro...
+FAILED tests/test_final_state.py::test_t19_jp_13_truncation_and_us_or_zero - ...
+FAILED tests/test_final_state.py::test_t20_batch_load_pairing - AssertionErro...
+FAILED tests/test_final_state.py::test_t21_post_fetch_load - AssertionError: ...
+FAILED tests/test_final_state.py::test_t22_empty_cart - AssertionError: Scena...
+FAILED tests/test_final_state.py::test_t23_arguments_honoured_per_load - Asse...
+FAILED tests/test_final_state.py::test_t24_large_exact_values - AssertionErro...
+FAILED tests/test_final_state.py::test_t25_write_validation - AssertionError:...
+FAILED tests/test_final_state.py::test_t26_required_quote_argument - Assertio...
+============================== 26 failed in 4.58s ==============================

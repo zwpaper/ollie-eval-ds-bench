@@ -1,0 +1,470 @@
+{
+    "reportFormat": "CTRF",
+    "specVersion": "0.0.0",
+    "timestamp": "2026-09-21T04:10:27.818480+00:00",
+    "generatedBy": "pytest",
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "7.4.4"
+        },
+        "summary": {
+            "tests": 42,
+            "passed": 21,
+            "failed": 21,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1789963801976,
+            "stop": 1789963827818
+        },
+        "environment": {
+            "buildName": "Pytest JSON CTRF Report",
+            "buildNumber": "000",
+            "buildUrl": "https://ctrf.io"
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_project_compiles",
+                "status": "passed",
+                "duration": 24187,
+                "start": 1789963802032,
+                "stop": 1789963826219,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_contract_suite_ran_completely",
+                "status": "passed",
+                "duration": 5,
+                "start": 1789963826222,
+                "stop": 1789963826227,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_t01_feed_action_declares_keyset_pagination_contract",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 154,
+                "start": 1789963826229,
+                "stop": 1789963826383,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}\n\n    def test_t01_feed_action_declares_keyset_pagination_contract(suite: Dict[str, Any]) -> None:\n>       _scenario(suite, \"T01\")\n\ntests/test_final_state.py:844: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nsuite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}\nscenario_id = 'T01'\n\n    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:\n        results = suite[\"results\"]\n        if not results:\n            pytest.fail(\n                \"The ExUnit contract suite produced no results at all, which normally means \"\n                \"the project failed to compile or the script crashed before running.\\n\"\n                + _diagnostics(suite)\n            )\n    \n        prefix = f\"test {scenario_id} \"\n        matches = [name for name in results if name.startswith(prefix)]\n        assert matches, (\n            f\"Scenario {scenario_id} did not run. Known scenarios: {sorted(results)}\\n\"\n            + _diagnostics(suite)\n        )\n    \n        status, detail = results[matches[0]]\n>       assert status == \"pass\", f\"Scenario {scenario_id} ({matches[0]}) failed:\\n{detail}\"\nE       AssertionError: Scenario T01 (test T01 the :feed action declares the required keyset pagination contract) failed:\nE           1) test T01 the :feed action declares the required keyset pagination contract (FeedPaginationTest)\nE              /tmp/harbor_feed_pagination_suite.exs:149\nE              Assertion with == failed\nE              code:  assert p.countable == true\nE              left:  :by_default\nE              right: true\nE              stacktrace:\nE                /tmp/harbor_feed_pagination_suite.exs:156: (test)\nE         \nE       assert 'fail' == 'pass'\nE         - pass\nE         + fail\n\ntests/test_final_state.py:827: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_t02_other_feed_actions_declare_their_pagination_contracts",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 84,
+                "start": 1789963826386,
+                "stop": 1789963826470,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}\n\n    def test_t02_other_feed_actions_declare_their_pagination_contracts(suite: Dict[str, Any]) -> None:\n>       _scenario(suite, \"T02\")\n\ntests/test_final_state.py:848: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nsuite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}\nscenario_id = 'T02'\n\n    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:\n        results = suite[\"results\"]\n        if not results:\n            pytest.fail(\n                \"The ExUnit contract suite produced no results at all, which normally means \"\n                \"the project failed to compile or the script crashed before running.\\n\"\n                + _diagnostics(suite)\n            )\n    \n        prefix = f\"test {scenario_id} \"\n        matches = [name for name in results if name.startswith(prefix)]\n        assert matches, (\n            f\"Scenario {scenario_id} did not run. Known scenarios: {sorted(results)}\\n\"\n            + _diagnostics(suite)\n        )\n    \n        status, detail = results[matches[0]]\n>       assert status == \"pass\", f\"Scenario {scenario_id} ({matches[0]}) failed:\\n{detail}\"\nE       AssertionError: Scenario T02 (test T02 the remaining feed actions declare their own pagination contracts) failed:\nE           1) test T02 the remaining feed actions declare their own pagination contracts (FeedPaginationTest)\nE              /tmp/harbor_feed_pagination_suite.exs:159\nE              Assertion with == failed\nE              code:  assert flexible.required? == false\nE              left:  true\nE              right: false\nE              stacktrace:\nE                /tmp/harbor_feed_pagination_suite.exs:181: (test)\nE         \nE       assert 'fail' == 'pass'\nE         - pass\nE         + fail\n\ntests/test_final_state.py:827: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_t03_first_keyset_page_struct_and_metadata",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 75,
+                "start": 1789963826470,
+                "stop": 1789963826545,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}\n\n    def test_t03_first_keyset_page_struct_and_metadata(suite: Dict[str, Any]) -> None:\n>       _scenario(suite, \"T03\")\n\ntests/test_final_state.py:852: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nsuite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}\nscenario_id = 'T03'\n\n    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:\n        results = suite[\"results\"]\n        if not results:\n            pytest.fail(\n                \"The ExUnit contract suite produced no results at all, which normally means \"\n                \"the project failed to compile or the script crashed before running.\\n\"\n                + _diagnostics(suite)\n            )\n    \n        prefix = f\"test {scenario_id} \"\n        matches = [name for name in results if name.startswith(prefix)]\n        assert matches, (\n            f\"Scenario {scenario_id} did not run. Known scenarios: {sorted(results)}\\n\"\n            + _diagnostics(suite)\n        )\n    \n        status, detail = results[matches[0]]\n>       assert status == \"pass\", f\"Scenario {scenario_id} ({matches[0]}) failed:\\n{detail}\"\nE       AssertionError: Scenario T03 (test T03 the first keyset page has the documented struct and metadata) failed:\nE           1) test T03 the first keyset page has the documented struct and metadata (FeedPaginationTest)\nE              /tmp/harbor_feed_pagination_suite.exs:185\nE              Assertion with == failed\nE              code:  assert page.count == nil\nE              left:  40\nE              right: nil\nE              stacktrace:\nE                /tmp/harbor_feed_pagination_suite.exs:190: (test)\nE         \nE       assert 'fail' == 'pass'\nE         - pass\nE         + fail\n\ntests/test_final_state.py:827: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_t04_keyset_page_carries_full_count",
+                "status": "passed",
+                "duration": 6,
+                "start": 1789963826547,
+                "stop": 1789963826553,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_t05_default_limit_applies_when_omitted",
+                "status": "passed",
+                "duration": 5,
+                "start": 1789963826555,
+                "stop": 1789963826560,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_t06_forward_keyset_chaining_walks_disjoint_windows",
+                "status": "passed",
+                "duration": 4,
+                "start": 1789963826563,
+                "stop": 1789963826567,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_t07_backward_keyset_chaining_reproduces_previous_windows",
+                "status": "passed",
+                "duration": 4,
+                "start": 1789963826570,
+                "stop": 1789963826574,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_t08_ash_page_continues_rewinds_replays_restarts",
+                "status": "passed",
+                "duration": 5,
+                "start": 1789963826577,
+                "stop": 1789963826582,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_t09_continuing_past_end_yields_empty_page",
+                "status": "passed",
+                "duration": 5,
+                "start": 1789963826584,
+                "stop": 1789963826589,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_t10_offset_feed_reports_offset_limit_more_and_default_count",
+                "status": "passed",
+                "duration": 4,
+                "start": 1789963826590,
+                "stop": 1789963826594,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_t11_ash_page_seeks_offset_page_by_last_and_number",
+                "status": "passed",
+                "duration": 4,
+                "start": 1789963826597,
+                "stop": 1789963826601,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_t12_max_page_size_caps_over_large_limit",
+                "status": "passed",
+                "duration": 5,
+                "start": 1789963826604,
+                "stop": 1789963826609,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_t13_author_feed_filters_and_caps_at_own_max_page_size",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 79,
+                "start": 1789963826611,
+                "stop": 1789963826690,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}\n\n    def test_t13_author_feed_filters_and_caps_at_own_max_page_size(suite: Dict[str, Any]) -> None:\n>       _scenario(suite, \"T13\")\n\ntests/test_final_state.py:892: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nsuite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}\nscenario_id = 'T13'\n\n    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:\n        results = suite[\"results\"]\n        if not results:\n            pytest.fail(\n                \"The ExUnit contract suite produced no results at all, which normally means \"\n                \"the project failed to compile or the script crashed before running.\\n\"\n                + _diagnostics(suite)\n            )\n    \n        prefix = f\"test {scenario_id} \"\n        matches = [name for name in results if name.startswith(prefix)]\n        assert matches, (\n            f\"Scenario {scenario_id} did not run. Known scenarios: {sorted(results)}\\n\"\n            + _diagnostics(suite)\n        )\n    \n        status, detail = results[matches[0]]\n>       assert status == \"pass\", f\"Scenario {scenario_id} ({matches[0]}) failed:\\n{detail}\"\nE       AssertionError: Scenario T13 (test T13 :author_feed filters by its argument and caps at its own maximum page size) failed:\nE           1) test T13 :author_feed filters by its argument and caps at its own maximum page size (FeedPaginationTest)\nE              /tmp/harbor_feed_pagination_suite.exs:304\nE              ** (ArgumentError) Expected `params` to be a map or a list of maps.\nE              Got:  \"u_ada\"\nE         \nE              code: assert length(timeline().author_feed!(\"u_ada\", page: [limit: 50]).results) == 11\nE              stacktrace:\nE                (ash 3.31.0) lib/ash/code_interface.ex:1909: Ash.CodeInterface.merge_params/2\nE                (ash 3.31.0) lib/ash/code_interface.ex:2023: Ash.CodeInterface.resolve_params_and_opts/16\nE                (feedapi 0.1.0) deps/ash/lib/ash/code_interface.ex:732: Feed.Timeline.author_feed!/2\nE                /tmp/harbor_feed_pagination_suite.exs:305: (test)\nE         \nE       assert 'fail' == 'pass'\nE         - pass\nE         + fail\n\ntests/test_final_state.py:827: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_t14_disabling_pagination_on_required_action_is_refused",
+                "status": "passed",
+                "duration": 6,
+                "start": 1789963826694,
+                "stop": 1789963826700,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_t15_action_without_default_limit_demands_one",
+                "status": "passed",
+                "duration": 5,
+                "start": 1789963826702,
+                "stop": 1789963826707,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_t16_non_countable_action_refuses_count",
+                "status": "passed",
+                "duration": 4,
+                "start": 1789963826709,
+                "stop": 1789963826713,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_t17_dual_mode_action_is_optional_and_switches_page_type",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 74,
+                "start": 1789963826716,
+                "stop": 1789963826790,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}\n\n    def test_t17_dual_mode_action_is_optional_and_switches_page_type(suite: Dict[str, Any]) -> None:\n>       _scenario(suite, \"T17\")\n\ntests/test_final_state.py:908: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nsuite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}\nscenario_id = 'T17'\n\n    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:\n        results = suite[\"results\"]\n        if not results:\n            pytest.fail(\n                \"The ExUnit contract suite produced no results at all, which normally means \"\n                \"the project failed to compile or the script crashed before running.\\n\"\n                + _diagnostics(suite)\n            )\n    \n        prefix = f\"test {scenario_id} \"\n        matches = [name for name in results if name.startswith(prefix)]\n        assert matches, (\n            f\"Scenario {scenario_id} did not run. Known scenarios: {sorted(results)}\\n\"\n            + _diagnostics(suite)\n        )\n    \n        status, detail = results[matches[0]]\n>       assert status == \"pass\", f\"Scenario {scenario_id} ({matches[0]}) failed:\\n{detail}\"\nE       AssertionError: Scenario T17 (test T17 the dual-mode action is optional and switches page type on demand) failed:\nE           1) test T17 the dual-mode action is optional and switches page type on demand (FeedPaginationTest)\nE              /tmp/harbor_feed_pagination_suite.exs:338\nE              ** (Ash.Error.Invalid) \nE              Bread Crumbs:\nE                > Error returned from: Feed.Timeline.Activity.flexible_feed\nE         \nE              Invalid Error\nE         \nE              * Pagination is required\nE                (ash 3.31.0) lib/ash/actions/read/read.ex:88: Ash.Actions.Read.run/3\nE                (ash 3.31.0) lib/ash.ex:2938: Ash.read/2\nE                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2\nE                /tmp/harbor_feed_pagination_suite.exs:339: FeedPaginationTest.\"test T17 the dual-mode action is optional and switches page type on demand\"/1\nE                (ex_unit 1.18.4) lib/ex_unit/runner.ex:511: ExUnit.Runner.exec_test/2\nE                (stdlib 6.2.2) timer.erl:595: :timer.tc/2\nE                (ex_unit 1.18.4) lib/ex_unit/runner.ex:433: anonymous fn/6 in ExUnit.Runner.spawn_test_monitor/4\nE              code: unpaged = timeline().flexible_feed!(page: false)\nE              stacktrace:\nE                (ash 3.31.0) lib/ash/actions/read/read.ex:88: Ash.Actions.Read.run/3\nE                (ash 3.31.0) lib/ash.ex:2938: Ash.read/2\nE                (ash 3.31.0) lib/ash.ex:2873: Ash.read!/2\nE                /tmp/harbor_feed_pagination_suite.exs:339: (test)\nE         \nE       assert 'fail' == 'pass'\nE         - pass\nE         + fail\n\ntests/test_final_state.py:827: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_t18_malformed_keyset_is_rejected",
+                "status": "passed",
+                "duration": 4,
+                "start": 1789963826793,
+                "stop": 1789963826797,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_t19_public_feed_filters_and_counts_public_only",
+                "status": "passed",
+                "duration": 5,
+                "start": 1789963826800,
+                "stop": 1789963826805,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_t20_hot_feed_orders_by_score_then_reactions_then_id",
+                "status": "passed",
+                "duration": 5,
+                "start": 1789963826808,
+                "stop": 1789963826813,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_t21_hot_feed_keyset_walk_visits_every_activity_once",
+                "status": "passed",
+                "duration": 5,
+                "start": 1789963826815,
+                "stop": 1789963826820,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_t22_heat_feed_keyset_walk_visits_every_activity_once",
+                "status": "passed",
+                "duration": 5,
+                "start": 1789963826822,
+                "stop": 1789963826827,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_t23_aggregate_calculation_and_relationship_load_on_page",
+                "status": "passed",
+                "duration": 5,
+                "start": 1789963826829,
+                "stop": 1789963826834,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_t24_api_fetch_returns_documented_envelope",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 78,
+                "start": 1789963826836,
+                "stop": 1789963826914,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}\n\n    def test_t24_api_fetch_returns_documented_envelope(suite: Dict[str, Any]) -> None:\n>       _scenario(suite, \"T24\")\n\ntests/test_final_state.py:936: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nsuite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}\nscenario_id = 'T24'\n\n    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:\n        results = suite[\"results\"]\n        if not results:\n            pytest.fail(\n                \"The ExUnit contract suite produced no results at all, which normally means \"\n                \"the project failed to compile or the script crashed before running.\\n\"\n                + _diagnostics(suite)\n            )\n    \n        prefix = f\"test {scenario_id} \"\n        matches = [name for name in results if name.startswith(prefix)]\n        assert matches, (\n            f\"Scenario {scenario_id} did not run. Known scenarios: {sorted(results)}\\n\"\n            + _diagnostics(suite)\n        )\n    \n        status, detail = results[matches[0]]\n>       assert status == \"pass\", f\"Scenario {scenario_id} ({matches[0]}) failed:\\n{detail}\"\nE       AssertionError: Scenario T24 (test T24 Feed.Api.fetch/2 returns the documented envelope for the first window) failed:\nE           1) test T24 Feed.Api.fetch/2 returns the documented envelope for the first window (FeedPaginationTest)\nE              /tmp/harbor_feed_pagination_suite.exs:428\nE              ** (Protocol.UndefinedError) protocol Enumerable not implemented for type Ash.Query (a struct). This protocol is implemented for the following type(s): Date.Range, File.Stream, Function, GenEvent.Stream, HashDict, HashSet, IO.Stream, Iter, Jason.OrderedObject, List, Map, MapSet, Range, Stream, StreamData\nE         \nE              Got value:\nE         \nE                  #Ash.Query<\nE                    resource: Feed.Timeline.Activity,\nE                    action: :feed,\nE                    sort: [published_at: :desc, id: :asc],\nE                    errors: [\nE                      %Ash.Error.Query.InvalidPage{\nE                        page: [limit: 5, count?: true],\nE                        splode: Ash.Error,\nE                        bread_crumbs: [],\nE                        vars: [],\nE                        path: [:page],\nE                        stacktrace: #Splode.Stacktrace<>,\nE                        class: :invalid\nE                      }\nE                    ]\nE                  >\nE         \nE              code: assert {:ok, window} = api().fetch(:feed)\nE              stacktrace:\nE                (elixir 1.18.4) lib/enum.ex:1: Enumerable.impl_for!/1\nE                (elixir 1.18.4) lib/enum.ex:166: Enumerable.reduce/3\nE                (elixir 1.18.4) lib/enum.ex:4515: Enum.reverse/1\nE                (elixir 1.18.4) lib/enum.ex:3833: Enum.to_list/1\nE                (elixir 1.18.4) lib/map.ex:224: Map.new_from_enum/1\nE                (ash 3.31.0) lib/ash/query/query.ex:881: Ash.Query.for_read/4\nE                (feedapi 0.1.0) deps/ash/lib/ash/code_interface.ex:794: Feed.Timeline.feed/2\nE                (feedapi 0.1.0) lib/feed/api.ex:117: Feed.Api.execute/4\nE                /tmp/harbor_feed_pagination_suite.exs:429: (test)\nE         \nE       assert 'fail' == 'pass'\nE         - pass\nE         + fail\n\ntests/test_final_state.py:827: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_t25_cursor_codec_round_trips_and_is_opaque",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 68,
+                "start": 1789963826917,
+                "stop": 1789963826985,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}\n\n    def test_t25_cursor_codec_round_trips_and_is_opaque(suite: Dict[str, Any]) -> None:\n>       _scenario(suite, \"T25\")\n\ntests/test_final_state.py:940: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nsuite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}\nscenario_id = 'T25'\n\n    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:\n        results = suite[\"results\"]\n        if not results:\n            pytest.fail(\n                \"The ExUnit contract suite produced no results at all, which normally means \"\n                \"the project failed to compile or the script crashed before running.\\n\"\n                + _diagnostics(suite)\n            )\n    \n        prefix = f\"test {scenario_id} \"\n        matches = [name for name in results if name.startswith(prefix)]\n        assert matches, (\n            f\"Scenario {scenario_id} did not run. Known scenarios: {sorted(results)}\\n\"\n            + _diagnostics(suite)\n        )\n    \n        status, detail = results[matches[0]]\n>       assert status == \"pass\", f\"Scenario {scenario_id} ({matches[0]}) failed:\\n{detail}\"\nE       AssertionError: Scenario T25 (test T25 the cursor codec round-trips and is deterministic and opaque) failed:\nE           1) test T25 the cursor codec round-trips and is deterministic and opaque (FeedPaginationTest)\nE              /tmp/harbor_feed_pagination_suite.exs:449\nE              ** (MatchError) no match of right hand side value: :error\nE              code: for payload <- payloads do\nE              stacktrace:\nE                (feedapi 0.1.0) lib/feed/cursor.ex:27: Feed.Cursor.encode/1\nE                /tmp/harbor_feed_pagination_suite.exs:456: anonymous fn/1 in FeedPaginationTest.\"test T25 the cursor codec round-trips and is deterministic and opaque\"/1\nE                (elixir 1.18.4) lib/enum.ex:1714: Enum.\"-map/2-lists^map/1-1-\"/2\nE                /tmp/harbor_feed_pagination_suite.exs:455: (test)\nE         \nE       assert 'fail' == 'pass'\nE         - pass\nE         + fail\n\ntests/test_final_state.py:827: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_t26_cursor_codec_rejects_corrupt_and_forged_cursors",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 69,
+                "start": 1789963826987,
+                "stop": 1789963827056,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}\n\n    def test_t26_cursor_codec_rejects_corrupt_and_forged_cursors(suite: Dict[str, Any]) -> None:\n>       _scenario(suite, \"T26\")\n\ntests/test_final_state.py:944: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nsuite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}\nscenario_id = 'T26'\n\n    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:\n        results = suite[\"results\"]\n        if not results:\n            pytest.fail(\n                \"The ExUnit contract suite produced no results at all, which normally means \"\n                \"the project failed to compile or the script crashed before running.\\n\"\n                + _diagnostics(suite)\n            )\n    \n        prefix = f\"test {scenario_id} \"\n        matches = [name for name in results if name.startswith(prefix)]\n        assert matches, (\n            f\"Scenario {scenario_id} did not run. Known scenarios: {sorted(results)}\\n\"\n            + _diagnostics(suite)\n        )\n    \n        status, detail = results[matches[0]]\n>       assert status == \"pass\", f\"Scenario {scenario_id} ({matches[0]}) failed:\\n{detail}\"\nE       AssertionError: Scenario T26 (test T26 the cursor codec rejects corrupt and forged cursors) failed:\nE           1) test T26 the cursor codec rejects corrupt and forged cursors (FeedPaginationTest)\nE              /tmp/harbor_feed_pagination_suite.exs:464\nE              ** (MatchError) no match of right hand side value: :error\nE              code: valid = cursor_mod().encode(%{feed: :feed, direction: :next, keyset: \"AAAA\"})\nE              stacktrace:\nE                (feedapi 0.1.0) lib/feed/cursor.ex:27: Feed.Cursor.encode/1\nE                /tmp/harbor_feed_pagination_suite.exs:465: (test)\nE         \nE       assert 'fail' == 'pass'\nE         - pass\nE         + fail\n\ntests/test_final_state.py:827: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_t27_api_forward_cursor_paging_matches_raw_keyset_chain",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 50,
+                "start": 1789963827057,
+                "stop": 1789963827107,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}\n\n    def test_t27_api_forward_cursor_paging_matches_raw_keyset_chain(suite: Dict[str, Any]) -> None:\n>       _scenario(suite, \"T27\")\n\ntests/test_final_state.py:948: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nsuite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}\nscenario_id = 'T27'\n\n    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:\n        results = suite[\"results\"]\n        if not results:\n            pytest.fail(\n                \"The ExUnit contract suite produced no results at all, which normally means \"\n                \"the project failed to compile or the script crashed before running.\\n\"\n                + _diagnostics(suite)\n            )\n    \n        prefix = f\"test {scenario_id} \"\n        matches = [name for name in results if name.startswith(prefix)]\n        assert matches, (\n            f\"Scenario {scenario_id} did not run. Known scenarios: {sorted(results)}\\n\"\n            + _diagnostics(suite)\n        )\n    \n        status, detail = results[matches[0]]\n>       assert status == \"pass\", f\"Scenario {scenario_id} ({matches[0]}) failed:\\n{detail}\"\nE       AssertionError: Scenario T27 (test T27 forward cursor paging through Feed.Api matches the raw keyset chain) failed:\nE           1) test T27 forward cursor paging through Feed.Api matches the raw keyset chain (FeedPaginationTest)\nE              /tmp/harbor_feed_pagination_suite.exs:494\nE              ** (Protocol.UndefinedError) protocol Enumerable not implemented for type Ash.Query (a struct). This protocol is implemented for the following type(s): Date.Range, File.Stream, Function, GenEvent.Stream, HashDict, HashSet, IO.Stream, Iter, Jason.OrderedObject, List, Map, MapSet, Range, Stream, StreamData\nE         \nE              Got value:\nE         \nE                  #Ash.Query<\nE                    resource: Feed.Timeline.Activity,\nE                    action: :feed,\nE                    sort: [published_at: :desc, id: :asc],\nE                    errors: [\nE                      %Ash.Error.Query.InvalidPage{\nE                        page: [limit: 5, count?: true],\nE                        splode: Ash.Error,\nE                        bread_crumbs: [],\nE                        vars: [],\nE                        path: [:page],\nE                        stacktrace: #Splode.Stacktrace<>,\nE                        class: :invalid\nE                      }\nE                    ]\nE                  >\nE         \nE              code: assert {:ok, w1} = api().fetch(:feed, limit: 5)\nE              stacktrace:\nE                (elixir 1.18.4) lib/enum.ex:1: Enumerable.impl_for!/1\nE                (elixir 1.18.4) lib/enum.ex:166: Enumerable.reduce/3\nE                (elixir 1.18.4) lib/enum.ex:4515: Enum.reverse/1\nE                (elixir 1.18.4) lib/enum.ex:3833: Enum.to_list/1\nE                (elixir 1.18.4) lib/map.ex:224: Map.new_from_enum/1\nE                (ash 3.31.0) lib/ash/query/query.ex:881: Ash.Query.for_read/4\nE                (feedapi 0.1.0) deps/ash/lib/ash/code_interface.ex:794: Feed.Timeline.feed/2\nE                (feedapi 0.1.0) lib/feed/api.ex:117: Feed.Api.execute/4\nE                /tmp/harbor_feed_pagination_suite.exs:495: (test)\nE         \nE       assert 'fail' == 'pass'\nE         - pass\nE         + fail\n\ntests/test_final_state.py:827: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_t28_api_backward_cursor_paging_returns_reversed_windows",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 39,
+                "start": 1789963827109,
+                "stop": 1789963827148,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}\n\n    def test_t28_api_backward_cursor_paging_returns_reversed_windows(suite: Dict[str, Any]) -> None:\n>       _scenario(suite, \"T28\")\n\ntests/test_final_state.py:952: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nsuite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}\nscenario_id = 'T28'\n\n    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:\n        results = suite[\"results\"]\n        if not results:\n            pytest.fail(\n                \"The ExUnit contract suite produced no results at all, which normally means \"\n                \"the project failed to compile or the script crashed before running.\\n\"\n                + _diagnostics(suite)\n            )\n    \n        prefix = f\"test {scenario_id} \"\n        matches = [name for name in results if name.startswith(prefix)]\n        assert matches, (\n            f\"Scenario {scenario_id} did not run. Known scenarios: {sorted(results)}\\n\"\n            + _diagnostics(suite)\n        )\n    \n        status, detail = results[matches[0]]\n>       assert status == \"pass\", f\"Scenario {scenario_id} ({matches[0]}) failed:\\n{detail}\"\nE       AssertionError: Scenario T28 (test T28 backward cursor paging through Feed.Api returns the reversed windows) failed:\nE           1) test T28 backward cursor paging through Feed.Api returns the reversed windows (FeedPaginationTest)\nE              /tmp/harbor_feed_pagination_suite.exs:510\nE              ** (Protocol.UndefinedError) protocol Enumerable not implemented for type Ash.Query (a struct). This protocol is implemented for the following type(s): Date.Range, File.Stream, Function, GenEvent.Stream, HashDict, HashSet, IO.Stream, Iter, Jason.OrderedObject, List, Map, MapSet, Range, Stream, StreamData\nE         \nE              Got value:\nE         \nE                  #Ash.Query<\nE                    resource: Feed.Timeline.Activity,\nE                    action: :feed,\nE                    sort: [published_at: :desc, id: :asc],\nE                    errors: [\nE                      %Ash.Error.Query.InvalidPage{\nE                        page: [limit: 5, count?: true],\nE                        splode: Ash.Error,\nE                        bread_crumbs: [],\nE                        vars: [],\nE                        path: [:page],\nE                        stacktrace: #Splode.Stacktrace<>,\nE                        class: :invalid\nE                      }\nE                    ]\nE                  >\nE         \nE              code: assert {:ok, w1} = api().fetch(:feed, limit: 5)\nE              stacktrace:\nE                (elixir 1.18.4) lib/enum.ex:1: Enumerable.impl_for!/1\nE                (elixir 1.18.4) lib/enum.ex:166: Enumerable.reduce/3\nE                (elixir 1.18.4) lib/enum.ex:4515: Enum.reverse/1\nE                (elixir 1.18.4) lib/enum.ex:3833: Enum.to_list/1\nE                (elixir 1.18.4) lib/map.ex:224: Map.new_from_enum/1\nE                (ash 3.31.0) lib/ash/query/query.ex:881: Ash.Query.for_read/4\nE                (feedapi 0.1.0) deps/ash/lib/ash/code_interface.ex:794: Feed.Timeline.feed/2\nE                (feedapi 0.1.0) lib/feed/api.ex:117: Feed.Api.execute/4\nE                /tmp/harbor_feed_pagination_suite.exs:511: (test)\nE         \nE       assert 'fail' == 'pass'\nE         - pass\nE         + fail\n\ntests/test_final_state.py:827: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_t29_cursor_from_one_feed_is_refused_by_another",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 49,
+                "start": 1789963827149,
+                "stop": 1789963827198,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}\n\n    def test_t29_cursor_from_one_feed_is_refused_by_another(suite: Dict[str, Any]) -> None:\n>       _scenario(suite, \"T29\")\n\ntests/test_final_state.py:956: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nsuite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}\nscenario_id = 'T29'\n\n    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:\n        results = suite[\"results\"]\n        if not results:\n            pytest.fail(\n                \"The ExUnit contract suite produced no results at all, which normally means \"\n                \"the project failed to compile or the script crashed before running.\\n\"\n                + _diagnostics(suite)\n            )\n    \n        prefix = f\"test {scenario_id} \"\n        matches = [name for name in results if name.startswith(prefix)]\n        assert matches, (\n            f\"Scenario {scenario_id} did not run. Known scenarios: {sorted(results)}\\n\"\n            + _diagnostics(suite)\n        )\n    \n        status, detail = results[matches[0]]\n>       assert status == \"pass\", f\"Scenario {scenario_id} ({matches[0]}) failed:\\n{detail}\"\nE       AssertionError: Scenario T29 (test T29 a cursor issued for one feed is refused by another) failed:\nE           1) test T29 a cursor issued for one feed is refused by another (FeedPaginationTest)\nE              /tmp/harbor_feed_pagination_suite.exs:524\nE              ** (Protocol.UndefinedError) protocol Enumerable not implemented for type Ash.Query (a struct). This protocol is implemented for the following type(s): Date.Range, File.Stream, Function, GenEvent.Stream, HashDict, HashSet, IO.Stream, Iter, Jason.OrderedObject, List, Map, MapSet, Range, Stream, StreamData\nE         \nE              Got value:\nE         \nE                  #Ash.Query<\nE                    resource: Feed.Timeline.Activity,\nE                    action: :feed,\nE                    sort: [published_at: :desc, id: :asc],\nE                    errors: [\nE                      %Ash.Error.Query.InvalidPage{\nE                        page: [limit: 5, count?: true],\nE                        splode: Ash.Error,\nE                        bread_crumbs: [],\nE                        vars: [],\nE                        path: [:page],\nE                        stacktrace: #Splode.Stacktrace<>,\nE                        class: :invalid\nE                      }\nE                    ]\nE                  >\nE         \nE              code: assert {:ok, window} = api().fetch(:feed, limit: 5)\nE              stacktrace:\nE                (elixir 1.18.4) lib/enum.ex:1: Enumerable.impl_for!/1\nE                (elixir 1.18.4) lib/enum.ex:166: Enumerable.reduce/3\nE                (elixir 1.18.4) lib/enum.ex:4515: Enum.reverse/1\nE                (elixir 1.18.4) lib/enum.ex:3833: Enum.to_list/1\nE                (elixir 1.18.4) lib/map.ex:224: Map.new_from_enum/1\nE                (ash 3.31.0) lib/ash/query/query.ex:881: Ash.Query.for_read/4\nE                (feedapi 0.1.0) deps/ash/lib/ash/code_interface.ex:794: Feed.Timeline.feed/2\nE                (feedapi 0.1.0) lib/feed/api.ex:117: Feed.Api.execute/4\nE                /tmp/harbor_feed_pagination_suite.exs:525: (test)\nE         \nE       assert 'fail' == 'pass'\nE         - pass\nE         + fail\n\ntests/test_final_state.py:827: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_t30_cursor_failures_surface_as_codec_or_ash_errors",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 52,
+                "start": 1789963827199,
+                "stop": 1789963827251,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}\n\n    def test_t30_cursor_failures_surface_as_codec_or_ash_errors(suite: Dict[str, Any]) -> None:\n>       _scenario(suite, \"T30\")\n\ntests/test_final_state.py:960: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nsuite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}\nscenario_id = 'T30'\n\n    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:\n        results = suite[\"results\"]\n        if not results:\n            pytest.fail(\n                \"The ExUnit contract suite produced no results at all, which normally means \"\n                \"the project failed to compile or the script crashed before running.\\n\"\n                + _diagnostics(suite)\n            )\n    \n        prefix = f\"test {scenario_id} \"\n        matches = [name for name in results if name.startswith(prefix)]\n        assert matches, (\n            f\"Scenario {scenario_id} did not run. Known scenarios: {sorted(results)}\\n\"\n            + _diagnostics(suite)\n        )\n    \n        status, detail = results[matches[0]]\n>       assert status == \"pass\", f\"Scenario {scenario_id} ({matches[0]}) failed:\\n{detail}\"\nE       AssertionError: Scenario T30 (test T30 cursor failures surface as codec errors or as Ash's keyset error) failed:\nE           1) test T30 cursor failures surface as codec errors or as Ash's keyset error (FeedPaginationTest)\nE              /tmp/harbor_feed_pagination_suite.exs:530\nE              ** (MatchError) no match of right hand side value: :error\nE              code: poisoned = cursor_mod().encode(%{feed: :feed, direction: :next, keyset: \"!!!nope!!!\"})\nE              stacktrace:\nE                (feedapi 0.1.0) lib/feed/cursor.ex:27: Feed.Cursor.encode/1\nE                /tmp/harbor_feed_pagination_suite.exs:531: (test)\nE         \nE       assert 'fail' == 'pass'\nE         - pass\nE         + fail\n\ntests/test_final_state.py:827: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_t31_api_enforces_max_page_size_and_rejects_bad_limits",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 60,
+                "start": 1789963827252,
+                "stop": 1789963827312,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}\n\n    def test_t31_api_enforces_max_page_size_and_rejects_bad_limits(suite: Dict[str, Any]) -> None:\n>       _scenario(suite, \"T31\")\n\ntests/test_final_state.py:964: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nsuite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}\nscenario_id = 'T31'\n\n    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:\n        results = suite[\"results\"]\n        if not results:\n            pytest.fail(\n                \"The ExUnit contract suite produced no results at all, which normally means \"\n                \"the project failed to compile or the script crashed before running.\\n\"\n                + _diagnostics(suite)\n            )\n    \n        prefix = f\"test {scenario_id} \"\n        matches = [name for name in results if name.startswith(prefix)]\n        assert matches, (\n            f\"Scenario {scenario_id} did not run. Known scenarios: {sorted(results)}\\n\"\n            + _diagnostics(suite)\n        )\n    \n        status, detail = results[matches[0]]\n>       assert status == \"pass\", f\"Scenario {scenario_id} ({matches[0]}) failed:\\n{detail}\"\nE       AssertionError: Scenario T31 (test T31 Feed.Api enforces each feed's maximum page size and rejects bad limits) failed:\nE           1) test T31 Feed.Api enforces each feed's maximum page size and rejects bad limits (FeedPaginationTest)\nE              /tmp/harbor_feed_pagination_suite.exs:539\nE              ** (Protocol.UndefinedError) protocol Enumerable not implemented for type Ash.Query (a struct). This protocol is implemented for the following type(s): Date.Range, File.Stream, Function, GenEvent.Stream, HashDict, HashSet, IO.Stream, Iter, Jason.OrderedObject, List, Map, MapSet, Range, Stream, StreamData\nE         \nE              Got value:\nE         \nE                  #Ash.Query<\nE                    resource: Feed.Timeline.Activity,\nE                    action: :feed,\nE                    sort: [published_at: :desc, id: :asc],\nE                    errors: [\nE                      %Ash.Error.Query.InvalidPage{\nE                        page: [limit: 11, count?: true],\nE                        splode: Ash.Error,\nE                        bread_crumbs: [],\nE                        vars: [],\nE                        path: [:page],\nE                        stacktrace: #Splode.Stacktrace<>,\nE                        class: :invalid\nE                      },\nE                      %Ash.Error.Invalid.NoSuchInput{\nE                        calculation: nil,\nE                        resource: Feed.Timeline.Activity,\nE                        action: :feed,\nE                        input: :author_id,\nE                        inputs: [],\nE                        did_you_mean: [],\nE                        splode: Ash.Error,\nE                        bread_crumbs: [],\nE                        vars: [],\nE                        path: [:author_id],\nE                        stacktrace: #Splode.Stacktrace<>,\nE                        class: :invalid\nE                      }\nE                    ]\nE                  >\nE         \nE              code: assert api().fetch(:author_feed, author_id: \"u_ada\", limit: 11) ==\nE              stacktrace:\nE                (elixir 1.18.4) lib/enum.ex:1: Enumerable.impl_for!/1\nE                (elixir 1.18.4) lib/enum.ex:166: Enumerable.reduce/3\nE                (elixir 1.18.4) lib/enum.ex:4515: Enum.reverse/1\nE                (elixir 1.18.4) lib/enum.ex:3833: Enum.to_list/1\nE                (elixir 1.18.4) lib/map.ex:224: Map.new_from_enum/1\nE                (ash 3.31.0) lib/ash/query/query.ex:881: Ash.Query.for_read/4\nE                (feedapi 0.1.0) deps/ash/lib/ash/code_interface.ex:794: Feed.Timeline.feed/2\nE                (feedapi 0.1.0) lib/feed/api.ex:117: Feed.Api.execute/4\nE                /tmp/harbor_feed_pagination_suite.exs:542: (test)\nE         \nE       assert 'fail' == 'pass'\nE         - pass\nE         + fail\n\ntests/test_final_state.py:827: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_t32_api_validates_feed_name_and_author_argument",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 72,
+                "start": 1789963827314,
+                "stop": 1789963827386,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}\n\n    def test_t32_api_validates_feed_name_and_author_argument(suite: Dict[str, Any]) -> None:\n>       _scenario(suite, \"T32\")\n\ntests/test_final_state.py:968: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nsuite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}\nscenario_id = 'T32'\n\n    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:\n        results = suite[\"results\"]\n        if not results:\n            pytest.fail(\n                \"The ExUnit contract suite produced no results at all, which normally means \"\n                \"the project failed to compile or the script crashed before running.\\n\"\n                + _diagnostics(suite)\n            )\n    \n        prefix = f\"test {scenario_id} \"\n        matches = [name for name in results if name.startswith(prefix)]\n        assert matches, (\n            f\"Scenario {scenario_id} did not run. Known scenarios: {sorted(results)}\\n\"\n            + _diagnostics(suite)\n        )\n    \n        status, detail = results[matches[0]]\n>       assert status == \"pass\", f\"Scenario {scenario_id} ({matches[0]}) failed:\\n{detail}\"\nE       AssertionError: Scenario T32 (test T32 Feed.Api validates the feed name and the author argument) failed:\nE           1) test T32 Feed.Api validates the feed name and the author argument (FeedPaginationTest)\nE              /tmp/harbor_feed_pagination_suite.exs:552\nE              ** (Protocol.UndefinedError) protocol Enumerable not implemented for type Ash.Query (a struct). This protocol is implemented for the following type(s): Date.Range, File.Stream, Function, GenEvent.Stream, HashDict, HashSet, IO.Stream, Iter, Jason.OrderedObject, List, Map, MapSet, Range, Stream, StreamData\nE         \nE              Got value:\nE         \nE                  #Ash.Query<\nE                    resource: Feed.Timeline.Activity,\nE                    action: :feed,\nE                    sort: [published_at: :desc, id: :asc],\nE                    errors: [\nE                      %Ash.Error.Query.InvalidPage{\nE                        page: [limit: 4, count?: true],\nE                        splode: Ash.Error,\nE                        bread_crumbs: [],\nE                        vars: [],\nE                        path: [:page],\nE                        stacktrace: #Splode.Stacktrace<>,\nE                        class: :invalid\nE                      },\nE                      %Ash.Error.Invalid.NoSuchInput{\nE                        calculation: nil,\nE                        resource: Feed.Timeline.Activity,\nE                        action: :feed,\nE                        input: :author_id,\nE                        inputs: [],\nE                        did_you_mean: [],\nE                        splode: Ash.Error,\nE                        bread_crumbs: [],\nE                        vars: [],\nE                        path: [:author_id],\nE                        stacktrace: #Splode.Stacktrace<>,\nE                        class: :invalid\nE                      }\nE                    ]\nE                  >\nE         \nE              code: assert {:ok, window} = api().fetch(:author_feed, author_id: \"u_bob\", limit: 4)\nE              stacktrace:\nE                (elixir 1.18.4) lib/enum.ex:1: Enumerable.impl_for!/1\nE                (elixir 1.18.4) lib/enum.ex:166: Enumerable.reduce/3\nE                (elixir 1.18.4) lib/enum.ex:4515: Enum.reverse/1\nE                (elixir 1.18.4) lib/enum.ex:3833: Enum.to_list/1\nE                (elixir 1.18.4) lib/map.ex:224: Map.new_from_enum/1\nE                (ash 3.31.0) lib/ash/query/query.ex:881: Ash.Query.for_read/4\nE                (feedapi 0.1.0) deps/ash/lib/ash/code_interface.ex:794: Feed.Timeline.feed/2\nE                (feedapi 0.1.0) lib/feed/api.ex:117: Feed.Api.execute/4\nE                /tmp/harbor_feed_pagination_suite.exs:556: (test)\nE         \nE       assert 'fail' == 'pass'\nE         - pass\nE         + fail\n\ntests/test_final_state.py:827: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_t33_forward_walk_terminates_with_exact_totals",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 66,
+                "start": 1789963827387,
+                "stop": 1789963827453,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}\n\n    def test_t33_forward_walk_terminates_with_exact_totals(suite: Dict[str, Any]) -> None:\n>       _scenario(suite, \"T33\")\n\ntests/test_final_state.py:972: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nsuite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}\nscenario_id = 'T33'\n\n    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:\n        results = suite[\"results\"]\n        if not results:\n            pytest.fail(\n                \"The ExUnit contract suite produced no results at all, which normally means \"\n                \"the project failed to compile or the script crashed before running.\\n\"\n                + _diagnostics(suite)\n            )\n    \n        prefix = f\"test {scenario_id} \"\n        matches = [name for name in results if name.startswith(prefix)]\n        assert matches, (\n            f\"Scenario {scenario_id} did not run. Known scenarios: {sorted(results)}\\n\"\n            + _diagnostics(suite)\n        )\n    \n        status, detail = results[matches[0]]\n>       assert status == \"pass\", f\"Scenario {scenario_id} ({matches[0]}) failed:\\n{detail}\"\nE       AssertionError: Scenario T33 (test T33 walking the whole feed forwards terminates with exact totals) failed:\nE           1) test T33 walking the whole feed forwards terminates with exact totals (FeedPaginationTest)\nE              /tmp/harbor_feed_pagination_suite.exs:561\nE              ** (Protocol.UndefinedError) protocol Enumerable not implemented for type Ash.Query (a struct). This protocol is implemented for the following type(s): Date.Range, File.Stream, Function, GenEvent.Stream, HashDict, HashSet, IO.Stream, Iter, Jason.OrderedObject, List, Map, MapSet, Range, Stream, StreamData\nE         \nE              Got value:\nE         \nE                  #Ash.Query<\nE                    resource: Feed.Timeline.Activity,\nE                    action: :feed,\nE                    sort: [published_at: :desc, id: :asc],\nE                    errors: [\nE                      %Ash.Error.Query.InvalidPage{\nE                        page: [limit: 3, count?: true],\nE                        splode: Ash.Error,\nE                        bread_crumbs: [],\nE                        vars: [],\nE                        path: [:page],\nE                        stacktrace: #Splode.Stacktrace<>,\nE                        class: :invalid\nE                      }\nE                    ]\nE                  >\nE         \nE              code: assert {:ok, walked} = api().walk(:feed, limit: 3)\nE              stacktrace:\nE                (elixir 1.18.4) lib/enum.ex:1: Enumerable.impl_for!/1\nE                (elixir 1.18.4) lib/enum.ex:166: Enumerable.reduce/3\nE                (elixir 1.18.4) lib/enum.ex:4515: Enum.reverse/1\nE                (elixir 1.18.4) lib/enum.ex:3833: Enum.to_list/1\nE                (elixir 1.18.4) lib/map.ex:224: Map.new_from_enum/1\nE                (ash 3.31.0) lib/ash/query/query.ex:881: Ash.Query.for_read/4\nE                (feedapi 0.1.0) deps/ash/lib/ash/code_interface.ex:794: Feed.Timeline.feed/2\nE                (feedapi 0.1.0) lib/feed/api.ex:117: Feed.Api.execute/4\nE                (feedapi 0.1.0) lib/feed/api.ex:32: Feed.Api.walk/2\nE                /tmp/harbor_feed_pagination_suite.exs:562: (test)\nE         \nE       assert 'fail' == 'pass'\nE         - pass\nE         + fail\n\ntests/test_final_state.py:827: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_t34_walk_of_filtered_feed_and_of_empty_feed",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 77,
+                "start": 1789963827455,
+                "stop": 1789963827532,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}\n\n    def test_t34_walk_of_filtered_feed_and_of_empty_feed(suite: Dict[str, Any]) -> None:\n>       _scenario(suite, \"T34\")\n\ntests/test_final_state.py:976: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nsuite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}\nscenario_id = 'T34'\n\n    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:\n        results = suite[\"results\"]\n        if not results:\n            pytest.fail(\n                \"The ExUnit contract suite produced no results at all, which normally means \"\n                \"the project failed to compile or the script crashed before running.\\n\"\n                + _diagnostics(suite)\n            )\n    \n        prefix = f\"test {scenario_id} \"\n        matches = [name for name in results if name.startswith(prefix)]\n        assert matches, (\n            f\"Scenario {scenario_id} did not run. Known scenarios: {sorted(results)}\\n\"\n            + _diagnostics(suite)\n        )\n    \n        status, detail = results[matches[0]]\n>       assert status == \"pass\", f\"Scenario {scenario_id} ({matches[0]}) failed:\\n{detail}\"\nE       AssertionError: Scenario T34 (test T34 walking a filtered feed and an empty feed) failed:\nE           1) test T34 walking a filtered feed and an empty feed (FeedPaginationTest)\nE              /tmp/harbor_feed_pagination_suite.exs:571\nE              ** (Protocol.UndefinedError) protocol Enumerable not implemented for type Ash.Query (a struct). This protocol is implemented for the following type(s): Date.Range, File.Stream, Function, GenEvent.Stream, HashDict, HashSet, IO.Stream, Iter, Jason.OrderedObject, List, Map, MapSet, Range, Stream, StreamData\nE         \nE              Got value:\nE         \nE                  #Ash.Query<\nE                    resource: Feed.Timeline.Activity,\nE                    action: :feed,\nE                    sort: [published_at: :desc, id: :asc],\nE                    errors: [\nE                      %Ash.Error.Query.InvalidPage{\nE                        page: [limit: 4, count?: true],\nE                        splode: Ash.Error,\nE                        bread_crumbs: [],\nE                        vars: [],\nE                        path: [:page],\nE                        stacktrace: #Splode.Stacktrace<>,\nE                        class: :invalid\nE                      }\nE                    ]\nE                  >\nE         \nE              code: assert {:ok, public} = api().walk(:public_feed, limit: 4)\nE              stacktrace:\nE                (elixir 1.18.4) lib/enum.ex:1: Enumerable.impl_for!/1\nE                (elixir 1.18.4) lib/enum.ex:166: Enumerable.reduce/3\nE                (elixir 1.18.4) lib/enum.ex:4515: Enum.reverse/1\nE                (elixir 1.18.4) lib/enum.ex:3833: Enum.to_list/1\nE                (elixir 1.18.4) lib/map.ex:224: Map.new_from_enum/1\nE                (ash 3.31.0) lib/ash/query/query.ex:881: Ash.Query.for_read/4\nE                (feedapi 0.1.0) deps/ash/lib/ash/code_interface.ex:794: Feed.Timeline.feed/2\nE                (feedapi 0.1.0) lib/feed/api.ex:117: Feed.Api.execute/4\nE                (feedapi 0.1.0) lib/feed/api.ex:32: Feed.Api.walk/2\nE                /tmp/harbor_feed_pagination_suite.exs:572: (test)\nE         \nE       assert 'fail' == 'pass'\nE         - pass\nE         + fail\n\ntests/test_final_state.py:827: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_t35_walk_back_visits_exactly_the_reversed_windows",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 56,
+                "start": 1789963827533,
+                "stop": 1789963827589,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}\n\n    def test_t35_walk_back_visits_exactly_the_reversed_windows(suite: Dict[str, Any]) -> None:\n>       _scenario(suite, \"T35\")\n\ntests/test_final_state.py:980: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nsuite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}\nscenario_id = 'T35'\n\n    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:\n        results = suite[\"results\"]\n        if not results:\n            pytest.fail(\n                \"The ExUnit contract suite produced no results at all, which normally means \"\n                \"the project failed to compile or the script crashed before running.\\n\"\n                + _diagnostics(suite)\n            )\n    \n        prefix = f\"test {scenario_id} \"\n        matches = [name for name in results if name.startswith(prefix)]\n        assert matches, (\n            f\"Scenario {scenario_id} did not run. Known scenarios: {sorted(results)}\\n\"\n            + _diagnostics(suite)\n        )\n    \n        status, detail = results[matches[0]]\n>       assert status == \"pass\", f\"Scenario {scenario_id} ({matches[0]}) failed:\\n{detail}\"\nE       AssertionError: Scenario T35 (test T35 walking backwards visits exactly the reversed windows) failed:\nE           1) test T35 walking backwards visits exactly the reversed windows (FeedPaginationTest)\nE              /tmp/harbor_feed_pagination_suite.exs:581\nE              ** (Protocol.UndefinedError) protocol Enumerable not implemented for type Ash.Query (a struct). This protocol is implemented for the following type(s): Date.Range, File.Stream, Function, GenEvent.Stream, HashDict, HashSet, IO.Stream, Iter, Jason.OrderedObject, List, Map, MapSet, Range, Stream, StreamData\nE         \nE              Got value:\nE         \nE                  #Ash.Query<\nE                    resource: Feed.Timeline.Activity,\nE                    action: :feed,\nE                    sort: [published_at: :desc, id: :asc],\nE                    errors: [\nE                      %Ash.Error.Query.InvalidPage{\nE                        page: [limit: 3, count?: true],\nE                        splode: Ash.Error,\nE                        bread_crumbs: [],\nE                        vars: [],\nE                        path: [:page],\nE                        stacktrace: #Splode.Stacktrace<>,\nE                        class: :invalid\nE                      }\nE                    ]\nE                  >\nE         \nE              code: for {feed, opts} <- [{:feed, [limit: 3]}, {:public_feed, [limit: 4]}, {:hot_feed, [limit: 7]}] do\nE              stacktrace:\nE                (elixir 1.18.4) lib/enum.ex:1: Enumerable.impl_for!/1\nE                (elixir 1.18.4) lib/enum.ex:166: Enumerable.reduce/3\nE                (elixir 1.18.4) lib/enum.ex:4515: Enum.reverse/1\nE                (elixir 1.18.4) lib/enum.ex:3833: Enum.to_list/1\nE                (elixir 1.18.4) lib/map.ex:224: Map.new_from_enum/1\nE                (ash 3.31.0) lib/ash/query/query.ex:881: Ash.Query.for_read/4\nE                (feedapi 0.1.0) deps/ash/lib/ash/code_interface.ex:794: Feed.Timeline.feed/2\nE                (feedapi 0.1.0) lib/feed/api.ex:117: Feed.Api.execute/4\nE                (feedapi 0.1.0) lib/feed/api.ex:32: Feed.Api.walk/2\nE                /tmp/harbor_feed_pagination_suite.exs:583: anonymous fn/2 in FeedPaginationTest.\"test T35 walking backwards visits exactly the reversed windows\"/1\nE                (elixir 1.18.4) lib/enum.ex:2546: Enum.\"-reduce/3-lists^foldl/2-0-\"/3\nE                /tmp/harbor_feed_pagination_suite.exs:582: (test)\nE         \nE       assert 'fail' == 'pass'\nE         - pass\nE         + fail\n\ntests/test_final_state.py:827: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_t36_insertion_between_pages_neither_duplicates_nor_skips",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 54,
+                "start": 1789963827591,
+                "stop": 1789963827645,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}\n\n    def test_t36_insertion_between_pages_neither_duplicates_nor_skips(suite: Dict[str, Any]) -> None:\n>       _scenario(suite, \"T36\")\n\ntests/test_final_state.py:984: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nsuite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}\nscenario_id = 'T36'\n\n    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:\n        results = suite[\"results\"]\n        if not results:\n            pytest.fail(\n                \"The ExUnit contract suite produced no results at all, which normally means \"\n                \"the project failed to compile or the script crashed before running.\\n\"\n                + _diagnostics(suite)\n            )\n    \n        prefix = f\"test {scenario_id} \"\n        matches = [name for name in results if name.startswith(prefix)]\n        assert matches, (\n            f\"Scenario {scenario_id} did not run. Known scenarios: {sorted(results)}\\n\"\n            + _diagnostics(suite)\n        )\n    \n        status, detail = results[matches[0]]\n>       assert status == \"pass\", f\"Scenario {scenario_id} ({matches[0]}) failed:\\n{detail}\"\nE       AssertionError: Scenario T36 (test T36 inserting newer activities between pages neither duplicates nor skips) failed:\nE           1) test T36 inserting newer activities between pages neither duplicates nor skips (FeedPaginationTest)\nE              /tmp/harbor_feed_pagination_suite.exs:595\nE              ** (Protocol.UndefinedError) protocol Enumerable not implemented for type Ash.Query (a struct). This protocol is implemented for the following type(s): Date.Range, File.Stream, Function, GenEvent.Stream, HashDict, HashSet, IO.Stream, Iter, Jason.OrderedObject, List, Map, MapSet, Range, Stream, StreamData\nE         \nE              Got value:\nE         \nE                  #Ash.Query<\nE                    resource: Feed.Timeline.Activity,\nE                    action: :feed,\nE                    sort: [published_at: :desc, id: :asc],\nE                    errors: [\nE                      %Ash.Error.Query.InvalidPage{\nE                        page: [limit: 5, count?: true],\nE                        splode: Ash.Error,\nE                        bread_crumbs: [],\nE                        vars: [],\nE                        path: [:page],\nE                        stacktrace: #Splode.Stacktrace<>,\nE                        class: :invalid\nE                      }\nE                    ]\nE                  >\nE         \nE              code: assert {:ok, w1} = api().fetch(:feed, limit: 5)\nE              stacktrace:\nE                (elixir 1.18.4) lib/enum.ex:1: Enumerable.impl_for!/1\nE                (elixir 1.18.4) lib/enum.ex:166: Enumerable.reduce/3\nE                (elixir 1.18.4) lib/enum.ex:4515: Enum.reverse/1\nE                (elixir 1.18.4) lib/enum.ex:3833: Enum.to_list/1\nE                (elixir 1.18.4) lib/map.ex:224: Map.new_from_enum/1\nE                (ash 3.31.0) lib/ash/query/query.ex:881: Ash.Query.for_read/4\nE                (feedapi 0.1.0) deps/ash/lib/ash/code_interface.ex:794: Feed.Timeline.feed/2\nE                (feedapi 0.1.0) lib/feed/api.ex:117: Feed.Api.execute/4\nE                /tmp/harbor_feed_pagination_suite.exs:596: (test)\nE         \nE       assert 'fail' == 'pass'\nE         - pass\nE         + fail\n\ntests/test_final_state.py:827: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_t37_offset_paging_over_same_insertion_repeats_rows",
+                "status": "passed",
+                "duration": 3,
+                "start": 1789963827646,
+                "stop": 1789963827649,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_t38_deletion_between_pages_does_not_skip_survivors",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 66,
+                "start": 1789963827650,
+                "stop": 1789963827716,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}\n\n    def test_t38_deletion_between_pages_does_not_skip_survivors(suite: Dict[str, Any]) -> None:\n>       _scenario(suite, \"T38\")\n\ntests/test_final_state.py:992: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nsuite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}\nscenario_id = 'T38'\n\n    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:\n        results = suite[\"results\"]\n        if not results:\n            pytest.fail(\n                \"The ExUnit contract suite produced no results at all, which normally means \"\n                \"the project failed to compile or the script crashed before running.\\n\"\n                + _diagnostics(suite)\n            )\n    \n        prefix = f\"test {scenario_id} \"\n        matches = [name for name in results if name.startswith(prefix)]\n        assert matches, (\n            f\"Scenario {scenario_id} did not run. Known scenarios: {sorted(results)}\\n\"\n            + _diagnostics(suite)\n        )\n    \n        status, detail = results[matches[0]]\n>       assert status == \"pass\", f\"Scenario {scenario_id} ({matches[0]}) failed:\\n{detail}\"\nE       AssertionError: Scenario T38 (test T38 deleting activities between pages does not skip survivors) failed:\nE           1) test T38 deleting activities between pages does not skip survivors (FeedPaginationTest)\nE              /tmp/harbor_feed_pagination_suite.exs:642\nE              ** (Protocol.UndefinedError) protocol Enumerable not implemented for type Ash.Query (a struct). This protocol is implemented for the following type(s): Date.Range, File.Stream, Function, GenEvent.Stream, HashDict, HashSet, IO.Stream, Iter, Jason.OrderedObject, List, Map, MapSet, Range, Stream, StreamData\nE         \nE              Got value:\nE         \nE                  #Ash.Query<\nE                    resource: Feed.Timeline.Activity,\nE                    action: :feed,\nE                    sort: [published_at: :desc, id: :asc],\nE                    errors: [\nE                      %Ash.Error.Query.InvalidPage{\nE                        page: [limit: 5, count?: true],\nE                        splode: Ash.Error,\nE                        bread_crumbs: [],\nE                        vars: [],\nE                        path: [:page],\nE                        stacktrace: #Splode.Stacktrace<>,\nE                        class: :invalid\nE                      }\nE                    ]\nE                  >\nE         \nE              code: assert {:ok, w1} = api().fetch(:feed, limit: 5)\nE              stacktrace:\nE                (elixir 1.18.4) lib/enum.ex:1: Enumerable.impl_for!/1\nE                (elixir 1.18.4) lib/enum.ex:166: Enumerable.reduce/3\nE                (elixir 1.18.4) lib/enum.ex:4515: Enum.reverse/1\nE                (elixir 1.18.4) lib/enum.ex:3833: Enum.to_list/1\nE                (elixir 1.18.4) lib/map.ex:224: Map.new_from_enum/1\nE                (ash 3.31.0) lib/ash/query/query.ex:881: Ash.Query.for_read/4\nE                (feedapi 0.1.0) deps/ash/lib/ash/code_interface.ex:794: Feed.Timeline.feed/2\nE                (feedapi 0.1.0) lib/feed/api.ex:117: Feed.Api.execute/4\nE                /tmp/harbor_feed_pagination_suite.exs:643: (test)\nE         \nE       assert 'fail' == 'pass'\nE         - pass\nE         + fail\n\ntests/test_final_state.py:827: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_t39_rescoring_between_pages_keeps_window_anchored",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 46,
+                "start": 1789963827718,
+                "stop": 1789963827764,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}\n\n    def test_t39_rescoring_between_pages_keeps_window_anchored(suite: Dict[str, Any]) -> None:\n>       _scenario(suite, \"T39\")\n\ntests/test_final_state.py:996: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nsuite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}\nscenario_id = 'T39'\n\n    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:\n        results = suite[\"results\"]\n        if not results:\n            pytest.fail(\n                \"The ExUnit contract suite produced no results at all, which normally means \"\n                \"the project failed to compile or the script crashed before running.\\n\"\n                + _diagnostics(suite)\n            )\n    \n        prefix = f\"test {scenario_id} \"\n        matches = [name for name in results if name.startswith(prefix)]\n        assert matches, (\n            f\"Scenario {scenario_id} did not run. Known scenarios: {sorted(results)}\\n\"\n            + _diagnostics(suite)\n        )\n    \n        status, detail = results[matches[0]]\n>       assert status == \"pass\", f\"Scenario {scenario_id} ({matches[0]}) failed:\\n{detail}\"\nE       AssertionError: Scenario T39 (test T39 re-scoring between pages keeps the keyset window anchored to the data) failed:\nE           1) test T39 re-scoring between pages keeps the keyset window anchored to the data (FeedPaginationTest)\nE              /tmp/harbor_feed_pagination_suite.exs:654\nE              ** (Protocol.UndefinedError) protocol Enumerable not implemented for type Ash.Query (a struct). This protocol is implemented for the following type(s): Date.Range, File.Stream, Function, GenEvent.Stream, HashDict, HashSet, IO.Stream, Iter, Jason.OrderedObject, List, Map, MapSet, Range, Stream, StreamData\nE         \nE              Got value:\nE         \nE                  #Ash.Query<\nE                    resource: Feed.Timeline.Activity,\nE                    action: :feed,\nE                    sort: [published_at: :desc, id: :asc],\nE                    errors: [\nE                      %Ash.Error.Query.InvalidPage{\nE                        page: [limit: 4, count?: true],\nE                        splode: Ash.Error,\nE                        bread_crumbs: [],\nE                        vars: [],\nE                        path: [:page],\nE                        stacktrace: #Splode.Stacktrace<>,\nE                        class: :invalid\nE                      }\nE                    ]\nE                  >\nE         \nE              code: assert {:ok, w1} = api().fetch(:hot_feed, limit: 4)\nE              stacktrace:\nE                (elixir 1.18.4) lib/enum.ex:1: Enumerable.impl_for!/1\nE                (elixir 1.18.4) lib/enum.ex:166: Enumerable.reduce/3\nE                (elixir 1.18.4) lib/enum.ex:4515: Enum.reverse/1\nE                (elixir 1.18.4) lib/enum.ex:3833: Enum.to_list/1\nE                (elixir 1.18.4) lib/map.ex:224: Map.new_from_enum/1\nE                (ash 3.31.0) lib/ash/query/query.ex:881: Ash.Query.for_read/4\nE                (feedapi 0.1.0) deps/ash/lib/ash/code_interface.ex:794: Feed.Timeline.feed/2\nE                (feedapi 0.1.0) lib/feed/api.ex:117: Feed.Api.execute/4\nE                /tmp/harbor_feed_pagination_suite.exs:655: (test)\nE         \nE       assert 'fail' == 'pass'\nE         - pass\nE         + fail\n\ntests/test_final_state.py:827: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_t40_reported_total_stays_filtered_while_paging",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 50,
+                "start": 1789963827767,
+                "stop": 1789963827817,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "suite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}\n\n    def test_t40_reported_total_stays_filtered_while_paging(suite: Dict[str, Any]) -> None:\n>       _scenario(suite, \"T40\")\n\ntests/test_final_state.py:1000: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nsuite = {'compiled': CompletedProcess(args=['mix', 'compile'], returncode=0, stdout='', stderr=''), 'executed': CompletedProce.../harbor_feed_pagination_suite.exs:190: (test)\\n'), 'test T04 a keyset page can carry a full count': ('pass', ''), ...}}\nscenario_id = 'T40'\n\n    def _scenario(suite: Dict[str, Any], scenario_id: str) -> None:\n        results = suite[\"results\"]\n        if not results:\n            pytest.fail(\n                \"The ExUnit contract suite produced no results at all, which normally means \"\n                \"the project failed to compile or the script crashed before running.\\n\"\n                + _diagnostics(suite)\n            )\n    \n        prefix = f\"test {scenario_id} \"\n        matches = [name for name in results if name.startswith(prefix)]\n        assert matches, (\n            f\"Scenario {scenario_id} did not run. Known scenarios: {sorted(results)}\\n\"\n            + _diagnostics(suite)\n        )\n    \n        status, detail = results[matches[0]]\n>       assert status == \"pass\", f\"Scenario {scenario_id} ({matches[0]}) failed:\\n{detail}\"\nE       AssertionError: Scenario T40 (test T40 the reported total stays filtered while paging a filtered feed) failed:\nE           1) test T40 the reported total stays filtered while paging a filtered feed (FeedPaginationTest)\nE              /tmp/harbor_feed_pagination_suite.exs:681\nE              ** (Protocol.UndefinedError) protocol Enumerable not implemented for type Ash.Query (a struct). This protocol is implemented for the following type(s): Date.Range, File.Stream, Function, GenEvent.Stream, HashDict, HashSet, IO.Stream, Iter, Jason.OrderedObject, List, Map, MapSet, Range, Stream, StreamData\nE         \nE              Got value:\nE         \nE                  #Ash.Query<\nE                    resource: Feed.Timeline.Activity,\nE                    action: :feed,\nE                    sort: [published_at: :desc, id: :asc],\nE                    errors: [\nE                      %Ash.Error.Query.InvalidPage{\nE                        page: [limit: 4, count?: true],\nE                        splode: Ash.Error,\nE                        bread_crumbs: [],\nE                        vars: [],\nE                        path: [:page],\nE                        stacktrace: #Splode.Stacktrace<>,\nE                        class: :invalid\nE                      }\nE                    ]\nE                  >\nE         \nE              code: Enum.reduce(1..8, [], fn\nE              stacktrace:\nE                (elixir 1.18.4) lib/enum.ex:1: Enumerable.impl_for!/1\nE                (elixir 1.18.4) lib/enum.ex:166: Enumerable.reduce/3\nE                (elixir 1.18.4) lib/enum.ex:4515: Enum.reverse/1\nE                (elixir 1.18.4) lib/enum.ex:3833: Enum.to_list/1\nE                (elixir 1.18.4) lib/map.ex:224: Map.new_from_enum/1\nE                (ash 3.31.0) lib/ash/query/query.ex:881: Ash.Query.for_read/4\nE                (feedapi 0.1.0) deps/ash/lib/ash/code_interface.ex:794: Feed.Timeline.feed/2\nE                (feedapi 0.1.0) lib/feed/api.ex:117: Feed.Api.execute/4\nE                /tmp/harbor_feed_pagination_suite.exs:687: anonymous fn/2 in FeedPaginationTest.\"test T40 the reported total stays filtered while paging a filtered feed\"/1\nE                (elixir 1.18.4) lib/enum.ex:4507: Enum.reduce/3\nE                /tmp/harbor_feed_pagination_suite.exs:685: (test)\nE         \nE       assert 'fail' == 'pass'\nE         - pass\nE         + fail\n\ntests/test_final_state.py:827: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            }
+        ]
+    }
+}

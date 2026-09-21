@@ -1,0 +1,173 @@
+{
+    "reportFormat": "CTRF",
+    "specVersion": "0.0.0",
+    "timestamp": "2026-09-21T04:41:34.147499+00:00",
+    "generatedBy": "pytest",
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "7.4.4"
+        },
+        "summary": {
+            "tests": 13,
+            "passed": 4,
+            "failed": 9,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1789965693649,
+            "stop": 1789965694147
+        },
+        "environment": {
+            "buildName": "Pytest JSON CTRF Report",
+            "buildNumber": "000",
+            "buildUrl": "https://ctrf.io"
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_class_script_exists",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789965693720,
+                "stop": 1789965693721,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_field_resource_exists",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789965693721,
+                "stop": 1789965693722,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_report_json_exists",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 21,
+                "start": 1789965693722,
+                "stop": 1789965693743,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_report_json_exists():\n>       assert os.path.isfile(REPORT_JSON), f\"Expected report at {REPORT_JSON}.\"\nE       AssertionError: Expected report at /home/user/instancing_project/build/report.json.\nE       assert False\nE        +  where False = <function isfile at 0x7fa197b20220>('/home/user/instancing_project/build/report.json')\nE        +    where <function isfile at 0x7fa197b20220> = <module 'posixpath' (frozen)>.isfile\nE        +      where <module 'posixpath' (frozen)> = os.path\n\ntests/test_final_state.py:288: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_checker_no_load_errors",
+                "status": "passed",
+                "duration": 301,
+                "start": 1789965693744,
+                "stop": 1789965694045,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_saved_resource_instances",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 15,
+                "start": 1789965694046,
+                "stop": 1789965694061,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "checker = {'built': {'buffer': [0.5, 0, 0, 0, 0.5, 0, ...], 'class': 'MultiMesh', 'instance_count': 120, 'ok': True, ...}, 'cull...3], ...}, ...}, 'errors': [], 'resource': {'buffer': [], 'class': 'MultiMesh', 'instance_count': 120, 'ok': True, ...}}\n\n    def test_saved_resource_instances(checker):\n>       _assert_config_and_buffer(checker[\"resource\"], \"field.res\")\n\ntests/test_final_state.py:299: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\ndump = {'buffer': [], 'class': 'MultiMesh', 'instance_count': 120, 'ok': True, ...}\nlabel = 'field.res'\n\n    def _assert_config_and_buffer(dump, label):\n        assert dump.get(\"ok\") is True, f\"{label}: not a valid MultiMesh.\"\n        assert dump.get(\"transform_format\") == 1, (\n            f\"{label}: transform_format must be 1 (TRANSFORM_3D), got \"\n            f\"{dump.get('transform_format')}.\"\n        )\n        assert dump.get(\"use_colors\") is True, f\"{label}: use_colors must be true.\"\n        assert dump.get(\"use_custom_data\") is True, f\"{label}: use_custom_data must be true.\"\n        assert dump.get(\"instance_count\") == 120, (\n            f\"{label}: instance_count must be 120, got {dump.get('instance_count')}.\"\n        )\n        buffer = dump.get(\"buffer\", [])\n>       assert len(buffer) == 120 * STRIDE, (\n            f\"{label}: expected an instance buffer of {120 * STRIDE} floats \"\n            f\"(120 instances x {STRIDE}), got {len(buffer)}. In headless mode the \"\n            f\"per-instance data must be stored in the MultiMesh buffer.\"\n        )\nE       AssertionError: field.res: expected an instance buffer of 2400 floats (120 instances x 20), got 0. In headless mode the per-instance data must be stored in the MultiMesh buffer.\nE       assert 0 == (120 * 20)\nE        +  where 0 = len([])\n\ntests/test_final_state.py:219: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_built_field_instances",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 16,
+                "start": 1789965694062,
+                "stop": 1789965694078,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "checker = {'built': {'buffer': [0.5, 0, 0, 0, 0.5, 0, ...], 'class': 'MultiMesh', 'instance_count': 120, 'ok': True, ...}, 'cull...3], ...}, ...}, 'errors': [], 'resource': {'buffer': [], 'class': 'MultiMesh', 'instance_count': 120, 'ok': True, ...}}\n\n    def test_built_field_instances(checker):\n>       _assert_config_and_buffer(checker[\"built\"], \"InstanceField.build()\")\n\ntests/test_final_state.py:306: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\ndump = {'buffer': [0.5, 0, 0, 0, 0.5, 0, ...], 'class': 'MultiMesh', 'instance_count': 120, 'ok': True, ...}\nlabel = 'InstanceField.build()'\n\n    def _assert_config_and_buffer(dump, label):\n        assert dump.get(\"ok\") is True, f\"{label}: not a valid MultiMesh.\"\n        assert dump.get(\"transform_format\") == 1, (\n            f\"{label}: transform_format must be 1 (TRANSFORM_3D), got \"\n            f\"{dump.get('transform_format')}.\"\n        )\n        assert dump.get(\"use_colors\") is True, f\"{label}: use_colors must be true.\"\n        assert dump.get(\"use_custom_data\") is True, f\"{label}: use_custom_data must be true.\"\n        assert dump.get(\"instance_count\") == 120, (\n            f\"{label}: instance_count must be 120, got {dump.get('instance_count')}.\"\n        )\n        buffer = dump.get(\"buffer\", [])\n        assert len(buffer) == 120 * STRIDE, (\n            f\"{label}: expected an instance buffer of {120 * STRIDE} floats \"\n            f\"(120 instances x {STRIDE}), got {len(buffer)}. In headless mode the \"\n            f\"per-instance data must be stored in the MultiMesh buffer.\"\n        )\n    \n        for i in range(120):\n            e = expected_instance(i)\n            got = decode_instance(buffer, i)\n            s = e[\"s\"]\n            a = e[\"a\"]\n    \n            # Origin drives culling and must be exact.\n            for axis, exp_v, got_v in zip(\"xyz\", e[\"origin\"], got[\"origin\"]):\n>               assert abs(exp_v - got_v) <= TOL, (\n                    f\"{label}: instance {i} origin.{axis} expected {exp_v}, got {got_v}.\"\n                )\nE               AssertionError: InstanceField.build(): instance 0 origin.x expected -5.0, got 0.\nE               assert 5.0 <= 0.001\nE                +  where 5.0 = abs((-5.0 - 0))\n\ntests/test_final_state.py:233: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_report_json_content",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 10,
+                "start": 1789965694078,
+                "stop": 1789965694088,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_report_json_content():\n>       with open(REPORT_JSON) as fh:\nE       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/instancing_project/build/report.json'\n\ntests/test_final_state.py:313: FileNotFoundError",
+                "message": "The test failed in the call phase"
+            },
+            {
+                "name": "test_final_state.py::test_cull_report_box",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 10,
+                "start": 1789965694088,
+                "stop": 1789965694098,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "checker = {'built': {'buffer': [0.5, 0, 0, 0, 0.5, 0, ...], 'class': 'MultiMesh', 'instance_count': 120, 'ok': True, ...}, 'cull...3], ...}, ...}, 'errors': [], 'resource': {'buffer': [], 'class': 'MultiMesh', 'instance_count': 120, 'ok': True, ...}}\n\n    def test_cull_report_box(checker):\n        entry = checker[\"culls\"][\"report_box\"]\n        assert list(entry[\"indices\"]) == REPORT_INDICES, (\n            f\"cull(report box) indices mismatch: {entry['indices']}\"\n        )\n        assert entry[\"count\"] == 48, f\"cull(report box) count must be 48, got {entry['count']}.\"\n>       assert abs(entry[\"weight_sum\"] - 123.0) <= 1e-6, (\n            f\"cull(report box) weight_sum must be 123.0, got {entry['weight_sum']}.\"\n        )\nE       AssertionError: cull(report box) weight_sum must be 123.0, got 16.0000004768372.\nE       assert 106.9999995231628 <= 1e-06\nE        +  where 106.9999995231628 = abs((16.0000004768372 - 123.0))\n\ntests/test_final_state.py:354: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_cull_matches_oracle",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 11,
+                "start": 1789965694099,
+                "stop": 1789965694110,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "checker = {'built': {'buffer': [0.5, 0, 0, 0, 0.5, 0, ...], 'class': 'MultiMesh', 'instance_count': 120, 'ok': True, ...}, 'cull...3], ...}, ...}, 'errors': [], 'resource': {'buffer': [], 'class': 'MultiMesh', 'instance_count': 120, 'ok': True, ...}}\nname = 'report_box'\n\n    @pytest.mark.parametrize(\"name\", [b[0] for b in BOXES])\n    def test_cull_matches_oracle(checker, name):\n        box = next(b for b in BOXES if b[0] == name)\n        _, bmin, bmax = box\n        exp_indices, exp_weight, exp_flagged = cull_expected(bmin, bmax)\n    \n        entry = checker[\"culls\"][name]\n        assert sorted(entry[\"indices\"]) == exp_indices, (\n            f\"cull({name}) indices mismatch. expected {exp_indices}, got {entry['indices']}.\"\n        )\n        assert list(entry[\"indices\"]) == exp_indices, (\n            f\"cull({name}) indices must be sorted ascending, got {entry['indices']}.\"\n        )\n        assert entry[\"count\"] == len(exp_indices), (\n            f\"cull({name}) count expected {len(exp_indices)}, got {entry['count']}.\"\n        )\n>       assert abs(entry[\"weight_sum\"] - exp_weight) <= 1e-6, (\n            f\"cull({name}) weight_sum expected {exp_weight}, got {entry['weight_sum']}.\"\n        )\nE       AssertionError: cull(report_box) weight_sum expected 123.0, got 16.0000004768372.\nE       assert 106.9999995231628 <= 1e-06\nE        +  where 106.9999995231628 = abs((16.0000004768372 - 123.0))\n\ntests/test_final_state.py:381: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_cull_matches_oracle",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 12,
+                "start": 1789965694110,
+                "stop": 1789965694122,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "checker = {'built': {'buffer': [0.5, 0, 0, 0, 0.5, 0, ...], 'class': 'MultiMesh', 'instance_count': 120, 'ok': True, ...}, 'cull...3], ...}, ...}, 'errors': [], 'resource': {'buffer': [], 'class': 'MultiMesh', 'instance_count': 120, 'ok': True, ...}}\nname = 'all'\n\n    @pytest.mark.parametrize(\"name\", [b[0] for b in BOXES])\n    def test_cull_matches_oracle(checker, name):\n        box = next(b for b in BOXES if b[0] == name)\n        _, bmin, bmax = box\n        exp_indices, exp_weight, exp_flagged = cull_expected(bmin, bmax)\n    \n        entry = checker[\"culls\"][name]\n        assert sorted(entry[\"indices\"]) == exp_indices, (\n            f\"cull({name}) indices mismatch. expected {exp_indices}, got {entry['indices']}.\"\n        )\n        assert list(entry[\"indices\"]) == exp_indices, (\n            f\"cull({name}) indices must be sorted ascending, got {entry['indices']}.\"\n        )\n        assert entry[\"count\"] == len(exp_indices), (\n            f\"cull({name}) count expected {len(exp_indices)}, got {entry['count']}.\"\n        )\n>       assert abs(entry[\"weight_sum\"] - exp_weight) <= 1e-6, (\n            f\"cull({name}) weight_sum expected {exp_weight}, got {entry['weight_sum']}.\"\n        )\nE       AssertionError: cull(all) weight_sum expected 298.5, got 60.0000008940697.\nE       assert 238.4999991059303 <= 1e-06\nE        +  where 238.4999991059303 = abs((60.0000008940697 - 298.5))\n\ntests/test_final_state.py:381: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_cull_matches_oracle",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789965694122,
+                "stop": 1789965694123,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_cull_matches_oracle",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 11,
+                "start": 1789965694124,
+                "stop": 1789965694135,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "checker = {'built': {'buffer': [0.5, 0, 0, 0, 0.5, 0, ...], 'class': 'MultiMesh', 'instance_count': 120, 'ok': True, ...}, 'cull...3], ...}, ...}, 'errors': [], 'resource': {'buffer': [], 'class': 'MultiMesh', 'instance_count': 120, 'ok': True, ...}}\nname = 'single'\n\n    @pytest.mark.parametrize(\"name\", [b[0] for b in BOXES])\n    def test_cull_matches_oracle(checker, name):\n        box = next(b for b in BOXES if b[0] == name)\n        _, bmin, bmax = box\n        exp_indices, exp_weight, exp_flagged = cull_expected(bmin, bmax)\n    \n        entry = checker[\"culls\"][name]\n        assert sorted(entry[\"indices\"]) == exp_indices, (\n            f\"cull({name}) indices mismatch. expected {exp_indices}, got {entry['indices']}.\"\n        )\n        assert list(entry[\"indices\"]) == exp_indices, (\n            f\"cull({name}) indices must be sorted ascending, got {entry['indices']}.\"\n        )\n        assert entry[\"count\"] == len(exp_indices), (\n            f\"cull({name}) count expected {len(exp_indices)}, got {entry['count']}.\"\n        )\n>       assert abs(entry[\"weight_sum\"] - exp_weight) <= 1e-6, (\n            f\"cull({name}) weight_sum expected {exp_weight}, got {entry['weight_sum']}.\"\n        )\nE       AssertionError: cull(single) weight_sum expected 1.0, got 0.\nE       assert 1.0 <= 1e-06\nE        +  where 1.0 = abs((0 - 1.0))\n\ntests/test_final_state.py:381: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_cull_matches_oracle",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 12,
+                "start": 1789965694135,
+                "stop": 1789965694147,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "checker = {'built': {'buffer': [0.5, 0, 0, 0, 0.5, 0, ...], 'class': 'MultiMesh', 'instance_count': 120, 'ok': True, ...}, 'cull...3], ...}, ...}, 'errors': [], 'resource': {'buffer': [], 'class': 'MultiMesh', 'instance_count': 120, 'ok': True, ...}}\nname = 'slab'\n\n    @pytest.mark.parametrize(\"name\", [b[0] for b in BOXES])\n    def test_cull_matches_oracle(checker, name):\n        box = next(b for b in BOXES if b[0] == name)\n        _, bmin, bmax = box\n        exp_indices, exp_weight, exp_flagged = cull_expected(bmin, bmax)\n    \n        entry = checker[\"culls\"][name]\n        assert sorted(entry[\"indices\"]) == exp_indices, (\n            f\"cull({name}) indices mismatch. expected {exp_indices}, got {entry['indices']}.\"\n        )\n        assert list(entry[\"indices\"]) == exp_indices, (\n            f\"cull({name}) indices must be sorted ascending, got {entry['indices']}.\"\n        )\n        assert entry[\"count\"] == len(exp_indices), (\n            f\"cull({name}) count expected {len(exp_indices)}, got {entry['count']}.\"\n        )\n>       assert abs(entry[\"weight_sum\"] - exp_weight) <= 1e-6, (\n            f\"cull({name}) weight_sum expected {exp_weight}, got {entry['weight_sum']}.\"\n        )\nE       AssertionError: cull(slab) weight_sum expected 99.5, got 20.0000002980232.\nE       assert 79.4999997019768 <= 1e-06\nE        +  where 79.4999997019768 = abs((20.0000002980232 - 99.5))\n\ntests/test_final_state.py:381: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            }
+        ]
+    }
+}

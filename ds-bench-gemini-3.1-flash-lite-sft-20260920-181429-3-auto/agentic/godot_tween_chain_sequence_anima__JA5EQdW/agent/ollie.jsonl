@@ -1,0 +1,10 @@
+{"type":"text","text":"<think>Let me look at the project first."}
+{"type":"text","text":"</think>"}
+{"type":"tool-call","toolName":"bash","input":{"command":"cd /home/user/godot_project && ls -la && cat project.godot 2>/dev/null | head -50"}}
+{"type":"tool-result","toolName":"bash","output":{"exitCode":0,"stdout":"total 32\ndrwxr-xr-x 1 root root 4096 Sep 19 01:51 .\ndrwxr-xr-x 1 root root 4096 Sep 19 01:51 ..\ndrwxr-xr-x 4 root root 4096 Sep 19 01:51 .godot\n-rw-r--r-- 1 root root  305 Sep 19 01:51 project.godot\ndrwxr-xr-x 2 root root 4096 Sep 19 01:51 scenes\ndrwxr-xr-x 2 root root 4096 Sep 19 01:51 scripts\ndrwxr-xr-x 2 root root 4096 Sep 19 01:51 tests\n; Godot project configuration for the tween_chain_sequence_animation task.\nconfig_version=5\n\n[application]\n\nconfig/name=\"tween_chain_sequence_animation\"\nconfig/features=PackedStringArray(\"4.3\")\n\n[rendering]\n\nrenderer/rendering_method=\"gl_compatibility\"\nrenderer/rendering_method.mobile=\"gl_compatibility\"\n","stderr":""}}
+{"type":"text","text":"<think>The directories exist. Let me check the"}
+{"type":"text","text":" structure."}
+{"type":"text","text":"</think>"}
+{"type":"tool-call","toolName":"bash","input":{"command":"cd /home/user/godot_project && echo \"--- scenes ---\" && ls -la scenes && echo \"--- scripts ---\" && ls -la scripts && echo \"--- tests ---\" && ls -la tests"}}
+{"type":"tool-result","toolName":"bash","output":{"exitCode":0,"stdout":"--- scenes ---\ntotal 8\ndrwxr-xr-x 2 root root 4096 Sep 19 01:51 .\ndrwxr-xr-x 1 root root 4096 Sep 19 01:51 ..\n--- scripts ---\ntotal 8\ndrwxr-xr-x 2 root root 4096 Sep 19 01:51 .\ndrwxr-xr-x 1 root root 4096 Sep 19 01:51 ..\n--- tests ---\ntotal 8\ndrwxr-xr-x 2 root root 4096 Sep 19 01:51 .\ndrwxr-xr-x 1 root root 4096 Sep 19 01:51 ..\n","stderr":""}}
+{"type":"error","message":"Chat completion failed: Response stream ended without a finish reason."}

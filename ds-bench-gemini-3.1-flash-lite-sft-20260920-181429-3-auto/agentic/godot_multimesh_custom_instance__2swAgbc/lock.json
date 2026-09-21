@@ -1,0 +1,40 @@
+{
+    "schema_version": 2,
+    "task": {
+        "name": "godot_multimesh_custom_instance_data",
+        "type": "local",
+        "digest": "sha256:d32f0d275dce8d0a05ba73c729f57fc1483cd90025664b8c17571803e5f99698",
+        "source": "ds-bench",
+        "path": "/home/kweizh/ollie/dataset/eval/tasks/ds-bench/godot_multimesh_custom_instance_data"
+    },
+    "install_only": false,
+    "timeout_multiplier": 10.0,
+    "agent": {
+        "name": "ollie.agent:OllieAgent",
+        "model_name": "gemini-3.1-flash-lite-sft-20260920-181429@3",
+        "skills": [],
+        "resume_trajectory": false,
+        "extra_allowed_hosts": [],
+        "kwargs": {
+            "max_steps": 100,
+            "reasoning_effort": "auto"
+        },
+        "mcp_servers": []
+    },
+    "bridge_inputs": {},
+    "skills": [],
+    "environment": {
+        "type": "docker",
+        "force_build": false,
+        "delete": true,
+        "cpu_enforcement_policy": "auto",
+        "memory_enforcement_policy": "auto",
+        "extra_docker_compose": [],
+        "kwargs": {},
+        "extra_allowed_hosts": []
+    },
+    "verifier": {
+        "disable": false,
+        "environment_mode": "shared"
+    }
+}

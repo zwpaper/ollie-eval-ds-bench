@@ -1,0 +1,83 @@
+{
+    "reportFormat": "CTRF",
+    "specVersion": "0.0.0",
+    "timestamp": "2026-09-21T04:17:43.747329+00:00",
+    "generatedBy": "pytest",
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "7.4.4"
+        },
+        "summary": {
+            "tests": 6,
+            "passed": 6,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1789964253065,
+            "stop": 1789964263747
+        },
+        "environment": {
+            "buildName": "Pytest JSON CTRF Report",
+            "buildNumber": "000",
+            "buildUrl": "https://ctrf.io"
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_project_godot_file_exists",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789964253089,
+                "stop": 1789964253090,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_tileset_file_exists",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789964253091,
+                "stop": 1789964253092,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_dungeon_generator_script_exists",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789964253092,
+                "stop": 1789964253093,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_main_scene_exists",
+                "status": "passed",
+                "duration": 1,
+                "start": 1789964253093,
+                "stop": 1789964253094,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_project_imports_cleanly",
+                "status": "passed",
+                "duration": 10083,
+                "start": 1789964253094,
+                "stop": 1789964263177,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_harness_passes",
+                "status": "passed",
+                "duration": 568,
+                "start": 1789964263178,
+                "stop": 1789964263746,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

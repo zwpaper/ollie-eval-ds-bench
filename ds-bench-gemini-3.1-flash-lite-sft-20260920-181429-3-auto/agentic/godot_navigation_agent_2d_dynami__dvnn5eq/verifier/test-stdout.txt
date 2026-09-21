@@ -1,0 +1,49 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0
+rootdir: /tests
+plugins: json-ctrf-0.5.3
+collected 9 items
+
+tests/test_final_state.py FF.......                                      [100%]
+
+=================================== FAILURES ===================================
+_________________________ test_nav_world_script_exists _________________________
+
+    def test_nav_world_script_exists():
+        path = os.path.join(PROJECT_DIR, "scripts", "nav_world.gd")
+>       assert os.path.isfile(path), (
+            f"Expected NavWorld script at {path}, not found."
+        )
+E       AssertionError: Expected NavWorld script at /home/user/godot_project/scripts/nav_world.gd, not found.
+E       assert False
+E        +  where False = <function isfile at 0x7fec2f694220>('/home/user/godot_project/scripts/nav_world.gd')
+E        +    where <function isfile at 0x7fec2f694220> = <module 'posixpath' (frozen)>.isfile
+E        +      where <module 'posixpath' (frozen)> = os.path
+
+tests/test_final_state.py:40: AssertionError
+_________________________ test_nav_agent_script_exists _________________________
+
+    def test_nav_agent_script_exists():
+        path = os.path.join(PROJECT_DIR, "scripts", "nav_agent.gd")
+>       assert os.path.isfile(path), (
+            f"Expected NavAgent script at {path}, not found."
+        )
+E       AssertionError: Expected NavAgent script at /home/user/godot_project/scripts/nav_agent.gd, not found.
+E       assert False
+E        +  where False = <function isfile at 0x7fec2f694220>('/home/user/godot_project/scripts/nav_agent.gd')
+E        +    where <function isfile at 0x7fec2f694220> = <module 'posixpath' (frozen)>.isfile
+E        +      where <module 'posixpath' (frozen)> = os.path
+
+tests/test_final_state.py:47: AssertionError
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED tests/test_final_state.py::test_nav_world_scene_exists
+PASSED tests/test_final_state.py::test_headless_harness_executes_successfully
+PASSED tests/test_final_state.py::test_scene_structure_valid
+PASSED tests/test_final_state.py::test_nav_agent_api_present
+PASSED tests/test_final_state.py::test_nav_world_api_present
+PASSED tests/test_final_state.py::test_agent_reaches_goal_with_obstacles
+PASSED tests/test_final_state.py::test_agent_reaches_goal_after_obstacles_moved
+FAILED tests/test_final_state.py::test_nav_world_script_exists - AssertionErr...
+FAILED tests/test_final_state.py::test_nav_agent_script_exists - AssertionErr...
+========================= 2 failed, 7 passed in 5.96s ==========================
